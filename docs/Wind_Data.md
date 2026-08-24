@@ -327,7 +327,7 @@ Test Exception: None.
 
 Test specifications to be established locally by the operator.
 
-Examples: 
+Examples:
 
 - `SENSOR_MAX = 100 m/s` (limited by the manufacturer firmware, for example)
 - `SENSOR_MIN = 0 m/s`
