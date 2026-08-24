@@ -423,7 +423,7 @@ Test checks that the reported present physical location (latitude/longitude) is 
 
 All sensors have a limited output range, and this can form the most rudimentary gross range check. No values less than a minimum value or greater than the maximum value the sensor can output (SENSOR\_MIN, SENSOR\_MAX) are acceptable. Additionally, the operator can select a smaller span (USER\_MIN, USER\_MAX) based upon local knowledge or a desire to draw attention to extreme values. An obvious gross range check is wind direction 0-360°.
 
-**NOTE:** Operators may choose to flag as suspect values that exceed the calibration span but not the hardware limits (e.g., a value that sensor is not capable of producing). 
+**NOTE:** Operators may choose to flag as suspect values that exceed the calibration span but not the hardware limits (e.g., a value that sensor is not capable of producing).
 
 | Flags     | Condition                           | Codable	Instructions          |
 |-----------|-------------------------------------|-------------------------------|
@@ -508,7 +508,7 @@ The rate of change between WS*n*-1 and WS*<sup>n</sup>* must be less than three 
 
 **Test specifications to be established locally by operator.**
 
-**Examples:** N\_DEV = 3, TIM\_DEV = 8 hours. 
+**Examples:** N\_DEV = 3, TIM\_DEV = 8 hours.
 
 #### **Test 8 - Flat Line Test (Strongly Recommended)**
 
@@ -558,7 +558,7 @@ The QARTOD wind committee recognized the high value in full co-variance testing 
 
 #### A test for inadequate variation of the time series.
 
-A common sensor failure mode can provide a data series that is nearly but not exactly a flat line. Badly worn bearings, a failed grounding wire, signal crosstalk, or inadequate wire shielding might cause such a failure. This test inspects for an SD value or a range variation (MAX-MIN) value that fails to exceed threshold values (MIN\_VAR\_WARN, MIN\_VAR\_FAIL) over a selected time period (TST\_TIM). 
+A common sensor failure mode can provide a data series that is nearly but not exactly a flat line. Badly worn bearings, a failed grounding wire, signal crosstalk, or inadequate wire shielding might cause such a failure. This test inspects for an SD value or a range variation (MAX-MIN) value that fails to exceed threshold values (MIN\_VAR\_WARN, MIN\_VAR\_FAIL) over a selected time period (TST\_TIM).
 
 | Flags     | Condition                                                      | Codable	Instructions                                                                                                                |
 |-----------|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
@@ -656,7 +656,7 @@ http://www.ioos.noaa.gov/qartod/dissolved\_oxygen/data\_qc\_workshop\_final\_rep
 
 http://www.ioos.noaa.gov/qartod/dissolved\_oxygen/ioos\_devplan.pdf
 
-**National Data Buoy Center Handbook of Automated Data Quality Control** 
+**National Data Buoy Center Handbook of Automated Data Quality Control**
 
 http://www.ioos.noaa.gov/qartod/dissolved\_oxygen/ndbc\_handbook\_autodataqc2009.pdf
 
@@ -668,7 +668,7 @@ http://www.ioos.noaa.gov/qartod/dissolved\_oxygen/ioos\_cwp\_lankhorst\_data\_qc
 
 http://www.ioos.noaa.gov/qartod/dissolved\_oxygen/requirements4global\_implementation\_4coastalgoos.pdf
 
-**Integrating Standards in Data QA/QC into OpenGeospatial Consortium Sensor Observation Services** 
+**Integrating Standards in Data QA/QC into OpenGeospatial Consortium Sensor Observation Services**
 
 http://www.ioos.noaa.gov/qartod/dissolved\_oxygen/ieee\_oceans09b\_remen.pdf
 
@@ -700,7 +700,7 @@ http://coaps.fsu.edu/woce/docs/qchbook/qchbook.htm
 
 http://www.ndbc.noaa.gov/realtime.pdf
 
-**NDBC Technical Document 09-02 Handbook of Automated Data Quality Control Checks and Procedures** 
+**NDBC Technical Document 09-02 Handbook of Automated Data Quality Control Checks and Procedures**
 
 http://www.ndbc.noaa.gov/NDBCHandbookofAutomatedDataQualityControl2009.pdf
 
