@@ -1,121 +1,19 @@
-![](_page_0_Picture_0.jpeg)
-
-# **Manual for Real-Time Quality Control of Wind Data**
+# Manual for Real-Time Quality Control of Wind Data
 
 A Guide to Quality Control and Quality Assurance for Coastal and Oceanic Wind Observations
 
-**Version 1.0 October 2014**
+DOIII
 
-![](_page_0_Picture_4.jpeg)
-
-# **Document Validation**
-
-![](_page_1_Picture_1.jpeg)
-
-## **U.S. IOOS Program Office Validation**
-
-|                                                      | 10/17/2014 |
-|------------------------------------------------------|------------|
-| Zdenka S. Willis, Director, U.S. IOOS Program Office | Date       |
-
-## **QARTOD Project Manager Validation**
-
-10/17/2014 Joseph Swaykos, NOAA National Data Buoy Center Date
-
-## **QARTOD Board of Advisors Validation**
-
-Julianna O. Thomas, Southern California Coastal Ocean Observing System Date 10/17/2014
-
-## **Table of Contents**
-
-| Doc  | ument Validation                                                                                          | ii  |
-|------|-----------------------------------------------------------------------------------------------------------|-----|
-| Tabl | e of Contents                                                                                             | iii |
-| List | of Figures                                                                                                | iv  |
-|      | of Tables                                                                                                 |     |
-|      | sion History                                                                                              |     |
-|      | orsement Disclaimer                                                                                       |     |
-|      | nowledgements                                                                                             |     |
-|      | nyms and Abbreviations                                                                                    |     |
-|      | nitions of Selected Terms                                                                                 |     |
-|      |                                                                                                           |     |
-| 1.0  | Background and Introduction                                                                               |     |
-| 2.0  | Purpose/Constraints/Applications                                                                          | 2   |
-| 2.1  | Purpose                                                                                                   |     |
-| 2.2  | Constraints                                                                                               |     |
-|      | 2.2.1 Data Processing Methodology                                                                         |     |
-|      | 2.2.2 Traceability to Accepted Standards  2.2.3 Sensor Deployment Considerations and Hardware Limitations |     |
-| 2.3  | Applications of Wind Data                                                                                 |     |
-| 2.3  | Sensor Technology                                                                                         |     |
-| 3.0  | Quality Control                                                                                           |     |
-| 3.1  | QC Flags                                                                                                  |     |
-| 3.2  | Test Hierarchy                                                                                            |     |
-| 3.3  | QC Test Descriptions                                                                                      |     |
-|      | 3.3.1 Applications of QC Tests to Wind Sensors                                                            |     |
-|      | Test 1 - Timing/Gap Test (Required)                                                                       |     |
-|      | Test 2 - Syntax Test (Required)                                                                           | 12  |
-|      | Test 3 - Location Test (Required)                                                                         | 13  |
-|      | Test 4 - Gross Range Test (Required)                                                                      |     |
-|      | Test 5 - Climatology Test (Required)                                                                      |     |
-|      | Test 6 - Spike Test (Strongly Recommended)                                                                |     |
-|      | Test 7 - Rate of Change Test (Strongly Recommended)                                                       |     |
-|      | Test 8 - Flat Line Test (Strongly Recommended)                                                            |     |
-|      | Test 9 - Multi-Variate Test (Suggested)                                                                   |     |
-|      | Test 10 - Attenuated Signal Test (Suggested)                                                              |     |
-|      | Test 11 - Neighbor Test (Suggested)                                                                       | 20  |
-| 4.0  | Summary                                                                                                   | 21  |
-| 5.0  | References                                                                                                | 22  |
-
-| Appendix A. | Quality Assurance<br>A-1                                                                                |    |
-|-------------|---------------------------------------------------------------------------------------------------------|----|
-| A.1         | Sensor Calibration ConsiderationsA-1                                                                    |    |
-| A.2         | Sensor Comparison<br>A-1                                                                                |    |
-| A.3         | Common QA ConsiderationsA-2                                                                             |    |
-| A.4         | QA Levels for Best PracticesA-3                                                                         |    |
-| A.5         | Additional Sources of QA InformationA-3                                                                 |    |
-|             | Pre-deployment QA Checklist<br>A-5                                                                      |    |
-|             | Deployment ChecklistA-5                                                                                 |    |
-|             | Post-deployment ChecklistA-6                                                                            |    |
-| Appendix B. | QARTOD Wind Manual TeamB-1<br>List	of	Figures                                                           |    |
-|             | Figure 2-1. RM Young propeller and wind vane sensor (photo courtesy of RM Young)<br>                    | 5  |
-|             | Figure 2-2. Example of a vane anemometer atop a fixed platform (L) (photo courtesy of NOAA/             |    |
-|             | CO-OPS) and on a moored buoy (R) (photo courtesy of NOAA/NDBC)<br>                                      | 6  |
-|             | Figure 2-3. Close-up of a cup anemometer (photo courtesy of NOAA/NWS)<br>                               | 6  |
-|             | Figure 2-4. Acoustic anemometers at the Otis Weather Test facility in Cape Cod, Massachusetts. The five |    |
-|             | masts on the left provide reference wind observations. The five sensors on the right are: 1) RM         |    |
-|             | Young 3-axis ultrasonic anemometer (partially obscured), 2) Gill R3 3-D anemometer, 3) RM               |    |
-|             | Young 2-axis ultrasonic anemometer, 4) Gill Windsonic 2-axis ultrasonic anemometer, and 5)              |    |
-|             | Vaisala WS425 ultrasonic anemometer (photo courtesy of Mark Bushnell).<br>                              | 7  |
-|             | List	of	Tables                                                                                          |    |
-|             | Table 2-1. Technologies included and excluded in this manual<br>                                        | 2  |
-|             | Table 2-2. Platforms included and excluded in this manual<br>                                           | 2  |
-|             | Table 3-1. Flags for real-time data (UNESCO 2013)                                                       | 10 |
-|             | Table 3-2. QC Tests in order of implementation and hierarchy<br>                                        | 10 |
-
-# **Revision History**
-
-| Date         | Revision	Description        | Notes |
-|--------------|-----------------------------|-------|
-| October 2014 | Original Document Published |       |
-|              |                             |       |
-|              |                             |       |
-|              |                             |       |
-
-v
-
-# **Endorsement Disclaimer**
-
-**Mention of a commercial company or product does not constitute an endorsement by NOAA. Use of information from this publication for publicity or advertising purposes concerning proprietary products or the tests of such products is not authorized.**
-
-# **Acknowledgements**
+## Acknowledgements
 
 We are grateful to our entire Wind Manual Team, whose names are listed in appendix B. Special thanks go to those who served on the Wind Manual Committee and provided content and suggestions for the initial draft, as well as all who reviewed each draft and provided valuable feedback.
 
-# **Acronyms and Abbreviations**
+## Acronyms and Abbreviations
 
-| AOOS     | Alaska	Ocean	Observing	System                                              |
-|----------|----------------------------------------------------------------------------|
-| CariCOOS | Caribbean	Coastal	Ocean	Observing	System                                   |
+|          |                                                                      |
+| -------- | -------------------------------------------------------------------- |
+| AOOS     | Alaska	Ocean	Observing	System                                    |
+| CariCOOS | Caribbean	Coastal	Ocean	Observing System                                   |
 | CeNCOOS  | Central	and	Northern	California	Ocean	Observing	System                     |
 | C-MAN    | Coastal-Marine	Automated	Network                                           |
 | CO-OPS   | Center	for	Operational	Oceanographic	Products<br>and	Services              |
@@ -148,12 +46,13 @@ We are grateful to our entire Wind Manual Team, whose names are listed in append
 | WS       | Wind	Speed                                                                 |
 |          |                                                                            |
 
-# **Definitions of Selected Terms**
+## Definitions of Selected Terms
 
 This manual contains several terms whose meanings are critical to those using the manual. These terms are included in the following table to ensure that the meanings are clearly defined.
 
-| Anemometer                | An anemometer is an instrument for measuring and indicating the force or<br>speed and sometimes direction of the wind (Merriam-Webster).                                                                                                                                                                                     |  |
-|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--|
+|                        |                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Anemometer                | An anemometer is an instrument for measuring and indicating the force or<br>speed and sometimes direction of the wind (Merriam-Webster).
 | Codable Instructions      | Codable instructions are specific guidance that can be used by a software<br>programmer to design, construct, and implement a test. These instructions also<br>include examples with sample thresholds.                                                                                                                      |  |
 | Data Record               | A data record is one or more messages that form a coherent, logical, and<br>complete observation.                                                                                                                                                                                                                            |  |
 | Message                   | A message is a standalone data transmission. A data record can be composed of<br>multiple messages.                                                                                                                                                                                                                          |  |
@@ -163,32 +62,30 @@ This manual contains several terms whose meanings are critical to those using th
 | Real Time                 | Real time means that: data are delivered without latency for immediate use; time<br>series extends only backwards in time, where the next data point is not available;<br>and there may be delays ranging from a few seconds to a few hours or even days,<br>depending upon the data delivery capabilities<br>(section 1.0). |  |
 | Threshold                 | Thresholds are limits that are defined by the operator.                                                                                                                                                                                                                                                                      |  |
 
-# **1.0 Background and Introduction**
+## 1.0 Background and Introduction
 
 The U.S. Integrated Ocean Observing System (IOOS) has a vested interest in collecting high quality data for the 26 core variables (U.S. IOOS 2010) measured on a national scale. In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding permits. Additional efforts can also be undertaken to produce higher quality delayed mode data. This wind data manual is the sixth in a series of guidance documents that address QC of real-time data of each core variable.
 
 Please refer to http://www.ioos.noaa.gov/qartod/for the following documents:
 
-- 1) U.S IOOS QARTOD Project Plan dated April 1, 2012
-- 2) U.S. Integrated Ocean Observing System, 2012. Manual for Real-Time Quality Control of Dissolved Oxygen Observations: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 45pp.
-- 3) U.S. Integrated Ocean Observing System, 2013. Manual for Real-Time Quality Control of In-Situ Current Observations: A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 43pp.
-- 4) U.S. Integrated Ocean Observing System, 2013. Manual for Real-Time Quality Control of In-Situ Surface Wave Data: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 49pp.
-- 5) U.S. Integrated Ocean Observing System, 2013. Manual for Real-Time Quality Control of Temperature and Salinity Data: A Guide to Quality Control and Quality Assurance of Temperature and Salinity Observations. 55pp.
-- 6) U.S. Integrated Ocean Observing System, 2014. Manual for Real-Time Quality Control of Water Level Data: A Guide to Quality Control and Quality Assurance of Water Level Observations. 43pp.
+1. U.S IOOS QARTOD Project Plan dated April 1, 2012
+2. U.S. Integrated Ocean Observing System, 2012. Manual for Real-Time Quality Control of Dissolved Oxygen Observations: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 45pp.
+3. U.S. Integrated Ocean Observing System, 2013. Manual for Real-Time Quality Control of In-Situ Current Observations: A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 43pp.
+4. U.S. Integrated Ocean Observing System, 2013. Manual for Real-Time Quality Control of In-Situ Surface Wave Data: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 49pp.
+5. U.S. Integrated Ocean Observing System, 2013. Manual for Real-Time Quality Control of Temperature and Salinity Data: A Guide to Quality Control and Quality Assurance of Temperature and Salinity Observations. 55pp.
+6. U.S. Integrated Ocean Observing System, 2014. Manual for Real-Time Quality Control of Water Level Data: A Guide to Quality Control and Quality Assurance of Water Level Observations. 43pp.
 
 Please reference this document as:
 
-U.S. Integrated Ocean Observing System, 2014. Manual for Real-Time Quality Control of Wind Data: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 45pp.
+    U.S. Integrated Ocean Observing System, 2014. Manual for Real-Time Quality Control of Wind Data: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 45pp.
 
 This manual is a living document that reflects the state-of-the-art QC testing procedures for real-time wind observations. It is written for the experienced operator but also provides examples for those who are just entering the field.
 
-![](_page_11_Picture_0.jpeg)
-
-# **2.0 Purpose/Constraints/Applications**
+## 2.0 Purpose/Constraints/Applications
 
 The following sections describe the purpose of this manual, as well as the constraints that operators may encounter when performing QC of wind data and specific applications of those data.
 
-## **2.1 Purpose**
+### 2.1 Purpose
 
 The purpose of this manual is to provide guidance to the U.S. IOOS and the wind community at large for the real-time QC of wind speed, direction, and gust measurements using an agreed-upon, documented, and implemented standard process. This manual is also a deliverable to the U.S. IOOS Regional Associations and the ocean observing community and represents a contribution to a collection of core variable QC documents.
 
@@ -198,23 +95,27 @@ This manual differs from existing QC procedures for wind in that its focus is on
 
 Table 2-1 shows technologies that are included and excluded in this manual, and table 2-2 shows the platforms that are included and excluded.
 
-**Table 2-1.** Technologies included and excluded in this manual
+| **Technologies Included**            | **Technologies Excluded** |
+| ------------------------------------ | ------------------------- |
+| Sonic and acoustic resonance         | Dropsondes                |
+| Cup and van                          | Radiosondes/balloons      |
+| Propeller and vane                   | Microwave mapping         |
+| Hot wire (no direction, rarely used) |                           |
+| WOTAN                                |                           |
 
-| Technologies<br>Included                                                                                                        | Technologies Excluded                                   |
-|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| !<br>Sonic and acoustic resonance<br>!Cup and vane<br>!Propeller and vane<br>!Hot wire<br>(no direction, rarely used)<br>!WOTAN | Dropsondes<br>Radiosondes/balloons<br>Microwave mapping |
+: Table 2-1. Technologies included and excluded in this manual
 
-**Table 2-2.** Platforms included and excluded in this manual
+| **Platforms Included**             | **Platforms Excluded** |
+|------------------------------------|------------------------|
+| Coastal and offshore               | Satellite              |
+| Surface fixed and mobile platforms | Radar                  |
+| Autonomous surface vessels and     | Aircraft               |
+| ships                              |                        |
+| Oil platforms                      |                        |
+| C-MAN                              |                        |
+| Buoys                              |                        |
 
-| Platforms Included                 | Platforms Excluded |
-|------------------------------------|--------------------|
-| Coastal and offshore               | Satellite          |
-| Surface fixed and mobile platforms | Radar              |
-| Autonomous surface vessels and     | Aircraft           |
-| ships                              |                    |
-| !Oil platforms                     |                    |
-| !C-MAN                             |                    |
-| !Buoys                             |                    |
+: Table 2-2. Platforms included and excluded in this manual
 
 These test procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific tests and set data flags (data quality indicators) within an automated software program. U.S. IOOS/QARTOD maintains a code repository (http://code.google.com/p/qartod/) where operators may find or post examples of code in use. Although certain tests are recommended, thresholds can vary among data providers. In some instances, tests have been simplified and are less rigorous than those implemented by established providers of wind data, such as NOAA/NWS/NDBC. A balance must be struck between the timesensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.
 
@@ -224,17 +125,15 @@ QC involves follow-on steps that support the delivery of high-quality data and r
 
 The process of ensuring data quality is not always straightforward. QA/QC procedures may be specific to a sensor technology or even to a particular manufacturer's model, so the establishment of a methodology that is applicable to every sensor is challenging.
 
-## **2.2 Constraints**
+### 2.2 Constraints
 
-#### **2.2.1 Data Processing Methodology**
+#### 2.2.1 Data Processing Methodology
 
 The type of sensor system used to collect wind data and the system used to process and transmit the wind measurements determine which QC algorithms are used. In-situ systems with sufficient on-board processing power within the sensor may process the original (raw) data and produce derived products, such as a generated analog output designed to mimic a competitor's output. Most sensors sample at high-rate or burst mode (e.g., 121 1-Hz values averaged to compute an observation every 6 minutes). These samples are used to produce the actual real-time values transmitted (e.g., hourly speed, direction, and gust values). Because operators have different data processing methodologies, three levels of QC are proposed: required, strongly recommended, and suggested.
 
-#### **2.2.2 Traceability to Accepted Standards**
+#### 2.2.2 Traceability to Accepted Standards
 
 To ensure that wind sensors produce accurate data, rigorous calibrations and calibration checks must be performed in addition to QC checks. Most operators rely upon manufacturer calibrations and generally conduct calibration checks before deployment. These calibration checks are critical to ensuring that the
-
-![](_page_13_Picture_0.jpeg)
 
 manufacturer calibration is still valid. Manufacturers describe how to conduct these calibration checks in their user manuals, which are currently considered QA and further addressed in appendix A.
 
@@ -242,7 +141,7 @@ Calibrations and calibration checks must be traceable to accepted standards. The
 
 A stable calibration is essential for collecting climate quality data. Few operators maintain a wind tunnel and reference standards as described in Freitag et al. (2001) and Gilhousen (1986), but they may partner with such facilities to periodically conduct calibrations. Alternatively, they may develop a consensus reference capability using multiple anemometers to establish "truth," as described by Kline and Mikhail (1998).
 
-#### **2.2.3 Sensor Deployment Considerations and Hardware Limitations**
+#### 2.2.3 Sensor Deployment Considerations and Hardware Limitations
 
 Wind sensors can be deployed in several ways: on fixed platforms with no motion or rotation, on moorings where buoy motion provides a source of error and a compass is required to correct for rotation, or on mobile platforms where corrections for both translation and rotation must be conducted.
 
@@ -252,7 +151,7 @@ Also important, but beyond the scope of this document at present, is the determi
 
 The following sections describe the sensor technologies that are most often used, with a brief note about their attributes and shortcomings.
 
-## **2.3 Applications of Wind Data**
+### 2.3 Applications of Wind Data
 
 Real-time wind observations are important for a wide variety of applications, including:
 
@@ -266,45 +165,37 @@ Real-time wind observations are important for a wide variety of applications, in
 
 Other applications, such as climatological summaries and operational/design criteria, do not require real-time QC but benefit from it through early detection of faulty wind observations or other station issues.
 
-## **2.4 Sensor Technology**
+### 2.4 Sensor Technology
 
 The most predominant anemometer is an impellor/wind vane combination (often combined into one unit) used to measure wind speed/direction, respectively. Figure 2-1 shows an RM Young blade impellor mounted on a rotating wind vane. The impellor rotation can be detected magnetically, electrically, or optically; the pulsed output is used to determine the impellor speed of rotation. The wind vane rotation is often measured with a potentiometer, such that orientation is proportional to the observed resistance. A data collection platform (DCP) is used to capture the sensor output and apply a calibration to convert the observations to wind speed and direction. These instantaneous observations are then processed over a period of time to create the reported wind speed, direction, and gust. However, this technology does have several disadvantages. Impellors and wind vanes bearings tend to wear or corrode over time, have various start-up thresholds that may preclude low-wind observations, and are subject to damage if the blade strikes an object.
 
-![](_page_14_Picture_5.jpeg)
+![Shows an RM Young blade impellor mounted on a rotating wind vane.](images_Wind/image1.png)
 
-**Figure 2-1.** RM Young propeller and wind vane sensor (photo courtesy of RM Young).
+<figcaption>Figure 2-1. RM Young propeller and wind vane sensor (photo courtesy of RM Young).</figcaption>
 
-Figure 2-2 (left) shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge. Metadata for this station can be found at http://tidesandcurrents.noaa.gov/stationhome.html?id=8764227. Figure 2-2 (right) shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy. An example of supporting metadata for this buoy can be seen at http://www.ndbc.noaa.gov/station\_page.php?station=44009. In both cases,
+Figure 2-2 (left) shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge. Metadata for this station can be found at http://tidesandcurrents.noaa.gov/stationhome.html?id=8764227. Figure 2-2 (right) shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy. An example of supporting metadata for this buoy can be seen at http://www.ndbc.noaa.gov/station\_page.php?station=44009. In both cases, maintenance is eased because the dual anemometers are identical. However, they will have identical failure modes, and operators may be lulled into a sense of heightened accuracy because of the certain agreement between the two identical sensors. A better arrangement would have dual anemometers with different technologies. Figure 2-3 shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction. The vane/impellor anemometer bearings are especially challenged in a marine environment, and maintenance may be needed more frequently. Manufacturers continually strive to improve the materials used, such as the recent implementation of ceramic bearings, which won't corrode.
 
-![](_page_15_Picture_0.jpeg)
+![In the left, shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge. In the right, shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy.](images_Wind/image2.png)
 
-maintenance is eased because the dual anemometers are identical. However, they will have identical failure modes, and operators may be lulled into a sense of heightened accuracy because of the certain agreement between the two identical sensors. A better arrangement would have dual anemometers with different technologies. Figure 2-3 shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction. The vane/impellor anemometer bearings are especially challenged in a marine environment, and maintenance may be needed more frequently. Manufacturers continually strive to improve the materials used, such as the recent implementation of ceramic bearings, which won't corrode.
+<figcaption>Figure 2-2. Example of a vane anemometer atop a fixed platform (L) (photo courtesy of NOAA/CO-OPS) and on a moored buoy (R) (photo courtesy of NOAA/NDBC).</figcaption>
 
-![](_page_15_Picture_2.jpeg)
+![Shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction](images_Wind/image3.jpg)
 
-**Figure 2-2.** Example of a vane anemometer atop a fixed platform (L) (photo courtesy of NOAA/CO-OPS) and on a moored buoy (R) (photo courtesy of NOAA/NDBC).
-
-![](_page_15_Picture_4.jpeg)
-
-**Figure 2-3.** Close-up of a cup anemometer (photo courtesy of NOAA/NWS).
+<figcaption>Figure 2-3. Close-up of a cup anemometer (photo courtesy of NOAA/NWS).</figcaption>
 
 Another popular technology uses ultrasound, either by observing changes in the time of flight of acoustic pulses between several emitter/receiver pairs, or more recently by detecting phase changes in a resonant acoustic wave. Figure 2-4 shows a variety of acoustic anemometers being tested at the Otis Weather Test facility in Cape Cod, Massachusetts. These electronic sensors usually include the circuitry needed to directly output calibrated wind speed, direction, and gust. In some cases, they can also generate an analog output that mimics an impellor/wind vane, easing the replacement of these devices with a sonic anemometer. They excel at observing the lowest wind speeds, but in some cases, the physical structure that supports the emitter/receivers also obstructs wind flow. The problem is most pronounced at extremely high wind speeds. Some sensors are also prone to failure because of roosting birds. Early acoustic anemometers accumulated water droplets on the emitter or receiver resulting in erroneous measurements, which are now readily detected and discarded by the sensor itself before outputting an observation.
 
-![](_page_16_Figure_2.jpeg)
+![Shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction](images_Wind/image4.jpg)
 
-**Figure 2-4.** Acoustic anemometers at the Otis Weather Test facility in Cape Cod, Massachusetts. The five masts on the left provide reference wind observations. The five sensors on the right are: 1) RM Young 3-axis ultrasonic anemometer (partially obscured), 2) Gill R3 3-D anemometer, 3) RM Young 2-axis ultrasonic anemometer, 4) Gill Windsonic 2-axis ultrasonic anemometer, and 5) Vaisala WS425 ultrasonic anemometer (photo courtesy of Mark Bushnell).
+<figcaption>Figure 2-4. Acoustic anemometers at the Otis Weather Test facility in Cape Cod, Massachusetts. The five masts on the left provide reference wind observations. The five sensors on the right are: 1) RM Young 3-axis ultrasonic anemometer (partially obscured), 2) Gill R3 3-D anemometer, 3) RM Young 2-axis ultrasonic anemometer, 4) Gill Windsonic 2-axis ultrasonic anemometer, and 5) Vaisala WS425 ultrasonic anemometer (photo courtesy of Mark Bushnell).</figcaption>
 
 Both impellor and sonic anemometers are subject to failure when water freezes on them, especially in lowwind and high-humidity conditions. Coatings (such as Teflon) and heaters are often employed to mitigate freezing. Heaters require a large power supply, and in extreme cold, may sufficiently melt snow that otherwise would not have adhered to the device.
 
-Wind Observation Through Ambient Noise (WOTAN) is a unique technology that is not widely used. Acoustic transducers record sound pressure levels near the ocean surface at selected frequencies, and algorithms have been developed to convert these observations into wind speeds (Vagle et al. 1990). A vane
-
-![](_page_17_Picture_0.jpeg)
-
-on the supporting buoy provides wind direction. This technology is included because the output of a WOTAN wind buoy is simply wind speed and direction, which makes the QC tests described herein directly applicable.
+Wind Observation Through Ambient Noise (WOTAN) is a unique technology that is not widely used. Acoustic transducers record sound pressure levels near the ocean surface at selected frequencies, and algorithms have been developed to convert these observations into wind speeds (Vagle et al. 1990). A vane on the supporting buoy provides wind direction. This technology is included because the output of a WOTAN wind buoy is simply wind speed and direction, which makes the QC tests described herein directly applicable.
 
 Hot-wire wind speed sensors are thermistors that are cooled by heat dissipation when winds blow over them. They are not typically used in the field because they are fragile, can require a large power supply, and require correction for humidity. They are more often found as a reference sensor in wind tunnel calibration facilities.
 
-# **3.0 Quality Control**
+## 3.0 Quality Control
 
 As is the case with most real-time meteorological/ocean observations, the real-time QC of wind observations can be extremely challenging. Events such as fast moving fronts, microbursts, and tropical cyclones must be considered when determining acceptable data thresholds. Human involvement is therefore important to ensure that solid scientific principles are applied to data evaluation so that good data are not discarded and bad data are not distributed (e.g., selection of appropriate thresholds and examination of data flagged as questionable).
 
@@ -314,114 +205,113 @@ This manual focuses specifically on the QC of real-time data, but there are limi
 
 Observations are time ordered, and the most recent observation is *n0*, preceded by a value at *n-1*, and so on backwards in time. The focus of the real-time QC is primarily on observations n0, *n-1*, and *n-2*.
 
-## **3.1 QC Flags**
+### 3.1 QC Flags
 
 Data are evaluated using QC tests, and the results of those tests are recorded by inserting flags in the data files. Table 3-1 provides the set of flags and associated descriptions adopted by the International Oceanographic Data and Information Exchange in 2013 and subsequently by U.S. IOOS. Additional flags may be incorporated to provide more detailed information to assist with troubleshooting. For example, an observation may fail the wind speed neighbor test and be flagged as having failed. If the data failed the wind speed neighbor test because the observation is too low, a second-tier "failed low" flag may indicate that the value was lower than allowed by a preset threshold. Such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for QC of real-time data. However, all flags should be identified and defined in the data's metadata.
 
-![](_page_19_Picture_0.jpeg)
-
 Further post-processing of the data may yield different conclusions from those reached during initial assessments. Flags set in real time should not be changed, ensuring that historical documentation is preserved. Results from post processing should generate another set of flags corresponding to a revised version of the data.
 
-**Table 3-1.** Flags for real-time data (UNESCO 2013)
-
-| Flag                             | Description                                                                                                                                                                             |  |
-|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--|
+| **Flag**                      | **Description**                                                                                                                                                                      |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Pass=1                           | Data	have	passed	critical	real-time	quality	control	tests	and	are	deemed	adequate	for	use<br>as	preliminary	data.                                                                       |  |
 | Not	Evaluated=2                  | Data	have	not	been	QC-tested,	or	the	information	on	quality	is	not	available.                                                                                                           |  |
 | Suspect	or<br>Of	High	Interest=3 | Data	are	considered	to	be	either	suspect	or	of	high	interest	to	data	providers	and	users.<br>They	are	flagged	suspect	to	draw	further	attention	to	them	by	operators.                   |  |
 | Fail=4                           | Data	are	considered	to	have	failed	one	or	more	critical	real-time	QC	checks.	If	they	are<br>disseminated	at	all,	it	should	be	readily	apparent	that	they	are	not	of	acceptable	quality. |  |
 | Missing	Data=9                   | Data	are	missing;	used	as	a	placeholder.                                                                                                                                                |  |
 
-## **3.2 Test Hierarchy**
+: Table 3-1. Flags for real-time data (UNESCO 2013)
+
+### 3.2 Test Hierarchy
 
 This section outlines eleven real-time QC tests that are required, recommended, or suggested for wind measurements. Operators should also consider that some of these tests can be carried out within the instrument, where thresholds can be defined in configuration files. Although more tests may imply a more robust QC effort, there are many reasons operators could use to justify not conducting some tests. In those cases, operators need only to document reasons these tests do not apply to their observations. Such flexibility is needed to support the U.S. IOOS effort, since the number of tests conducted and the justification for not applying some tests are useful for evaluating an operator's skill levels. Tests are listed in table 3-2 and are divided into three groups: those that are required, strongly recommended, or suggested. However, for some critical real-time applications with high risk operations, it may be advisable to invoke all groups.
 
-**Table 3-2.** QC Tests in order of implementation and hierarchy
+|                                     |         |                           |
+| ----------------------------------- | ------- | ------------------------- |
+| **Group 1:** _Required_             | Test 1  | Timing/Gap Test           |
+|                                     | Test 2  | Syntax Test               |
+|                                     | Test 3  | Location Test             |
+|                                     | Test 4  | Gross Range Test          |
+|                                     | Test 5  | Climatology Test          |
+| **Group 2:** _Strongly Recommended_ | Test 6  | Spike Test                |
+|                                     | Test 7  | Rate of Change Test       |
+|                                     | Test 8  | Flat Line Test            |
+| **Group 3:** _Suggested_            | Test 9  | Multi-Variate Test        |
+|                                     | Test 10 | Attenuated Signal Test    |
+|                                     | Test 11 | Neighbor or Forecast Test |
 
-| Group	1<br>Required                | Test	1<br>Test	2<br>Test	3<br>Test	4<br>Test	5 | Timing/Gap	Test<br>Syntax	Test<br>Location	Test<br>Gross	Range	Test<br>Climatology Test |
-|------------------------------------|------------------------------------------------|-----------------------------------------------------------------------------------------|
-| Group	2<br>Strongly<br>Recommended | Test	6<br>Test	7<br>Test	8                     | Spike	Test<br>Rate	of	Change	Test<br>Flat	Line	Test                                     |
-| Group	3<br>Suggested               | Test	9<br>Test	10<br>Test	11                   | Multi-Variate	Test<br>Attenuated	Signal	Test<br>Neighbor	Test                           |
+: Table 3-2. QC Tests in order of implementation and hierarchy
 
-## **3.3 QC Test Descriptions**
+### 3.3 QC Test Descriptions
 
 A variety of tests can be performed on the sensor measurements to evaluate data quality. Testing the timely arrival and integrity of the data transmission itself is a first step. If the data are corrupted during transmission, further testing may be irrelevant. The checks defined in these eleven tests evaluate data through various comparisons to other data and to the expected conditions in the given environment. The tests listed in this section presume a time-ordered series of observations and denote the most recent observation as previously described.
 
 Some effort will be needed to select the best thresholds, which are determined at the operator level and may require multiple iterations of trial and error before final selections are made. A successful QC effort is highly dependent upon selection of the proper thresholds, which should not be determined arbitrarily but can be based on historical knowledge or statistics derived from recently acquired data. Although this manual provides some guidance for selecting thresholds based on input from various operators, it is assumed that operators have the necessary expertise and interest in selecting the proper thresholds to maximize the value of their QC effort. Operators should openly provide thresholds as metadata for user support. The selection of wind thresholds may be dependent upon the real-time application, (e.g., onset of a coastal sea breeze or observation of a hurricane maximum gust). This shared information will help U.S. IOOS to document standardized thresholds that will be included in future releases of this manual.
 
-#### **3.3.1 Applications of QC Tests to Wind Sensors**
+#### 3.3.1 Applications of QC Tests to Wind Sensors
 
 These eleven tests require operators to select a variety of thresholds. Examples are provided in the following test tables; however, operators are in the best position to determine the appropriate thresholds for their operations. Wind speed (WS) is used in the descriptions and examples, but the tests apply equally to direction and gust in most cases. A discontinuity in wind direction is caused when the wind veers through north, stepping from 359° to 0° and complicating the application of some of these tests. Operators may choose to conduct wind direction tests on the *u* and *v* wind direction components to circumvent the problem. Some tests rely on multiple data points most recently received to determine the quality of the latest data point. When this series of data points reveals that the entire group fails, the most recent data point is flagged, but the previous flags are not changed. This action supports the view that historical flags are generally not altered. The first example is in Test 8, the Flat Line Test, where this scenario will become clearer. The exception to the rule occurs for Test 6 Spike Check, where the most recent point must be flagged as "2 Not Evaluated" until the next point arrives and the spike check can be performed. For additional information regarding flags, see the *Manual for the Use of Real-Time Oceanographic Data Quality Control Flags* (U.S. IOOS 2014) posted on the U.S. IOOS QARTOD website.
 
-![](_page_21_Picture_0.jpeg)
+**Test 1 - Timing/Gap Test (Required)**
 
-#### **Test 1 - Timing/Gap Test (Required)**
-
-#### Check for arrival of data.
-
+Check for arrival of data.
 Test determines that the most recent data point has been measured and received within the expected time window (TIM\_INC) and has the correct time stamp (TIM\_STMP).
-
 **Note:** For those systems that do not update at regular intervals (Argos telemetry, for example), a large value for TIM\_STMP can be assigned. The gap check is not a solution for all timing errors. Data could be measured or received earlier than expected. This test does not address all clock drift/jump issues.
 
-| Flags          | Condition                          | Codable	Instructions                  |
-|----------------|------------------------------------|---------------------------------------|
-| Missing	Data=9 | Data	have	not	arrived	as	expected. | If	NOW	– TIM_STMP	>	TIM_INC,	flag	=	9 |
-| Suspect=3      | N/A                                | N/A                                   |
-| Pass=1         | Applies	for	test	pass	condition.   | N/A                                   |
+| Flags       | Condition                          | Codable Instructions                    |
+| ----------- | ---------------------------------- | --------------------------------------- |
+| Missing = 9 | Data have not arrived as expected. | `If NOW - TIM_STMP > TIM_INC, flag = 9` |
+| Suspect = 3 | N/A                                | N/A                                     |
+| Pass = 1    | Applies for test pass condition.   | N/A                                     |
 
-**Test Exception**: None.
+Test Exception: None.
 
-**Test specifications to be established locally by the operator.**
+Test specifications to be established locally by the operator.
 
-**Example:** TIM\_INC= 1 hour
+Example: `TIM_INC = 1 hour`
 
-#### **Test 2 - Syntax Test (Required)**
+**Test 2 - Syntax Test (Required)**
 
-#### Check to ensure that the message is structured properly.
-
-Received data message (full message) contains the proper structure without any indicators of flawed transmission such as parity errors. Possible tests are: a) the expected number of characters (NCHAR) for fixed-length messages equals the number of characters received (REC\_CHAR), or b) passes a standard parity bit check, cyclic redundancy check, etc. Many such syntax tests exist, and the user should select the best criteria for one or more syntax tests.
-
+Check to ensure that the message is structured properly.
+Received data message (full message) contains the proper structure without any indicators of flawed transmission such as parity errors. Possible tests are: a) the expected number of characters (NCHAR) for fixed-length messages equals the number of characters received (`REC_CHAR`), or b) passes a standard parity bit check, cyclic redundancy check, etc. Many such syntax tests exist, and the user should select the best criteria for one or more syntax tests.
 Capabilities for dealing with flawed messages vary among operators; some may have the ability to parse messages to extract data within the flawed message sentence before the flaw. A syntax check is performed only at the message level and not within the message content. In cases where a data record requires multiple messages, this check can be performed at the message level but is not used to check message content.
 
-| Flags      | Condition                                                         | Codable	Instructions          |
-|------------|-------------------------------------------------------------------|-------------------------------|
-| Fail=4     | Data	sentence	cannot	be	parsed	to<br>provide	a	valid	observation. | If	REC_CHAR	≠ NCHAR,	flag	=	4 |
-| Suspect	=3 | N/A                                                               | N/A                           |
-| Pass=1     | Expected	data	sentence	received;<br>absence	of	parity	errors.     | N/A                           |
+| Flags       | Condition                                                      | Codable Instructions               |
+| ----------- | -------------------------------------------------------------- | ---------------------------------- |
+| Fail = 4    | Data sentence cannot be parsed to provide a valid observation. | $If REC_CHAR \neq NCHAR$, flag = 4 |
+| Suspect = 3 | N/A                                                            | N/A                                |
+| Pass = 1    | Expected data sentence received; absence of parity errors.     | N/A                                |
 
-**Test Exception**: None.
+Test Exception: None.
 
-**Test specifications to be established locally by the operator.**
+Test specifications to be established locally by the operator.
 
-**Example:** NCHAR = 128
+Example: `NCHAR = 128`
 
-#### **Test 3 - Location Test (Required)**
+**Test 3 - Location Test (Required)**
 
-#### Check for reasonable geographic location.
-
-Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits. The location test(s) can vary from: 1) a simple invalid location, to 2) a more complex check for displacement (DISP) exceeding a distance limit RANGEMAX based upon a previous location and platform speed. Operators may also check for 3) erroneous locations based upon other criteria, such as reported positions over land, as appropriate.
+Check for reasonable geographic location.
+Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits. The location test(s) can vary from: 1) a simple invalid location, to 2) a more complex check for displacement (DISP) exceeding a distance limit `RANGEMAX` based upon a previous location and platform speed. Operators may also check for 3) erroneous locations based upon other criteria, such as reported positions over land, as appropriate.
 
 | Flags     | Condition                        | Codable	Instructions                    |
 |-----------|----------------------------------|-----------------------------------------|
-| Fail=4    | Invalid location                 | If	 LAT  >	90	or	 LONG  >	180,	flag	=	4 |
-| Suspect=3 | Unlikely	platform	displacement   | If	DISP	>	RANGEMAX,	flag	=	3            |
+| Fail=4    | Invalid location                 | `If	 LAT  >	90	or	 LONG  >	180`,	flag	=	4 |
+| Suspect=3 | Unlikely	platform	displacement   | `If DISP > RANGEMAX`, flag = 3            |
 | Pass=1    | Applies	for	test	pass	condition. | N/A                                     |
 
 **Test Exception**: Test does not apply to fixed deployments when no location is transmitted.
 
-**Test specifications to be established locally by the operator.**
+Test specifications to be established locally by the operator.
 
-**Example 1:** Impossible location, LAT or LONG exceeds mathematical limits.
+Example 1: Impossible location, LAT or LONG exceeds mathematical limits.
 
-**Example 2:** Displacement DISP calculated between sequential position reports, RANGEMAX = 20 km.
+Example 2: Displacement DISP calculated between sequential position reports, RANGEMAX = 20 km.
 
-**Example 3:** Buoy position resides within land mask.
+Example 3: Buoy position resides within land mask.
 
-#### **Test 4 - Gross Range Test (Required)**
+**Test 4 - Gross Range Test (Required)**
 
-#### Data point exceeds sensor or operator-selected min/max.
-
-All sensors have a limited output range, and this can form the most rudimentary gross range check. No values less than a minimum value or greater than the maximum value the sensor can output (SENSOR\_MIN, SENSOR\_MAX) are acceptable. Additionally, the operator can select a smaller span (USER\_MIN, USER\_MAX) based upon local knowledge or a desire to draw attention to extreme values. An obvious gross range check is wind direction 0-360°.
+Data point exceeds sensor or operator-selected min/max.
+All sensors have a limited output range, and this can form the most rudimentary gross range check. No values less than a minimum value or greater than the maximum value the sensor can output (`SENSOR_MIN`, `SENSOR_MAX`) are acceptable. Additionally, the operator can select a smaller span (`USER_MIN`, `USER_MAX`) based upon local knowledge or a desire to draw attention to extreme values. An obvious gross range check is wind direction 0-360°.
 
 **NOTE:** Operators may choose to flag as suspect values that exceed the calibration span but not the hardware limits (e.g., a value that sensor is not capable of producing).
 
@@ -433,23 +323,21 @@ All sensors have a limited output range, and this can form the most rudimentary 
 |           | selected	span.                      | WSn<br>>	USER_MAX,	flag	=	3   |
 | Pass=1    | Applies	for	test	pass	condition     |                               |
 
-**Test Exception:** None.
+Test Exception: None.
 
-**Test specifications to be established locally by the operator.**
+Test specifications to be established locally by the operator.
 
-**Examples:** SENSOR\_MAX = 100 m/s (limited by the manufacturer firmware, for example)
+Examples: 
 
-SENSOR\_MIN = 0 m/s
+- `SENSOR_MAX = 100 m/s` (limited by the manufacturer firmware, for example)
+- `SENSOR_MIN = 0 m/s`
+- `USER_MAX = 75 m/s      USER_MIN = - 0 m/s`
 
-USER\_MAX = 75 m/s USER\_MIN = - 0 m/s
+**Test 5 - Climatology Test (Required)**
 
-![](_page_23_Picture_0.jpeg)
+Test that data point falls within seasonal expectations.
 
-### **Test 5 - Climatology Test (Required)**
-
-#### Test that data point falls within seasonal expectations.
-
-This test is a variation on the gross range check, where the gross range Season\_MAX and Season\_MIN are adjusted monthly, seasonally, or at some other operator-selected time period (TIM\_TST). Expertise of the local operator using long historical records is the best method to determine reasonable seasonal averages longer time series permit more refined identification of appropriate thresholds. Additional climatology guidance is available at http://www.ncdc.noaa.gov/societal-impacts/wind/mean/2014/4, http://numbat.coas.oregonstate.edu/cogow,
+This test is a variation on the gross range check, where the gross range `Season_MAX` and `Season_MIN` are adjusted monthly, seasonally, or at some other operator-selected time period (`TIM_TST`). Expertise of the local operator using long historical records is the best method to determine reasonable seasonal averages longer time series permit more refined identification of appropriate thresholds. Additional climatology guidance is available at http://www.ncdc.noaa.gov/societal-impacts/wind/mean/2014/4, http://numbat.coas.oregonstate.edu/cogow,
 
 http://iridl.ldeo.columbia.edu/maproom/Global/Climatologies/Vector\_Winds.html, and from the NCEP/NCAR Reanalysis 1, 2 and 3 (now CFSR).
 
@@ -463,7 +351,7 @@ http://iridl.ldeo.columbia.edu/maproom/Global/Climatologies/Vector\_Winds.html, 
 
 **Test specifications to be established locally by operator:** A seasonal matrix of WSmax and WSmin values at all TIM\_TST intervals**.**
 
-**Examples:**  SPRING\_MIN = 0 m/s, SPRING\_MAX = 60 m/s
+**Examples:**  `SPRING_MIN = 0 m/s`, `SPRING_MAX = 60 m/s`
 
 #### **Test 6 - Spike Test (Strongly Recommended)**
 
