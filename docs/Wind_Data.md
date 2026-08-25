@@ -1148,6 +1148,7 @@ The following samples provide hints for development of deployment checklists tak
 | Julie	Thomas*              | University	of	California,	San	Diego	Coastal	Data	Information	Program |
 | Jay	Titlow*                | WeatherFlow,	Inc.                                                    |
 | Shawn	Smith                | Florida	State	University/Center	for	Ocean-Atmospheric	Prediction Studies/Shipboard Automated Meteorological	and	Oceanographic Systems     |
+
 *Wind	Manual Committee Members
 
 **Wind Manual	Reviewers**
@@ -1171,7 +1172,7 @@ The following samples provide hints for development of deployment checklists tak
 | Derrick	Snowden     | U.S.	IOOS                                      |
 | Mario	Tamburri      | Alliance	for	Coastal	Technologies              |
 
-**| **DMAC	Committee**
+**DMAC Committee**
 | Name                            | Organization                                     |
 |---------------------------------|--------------------------------------------------|
 | Rob	Bochenek                    | AOOS/CeNCOOS	Axiom	Consulting	&	Design           |
