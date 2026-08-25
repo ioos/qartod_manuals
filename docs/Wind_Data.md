@@ -1076,67 +1076,51 @@ The following list provides links to additional resources on QA practices.
 
 The following samples provide hints for development of deployment checklists taken from QARTOD IV:
 
-|   | Pre-deployment	QA	Checklist                                                                                                                                                                         |
-|---|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| " | Read the manual.                                                                                                                                                                                    |
-| " | Establish, use, and submit (with a reference and version #) a documented sensor preparation                                                                                                         |
-|   | procedure (protocol). Maintain the sensor according to the manufacturer's procedures.                                                                                                            |
-| " | Calibrate sensor against an accepted standard and document (with a reference and version #).                                                                                                        |
-| " | Compare the sensor with an identical, calibrated sensor measuring the same thing in the same area (in                                                                                               |
-|   | a calibration lab).                                                                                                                                                                                 |
-| " | View calibration specifications with a critical eye (don't presume the calibration is infallible). Execute detailed review of calibrated data.                                                   |
-| " | Check the sensor history for past calibrations, including a plot over time of deviations from the                                                                                                   |
-|   | standard for each (this will help identify trends such a progressively poorer performance). Control                                                                                              |
-|   | chart calibrations.                                                                                                                                                                                 |
-| " | Check the sensor history for past repairs, maintenance, and calibration.                                                                                                                            |
-| " | Consider storing and shipping information before deploying.                                                                                                                                         |
-|   | Heat, cold, vibration, etc.<br>o                                                                                                                                                                    |
-| " | Provide detailed documentation.                                                                                                                                                                     |
-| " | Record operator/user experiences with this sensor after reading the manual.                                                                                                                         |
-| " | Search the literature for information on your particular sensor(s) to see what experiences other                                                                                                    |
-|   | researchers may have had with the sensor(s).                                                                                                                                                        |
-| " | Establish and use a formal pre-deployment checklist.                                                                                                                                                |
-| " | Ensure that technicians are well-trained. Use a tracking system for training to identify those technicians who are highly trained and then pair them with inexperienced technicians. Have a data |
-|   | quality review chain.                                                                                                                                                                               |
-|   |                                                                                                                                                                                                     |
-|   | Deployment	Checklist                                                                                                                                                                                |
-| " | Verify sensor serial numbers.                                                                                                                                                                       |
-| " | Deploy and co-locate multiple sensors (attention to interference if too close).                                                                                                                     |
-| " | Perform visual inspection; take photos if possible (verify position of sensors, connectors, and cable                                                                                               |
-|   | problems).                                                                                                                                                                                          |
-| " | Verify instrument function at deployment site prior to site departure.                                                                                                                              |
-| " | Monitor sensors for issues (freezing, corrosion).                                                                                                                                                |
-| " | Automate processing so you can monitor the initial deployment and confirm the sensor is working                                                                                                     |
-|   | while still on-site.                                                                                                                                                                                |
-| " | Specify date/time for all recorded events. Use GMT or UTC.                                                                                                                                          |
-| " | Check software to ensure that the sensor configuration and calibration coefficients are correct. Also                                                                                               |
-|   | check sampling rates and other timed events, like time averaging.                                                                                                                                   |
-| " | Visually inspect data stream to ensure reasonable values.                                                                                                                                           |
-| " | Note weather conditions and members of field crew.                                                                                                                                                  |
-| " | Record and routinely verify metadata (e.g., sensor position and orientation). This information is vital                                                                                          |
-|   | to the value of data for many applications. For example, wind speed measurements are very                                                                                                           |
-|   | dependent on measurement height relative to the surface. If this height is not known, the value of the                                                                                           |
-|   | data is greatly diminished.                                                                                                                                                                         |
+  **Pre-deployment QA Checklist**
 
-![](_page_41_Picture_0.jpeg)
+- [ ] Read the manual.
+- [ ] Establish, use, and submit (with a reference and version #) a documented sensor preparation procedure (protocol). Maintain the sensor according to the manufacturer's procedures.
+- [ ] Calibrate sensor against an accepted standard and document (with a reference and version #).
+- [ ] Compare the sensor with an identical, calibrated sensor measuring the same thing in the same area (in a calibration lab).
+- [ ] View calibration specifications with a critical eye (don't presume the calibration is infallible). Execute detailed review of calibrated data.
+- [ ] Check the sensor history for past calibrations, including a plot over time of deviations from the standard for <u>each</u> (this will help identify trends such a progressively poorer performance). Control chart calibrations.
+- [ ] Check the sensor history for past repairs, maintenance, and calibration.
+- [ ] Consider storing and shipping information before deploying.
+  - [ ] Heat, cold, vibration, etc.
+- [ ] Provide detailed documentation.
+- [ ] Record operator/user experiences with this sensor after reading the manual.
+- [ ] Search the literature for information on your particular sensor(s) to see what experiences other researchers may have had with the sensor(s).
+- [ ] Establish and use a formal pre-deployment checklist.
+- [ ] Ensure that technicians are well-trained. Use a tracking system for training to identify those technicians who are highly trained and then pair them with inexperienced technicians. Have a data quality review chain.
 
-#### **Post-deployment Checklist**
+**Deployment	Checklist**
 
-| " | Take pictures of recovered sensor (as is) for metadata.                                            |
-|---|-------------------------------------------------------------------------------------------------------|
-| " | Check to make sure all clocks agree or, if they do not agree, record all times and compare with NIST. |
-| " | Post-calibrate sensor and document readings.                                                          |
-| " | Perform in-situ side by side check using another sensor.                                              |
-| " | Provide a mechanism for feedback on possible data problems and/or sensor diagnostics.                 |
-| " | Clean and store the sensor properly or redeploy.                                                      |
-| " | Visually inspect physical state of instrument.                                                        |
-| " | Verify sensor performance by:                                                                         |
-|   |                                                                                                       |
+- [ ] Verify sensor serial numbers.
+- [ ] Deploy and co-locate multiple sensors (attention to interference if too close).
+- [ ] Perform visual inspection; take photos if possible (verify position of sensors, connectors, and cable problems).
+- [ ] Verify instrument function at deployment site prior to site departure.
+- [ ] Monitor sensors for issues (freezing, corrosion).
+- [ ] Automate processing so you can monitor the initial deployment and confirm the sensor is working while still on-site.
+- [ ] Specify date/time for all recorded events. Use GMT or UTC.
+- [ ] Check software to ensure that the sensor configuration and calibration coefficients are correct. Also check sampling rates and other timed events, like time averaging.
+- [ ] Visually inspect data stream to ensure reasonable values.
+- [ ] Note weather conditions and members of field crew.
+- [ ] Record and routinely verify metadata (e.g., sensor position and orientation). This information is vital to the value of data for many applications. For example, wind speed measurements are very dependent on measurement height relative to the surface. If this height is not known, the value of the data is greatly diminished.
 
-- o Checking nearby stations;
-- o Making historical data comparisons (e.g., long-term time-series plots, which are particularly useful for identifying long-term calibration drift).
+**Post-deployment Checklist**
 
-# **Appendix B. QARTOD Wind Manual Team**
+- [ ] Take pictures of recovered sensor (as is) for metadata.                                            |
+- [ ] Check to make sure all clocks agree or, if they do not agree, record all times and compare with NIST. |
+- [ ] Post-calibrate sensor and document readings.
+- [ ] Perform in-situ side by side check using another sensor.
+- [ ] Provide a mechanism for feedback on possible data problems and/or sensor diagnostics.
+- [ ] Clean and store the sensor properly or redeploy.
+- [ ] Visually inspect physical state of instrument.
+- [ ] Verify sensor performance by:
+  - [ ] Checking nearby stations;
+  - [ ] Making historical data comparisons (e.g., long-term time-series plots, which are particularly useful for identifying long-term calibration drift).
+
+## Appendix B. QARTOD Wind Manual Team
 
 |                                | Wind Manual	Contributors                                          |  |  |
 |--------------------------------|----------------------------------------------------------------------|--|--|
@@ -1169,7 +1153,6 @@ The following samples provide hints for development of deployment checklists tak
 |                                | Systems                                                              |  |  |
 | *Wind	Manual	Committee Members |                                                                      |  |  |
 
-![](_page_43_Picture_0.jpeg)
 
 |                     | Wind Manual	Reviewers                       |
 |---------------------|------------------------------------------------|
