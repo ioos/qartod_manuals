@@ -47,7 +47,6 @@ as well as all who reviewed each draft and provided valuable feedback.
 | WMO      | World	Meteorological	Organization                                          |
 | WOTAN    | Wind	Observation	Through	Ambient	Noise                                     |
 | WS       | Wind	Speed                                                                 |
-|          |                                                                            |
 
 ## Definitions of Selected Terms
 
@@ -76,7 +75,7 @@ This wind data manual is the sixth in a series of guidance documents that addres
 
 Please refer to http://www.ioos.noaa.gov/qartod/for the following documents:
 
-1. U.S IOOS QARTOD Project Plan dated April 1, 2012
+1. U.S IOOS QARTOD Project Plan dated April 1, 2012.
 2. U.S. Integrated Ocean Observing System, 2012. Manual for Real-Time Quality Control of Dissolved Oxygen Observations: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 45pp.
 3. U.S. Integrated Ocean Observing System, 2013. Manual for Real-Time Quality Control of In-Situ Current Observations: A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 43pp.
 4. U.S. Integrated Ocean Observing System, 2013. Manual for Real-Time Quality Control of In-Situ Surface Wave Data: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 49pp.
@@ -507,7 +506,7 @@ Example: `TIM_INC = 1 hour`
 Check to ensure that the message is structured properly.
 Received data message (full message) contains the proper structure without any indicators of flawed transmission such as parity errors.
 Possible tests are:
-a) the expected number of characters (NCHAR) for fixed-length messages equals the number of characters received (`REC_CHAR`),
+a) the expected number of characters (`NCHAR`) for fixed-length messages equals the number of characters received (`REC_CHAR`),
 or
 b) passes a standard parity bit check, cyclic redundancy check, etc. Many such syntax tests exist, and the user should select the best criteria for one or more syntax tests.
 Capabilities for dealing with flawed messages vary among operators;
@@ -518,7 +517,7 @@ this check can be performed at the message level but is not used to check messag
 
 | Flags       | Condition                                                      | Codable Instructions               |
 | ----------- | -------------------------------------------------------------- | ---------------------------------- |
-| Fail = 4    | Data sentence cannot be parsed to provide a valid observation. | $If REC_CHAR neq NCHAR$, flag = 4 |
+| Fail = 4    | Data sentence cannot be parsed to provide a valid observation. | $If REC_CHAR \neq NCHAR$, flag = 4 |
 | Suspect = 3 | N/A                                                            | N/A                                |
 | Pass = 1    | Expected data sentence received; absence of parity errors.     | N/A                                |
 
@@ -532,28 +531,24 @@ Example: `NCHAR = 128`
 
 Check for reasonable geographic location.
 Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits.
-The location test(s) can vary from:
-1) a simple invalid location,
-to
-2) a more complex check for displacement (DISP) exceeding a distance limit `RANGEMAX` based upon a previous location and platform speed.
-Operators may also check for
-3) erroneous locations based upon other criteria,
+The location test(s) can vary from: 1) a simple invalid location, to 2) a more complex check for displacement (`DISP`) exceeding a distance limit `RANGEMAX` based upon a previous location and platform speed.
+Operators may also check for 3) erroneous locations based upon other criteria,
 such as reported positions over land,
 as appropriate.
 
 | Flags     | Condition                        | Codable	Instructions                    |
 |-----------|----------------------------------|-----------------------------------------|
-| Fail=4    | Invalid location                 | `If	 LAT  >	90	or	 LONG  >	180`,	flag	=	4 |
+| Fail=4    | Invalid location                 | `If LAT > abs(90)	or LONG > abs(180)`,	flag	=	4 |
 | Suspect=3 | Unlikely	platform	displacement   | `If DISP > RANGEMAX`, flag = 3            |
 | Pass=1    | Applies	for	test	pass	condition. | N/A                                     |
 
-**Test Exception**: Test does not apply to fixed deployments when no location is transmitted.
+Test Exception: Test does not apply to fixed deployments when no location is transmitted.
 
 Test specifications to be established locally by the operator.
 
 Example 1: Impossible location, LAT or LONG exceeds mathematical limits.
 
-Example 2: Displacement DISP calculated between sequential position reports, RANGEMAX = 20 km.
+Example 2: Displacement `DISP` calculated between sequential position reports, `RANGEMAX = 20 km`.
 
 Example 3: Buoy position resides within land mask.
 
@@ -571,11 +566,9 @@ An obvious gross range check is wind direction 0-360°.
 
 | Flags     | Condition                           | Codable	Instructions          |
 |-----------|-------------------------------------|-------------------------------|
-| Fail=4    | Reported	value	is	outside	of	sensor | If	WS n <	SENSOR_MIN,	or    |
-|           | span.                               | WS n >	SENSOR_MAX,	flag	=	4 |
-| Suspect=3 | Reported	value	is	outside	of	user   | If	WS n <	USER_MIN,	or      |
-|           | selected	span.                      | WS n >	USER_MAX,	flag	=	3   |
-| Pass=1    | Applies	for	test	pass	condition     |                               |
+| Fail=4    | Reported	value	is	outside	of	sensor span.| `If	WS n <	SENSOR_MIN`, or `WS n >	SENSOR_MAX`, flag	=	4   |
+| Suspect=3 | Reported	value	is	outside	of	user selected	span.     | `If	WS n <	USER_MIN`,	or `WS n > USER_MAX`,	flag	=	3   |
+| Pass=1    | Applies	for	test	pass	condition     |             N/A                |
 
 Test Exception: None.
 
@@ -631,9 +624,8 @@ $Diff_n = WS_{n-3} - 3 * WS_{n-2} + 3 * WS_{n-1} - WS_n$.
 
 | Flags     | Condition                        | Codable	Instructions                             |
 |-----------|----------------------------------|--------------------------------------------------|
-| Fail=4    | High	spike	threshold	exceeded.   | `If	 WS_{n-1} - SPK_REF 	>	THRSHLD_HIGH`,	flag	=	4 |
-| Suspect=3 | Low	spike	threshold	exceeded.    | `If	 WS_{n-1} - SPK_REF 	>	THRSHLD_LOW` and        |
-|           |                                  | `- SPK_REF 	≤ WS_{n-1} THRSHLD_HIGH`,	flag = 3 |
+| Fail=4    | High	spike	threshold	exceeded.   | `If	 abs($WS_{n-1}$ - SPK_REF) 	>	THRSHLD_HIGH`,	flag	=	4 |
+| Suspect=3 | Low	spike	threshold	exceeded.    | `If abs($WS_{n-1}$ - SPK_REF) >	THRSHLD_LOW` and `abs($WS_{n-1}$ - SPK_REF) ≤ THRSHLD_HIGH`,	flag = 3      |
 | Pass=1    | Applies	for	test	pass	condition. | N/A                                              |
 
 Test Exception: None.
@@ -647,7 +639,7 @@ a threshold proportional to the 97th or 98th percentile of first differences is 
 This flexible standard is particularly useful for ships,
 which can traverse a wide range of conditions and sensors in areas with large synoptic or seasonal scale variability.
 
-**Test 7 - Rate of Change Test (Strongly Recommended)
+**Test 7 - Rate of Change Test (Strongly Recommended)**
 
 Excessive rise/fall test.
 
@@ -1122,53 +1114,51 @@ The following samples provide hints for development of deployment checklists tak
 
 ## Appendix B. QARTOD Wind Manual Team
 
-|                                | Wind Manual	Contributors                                          |  |  |
-|--------------------------------|----------------------------------------------------------------------|--|--|
-| Name                           | Organization                                                         |  |  |
-| Mark	Bushnell,	Lead	Editor     | CoastalObsTechServices	LLC	– NOAA/NOS/CO-OPS                         |  |  |
-| Ray	Toll,	Editor               | Old	Dominion	University                                              |  |  |
-| Helen	Worthington,	Editor      | REMSA	– NOAA/NOS/CO-OPS                                              |  |  |
-| Kathy	Bailey*                  | NOAA/NOS/CO-OPS                                                      |  |  |
-| Julie	Bosch*                   | NOAA/National	Coastal	Data	Development	Center                        |  |  |
-| Rich	Bouchard*                 | NOAA/National	Data	Buoy	Center                                       |  |  |
-| Mark	Bourassa*                 | Florida	State	University                                             |  |  |
-| Richard	Bourgerie*             | NOAA/NOS/CO-OPS                                                      |  |  |
-| Grant	Cameron*                 | University	of	California,	San	Diego	Coastal	Data	Information	Program |  |  |
-| Frank	DeFina*                  | Vaisala                                                              |  |  |
-| James	Elliott*                 | NOAA/National	Weather	Service/Office	of	Operational	Systems          |  |  |
-| Kent	Hathaway*                 | U.S.	Army	Corps	of	Engineers                                         |  |  |
-| Rex	Hervey*                    | NOAA/	National	Data	Buoy	Center                                      |  |  |
-| Robert	Jensen*                 | U.S.	Army	Corps	of	Engineers                                         |  |  |
-| Ed	Kearns*                     | NOAA/National	Environmental	Satellite	and	Information	Service        |  |  |
-| Rick	Lumpkin*                  | NOAA/Atlantic	Oceanographic	and	Meteorological	Laboratory            |  |  |
-| Regina	Moore*                  | NOAA/National	Data	Buoy	Center                                       |  |  |
-| Mark	Powell*                   | NOAA/                                                                |  |  |
-| Robert	Raye*                   | Shell	Oil	Company                                                    |  |  |
-| Paula	Rychtar*                 | NOAA/National	Weather	Service/Office	of	Operational	Systems          |  |  |
-| Mario	Tamburri                 | Alliance	for	Coastal	Technologies                                    |  |  |
-| Julie	Thomas*                  | University	of	California,	San	Diego	Coastal	Data	Information	Program |  |  |
-| Jay	Titlow*                    | WeatherFlow,	Inc.                                                    |  |  |
-| Shawn	Smith                    | Florida	State	University/Center	for	Ocean-Atmospheric	Prediction     |  |  |
-|                                | Studies/Shipboard	Automated	Meteorological	and	Oceanographic         |  |  |
-|                                | Systems                                                              |  |  |
-| *Wind	Manual	Committee Members |                                                                      |  |  |
+|                            | Wind Manual	Contributors                                             |   |   |
+|----------------------------|----------------------------------------------------------------------|---|---|
+| Name                       | Organization                                                         |   |   |
+| Mark	Bushnell,	Lead	Editor | CoastalObsTechServices	LLC	– NOAA/NOS/CO-OPS                         |   |   |
+| Ray	Toll,	Editor           | Old	Dominion	University                                              |   |   |
+| Helen	Worthington,	Editor  | REMSA	– NOAA/NOS/CO-OPS                                              |   |   |
+| Kathy	Bailey*              | NOAA/NOS/CO-OPS                                                      |   |   |
+| Julie	Bosch*               | NOAA/National	Coastal	Data	Development	Center                        |   |   |
+| Rich	Bouchard*             | NOAA/National	Data	Buoy	Center                                       |   |   |
+| Mark	Bourassa*             | Florida	State	University                                             |   |   |
+| Richard	Bourgerie*         | NOAA/NOS/CO-OPS                                                      |   |   |
+| Grant	Cameron*             | University	of	California,	San	Diego	Coastal	Data	Information	Program |   |   |
+| Frank	DeFina*              | Vaisala                                                              |   |   |
+| James	Elliott*             | NOAA/National	Weather	Service/Office	of	Operational	Systems          |   |   |
+| Kent	Hathaway*             | U.S.	Army	Corps	of	Engineers                                         |   |   |
+| Rex	Hervey*                | NOAA/	National	Data	Buoy	Center                                      |   |   |
+| Robert	Jensen*             | U.S.	Army	Corps	of	Engineers                                         |   |   |
+| Ed	Kearns*                 | NOAA/National	Environmental	Satellite	and	Information	Service        |   |   |
+| Rick	Lumpkin*              | NOAA/Atlantic	Oceanographic	and	Meteorological	Laboratory            |   |   |
+| Regina	Moore*              | NOAA/National	Data	Buoy	Center                                       |   |   |
+| Mark	Powell*               | NOAA/                                                                |   |   |
+| Robert	Raye*               | Shell	Oil	Company                                                    |   |   |
+| Paula	Rychtar*             | NOAA/National	Weather	Service/Office	of	Operational	Systems          |   |   |
+| Mario	Tamburri             | Alliance	for	Coastal	Technologies                                    |   |   |
+| Julie	Thomas*              | University	of	California,	San	Diego	Coastal	Data	Information	Program |   |   |
+| Jay	Titlow*                | WeatherFlow,	Inc.                                                    |   |   |
+| Shawn	Smith                | Florida	State	University/Center	for	Ocean-Atmospheric	Prediction     |   |   |
+|                            | Studies/Shipboard Automated Meteorological	and	Oceanographic Systems |   |   |
+* Wind	Manual Committee Members
 
-
-|                     | Wind Manual	Reviewers                       |
+|                     | Wind Manual	Reviewers                          |
 |---------------------|------------------------------------------------|
 | Name                | Organization                                   |
-| Jeff	Donovan        | SECOORA                                        |
+| Jeff	Donovan       | SECOORA                                        |
 | Janet	Fredericks    | Woods	Hole	Oceanographic	Institution           |
 | Sarah	North         | Meteorological	Office,	United	Kingdom          |
 | Vembu	Subramanian   | SECOORA                                        |
 | Rik	Wanninkhof      | NOAA                                           |
-|                     | QARTOD	Board	of	Advisors                       |
+|                     | QARTOD	Board	of	Advisors                     |
 | Name                | Organization                                   |
 |                     |                                                |
-| Joe	Swaykos	- Chair | NOAA/National	Data	Buoy	Center                 |
+| Joe	Swaykos	- Chair | NOAA/National	Data	Buoy	Center               |
 | Julie	Bosch         | NOAA/ National	Coastal	Data	Development	Center |
 | Janet	Fredericks    | Woods	Hole	Oceanographic	Institution           |
-| Matt	Howard         | GCOOS                                          |
+| Matt	Howard        | GCOOS                                          |
 | Bob	Jensen          | USACE                                          |
 | Chris	Paternostro   | NOS/CO-OPS                                     |
 | Derrick	Snowden     | U.S.	IOOS                                      |
