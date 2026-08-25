@@ -2,13 +2,13 @@
 
 A Guide to Quality Control and Quality Assurance for Coastal and Oceanic Wind Observations
 
-DOIII
+**DOI**
 
 ## Acknowledgements
 
-We are grateful to our entire Wind Manual Team,
-whose names are listed in appendix B.
-Special thanks go to those who served on the Wind Manual Committee and provided content and suggestions for the initial draft,
+We are grateful to our entire Wind Manual Team, 
+whose names are listed in appendix B. 
+Special thanks go to those who served on the Wind Manual Committee and provided content and suggestions for the initial draft, 
 as well as all who reviewed each draft and provided valuable feedback.
 
 ## Acronyms and Abbreviations
@@ -19,31 +19,31 @@ as well as all who reviewed each draft and provided valuable feedback.
 | CariCOOS | Caribbean	Coastal	Ocean	Observing System                                   |
 | CeNCOOS  | Central	and	Northern	California	Ocean	Observing	System                     |
 | C-MAN    | Coastal-Marine	Automated	Network                                           |
-| CO-OPS   | Center	for	Operational	Oceanographic	Products<br>and	Services              |
+| CO-OPS   | Center	for	Operational	Oceanographic	Products and	Services              |
 | DCP      | Data	Collection	Platform                                                   |
 | EPA      | Environmental	Protection	Agency                                            |
 | GCOOS    | Gulf	of	Mexico	Coastal	Ocean	Observing	System                              |
 | GLOS     | Great	Lakes	Observing	System                                               |
 | GOOS     | Global	Ocean	Observing	System                                              |
-| IOOS     | Integrated<br>Ocean<br>Observing<br>System                                 |
+| IOOS     | Integrated Ocean Observing System                                 |
 | MARACOOS | Mid-Atlantic	Regional	Association	Coastal	Ocean	Observing	System           |
-| m/s      | Meters<br>per	second                                                       |
+| m/s      | Meters per	second                                                       |
 | NANOOS   | Northwest	Association	of	Networked	Ocean	Observing	Systems                 |
-| NDBC     | National<br>Data<br>Buoy<br>Center                                         |
+| NDBC     | National Data Buoy Center                                         |
 | NERACOOS | Northeastern	Regional	Association	of	Coastal	Ocean	Observing	Systems       |
 | NIST     | National	Institute	of	Standards	and	Technology                             |
-| NOAA     | National<br>Oceanic<br>and<br>Atmospheric<br>Administration                |
+| NOAA     | National Oceanic and Atmospheric Administration                |
 | NOS      | National	Ocean	Service                                                     |
 | NWS      | National	Weather	Service                                                   |
 | PacIOOS  | Pacific	Islands	Ocean	Observing	System                                     |
-| QARTOD   | Quality-Assurance/Quality	Control	of<br>Real-Time<br>Oceanographic<br>Data |
+| QARTOD   | Quality-Assurance/Quality	Control	of Real-Time Oceanographic Data |
 | QA       | Quality	Assurance                                                          |
 | QC       | Quality	Control                                                            |
 | SCCOOS   | Southern	California	Coastal	Ocean	Observing	System                         |
 | SD       | Standard	Deviation                                                         |
 | SECOORA  | Southeast	Coastal	Ocean	Observing	Regional	Association                     |
 | UNESCO   | United	Nations	Organization	for	Education,	Science,	and	Culture            |
-| USGS     | United	States<br>Geological	Survey                                         |
+| USGS     | United	States Geological	Survey                                         |
 | WMO      | World	Meteorological	Organization                                          |
 | WOTAN    | Wind	Observation	Through	Ambient	Noise                                     |
 | WS       | Wind	Speed                                                                 |
@@ -51,23 +51,28 @@ as well as all who reviewed each draft and provided valuable feedback.
 
 ## Definitions of Selected Terms
 
-This manual contains several terms whose meanings are critical to those using the manual. These terms are included in the following table to ensure that the meanings are clearly defined.
+This manual contains several terms whose meanings are critical to those using the manual. 
+These terms are included in the following table to ensure that the meanings are clearly defined.
 
 |                        |                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Anemometer                | An anemometer is an instrument for measuring and indicating the force or<br>speed and sometimes direction of the wind (Merriam-Webster).
-| Codable Instructions      | Codable instructions are specific guidance that can be used by a software<br>programmer to design, construct, and implement a test. These instructions also<br>include examples with sample thresholds.                                                                                                                      |  |
-| Data Record               | A data record is one or more messages that form a coherent, logical, and<br>complete observation.                                                                                                                                                                                                                            |  |
-| Message                   | A message is a standalone data transmission. A data record can be composed of<br>multiple messages.                                                                                                                                                                                                                          |  |
-| Operator                  | Operators are individuals or entities who are responsible for collecting and<br>providing data.                                                                                                                                                                                                                              |  |
-| Quality Assurance<br>(QA) | QA involves processes that are employed with hardware to support the<br>generation of high quality data. (section 2.0 and appendix A). These steps or<br>measures are often taken prior to deployment.                                                                                                                       |  |
-| Quality Control (QC)      | QC involves follow-on steps that support the delivery of high quality data and<br>requires both automation and human intervention (section 3.0). These steps or<br>measures are often taken after deployment.                                                                                                                |  |
-| Real Time                 | Real time means that: data are delivered without latency for immediate use; time<br>series extends only backwards in time, where the next data point is not available;<br>and there may be delays ranging from a few seconds to a few hours or even days,<br>depending upon the data delivery capabilities<br>(section 1.0). |  |
+| Anemometer                | An anemometer is an instrument for measuring and indicating the force or speed and sometimes direction of the wind (Merriam-Webster).
+| Codable Instructions      | Codable instructions are specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.                                                                                                                      |  |
+| Data Record               | A data record is one or more messages that form a coherent, logical, and complete observation.                                                                                                                                                                                                                            |  |
+| Message                   | A message is a standalone data transmission. A data record can be composed of multiple messages.                                                                                                                                                                                                                          |  |
+| Operator                  | Operators are individuals or entities who are responsible for collecting and providing data.                                                                                                                                                                                                                              |  |
+| Quality Assurance (QA) | QA involves processes that are employed with hardware to support the generation of high quality data. (section 2.0 and appendix A). These steps or measures are often taken prior to deployment.                                                                                                                       |  |
+| Quality Control (QC)      | QC involves follow-on steps that support the delivery of high quality data and requires both automation and human intervention (section 3.0). These steps or measures are often taken after deployment.                                                                                                                |  |
+| Real Time                 | Real time means that: data are delivered without latency for immediate use; time series extends only backwards in time, where the next data point is not available; and there may be delays ranging from a few seconds to a few hours or even days, depending upon the data delivery capabilities (section 1.0). |  |
 | Threshold                 | Thresholds are limits that are defined by the operator.                                                                                                                                                                                                                                                                      |  |
 
 ## 1.0 Background and Introduction
 
-The U.S. Integrated Ocean Observing System (IOOS) has a vested interest in collecting high quality data for the 26 core variables (U.S. IOOS 2010) measured on a national scale. In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding permits. Additional efforts can also be undertaken to produce higher quality delayed mode data. This wind data manual is the sixth in a series of guidance documents that address QC of real-time data of each core variable.
+The U.S. Integrated Ocean Observing System (IOOS) has a vested interest in collecting high quality data for the 26 core variables (U.S. IOOS 2010) measured on a national scale. 
+In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, 
+addressing each variable as funding permits. 
+Additional efforts can also be undertaken to produce higher quality delayed mode data. 
+This wind data manual is the sixth in a series of guidance documents that address QC of real-time data of each core variable.
 
 Please refer to http://www.ioos.noaa.gov/qartod/for the following documents:
 
@@ -82,21 +87,35 @@ Please reference this document as:
 
     U.S. Integrated Ocean Observing System, 2014. Manual for Real-Time Quality Control of Wind Data: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 45pp.
 
-This manual is a living document that reflects the state-of-the-art QC testing procedures for real-time wind observations. It is written for the experienced operator but also provides examples for those who are just entering the field.
+This manual is a living document that reflects the state-of-the-art QC testing procedures for real-time wind observations. 
+It is written for the experienced operator but also provides examples for those who are just entering the field.
 
 ## 2.0 Purpose/Constraints/Applications
 
-The following sections describe the purpose of this manual, as well as the constraints that operators may encounter when performing QC of wind data and specific applications of those data.
+The following sections describe the purpose of this manual, 
+as well as the constraints that operators may encounter when performing QC of wind data and specific applications of those data.
 
 ### 2.1 Purpose
 
-The purpose of this manual is to provide guidance to the U.S. IOOS and the wind community at large for the real-time QC of wind speed, direction, and gust measurements using an agreed-upon, documented, and implemented standard process. This manual is also a deliverable to the U.S. IOOS Regional Associations and the ocean observing community and represents a contribution to a collection of core variable QC documents.
+The purpose of this manual is to provide guidance to the U.S. IOOS and the wind community at large for the real-time QC of wind speed, 
+direction, 
+and gust measurements using an agreed-upon, 
+documented, 
+and implemented standard process. 
+This manual is also a deliverable to the U.S. IOOS Regional Associations and the ocean observing community and represents a contribution to a collection of core variable QC documents.
 
-Wind observations covered by these test procedures are collected in coastal areas, oceans, and lakes in real time or near-real time. These tests draw from existing expertise in programs such as the World Meteorological Organization (WMO), the U.S. Environmental Protection Agency (EPA), and very specifically the National Oceanic and Atmospheric Administration National Weather Service National Data Buoy Center (NOAA/NWS/NDBC).
+Wind observations covered by these test procedures are collected in coastal areas, oceans, and lakes in real time or near-real time. 
+These tests draw from existing expertise in programs such as the World Meteorological Organization (WMO), 
+the U.S. Environmental Protection Agency (EPA), 
+and very specifically the National Oceanic and Atmospheric Administration National Weather Service National Data Buoy Center (NOAA/NWS/NDBC).
 
-This manual differs from existing QC procedures for wind in that its focus is on real-time data. It presents a series of eleven tests that operators can incorporate into practices and procedures for QC of wind measurements. These tests apply only to the in-situ, real-time measurement of wind as observed by sensors deployed on fixed or mobile platforms and not to remotely sensed wind measurements (e.g., satellite observations).
+This manual differs from existing QC procedures for wind in that its focus is on real-time data. 
+It presents a series of eleven tests that operators can incorporate into practices and procedures for QC of wind measurements. 
+These tests apply only to the in-situ, 
+real-time measurement of wind as observed by sensors deployed on fixed or mobile platforms and not to remotely sensed wind measurements (e.g., satellite observations).
 
-Table 2-1 shows technologies that are included and excluded in this manual, and table 2-2 shows the platforms that are included and excluded.
+Table 2-1 shows technologies that are included and excluded in this manual, 
+and table 2-2 shows the platforms that are included and excluded.
 
 | **Technologies Included**            | **Technologies Excluded** |
 | ------------------------------------ | ------------------------- |
@@ -120,39 +139,107 @@ Table 2-1 shows technologies that are included and excluded in this manual, and 
 
 : Table 2-2. Platforms included and excluded in this manual
 
-These test procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific tests and set data flags (data quality indicators) within an automated software program. U.S. IOOS/QARTOD maintains a code repository (http://code.google.com/p/qartod/) where operators may find or post examples of code in use. Although certain tests are recommended, thresholds can vary among data providers. In some instances, tests have been simplified and are less rigorous than those implemented by established providers of wind data, such as NOAA/NWS/NDBC. A balance must be struck between the timesensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.
+These test procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific tests and set data flags (data quality indicators) within an automated software program. U.S. IOOS/QARTOD maintains a code repository (http://code.google.com/p/qartod/) where operators may find or post examples of code in use. Although certain tests are recommended, 
+thresholds can vary among data providers. 
+In some instances, 
+tests have been simplified and are less rigorous than those implemented by established providers of wind data, 
+such as NOAA/NWS/NDBC. 
+A balance must be struck between the timesensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.
 
-High-quality marine observations require sustained quality assurance (QA) and QC practices to ensure credibility and value to operators and data users. QA practices involve processes that are employed with hardware to support the generation of high-quality data, such as a sufficiently accurate, precise, and reliable sensor with adequate resolution. Other QA practices include: sensor calibration; calibration checks and/or in-situ verification, including post-deployment calibration; proper deployment considerations, such as measures for corrosion control; solid data communications; adequate maintenance intervals; and creation of a robust qualitycontrol process. Post-deployment calibration (instrument verification after recovery) issues are not part of the scope of this manual. Although QC and QA are interrelated and both are important to the process, QA is not the focus of this manual. However, QA considerations are briefly addressed in appendix A.
+High-quality marine observations require sustained quality assurance (QA) and QC practices to ensure credibility and value to operators and data users. 
+QA practices involve processes that are employed with hardware to support the generation of high-quality data, such as a sufficiently accurate, precise, and reliable sensor with adequate resolution. 
+Other QA practices include: 
+sensor calibration; 
+calibration checks and/or in-situ verification, 
+including post-deployment calibration; 
+proper deployment considerations, 
+such as measures for corrosion control; 
+solid data communications; adequate maintenance intervals; 
+and creation of a robust qualitycontrol process. 
+Post-deployment calibration (instrument verification after recovery) issues are not part of the scope of this manual. 
+Although QC and QA are interrelated and both are important to the process, 
+QA is not the focus of this manual. 
+However, QA considerations are briefly addressed in appendix A.
 
-QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. QC practices include such things as format, checksum, timely arrival of data, threshold checks (minimum/maximum rate of change), neighbor checks, climatology checks, model comparisons, signal/noise ratios, verification of user satisfaction, and generation of data flags (Bushnell 2005).
+QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. 
+QC practices include such things as format, 
+checksum, 
+timely arrival of data, 
+threshold checks (minimum/maximum rate of change), 
+neighbor checks, 
+climatology checks, 
+model comparisons, 
+signal/noise ratios, 
+verification of user satisfaction, 
+and generation of data flags (Bushnell 2005).
 
-The process of ensuring data quality is not always straightforward. QA/QC procedures may be specific to a sensor technology or even to a particular manufacturer's model, so the establishment of a methodology that is applicable to every sensor is challenging.
+The process of ensuring data quality is not always straightforward. 
+QA/QC procedures may be specific to a sensor technology or even to a particular manufacturer's model, 
+so the establishment of a methodology that is applicable to every sensor is challenging.
 
 ### 2.2 Constraints
 
 #### 2.2.1 Data Processing Methodology
 
-The type of sensor system used to collect wind data and the system used to process and transmit the wind measurements determine which QC algorithms are used. In-situ systems with sufficient on-board processing power within the sensor may process the original (raw) data and produce derived products, such as a generated analog output designed to mimic a competitor's output. Most sensors sample at high-rate or burst mode (e.g., 121 1-Hz values averaged to compute an observation every 6 minutes). These samples are used to produce the actual real-time values transmitted (e.g., hourly speed, direction, and gust values). Because operators have different data processing methodologies, three levels of QC are proposed: required, strongly recommended, and suggested.
+The type of sensor system used to collect wind data and the system used to process and transmit the wind measurements determine which QC algorithms are used. 
+In-situ systems with sufficient on-board processing power within the sensor may process the original (raw) data and produce derived products, 
+such as a generated analog output designed to mimic a competitor's output. 
+Most sensors sample at high-rate or burst mode (e.g., 121 1-Hz values averaged to compute an observation every 6 minutes). 
+These samples are used to produce the actual real-time values transmitted (e.g., hourly speed, direction, and gust values). 
+Because operators have different data processing methodologies, 
+three levels of QC are proposed: 
+required, 
+strongly recommended, 
+and suggested.
 
 #### 2.2.2 Traceability to Accepted Standards
 
-To ensure that wind sensors produce accurate data, rigorous calibrations and calibration checks must be performed in addition to QC checks. Most operators rely upon manufacturer calibrations and generally conduct calibration checks before deployment. These calibration checks are critical to ensuring that the
+To ensure that wind sensors produce accurate data, rigorous calibrations and calibration checks must be performed in addition to QC checks. 
+Most operators rely upon manufacturer calibrations and generally conduct calibration checks before deployment. These calibration checks are critical to ensuring that the
 
-manufacturer calibration is still valid. Manufacturers describe how to conduct these calibration checks in their user manuals, which are currently considered QA and further addressed in appendix A.
+manufacturer calibration is still valid. 
+Manufacturers describe how to conduct these calibration checks in their user manuals, 
+which are currently considered QA and further addressed in appendix A.
 
-Calibrations and calibration checks must be traceable to accepted standards. The National Institute of Standards and Technology (NIST) (http://www.nist.gov/calibrations/air\_speed\_instruments.cfm), a provider of internationally accepted standards, is often the source for accepted standards. Calibration activities must be tailored to match data use and resources. Calibration cost and effort increase dramatically as accuracy requirements increase.
+Calibrations and calibration checks must be traceable to accepted standards. 
+The National Institute of Standards and Technology (NIST) (http://www.nist.gov/calibrations/air\_speed\_instruments.cfm), 
+a provider of internationally accepted standards, 
+is often the source for accepted standards. 
+Calibration activities must be tailored to match data use and resources. 
+Calibration cost and effort increase dramatically as accuracy requirements increase.
 
-A stable calibration is essential for collecting climate quality data. Few operators maintain a wind tunnel and reference standards as described in Freitag et al. (2001) and Gilhousen (1986), but they may partner with such facilities to periodically conduct calibrations. Alternatively, they may develop a consensus reference capability using multiple anemometers to establish "truth," as described by Kline and Mikhail (1998).
+A stable calibration is essential for collecting climate quality data. 
+Few operators maintain a wind tunnel and reference standards as described in Freitag et al. (2001) and Gilhousen (1986), 
+but they may partner with such facilities to periodically conduct calibrations. 
+Alternatively, 
+they may develop a consensus reference capability using multiple anemometers to establish "truth," 
+as described by Kline and Mikhail (1998).
 
 #### 2.2.3 Sensor Deployment Considerations and Hardware Limitations
 
-Wind sensors can be deployed in several ways: on fixed platforms with no motion or rotation, on moorings where buoy motion provides a source of error and a compass is required to correct for rotation, or on mobile platforms where corrections for both translation and rotation must be conducted.
+Wind sensors can be deployed in several ways: on fixed platforms with no motion or rotation, 
+on moorings where buoy motion provides a source of error and a compass is required to correct for rotation, 
+or on mobile platforms where corrections for both translation and rotation must be conducted.
 
-While outside the scope of the real-time tests described in this manual, QA is critical to data quality. Sensors require attention to proper QA measures both before and after the deployment. Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor maintenance. Operators should strive to adhere to anemometer installation standards (EPA 1987; WMO 1983), allowing for proper site clearance in the surrounding vicinity of the anemometer and above ground, rooftop, or other mounting surface. Anemometer height relative to an accepted datum and photos of the installation should be available in the metadata.
+While outside the scope of the real-time tests described in this manual, QA is critical to data quality. 
+Sensors require attention to proper QA measures both before and after the deployment. 
+Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor maintenance. 
+Operators should strive to adhere to anemometer installation standards (EPA 1987; WMO 1983), 
+allowing for proper site clearance in the surrounding vicinity of the anemometer and above ground, rooftop, 
+or other mounting surface. 
+Anemometer height relative to an accepted datum and photos of the installation should be available in the metadata.
 
-Also important, but beyond the scope of this document at present, is the determination and reporting of data uncertainty. All sensors and measurements contain errors, and operators should routinely provide a quantitative measure of data uncertainty in the associated metadata. Such calculations can be challenging, so operators should also document the methods used to compute the uncertainty. The limits and thresholds implemented by operators for the data quality control tests described here are a key component in establishing the observational error bars. Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty, as these two efforts greatly enhance the utility of their data.
+Also important, 
+but beyond the scope of this document at present, is the determination and reporting of data uncertainty. 
+All sensors and measurements contain errors, 
+and operators should routinely provide a quantitative measure of data uncertainty in the associated metadata. 
+Such calculations can be challenging, 
+so operators should also document the methods used to compute the uncertainty. 
+The limits and thresholds implemented by operators for the data quality control tests described here are a key component in establishing the observational error bars. Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty, 
+as these two efforts greatly enhance the utility of their data.
 
-The following sections describe the sensor technologies that are most often used, with a brief note about their attributes and shortcomings.
+The following sections describe the sensor technologies that are most often used, 
+with a brief note about their attributes and shortcomings.
 
 ### 2.3 Applications of Wind Data
 
@@ -166,17 +253,44 @@ Real-time wind observations are important for a wide variety of applications, in
 
 • Operation of coastal engineering infrastructure
 
-Other applications, such as climatological summaries and operational/design criteria, do not require real-time QC but benefit from it through early detection of faulty wind observations or other station issues.
+Other applications, such as climatological summaries and operational/design criteria, 
+do not require real-time QC but benefit from it through early detection of faulty wind observations or other station issues.
 
 ### 2.4 Sensor Technology
 
-The most predominant anemometer is an impellor/wind vane combination (often combined into one unit) used to measure wind speed/direction, respectively. Figure 2-1 shows an RM Young blade impellor mounted on a rotating wind vane. The impellor rotation can be detected magnetically, electrically, or optically; the pulsed output is used to determine the impellor speed of rotation. The wind vane rotation is often measured with a potentiometer, such that orientation is proportional to the observed resistance. A data collection platform (DCP) is used to capture the sensor output and apply a calibration to convert the observations to wind speed and direction. These instantaneous observations are then processed over a period of time to create the reported wind speed, direction, and gust. However, this technology does have several disadvantages. Impellors and wind vanes bearings tend to wear or corrode over time, have various start-up thresholds that may preclude low-wind observations, and are subject to damage if the blade strikes an object.
+The most predominant anemometer is an impellor/wind vane combination (often combined into one unit) used to measure wind speed/direction, 
+respectively. 
+Figure 2-1 shows an RM Young blade impellor mounted on a rotating wind vane. 
+The impellor rotation can be detected magnetically, 
+electrically, or optically; 
+the pulsed output is used to determine the impellor speed of rotation. 
+The wind vane rotation is often measured with a potentiometer, 
+such that orientation is proportional to the observed resistance. 
+A data collection platform (DCP) is used to capture the sensor output and apply a calibration to convert the observations to wind speed and direction. 
+These instantaneous observations are then processed over a period of time to create the reported wind speed, 
+direction, 
+and gust. 
+However, 
+this technology does have several disadvantages. 
+Impellors and wind vanes bearings tend to wear or corrode over time, 
+have various start-up thresholds that may preclude low-wind observations, 
+and are subject to damage if the blade strikes an object.
 
 ![Shows an RM Young blade impellor mounted on a rotating wind vane.](images_Wind/image1.png)
 
 <figcaption>Figure 2-1. RM Young propeller and wind vane sensor (photo courtesy of RM Young).</figcaption>
 
-Figure 2-2 (left) shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge. Metadata for this station can be found at http://tidesandcurrents.noaa.gov/stationhome.html?id=8764227. Figure 2-2 (right) shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy. An example of supporting metadata for this buoy can be seen at http://www.ndbc.noaa.gov/station\_page.php?station=44009. In both cases, maintenance is eased because the dual anemometers are identical. However, they will have identical failure modes, and operators may be lulled into a sense of heightened accuracy because of the certain agreement between the two identical sensors. A better arrangement would have dual anemometers with different technologies. Figure 2-3 shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction. The vane/impellor anemometer bearings are especially challenged in a marine environment, and maintenance may be needed more frequently. Manufacturers continually strive to improve the materials used, such as the recent implementation of ceramic bearings, which won't corrode.
+Figure 2-2 (left) shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge. 
+Metadata for this station can be found at http://tidesandcurrents.noaa.gov/stationhome.html?id=8764227. 
+Figure 2-2 (right) shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy. 
+An example of supporting metadata for this buoy can be seen at http://www.ndbc.noaa.gov/station\_page.php?station=44009. 
+In both cases, maintenance is eased because the dual anemometers are identical. However, 
+they will have identical failure modes, 
+and operators may be lulled into a sense of heightened accuracy because of the certain agreement between the two identical sensors. 
+A better arrangement would have dual anemometers with different technologies. 
+Figure 2-3 shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction. 
+The vane/impellor anemometer bearings are especially challenged in a marine environment, and maintenance may be needed more frequently. 
+Manufacturers continually strive to improve the materials used, such as the recent implementation of ceramic bearings, which won't corrode.
 
 ![In the left, shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge. In the right, shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy.](images_Wind/image2.png)
 
@@ -186,27 +300,81 @@ Figure 2-2 (left) shows the dual vane/impellor anemometers mounted on a tower at
 
 <figcaption>Figure 2-3. Close-up of a cup anemometer (photo courtesy of NOAA/NWS).</figcaption>
 
-Another popular technology uses ultrasound, either by observing changes in the time of flight of acoustic pulses between several emitter/receiver pairs, or more recently by detecting phase changes in a resonant acoustic wave. Figure 2-4 shows a variety of acoustic anemometers being tested at the Otis Weather Test facility in Cape Cod, Massachusetts. These electronic sensors usually include the circuitry needed to directly output calibrated wind speed, direction, and gust. In some cases, they can also generate an analog output that mimics an impellor/wind vane, easing the replacement of these devices with a sonic anemometer. They excel at observing the lowest wind speeds, but in some cases, the physical structure that supports the emitter/receivers also obstructs wind flow. The problem is most pronounced at extremely high wind speeds. Some sensors are also prone to failure because of roosting birds. Early acoustic anemometers accumulated water droplets on the emitter or receiver resulting in erroneous measurements, which are now readily detected and discarded by the sensor itself before outputting an observation.
+Another popular technology uses ultrasound, either by observing changes in the time of flight of acoustic pulses between several emitter/receiver pairs, 
+or more recently by detecting phase changes in a resonant acoustic wave. 
+Figure 2-4 shows a variety of acoustic anemometers being tested at the Otis Weather Test facility in Cape Cod, Massachusetts. 
+These electronic sensors usually include the circuitry needed to directly output calibrated wind speed, 
+direction, 
+and gust. In some cases, 
+they can also generate an analog output that mimics an impellor/wind vane, 
+easing the replacement of these devices with a sonic anemometer. 
+They excel at observing the lowest wind speeds, 
+but in some cases, 
+the physical structure that supports the emitter/receivers also obstructs wind flow. The problem is most pronounced at extremely high wind speeds. 
+Some sensors are also prone to failure because of roosting birds. 
+Early acoustic anemometers accumulated water droplets on the emitter or receiver resulting in erroneous measurements, 
+which are now readily detected and discarded by the sensor itself before outputting an observation.
 
 ![Shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction](images_Wind/image4.jpg)
 
 <figcaption>Figure 2-4. Acoustic anemometers at the Otis Weather Test facility in Cape Cod, Massachusetts. The five masts on the left provide reference wind observations. The five sensors on the right are: 1) RM Young 3-axis ultrasonic anemometer (partially obscured), 2) Gill R3 3-D anemometer, 3) RM Young 2-axis ultrasonic anemometer, 4) Gill Windsonic 2-axis ultrasonic anemometer, and 5) Vaisala WS425 ultrasonic anemometer (photo courtesy of Mark Bushnell).</figcaption>
 
-Both impellor and sonic anemometers are subject to failure when water freezes on them, especially in lowwind and high-humidity conditions. Coatings (such as Teflon) and heaters are often employed to mitigate freezing. Heaters require a large power supply, and in extreme cold, may sufficiently melt snow that otherwise would not have adhered to the device.
+Both impellor and sonic anemometers are subject to failure when water freezes on them, especially in lowwind and high-humidity conditions. 
+Coatings (such as Teflon) and heaters are often employed to mitigate freezing. Heaters require a large power supply, 
+and in extreme cold, 
+may sufficiently melt snow that otherwise would not have adhered to the device.
 
-Wind Observation Through Ambient Noise (WOTAN) is a unique technology that is not widely used. Acoustic transducers record sound pressure levels near the ocean surface at selected frequencies, and algorithms have been developed to convert these observations into wind speeds (Vagle et al. 1990). A vane on the supporting buoy provides wind direction. This technology is included because the output of a WOTAN wind buoy is simply wind speed and direction, which makes the QC tests described herein directly applicable.
+Wind Observation Through Ambient Noise (WOTAN) is a unique technology that is not widely used. 
+Acoustic transducers record sound pressure levels near the ocean surface at selected frequencies, 
+and algorithms have been developed to convert these observations into wind speeds (Vagle et al. 1990). 
+A vane on the supporting buoy provides wind direction. 
+This technology is included because the output of a WOTAN wind buoy is simply wind speed and direction, 
+which makes the QC tests described herein directly applicable.
 
-Hot-wire wind speed sensors are thermistors that are cooled by heat dissipation when winds blow over them. They are not typically used in the field because they are fragile, can require a large power supply, and require correction for humidity. They are more often found as a reference sensor in wind tunnel calibration facilities.
+Hot-wire wind speed sensors are thermistors that are cooled by heat dissipation when winds blow over them. 
+They are not typically used in the field because they are fragile, can require a large power supply, 
+and require correction for humidity. 
+They are more often found as a reference sensor in wind tunnel calibration facilities.
 
 ## 3.0 Quality Control
 
-As is the case with most real-time meteorological/ocean observations, the real-time QC of wind observations can be extremely challenging. Events such as fast moving fronts, microbursts, and tropical cyclones must be considered when determining acceptable data thresholds. Human involvement is therefore important to ensure that solid scientific principles are applied to data evaluation so that good data are not discarded and bad data are not distributed (e.g., selection of appropriate thresholds and examination of data flagged as questionable).
+As is the case with most real-time meteorological/ocean observations, 
+the real-time QC of wind observations can be extremely challenging. 
+Events such as fast moving fronts, 
+microbursts, 
+and tropical cyclones must be considered when determining acceptable data thresholds. 
+Human involvement is therefore important to ensure that solid scientific principles are applied to data evaluation so that good data are not discarded and bad data are not distributed (e.g., selection of appropriate thresholds and examination of data flagged as questionable).
 
-To conduct real-time QC on wind observations, the first pre-requisite is to understand the science and context within which the measurements are being conducted. For example and as was discussed in section 2.2.3, sensors can be deployed in a number of ways. Each deployment method imposes the need for specific QC methods. Real-time wind data should have these main attributes: accurate time, speed, direction, and gust measurements.
+To conduct real-time QC on wind observations, the first pre-requisite is to understand the science and context within which the measurements are being conducted. 
+For example and as was discussed in section 2.2.3, 
+sensors can be deployed in a number of ways. Each deployment method imposes the need for specific QC methods. 
+Real-time wind data should have these main attributes: accurate time, 
+speed, 
+direction, 
+and gust measurements.
 
-This manual focuses specifically on the QC of real-time data, but there are limitations. For example, gradual calibration changes or slow system response variations (sensor drift) cannot be detected or corrected in real time. Therefore, delayed-mode approaches are done through comparison with collocated observations (e.g., satellite data). Drift correction to wind measurements during post-processing is highly unlikely to occur even if a valid post-recovery calibration could be obtained. Drift is often caused by worn bearings and corrosion, potentiometer pad degradation, and to a lesser extent, the aging of electronic components—e.g., those compensating for temperature dependencies, which are now less of a problem thanks to advances in digital circuitry. These gradual changes affect different systems in different ways (e.g., an impellor has a higher starting speed caused by corroded bearings). Another limitation is the ability of some data providers to backfill data gaps. In both of these examples, the observations are not considered to be real time for purposes of QC checks. (However, in some sophisticated 24/7 QC operations, real-time dissemination may be switched from one sensor to another based on real-time QC flags.)
+This manual focuses specifically on the QC of real-time data, but there are limitations. 
+For example, 
+gradual calibration changes or slow system response variations (sensor drift) cannot be detected or corrected in real time. 
+Therefore, delayed-mode approaches are done through comparison with collocated observations (e.g., satellite data). 
+Drift correction to wind measurements during post-processing is highly unlikely to occur even if a valid post-recovery calibration could be obtained. 
+Drift is often caused by worn bearings and corrosion, potentiometer pad degradation, 
+and to a lesser extent, 
+the aging of electronic components—e.g., 
+those compensating for temperature dependencies, 
+which are now less of a problem thanks to advances in digital circuitry. 
+These gradual changes affect different systems in different ways (e.g., an impellor has a higher starting speed caused by corroded bearings). 
+Another limitation is the ability of some data providers to backfill data gaps. 
+In both of these examples, the observations are not considered to be real time for purposes of QC checks. 
+(However, in some sophisticated 24/7 QC operations, 
+real-time dissemination may be switched from one sensor to another based on real-time QC flags.)
 
-Observations are time ordered, and the most recent observation is *n0*, preceded by a value at *n-1*, and so on backwards in time. The focus of the real-time QC is primarily on observations n0, *n-1*, and *n-2*.
+Observations are time ordered, and the most recent observation is *n0*, 
+preceded by a value at *n-1*, 
+and so on backwards in time. 
+The focus of the real-time QC is primarily on observations n0, 
+*n-1*, 
+and *n-2*.
 
 ### 3.1 QC Flags
 
@@ -216,10 +384,10 @@ Further post-processing of the data may yield different conclusions from those r
 
 | **Flag**                      | **Description**                                                                                                                                                                      |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Pass=1                           | Data	have	passed	critical	real-time	quality	control	tests	and	are	deemed	adequate	for	use<br>as	preliminary	data.                                                                       |  |
+| Pass=1                           | Data	have	passed	critical	real-time	quality	control	tests	and	are	deemed	adequate	for	use as	preliminary	data.                                                                       |  |
 | Not	Evaluated=2                  | Data	have	not	been	QC-tested,	or	the	information	on	quality	is	not	available.                                                                                                           |  |
-| Suspect	or<br>Of	High	Interest=3 | Data	are	considered	to	be	either	suspect	or	of	high	interest	to	data	providers	and	users.<br>They	are	flagged	suspect	to	draw	further	attention	to	them	by	operators.                   |  |
-| Fail=4                           | Data	are	considered	to	have	failed	one	or	more	critical	real-time	QC	checks.	If	they	are<br>disseminated	at	all,	it	should	be	readily	apparent	that	they	are	not	of	acceptable	quality. |  |
+| Suspect	or Of	High	Interest=3 | Data	are	considered	to	be	either	suspect	or	of	high	interest	to	data	providers	and	users. They	are	flagged	suspect	to	draw	further	attention	to	them	by	operators.                   |  |
+| Fail=4                           | Data	are	considered	to	have	failed	one	or	more	critical	real-time	QC	checks.	If	they	are disseminated	at	all,	it	should	be	readily	apparent	that	they	are	not	of	acceptable	quality. |  |
 | Missing	Data=9                   | Data	are	missing;	used	as	a	placeholder.                                                                                                                                                |  |
 
 : Table 3-1. Flags for real-time data (UNESCO 2013)
@@ -320,17 +488,17 @@ All sensors have a limited output range, and this can form the most rudimentary 
 
 | Flags     | Condition                           | Codable	Instructions          |
 |-----------|-------------------------------------|-------------------------------|
-| Fail=4    | Reported	value	is	outside	of	sensor | If	WSn<br><	SENSOR_MIN,	or    |
-|           | span.                               | WSn<br>>	SENSOR_MAX,	flag	=	4 |
-| Suspect=3 | Reported	value	is	outside	of	user   | If	WSn<br><	USER_MIN,	or      |
-|           | selected	span.                      | WSn<br>>	USER_MAX,	flag	=	3   |
+| Fail=4    | Reported	value	is	outside	of	sensor | If	WSn <	SENSOR_MIN,	or    |
+|           | span.                               | WSn >	SENSOR_MAX,	flag	=	4 |
+| Suspect=3 | Reported	value	is	outside	of	user   | If	WSn <	USER_MIN,	or      |
+|           | selected	span.                      | WSn >	USER_MAX,	flag	=	3   |
 | Pass=1    | Applies	for	test	pass	condition     |                               |
 
 Test Exception: None.
 
 Test specifications to be established locally by the operator.
 
-Examples:
+Examples: 
 
 - `SENSOR_MAX = 100 m/s` (limited by the manufacturer firmware, for example)
 - `SENSOR_MIN = 0 m/s`
@@ -346,8 +514,8 @@ http://iridl.ldeo.columbia.edu/maproom/Global/Climatologies/Vector\_Winds.html, 
 
 | Flags     | Condition                                                                                                                                                         | Codable	Instructions                                       |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
-| Fail=4    | Because	of	the	potential	for	extreme<br>wind	speeds,	gusts,	and	directional<br>variability without	regard	to	season,<br>no	fail	flag	is	identified	for	this	test. | N/A                                                        |
-| Suspect=3 | Reported	value	is	outside	the<br>operator-identified	climatology<br>window.                                                                                       | If	WSn<br><	Season_MIN	or<br>WSn<br>>	Season_MAX,	flag	=	3 |
+| Fail=4    | Because	of	the	potential	for	extreme wind	speeds,	gusts,	and	directional variability without	regard	to	season, no	fail	flag	is	identified	for	this	test. | N/A                                                        |
+| Suspect=3 | Reported	value	is	outside	the operator-identified	climatology window.                                                                                       | If	WSn <	Season_MIN	or WSn >	Season_MAX,	flag	=	3 |
 | Pass=1    | Applies	for	test	pass	condition.                                                                                                                                  | N/A                                                        |
 
 **Test Exception:**  None.
@@ -366,9 +534,9 @@ An alternative is a third difference test defined as Diff*<sup>n</sup>* = WS*n*-
 
 | Flags     | Condition                        | Codable	Instructions                             |
 |-----------|----------------------------------|--------------------------------------------------|
-| Fail=4    | High	spike	threshold	exceeded.   | If	 WSn-1<br>- SPK_REF 	>	THRSHLD_HIGH,	flag	=	4 |
-| Suspect=3 | Low	spike	threshold	exceeded.    | If	 WSn-1<br>- SPK_REF 	>	THRSHLD_LOW and        |
-|           |                                  | - SPK_REF 	≤<br> WSn-1<br>THRSHLD_HIGH,	flag = 3 |
+| Fail=4    | High	spike	threshold	exceeded.   | If	 WSn-1 - SPK_REF 	>	THRSHLD_HIGH,	flag	=	4 |
+| Suspect=3 | Low	spike	threshold	exceeded.    | If	 WSn-1 - SPK_REF 	>	THRSHLD_LOW and        |
+|           |                                  | - SPK_REF 	≤ WSn-1 THRSHLD_HIGH,	flag = 3 |
 | Pass=1    | Applies	for	test	pass	condition. | N/A                                              |
 
 **Test Exception:** None.
@@ -392,7 +560,7 @@ The rate of change between WS*n*-1 and WS*<sup>n</sup>* must be less than three 
 | Flags     | Condition                                             | Codable	Instructions                     |
 |-----------|-------------------------------------------------------|------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.             | N/A                                      |
-| Suspect=3 | The	rate	of	change	exceeds	the<br>selected	threshold. | If	 WSn<br>– WSn-1  > N_DEV*SD,	flag	=	3 |
+| Suspect=3 | The	rate	of	change	exceeds	the selected	threshold. | If	 WSn – WSn-1  > N_DEV*SD,	flag	=	3 |
 | Pass=1    | Applies	for	test	pass	condition.                      | N/A                                      |
 
 **Test Exception:** None.
@@ -409,8 +577,8 @@ When some sensors and/or data DCPs fail, the result can be a continuously repeat
 
 | Flags     | Condition                                                                                                                                                                                               | Codable	Instructions                                                                                    |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| Fail=4    | When	the	five	most	recent<br>observations	are	equal,	WSn<br>is<br>flagged	fail.                                                                                                                         | Flag=4<br>For	i=1,REP_CNT_FAIL<br>If	 WSn<br>- WSn-i 	>	EPS then	flag = 1<br>end	if                     |
-| Suspect=3 | It	is	possible	but	unlikely	that	the<br>present	observation	and	the	two<br>previous	observations	would	be<br>equal.	When	the	three	most	recent<br>observations	are	equal,	WSn<br>is<br>flagged	suspect. | If	flag=4,	end<br>Flag=3<br>For i=1,REP_CNT_SUSPECT<br>If  WSn<br>- WSn-i > EPS then	flag = 1<br>end	if |
+| Fail=4    | When	the	five	most	recent observations	are	equal,	WSn is flagged	fail.                                                                                                                         | Flag=4 For	i=1,REP_CNT_FAILIf	 WSn- WSn-i 	>	EPS then	flag = 1 end	if                     |
+| Suspect=3 | It	is	possible	but	unlikely	that	the present	observation	and	the	two previous	observations	would	be equal.	When	the	three	most	recent observations	are	equal,	WSn is flagged	suspect. | If	flag=4,	end Flag=3 For i=1,REP_CNT_SUSPECT If  WSn - WSn-i > EPS then	flag = 1 end	if |
 | Pass=1    | Applies	for	test	pass	condition.                                                                                                                                                                        | N/A                                                                                                     |
 
 **Test Exception**: None.
@@ -432,7 +600,7 @@ This example pairs rate of change tests as described in Test 7. The WS rate of c
 | Flags     | Condition                                                                                                                               | Codable	Instructions                                                                         |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.                                                                                               | N/A                                                                                          |
-| Suspect=3 | WSn<br>fails	the	rate	of	change	and	the<br>second	variable	(barometric	pressure,<br>for	example)	does	not	exceed	the<br>rate	of	change. | If	 WSn<br>– WSn-1  > N_WSMV_DEV*SD_WS<br>AND<br> BPn<br>– BPn-1  < N_BP_DEV*SD_BP,	flag	=	3 |
+| Suspect=3 | WSn fails	the	rate	of	change	and	the second	variable	(barometric	pressure, for	example)	does	not	exceed	the rate	of	change. | If	 WSn – WSn-1  > N_WSMV_DEV*SD_WS AND BPn – BPn-1  < N_BP_DEV*SD_BP,	flag	=	3 |
 | Pass=1    |                                                                                                                                         | N/A                                                                                          |
 
 **Test Exception:** None.
@@ -453,8 +621,8 @@ A common sensor failure mode can provide a data series that is nearly but not ex
 
 | Flags     | Condition                                                      | Codable	Instructions                                                                                                                |
 |-----------|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Fail=4    | Variation	fails	to	meet	the	minimum<br>threshold	MIN_VAR_FAIL. | If	During	TST_TIM,	SD <min_var_fail, or<br="">During	TST_TIM,	MAX-MIN	<min_var_fail,<br>flag	=	4</min_var_fail,<br></min_var_fail,> |
-| Suspect=3 | Variation	fails	to	meet	the	minimum<br>threshold	MIN_VAR_WARN. | If	During	TST_TIM,	SD <min_var_warn, or<br="">During	TST_TIM,	MAX-MIN	<min_var_warn,<br>flag	=	3</min_var_warn,<br></min_var_warn,> |
+| Fail=4    | Variation	fails	to	meet	the	minimum threshold	MIN_VAR_FAIL. | If	During	TST_TIM,	SD <min_var_fail, or<br="">During	TST_TIM,	MAX-MIN	<min_var_fail, flag	=	4</min_var_fail, </min_var_fail,> |
+| Suspect=3 | Variation	fails	to	meet	the	minimum threshold	MIN_VAR_WARN. | If	During	TST_TIM,	SD <min_var_warn, or<br="">During	TST_TIM,	MAX-MIN	<min_var_warn, flag	=	3</min_var_warn, </min_var_warn,> |
 | Pass=1    | Applies	for	test	pass	condition.                               | N/A                                                                                                                                 |
 
 **Test Exception:** None.
@@ -486,7 +654,7 @@ In the instructions and examples below, data from one site (WS1) are compared to
 | Flags     | Condition                                                                                                 | Codable	Instructions                                                                         |
 |-----------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.                                                                 | N/A                                                                                          |
-| Suspect=3 | WS1n<br>fails	the	rate	of	change	and<br>the	second	sensor WS2 n<br>does	not<br>exceed	the	rate	of	change. | If	 WS1n<br>– WS1n-1  > N_WS1_DEV*SD1<br>AND<br> WS2n<br>– WS2n-1  < N_WS2_DEV*SD2,	flag	=	3 |
+| Suspect=3 | WS1n fails	the	rate	of	change	and the	second	sensor WS2n does	not exceed	the	rate	of	change. | If	 WS1n – WS1n-1  > N_WS1_DEV*SD1 AND WS2n – WS2n-1  < N_WS2_DEV*SD2,	flag	=	3 |
 | Pass=1    |                                                                                                           | N/A                                                                                          |
 
 **Test Exception:** There is no adequate neighbor.
@@ -695,11 +863,11 @@ A wide variety of techniques are used by operators to assure that sensors are pr
 
 Table A-1. Best practices indicator for QA
 
-| QA	Best	Practices<br>Indicator | Description                                                                                                                                                                                                   |
+| QA	Best	Practices Indicator | Description                                                                                                                                                                                                   |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Good	Process                   | Sensors	are	swapped	and/or	serviced	at	sufficient	regular	intervals.<br>Sensors	are	pre-<br>and	post-deployment	calibration	checked.                                                                          |
-| Better	Process                 | Good	process,	plus	an	overlapping	operational	period	during	sensor<br>swap-out	to	demonstrate	continuity	of	observations.                                                                                     |
-| Best	Process                   | Better	process,	and	follow<br>a	well-documented	protocol	or	alternative<br>sensors	to	validate	in-situ	deployments.	Or,	the	better	process<br>employing	manufacturer	conducted	pre-<br>and	post-calibrations. |
+| Good	Process                   | Sensors	are	swapped	and/or	serviced	at	sufficient	regular	intervals. Sensors	are	pre- and	post-deployment	calibration	checked.                                                                          |
+| Better	Process                 | Good	process,	plus	an	overlapping	operational	period	during	sensor swap-out	to	demonstrate	continuity	of	observations.                                                                                     |
+| Best	Process                   | Better	process,	and	follow a	well-documented	protocol	or	alternative sensors	to	validate	in-situ	deployments.	Or,	the	better	process employing	manufacturer	conducted	pre- and	post-calibrations. |
 
 ## **A.5 Additional Sources of QA Information**
 
@@ -721,13 +889,13 @@ The following samples provide hints for development of deployment checklists tak
 |---|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | " | Read the manual.                                                                                                                                                                                    |
 | " | Establish, use, and submit (with a reference and version #) a documented sensor preparation                                                                                                         |
-|   | procedure (protocol). Maintain<br>the sensor according to the manufacturer's procedures.                                                                                                            |
+|   | procedure (protocol). Maintain the sensor according to the manufacturer's procedures.                                                                                                            |
 | " | Calibrate sensor against an accepted standard and document (with a reference and version #).                                                                                                        |
 | " | Compare the sensor with an identical, calibrated sensor measuring the same thing in the same area (in                                                                                               |
 |   | a calibration lab).                                                                                                                                                                                 |
-| " | View calibration specifications with a critical eye (don't presume the calibration is infallible). Execute<br>detailed review of calibrated data.                                                   |
+| " | View calibration specifications with a critical eye (don't presume the calibration is infallible). Execute detailed review of calibrated data.                                                   |
 | " | Check the sensor history for past calibrations, including a plot over time of deviations from the                                                                                                   |
-|   | standard for each<br>(this will help identify trends such a progressively poorer performance). Control                                                                                              |
+|   | standard for each (this will help identify trends such a progressively poorer performance). Control                                                                                              |
 |   | chart calibrations.                                                                                                                                                                                 |
 | " | Check the sensor history for past repairs, maintenance, and calibration.                                                                                                                            |
 | " | Consider storing and shipping information before deploying.                                                                                                                                         |
@@ -737,7 +905,7 @@ The following samples provide hints for development of deployment checklists tak
 | " | Search the literature for information on your particular sensor(s) to see what experiences other                                                                                                    |
 |   | researchers may have had with the sensor(s).                                                                                                                                                        |
 | " | Establish and use a formal pre-deployment checklist.                                                                                                                                                |
-| " | Ensure that technicians are well-trained. Use a tracking system for training to identify those<br>technicians who are highly trained and then pair them with inexperienced technicians. Have a data |
+| " | Ensure that technicians are well-trained. Use a tracking system for training to identify those technicians who are highly trained and then pair them with inexperienced technicians. Have a data |
 |   | quality review chain.                                                                                                                                                                               |
 |   |                                                                                                                                                                                                     |
 |   | Deployment	Checklist                                                                                                                                                                                |
@@ -746,7 +914,7 @@ The following samples provide hints for development of deployment checklists tak
 | " | Perform visual inspection; take photos if possible (verify position of sensors, connectors, and cable                                                                                               |
 |   | problems).                                                                                                                                                                                          |
 | " | Verify instrument function at deployment site prior to site departure.                                                                                                                              |
-| " | Monitor sensors for issues (freezing,<br>corrosion).                                                                                                                                                |
+| " | Monitor sensors for issues (freezing, corrosion).                                                                                                                                                |
 | " | Automate processing so you can monitor the initial deployment and confirm the sensor is working                                                                                                     |
 |   | while still on-site.                                                                                                                                                                                |
 | " | Specify date/time for all recorded events. Use GMT or UTC.                                                                                                                                          |
@@ -754,16 +922,16 @@ The following samples provide hints for development of deployment checklists tak
 |   | check sampling rates and other timed events, like time averaging.                                                                                                                                   |
 | " | Visually inspect data stream to ensure reasonable values.                                                                                                                                           |
 | " | Note weather conditions and members of field crew.                                                                                                                                                  |
-| " | Record and routinely verify metadata<br>(e.g., sensor position and orientation). This information is vital                                                                                          |
+| " | Record and routinely verify metadata (e.g., sensor position and orientation). This information is vital                                                                                          |
 |   | to the value of data for many applications. For example, wind speed measurements are very                                                                                                           |
-|   | dependent on measurement height relative to the surface. If this height is not known, the value of<br>the                                                                                           |
+|   | dependent on measurement height relative to the surface. If this height is not known, the value of the                                                                                           |
 |   | data is greatly diminished.                                                                                                                                                                         |
 
 ![](_page_41_Picture_0.jpeg)
 
 #### **Post-deployment Checklist**
 
-| " | Take pictures of recovered sensor (as is)<br>for metadata.                                            |
+| " | Take pictures of recovered sensor (as is) for metadata.                                            |
 |---|-------------------------------------------------------------------------------------------------------|
 | " | Check to make sure all clocks agree or, if they do not agree, record all times and compare with NIST. |
 | " | Post-calibrate sensor and document readings.                                                          |
@@ -779,7 +947,7 @@ The following samples provide hints for development of deployment checklists tak
 
 # **Appendix B. QARTOD Wind Manual Team**
 
-|                                | Wind<br>Manual	Contributors                                          |  |  |
+|                                | Wind Manual	Contributors                                          |  |  |
 |--------------------------------|----------------------------------------------------------------------|--|--|
 | Name                           | Organization                                                         |  |  |
 | Mark	Bushnell,	Lead	Editor     | CoastalObsTechServices	LLC	– NOAA/NOS/CO-OPS                         |  |  |
@@ -812,7 +980,7 @@ The following samples provide hints for development of deployment checklists tak
 
 ![](_page_43_Picture_0.jpeg)
 
-|                     | Wind<br>Manual	Reviewers                       |
+|                     | Wind Manual	Reviewers                       |
 |---------------------|------------------------------------------------|
 | Name                | Organization                                   |
 | Jeff	Donovan        | SECOORA                                        |
