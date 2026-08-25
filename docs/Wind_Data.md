@@ -202,7 +202,7 @@ Manufacturers describe how to conduct these calibration checks in their user man
 which are currently considered QA and further addressed in appendix A.
 
 Calibrations and calibration checks must be traceable to accepted standards.
-The National Institute of Standards and Technology (NIST) (http://www.nist.gov/calibrations/air\_speed\_instruments.cfm),
+The National Institute of Standards and Technology (NIST) (http://www.nist.gov/calibrations/air_speed_instruments.cfm),
 a provider of internationally accepted standards,
 is often the source for accepted standards.
 Calibration activities must be tailored to match data use and resources.
@@ -282,7 +282,7 @@ and are subject to damage if the blade strikes an object.
 Figure 2-2 (left) shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge.
 Metadata for this station can be found at http://tidesandcurrents.noaa.gov/stationhome.html?id=8764227.
 Figure 2-2 (right) shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy.
-An example of supporting metadata for this buoy can be seen at http://www.ndbc.noaa.gov/station\_page.php?station=44009.
+An example of supporting metadata for this buoy can be seen at http://www.ndbc.noaa.gov/station_page.php?station=44009.
 In both cases, maintenance is eased because the dual anemometers are identical. However,
 they will have identical failure modes,
 and operators may be lulled into a sense of heightened accuracy because of the certain agreement between the two identical sensors.
@@ -518,7 +518,7 @@ this check can be performed at the message level but is not used to check messag
 
 | Flags       | Condition                                                      | Codable Instructions               |
 | ----------- | -------------------------------------------------------------- | ---------------------------------- |
-| Fail = 4    | Data sentence cannot be parsed to provide a valid observation. | $If REC_CHAR \neq NCHAR$, flag = 4 |
+| Fail = 4    | Data sentence cannot be parsed to provide a valid observation. | $If REC_CHAR neq NCHAR$, flag = 4 |
 | Suspect = 3 | N/A                                                            | N/A                                |
 | Pass = 1    | Expected data sentence received; absence of parity errors.     | N/A                                |
 
@@ -596,7 +596,7 @@ seasonally,
 or at some other operator-selected time period (`TIM_TST`).
 Expertise of the local operator using long historical records is the best method to determine reasonable seasonal averages longer time series permit more refined identification of appropriate thresholds.
 Additional climatology guidance is available at http://www.ncdc.noaa.gov/societal-impacts/wind/mean/2014/4, http://numbat.coas.oregonstate.edu/cogow,
-http://iridl.ldeo.columbia.edu/maproom/Global/Climatologies/Vector\_Winds.html,
+http://iridl.ldeo.columbia.edu/maproom/Global/Climatologies/Vector_Winds.html,
 and from the NCEP/NCAR Reanalysis 1, 2 and 3 (now CFSR).
 
 | Flags     | Condition                                                                                                                                                         | Codable	Instructions                                       |
@@ -894,9 +894,9 @@ Supporting Documents Found on the [QARTOD Website] (https://ioos.noaa.gov/ioos-i
 
 Supporting Web Links
 
-- ACT Workshop: Meteorological Buoy Sensor Systems: http://www.act-us.info/Download/Workshops/2006/CBL\_Meteorological/
+- ACT Workshop: Meteorological Buoy Sensor Systems: http://www.act-us.info/Download/Workshops/2006/CBL_Meteorological/
 
-- EPA Quality Assurance Handbook for Air Pollution Measurement Systems: http://www.epa.gov/ttnamti1/files/ambient/met/Volume%20IV\_Meteorological\_Measurements.pdf
+- EPA Quality Assurance Handbook for Air Pollution Measurement Systems: http://www.epa.gov/ttnamti1/files/ambient/met/Volume%20IV_Meteorological_Measurements.pdf
 
 - Establishing more truth in true winds, Smith, Bourassa, and Sharp, COAPS** http://coaps.fsu.edu/woce/truewind/paper
 
@@ -918,7 +918,7 @@ Supporting Web Links
 
 - Operations and Services Inter-comparison of Hydrometeorological Instruments and Algorithms, NDSPD 10-21 General Instructions for Terrestrial-Based In-Situ Instrument and Algorithm Intercomparisons for the Purpose of Climate Data Continuity: http://www.nws.noaa.gov/directives/sym/pd01021001curr.pdf
 
-- Wind Tunnel Tests of Some Low-Cost Sonic Anemometers: https://www.wmo.int/pages/prog/www/IMOP/publications/IOM-82- TECO\_2005/Posters/P3(36)_USA_8_Sturgeon.pdf
+- Wind Tunnel Tests of Some Low-Cost Sonic Anemometers: https://www.wmo.int/pages/prog/www/IMOP/publications/IOM-82- TECO_2005/Posters/P3(36)_USA_8_Sturgeon.pdf
 
 ## Appendix A. Quality Assurance
 
