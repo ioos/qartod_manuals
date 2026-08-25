@@ -2,7 +2,7 @@
 
 A Guide to Quality Control and Quality Assurance for Coastal and Oceanic Wind Observations
 
-**DOI**
+<https://doi.org/10.25607/OBP-1458>
 
 ## Acknowledgements
 
@@ -194,9 +194,8 @@ and suggested.
 #### 2.2.2 Traceability to Accepted Standards
 
 To ensure that wind sensors produce accurate data, rigorous calibrations and calibration checks must be performed in addition to QC checks.
-Most operators rely upon manufacturer calibrations and generally conduct calibration checks before deployment. These calibration checks are critical to ensuring that the
-
-manufacturer calibration is still valid.
+Most operators rely upon manufacturer calibrations and generally conduct calibration checks before deployment. 
+These calibration checks are critical to ensuring that the manufacturer calibration is still valid.
 Manufacturers describe how to conduct these calibration checks in their user manuals,
 which are currently considered QA and further addressed in appendix A.
 
@@ -211,7 +210,7 @@ A stable calibration is essential for collecting climate quality data.
 Few operators maintain a wind tunnel and reference standards as described in Freitag et al. (2001) and Gilhousen (1986),
 but they may partner with such facilities to periodically conduct calibrations.
 Alternatively,
-they may develop a consensus reference capability using multiple anemometers to establish "truth,"
+they may develop a consensus reference capability using multiple anemometers to establish "truth",
 as described by Kline and Mikhail (1998).
 
 #### 2.2.3 Sensor Deployment Considerations and Hardware Limitations
@@ -220,7 +219,8 @@ Wind sensors can be deployed in several ways: on fixed platforms with no motion 
 on moorings where buoy motion provides a source of error and a compass is required to correct for rotation,
 or on mobile platforms where corrections for both translation and rotation must be conducted.
 
-While outside the scope of the real-time tests described in this manual, QA is critical to data quality.
+While outside the scope of the real-time tests described in this manual, 
+QA is critical to data quality.
 Sensors require attention to proper QA measures both before and after the deployment.
 Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor maintenance.
 Operators should strive to adhere to anemometer installation standards (EPA 1987; WMO 1983),
@@ -234,7 +234,8 @@ All sensors and measurements contain errors,
 and operators should routinely provide a quantitative measure of data uncertainty in the associated metadata.
 Such calculations can be challenging,
 so operators should also document the methods used to compute the uncertainty.
-The limits and thresholds implemented by operators for the data quality control tests described here are a key component in establishing the observational error bars. Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty,
+The limits and thresholds implemented by operators for the data quality control tests described here are a key component in establishing the observational error bars. 
+Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty,
 as these two efforts greatly enhance the utility of their data.
 
 The following sections describe the sensor technologies that are most often used,
@@ -251,7 +252,8 @@ Real-time wind observations are important for a wide variety of applications, in
 - Recreational boating
 - Operation of coastal engineering infrastructure
 
-Other applications, such as climatological summaries and operational/design criteria,
+Other applications, 
+such as climatological summaries and operational/design criteria,
 do not require real-time QC but benefit from it through early detection of faulty wind observations or other station issues.
 
 ### 2.4 Sensor Technology
@@ -278,6 +280,7 @@ and are subject to damage if the blade strikes an object.
 
 <figcaption>Figure 2-1. RM Young propeller and wind vane sensor (photo courtesy of RM Young).</figcaption>
 
+
 Figure 2-2 (left) shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge.
 Metadata for this station can be found at http://tidesandcurrents.noaa.gov/stationhome.html?id=8764227.
 Figure 2-2 (right) shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy.
@@ -298,6 +301,7 @@ Manufacturers continually strive to improve the materials used, such as the rece
 
 <figcaption>Figure 2-3. Close-up of a cup anemometer (photo courtesy of NOAA/NWS).</figcaption>
 
+
 Another popular technology uses ultrasound, either by observing changes in the time of flight of acoustic pulses between several emitter/receiver pairs,
 or more recently by detecting phase changes in a resonant acoustic wave.
 Figure 2-4 shows a variety of acoustic anemometers being tested at the Otis Weather Test facility in Cape Cod, Massachusetts.
@@ -316,6 +320,7 @@ which are now readily detected and discarded by the sensor itself before outputt
 ![Shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction](images_Wind/image4.jpg)
 
 <figcaption>Figure 2-4. Acoustic anemometers at the Otis Weather Test facility in Cape Cod, Massachusetts. The five masts on the left provide reference wind observations. The five sensors on the right are: 1) RM Young 3-axis ultrasonic anemometer (partially obscured), 2) Gill R3 3-D anemometer, 3) RM Young 2-axis ultrasonic anemometer, 4) Gill Windsonic 2-axis ultrasonic anemometer, and 5) Vaisala WS425 ultrasonic anemometer (photo courtesy of Mark Bushnell).</figcaption>
+
 
 Both impellor and sonic anemometers are subject to failure when water freezes on them, especially in lowwind and high-humidity conditions.
 Coatings (such as Teflon) and heaters are often employed to mitigate freezing. Heaters require a large power supply,
@@ -354,7 +359,8 @@ and gust measurements.
 This manual focuses specifically on the QC of real-time data, but there are limitations.
 For example,
 gradual calibration changes or slow system response variations (sensor drift) cannot be detected or corrected in real time.
-Therefore, delayed-mode approaches are done through comparison with collocated observations (e.g., satellite data).
+Therefore, 
+delayed-mode approaches are done through comparison with collocated observations (e.g., satellite data).
 Drift correction to wind measurements during post-processing is highly unlikely to occur even if a valid post-recovery calibration could be obtained.
 Drift is often caused by worn bearings and corrosion, potentiometer pad degradation,
 and to a lesser extent,
@@ -364,13 +370,14 @@ which are now less of a problem thanks to advances in digital circuitry.
 These gradual changes affect different systems in different ways (e.g., an impellor has a higher starting speed caused by corroded bearings).
 Another limitation is the ability of some data providers to backfill data gaps.
 In both of these examples, the observations are not considered to be real time for purposes of QC checks.
-(However, in some sophisticated 24/7 QC operations,
+(However, 
+in some sophisticated 24/7 QC operations,
 real-time dissemination may be switched from one sensor to another based on real-time QC flags.)
 
 Observations are time ordered, and the most recent observation is *n0*,
 preceded by a value at *n-1*,
 and so on backwards in time.
-The focus of the real-time QC is primarily on observations n0,
+The focus of the real-time QC is primarily on observations *n0*,
 *n-1*,
 and *n-2*.
 
@@ -401,7 +408,7 @@ Results from post processing should generate another set of flags corresponding 
 | Fail=4                           | Data	are	considered	to	have	failed	one	or	more	critical	real-time	QC	checks.	If	they	are disseminated	at	all,	it	should	be	readily	apparent	that	they	are	not	of	acceptable	quality. |  |
 | Missing	Data=9                   | Data	are	missing;	used	as	a	placeholder.                                                                                                                                                |  |
 
-: Table 3-1. Flags for real-time data (UNESCO 2013)
+: Table 3-1. Flags for real-time data (UNESCO 2013).
 
 ### 3.2 Test Hierarchy
 
@@ -491,7 +498,7 @@ This test does not address all clock drift/jump issues.
 
 | Flags       | Condition                          | Codable Instructions                    |
 | ----------- | ---------------------------------- | --------------------------------------- |
-| Missing = 9 | Data have not arrived as expected. | `If NOW - TIM_STMP > TIM_INC, flag = 9` |
+| Missing = 9 | Data have not arrived as expected. | If `NOW - TIM_STMP > TIM_INC`, flag = 9 |
 | Suspect = 3 | N/A                                | N/A                                     |
 | Pass = 1    | Applies for test pass condition.   | N/A                                     |
 
@@ -517,7 +524,7 @@ this check can be performed at the message level but is not used to check messag
 
 | Flags       | Condition                                                      | Codable Instructions               |
 | ----------- | -------------------------------------------------------------- | ---------------------------------- |
-| Fail = 4    | Data sentence cannot be parsed to provide a valid observation. | $If REC_CHAR \neq NCHAR$, flag = 4 |
+| Fail = 4    | Data sentence cannot be parsed to provide a valid observation. | If `REC_CHAR` $\neq$ `NCHAR`, flag = 4 |
 | Suspect = 3 | N/A                                                            | N/A                                |
 | Pass = 1    | Expected data sentence received; absence of parity errors.     | N/A                                |
 
@@ -538,8 +545,8 @@ as appropriate.
 
 | Flags     | Condition                        | Codable	Instructions                    |
 |-----------|----------------------------------|-----------------------------------------|
-| Fail=4    | Invalid location                 | `If LAT > abs(90)	or LONG > abs(180)`,	flag	=	4 |
-| Suspect=3 | Unlikely	platform	displacement   | `If DISP > RANGEMAX`, flag = 3            |
+| Fail=4    | Invalid location                 | If `LAT > abs(90) or LONG > abs(180)`,	flag	=	4 |
+| Suspect=3 | Unlikely	platform	displacement   | If `DISP > RANGEMAX`, flag = 3            |
 | Pass=1    | Applies	for	test	pass	condition. | N/A                                     |
 
 Test Exception: Test does not apply to fixed deployments when no location is transmitted.
@@ -566,8 +573,8 @@ An obvious gross range check is wind direction 0-360°.
 
 | Flags     | Condition                           | Codable	Instructions          |
 |-----------|-------------------------------------|-------------------------------|
-| Fail=4    | Reported	value	is	outside	of	sensor span.| `If	WS n <	SENSOR_MIN`, or `WS n >	SENSOR_MAX`, flag	=	4   |
-| Suspect=3 | Reported	value	is	outside	of	user selected	span.     | `If	WS n <	USER_MIN`,	or `WS n > USER_MAX`,	flag	=	3   |
+| Fail=4    | Reported	value	is	outside	of	sensor span.| If	$WS_n$ <	`SENSOR_MIN`, or $WS_n$ >	`SENSOR_MAX`, flag	=	4   |
+| Suspect=3 | Reported	value	is	outside	of	user selected	span.     | If $WS_n$ < `USER_MIN`, or $WS_n$ > `USER_MAX`,	flag	=	3   |
 | Pass=1    | Applies	for	test	pass	condition     |             N/A                |
 
 Test Exception: None.
@@ -595,7 +602,7 @@ and from the NCEP/NCAR Reanalysis 1, 2 and 3 (now CFSR).
 | Flags     | Condition                                                                                                                                                         | Codable	Instructions                                       |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
 | Fail=4    | Because	of	the	potential	for	extreme wind	speeds,	gusts,	and	directional variability without	regard	to	season, no	fail	flag	is	identified	for	this	test. | N/A                                                        |
-| Suspect=3 | Reported	value	is	outside	the operator-identified	climatology window.                                                                                       | `If	WS n <	Season_MIN`	or `WS n >	Season_MAX`,	flag	=	3 |
+| Suspect=3 | Reported	value	is	outside	the operator-identified	climatology window.                                                                                       | If $WS_n$ <	`Season_MIN` or $WS_n$ >	`Season_MAX`,	flag	=	3 |
 | Pass=1    | Applies	for	test	pass	condition.                                                                                                                                  | N/A                                                        |
 
 Test Exception:  None.
@@ -624,8 +631,8 @@ $Diff_n = WS_{n-3} - 3 * WS_{n-2} + 3 * WS_{n-1} - WS_n$.
 
 | Flags     | Condition                        | Codable	Instructions                             |
 |-----------|----------------------------------|--------------------------------------------------|
-| Fail=4    | High	spike	threshold	exceeded.   | `If	 $abs(WS_{n-1} - SPK_REF)$ 	>	THRSHLD_HIGH`,	flag	=	4 |
-| Suspect=3 | Low	spike	threshold	exceeded.    | `If $abs(WS_{n-1} - SPK_REF)$ >	THRSHLD_LOW` and `$abs(WS_{n-1} - SPK_REF)$ ≤ THRSHLD_HIGH`,	flag = 3      |
+| Fail=4    | High	spike	threshold	exceeded.   | If abs($WS_{n-1}$ - `SPK_REF`) > `THRSHLD_HIGH`,	flag	=	4 |
+| Suspect=3 | Low	spike	threshold	exceeded.    | If abs($WS_{n-1}$ - `SPK_REF`) > `THRSHLD_LOW` and abs($WS_{n-1}$ - `SPK_REF`) ≤ `THRSHLD_HIGH`,	flag = 3      |
 | Pass=1    | Applies	for	test	pass	condition. | N/A                                              |
 
 Test Exception: None.
@@ -664,7 +671,7 @@ The local operator can determine both the number of SDs (`N_DEV`) and the period
 | Flags     | Condition                                             | Codable	Instructions                     |
 |-----------|-------------------------------------------------------|------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.             | N/A                                      |
-| Suspect=3 | The	rate	of	change	exceeds	the selected	threshold. | `If abs(WSn – WS_{n-1}) > N_DEV*SD`,	flag	=	3 |
+| Suspect=3 | The	rate	of	change	exceeds	the selected	threshold. | If abs($WS_n – WS_{n-1}$) > `N_DEV * SD`,	flag	=	3 |
 | Pass=1    | Applies	for	test	pass	condition.                      | N/A                                      |
 
 Test Exception: None.
@@ -687,8 +694,8 @@ Note that historical flags are not changed.
 
 | Flags     | Condition                                                                                                                                                                                               | Codable	Instructions                                                                                    |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| Fail=4    | When	the	five	most	recent observations	are	equal,	WSn is flagged fail.                                                                                                                         | Flag=4 <br>`For i=1`, `REP_CNT_FAIL` <br/>`If WS_n- WS_{n-i} > EPS` then flag = 1 end	if                     |
-| Suspect=3 | It	is	possible	but	unlikely	that	the present	observation	and	the	two previous	observations	would	be equal.	When	the	three	most	recent observations	are	equal,	WS_n is flagged	suspect. | If	flag=4,	end <br>Flag=3 <br/>`For i=1`, `REP_CNT_SUSPECT` <br>`If  WS_n - WS_{n-i} > EPS` then	flag = 1 <br/>end if |
+| Fail=4    | When	the	five	most	recent observations	are	equal,	$WS_n$ is flagged fail.                                                                                                                         | Flag=4 <br>`For i=1`, `REP_CNT_FAIL` <br/> If $WS_n - WS_{n-i}$ > `EPS` then flag = 1 end	if                     |
+| Suspect=3 | It	is	possible	but	unlikely	that	the present	observation	and	the	two previous	observations	would	be equal.	When	the	three	most	recent observations	are	equal, $WS_n$ is flagged	suspect. | If	flag=4,	end <br>Flag=3 <br/>`For i=1`, `REP_CNT_SUSPECT` <br>If  $WS_n$ - $WS_{n-i}$ > `EPS` then	flag = 1 <br/>end if |
 | Pass=1    | Applies	for	test	pass	condition.                                                                                                                                                                        | N/A                                                                                                     |
 
 Test Exception: None.
@@ -718,7 +725,7 @@ then the $WS_n$ value is flagged.
 | Flags     | Condition                                                                                                                               | Codable	Instructions                                                                         |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.                                                                                               | N/A                                                                                          |
-| Suspect=3 | $WS_n$ fails	the	rate	of	change	and	the second	variable	(barometric	pressure, for	example)	does	not	exceed	the rate	of	change. | $If	 abs(WS_n$ – WS_{n-1})  > N_WSMV_DEV * SD_WS$ `AND` abs(BPn – BPn-1)  < N_BP_DEV * SD_BP$,	flag	=	3 |
+| Suspect=3 | $WS_n$ fails	the	rate	of	change	and	the second	variable	(barometric	pressure, for	example)	does	not	exceed	the rate	of	change. | If abs($WS_n$ – $WS_{n-1}$) > `N_WSMV_DEV * SD_WS$` AND abs($BP_n – BP_{n-1}$) < `N_BP_DEV * SD_BP`,	flag	=	3 |
 | Pass=1    |                                                                                                                                         | N/A                                                                                          |
 
 Test Exception: None.
@@ -746,8 +753,8 @@ This test inspects for an SD value or a range variation (`MAX-MIN`) value that f
 
 | Flags     | Condition                                                      | Codable	Instructions                                                                                                                |
 |-----------|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Fail=4    | Variation	fails	to	meet	the	minimum threshold	`MIN_VAR_FAIL`. | If	During	`TST_TIM,	SD < MIN_VAR_FAIL`, or During	`TST_TIM,	MAX-MIN	< MIN_VAR_FAIL`, flag	=	4 < MIN_VAR_FAIL, < MIN_VAR_FAIL,> |
-| Suspect=3 | Variation	fails	to	meet	the	minimum threshold	MIN_VAR_WARN. | If	During	`TST_TIM,	SD < MIN_VAR_WARN`, or During	`TST_TIM,	MAX-MIN	< MIN_VAR_WARN`, flag	=	3 <MIN_VAR_WARN, <MIN_VAR_WARN,> |
+| Fail=4    | Variation	fails	to	meet	the	minimum threshold	`MIN_VAR_FAIL`. | If	During	`TST_TIM`,	`SD` < `MIN_VAR_FAIL`, or During `TST_TIM`,	`MAX-MIN`	< `MIN_VAR_FAIL`, flag	=	4 |
+| Suspect=3 | Variation	fails	to	meet	the	minimum threshold	MIN_VAR_WARN. | If	During	`TST_TIM`,	`SD` < `MIN_VAR_WARN`, or During	`TST_TIM`, `MAX-MIN` < `MIN_VAR_WARN`, flag	=	3 |
 | Pass=1    | Applies	for	test	pass	condition.                               | N/A                                                                                                                                 |
 
 Test Exception: None.
@@ -763,9 +770,9 @@ A related problem occurs with sonic anemometers when droplets of water bead on t
 The speed of sound is faster in water, complicating the interpretation of the observations.
 The consequences of this problem are not easily identified in wind speeds but can be a serious problem if the instrument is used to measure a momentum flux.
 
-#### **Test 11 - Neighbor Test (Suggested)**
+**Test 11 - Neighbor Test (Suggested)**
 
-#### Comparison to nearby sensors.
+Comparison to nearby sensors.
 
 This check has the potential to be the most useful test when a nearby second sensor is determined to have a similar response.
 
@@ -779,12 +786,12 @@ and this test should not be overlooked where it may have application.
 This test is the same as Test 9),
 _Multi-Variate Check_ – comparison to other variables where the second variable is the second sensor. The selected thresholds depend entirely upon the relationship between the two sensors as determined by the local knowledge of the operator.
 
-In the instructions and examples below, data from one site (`WS1`) are compared to a second site (WS2). The standard deviation for each site (`SD1`, `SD2`) is calculated over the period (`TIM_DEV`) and multiplied as appropriate (`N_WS1_DEV for site WS1`) to calculate the rate of change threshold. Note that an operator could also choose to use the same threshold for each site, since the sites are presumed to be similar. A unique and highly valuable version of the neighbor check is the surrogate use of wind forecasts. These 'virtual neighbor' constructs offer a QC check that is also presumed to be similar—again, within userselected thresholds.
+In the instructions and examples below, data from one site (`WS1`) are compared to a second site (`WS2`). The standard deviation for each site (`SD1`, `SD2`) is calculated over the period (`TIM_DEV`) and multiplied as appropriate (`N_WS1_DEV` for site `WS1`) to calculate the rate of change threshold. Note that an operator could also choose to use the same threshold for each site, since the sites are presumed to be similar. A unique and highly valuable version of the neighbor check is the surrogate use of wind forecasts. These 'virtual neighbor' constructs offer a QC check that is also presumed to be similar—again, within userselected thresholds.
 
 | Flags     | Condition                                                                                                 | Codable	Instructions                                                                         |
 |-----------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.                                                                 | N/A                                                                                          |
-| Suspect=3 | WS1n fails	the	rate	of	change	and the	second	sensor WS2n does	not exceed	the	rate	of	change. | `If	 WS1n – WS1n-1  > N_WS1_DEV * SD1 AND WS2n – WS2n-1  < N_WS2_DEV * SD2`,	flag	=	3 |
+| Suspect=3 | $WS1_n$ fails	the	rate	of	change	and the	second	sensor WS2n does	not exceed	the	rate	of	change. | If $WS1_n – WS1_{n-1}$  > `N_WS1_DEV` * `SD1` AND $WS2_n – WS2_{n-1}$  < `N_WS2_DEV` * `SD2`,	flag	=	3 |
 | Pass=1    |                                                                                                           | N/A                                                                                          |
 
 Test Exception: There is no adequate neighbor.
@@ -852,7 +859,7 @@ This process allows for QC manual updates as technology development occurs for b
 
 > Vagel, S., W. Large, and D. Farmer, 1990: An Evaluation of the WOTAN Technique of Inferring Oceanic Winds from Underwater Ambient Sound. *Journal of Atmospheric and Oceanic Technology*, Vol. 7, p. 576-595. http://journals.ametsoc.org/doi/abs/10.1175/1520- 0426(1990)007%3C0576%3AAEOTWT%3E2.0.CO%3B2
 
- > WMO 1983. Guide to Meteorological Instruments and Methods of Observation. World Meteorological Organization No. 8, 5th edition, Geneva Switzerland.
+> WMO 1983. Guide to Meteorological Instruments and Methods of Observation. World Meteorological Organization No. 8, 5th edition, Geneva Switzerland.
 
 Additional References to Related Documents:
 
@@ -870,8 +877,7 @@ Additional References to Related Documents:
 
 > U.S. IOOS QARTOD Project Plan, February 18, 2012. http://www.ioos.noaa.gov/qartod/meetings.html
 
-**CHECK IT**
-Supporting Documents Found on the [QARTOD Website] (https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-wind-data/):
+Supporting Documents Found on the [QARTOD Website](https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-wind-data/):
 
 - Report from the COL-NASA Data QA/QC Workshop: http://www.ioos.noaa.gov/qartod/dissolved_oxygen/data_qc_workshop_final_report20120_08_7.pdf
 
@@ -1079,7 +1085,7 @@ The following samples provide hints for development of deployment checklists tak
 - [ ] Check the sensor history for past calibrations, including a plot over time of deviations from the standard for <u>each</u> (this will help identify trends such a progressively poorer performance). Control chart calibrations.
 - [ ] Check the sensor history for past repairs, maintenance, and calibration.
 - [ ] Consider storing and shipping information before deploying.
-  - [ ] Heat, cold, vibration, etc.
+  - Heat, cold, vibration, etc.
 - [ ] Provide detailed documentation.
 - [ ] Record operator/user experiences with this sensor after reading the manual.
 - [ ] Search the literature for information on your particular sensor(s) to see what experiences other researchers may have had with the sensor(s).
