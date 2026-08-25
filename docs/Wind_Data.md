@@ -6,7 +6,10 @@ DOIII
 
 ## Acknowledgements
 
-We are grateful to our entire Wind Manual Team, whose names are listed in appendix B. Special thanks go to those who served on the Wind Manual Committee and provided content and suggestions for the initial draft, as well as all who reviewed each draft and provided valuable feedback.
+We are grateful to our entire Wind Manual Team,
+whose names are listed in appendix B.
+Special thanks go to those who served on the Wind Manual Committee and provided content and suggestions for the initial draft,
+as well as all who reviewed each draft and provided valuable feedback.
 
 ## Acronyms and Abbreviations
 
