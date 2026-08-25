@@ -377,21 +377,21 @@ and *n-2*.
 
 ### 3.1 QC Flags
 
-Data are evaluated using QC tests, 
-and the results of those tests are recorded by inserting flags in the data files. 
-Table 3-1 provides the set of flags and associated descriptions adopted by the International Oceanographic Data and Information Exchange in 2013 and subsequently by U.S. IOOS. 
-Additional flags may be incorporated to provide more detailed information to assist with troubleshooting. 
-For example, 
-an observation may fail the wind speed neighbor test and be flagged as having failed. 
-If the data failed the wind speed neighbor test because the observation is too low, 
-a second-tier "failed low" flag may indicate that the value was lower than allowed by a preset threshold. 
-Such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for QC of real-time data. 
-However, 
+Data are evaluated using QC tests,
+and the results of those tests are recorded by inserting flags in the data files.
+Table 3-1 provides the set of flags and associated descriptions adopted by the International Oceanographic Data and Information Exchange in 2013 and subsequently by U.S. IOOS.
+Additional flags may be incorporated to provide more detailed information to assist with troubleshooting.
+For example,
+an observation may fail the wind speed neighbor test and be flagged as having failed.
+If the data failed the wind speed neighbor test because the observation is too low,
+a second-tier "failed low" flag may indicate that the value was lower than allowed by a preset threshold.
+Such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for QC of real-time data.
+However,
 all flags should be identified and defined in the data's metadata.
 
-Further post-processing of the data may yield different conclusions from those reached during initial assessments. 
-Flags set in real time should not be changed, 
-ensuring that historical documentation is preserved. 
+Further post-processing of the data may yield different conclusions from those reached during initial assessments.
+Flags set in real time should not be changed,
+ensuring that historical documentation is preserved.
 Results from post processing should generate another set of flags corresponding to a revised version of the data.
 
 | **Flag**                      | **Description**                                                                                                                                                                      |
@@ -406,23 +406,23 @@ Results from post processing should generate another set of flags corresponding 
 
 ### 3.2 Test Hierarchy
 
-This section outlines eleven real-time QC tests that are required, 
-recommended, 
-or suggested for wind measurements. 
-Operators should also consider that some of these tests can be carried out within the instrument, 
-where thresholds can be defined in configuration files. 
-Although more tests may imply a more robust QC effort, 
-there are many reasons operators could use to justify not conducting some tests. 
-In those cases, 
-operators need only to document reasons these tests do not apply to their observations. 
-Such flexibility is needed to support the U.S. IOOS effort, 
-since the number of tests conducted and the justification for not applying some tests are useful for evaluating an operator's skill levels. 
-Tests are listed in table 3-2 and are divided into three groups: 
-those that are required, 
-strongly recommended, 
-or suggested. 
-However, 
-for some critical real-time applications with high risk operations, 
+This section outlines eleven real-time QC tests that are required,
+recommended,
+or suggested for wind measurements.
+Operators should also consider that some of these tests can be carried out within the instrument,
+where thresholds can be defined in configuration files.
+Although more tests may imply a more robust QC effort,
+there are many reasons operators could use to justify not conducting some tests.
+In those cases,
+operators need only to document reasons these tests do not apply to their observations.
+Such flexibility is needed to support the U.S. IOOS effort,
+since the number of tests conducted and the justification for not applying some tests are useful for evaluating an operator's skill levels.
+Tests are listed in table 3-2 and are divided into three groups:
+those that are required,
+strongly recommended,
+or suggested.
+However,
+for some critical real-time applications with high risk operations,
 it may be advisable to invoke all groups.
 
 |                                     |         |                           |
@@ -443,51 +443,51 @@ it may be advisable to invoke all groups.
 
 ### 3.3 QC Test Descriptions
 
-A variety of tests can be performed on the sensor measurements to evaluate data quality. 
-Testing the timely arrival and integrity of the data transmission itself is a first step. 
-If the data are corrupted during transmission, 
-further testing may be irrelevant. 
-The checks defined in these eleven tests evaluate data through various comparisons to other data and to the expected conditions in the given environment. 
+A variety of tests can be performed on the sensor measurements to evaluate data quality.
+Testing the timely arrival and integrity of the data transmission itself is a first step.
+If the data are corrupted during transmission,
+further testing may be irrelevant.
+The checks defined in these eleven tests evaluate data through various comparisons to other data and to the expected conditions in the given environment.
 The tests listed in this section presume a time-ordered series of observations and denote the most recent observation as previously described.
 
-Some effort will be needed to select the best thresholds, 
-which are determined at the operator level and may require multiple iterations of trial and error before final selections are made. 
-A successful QC effort is highly dependent upon selection of the proper thresholds, 
-which should not be determined arbitrarily but can be based on historical knowledge or statistics derived from recently acquired data. 
-Although this manual provides some guidance for selecting thresholds based on input from various operators, 
-it is assumed that operators have the necessary expertise and interest in selecting the proper thresholds to maximize the value of their QC effort. 
-Operators should openly provide thresholds as metadata for user support. 
-The selection of wind thresholds may be dependent upon the real-time application, (e.g., onset of a coastal sea breeze or observation of a hurricane maximum gust). 
+Some effort will be needed to select the best thresholds,
+which are determined at the operator level and may require multiple iterations of trial and error before final selections are made.
+A successful QC effort is highly dependent upon selection of the proper thresholds,
+which should not be determined arbitrarily but can be based on historical knowledge or statistics derived from recently acquired data.
+Although this manual provides some guidance for selecting thresholds based on input from various operators,
+it is assumed that operators have the necessary expertise and interest in selecting the proper thresholds to maximize the value of their QC effort.
+Operators should openly provide thresholds as metadata for user support.
+The selection of wind thresholds may be dependent upon the real-time application, (e.g., onset of a coastal sea breeze or observation of a hurricane maximum gust).
 This shared information will help U.S. IOOS to document standardized thresholds that will be included in future releases of this manual.
 
 #### 3.3.1 Applications of QC Tests to Wind Sensors
 
-These eleven tests require operators to select a variety of thresholds. 
-Examples are provided in the following test tables; 
-however, 
-operators are in the best position to determine the appropriate thresholds for their operations. 
-Wind speed (WS) is used in the descriptions and examples, 
-but the tests apply equally to direction and gust in most cases. 
-A discontinuity in wind direction is caused when the wind veers through north, stepping from 359° to 0° and complicating the application of some of these tests. 
-Operators may choose to conduct wind direction tests on the *u* and *v* wind direction components to circumvent the problem. 
-Some tests rely on multiple data points most recently received to determine the quality of the latest data point. When this series of data points reveals that the entire group fails, 
-the most recent data point is flagged, 
-but the previous flags are not changed. 
-This action supports the view that historical flags are generally not altered. The first example is in Test 8, the Flat Line Test, 
-where this scenario will become clearer. 
-The exception to the rule occurs for Test 6 Spike Check, 
-where the most recent point must be flagged as "2 Not Evaluated" 
-until the next point arrives and the spike check can be performed. For additional information regarding flags, 
+These eleven tests require operators to select a variety of thresholds.
+Examples are provided in the following test tables;
+however,
+operators are in the best position to determine the appropriate thresholds for their operations.
+Wind speed (WS) is used in the descriptions and examples,
+but the tests apply equally to direction and gust in most cases.
+A discontinuity in wind direction is caused when the wind veers through north, stepping from 359° to 0° and complicating the application of some of these tests.
+Operators may choose to conduct wind direction tests on the *u* and *v* wind direction components to circumvent the problem.
+Some tests rely on multiple data points most recently received to determine the quality of the latest data point. When this series of data points reveals that the entire group fails,
+the most recent data point is flagged,
+but the previous flags are not changed.
+This action supports the view that historical flags are generally not altered. The first example is in Test 8, the Flat Line Test,
+where this scenario will become clearer.
+The exception to the rule occurs for Test 6 Spike Check,
+where the most recent point must be flagged as "2 Not Evaluated"
+until the next point arrives and the spike check can be performed. For additional information regarding flags,
 see the *Manual for the Use of Real-Time Oceanographic Data Quality Control Flags* (U.S. IOOS 2014) posted on the U.S. IOOS QARTOD website.
 
 **Test 1 - Timing/Gap Test (Required)**
 
 Check for arrival of data.
 Test determines that the most recent data point has been measured and received within the expected time window (`TIM_INC`) and has the correct time stamp (`TIM_STMP`).
-**Note:** For those systems that do not update at regular intervals (Argos telemetry, for example), 
-a large value for `TIM_STMP` can be assigned. 
-The gap check is not a solution for all timing errors. 
-Data could be measured or received earlier than expected. 
+**Note:** For those systems that do not update at regular intervals (Argos telemetry, for example),
+a large value for `TIM_STMP` can be assigned.
+The gap check is not a solution for all timing errors.
+Data could be measured or received earlier than expected.
 This test does not address all clock drift/jump issues.
 
 | Flags       | Condition                          | Codable Instructions                    |
@@ -505,15 +505,15 @@ Example: `TIM_INC = 1 hour`
 **Test 2 - Syntax Test (Required)**
 
 Check to ensure that the message is structured properly.
-Received data message (full message) contains the proper structure without any indicators of flawed transmission such as parity errors. 
-Possible tests are: 
-a) the expected number of characters (NCHAR) for fixed-length messages equals the number of characters received (`REC_CHAR`), 
-or 
+Received data message (full message) contains the proper structure without any indicators of flawed transmission such as parity errors.
+Possible tests are:
+a) the expected number of characters (NCHAR) for fixed-length messages equals the number of characters received (`REC_CHAR`),
+or
 b) passes a standard parity bit check, cyclic redundancy check, etc. Many such syntax tests exist, and the user should select the best criteria for one or more syntax tests.
-Capabilities for dealing with flawed messages vary among operators; 
-some may have the ability to parse messages to extract data within the flawed message sentence before the flaw. 
-A syntax check is performed only at the message level and not within the message content. 
-In cases where a data record requires multiple messages, 
+Capabilities for dealing with flawed messages vary among operators;
+some may have the ability to parse messages to extract data within the flawed message sentence before the flaw.
+A syntax check is performed only at the message level and not within the message content.
+In cases where a data record requires multiple messages,
 this check can be performed at the message level but is not used to check message content.
 
 | Flags       | Condition                                                      | Codable Instructions               |
@@ -531,14 +531,14 @@ Example: `NCHAR = 128`
 **Test 3 - Location Test (Required)**
 
 Check for reasonable geographic location.
-Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits. 
-The location test(s) can vary from: 
-1) a simple invalid location, 
-to 
-2) a more complex check for displacement (DISP) exceeding a distance limit `RANGEMAX` based upon a previous location and platform speed. 
-Operators may also check for 
-3) erroneous locations based upon other criteria, 
-such as reported positions over land, 
+Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits.
+The location test(s) can vary from:
+1) a simple invalid location,
+to
+2) a more complex check for displacement (DISP) exceeding a distance limit `RANGEMAX` based upon a previous location and platform speed.
+Operators may also check for
+3) erroneous locations based upon other criteria,
+such as reported positions over land,
 as appropriate.
 
 | Flags     | Condition                        | Codable	Instructions                    |
@@ -560,13 +560,13 @@ Example 3: Buoy position resides within land mask.
 **Test 4 - Gross Range Test (Required)**
 
 Data point exceeds sensor or operator-selected min/max.
-All sensors have a limited output range, and this can form the most rudimentary gross range check. 
-No values less than a minimum value or greater than the maximum value the sensor can output (`SENSOR_MIN`, `SENSOR_MAX`) are acceptable. 
-Additionally, 
-the operator can select a smaller span (`USER_MIN`, `USER_MAX`) based upon local knowledge or a desire to draw attention to extreme values. 
+All sensors have a limited output range, and this can form the most rudimentary gross range check.
+No values less than a minimum value or greater than the maximum value the sensor can output (`SENSOR_MIN`, `SENSOR_MAX`) are acceptable.
+Additionally,
+the operator can select a smaller span (`USER_MIN`, `USER_MAX`) based upon local knowledge or a desire to draw attention to extreme values.
 An obvious gross range check is wind direction 0-360°.
 
-**NOTE:** Operators may choose to flag as suspect values that exceed the calibration span but not the hardware limits 
+**NOTE:** Operators may choose to flag as suspect values that exceed the calibration span but not the hardware limits
 (e.g., a value that sensor is not capable of producing).
 
 | Flags     | Condition                           | Codable	Instructions          |
@@ -591,12 +591,12 @@ Examples:
 
 Test that data point falls within seasonal expectations.
 
-This test is a variation on the gross range check, where the gross range `Season_MAX` and `Season_MIN` are adjusted monthly, 
-seasonally, 
-or at some other operator-selected time period (`TIM_TST`). 
-Expertise of the local operator using long historical records is the best method to determine reasonable seasonal averages longer time series permit more refined identification of appropriate thresholds. 
+This test is a variation on the gross range check, where the gross range `Season_MAX` and `Season_MIN` are adjusted monthly,
+seasonally,
+or at some other operator-selected time period (`TIM_TST`).
+Expertise of the local operator using long historical records is the best method to determine reasonable seasonal averages longer time series permit more refined identification of appropriate thresholds.
 Additional climatology guidance is available at http://www.ncdc.noaa.gov/societal-impacts/wind/mean/2014/4, http://numbat.coas.oregonstate.edu/cogow,
-http://iridl.ldeo.columbia.edu/maproom/Global/Climatologies/Vector\_Winds.html, 
+http://iridl.ldeo.columbia.edu/maproom/Global/Climatologies/Vector\_Winds.html,
 and from the NCEP/NCAR Reanalysis 1, 2 and 3 (now CFSR).
 
 | Flags     | Condition                                                                                                                                                         | Codable	Instructions                                       |
@@ -607,7 +607,7 @@ and from the NCEP/NCAR Reanalysis 1, 2 and 3 (now CFSR).
 
 Test Exception:  None.
 
-Test specifications to be established locally by operator: 
+Test specifications to be established locally by operator:
 A seasonal matrix of `WSmax` and WSmin values at all `TIM_TST` intervals.
 
 Examples:  `SPRING_MIN = 0 m/s`, `SPRING_MAX = 60 m/s`
@@ -616,17 +616,17 @@ Examples:  `SPRING_MIN = 0 m/s`, `SPRING_MAX = 60 m/s`
 
 Data point $n-1$ exceeds a selected threshold relative to adjacent data points.
 
-This check is for single-value spikes, specifically the value at point *n*-1. 
-Spikes consisting of more than one data point are difficult to capture, 
-but their onset may be flagged by the rate of change test. 
-The spike test consists of two operator-selected thresholds, `THRSHLD_LOW` and `THRSHLD_HIGH`. 
-Adjacent data points ($n_{-2}$ and $n_0$) are averaged to form a spike reference (`SPK_REF`). 
-The absolute value of the spike is tested to capture positive and negative spikes. Large spikes are easier to identify as outliers and flag as failures. 
-Smaller spikes may be real and are only flagged suspect. 
-The thresholds may be fixed values or dynamically established (for example, 
+This check is for single-value spikes, specifically the value at point *n*-1.
+Spikes consisting of more than one data point are difficult to capture,
+but their onset may be flagged by the rate of change test.
+The spike test consists of two operator-selected thresholds, `THRSHLD_LOW` and `THRSHLD_HIGH`.
+Adjacent data points ($n_{-2}$ and $n_0$) are averaged to form a spike reference (`SPK_REF`).
+The absolute value of the spike is tested to capture positive and negative spikes. Large spikes are easier to identify as outliers and flag as failures.
+Smaller spikes may be real and are only flagged suspect.
+The thresholds may be fixed values or dynamically established (for example,
 a multiple of the standard deviation over an operator-selected period).
 
-An alternative is a third difference test defined as 
+An alternative is a third difference test defined as
 $Diff_n = WS_{n-3} - 3 * WS_{n-2} + 3 * WS_{n-1} - WS_n$.
 
 | Flags     | Condition                        | Codable	Instructions                             |
@@ -642,31 +642,31 @@ Test specifications to be established locally by the operator.
 
 Examples: `THRSHLD_LOW = 20 m/s`, `THRSHLD_HIGH = 40 m/s`
 
-**Note:** For one-minute sampling, 
-a threshold proportional to the 97th or 98th percentile of first differences is effective given enough recent data to robustly calculate this threshold. 
-This flexible standard is particularly useful for ships, 
+**Note:** For one-minute sampling,
+a threshold proportional to the 97th or 98th percentile of first differences is effective given enough recent data to robustly calculate this threshold.
+This flexible standard is particularly useful for ships,
 which can traverse a wide range of conditions and sensors in areas with large synoptic or seasonal scale variability.
 
 **Test 7 - Rate of Change Test (Strongly Recommended)
 
 Excessive rise/fall test.
 
-This test inspects the time series for a time rate of change that exceeds a threshold value identified by the operator. 
-Wind speed, 
-direction, 
-and gust values can change substantially over short periods in all locations, hindering the value of this test. 
-A balance must be found between a threshold set too low, 
-which triggers too many false alarms, and one set too high, 
-making the test ineffective. 
-Test implementation can be challenging. 
-Upon failure, 
-it is unknown which point is bad. 
-Further, 
-upon failing a data point, 
-it remains to be determined how the next iteration can be handled. 
+This test inspects the time series for a time rate of change that exceeds a threshold value identified by the operator.
+Wind speed,
+direction,
+and gust values can change substantially over short periods in all locations, hindering the value of this test.
+A balance must be found between a threshold set too low,
+which triggers too many false alarms, and one set too high,
+making the test ineffective.
+Test implementation can be challenging.
+Upon failure,
+it is unknown which point is bad.
+Further,
+upon failing a data point,
+it remains to be determined how the next iteration can be handled.
 The following suggests one approach to implementation of a threshold:
 
-The rate of change between $WS_{n-1}$ and $WS_n$ must be less than three standard deviations (`3*SD`) of first differences. 
+The rate of change between $WS_{n-1}$ and $WS_n$ must be less than three standard deviations (`3*SD`) of first differences.
 The local operator can determine both the number of SDs (`N_DEV`) and the period over which the SD is calculated (`TIM_DEV`).
 
 | Flags     | Condition                                             | Codable	Instructions                     |
@@ -685,12 +685,12 @@ Examples: `N_DEV = 3`, `TIM_DEV = 8 hours`.
 
 Invariant value.
 
-When some sensors and/or data DCPs fail, 
-the result can be a continuously repeated observation of the same value. 
-This test compares the present observation ($n$) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations. 
-Observation $n$ is flagged if it has the same value as previous observations within a tolerance value, 
-EPS, 
-to allow for numerical round-off error. 
+When some sensors and/or data DCPs fail,
+the result can be a continuously repeated observation of the same value.
+This test compares the present observation ($n$) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations.
+Observation $n$ is flagged if it has the same value as previous observations within a tolerance value,
+EPS,
+to allow for numerical round-off error.
 Note that historical flags are not changed.
 
 | Flags     | Condition                                                                                                                                                                                               | Codable	Instructions                                                                                    |
@@ -709,18 +709,18 @@ Examples: `REP_CNT_FAIL = 5`, `REP_CNT_SUSPECT= 3`, `EPS = 0.5 m/s`, in some ins
 
 Comparison to other variables.
 
-This is an advanced family of tests, 
-starting with the simpler test described here and anticipating growth towards full co-variance testing in the future. 
-It is doubtful that anyone is conducting tests such as these in real time. 
-As these tests are developed and implemented, 
+This is an advanced family of tests,
+starting with the simpler test described here and anticipating growth towards full co-variance testing in the future.
+It is doubtful that anyone is conducting tests such as these in real time.
+As these tests are developed and implemented,
 they should be documented and standardized in later versions of this manual.
-This example pairs rate of change tests as described in Test 7. 
-The WS rate of change test is conducted with a more restrictive threshold (`N_WSMV_DEV`). 
-If this test fails, 
-a second rate of change test operating on a second variable (barometric pressure [BP], for example) is conducted. 
-The absolute value rate of change should be tested, 
-since the relationship between `WS` and the second variable may be indeterminate. 
-If the rate of change test on the second variable fails to exceed a threshold (e.g., an anomalous step is found in WS and is lacking in barometric pressure), 
+This example pairs rate of change tests as described in Test 7.
+The WS rate of change test is conducted with a more restrictive threshold (`N_WSMV_DEV`).
+If this test fails,
+a second rate of change test operating on a second variable (barometric pressure [BP], for example) is conducted.
+The absolute value rate of change should be tested,
+since the relationship between `WS` and the second variable may be indeterminate.
+If the rate of change test on the second variable fails to exceed a threshold (e.g., an anomalous step is found in WS and is lacking in barometric pressure),
 then the $WS_n$ value is flagged.
 
 | Flags     | Condition                                                                                                                               | Codable	Instructions                                                                         |
@@ -735,21 +735,21 @@ Test specifications to be established locally by the operator.
 
 Examples: `N_WSMV_DEV = 2`, `N_BP_DEV=2`, `TIM_DEV = 8 hours`
 
-**NOTE:** In a more complex case, more than one secondary rate of change test can be conducted. 
-Wind direction or air temperature could be possible secondary candidates to be checked for anomalous rate of change values. 
-In this case, 
-a knowledgeable operator may elect to assign a pass flag to a high rate of change observation when any one of the secondary variables also exhibits a high rate of change. Such tests border on modeling, 
+**NOTE:** In a more complex case, more than one secondary rate of change test can be conducted.
+Wind direction or air temperature could be possible secondary candidates to be checked for anomalous rate of change values.
+In this case,
+a knowledgeable operator may elect to assign a pass flag to a high rate of change observation when any one of the secondary variables also exhibits a high rate of change. Such tests border on modeling,
 should be carefully considered, and may be beyond the scope of this effort.
 
-The QARTOD wind committee recognized the high value in full co-variance testing but also noted the challenges. 
+The QARTOD wind committee recognized the high value in full co-variance testing but also noted the challenges.
 Such testing remains to be a research project not yet ready for operational implementation.
 
 **Test 10 - Attenuated Signal Test (Suggested)**
 
 A test for inadequate variation of the time series.
 
-A common sensor failure mode can provide a data series that is nearly but not exactly a flat line. 
-Badly worn bearings, a failed grounding wire, signal crosstalk, or inadequate wire shielding might cause such a failure. 
+A common sensor failure mode can provide a data series that is nearly but not exactly a flat line.
+Badly worn bearings, a failed grounding wire, signal crosstalk, or inadequate wire shielding might cause such a failure.
 This test inspects for an SD value or a range variation (`MAX-MIN`) value that fails to exceed threshold values (`MIN_VAR_WARN`, `MIN_VAR_FAIL`) over a selected time period (`TST_TIM`).
 
 | Flags     | Condition                                                      | Codable	Instructions                                                                                                                |
@@ -766,9 +766,9 @@ Examples: `TST_TIM = 12 hours`
 
 `MIN_VAR_WARN= ?`, `MIN_VAR_FAIL= ?`
 
-**Note:** This type of failure mode is rare for most anemometers, occurring at very low speeds for cup anemometers. 
-A related problem occurs with sonic anemometers when droplets of water bead on the transmitter and receiver. 
-The speed of sound is faster in water, complicating the interpretation of the observations. 
+**Note:** This type of failure mode is rare for most anemometers, occurring at very low speeds for cup anemometers.
+A related problem occurs with sonic anemometers when droplets of water bead on the transmitter and receiver.
+The speed of sound is faster in water, complicating the interpretation of the observations.
 The consequences of this problem are not easily identified in wind speeds but can be a serious problem if the instrument is used to measure a momentum flux.
 
 #### **Test 11 - Neighbor Test (Suggested)**
@@ -777,14 +777,14 @@ The consequences of this problem are not easily identified in wind speeds but ca
 
 This check has the potential to be the most useful test when a nearby second sensor is determined to have a similar response.
 
-Ideally, redundant sensors utilizing different technology would be co-located and alternately serviced at different intervals. 
+Ideally, redundant sensors utilizing different technology would be co-located and alternately serviced at different intervals.
 This close neighbor would provide the ultimate QC check, but cost prohibits such a deployment in most cases.
 
-However, 
-there are few instances where a second sensor is sufficiently proximate to provide a useful QC check. Wind observations are more readily compared to adjacent sites than many non-conservative observations (such as dissolved oxygen, for example), 
+However,
+there are few instances where a second sensor is sufficiently proximate to provide a useful QC check. Wind observations are more readily compared to adjacent sites than many non-conservative observations (such as dissolved oxygen, for example),
 and this test should not be overlooked where it may have application.
 
-This test is the same as Test 9), 
+This test is the same as Test 9),
 _Multi-Variate Check_ – comparison to other variables where the second variable is the second sensor. The selected thresholds depend entirely upon the relationship between the two sensors as determined by the local knowledge of the operator.
 
 In the instructions and examples below, data from one site (`WS1`) are compared to a second site (WS2). The standard deviation for each site (`SD1`, `SD2`) is calculated over the period (`TIM_DEV`) and multiplied as appropriate (`N_WS1_DEV for site WS1`) to calculate the rate of change threshold. Note that an operator could also choose to use the same threshold for each site, since the sites are presumed to be similar. A unique and highly valuable version of the neighbor check is the surrogate use of wind forecasts. These 'virtual neighbor' constructs offer a QC check that is also presumed to be similar—again, within userselected thresholds.
@@ -803,36 +803,36 @@ Examples: `N_WS1_DEV = 2`, `N_WS2_DEV=2`, `TIM_DEV = 8 hours`
 
 ## 4.0 Summary
 
-The QC tests in this wind manual have been compiled using the guidance provided by all QARTOD workshops (QARTOD 2003-2009). 
-Test suggestions came from operators with extensive experience (see appendix B). 
-Wherever possible, 
-redundant tests have been merged. 
-In some instances, 
-tests have been simplified and are less rigorous than those offered by established providers of wind data. 
+The QC tests in this wind manual have been compiled using the guidance provided by all QARTOD workshops (QARTOD 2003-2009).
+Test suggestions came from operators with extensive experience (see appendix B).
+Wherever possible,
+redundant tests have been merged.
+In some instances,
+tests have been simplified and are less rigorous than those offered by established providers of wind data.
 A balance must be struck between the time-sensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.
 
-The eleven data QC tests identified in this manual apply to wind observations from a variety of sensor types and platforms that may be used in U.S. IOOS applications. 
-Since several existing programs, 
-such as those of NDBC and WMO, 
-have already developed QC tests that are similar to the U.S. IOOS QARTOD tests in this manual, 
-the QARTOD wind speed committee's objective is for U.S. IOOS QARTOD requirements and recommendations to be in accord with the QC tests of existing programs. 
-The individual tests are described and include codable instructions, 
-output conditions, 
-example thresholds, 
+The eleven data QC tests identified in this manual apply to wind observations from a variety of sensor types and platforms that may be used in U.S. IOOS applications.
+Since several existing programs,
+such as those of NDBC and WMO,
+have already developed QC tests that are similar to the U.S. IOOS QARTOD tests in this manual,
+the QARTOD wind speed committee's objective is for U.S. IOOS QARTOD requirements and recommendations to be in accord with the QC tests of existing programs.
+The individual tests are described and include codable instructions,
+output conditions,
+example thresholds,
 and exceptions (if any).
 
-Selection of the proper thresholds is critical to a successful QC effort. 
-Thresholds can be based on historical knowledge or statistics derived from more recently acquired data and should not be determined arbitrarily. 
-This manual provides some guidance for selecting thresholds based on input from various operators, 
+Selection of the proper thresholds is critical to a successful QC effort.
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data and should not be determined arbitrarily.
+This manual provides some guidance for selecting thresholds based on input from various operators,
 but also notes that operators need the subject matter expertise in selecting the proper thresholds to maximize the value of their QC effort.
 
-Future QARTOD manuals will address standard QC test procedures and best practices for all types of common as well as uncommon platforms and sensors for all the U.S. IOOS core variables. 
-Some test procedures may even take place within the sensor package. 
-Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream. 
-Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data. 
-However, 
-QARTOD QC test procedures in this manual address only real-time in-situ observations made by sensors on fixed or mobile platforms. 
-The tests do not include post-processing efforts or delayed-mode delivery, 
+Future QARTOD manuals will address standard QC test procedures and best practices for all types of common as well as uncommon platforms and sensors for all the U.S. IOOS core variables.
+Some test procedures may even take place within the sensor package.
+Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream.
+Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data.
+However,
+QARTOD QC test procedures in this manual address only real-time in-situ observations made by sensors on fixed or mobile platforms.
+The tests do not include post-processing efforts or delayed-mode delivery,
 which is required for climate studies.
 
 Each QC manual is envisioned as a dynamic document and will be posted on the QARTOD website at <https://ioos.noaa.gov/project/qartod>.
@@ -922,70 +922,70 @@ Supporting Web Links
 
 ## Appendix A. Quality Assurance
 
-A major pre-requisite for establishing quality control standards for wind measurements is a strong quality assurance program. 
-Remember the mantra that good QC requires good QA, 
-and good QA requires good scientists, 
-engineers, 
+A major pre-requisite for establishing quality control standards for wind measurements is a strong quality assurance program.
+Remember the mantra that good QC requires good QA,
+and good QA requires good scientists,
+engineers,
 and technicians.
 
-A good QA effort continually seeks to ensure that end data products are of high value and strives to prove they are free of error. 
-Operators should seek out partnering opportunities to inter-compare systems by colocation of differing sensors, 
-thereby demonstrating high quality by both to the extent that there is agreement and providing a robust measure of observation accuracy by the level of disagreement. 
-Operators should also, 
-if possible, 
+A good QA effort continually seeks to ensure that end data products are of high value and strives to prove they are free of error.
+Operators should seek out partnering opportunities to inter-compare systems by colocation of differing sensors,
+thereby demonstrating high quality by both to the extent that there is agreement and providing a robust measure of observation accuracy by the level of disagreement.
+Operators should also,
+if possible,
 retain an alternate sensor or technology from a second vendor for similar in-house checks.
 
-The lists in the following sections suggest ways to ensure QA by using specific procedures and techniques. 
+The lists in the following sections suggest ways to ensure QA by using specific procedures and techniques.
 Operators should also follow instructions provided by the sensor manufacturer.
 
 ### A.1 Sensor Calibration Considerations
 
-Observations must be traceable to one or more accepted standards through a calibration performed by the manufacturer and/or the operator. 
-If the calibration is conducted by the manufacturer, 
+Observations must be traceable to one or more accepted standards through a calibration performed by the manufacturer and/or the operator.
+If the calibration is conducted by the manufacturer,
 the operator must also conduct some form of an acceptable calibration check.
 
-NIST provides a wealth of information on standards and calibrations for many variables, 
-including wind observations (http://www.nist.gov/calibrations/upload/sp250_79-2.pdf). 
+NIST provides a wealth of information on standards and calibrations for many variables,
+including wind observations (http://www.nist.gov/calibrations/upload/sp250_79-2.pdf).
 Virtually all manufacturers provide calibrations traceable to NIST standards as part of their standard product services.
 
-An often overlooked calibration or calibration check can be performed by choosing a consensus standard. 
-For example, 
-deriving the same answer (within acceptable levels of data precision or data uncertainty) from four different sensors of four different vendors, 
-preferably utilizing several different technologies, 
-constitutes an acceptable check. 
+An often overlooked calibration or calibration check can be performed by choosing a consensus standard.
+For example,
+deriving the same answer (within acceptable levels of data precision or data uncertainty) from four different sensors of four different vendors,
+preferably utilizing several different technologies,
+constitutes an acceptable check.
 Because of the trend towards corporate conglomeration, those wishing to employ a consensus standard should ensure that the different vendors are truly independent.
 
 ### A.2 Sensor Comparison
 
-An effective QA effort continually strives to ensure that end data products are of high value and to prove they are free of error. 
-Operators should seek out partnering opportunities to inter-compare systems by colocating differing sensors. 
-Agreement of multiple systems would provide a robust observation, 
-while disagreement may offer a measure of data uncertainty. 
-If possible, 
-operators should retain an alternate sensor or technology from a second vendor for similar in-house checks. 
-For resource-constrained operators, 
-however, 
-it may not be possible to spend the time and funds needed to procure and maintain two systems. 
-For those who do so and get two different results, 
-the use of alternate sensors or technologies provide several important messages: 
-a) a measure of corporate capabilities; 
-b) a reason to investigate, understand the different results, and take corrective action; 
-and 
-c) increased understanding that when variables are measured with different technologies, 
-different answers can be correct, 
-and they must be understood in order to properly report results. 
-For those who succeed, 
-the additional sensors provide a highly robust demonstration of capability. 
-Such efforts form the basis of a strong QA/QC effort. 
-Further, 
-it provides the operator with an expanded supply source, 
-permitting less reliance upon a single vendor and providing competition that is often required by procurement offices. 
-Although not real time, 
+An effective QA effort continually strives to ensure that end data products are of high value and to prove they are free of error.
+Operators should seek out partnering opportunities to inter-compare systems by colocating differing sensors.
+Agreement of multiple systems would provide a robust observation,
+while disagreement may offer a measure of data uncertainty.
+If possible,
+operators should retain an alternate sensor or technology from a second vendor for similar in-house checks.
+For resource-constrained operators,
+however,
+it may not be possible to spend the time and funds needed to procure and maintain two systems.
+For those who do so and get two different results,
+the use of alternate sensors or technologies provide several important messages:
+a) a measure of corporate capabilities;
+b) a reason to investigate, understand the different results, and take corrective action;
+and
+c) increased understanding that when variables are measured with different technologies,
+different answers can be correct,
+and they must be understood in order to properly report results.
+For those who succeed,
+the additional sensors provide a highly robust demonstration of capability.
+Such efforts form the basis of a strong QA/QC effort.
+Further,
+it provides the operator with an expanded supply source,
+permitting less reliance upon a single vendor and providing competition that is often required by procurement offices.
+Although not real time,
 an alternative approach to monitoring stability of a sensor is comparison with remotely sensed data from satellite or radar (ideally two additional sources of observations so it is clear which instrument is drifting).
 
 ### A.3 Common QA Considerations
 
-In addition to the more generic QA processes listed below, 
+In addition to the more generic QA processes listed below,
 these critical QA considerations specific to wind observations were highlighted by the manual committee and others who reviewed the manual:
 
 - Carefully address the initial sensor alignment, correcting for magnetic deviation and variation as appropriate, and provide this information in the metadata. For vessel-mounted anemometers, do the same for the vessel heading.
@@ -1032,18 +1032,18 @@ these critical QA considerations specific to wind observations were highlighted 
 - Use NIST-traceable instrumentation when conducting calibrations or calibration checks.
 - A sensor that maintains an internal file of past calibration constants is very useful since it can be downloaded instead of transcribed manually introducing human error.
 
-The calibration constants or deviations from a standard should be plotted over time to determine if the sensor has a drift in one direction or another. 
+The calibration constants or deviations from a standard should be plotted over time to determine if the sensor has a drift in one direction or another.
 A sudden change can indicate a problem with the sensor or the last calibration.
 
 ### A.4 QA Levels for Best Practices
 
-A wide variety of techniques are used by operators to assure that sensors are properly calibrated and operating within specifications. 
-While all operators must conduct some form of validation, 
-there is no need to force operators to adhere to one single method. 
-A balance exists between available resources, 
-level of proficiency of the operator, 
-and target data reproducibility requirements. 
-The various techniques span a range of validation levels and form a natural hierarchy that can be used to establish levels of certification for operators (table A-1). 
+A wide variety of techniques are used by operators to assure that sensors are properly calibrated and operating within specifications.
+While all operators must conduct some form of validation,
+there is no need to force operators to adhere to one single method.
+A balance exists between available resources,
+level of proficiency of the operator,
+and target data reproducibility requirements.
+The various techniques span a range of validation levels and form a natural hierarchy that can be used to establish levels of certification for operators (table A-1).
 The lists in the following sections suggest ways to ensure QA by using specific procedures and techniques.
 
 | QA	Best	Practices Indicator | Description                                                                                                                                                                                                   |
@@ -1056,16 +1056,16 @@ The lists in the following sections suggest ways to ensure QA by using specific 
 
 ### A.5 Additional Sources of QA Information
 
-Wind sensor operators also have access to other sources of QA practices and information about a variety of instruments. 
-For example, 
-the Alliance for Coastal Technologies (ACT) serves as an unbiased, 
-third party test bed for evaluating sensors and platforms for use in coastal and ocean environments. 
-ACT conducts instrument performance demonstrations and verifications so that effective existing technologies can be recognized and promising new technologies can become available to support coastal science, 
-resource management, and ocean observing systems (ACT 2012). 
-The NOAA Ocean Systems Test and Evaluation Program (OSTEP) also conducts independent tests and evaluations on emerging technology as well as new sensor models. 
-Both ACT and OSTEP publish findings that can provide information about QA, 
-calibration, 
-and other aspects of sensor functionality. 
+Wind sensor operators also have access to other sources of QA practices and information about a variety of instruments.
+For example,
+the Alliance for Coastal Technologies (ACT) serves as an unbiased,
+third party test bed for evaluating sensors and platforms for use in coastal and ocean environments.
+ACT conducts instrument performance demonstrations and verifications so that effective existing technologies can be recognized and promising new technologies can become available to support coastal science,
+resource management, and ocean observing systems (ACT 2012).
+The NOAA Ocean Systems Test and Evaluation Program (OSTEP) also conducts independent tests and evaluations on emerging technology as well as new sensor models.
+Both ACT and OSTEP publish findings that can provide information about QA,
+calibration,
+and other aspects of sensor functionality.
 The following list provides links to additional resources on QA practices.
 
 - Manufacturer specifications and supporting Web pages/documents
