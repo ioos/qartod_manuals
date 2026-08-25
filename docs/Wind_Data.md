@@ -498,7 +498,7 @@ This test does not address all clock drift/jump issues.
 
 | Flags       | Condition                          | Codable Instructions                    |
 | ----------- | ---------------------------------- | --------------------------------------- |
-| Missing = 9 | Data have not arrived as expected. | If `NOW - TIM_STMP > TIM_INC`, flag = 9 |
+| Missing = 9 | Data have not arrived as expected. | If `NOW` - `TIM_STMP` > `TIM_INC`, flag = 9 |
 | Suspect = 3 | N/A                                | N/A                                     |
 | Pass = 1    | Applies for test pass condition.   | N/A                                     |
 
@@ -545,8 +545,8 @@ as appropriate.
 
 | Flags     | Condition                        | Codable	Instructions                    |
 |-----------|----------------------------------|-----------------------------------------|
-| Fail=4    | Invalid location                 | If `LAT > abs(90) or LONG > abs(180)`,	flag	=	4 |
-| Suspect=3 | Unlikely	platform	displacement   | If `DISP > RANGEMAX`, flag = 3            |
+| Fail=4    | Invalid location                 | If `LAT` > `abs(90)` or `LONG` > `abs(180)`,	flag	=	4 |
+| Suspect=3 | Unlikely	platform	displacement   | If `DISP` > `RANGEMAX`, flag = 3            |
 | Pass=1    | Applies	for	test	pass	condition. | N/A                                     |
 
 Test Exception: Test does not apply to fixed deployments when no location is transmitted.
@@ -671,7 +671,7 @@ The local operator can determine both the number of SDs (`N_DEV`) and the period
 | Flags     | Condition                                             | Codable	Instructions                     |
 |-----------|-------------------------------------------------------|------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.             | N/A                                      |
-| Suspect=3 | The	rate	of	change	exceeds	the selected	threshold. | If abs($WS_n – WS_{n-1}$) > `N_DEV * SD`,	flag	=	3 |
+| Suspect=3 | The	rate	of	change	exceeds	the selected	threshold. | If abs($WS_n – WS_{n-1}$) > `N_DEV` * `SD`,	flag	=	3 |
 | Pass=1    | Applies	for	test	pass	condition.                      | N/A                                      |
 
 Test Exception: None.
@@ -695,7 +695,7 @@ Note that historical flags are not changed.
 | Flags     | Condition                                                                                                                                                                                               | Codable	Instructions                                                                                    |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | Fail=4    | When	the	five	most	recent observations	are	equal,	$WS_n$ is flagged fail.                                                                                                                         | Flag=4 <br>`For i=1`, `REP_CNT_FAIL` <br/> If $WS_n - WS_{n-i}$ > `EPS` then flag = 1 end	if                     |
-| Suspect=3 | It	is	possible	but	unlikely	that	the present	observation	and	the	two previous	observations	would	be equal.	When	the	three	most	recent observations	are	equal, $WS_n$ is flagged	suspect. | If	flag=4,	end <br>Flag=3 <br/>`For i=1`, `REP_CNT_SUSPECT` <br>If  $WS_n$ - $WS_{n-i}$ > `EPS` then	flag = 1 <br/>end if |
+| Suspect=3 | It	is	possible	but	unlikely	that	the present	observation	and	the	two previous	observations	would	be equal.	When	the	three	most	recent observations	are	equal, $WS_n$ is flagged	suspect. | If	flag=4,	end <br>Flag=3 <br/>`For i=1`, `REP_CNT_SUSPECT` <br>If abs($WS_n$ - $WS_{n-i}$) > `EPS` then	flag = 1 <br/>end if |
 | Pass=1    | Applies	for	test	pass	condition.                                                                                                                                                                        | N/A                                                                                                     |
 
 Test Exception: None.
@@ -725,7 +725,7 @@ then the $WS_n$ value is flagged.
 | Flags     | Condition                                                                                                                               | Codable	Instructions                                                                         |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.                                                                                               | N/A                                                                                          |
-| Suspect=3 | $WS_n$ fails	the	rate	of	change	and	the second	variable	(barometric	pressure, for	example)	does	not	exceed	the rate	of	change. | If abs($WS_n$ – $WS_{n-1}$) > `N_WSMV_DEV * SD_WS$` AND abs($BP_n – BP_{n-1}$) < `N_BP_DEV * SD_BP`,	flag	=	3 |
+| Suspect=3 | $WS_n$ fails	the	rate	of	change	and	the second	variable	(barometric	pressure, for	example)	does	not	exceed	the rate	of	change. | If abs($WS_n$ – $WS_{n-1}$) > `N_WSMV_DEV` * `SD_WS` AND abs($BP_n – BP_{n-1}$) < `N_BP_DEV` * `SD_BP`,	flag	=	3 |
 | Pass=1    |                                                                                                                                         | N/A                                                                                          |
 
 Test Exception: None.
@@ -791,7 +791,7 @@ In the instructions and examples below, data from one site (`WS1`) are compared 
 | Flags     | Condition                                                                                                 | Codable	Instructions                                                                         |
 |-----------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.                                                                 | N/A                                                                                          |
-| Suspect=3 | $WS1_n$ fails	the	rate	of	change	and the	second	sensor WS2n does	not exceed	the	rate	of	change. | If $WS1_n – WS1_{n-1}$  > `N_WS1_DEV` * `SD1` AND $WS2_n – WS2_{n-1}$  < `N_WS2_DEV` * `SD2`,	flag	=	3 |
+| Suspect=3 | $WS1_n$ fails	the	rate	of	change	and the	second	sensor WS2n does	not exceed	the	rate	of	change. | If abs($WS1_n – WS1_{n-1}$)  > `N_WS1_DEV` * `SD1` <br>AND <br/>abs($WS2_n – WS2_{n-1}$) < `N_WS2_DEV` * `SD2`,	flag	=	3 |
 | Pass=1    |                                                                                                           | N/A                                                                                          |
 
 Test Exception: There is no adequate neighbor.
@@ -1121,9 +1121,9 @@ The following samples provide hints for development of deployment checklists tak
 
 ## Appendix B. QARTOD Wind Manual Team
 
-|                            | Wind Manual	Contributors                                             |
-|----------------------------|----------------------------------------------------------------------|
+**Wind Manual	Contributors**
 | Name                       | Organization                                                         |
+|----------------------------|----------------------------------------------------------------------|
 | Mark	Bushnell,	Lead	Editor | CoastalObsTechServices	LLC	– NOAA/NOS/CO-OPS                         |
 | Ray	Toll,	Editor           | Old	Dominion	University                                              |
 | Helen	Worthington,	Editor  | REMSA	– NOAA/NOS/CO-OPS                                              |
@@ -1147,21 +1147,21 @@ The following samples provide hints for development of deployment checklists tak
 | Mario	Tamburri             | Alliance	for	Coastal	Technologies                                    |
 | Julie	Thomas*              | University	of	California,	San	Diego	Coastal	Data	Information	Program |
 | Jay	Titlow*                | WeatherFlow,	Inc.                                                    |
-| Shawn	Smith                | Florida	State	University/Center	for	Ocean-Atmospheric	Prediction     |
-|                            | Studies/Shipboard Automated Meteorological	and	Oceanographic Systems |
-* Wind	Manual Committee Members
+| Shawn	Smith                | Florida	State	University/Center	for	Ocean-Atmospheric	Prediction Studies/Shipboard Automated Meteorological	and	Oceanographic Systems     |
+*Wind	Manual Committee Members
 
-|                     | Wind Manual	Reviewers                          |
-|---------------------|------------------------------------------------|
+**Wind Manual	Reviewers**
 | Name                | Organization                                   |
+|---------------------|------------------------------------------------|
 | Jeff	Donovan       | SECOORA                                        |
 | Janet	Fredericks    | Woods	Hole	Oceanographic	Institution           |
 | Sarah	North         | Meteorological	Office,	United	Kingdom          |
 | Vembu	Subramanian   | SECOORA                                        |
 | Rik	Wanninkhof      | NOAA                                           |
-|                     | QARTOD	Board	of	Advisors                     |
+
+**QARTOD Board of Advisors**
 | Name                | Organization                                   |
-|                     |                                                |
+|---------------------|------------------------------------------------|
 | Joe	Swaykos	- Chair | NOAA/National	Data	Buoy	Center               |
 | Julie	Bosch         | NOAA/ National	Coastal	Data	Development	Center |
 | Janet	Fredericks    | Woods	Hole	Oceanographic	Institution           |
@@ -1171,36 +1171,38 @@ The following samples provide hints for development of deployment checklists tak
 | Derrick	Snowden     | U.S.	IOOS                                      |
 | Mario	Tamburri      | Alliance	for	Coastal	Technologies              |
 
-| DMAC	Committee                  |                                                  |
-|---------------------------------|--------------------------------------------------|
+**| **DMAC	Committee**
 | Name                            | Organization                                     |
+|---------------------------------|--------------------------------------------------|
 | Rob	Bochenek                    | AOOS/CeNCOOS	Axiom	Consulting	&	Design           |
-| Eric	Bridger                    | NERACOOS/Gulf	of	Marine	Research	Institute       |
+| Eric	Bridger                   | NERACOOS/Gulf	of	Marine	Research	Institute       |
 | Jorge	Capella                   | CariCOOS/University	of	Puerto	Rico               |
-| Jeremy	Cothran                  | SECOORA                                          |
-| Matt	Howard                     | GCOOS/Texas	A&M	University                       |
-| Eoin	Howlett                    | MARACOOS/Applied	Science	Associates,	Inc.        |
+| Jeremy	Cothran                 | SECOORA                                          |
+| Matt	Howard                    | GCOOS/Texas	A&M	University                       |
+| Eoin	Howlett                   | MARACOOS/Applied	Science	Associates,	Inc.        |
 | Kelly	Knee                      | MARACOOS/Applied	Science	Associates,	Inc.        |
-| Emilio	Mayorga                  | NANOOS/University	of Washington                  |
-| Jennifer	Patterson              | CeNCOOS/Monterey	Bay	Aquarium	Research	Institute |
+| Emilio	Mayorga                 | NANOOS/University	of Washington                  |
+| Jennifer	Patterson             | CeNCOOS/Monterey	Bay	Aquarium	Research	Institute |
 | Jim	Potemra                     | PacIOOS/University	of	Hawaii                     |
 | Rob	Ragsdale                    | U.S.	IOOS                                        |
 | Tad	Slawecki                    | GLOS/LimnoTech                                   |
 | Derrick	Snowden                 | U.S.	IOOS                                        |
 | Shane	StClair                   | AOOS/Axiom	Consulting	&	Design                   |
 | Vembu	Subramanian               | SECOORA                                          |
-| Darren	Wright                   | SCCOOS                                           |
-| U.S.	IOOS	Regional	Associations |                                                  |
+| Darren	Wright                  | SCCOOS                                           |
+
+**U.S. IOOS Regional Associations**
 | Name                            | Organization                                     |
-| Josie	Quintrell                 | U.S.	IOOS	Association                            |
-| Leslie	Rosenfeld                | CeNCOOS                                          |
+|---------------------------------|--------------------------------------------------|
+| Josie	Quintrell                 | U.S.	IOOS	Association                          |
+| Leslie	Rosenfeld               | CeNCOOS                                          |
 | Jan	Newton                      | NANOOS                                           |
 | Debra	Hernandez                 | SECOORA                                          |
 | Julie	Thomas                    | SCCOOS                                           |
 | Barbara	Kirkpatrick             | GCOOS                                            |
 | Gerhard	Kuska                   | MARACOOS                                         |
 | Molly	McCammon                  | AOOS                                             |
-| Ru	Morrison                     | NERACOOS                                         |
+| Ru	Morrison                    | NERACOOS                                         |
 | Jorge	Corridor                  | CariCOOS                                         |
 | Chris	Ostrander                 | PacIOOS                                          |
 | Kelli	Paige                     | GLOS                                             |
