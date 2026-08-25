@@ -1,0 +1,3521 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ADCP/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>pH - QARTOD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manual-for-real-time-quality-control-of-ph-data-observations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QARTOD" class="md-header__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QARTOD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              pH
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Water_Level/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Water Level
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ADCP/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ADCP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  pH
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QARTOD" class="md-nav__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QARTOD
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Water_Level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pH
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acronyms-and-abbreviations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acronyms and Abbreviations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions-of-selected-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions of Selected Terms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-background-and-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.0 Background and Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-purposeconstraintsapplications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.0 Purpose/Constraints/Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.0 Purpose/Constraints/Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-temperaturesalinity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Temperature/Salinity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Constraints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-data-processing-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.1 Data Processing Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-traceability-to-accepted-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.2 Traceability to Accepted Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-the-effect-of-dynamic-environments-on-sensor-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.3 The Effect of Dynamic Environments on Sensor Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-sensor-deployment-considerations-and-hardware-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.4 Sensor Deployment Considerations and Hardware Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-applications-of-ph-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Applications of pH Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-quality-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.0 Quality Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.0 Quality Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-qc-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 QC Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-test-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Test Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-qc-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 QC Tests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 QC Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-applications-of-qc-tests-to-stationary-ph-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1 Applications of QC Tests to Stationary pH Sensors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-applications-of-qc-tests-to-ph-sensor-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.2 Applications of QC Tests to pH Sensor Deployments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#40-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.0 Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#50-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.0 References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-references-to-related-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional References to Related Documents:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supporting-documents-found-on-the-qartod-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supporting Documents Found on the QARTOD Website:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendix-a-ph-manual-contributors-and-reviewers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A pH Manual Contributors and Reviewers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ph-manual-contributors-and-reviewers-version-1-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pH Manual Contributors and Reviewers, Version 1. 0
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="pH Manual Contributors and Reviewers, Version 1. 0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Name Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qartod-board-of-advisors-version-1-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QARTOD Board of Advisors, Version 1. 0
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QARTOD Board of Advisors, Version 1. 0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-organization_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Name Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-ioos-regional-associations-version-1-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U.S. IOOS Regional Associations, Version 1. 0
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="U.S. IOOS Regional Associations, Version 1. 0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-organization_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Name Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dmac-community-version-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMAC Community Version 1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendix-b-quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B Quality Assurance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix B Quality Assurance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b1-sensor-calibration-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.1 Sensor Calibration Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2-sensor-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.2 Sensor Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b3-bio-fouling-and-corrosion-prevention-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.3 Bio-fouling and Corrosion Prevention Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b4-common-qa-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.4 Common QA Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b5-qa-levels-for-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.5 QA Levels for Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qa-best" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QA Best
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indicator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indicator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b6-additional-sources-of-qa-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.6 Additional Sources of QA Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b7-sample-checklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B.7 Sample Checklists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/ocefpaf/qartod_manuals/edit/main/docs/pH.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/ocefpaf/qartod_manuals/raw/main/docs/pH.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="manual-for-real-time-quality-control-of-ph-data-observations">Manual for Real-Time Quality Control of pH Data Observations</h1>
+<p>A Guide to Quality Control and Quality Assurance for pH Observations</p>
+<p><a href="https://doi.org/10.25923/111k-br08">https://doi.org/10.25923/111k-br08</a></p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>This thirteenth QARTOD (Quality Assurance/Quality Control of Real-Time Oceanographic Data) manual builds upon the previous manuals,
+which have been created with the assistance of hundreds of subject-matter experts.
+We are grateful for their contributions and rewarded by their efforts to implement the QARTOD tests.
+We appreciate the guidance and support provided by the members of the QARTOD Board of Advisors.
+We thank all of the participants of the pH manual kick-off workshop,
+held on February 26,
+2018 in conjunction with the Association for the Sciences of Limnology and Oceanography conference in San Juan,
+Puerto Rico.</p>
+<p>For this pH manual we were fortunate to obtain excellent reviews from Rik Wanninkhof and Leticia Barbero (NOAA/Atlantic Oceanographic and Meteorological Laboratory),
+Adrienne Sutton (NOAA/Pacific Marine Environmental Laboratory),
+Chris Sabine (University of Hawaii),
+Grace Saba (Rutgers University),
+Chris Kincade and Dwight Trueblood (NOAA/National Estuarine Research Reserve System),
+and Bauke Houtman,
+Nicholas Rome,
+and Kruti Desai on behalf of the National Science Foundation Ocean Observatories Initiative-thank you all!</p>
+<p>We appreciate the support provided by Libby Jewett for the Ocean Acidification Information Exchange forum,
+and the conversations with Janice Fulford (U.S. Geological Survey, Hydrographic Instrumentation Facility),
+Oscar Schofield (Rutgers University),
+Gary Kirkpatrick (Mote Marine Laboratory),
+Dan Sullivan (U.S. Geological Survey),
+and Andrew Dickson (Scripps Institution of Oceanography).</p>
+<p>Finally,
+we wish to express our sincere gratitude to Gregory Ikeda and Charles Branham at Sea-Bird Scientific for their enthusiasm,
+attention to details,
+and excellent contributions.</p>
+<h2 id="acronyms-and-abbreviations">Acronyms and Abbreviations</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT</td>
+<td>Alliance for Coastal Technologies</td>
+</tr>
+<tr>
+<td>AOOS</td>
+<td>Alaska Ocean Observing System</td>
+</tr>
+<tr>
+<td>AUV</td>
+<td>Autonomous Underwater Vehicle</td>
+</tr>
+<tr>
+<td>CeNCOOS</td>
+<td>Central and Northern California Ocean Observing System</td>
+</tr>
+<tr>
+<td>CRC</td>
+<td>Cyclic Redundancy Check</td>
+</tr>
+<tr>
+<td>CRM</td>
+<td>Certified Reference Material</td>
+</tr>
+<tr>
+<td>DMAC</td>
+<td>Data Management and Communications</td>
+</tr>
+<tr>
+<td>EPA</td>
+<td>Environmental Protection Agency</td>
+</tr>
+<tr>
+<td>GOA</td>
+<td>ON Global Ocean Acidification Observation Network</td>
+</tr>
+<tr>
+<td>GCOOS</td>
+<td>Gulf of Mexico Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>GLOS</td>
+<td>Great Lakes Observing System</td>
+</tr>
+<tr>
+<td>GOOS</td>
+<td>Global Ocean Observing System</td>
+</tr>
+<tr>
+<td>IOOS</td>
+<td>Integrated Ocean Observing System</td>
+</tr>
+<tr>
+<td>ISFET</td>
+<td>Ion-selective field effect transistor</td>
+</tr>
+<tr>
+<td>MAPCO2TM</td>
+<td>Moored Autonomous pCO</td>
+</tr>
+<tr>
+<td>MARACOOS</td>
+<td>Mid-Atlantic Regional Association Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>NANOOS</td>
+<td>Northwest Association of Networked Ocean Observing Systems</td>
+</tr>
+<tr>
+<td>NBS</td>
+<td>U.S. National Bureau of Standards</td>
+</tr>
+<tr>
+<td>NERACOOS</td>
+<td>North Eastern Regional Association of Coastal Ocean Observing Systems</td>
+</tr>
+<tr>
+<td>NERRS</td>
+<td>National Estuarine Research Reserves System</td>
+</tr>
+<tr>
+<td>NIST</td>
+<td>National Institute of Standards and Technology</td>
+</tr>
+<tr>
+<td>NOAA</td>
+<td>National Oceanic and Atmospheric Administration</td>
+</tr>
+<tr>
+<td>NOS</td>
+<td>National Ocean Service</td>
+</tr>
+<tr>
+<td>PacIOOS</td>
+<td>Pacific Islands Ocean Observing System</td>
+</tr>
+<tr>
+<td>pCO2</td>
+<td>Partial pressure of carbon dioxide</td>
+</tr>
+<tr>
+<td>PMEL</td>
+<td>Pacific Marine Environmental Laboratory</td>
+</tr>
+<tr>
+<td>QARTOD</td>
+<td>Quality Control/Quality-Assurance of Real-Time Oceanographic Data</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>Quality Assurance</td>
+</tr>
+<tr>
+<td>QC</td>
+<td>Quality Control</td>
+</tr>
+<tr>
+<td>RCOOS</td>
+<td>Regional Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>SAMI</td>
+<td>Submersible Autonomous Moored Instrument</td>
+</tr>
+<tr>
+<td>SCCOOS</td>
+<td>Southern California Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>SD</td>
+<td>Standard Deviation</td>
+</tr>
+<tr>
+<td>SECOORA</td>
+<td>Southeast Coastal Ocean Observing Regional Association</td>
+</tr>
+<tr>
+<td>UNESCO</td>
+<td>United Nations Educational, Scientific, and Cultural Organization</td>
+</tr>
+</tbody>
+</table>
+<h2 id="definitions-of-selected-terms">Definitions of Selected Terms</h2>
+<p>This manual contains several terms whose meanings are critical to those using the manual. These terms are included in the following table to ensure that the meanings are clearly defined.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codable Instructions</td>
+<td>Codable instructions are specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.</td>
+</tr>
+<tr>
+<td>Data Record</td>
+<td>Data record is one or more messages that form a coherent, logical, and complete observation.</td>
+</tr>
+<tr>
+<td>Interoperable</td>
+<td>Interoperable means the ability of two or more systems to exchange and mutually use data, metadata, information, or system parameters using established protocols or standards.</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>Message means a standalone data transmission. A data record can be composed of multiple messages.</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td>Operators are individuals or entities responsible for collecting and providing data.</td>
+</tr>
+<tr>
+<td>Quality Assurance (QA)</td>
+<td>QA means processes that are employed with hardware to support the generation of high-quality data. (section 2.0 and appendix B)</td>
+</tr>
+<tr>
+<td>Quality Control (QC)</td>
+<td>QC means follow-on steps that support the delivery of high-quality data, requiring both automation and human intervention. (section 3.0)</td>
+</tr>
+<tr>
+<td>pH</td>
+<td>pH is a scale, defined as the negative log of the hydrogen ion concentration, in which a lower numerical value translates to a stronger acidity (Newton et. al. 2019)</td>
+</tr>
+<tr>
+<td>Real Time</td>
+<td>Real time means that: data are delivered without delay for immediate use; time series extends only backwards in time, where the next data point is not available; and sample intervals may range from a few seconds to a few hours or even days, depending upon the sensor configuration (section 1.0).</td>
+</tr>
+<tr>
+<td>Sensor</td>
+<td>A sensor is a device that detects or measures a physical property and provides the result without delay.</td>
+</tr>
+<tr>
+<td></td>
+<td>A sensor is an element of a measuring system that is directly affected by a phenomenon, body, or substance carrying a quantity to be measured. (JCGM 2012)</td>
+</tr>
+<tr>
+<td>Thresholds</td>
+<td>Thresholds are limits that are defined by the operator.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>A variable is an observation (or measurement) of biogeochemical properties within oceanographic and/or meteorological environments.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-background-and-introduction">1.0 Background and Introduction</h2>
+<p>The U.S. Integrated Ocean Observing System (IOOS) has a vested interest in collecting high-quality data for the 34 core variables (<a href="https://ioos.noaa.gov/about/ioos-by-the-numbers">https://ioos.noaa.gov/about/ioos-by-the-numbers</a>) measured on a national scale. In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) Project, addressing each variable as funding permits. This manual is the thirteenth in a series of guidance documents that address the QC of real-time data for each core variable.</p>
+<p>Please refer to <a href="https://ioos.noaa.gov/project/qartod/">https://ioos.noaa.gov/project/qartod/</a> for the following documents:</p>
+<ol>
+<li>U.S. Integrated Ocean Observing System, 2017. U.S IOOS QARTOD Project Plan - Accomplishments for 2012-2016 and Update for 2017-2021. 47 pp. <a href="https://doi.org/10.7289/V5JQ0Z">https://doi.org/10.7289/V5JQ0Z</a></li>
+<li>U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.1: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 48 pp. <a href="https://doi.org/10.25923/q0m1-d">https://doi.org/10.25923/q0m1-d</a></li>
+<li>U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.0: A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 51 pp. <a href="https://doi.org/10.7289/V5WM1BMZ">https://doi.org/10.7289/V5WM1BMZ</a></li>
+<li>U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 70 pp. <a href="https://doi.org/10.25923/7yc5-vs">https://doi.org/10.25923/7yc5-vs</a></li>
+<li>U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of In-Situ Temperature and Salinity Data Version 2.0: A Guide to Quality Control and Quality Assurance of In-Situ Temperature and Salinity Observations. 56 pp. <a href="https://doi.org/10.7289/V5V40SD">https://doi.org/10.7289/V5V40SD</a></li>
+<li>U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of Water Level Data Version 2.0: A Guide to Quality Control and Quality Assurance of Water Level Observations. 4 6 pp. <a href="https://doi.org/10.7289/V5QC01Q">https://doi.org/10.7289/V5QC01Q</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. <a href="https://doi.org/10.7289/V5FX77NH">https://doi.org/10.7289/V5FX77NH</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Ocean Optics Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 49 pp. <a href="https://doi.org/10.25923/v9p8-ft">https://doi.org/10.25923/v9p8-ft</a></li>
+<li>U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Dissolved Nutrients Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. <a href="https://doi.org/10.7289/V5TT4P7R">https://doi.org/10.7289/V5TT4P7R</a></li>
+<li>U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of High Frequency Radar Surface Current Data Version 1.0: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Current Data Observations. 58 pp. <a href="https://doi.org/10.7289/V5T43R">https://doi.org/10.7289/V5T43R</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Phytoplankton Data Version 1.0: A Guide to Quality Control and Quality Assurance of Phytoplankton Data Observations. 67 pp. <a href="https://doi.org/10.7289/V56D5R6S">https://doi.org/10.7289/V56D5R6S</a></li>
+<li>U.S. Integrated Ocean Observing System, 2017. Manual for Real-Time Quality Control of Passive Acoustics Data Version 1.0: A Guide to Quality Control and Quality Assurance of Passive Acoustics Observations. 45 pp. <a href="https://doi.org/10.7289/V5PC30M">https://doi.org/10.7289/V5PC30M</a></li>
+<li>U.S. Integrated Ocean Observing System, 2018. Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 45 pp. <a href="https://doi.org/10.25923/gszc-ha">https://doi.org/10.25923/gszc-ha</a></li>
+</ol>
+<p>Please reference this document as:</p>
+<div class="highlight"><pre><span></span><code>U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of pH Data Version 1.0: A Guide to Quality Control and Quality Assurance of pH Data Observations. 56 pp &lt;https://doi.org/10.25923/111k-br&gt;
+</code></pre></div>
+<p>This manual is a living document that reflects the state-of-the-art QC testing procedures for pH observations.
+It is written for the experienced operator but also provides examples for those who are just entering the field.</p>
+<h2 id="20-purposeconstraintsapplications">2.0 Purpose/Constraints/Applications</h2>
+<p>The following sections describe the purpose of this manual,
+as well as the constraints that operators may encounter when performing QC of pH data and specific applications of those data.</p>
+<h3 id="21-purpose">2.1 Purpose</h3>
+<p>The purpose of this manual is to provide guidance to the U.S. IOOS and the community at large for the real-time QC of pH measurements using an agreed-upon,
+documented,
+and implemented standard process.
+This manual is also a deliverable to the U.S. IOOS Regional Associations and the ocean-observing community and represents a contribution to a collection of core variable QC documents.</p>
+<p>Most operators provide real-time data on a provisional basis,
+alerting users that post-processing is required to validate their data.
+However,
+even these provisional data should be quality controlled.
+Data released in real-time should be subjected to automated QC processes,
+which: 1) provide a quality-control indicator,
+2) alert the operator when questionable or interesting data are presented,
+and 3) reduce the dissemination of bad data.</p>
+<p>These practices for QC of pH data were developed by operators with experience using a variety of sensors and technologies.
+In-situ,
+real-time detection of pH is typically conducted using colorimetric methods,
+potentiometric glass electrodes,
+or ion-selective field-effect transistor (ISFET) sensors.
+Each method has strengths and weaknesses.</p>
+<p>Colorimetric systems using wet chemistry draw water samples into a reagent mixing chamber,
+where the chemical reaction is measured and quantified.
+This process is controlled by micro-pumps,
+injection valves,
+and small reactor cells combined with absorption detectors.
+Using these miniaturized colorimetric methods leads to sensitive,
+in-situ measurements of pH
+(Seidel et al., 2008; Martz et al., 2003; Rérolle et al. 2013; Rérolle et al. 2016).
+Some of these systems may require frequent maintenance due to the complexity associated with pumps,
+chambers,
+mixing,
+and detection components.
+They may require calibration of fluid delivery devices (pumps) and replenishment of reagents and standard solutions.
+Some systems can operate over a year without replacing reagents,
+depending on sample frequency and other environmental circumstances.</p>
+<p>Due to drift and the requirement for frequent calibration,
+potentiometric sensors are not suitable for use by the ocean acidification community.
+The relative variations in pH they provide can be useful to biologists,
+ecologists,
+and for water quality studies.
+They are most commonly used for freshwater sampling using the methodology described in chapter 6,
+section 4 of the <em>USGS National Field Manual, TWRI Book 9</em>
+(Ritz and Collins 2008) and measurement of seawater pH in discrete bottle samples using the methodology described in chapter 4 SOP 6a of the <em>Guide to Best Practices for Ocean CO 2 Measurements</em> (Dickson et al. 2007).
+Potentiometric sensors will also fail in extremely fresh water where ion concentration is inadequate.</p>
+<p>Recent developments in ISFET-based pH sensor technology have shown these devices to be much less susceptible to drift
+(Ikeda 2018; Branham 2019; Martz et al. 2010; Johnson et al. 2016),
+although biofouling can be an issue in surface waters
+(Bresnahan et al. 2014; Miller et al. 2018).
+While these sensors exhibit high accuracy,
+precision,
+and long-term stability,
+they must undergo a 24-72 hour conditioning period before providing optimal data.
+After the sensor becomes conditioned to the environment to which it is deployed,
+the factory calibration is sufficient to meet the expected accuracy.
+Furthermore,
+pH data from these sensors are susceptible to changes in local temperature,
+salinity,
+and pressure above 50 decibars,
+so co-deployment with a conductivity/temperature/depth (CTD) system may be necessary in dynamic environments.
+An in-situ calibration offset may be beneficial in certain conditions.</p>
+<p>Observations of pH covered by these procedures are collected for a variety of purposes along bays or coasts<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> in real-time or near-real-time settings.
+These tests draw from existing expertise in programs such as the National Estuarine Research Reserve System,
+the Global Ocean Acidification Observing Network,
+the NOAA Ocean Acidification Buoy Network,
+NOAA Ocean Observing and Monitoring Division,
+SOCCOM (Southern Ocean Carbon and Climate Observations and Modeling),
+and others.</p>
+<p>This manual focuses on QC procedures for real-time pH data.
+It presents a series of eleven tests that operators can incorporate into practices and procedures for QC of pH measurements.
+These tests apply only to the in-situ,
+real-time measurement of pH as observed by sensors deployed on fixed or mobile platforms
+(including ship-based, discrete samples reported in real-time)
+and not to remotely sensed pH measurements
+(e.g., satellite observations, a potential capability [Land et al. 2015]).</p>
+<p>Table 2-1 shows types of platforms and areas that are included and excluded in this manual.
+Those excluded are deemed to require substantially different QC tests,
+a different observational community,
+substantially greater resources,
+or they presently lack a real-time data delivery capability.
+Whenever possible,
+they will be included in later manual updates.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Platforms Included</strong></th>
+<th><strong>Platforms Excluded</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coastal and offshore buoys</td>
+<td>Satellite (Land et al. 2015)</td>
+</tr>
+<tr>
+<td>Oil platforms</td>
+<td>Aircraft</td>
+</tr>
+<tr>
+<td>Surface fixed and mobile platforms</td>
+<td></td>
+</tr>
+<tr>
+<td>Autonomous surface vessels and ships</td>
+<td></td>
+</tr>
+<tr>
+<td>Profiling floats and gliders</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>: Table 2-1. Types of platforms and areas included and excluded in this manual.</p>
+<p>These test procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific tests and set data flags (data quality indicators) within a software program.
+Those implementing QARTOD tests have created a code repository (<a href="https://github.com/ioos/qartod">https://github.com/ioos/qartod</a>)
+where operators may find or post examples of code in use.
+Although certain tests are recommended,
+thresholds will vary among data providers.
+The tests described here are designed to support a range of pH sensors and operator capabilities.
+Some well-established programs,
+such as the Global Ocean Acidification Observation Network (<a href="http://www.goa-on.org/">http://www.goa-on.org/</a>),
+have implemented rigorous QC processes.
+Others,
+with different requirements,
+may utilize sensors with data streams that cannot support as many QC checks-all have value when used prudently.
+Within the ocean acidification community,
+three tiers of accuracy are described:
+climate,
+weather,
+and undefined
+(Newton et al. 2014; Pimenta and Grear 2018; UNESCO 2018).
+It is the responsibility of the users to understand and appropriately utilize data of varying quality,
+and operators must provide support by documenting and publishing their QC processes.</p>
+<p>High-quality marine observations require sustained QA and QC practices to ensure credibility and value to
+operators and data users. QA practices involve processes that are employed with hardware to support the
+generation of high-quality data,
+such as a sufficiently accurate,
+precise,
+and reliable sensor with adequate resolution.
+Other QA practices include the following:
+sensor calibration,
+calibration checks,
+and/or in-situ verification (including post-deployment calibration);
+proper deployment considerations,
+such as measures for corrosion control and anti-fouling;
+solid data communications;
+adequate maintenance intervals;
+and creation of a robust quality control process.
+Post-deployment calibration (instrument verification after recovery) issues are not part of the scope of this manual.
+However,
+QC and QA are interrelated,
+and both are important to the process;
+therefore,
+QA considerations are briefly addressed in appendix B.</p>
+<p>QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention (known as human-in-the-loop).
+QC practices include such things as format,
+checksum,
+timely arrival of data,
+threshold checks (minimum/maximum rate of change),
+neighbor checks,
+climatology checks,
+model comparisons,
+signal/noise ratios,
+verification of user satisfaction,
+and generation of data flags (Bushnell 2005).</p>
+<p>The process of ensuring data quality is not always straightforward.
+QA/QC procedures may be specific to a sensor technology or even to a particular manufacturer's model, so the establishment of a methodology that is
+applicable to every sensor is challenging.</p>
+<h3 id="22-temperaturesalinity">2.2 Temperature/Salinity</h3>
+<p>The pH sensor detects a measure of pH,
+but many sensor responses and necessary pH calculations also depend upon the quality of the temperature,
+salinity,
+and pressure data (Easley and Byrne 2012; Sea-Bird Scientific 2019).
+Corrections to the sensor output usually are required to account for the effects of temperature,
+salinity,
+and pressure.
+These corrections might occur internally in many instruments,
+and in these cases,
+failure of the instrument to collect accurate temperature and/or salinity and/or pressure data necessitates that the pH data be highlighted with a suspect or fail flag and reviewed during the QC process.
+Not all sensors make the temperature data available,
+and not all sensors measure salinity and/or pressure.</p>
+<h3 id="23-constraints">2.3 Constraints</h3>
+<p>Many measurements of the 34 U.S. IOOS core variables of interest utilize similar sensing technologies but
+require substantially different QC methods.
+However,
+QC tests should not be overly generic,
+so these variables must be divided and grouped so that specific meaningful tests are appropriate to the variables included in the group.
+In this manual,
+pH measurements that are sufficiently common in nature to have similar QC checks are identified.</p>
+<h4 id="231-data-processing-methodology">2.3.1 Data Processing Methodology</h4>
+<p>The type of sensor system used to collect pH data and the system used to process and transmit the measurements determine which QC algorithms are used.
+In-situ systems with sufficient onboard processing power within the sensor may substantially process the data to produce derived products,
+such as temperature,
+salinity,
+and pressure corrections to pH observations.
+In other cases,
+operators may prefer to conduct QC on the "raw" data
+(i.e., a sensor voltage output prior to the calculation of pH).
+Some sensors may sample at high-rate or burst mode (e.g., 1 Hz).
+These samples are used to produce the actual,
+real-time value transmitted (e.g., hourly value) or a vertical profile of pH (the case with underwater gliders,
+shipboard profilers,
+and profiling floats).
+Statistical information about the high-rate sample distributions can also be used and transmitted as real-time QC parameters (e.g., sample standard deviations and outliers).
+If ample transmission capability is available,
+expanded data streams may be transmitted ashore and subsequently quality controlled from there.
+To accommodate a range of different operator methodologies,
+three levels of QC are proposed:
+required,
+strongly recommended,
+and suggested.</p>
+<p>When onboard processing is used to reduce high-frequency sampling,
+apply associated corrections,
+and generate the resultant observation to be transmitted,
+operators should have a full understanding of the algorithms employed.
+These processes are often proprietary,
+and when not fully revealed by the vendor or manufacturer,
+the operator should sufficiently test the system to gain the needed understanding.</p>
+<h4 id="232-traceability-to-accepted-standards">2.3.2 Traceability to Accepted Standards</h4>
+<p>To ensure that pH sensors produce accurate data,
+rigorous calibrations and calibration checks must be performed in addition to QC checks.
+Most operators rely upon manufacturer calibrations,
+but they may also conduct calibration checks before and after deployment.
+These calibration checks are critical to ensuring that the manufacturer calibration is still valid.
+Manufacturers describe how to conduct these calibration checks in their user manuals,
+which are currently considered QA and further addressed in appendix B.
+Calibration of pH sensors should be done using accepted standard processes.
+For example,
+the preferred methods for seawater are outlined in Dickson et al. (2007);
+ISFET methods are outlined in Martz et al. (2010),
+Johnson et al. (2016) and Bresnahan et al. (2014).</p>
+<p>Calibrations and calibration checks must be traceable to certified reference materials.
+The National Institute of Standards and Technology (NIST)
+(<a href="http://www.nist.gov/index.html">http://www.nist.gov/index.html</a>),
+a provider of internationally accepted standards,
+is a source for these standards
+(specifically,
+for fresh water,
+six pH standard reference materials - see <a href="https://www.nist.gov/programs-projects/ph-metrology">https://www.nist.gov/programs-projects/ph-metrology</a>).
+The Andrew Dickson Lab offers certified reference material,
+including natural seawater pH buffers - see <a href="https://cdiac.ess-dive.lbl.gov/newsletr/fall98/reference.htm">https://cdiac.ess-dive.lbl.gov/newsletr/fall98/reference.htm</a>.
+Calibration activities must be tailored to match data use and resources.
+Calibration cost and effort increase dramatically as accuracy requirements increase.
+Fundamental NIST standards such as mass and volume may be required when conducting calibration checks on pH sensors,
+and pH-specific standard reference materials are available from many sources
+(e.g., Cole-Parmer, Mettler-Toledo, Hach®, Omega).</p>
+<p>Calibration and traceability of pH sensors are further complicated because there are four standard pH scales in use,
+and conversion between them is not always straightforward (Dickson 1993).
+For example,
+Dickson (1993) does not recommend using the NBS standard for seawater applications.
+The scale employed must be clearly indicated by data providers and properly utilized by those working with the data.</p>
+<h4 id="233-the-effect-of-dynamic-environments-on-sensor-data">2.3.3 The Effect of Dynamic Environments on Sensor Data</h4>
+<p>Measurements of pH can be challenging for several reasons:
+pH is a non-conservative<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> variable,
+and dynamic coastal regions create rapid horizontal and vertical water mass changes.
+Tidal and meteorological events can create substantial steps in the pH time series.
+Other variations are induced by such things as seasonal stratification,
+upwelling, organic loading, increased biological activity (blooms),
+air-sea exchange,
+river inputs,
+spawning aggregations,
+fish kills,
+(indeed, all biological activities),
+sediment-water exchange,
+groundwater seepage,
+and springs.
+Also,
+the hydrogen ion concentrations,
+for which pH is a measure,
+are very low in natural waters (approximately 10<span class="arithmatex">\(^{-7}\)</span> to 10<span class="arithmatex">\(^{-9}\)</span> mol L<span class="arithmatex">\(^{-1}\)</span>).</p>
+<p>As with many other real-time QC challenges,
+the question is how to deal with extremes associated with a phenomenon (e.g., storm, spill, etc.) in a data time series,
+yet identify questionable data values that may have similar characteristics.
+One option is to allow a tighter QC requirement for the data,
+highlighting the event with a suspect flag and requiring a human review.
+This way,
+the event is both acknowledged as substantial if real,
+and identified as potentially questionable in the absence of causal forces.</p>
+<p>The expected pH ranges vary greatly depending upon the environment.
+An Alliance for Coastal Technologies (ACT) survey of operators found a low-end range of 4.00-7.80 and an upper-end range of 8.00-11.00 (ACT 2012).</p>
+<h4 id="234-sensor-deployment-considerations-and-hardware-limitations">2.3.4 Sensor Deployment Considerations and Hardware Limitations</h4>
+<p>Deployment of pH sensors can occur in several ways.
+Stationary sensor deployments are on fixed platforms or moorings where there is minimal movement either horizontally or vertically.
+They may be lowered from a ship,
+deployed aboard autonomous surface or submerged vehicles,
+or installed on moored or drifting buoys.
+The typical constraints of oceanographic data collection apply-including cost,
+power,
+data transmission,
+bio-fouling,
+vandalism,
+and electronics in a marine environment.
+Examples of deployments are shown in fig. 2-1.</p>
+<p>Mobile platforms are available in a variety of configurations and require different real-time pH QC considerations.
+Mobile platforms are,
+in order of increasing complexity:
+fixed vertical profilers,
+mobile surface vessels,
+and vessels freely operating in three dimensions
+(e.g., gliders, floats, powered autonomous underwater vehicles or AUVs).
+Figures 2-2 and 2-3 provide examples of mobile platforms.</p>
+<p>Data derived from sensors on moving platforms are limited due to response time of the sensor,
+i.e.,
+the time it takes for a technology to respond to a step change in the environment or to multiple forces.
+For example,
+a pH sensor might respond to a change in pH,
+as well as to changes in temperature,
+salinity,
+pressure,
+and other chemical conditions in the water column.
+Data from a glider or profiling CTD system on a moving platform will be affected by dynamic errors that,
+in most cases,
+have to be corrected in post-processing.
+These limitations occur in most sensor technology.</p>
+<p>Spatial and temporal resolution require a clear understanding of sensor response time,
+sample rate of the instrument
+(and in some cases the average period per measurement, if one exists),
+and the vehicle speed.
+The response time will often limit the realized resolution of an instrument,
+and accuracy may be limited relative to the pH gradients through which the vehicle is traveling.
+For example,
+a sensor with a response time of 60 seconds,
+sampling at 1 Hz,
+and moving through the water at 25 knots (such as a system installed aboard a volunteer observing ship) will not yield accurate map conditions in regions with high variability.
+Generally speaking,
+dynamic errors in moving platform data complicate QA/QC actions for real-time data.
+Operators must understand the magnitude of these errors before setting QA/QC limits on data.</p>
+<p><img alt="buoy" src="../images_pH/image1.jpg" /> <img alt="diver" src="../images_pH/image2.jpg" /></p>
+<figcaption>
+Figure 2-1. (Top) This Pacific Marine Environmental Laboratory buoy was deployed in April 2018 in the mouth of the Chesapeake Bay,
+where acidification may be more rapid due to a reduced buffering capacity in comparison to the open ocean (photo courtesy of M. Bushnell).
+(Bottom) A Sea-Bird Scientific Deep SeapHOx V2 deployed on a fixed mooring at Washington State's Carr Inlet by Northwest Environmental Mooring Group (photo courtesy of Sea-Bird Scientific and University of Washington Applied Physics Laboratory.
+</figcaption>
+
+<p><img alt="glider" src="../images_pH/image3.png" /></p>
+<figcaption>
+Figure 2-2. An underwater Slocum Webb glider (L) fitted with a prototype Sea-Bird Scientific ISFET-based pH sensor (photo courtesy of Dr. Grace Saba).
+Several laboratories have teamed with Liquid Robotics Wave Glider Mobile Surface (R) to deploy pH sensors (photo courtesy of Liquid Robotics).
+</figcaption>
+
+<p><img alt="glider" src="../images_pH/image4.png" /></p>
+<figcaption>
+Figure 2-3. This nke Instrumentation PROVOR float hosts a pH optode sensor developed by TU Graz and Pyro Science (photo courtesy of Arnaud David).
+</figcaption>
+
+<p><strong><em>Vertical Profilers</em></strong></p>
+<p>Fixed vertical pH profiles can be obtained from a variety of systems,
+including rigid-mounted profiling systems,
+buoy/mooring climbers,
+surface-or bottom-tethered systems,
+or even routine,
+repeated manual station occupations.
+In such cases,
+the tests described for a fixed sensor (see section 3.3.1) either remain unchanged or are conducted along the vertical 'z' axis,
+as well as along a time series of observations.</p>
+<p><strong><em>Mobile Surface Vessels</em></strong></p>
+<p>Examples of mobile surface vessels include manned vessels of opportunity and autonomously operated vehicles such as the Liquid Robotics Wave Glider and Saildrones fitted with pH sensors.
+Samples are obtained at a fixed depth along track.
+They may be sampled at fixed temporal or spatial intervals.
+Again,
+the tests described for a fixed sensor may remain unchanged,
+or they are conducted along the vessel track 's' or projections onto 'x' (longitude) and 'y' (latitude) coordinates,
+as well as along a time series of observations.</p>
+<p><strong><em>3-D Profiler Vessels</em></strong></p>
+<p>Gliders,
+floats,
+and powered AUVs can provide pH observations in a wide variety of space/time configurations.
+They can be as simple as along-track 's' observations,
+periodic vertical ascent profiles recorded following at-depth drifts (Argo profilers),
+or real-time processed down/up profiles (gliders).
+In many cases,
+a series of profiles may be transmitted together,
+and they are all considered as real-time here.
+When applying increasingly complex,
+real-time QC tests to increasingly complex deployments,
+challenges may arise.
+However,
+most of the eleven tests described in sections 3.2 and 3.3 can be applied with little modification.</p>
+<p><strong><em>Instrumentation</em></strong></p>
+<p>pH instrumentation may be constructed as a single function device but are usually housed and commingled with additional sensors to form a multiparameter package,
+such as the In-Situ Aqua TROLL 600 or Sea-Bird SeapHOx™ V2 multiparameter instruments.
+In addition to measuring pressure,
+temperature,
+and salinity to support meaningful pH observations,
+operators often co-locate additional sensors such as turbidity,
+chlorophyll-a,
+and dissolved oxygen.</p>
+<p>Most electrode-based sensors cannot provide pH measurements accurate enough to reach the GOA-ON weather-quality threshold.
+For reference,
+weather-quality measurements should have a relative uncertainty of approximately 0.02 pH units
+(<a href="http://www.goa-on.org/documents/SDG_14.3.1/SDG_14_3_1-indicator_methodology.pdf">http://www.goa-on.org/documents/SDG_14.3.1/SDG_14_3_1-indicator_methodology.pdf</a>).</p>
+<p>Table 2-2 provides examples of manufacturers and sensors that are typically used to observe pH,
+and fig. 2-4 shows several sensors listed in table 2-2.
+Some manufacturers have changed names,
+and some sensors are not currently marketed;
+however,
+data from these devices may still be generated,
+and they are included here as valid representatives of the technology.</p>
+<p>Figures 2-5 and 2-6 provide examples of pH time series where real-time QC tests would be of value for flagging clearly bad data or data that may require the attention of a knowledgeable individual.
+As these QC tests are implemented and additional examples arise,
+they will be included when this manual is updated.</p>
+<p>As with most sensors,
+the effects of bio-fouling must be considered.
+Bio-fouling varies seasonally and geographically and can often be the limiting factor in determining the deployment duration.
+All pH sensors have surfaces that must remain free of contamination,
+or they will drift as growth accumulates.
+pH sensors that draw in a water sample for chemical analysis must filter the input sample to avoid clogging,
+and the filter itself must remain free of growth.</p>
+<table>
+<thead>
+<tr>
+<th>Manufacturer/Sensor</th>
+<th>Measuring Principle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campbell Scientific Instruments / CS526-L</td>
+<td>ISFET</td>
+</tr>
+<tr>
+<td>Eureka / Manta2</td>
+<td>Potentiometric</td>
+</tr>
+<tr>
+<td>Honeywell / Durafet</td>
+<td>ISFET</td>
+</tr>
+<tr>
+<td>Idronaut / pH sensor</td>
+<td>Potentiometric</td>
+</tr>
+<tr>
+<td>In-Situ / TROLL 9500 pH Sensor</td>
+<td>Potentiometric</td>
+</tr>
+<tr>
+<td>Kongsberg / CONTROS HydroFIA pH</td>
+<td>Spectrophotometric</td>
+</tr>
+<tr>
+<td>nke Instrumentation / SPHT</td>
+<td>Potentiometric</td>
+</tr>
+<tr>
+<td>PreSens / NTH-HP5</td>
+<td>Fiberoptic</td>
+</tr>
+<tr>
+<td>Sea-Bird Scientific / SeaFET V2 and SeapHOx V2</td>
+<td>ISFET</td>
+</tr>
+<tr>
+<td>Sensor Lab SP200-SM</td>
+<td>Colorometric</td>
+</tr>
+<tr>
+<td>SenseOCEAN / oxygen, pH, CO2 device</td>
+<td>Sensor still in development</td>
+</tr>
+<tr>
+<td>Sunburst / SAMI-pH</td>
+<td>Spectrophotometric</td>
+</tr>
+<tr>
+<td>Yokogawa /FU20</td>
+<td>Potentiometric</td>
+</tr>
+<tr>
+<td>YSI Xylem / EXO pH Smart Sensor and 6561</td>
+<td>Potentiometric</td>
+</tr>
+</tbody>
+</table>
+<p>:Table 2-2. Commonly used sensors for pH observations.</p>
+<p><img alt="pH sensors" src="../images_pH/image5.png" /></p>
+<figcaption>Figure 2-4. Some commonly used pH sensors (photos courtesy of vendors).</figcaption>
+
+<p><img alt="pH sensors" src="../images_pH/image6.png" /></p>
+<figcaption>
+Figure 2-5.
+This plot shows seawater pH measured by a buoy fitted with a PMEL Moored Autonomous pCO2 (MAPCO2TM) system and using a Sunburst SAMI-pH sensor.
+It is deployed in the Gulf of Alaska near Seward.
+A negative spike can be seen in September.
+</figcaption>
+
+<p><img alt="pH sensors" src="../images_pH/image7.png" /></p>
+<figcaption>
+Figure 2-6.
+This pH time series is from a Sunburst SAMI-pH sensor deployed on the Ocean Station Papa mooring.
+Spikes of various amplitudes are seen,
+demonstrating the need for careful selection of proper test thresholds.
+</figcaption>
+
+<p>While outside the scope of the real-time tests described in this manual,
+QA is critical to data quality.
+Sensors require attention to proper QA measures both before and after the deployment.
+Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor maintenance.
+Often,
+operators take field samples during deployment,
+recovery,
+or service to validate the performance of an in-situ sensor.
+This can be a non-optimal sample time for ensuring quality sensor data,
+often due to initial stabilization,
+sensor/environment disturbance,
+or high fouling near the end.
+If resources permit,
+it is recommended that samples be obtained mid-deployment without disturbing the sensor.</p>
+<p>Also important,
+but beyond the scope of this document at present,
+is the determination and reporting of data uncertainty
+(Ellison and Williams 2012; Okazaki et al. 2017).
+Knowledge of the accuracy of each observation is required to ensure that data are used appropriately and aids in the computation of error bounds for subsequent products derived by users.
+All sensors and measurements contain errors that are determined by hardware quality,
+methods of operation,
+and data processing techniques.
+Operators should routinely provide a quantitative measure of data uncertainty in the associated metadata.
+Such calculations can be challenging,
+so operators should also document the methods used to compute the uncertainty.
+The limits and thresholds implemented by operators for the data QC tests described here are a key component in establishing the observational error bounds.
+Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty,
+as these two efforts greatly enhance the utility of their data.</p>
+<p>Sensor redundancy is key to obtaining measurements and ensuring that uncertainties can be assigned to those measurements.
+Comparing two adjacent instruments can assist in evaluation of data quality,
+as well as provide two (or more) independent estimates of a variable of interest.
+Variation in the estimated values can be useful in uncertainty calculations.</p>
+<h3 id="24-applications-of-ph-data">2.4 Applications of pH Data</h3>
+<p>Real-time observations of pH are important for a wide variety of applications,
+including:</p>
+<ul>
+<li>Water quality</li>
+<li>Monitoring for adherence to regulations</li>
+<li>Monitoring stormwater runoff and wastewater discharge</li>
+<li>Monitoring fish farm effluent</li>
+<li>Ocean biogeochemistry research, e.g., ocean acidification</li>
+<li>Ocean productivity, e.g., fisheries studies</li>
+<li>Agricultural best practices research</li>
+</ul>
+<p>Other applications utilizing post-processed data do not require real-time QC but benefit from it through early detection of pH sensors' issues.
+Some examples of observatories that may benefit from standardized real-time QC testing include:</p>
+<ul>
+<li>Florida Atlantic University Harbor Branch Indian River Lagoon Observatory,
+  <a href="http://fau.loboviz.com/">http://fau.loboviz.com/</a></li>
+<li>National Estuarine Research Reserve System,
+  <a href="http://cdmo.baruch.sc.edu/get/realTime.cfm">http://cdmo.baruch.sc.edu/get/realTime.cfm</a></li>
+</ul>
+<h2 id="30-quality-control">3.0 Quality Control</h2>
+<p>In order to conduct real-time QC on pH observations,
+the first pre-requisite is to understand the science and context within which the measurements are being conducted.
+pH measurements are dependent upon many things such as season,
+location,
+time of day,
+and the physical,
+chemical,
+and biological conditions where the measurements are being taken.
+The real-time QC of these observations can be extremely challenging.
+Human involvement is therefore important to ensure that solid scientific principles are applied to the process.
+Without credible science-based thought,
+good data might be discarded,
+and bad data distributed.
+It is also important to note that advances in pH sensor technology have eliminated many of the problems encountered in older devices.</p>
+<p>Again,
+this manual focuses specifically on real-time data in coastal environments,
+so the operator is likely to encounter aspects of data QC where the flags and tests described in the following sections do not apply because the data are not considered to be real-time.
+For example,
+in the absence of reference data points such as water samples collected nearby,
+drift often cannot be detected or corrected.
+Drift correction for pH sensors during post-processing is difficult even with a post-calibration in hand because drift in pH sensors is not always linear.
+Drift is sometimes caused by bio-fouling,
+usually results in a higher reading from respiring organisms,
+and is accompanied by an attenuated response.
+Another example might be the ability of some data providers to backfill data gaps.
+In both of these examples,
+the observations are not considered to be real time for purposes of QC checks.</p>
+<h3 id="31-qc-flags">3.1 QC Flags</h3>
+<p>Data are evaluated using QC tests,
+and the results of those tests are indicated using flags in the data files.
+Table 3-1 provides the set of flags and associated descriptions proposed by the International Oceanographic Data and Information Exchange (IODE) and adopted by the Intergovernmental Oceanographic Commission (IOC) in 2013.
+Operators may incorporate additional flags for inclusion in metadata records.
+For example,
+a pH observation may fail the gross range test and be flagged as having failed the test.
+Additional flags may be incorporated to provide more detailed information to assist with troubleshooting.
+If the data failed the gross range check by exceeding the upper limit,
+"failed high" may indicate that the values were higher than the expected range,
+but such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS requirements for QC of real-time data.</p>
+<p>Flags set in real-time should retain their original settings.
+Further post-processing of the data may yield different conclusions from those suggested in the initial real-time flags.
+However,
+by retaining the real-time flag settings,
+the historical documentation is preserved.
+The exception to the rule occurs for test 6 spike check,
+where the most recent point must be flagged as "2 Not Evaluated" until the next point arrives,
+and the spike check can be performed.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Flag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pass=1</td>
+<td>Data have passed critical real-time QC tests and are deemed adequate for use as preliminary data.</td>
+</tr>
+<tr>
+<td>Not Evaluated=2</td>
+<td>Data have not been QC-tested, or the information on quality is not available.</td>
+</tr>
+<tr>
+<td>Suspect or of High Interest=3</td>
+<td>Data are considered to be either suspect or of high interest to data providers and users. They are flagged suspect to draw further attention to them by operators.</td>
+</tr>
+<tr>
+<td>Fail=4</td>
+<td>Data are considered to have failed one or more critical real-time QC checks. If they are disseminated at all, it should be readily apparent that they are not of acceptable quality.</td>
+</tr>
+<tr>
+<td>Missing Data=9</td>
+<td>Data are missing; used as a placeholder.</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-1. Flags for real-time data (UNESCO 2013)</p>
+<h3 id="32-test-hierarchy">3.2 Test Hierarchy</h3>
+<p>This section outlines the eleven real-time QC tests that are required or recommended for selected pH sensors.
+Tests are listed in order of increasing complexity and (generally) decreasing utility and are divided into three groups.
+The tests in group 1 are required for all pH data measurements collected for U.S. IOOS.
+Operators must consider each test in group 2 and group 3 to determine if it can be applied in their particular instance -- not all tests can be implemented in all situations.
+Table 3-2 shows the test hierarchy.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Group 1</strong></td>
+<td>Test 1</td>
+<td>Gap Test</td>
+</tr>
+<tr>
+<td>Required</td>
+<td>Test 2</td>
+<td>Syntax Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 3</td>
+<td>Location Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 4</td>
+<td>Gross Range Test</td>
+</tr>
+<tr>
+<td><strong>Group 2</strong></td>
+<td>Test 5</td>
+<td>Climatological Test</td>
+</tr>
+<tr>
+<td>Strongly</td>
+<td>Test 6</td>
+<td>Spike Test</td>
+</tr>
+<tr>
+<td>Recommended</td>
+<td>Test 7</td>
+<td>Rate of Change Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 8</td>
+<td>Flat Line Test</td>
+</tr>
+<tr>
+<td><strong>Group 3</strong></td>
+<td>Test 9</td>
+<td>Multi-Variate Test</td>
+</tr>
+<tr>
+<td>Suggested</td>
+<td>Test 10</td>
+<td>Attenuated Signal Test</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 11</td>
+<td>Neighbor Test</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-2. Real-time QC Tests in order of implementation</p>
+<p>Some effort will be needed to select the best thresholds,
+which are determined at the local level and may require multiple iterations of trial and error before final selections are made.
+This manual does not provide overly generic guidance for selecting thresholds because doing so may not yield a good starting point at the local level.
+Although more tests imply a more robust QC effort,
+valid reasons may exist for not invoking a particular test in some instances.
+Where a test from group 2 or group 3 cannot be implemented, the operator should document the reason it does not apply.
+Such flexibility is needed to support the U.S. IOOS effort,
+since the number of tests conducted and the justification for not applying some tests are useful for evaluating an operator's skill levels.</p>
+<h3 id="33-qc-tests">3.3 QC Tests</h3>
+<p>A variety of tests can be performed on the data to indicate data quality.
+Testing the integrity of the data transmission itself using a gap test and syntax test is a first step.
+If the data transmission is not sound,
+further testing is irrelevant.
+Additional checks evaluate the pH values themselves through various comparisons to the data stream and to the expected conditions in the given environment.
+The tests listed in the following section presume a time ordered series of observations and denote the most recent observation as pH<span class="arithmatex">\(_n\)</span>,
+preceded by a value at pH<span class="arithmatex">\(_{n-1}\)</span>,
+and so on backwards in time.
+They were developed from input by authors and reviewers of this manual,
+as well as from QARTOD workshops (QARTOD 2003-2009).
+The focus is primarily on the real-time QC of observation pH<span class="arithmatex">\(_n\)</span>,
+pH<span class="arithmatex">\(_{n-1}\)</span>, and pH<span class="arithmatex">\(_{n-2}\)</span>.
+There are several instances when tests are closely related,
+e.g.,
+the climatology test is similar to the gross range test,
+the multi-variate test can be similar to the rate of change test,
+etc.
+As such,
+there are opportunities for clever and efficient coding,
+which are left to those creating the software.</p>
+<h4 id="331-applications-of-qc-tests-to-stationary-ph-sensors">3.3.1 Applications of QC Tests to Stationary pH Sensors</h4>
+<p>These eleven tests require operators to select a variety of thresholds.
+These thresholds should not be determined arbitrarily but can be based on historical knowledge or statistics derived from more recently acquired data.
+Operators must document the reasons and methods used to determine the thresholds.
+Examples are provided in the following test tables;
+however,
+operators are in the best position to determine the appropriate thresholds for their operations.
+Some tests rely on multiple data points most recently received to determine the quality of the current data point.
+When this series of data points reveals that the entire group fails,
+the current data point is flagged,
+but the previous flags are not changed.
+This action supports the view that historical flags are not altered.
+The first example is in test 8,
+the flat line test,
+where this scenario will become clearer.
+For additional information regarding flags,
+see U.S. IOOS (2017) posted on the U.S. IOOS QARTOD website.</p>
+<p><strong>Test 1) Gap Test (Required)</strong></p>
+<p>Check for arrival of data.</p>
+<p>Test determines that the most recent data point has been received within the expected time window (<code>TIM_INC</code>) and has the correct time stamp (<code>TIM_STMP</code>).</p>
+<p>Note: For those systems that do not update at regular intervals,
+a large value for <code>TIM_STMP</code> can be assigned.
+The gap check is not a panacea for all timing errors.
+Data could arrive earlier than expected.
+This test does not address all clock drift/jump issues.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>Data have not arrived as expected.</td>
+<td><code>NOW - TIM_STMP &gt; TIM_INC</code></td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established locally by operator.</p>
+<p>Example: <code>TIM_INC = 1 hour</code></p>
+<p><strong>Test 2) Syntax Test (Required)</strong></p>
+<p>Check to ensure that the message is structured properly.</p>
+<p>Received data record (full message) contains the proper structure without any indicators of flawed transmission such as parity errors.
+Possible tests are a) the expected number of characters (<code>NCHAR</code>) for fixed length messages equals the number of characters received (<code>REC_CHAR</code>),
+or b) passes a standard parity bit check,
+CRC check,
+etc.
+Many such syntax tests exist,
+and the user should select the best criteria for one or more syntax tests.</p>
+<p>Note: Capabilities for dealing with flawed messages vary among operators;
+some may have the ability to parse messages to extract data within the flawed message sentence before the flaw.
+Syntax check is performed only at the message level and not at the sub-message level.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>Data record cannot be parsed.</td>
+<td><code>REC_CHAR ≠ NCHAR</code></td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>Data record can be parsed.</td>
+<td><code>REC_CHAR ≠ NCHAR</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Expected data record received; absence of parity errors.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established locally by operator.</p>
+<p>Example: <code>NCHAR = 128</code></p>
+<p><strong>Test 3) Location Test (Required)</strong></p>
+<p>Check for reasonable geographic location.</p>
+<p>Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits.
+The location test(s) can vary from a simple invalid location to a more complex check for displacement (DISP) exceeding a distance limit (RANGEMAX) based upon a previous location and platform speed.
+Operators may also check for erroneous locations based upon other criteria,
+such as reported positions over land,
+as appropriate.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>Invalid location.</td>
+<td><code>If |LAT| &gt; 90 or |LONG| &gt; 180, flag = 4</code></td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>Unlikely platform displacement.</td>
+<td><code>If DISP &gt; RANGEMAX, flag = 3</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Test does not apply to fixed deployments when no location is transmitted.</p>
+<p>Test specifications to be established locally by the operator.</p>
+<p>Example: Displacement DISP calculated between sequential position reports,
+<code>RANGEMAX = 20 km</code></p>
+<p><strong>Test 4) Gross Range Test (Required)</strong></p>
+<p>Data point exceeds sensor or operator selected min/max.</p>
+<p>All sensors have a limited output range,
+and this can form the most rudimentary gross range check.
+No values less than a minimum value or greater than the maximum value the sensor can output (<code>pH_SENSOR_MIN</code>,
+<code>pH_SENSOR_MAX</code>) are acceptable.
+Additionally,
+the operator can select a smaller span (<code>pH_USER_MIN</code>,
+<code>pH_USER_MAX</code>) based upon local knowledge or a desire to draw attention to extreme values.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>Reported value is outside of sensor span.</td>
+<td><code>pH_{n} &lt; pH_SENSOR_MIN</code>, or <code>pH_{n} &gt; pH_SENSOR_MAX</code></td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>Reported value is outside of user-selected span.</td>
+<td><code>pH_{n} &lt; pH_USER_MIN</code>, or <code>pH_{n} &gt; pH_USER_MAX</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established locally by operator.</p>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>pH_SENSOR_MAX = 14
+pH_SENSOR_MIN = 0
+pH_USER_MAX = 7
+pH_USER_MIN = 9
+</code></pre></div>
+<p><strong>Test 5) Climatology Test (Strongly Recommended)</strong></p>
+<p>Test that data point falls within seasonal expectations.</p>
+<p>This test is a variation on the gross range check,
+where the gross range (<code>pH_Season_MAX</code> and <code>pH_Season_MIN</code>) are adjusted monthly,
+seasonally,
+or at some other operator-selected time period (<code>TIM_TST</code>).
+Expertise of the local user is required to determine reasonable seasonal averages.
+Longer time series permit more refined identification of appropriate thresholds.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>Because of the dynamic nature of pH, no fail flag is identified for this test.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>Reported value is outside of user-identified climatology window.</td>
+<td><code>pH_{n} &lt; pH_Season_MIN</code> or <code>pH_{n} &gt; pH_Season_MAX</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established locally by operator:
+A seasonal matrix of pHmax and pHmin values at all <code>TIM_TST</code> intervals.</p>
+<p>Examples: <code>pH_WINTER_MIN = 7.9</code>, <code>pH_WINTER_MAX = 8.1</code></p>
+<p><strong>Test 6) Spike Test (Strongly Recommended)</strong></p>
+<p>Data point <span class="arithmatex">\(n-1\)</span> exceeds a selected threshold relative to adjacent data points.</p>
+<p>This check is for single value spikes,
+specifically the pH value at point <span class="arithmatex">\(n-1\)</span> (pH<span class="arithmatex">\(_{n-1}\)</span>).
+Spikes consisting of more than one data point are notoriously difficult to capture,
+but their onset may be flagged by the rate of change test.
+The spike test consists of two operator-selected thresholds,
+<code>THRSHLD_LOW</code> and <code>THRSHLD_HIGH</code>.
+Adjacent data points (pH<span class="arithmatex">\(_{n-2}\)</span> and pH<span class="arithmatex">\(_n\)</span>) are averaged to form a spike reference (<code>SPK_REF</code>).
+The absolute value of the spike is tested to capture positive and negative going spikes.
+Large spikes are easier to identify as outliers and flag as failures.
+Smaller spikes may be real and are only flagged suspect.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>High spike threshold exceeded.</td>
+<td><code>|pH_{n-1} - SPK_REF| &gt; THRSHLD_HIGH</code></td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>Low spike threshold exceeded.</td>
+<td><code>|pH_{n-1} - SPK_REF| &gt; THRSHLD_LOW</code> &amp; <code>|pH_{n-1} - SPK_REF| &lt; THRSHLD_HIGH</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established locally by operator.</p>
+<p>Examples: <code>THRSHLD_LOW = 0.1</code>, <code>THRSHLD_HIGH = 0.2</code></p>
+<p><strong>Test 7 ) Rate of Change Test (Strongly Recommended)</strong></p>
+<p>Excessive rise/fall test.</p>
+<p>This test inspects the time series for a time rate of change that exceeds a threshold value identified by the operator.
+pH values can change dramatically over short periods,
+hindering the value of this test.
+A balance must be found between a threshold set too low,
+which triggers too many false alarms,
+and one set too high,
+making the test ineffective.
+Determining the excessive rate of change is left to the local operator.
+The following are two different examples provided by QARTOD VI participants used to select the thresholds.
+Implementation of this test can be challenging.
+Upon failure,
+it is unknown which point is bad.
+Further,
+upon failing a data point,
+it remains to be determined how the next iteration can be handled.</p>
+<ul>
+<li><strong>Example 1:</strong> The rate of change between pH<span class="arithmatex">\(_{n-1}\)</span> and pH<span class="arithmatex">\(_{n}\)</span> must be less than three standard deviations (3 <span class="arithmatex">\(*\)</span> SD).
+  The SD of the pH time series is computed over the previous 25-hour period (user-selected value) to accommodate cyclical diurnal and tidal fluctuations.
+  Both the number of SDs (<code>N_DEV</code>) and the period over which the SDs are calculated (<code>TIM_DEV</code>) are determined by the local operator.</li>
+<li><strong>Example 2:</strong> The rate of change between pH<span class="arithmatex">\(_{n-1}\)</span> and pH<span class="arithmatex">\(_{n}\)</span> must be less than 0.1 + 2SD.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>Because of the dynamic nature of pH, no fail flag is identified for this test.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>The rate of change exceeds the selected threshold.</td>
+<td><code>|pH_{n} - pH_{n-1}| &gt; N_DEV *S D</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None</p>
+<p>Test specifications to be established locally by operator.</p>
+<p>Example: <code>N_DEV = 3</code>, <code>TIM_DEV = 25</code></p>
+<p><strong>Test 8) Flat Line Test (Strongly Recommended)</strong></p>
+<p>Invariate pH value.</p>
+<p>When some sensors and/or data collection platforms fail,
+the result can be a continuously repeated observation of the same value.
+This test compares the present observation (pH<span class="arithmatex">\(_n\)</span>) to a number (<code>REP_CNT_FAIL</code> or <code>REP_CNT_SUSPECT</code>) of previous observations.
+pH<span class="arithmatex">\(_n\)</span> is flagged if it has the same value as previous observations within a tolerance value <code>EPS</code> to allow for numerical round-off error.
+Note that historical flags are not changed.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>When the five most recent observations are equal, pH_{n} is flagged fail.</td>
+<td><code>pH_{n} ≠ 0</code> AND <code>For i=1, REP_CNT_FAIL pH_{n} - pH_{n-I} &lt; EPS</code></td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>It is possible but unlikely that the present observation and the two previous observations would be equal. When the three most recent observations are equal, pH<span class="arithmatex">\(_n\)</span> is flagged suspect.</td>
+<td><code>For i=1, REP_CNT_SUSPECT pH_{n} - pH_{n-I} &lt; EPS</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None</p>
+<p>Test specifications to be established locally by operator.</p>
+<p>Examples: <code>REP_CNT_FAIL = 5</code>, <code>REP_CNT_SUSPECT = 3</code></p>
+<p><strong>Test 9) Multi-Variate Test (Suggested)</strong></p>
+<p>Comparison to other variables.
+This is an advanced family of tests,
+starting with the simpler test described here and anticipating growth toward full co-variance testing in the future.
+To our knowledge,
+no one is conducting tests such as these in real-time.
+As these tests are developed and implemented,
+they should indeed be documented and standardized in later versions of this living pH manual.
+In this simple example,
+it is a pair of rate of change tests as described in test 7.
+The pH rate of change test is conducted with a more restrictive threshold (<code>N_pH_DEV</code>).
+If this test fails,
+a second rate of change test operating on a second variable
+(dissolved oxygen would be the most probable, <code>N_DO_DEV</code>) is conducted.
+The absolute value of the rate of change may need to be tested,
+since the relationship between pH and variable two is indeterminate.
+If the rate of change test on the second variable fails to exceed a threshold
+(e.g., an anomalous step is found in pH and is lacking in salinity),
+then the pH_{n} value is flagged.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>Because of the dynamic nature of pH, no fail flag is identified for this test.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td><code>pH_{n}</code> fails the pH rate of change and the second variable does not exceed the rate of change.</td>
+<td><code>|pH_{n} - pH_{n-1}| &gt; N_pH_DEV * SD_pH</code> AND <code>|DO_{n} - DO_{n-1}| &lt; N_DO_DEV * SD_DO</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established locally by operator.</p>
+<p>Examples: <code>N_pH_DEV = 2</code>, <code>N_DO_DEV = 2</code>, <code>TIM_DEV = 25 hours</code></p>
+<p><strong>NOTE:</strong> In a more complex case,
+more than one secondary rate of change test can be conducted.
+Temperature,
+salinity,
+turbidity,
+chlorophyll,
+total dissolved inorganic carbon and pCO2 are all possible secondary candidates,
+and any number of them could be checked for anomalous rate of change values.
+In this case,
+a knowledgeable operator may elect to pass a high rate of change pH observation when any one of the secondary variables also exhibits a high rate of change.
+Such tests border on modeling, should be carefully considered,
+and may be beyond the scope of this effort.</p>
+<p>Those reviewing this pH manual recognized the high value in full co-variance testing but also noted the challenges.
+Such testing is still a research project not yet ready for operational implementation.</p>
+<p><strong>Test 10) Attenuated Signal Test (Suggested)</strong></p>
+<p>A test for inadequate variation of the time series.</p>
+<p>A pH sensor failure can provide a data series that is nearly but not exactly a flat line
+(for example, if the sensor head was to become wrapped in debris).
+This test inspects for a standard deviation (<code>SD</code>) value or a range variation
+(<code>MAX</code> - <code>MIN</code>) value that fails to exceed threshold values (<code>MIN_VAR_WARN</code>, <code>MIN_VAR_FAIL</code>)
+over a selected time period (<code>TST_TIM</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>Variation fails to meet the minimum threshold <code>MIN_VAR_FAIL</code>.</td>
+<td>During <code>TST_TIM</code>, <code>SD &lt; MIN_VAR_FAIL</code>, or During <code>TST_TIM</code>, <code>MAX-MIN &lt; MIN_VAR_FAIL</code></td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>Variation fails to meet the minimum threshold <code>MIN_VAR_WARN</code>.</td>
+<td>During <code>TST_TIM</code>, <code>SD &lt; MIN_VAR_WARN</code>, or During <code>TST_TIM</code>, <code>MAX - MIN &lt; MIN_VAR_WARN</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Test Exception:</strong> None.</p>
+<p><strong>Test specifications to be established locally by operator.</strong></p>
+<p><strong>Examples:</strong> <code>TST_TIM = 12 hours</code>, <code>MIN_VAR_WARN = 0.1</code>, <code>MIN_VAR_FAIL = 0.2</code></p>
+<p><strong>Test 11) Neighbor Test (Suggested)</strong></p>
+<p>Comparison to nearby pH sensors.
+The check has the potential to be the most useful test when a nearby second sensor is determined to have a similar response.</p>
+<p>In a perfect world,
+redundant pH sensors utilizing different technology would be co-located and alternately serviced at different intervals.
+This close neighbor would provide the ultimate QC check,
+but cost prohibits such a deployment in most cases.</p>
+<p>In the real world,
+there are very few instances where a second pH sensor is sufficiently proximate to provide a useful QC check.
+Just a few hundred meters in the horizontal and less than 10 meters vertical separation can yield greatly different results.
+Nevertheless,
+the test should not be overlooked where it may have application.</p>
+<p>This test is the same as <em>9) multi-variate test - comparison to other variables</em> where the second variable is the second pH sensor.
+The selected thresholds depend entirely upon the relationship between the two sensors as determined by the local knowledge of the operator.</p>
+<p>In the instructions and examples below,
+data from one site (<code>pH1</code>) are compared to a second site (<code>pH2</code>).
+The standard deviation for each site (<code>SD1</code>, <code>SD2</code>) is calculated over the period (<code>TIM_DEV</code>) and multiplied as appropriate (<code>N_pH1_DEV</code> for site <code>pH1</code>) to calculate the rate of change threshold.
+Note that an operator could also choose to use the same threshold for each site since they are presumed to be similar.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail=4</td>
+<td>Because of the dynamic nature of pH, no fail flag is identified for this test.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Suspect=3</td>
+<td>pH_{n} fails the pH rate of change and the second pH sensor does not exceed the rate of change.</td>
+<td><code>|pH1_{n} - pH1_{n-1}| &gt; N_pH1_DEV * SD1</code> AND <code>|pH2_{n} - pH2_{n-1}| &lt; N_pH2_DEV * SD2</code></td>
+</tr>
+<tr>
+<td>Pass=1</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Test Exception:</strong> None.</p>
+<p><strong>Test specifications to be established locally by operator.</strong></p>
+<p><strong>Examples:</strong> <code>N_pH1_DEV = 2</code>, <code>N_pH2_DEV = 2</code>, <code>TIM_DEV = 25 hours</code></p>
+<h4 id="332-applications-of-qc-tests-to-ph-sensor-deployments">3.3.2 Applications of QC Tests to pH Sensor Deployments</h4>
+<p>The specific application of the QC tests can be dependent on the way the sensor is deployed. Table 3- 3
+provides a summary of each QC test described earlier in section 3. 3 and indicates any changes necessary for
+the test to be applied to different deployment scenarios. Note that the "s" axis indicates "along path" for
+mobile platforms.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Condition</th>
+<th>Platform</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Gap Test (Required)</strong> Test determines that the most recent data point has been received within the expected time window (<code>TIM_INC</code>) and has the correct time stamp (<code>TIM_STMP</code>). Note: For those systems that don't update at regular intervals, a large value for <code>TIM_STMP</code> can be assigned. The gap check is not a panacea for all timing errors. Data could arrive earlier than expected. This test does not address all clock drift/jump issues.</td>
+<td>Check for arrival of data.</td>
+<td>Stationary, Fixed Vertical, Mobile, 3-D</td>
+<td>No change</td>
+</tr>
+<tr>
+<td><strong>2. Syntax Test (Required)</strong> Received data record contains the proper structure without any indicators of flawed transmission such as parity errors. Possible tests are a) the expected number of characters (<code>NCHAR</code>) for fixed length messages equals the number of characters received (<code>REC_CHAR</code>), or b) passes a standard parity bit check, CRC check, etc. Many such syntax tests exist, and the user should select the best criteria for one or more syntax tests.</td>
+<td>Expected data record received, absence of parity errors.</td>
+<td>Stationary, Fixed Vertical, Mobile, 3-D</td>
+<td>No change</td>
+</tr>
+<tr>
+<td><strong>3. Location Test (Required)</strong> Test checks that the reported present physical location (latitude/longitude) is within operator-determined limits. The location test(s) can vary from a simple invalid location to a more complex check for displacement (DISP) exceeding a distance limit (<code>RANGEMAX</code>) based upon a previous location and platform speed. Operators may also check for erroneous locations based upon other criteria, such as reported positions over land, as appropriate.</td>
+<td>Check for reasonable geographic location.</td>
+<td>Stationary, Fixed Vertical, Mobile, 3-D</td>
+<td>No change</td>
+</tr>
+<tr>
+<td><strong>4. Gross Range Test (Required)</strong> All sensors have a limited output range, and this can form the most rudimentary gross range check. No values less than a minimum value or greater than the maximum value the sensor can output (<code>pH_SENSOR_MIN</code>, <code>pH_SENSOR_MAX</code>) are acceptable. Additionally, the operator can select a smaller span (<code>pH_USER_MIN</code>, <code>pH_USER_MAX</code>) based upon local knowledge or a desire to draw attention to extreme values.</td>
+<td>Data point exceeds sensor or operator selected min/max.</td>
+<td>Stationary, Fixed Vertical, Mobile, 3-D</td>
+<td>No change</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-3. Application of Required QC Tests for Sensor Deployments.</p>
+<p><strong>Note:</strong> The 's' axis means "along path."</p>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Test</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Condition</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Platform</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Codable Instructions</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><strong>5. Climatology Test (Strongly Recommended)</strong> This test is a variation on the gross range check, where the gross range (<code>pH_Season_MAX</code> and <code>pH_Season_MIN</code>) are adjusted monthly, seasonally, or at some other operator-selected time period (<code>TIM_TST</code>). Expertise of the local user is required to determine reasonable seasonal averages. Longer time series permit more refined identification of appropriate thresholds.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Test that data point falls within seasonal expectations.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Stationary<br><br />
+Fixed Vertical<br><br />
+Mobile<br><br><br><br />
+3-D</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>No change<br><br />
+Test conducted along z axis<br><br />
+Test conducted along s, x, or y axis<br><br />
+Test conducted along s, x, y, or z</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><strong>6. Spike Test (Strongly Recommended)</strong> This check is for single value spikes, specifically the pH value at point n-1 (<code>pH_{n-1}</code>). Spikes consisting of more than one data point are notoriously difficult to capture, but their onset may be flagged by the rate of change test. The spike test consists of two operator-selected thresholds above or below adjacent data points, <code>THRSHLD_LOW</code> and <code>THRSHLD_HIGH</code>. Adjacent data points (<code>pH_{n-2}</code> and <code>pH_{n}</code>) are averaged to form a spike reference (SPK_REF). The absolute value of the spike is tested to capture positive and negative going spikes. Large spikes are easier to identify as outliers and flag as failures. Smaller spikes may be real and are only flagged suspect.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Data point n-1 exceeds a selected threshold relative to adjacent data points.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Stationary<br><br />
+Fixed Vertical<br><br />
+Mobile<br><br><br><br><br><br />
+3-D</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>No change<br><br />
+Test conducted along z axis<br><br />
+No change, or test is conducted along s, x, or y axis<br><br />
+No change, or test is conducted along s, x, y, z axis<br></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><strong>7. Rate of Change Test (Strongly Recommended)</strong> This test inspects the time series for a time rate of change that exceeds a threshold value identified by the operator. pH values can change dramatically over short periods, hindering the value of this test. A balance must be found between a threshold set too low, which triggers too many false alarms, and one set too high, making the test ineffective. Determining the excessive rate of change is left to the local operator. The following are two different examples provided by QARTOD VI participants used to select the thresholds. Implementation of this test can be challenging. Upon failure, it is unknown which of the points is bad. Further, upon failing a data point, it remains to be determined how the next iteration can be handled.<br><br />
+- <strong>Example 1:</strong> The rate of change between <code>pH_{n-1}</code> and <code>pH_{n}</code> must be less than three standard deviations (3 * SD). The SD of the pH time series is computed over the previous 25-hour period (user-selected value) to accommodate cyclical diurnal and tidal fluctuations. Both the number of SDs (<code>N_DEV</code>) and the period over which the SDs (TIM_DEV) are calculated are determined by the local operator.<br />
+- <strong>Example 2:</strong> The rate of change between <code>pH_{n-1}</code> and <code>pH_{n}</code> must be less than 0.2 + 2 * SD.<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Excessive rise/fall test.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Stationary<br><br />
+Fixed Vertical<br><br />
+Mobile<br><br><br><br><br><br />
+3-D</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>No change<br><br />
+Test conducted along z axis<br><br />
+No change, or test is conducted along s, x, or y axis<br><br />
+No change, or test is conducted along s, x, y, or z axis<br></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><strong>8. Flat Line Test (Strongly Recommended)</strong> When some sensors and/or data collection platforms fail, the result can be a continuously repeated observation of exactly the same value. This test compares the present observation (<code>pH_{n}</code>) to a number (<code>REP_CNT_FAIL</code> or <code>REP_CNT_SUSPECT</code>) of previous observations. <code>pH_{n}</code> is flagged if it has the same value as previous observations within a tolerance value <code>EPS</code> to allow for numerical round-off error. Note that historical flags are not changed.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Invariant pH value.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Stationary<br><br />
+Fixed Vertical<br><br />
+Mobile<br><br><br><br><br><br />
+3-D</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>No change<br><br />
+Test conducted along z axis<br><br />
+No change, or test is conducted along s, x, or y axis<br><br />
+No change, or test is conducted along s, x, y, or z axis<br></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-4. Application of Strongly Recommended QC Tests for Sensor Deployments.</p>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Test</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Condition</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Platform</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Codable Instructions</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><strong>9. Multi-Variate Test (Suggested)</strong> This is an advanced family of tests, starting with the simpler test described here and anticipating growth towards full co-variance testing in the future. In the simplest case, it is a pair of rate of change tests as described in test 7. The pH rate of change test is conducted with a more restrictive threshold (<code>N_pH_DEV</code>). If this test fails, a second rate of change test operating on a second variable (dissolved oxygen would be the most probable) is conducted. The absolute valued rate of change should be tested since the relationship between pH and variable two is indeterminate. If the rate of change test on the second variable fails to exceed a threshold (e.g., an anomalous step is found in pH and is lacking in salinity), then the pH value <code>n_0</code> is flagged.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Comparison to other variables.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Stationary<br><br />
+Fixed Vertical<br><br />
+Mobile<br><br><br><br />
+3-D</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>No change<br><br />
+Test conducted along z axis<br><br />
+Test conducted along s, x, or y axis<br><br />
+Test conducted along s, x, y, or z</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><strong>10. Attenuated Signal Test (Suggested)</strong> A pH sensor failure can provide a data series that is nearly but not exactly a flat line (for example, if the sensor head was to become wrapped in debris). This test inspects for a standard deviation (<code>SD</code>) value or a range variation (<code>MAX-MIN</code>) value that fails to exceed a threshold value (<code>MIN_VAR</code>) over a selected time period (<code>TST_TIM</code>).<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Inadequate variation test.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Stationary<br><br />
+Fixed Vertical<br><br />
+Mobile<br><br><br><br><br />
+3-D</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>No change<br><br />
+Test conducted along z axis<br><br />
+No change, or test conducted along s, x, or y axis<br><br />
+No change, or test Test conducted along s, x, y, or z</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><strong>11. Neighbor Test (Suggested)</strong> The check has the potential to be the most useful test when a nearby second sensor is determined to have a similar response. This test is the same as test <em>9) multi-variate check - comparison to other variables</em> where the second variable is the second pH sensor. The selected thresholds depend entirely upon the relationship between the two sensors as determined by the local knowledge of the operator.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Comparison to nearby pH sensors.<br />
+<br />
+<br />
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Stationary<br><br />
+Fixed Vertical<br><br />
+Mobile<br><br />
+3-D</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>No change<br><br />
+Test conducted along z axis<br><br />
+No change<br><br />
+No change</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-5. Application Suggested QC Tests for Sensor Deployments.</p>
+<h4 id="40-summary">4.0 Summary</h4>
+<p>The QC tests in this pH manual have been compiled using the guidance provided by QARTOD workshops (QARTOD 2003-2009) and from operators with extensive experience.
+Wherever possible,
+redundant tests have been merged.
+These tests are designed to support a range of pH sensors and operator capabilities.
+Some well-established programs with the highest standards have implemented very rigorous QC processes.
+Others,
+with different requirements,
+may utilize sensors with data streams that cannot support as many QC checks-all have value when used prudently.
+It is the responsibility of the users to understand and appropriately utilize data of varying quality,
+and operators must provide support by documenting and publishing their QC processes.
+A balance must be struck between the time-sensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.</p>
+<p>The eleven data QC tests described in this manual apply to pH observations from a variety of sensor types and platforms that may be used.
+Several existing programs,
+such as the Global Ocean Acidification Observation Network,
+may have already developed QC tests that are similar to the U.S. IOOS QARTOD tests in this manual.
+The QARTOD pH committee's objective is to ensure these QARTOD QC test requirements and recommendations align with those of existing programs to the maximum extent possible
+(without being overly prescriptive)
+by providing meaningful guidance and thresholds that everyone can accomplish within a national framework.
+The individual tests are described and include codable instructions,
+output conditions,
+example thresholds,
+and exceptions (if any).</p>
+<p>Selection of the proper thresholds is critical to a successful QC effort.
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data and should not be determined arbitrarily.
+This manual provides some guidance for selecting thresholds based on input from various operators,
+but also notes that operators need the subject-matter expertise in selecting the proper thresholds to maximize the value of their QC effort.
+Because long-term data for pH are relatively scarce,
+it is expected that refinement of thresholds and exceptions will occur over time globally as well as becoming more specific to regional databases.</p>
+<p>Future QARTOD manuals will address standard QC test procedures and best practices for all types of common as well as uncommon platforms and sensors for U.S. IOOS core variables as appropriate.
+Some test procedures may even take place within the sensor package.
+Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream.
+Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data.
+However,
+QARTOD QC test procedures in this manual address only real-time,
+in-situ observations made by sensors on fixed or mobile platforms.
+The tests do not include post-processing,
+which is not conducted in real-time but may be useful for ecosystem-based management,
+or delayed-mode,
+which is required for climate studies.</p>
+<p>Training and education are of paramount importance to ensure that both QA and QC practices are in place.
+The sensor manufacturers can play a huge role in this area.
+The manufacturers have spent enormous efforts helping customers use these sensors successfully.
+Most manufacturers provide instructions for best practices,</p>
+<div class="highlight"><pre><span></span><code>Knowledgeable human involvement is required to properly understand the physical, chemical,
+and biological conditions within which the pH observations are being taken.
+</code></pre></div>
+<p>and those practices should be used as a first-order QA for all measurements.
+The manufacturer-supplied user's manual includes these instructions,
+and carefully following them is critical to knowing how to use the instruments,
+understanding their limitations and accuracy,
+knowing how to interpret output,
+and then having a meaningful way to validate performance.
+Validation of sensor performance can be done by taking periodic water samples,
+using a known calibrated and maintained reference instrument,
+or performing laboratory tests to a given accuracy.</p>
+<p>Each QC manual is a dynamic document and is posted on the QARTOD website
+(<a href="https://ioos.noaa.gov/project/qartod/">https://ioos.noaa.gov/project/qartod/</a>)
+upon completion.
+This practice allows for updating each U.S. IOOS core variable QC manual as technology development occurs,
+accommodating not only new sensors but also the upgrades envisioned for the existing sensors.</p>
+<p>This website permits easy access to all QARTOD material and updates as they are identified.
+It identifies code libraries,
+procedures for testing data,
+and links to social media-enabling the growing ocean observing community to stay engaged across the enterprise regionally,
+nationally,
+and internationally.</p>
+<p>This QARTOD project may be one of the best working examples of private-public partnerships,
+which is a fundamental tenet of U.S. IOOS.
+As this pH manual has exemplified,
+the sensor manufacturers must be fully involved in the creation of most,
+if not all,
+QC manuals.</p>
+<p>It is through this kind of uniform QC process that integration can occur across the national ocean enterprise,
+capitalizing the <em>I</em> in U.S. IOOS.
+Implementing these procedures will accelerate the research-to-operations process to support a real-time,
+operational,
+integrated ocean observing system of defined data quality.</p>
+<h4 id="50-references">5.0 References</h4>
+<p>Alliance for Coastal Technologies (ACT) (2012). Customer Needs and Use Assessment Survey, Use of,
+Satisfaction with, and Requirements for In Situ pH Sensors, Ref. No. [UMCES] CBL 2012-053.</p>
+<p>Branham, C., Murphy D., Johnson K., and Jannasch H. (2016). Optimization of a robust and reliable ISFET
+sensor for measuring pH in the deep ocean. [Presentation at OCEANS 2016 MTS/IEEE Monterey].
+DOI: <a href="https://doi.org/10.1109/OCEANS.2016.7761357">https://doi.org/10.1109/OCEANS.2016.7761357</a></p>
+<p>Bresnahan Jr., P.J., T. R. Martza, Y. Takeshita, K.S. Johnson, and M. La Shomba (2014). Best practices for
+autonomous measurement of seawater pH with the Honeywell Durafet. Methods in Oceanography, 9,
+pp.44-60. DOI: <a href="http://dx.doi.org/10.25607/OBP-">http://dx.doi.org/10.25607/OBP-</a> 18</p>
+<p>Bushnell, M. (2005). Quality Control, Quality Assurance, and Quality Flags [Presentation at QARTOD III, 2-
+4 November 2005]. NOAA/NOS/CO-OPS, 18 slides. DOI: <a href="http://dx.doi.org/10.25607/OBP-">http://dx.doi.org/10.25607/OBP-</a> 390</p>
+<p>Dickson, A.G. ( 1993 ) The measurement of sea water pH. Mar. Chem. 44: 131-142. <a href="https://doi.org/10.1016/0304-4203(93)90198-W">https://doi.org/10.1016/0304-4203(93)90198-W</a></p>
+<p>Dickson, A.G., C.L. Sabine, and J.R. Christian, (Eds.) (2007). Guide to Best Practices for Ocean CO2
+Measurements. PICES Special Publication 3, 191 pp.</p>
+<p>Easley, R.A. and R.H. Byrne (201 2 ). Spectrophotometric calibration of pH electrodes in seawater using
+purified m-cresol purple [published correction appears in Environ Sci Technol. 2015 May 5;49(9):5841].
+Environ Sci Technol. 2012;46(9):5018-5024. doi:10.1021/es300491s</p>
+<p>Ellison, S.L.R. and A. Williams (2012). Eurachem/CITAC guide: Quantifying Uncertainty in Analytical
+Measurement, Third ed.</p>
+<p>Ikeda, G., (2018). Verifying ISFET Sensors: Test Bath, Field Experiments to Check Accuracy of pH
+Measurements. Sea Technology Magazine, October 2018, pp 10-13.</p>
+<p>Johnson, K. S., H.W. Jannasch, L.J. Coletti, V.A. Elrod, T.R. Martz, Y. Takeshita, R.J. Carlson, J.G. Connery,
+(2016). Deep-Sea DuraFET: A pressure tolerant pH sensor designed for global sensor networks. Anal.
+Chem. 88(6), 3249-3256.</p>
+<p>Joint Committee for Guides in Metrology (JCGM), ( 2012 ). International Vocabulary of Metrology: Basic and
+General Concepts and Associated Terms. 3rd Edition.</p>
+<p>Land, Peter E. ,J.D. Shutler, H. Findlay, F. Girard-Ardhuin, R. Sabia, N. Reul, J. Piolle, ... P. Bhadury (2015).
+"Salinity from space unlocks satellite-based assessment of ocean acidification." Environmental science &amp;
+technology. Retrieved from: <a href="http://pubs.acs.org/doi/abs/10.1021/es504849s">http://pubs.acs.org/doi/abs/10.1021/es504849s</a>.</p>
+<p>Martz, T.R., J.J. Carr, C.R. French, and M.D. DeGrandpre (2003). A submersible autonomous sensor for
+spectrophotometric pH measurements of natural waters. Anal. Chem., 75,1844-1850.</p>
+<p>Martz, T. R., J.G. Connery, and K.S. Johnson (2010). Testing the Honeywell Durafet® for seawater pH
+applications. Limnol. Oceanogr. Methods 8, 172-184.</p>
+<p>Miller, C. A., K. Pocock, W. Evans, and A.L. Kelley (2018). An evaluation of the performance of Sea-Bird
+Scientific's SeaFET™ autonomous pH sensor: considerations for the broader oceanographic community,
+Ocean Sci., 14, 751-768, <a href="https://doi.org/10.5194/os-14-751-2018">https://doi.org/10.5194/os-14-751-2018</a>.</p>
+<p>Neumann, Gerhard and W.J. Pierson (1966). Principles of Physical Oceanography, Prentice Hall, p. 154.</p>
+<p>Newton, J. A., R.A. Feely, E.B. Jewett, P. Williamson, and J. Mathis. ( 2014 ) Global Ocean Acidification
+Observing Network: Requirements and Governance Plan, First Edition. Accessed March 28, 2019 at
+<a href="http://www.pmel.noaa.gov/co2/GOA-ON/GOA-ON_Plan_v1.0_April2014.doc">http://www.pmel.noaa.gov/co2/GOA-ON/GOA-ON_Plan_v1.0_April2014.doc</a>.</p>
+<p>Okazaki, R. R., A.J. Sutton, R.A. Feely, A.G. Dickson, S.R. Alin, C.L. Sabine, P.M. Bunje and J.I. Virmani
+(2017). Evaluation of marine pH sensors under controlled and natural conditions for the Wendy Schmidt
+Ocean Health XPRIZE. Limnology and Oceanography: Methods, 15, pp.586-600.
+DOI:10.1002/lom3.10189.</p>
+<p>Paris. Intergovernmental Oceanographic Commission of UNESCO ( 2013 ). Ocean Data Standards, Vol.3:
+Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine
+Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English) (IOC/2013/MG/54-3).
+<a href="https://www.nodc.noaa.gov/oads/support/MG54_3.pdf">https://www.nodc.noaa.gov/oads/support/MG54_3.pdf</a></p>
+<p>Paris. Intergovernmental Oceanographic Commission of UNESCO ( 2018 ). IOC/EC-LI/2 Annex 6 rev.
+Update on the IOC Custodianship Role in Relation to SDG 14 Indicators. 21 pp. (English).
+<a href="http://www.ioc-unesco.org/components/com_oe/oe.php?task=download&amp;id=42566&amp;version=1.0&amp;lang=1&amp;format=1">http://www.ioc-unesco.org/components/com_oe/oe.php?task=download&amp;id=42566&amp;version=1.0&amp;lang=1&amp;format=1</a></p>
+<p>Pimenta, A.R. and J.S. Grear (2018). Guidelines for Measuring Changes in Seawater pH and Associated
+Carbonate Chemistry in Coastal Environments of the Eastern United States. Narragansett, RI, U.S.
+Environment Protection Agency, 59pp. (EPA/600/R-17/483) DOI:/10.25607/OBP- 425.</p>
+<p>QARTOD I-V Reports ( 2003 - 2009 ): Accessed June 9, 2019 at <a href="https://ioos.noaa.gov/ioos-in-action/qartod-meetings/">https://ioos.noaa.gov/ioos-in-action/qartod-meetings/</a>.</p>
+<p>Rérolle, Victoire M.C., Cedric F.A Floquet, Andy J.K. Harris, Matt C. Mowlem, Richard G. J. Bellerby, and
+Eric P. Achterberga ( 2013 ). Development of a colorimetric microfluidic pH sensor for autonomous
+seawater measurements Analytica Chimica Acta, Volume 786, 5 July 2013, Pages 124-131.
+<a href="https://doi.org/10.1016/j.aca.2013.05.008">https://doi.org/10.1016/j.aca.2013.05.008</a></p>
+<p>Rérolle, Victoire, Diana Ruiz-Pino, Mehrad Rafizadeh, Socratis Loucaides, Stathys Papadimitriou, et al.
+(2016). Measuring pH in the Arctic Ocean: Colorimetric method or SeaFET? Methods in Oceanography,
+Elsevier, 2016, 17, pp.32-49.
+<a href="https://www.researchgate.net/publication/304106232_Measuring_pH_in_the_Arctic_Ocean_Colorimetric_method_or_SeaFET">https://www.researchgate.net/publication/304106232_Measuring_pH_in_the_Arctic_Ocean_Colorimetric_method_or_SeaFET</a></p>
+<p>Ritz, G.F. and J.A. Collins ( 2008 ), Field measurements: U.S. Geological Survey Techniques of Water-
+Resources Investigations, book 9, chap. A6, sec. 6.4, accessed March 28, 2019 at
+<a href="http://pubs.water.usgs.gov/twri9A6/">http://pubs.water.usgs.gov/twri9A6/</a></p>
+<p>Sea-Bird Scientific Application Note 99 (2019). Calculating pH from ISFET pH Sensors.
+<a href="https://www.seabird.com/asset-get.download.jsa?id=56653842251">https://www.seabird.com/asset-get.download.jsa?id=56653842251</a></p>
+<p>Seidel, M.P., DeGrandpre, M.D. and A.G. Dickson. (2008). A sensor for in situ indicator-based
+measurements of seawater pH, Mar. Chem., 109, 18-28.</p>
+<p>U.S. Integrated Ocean Observing System ( 2017 ). Manual for the Use of Real-Time Oceanographic Data
+Quality Control Flags Version 1.1. 41 pp. <a href="https://doi.org/10.7289/V5B56GZJ">https://doi.org/10.7289/V5B56GZJ</a></p>
+<p>Williams, N.L., Juranek, L.W., Johnson, K.S., Feely, R.A., Riser, S.C., Talley, L.D., Russell, J.L., Sarmiento,
+J.L., Wanninkhof, R. (2016). Empirical algorithms to estimate water column pH in the Southern Ocean.
+Geophysical Research Letters 43, 3415-3422.</p>
+<h4 id="additional-references-to-related-documents">Additional References to Related Documents:</h4>
+<p>Scheme on QC flags, which is a general document that discusses how to write the results of tests but does not
+discuss the actual tests. <a href="http://www.oceandatastandards.org/">http://www.oceandatastandards.org/</a></p>
+<p>The ocean data standards resource pool can be found at: <a href="http://www.oceandatastandards.org/resourcepool-mainmenu-7">http://www.oceandatastandards.org/resourcepool-mainmenu-7</a>.</p>
+<p><a href="http://www.oceandatastandards.org">http://www.oceandatastandards.org</a> is the higher-level page (see menu to the right for subpages).</p>
+<p>Argo Quality Control Manual can be found at:
+<a href="http://www.argodatamgt.org/content/download/341/2650/file/argo-quality-control-manual-V2.7.pdf">http://www.argodatamgt.org/content/download/341/2650/file/argo-quality-control-manual-V2.7.pdf</a>.</p>
+<p>National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality
+Control Checks and Procedures, August 2009. National Data Buoy Center, Stennis Space Center,
+Mississippi 39529-6000.</p>
+<p>National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean
+Observing System (IOOS)Development Plan - A report of the national Ocean Research Leadership
+Council and the Interagency Committee on Ocean Science and Resource Management Integration. The
+National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9.</p>
+<p>Wagner, R.J., R.W. Boulger, Jr., C.J. Oblinger, and B.A. Smith, ( 2006 ). Guidelines and standard procedures
+for continuous water-quality monitors-Station operation, record computation, and data reporting: U.S.
+Geological Survey Techniques and Methods 1-D3, 51 p. <a href="http://pubs.water.usgs.gov/tm1d3">http://pubs.water.usgs.gov/tm1d3</a></p>
+<h4 id="supporting-documents-found-on-the-qartod-website">Supporting Documents Found on the QARTOD Website:</h4>
+<p><a href="https://ioos.noaa.gov/ioos-in-action/pH/">https://ioos.noaa.gov/ioos-in-action/pH/</a></p>
+<p>Global Ocean Acidification Observing Network: Requirements and Governance Plan, 2014</p>
+<p>Argo Quality Control Manual, V 2.7 3 January 2012</p>
+<p>National Water Quality Monitoring Council Water Quality Data Elements: A User Guide</p>
+<p>Requirements for Global Implementation of the Strategic Plan for Coastal GOOS - Panel for Integrated
+Coastal Observation (PICO-I)</p>
+<p>Voluntary Estuary Monitoring Manual, A Methods Manual, Second Edition, EPA- 842 - B- 06 - 003. Chapter 11:
+pH and Alkalinity</p>
+<p>A- 1</p>
+<h4 id="appendix-a-ph-manual-contributors-and-reviewers">Appendix A pH Manual Contributors and Reviewers</h4>
+<h4 id="ph-manual-contributors-and-reviewers-version-1-0">pH Manual Contributors and Reviewers, Version 1. 0</h4>
+<h5 id="name-organization">Name Organization</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Leticia Barbero
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Mark Bushnell
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Charles Branham
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Kruti Desai
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Janice Fulford
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Bauke Houtman
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Greg Ikeda
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Chris Kincade
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Nicholas Rome
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Grace Saba
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Chris Sabine
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Dan Sullivan
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Adrienne Sutton
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Dwight Trueblood
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Rik Wanninkhof
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>Atlantic Oceanographic and Meteorological Laboratory
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>U.S. IOOS
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>Sea-Bird Scientific
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>National Science Foundation/Ocean Observatories Initiative
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>USGS Hydrographic Instrumentation Facility
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>National Science Foundation/Ocean Observatories Initiative
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>Sea-Bird Scientific
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>National Estuarine Research Reserve System
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>National Science Foundation/Ocean Observatories Initiative
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>Rutgers University
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>University of Hawaii
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>U.S. Geological Survey
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>Pacific Marine Environmental Laboratory
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>National Estuarine Research Reserve System
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>Atlantic Oceanographic and Meteorological Laboratory
+</code></pre></div>
+<h4 id="qartod-board-of-advisors-version-1-0">QARTOD Board of Advisors, Version 1. 0</h4>
+<h5 id="name-organization_1">Name Organization</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Kathleen Bailey, Project Manager
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Julie Bosch
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Eugene Burger
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Jennifer Dorton
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Robert Heitsenrether
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Jeff King
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Shannon McArthur
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Mario Tamburri
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Julie Thomas, BOA Chair
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>Christoph Waldmann
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>U.S. IOOS
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>NOAA/National Centers for Environmental Information
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>NOAA/Pacific Marine Environmental Laboratory
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>SECOORA
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>NOS/Center for Operational Oceanographic Products and Services
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>U.S. Army Corps of Engineers
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>NOAA/National Data Buoy Center
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>University of Maryland Center for Environmental Science / Chesapeake
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>Biological Laboratory
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>SCCOOS/Scripps Institution of Oceanography/Coastal Data Information
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>Program (retired)
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>University of Bremen/MARUM
+</code></pre></div>
+<h4 id="us-ioos-regional-associations-version-1-0">U.S. IOOS Regional Associations, Version 1. 0</h4>
+<h5 id="name-organization_2">Name Organization</h5>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Josie Quintrell
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Clarissa Anderson
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Debra Hernandez
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Melissa Iwamoto
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Barbara Kirkpatrick
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Gerhard Kuska
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Molly McCammon
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Julio Morell
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Ru Morrison
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Jan Newton
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Kelli Paige
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Henry Ruhl
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>IOOS Association
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>SCCOOS
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>SECOORA
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>PacIOOS
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>GCOOS
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>MARACOOS
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>AOOS
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>CariCOOS
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>NERACOOS
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>NANOOS
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>GLOS
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>CeNCOOS
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>A - 2
+</code></pre></div>
+<h4 id="dmac-community-version-10">DMAC Community Version 1.0</h4>
+<p><strong>Regional Associations</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>AOOS
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Carol Janzen
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>GCOOS
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Bob Currier
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>CARICOOS
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Miguel Canals
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Roy Watlington
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>SECOORA
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Jennifer Dorton
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>Abbey Wakely
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Filipe Pires Alvarenga Fernandes
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>Research Organizations
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>Gulf of Maine Research Institute
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>Eric Bridger
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>Scripps Institution of Oceanography
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>Vicky Rowley
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>Monterey Bay Aquarium Research Institute
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>Fred Bahr
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>Smithsonian Environmental Research Center
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>Matthew Ogburn
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>Federal and State Agencies
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>Bureau of Ocean Energy Management
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>Brian Zelenke
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>Jonathan Blythe
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>Environmental Protection Agency
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>Dwane Young
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>Great Lakes Commission
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>Guan Wang
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>National Oceanic and Atmospheric Administration
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>Bill Woodward
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>Kenneth Casey
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>Mark VanWaes
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>Alexander Birger
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>Bob Simons
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>Byron Kilbourne
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>Dave Easter
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>Derrick Snowden
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>Frank Lodato
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>Gabrielle Canonico
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>Jason Gedamke
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>Jessica Morgan
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>Kevin O&#39;Brien
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>Lynn Dewitt
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>Mark Bushnell
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>Micah Wengren
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>Rita Adak
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>Thomas Ryan
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>Tiffany Vance
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>Tim Boyer
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a>Tony Lavoi
+<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>U.S. Army Corps of Engineers
+<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>Jeff Lillycrop
+<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>
+<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a>
+<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>
+<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a>U.S. Geological Survey
+<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a>Abigail Benson
+<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a>James Kreft
+<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a>Rich Signell
+<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a>Sky Bristol
+</code></pre></div>
+<p>A- 3</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Academic Institutions
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>University of Maine Bob Fleming
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>University of Maryland Mario Tamburri
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Dalhousie University Brad Covey
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Lenore Bajona
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Richard Davis
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>University of Puerto Rico Jorge Capella
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Juan Orlando Gonzalez Lopez
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>University of Hawaii James T. Potemra
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>University of Washington Emilio Mayorga
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>Texas A &amp; M University Felimon Gayanilo
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>Rutgers University John Kerfoot
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>Michael Vardaro
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>University of Tasmania Peter Walsh
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>Private Industry
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>LimnoTech Kathy Koch
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>Tad Slawecki
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>RPS Group Kelly Knee
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>Melanie Gearon
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>Axiom Kyle Wilcox
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>Rob Bochenek
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>Shane StClair
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>Ocean Tracking Network Jonathan Pye
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>Sea-Bird Scientific Charles Branham
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>Gregory Ikeda
+</code></pre></div>
+<p>B- 1</p>
+<h4 id="appendix-b-quality-assurance">Appendix B Quality Assurance</h4>
+<p>A major pre-requisite for establishing data quality for pH observations is having strong QA practices that
+address all actions related to the sensor during pre-deployment, deployment, and post-deployment. The
+consensus that emerged from past QARTOD meetings was that good quality data requires good QA, and
+good QA requires good scientists, engineers, and technicians applying consistent practices. Generally, QA
+practices relate to observing systems' sensors (the hardware) and include things like appropriate sensor
+selection, calibration, sensor handling and service, and evaluation of sensor performance.</p>
+<h5 id="b1-sensor-calibration-considerations">B.1 Sensor Calibration Considerations</h5>
+<p>Observations must be traceable to one or more accepted standards such as NIST through a calibration
+performed by the manufacturer and/or the operator. If the calibration is conducted by the manufacturer, the
+operator must also conduct some form of an acceptable calibration check.</p>
+<p>An often-overlooked calibration or calibration check can be performed by choosing a consensus standard.
+For example, deriving the same answer (within acceptable levels of data precision or data uncertainty) from
+four different sensors of four different manufacturers, preferably utilizing several different technologies,
+constitutes an acceptable check. Because of the trend toward corporate conglomeration, those wishing to
+employ a consensus standard should ensure that the different manufacturers are truly independent.</p>
+<p>Wet chemical sensors also have defined reagent stability and storage considerations that should be accounted
+for. For example, if reagents are beyond a "best-by date" the data are likely suspect. If reagents drift, that drift
+must be known or monitored.</p>
+<h5 id="b2-sensor-comparison">B.2 Sensor Comparison</h5>
+<p>An effective QA effort continually strives to ensure that end data products are of high value and to prove
+they are free of error. Operators should seek out partnering opportunities to inter-compare systems by co-
+locating differing sensors, thereby demonstrating high quality by both to the extent that there is agreement
+and providing a robust measure of observation data uncertainty by the level of disagreement. If possible,
+operators should retain an alternate sensor or technology from a second manufacturer for similar in-house
+checks. For resource-constrained operators, however, it may not be possible to spend the time and funds
+needed to procure and maintain two systems. For those who do so and get two different results, the use of
+alternate sensors or technologies provide several important messages: a) a measure of corporate capabilities;
+b) a reason to investigate, understand the different results, and take corrective action; and c) increased
+understanding that, when variables are measured with different technologies, different answers can be correct;
+they must be understood in order to properly report results. For those who succeed in obtaining similar
+results, the additional sensors provide a highly robust demonstration of capability. Such efforts form the basis
+of a strong QA/QC effort. Further, sensor comparison provides the operator with an expanded supply
+source, permitting less reliance upon a single manufacturer and providing competition that is often required
+by procurement offices.</p>
+<p>Users often take samples during deployment, recovery, or service. These times are not optimal for ensuring
+quality sensor data-often due to initial stabilization, sensor/environment disturbance, or high fouling near</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>B- 2
+</code></pre></div>
+<p>the end of the deployment. At least one sample should be obtained mid-deployment without disturbing the
+sensor.</p>
+<h5 id="b3-bio-fouling-and-corrosion-prevention-strategies">B.3 Bio-fouling and Corrosion Prevention Strategies</h5>
+<p>Bio-fouling is a frequent cause of pH sensor degradation and failure, so the following strategies may be useful
+for ameliorating the problem:</p>
+<ul>
+<li>Use anti-fouling paint with the highest copper content available (up to 75%) when possible (but not
+  on aluminum).</li>
+<li>Tributyltin oxide (TBTO) anti-foulant systems, often used in conjunction with a pumped system, are
+  highly effective (e.g., Sea-Bird SBE 43)</li>
+<li>To help with post-deployment clean-up (but not as an anti-foulant), wrap the body of the sensor with
+  clear packing tape for a small probe or plastic wrap for a large instrument, followed by PVC pipe
+  wrap tape. (This keeps the PVC tape from leaving a residue on the sensor.) Wrap the sensor body
+  with copper tape (again, beware of aluminum).</li>
+<li>Coat with zinc oxide (Desitin ointment).</li>
+<li>Use brass door/window screen around opening to sensor. The combination of copper and zinc is a
+  great anti-foulant and is significantly cheaper than copper screen.</li>
+<li>Remember that growth is sensor, depth, location, and season dependent.</li>
+<li>Maintain wipers on sensors per manufacturers' recommendation.</li>
+<li>Flush out with chlorine gas pumped through the system. This technique requires a lot of battery power.</li>
+<li>Plan for routine changing or cleaning of sensor as necessary.</li>
+<li>Check with calibration facility on which anti-foulants will be handled (allowed) by the calibrators.</li>
+<li>Use copper plates as shutters, which keep the sensor open for limited time. This is ideal over wipers
+  in oceanic environments with encrusting organisms like barnacles. Wipers do not work well in
+  southern Florida during the summer. Sediment and particles that become embedded in the wipers
+  can scratch the lens on optical sensors.</li>
+<li>Store the sensor in the dark when not in use.</li>
+<li>Avoid or isolate dissimilar metals.</li>
+<li>Maintain sacrificial anodes and ensure they are properly installed (good electrical contact).</li>
+<li>Maximize the use of non-metallic components.</li>
+<li>Use UV-stabilized components that are not subject to sunlight degradation.</li>
+<li>Mount sensors vertically to minimize sediment buildup - employ filters for sensors with flow-
+  through tubes.</li>
+<li>Where applicable, maintain sensor surfaces by gentle cleaning (e.g., using a baby toothbrush).</li>
+<li>Store the device above the surface between measurements.</li>
+<li>Make use of a pumped system where the sensor is kept above water and the sample is pumped
+  through a flow chamber just before a reading is required.</li>
+<li>Use petroleum-based lubricants as biocides (using care in the vicinity of optics and other sensitive
+  components).</li>
+<li>Carefully maintain and clean filters.</li>
+<li>Obtain mid-deployment validation field samples.</li>
+</ul>
+<p>B- 3</p>
+<h5 id="b4-common-qa-considerations">B.4 Common QA Considerations</h5>
+<p>The following lists suggest ways to ensure QA by using specific procedures and techniques:</p>
+<ul>
+<li>Perform pre-deployment calibrations on every sensor.</li>
+<li>Perform post-deployment calibrations on every sensor, plus in-situ comparison before recovery.</li>
+<li>Calibrate ready-to-use spares periodically.</li>
+<li>Monitor with redundant sensors whenever possible.</li>
+<li>Collect in-situ water samples to compare with the sensor.</li>
+<li>Take photos of sensor fouling for records.</li>
+<li>Record all actions related to sensors - calibration, cleaning, deployment, etc.</li>
+<li>Compare the first day or less of readings from newly deployed sensor to last sensor deployed. Large
+  shifts in median values can indicate a problem with one of the sensors. A post calibration of a
+  previously deployed sensor may help to determine if it is the source of the discontinuity in readings.</li>
+<li>Monitor battery voltage and watch for unexpected fluctuations.</li>
+</ul>
+<p><strong>When evaluating which instrument to use, consider these factors:</strong></p>
+<ul>
+<li>Selection of a reliable and supportive manufacturer and appropriate model</li>
+<li>Measurable data concentration range (including detection limit)
+  o Lowest and highest possible readings</li>
+<li>Operating range (i.e., some instruments won't operate at certain temperatures)
+  o Could be depth or pressure range
+  o Salinity correction</li>
+<li>Resolution/precision required</li>
+<li>Sampling frequency - how fast the sensor can take measurements</li>
+<li>Reporting frequency - how often the sensor reports the data</li>
+<li>Response time of the sensor - sensor lag - time response</li>
+<li>Power source limitations</li>
+<li>Clock stability and timing issues</li>
+<li>Internal fault detection and error reporting capabilities</li>
+</ul>
+<p><strong>When evaluating which specifications must be met:</strong></p>
+<ul>
+<li>State the expected accuracy.</li>
+<li>Determine how the sensor compared to the design specifications.</li>
+<li>Determine if sensor met those specifications.</li>
+<li>Determine whether the result is good enough (fit for purpose: data are adequate for nominal use as
+  preliminary data).</li>
+</ul>
+<p><strong>General comments regarding QA procedures:</strong></p>
+<ul>
+<li>A diagram (<a href="http://www.ldeo.columbia.edu/~dale/dataflow/">http://www.ldeo.columbia.edu/~dale/dataflow/</a>), contributed by Dale Chayes (LDEO)
+  provides a visual representation of proper QA procedures.</li>
+<li>Require serial numbers and model ID from the supplier.</li>
+<li>Develop useful checklists and update them as needed.</li>
+<li>Do not assume the calibration is perfect (could be a calibration problem rather than a sensor
+  problem).</li>
+<li>Keep good records of all related sensor calibrations and checks (e.g., conductivity and temperature).</li>
+<li>Use NIST-traceable standards when conducting calibrations or calibration checks.</li>
+<li>Keep good maintenance records. Favor sensors that maintain an internal file of past calibration
+  constants, which is very useful since it can be downloaded instead of transcribed manually, thus
+  introducing human error.</li>
+<li>Plot calibration constants or deviations from a standard over time to determine if the sensor has a
+  drift in one direction or another. A sudden change can indicate a problem with the sensor or the last
+  calibration.</li>
+<li>Don't presume that anomalous values are always problems with a sensor. Compare measurements
+  with other sensors to help determine if the reading is real; then examine the possibility of problems
+  with a sensor.</li>
+<li>Follow the manufacturer's recommendations and best practices established by knowledgeable users
+  to ensure proper sampling techniques. For example, in a non-pumped sensor in a turbulent
+  environment, bubbles can adhere to the surface of a sensor resulting in anomalous readings. Cycle
+  the wipers or shutter before the reading to brush off the bubbles from the face of the instrument.
+  For a pumped system in a turbulent environment, a degassing "Y" may limit bubbles adhering to the
+  face of the sensor.</li>
+</ul>
+<h5 id="b5-qa-levels-for-best-practices">B.5 QA Levels for Best Practices</h5>
+<p>A wide variety of techniques are used by operators to assure that sensors are properly calibrated and
+operating within specifications. While all operators must conduct some form of validation, there is no need to
+force operators to adhere to one single method. A balance exists between available resources, level of
+proficiency of the operator, and accuracy. The various techniques span a range of validation levels and form a
+natural hierarchy that can be used to establish levels of certification for operators (table A-1). The lists in the
+following sections suggest ways to ensure QA by using specific procedures and techniques.</p>
+<p>Table A-1. Best practices indicator for QA</p>
+<h5 id="qa-best">QA Best</h5>
+<h5 id="practices">Practices</h5>
+<h5 id="indicator">Indicator</h5>
+<h5 id="description">Description</h5>
+<p>Good Process Sensors are swapped and/or serviced at sufficiently regular intervals so as to
+avoid data steps (unexpected offsets) upon swap/service. Pre- and post-
+deployment calibration checks are conducted on each sensor.
+Better Process The good processes are employed, plus pre- and post-deployment calibration
+checks are conducted using alternative sensors to confirm performance.</p>
+<p><strong>Best Process</strong> (^) The better processes are employed, following a well-documented protocol,
+or alternative sensors are used to validate in-situ deployments. Or, pre-
+and post-calibrations are conducted by the manufacturer.</p>
+<h5 id="b6-additional-sources-of-qa-information">B.6 Additional Sources of QA Information</h5>
+<p>Sensor operators have access to many other sources of QA practices and information about a variety of
+instruments. For example, the Alliance for Coastal Technologies (ACT) serves as an unbiased, third party
+testbed for evaluating sensors and platforms for use in coastal and ocean environments. ACT conducts
+instrument performance demonstrations and verifications so that effective existing technologies can be
+recognized, and promising new technologies can become available to support coastal science, resource
+management, and ocean observing systems (ACT 2012). The NOAA Ocean Systems Test and Evaluation
+Program (OSTEP) also conducts independent tests and evaluations on emerging technology as well as new
+sensor models. Both ACT and OSTEP publish findings that can provide information about QA, calibration,
+and other aspects of sensor functionality. The following list provides links to additional resources on QA
+practices.</p>
+<ul>
+<li>Manufacturer specifications and supporting Web pages/documents</li>
+<li>QARTOD - <a href="https://ioos.noaa.gov/project/qartod/">https://ioos.noaa.gov/project/qartod/</a></li>
+<li>ACT - <a href="http://www.act-us.info/">http://www.act-us.info/</a></li>
+<li>USGS - <a href="http://water.usgs.gov/owq/quality.html">http://water.usgs.gov/owq/quality.html</a></li>
+<li>USGS - <a href="http://pubs.usgs.gov/tm/2006/tm1D3/">http://pubs.usgs.gov/tm/2006/tm1D3/</a></li>
+<li>USGS - <a href="http://or.water.usgs.gov/pubs/WRIR01-4273/wri014273.pdf">http://or.water.usgs.gov/pubs/WRIR01-4273/wri014273.pdf</a></li>
+<li>WOCE - <a href="https://www.nodc.noaa.gov/woce/">https://www.nodc.noaa.gov/woce/</a></li>
+<li>NWQMC - <a href="http://acwi.gov/monitoring/">http://acwi.gov/monitoring/</a></li>
+</ul>
+<h5 id="b7-sample-checklists">B.7 Sample Checklists</h5>
+<p>The following samples provide hints for development of deployment checklists taken from QARTOD IV:</p>
+<p>General QA Checklist:
+- [ ] Read the manual.
+- [ ] Establish, use, and submit (with a reference and version #) a documented sensor preparation procedure (protocol). Should include cleaning sensor according to the manufacturer's procedures.
+- [ ] Calibrate sensor against an accepted standard and document (with a reference and version #).
+- [ ] Compare the sensor with an identical, calibrated sensor measuring the same thing in the same area (in a calibration lab).
+- [ ] View calibration specifications with a critical eye (don't presume the calibration is infallible). Execute detailed review of calibrated data.
+- [ ] Check the sensor history for past calibrations, including a plot over time of deviations from the standard for each (this will help identify trends such a progressively poorer performance). Check the sensor history for past repairs, maintenance, and calibration.
+- [ ] Consider storing and shipping information before deploying.
+  - Heat, cold, vibration, etc.
+- [ ] Record operator/user experiences with this sensor.
+- [ ] Search the literature for information on your particular sensor(s) to see what experiences other researchers may have had with the sensor(s).
+- [ ] Establish and use a formal pre-deployment checklist.
+- [ ] Ensure that technicians are well-trained. Use a tracking system to identify those technicians who are highly trained and then pair them with inexperienced technicians for training purposes.</p>
+<p><strong>Deployment Checklist</strong></p>
+<ul>
+<li>[ ] Scrape bio-fouling off platform.</li>
+<li>[ ] Verify sensor serial numbers.</li>
+<li>[ ] Perform visual inspection; take photos if possible (verify position of sensors, connectors, fouling, and cable problems).</li>
+<li>[ ] Verify instrument function at deployment site just prior to site departure. Monitor sensors for issues (freezing, fouling, bubbles).</li>
+<li>[ ] Use established processes to confirm that the sensor is properly functioning, before departing the deployment site.</li>
+<li>[ ] Specify date/time for all recorded events. Use GMT or UTC.</li>
+<li>[ ] Check software to ensure that the sensor configuration and calibration coefficients are correct. Also check sampling rates and other timed events, like wiping and time averaging.</li>
+<li>[ ] Visually inspect data stream to ensure reasonable values.</li>
+<li>[ ] Compare up and down casts and/or dual sensors (if available).</li>
+<li>[ ] Note weather conditions and members of field crew.</li>
+</ul>
+<p><strong>Post-deployment Checklist</strong></p>
+<ul>
+<li>[ ] Take pictures of recovered sensor prior to cleaning.</li>
+<li>[ ] Check to make sure all clocks agree or, if they do not agree, record all times and compare with NIST.</li>
+<li>[ ] Post-calibrate sensor before and after cleaning, if possible. Perform in-situ side by side check using another sensor, if possible</li>
+<li>[ ] Use standard procedures to provide feedback about possible data problems and/or sensor diagnostics.</li>
+<li>[ ] Clean and store the sensor properly or redeploy.</li>
+<li>[ ] Visually inspect physical state of instrument.</li>
+<li>[ ] Verify sensor performance by:</li>
+<li>Checking nearby stations;</li>
+<li>Making historical data comparisons (e.g., long-term time-series plots, which are particularly useful for identifying long-term bio-fouling or calibration drift.)</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>The coast means coasts of the U.S. Exclusive Economic Zone (EEZ) and territorial sea
+(<a href="https://oceanservice.noaa.gov/facts/eez.html">https://oceanservice.noaa.gov/facts/eez.html</a>), Great Lakes, and semi-enclosed bodies of water and tidal wetlands connected to the coastal ocean.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>"Conservative constituents are physical,
+chemical,
+or biological properties of sea water that are not altered by external or internal processes which may either create or destroy the amount or concentration of such constituents or properties in a given volume of water" (Neumann and Pierson 1966).
+Temperature and salinity are conservative properties because there are no sources or sinks of heat and salt in the interior of the ocean.
+Other properties,
+such as oxygen are non-conservative.
+For example,
+oxygen content may change slowly due to oxidation of organic material and respiration by animals.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 11, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2025</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ocefpaf" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.tabs", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
