@@ -851,7 +851,8 @@ This process allows for QC manual updates as technology development occurs for b
 > U.S. Integrated Ocean Observing System, January 2014. Manual for the Use of Real-Time Oceanographic Data Quality Control Flags. 19 pp. http://www.ioos.noaa.gov/qartod/temperature_salinity/qartod_oceanographic_data_quality_manual.pdf
 
 > Vagel, S., W. Large, and D. Farmer, 1990: An Evaluation of the WOTAN Technique of Inferring Oceanic Winds from Underwater Ambient Sound. *Journal of Atmospheric and Oceanic Technology*, Vol. 7, p. 576-595. http://journals.ametsoc.org/doi/abs/10.1175/1520- 0426(1990)007%3C0576%3AAEOTWT%3E2.0.CO%3B2
-  - WMO 1983. Guide to Meteorological Instruments and Methods of Observation. World Meteorological Organization No. 8, 5th edition, Geneva Switzerland.
+
+ > WMO 1983. Guide to Meteorological Instruments and Methods of Observation. World Meteorological Organization No. 8, 5th edition, Geneva Switzerland.
 
 Additional References to Related Documents:
 
@@ -1114,34 +1115,34 @@ The following samples provide hints for development of deployment checklists tak
 
 ## Appendix B. QARTOD Wind Manual Team
 
-|                            | Wind Manual	Contributors                                             |   |   |
-|----------------------------|----------------------------------------------------------------------|---|---|
-| Name                       | Organization                                                         |   |   |
-| Mark	Bushnell,	Lead	Editor | CoastalObsTechServices	LLC	– NOAA/NOS/CO-OPS                         |   |   |
-| Ray	Toll,	Editor           | Old	Dominion	University                                              |   |   |
-| Helen	Worthington,	Editor  | REMSA	– NOAA/NOS/CO-OPS                                              |   |   |
-| Kathy	Bailey*              | NOAA/NOS/CO-OPS                                                      |   |   |
-| Julie	Bosch*               | NOAA/National	Coastal	Data	Development	Center                        |   |   |
-| Rich	Bouchard*             | NOAA/National	Data	Buoy	Center                                       |   |   |
-| Mark	Bourassa*             | Florida	State	University                                             |   |   |
-| Richard	Bourgerie*         | NOAA/NOS/CO-OPS                                                      |   |   |
-| Grant	Cameron*             | University	of	California,	San	Diego	Coastal	Data	Information	Program |   |   |
-| Frank	DeFina*              | Vaisala                                                              |   |   |
-| James	Elliott*             | NOAA/National	Weather	Service/Office	of	Operational	Systems          |   |   |
-| Kent	Hathaway*             | U.S.	Army	Corps	of	Engineers                                         |   |   |
-| Rex	Hervey*                | NOAA/	National	Data	Buoy	Center                                      |   |   |
-| Robert	Jensen*             | U.S.	Army	Corps	of	Engineers                                         |   |   |
-| Ed	Kearns*                 | NOAA/National	Environmental	Satellite	and	Information	Service        |   |   |
-| Rick	Lumpkin*              | NOAA/Atlantic	Oceanographic	and	Meteorological	Laboratory            |   |   |
-| Regina	Moore*              | NOAA/National	Data	Buoy	Center                                       |   |   |
-| Mark	Powell*               | NOAA/                                                                |   |   |
-| Robert	Raye*               | Shell	Oil	Company                                                    |   |   |
-| Paula	Rychtar*             | NOAA/National	Weather	Service/Office	of	Operational	Systems          |   |   |
-| Mario	Tamburri             | Alliance	for	Coastal	Technologies                                    |   |   |
-| Julie	Thomas*              | University	of	California,	San	Diego	Coastal	Data	Information	Program |   |   |
-| Jay	Titlow*                | WeatherFlow,	Inc.                                                    |   |   |
-| Shawn	Smith                | Florida	State	University/Center	for	Ocean-Atmospheric	Prediction     |   |   |
-|                            | Studies/Shipboard Automated Meteorological	and	Oceanographic Systems |   |   |
+|                            | Wind Manual	Contributors                                             |
+|----------------------------|----------------------------------------------------------------------|
+| Name                       | Organization                                                         |
+| Mark	Bushnell,	Lead	Editor | CoastalObsTechServices	LLC	– NOAA/NOS/CO-OPS                         |
+| Ray	Toll,	Editor           | Old	Dominion	University                                              |
+| Helen	Worthington,	Editor  | REMSA	– NOAA/NOS/CO-OPS                                              |
+| Kathy	Bailey*              | NOAA/NOS/CO-OPS                                                      |
+| Julie	Bosch*               | NOAA/National	Coastal	Data	Development	Center                        |
+| Rich	Bouchard*             | NOAA/National	Data	Buoy	Center                                       |
+| Mark	Bourassa*             | Florida	State	University                                             |
+| Richard	Bourgerie*         | NOAA/NOS/CO-OPS                                                      |
+| Grant	Cameron*             | University	of	California,	San	Diego	Coastal	Data	Information	Program |
+| Frank	DeFina*              | Vaisala                                                              |
+| James	Elliott*             | NOAA/National	Weather	Service/Office	of	Operational	Systems          |
+| Kent	Hathaway*             | U.S.	Army	Corps	of	Engineers                                         |
+| Rex	Hervey*                | NOAA/	National	Data	Buoy	Center                                      |
+| Robert	Jensen*             | U.S.	Army	Corps	of	Engineers                                         |
+| Ed	Kearns*                 | NOAA/National	Environmental	Satellite	and	Information	Service        |
+| Rick	Lumpkin*              | NOAA/Atlantic	Oceanographic	and	Meteorological	Laboratory            |
+| Regina	Moore*              | NOAA/National	Data	Buoy	Center                                       |
+| Mark	Powell*               | NOAA/                                                                |
+| Robert	Raye*               | Shell	Oil	Company                                                    |
+| Paula	Rychtar*             | NOAA/National	Weather	Service/Office	of	Operational	Systems          |
+| Mario	Tamburri             | Alliance	for	Coastal	Technologies                                    |
+| Julie	Thomas*              | University	of	California,	San	Diego	Coastal	Data	Information	Program |
+| Jay	Titlow*                | WeatherFlow,	Inc.                                                    |
+| Shawn	Smith                | Florida	State	University/Center	for	Ocean-Atmospheric	Prediction     |
+|                            | Studies/Shipboard Automated Meteorological	and	Oceanographic Systems |
 * Wind	Manual Committee Members
 
 |                     | Wind Manual	Reviewers                          |
