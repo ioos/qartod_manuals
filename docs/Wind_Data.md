@@ -624,8 +624,8 @@ $Diff_n = WS_{n-3} - 3 * WS_{n-2} + 3 * WS_{n-1} - WS_n$.
 
 | Flags     | Condition                        | Codable	Instructions                             |
 |-----------|----------------------------------|--------------------------------------------------|
-| Fail=4    | High	spike	threshold	exceeded.   | `If	 abs($WS_{n-1}$ - SPK_REF) 	>	THRSHLD_HIGH`,	flag	=	4 |
-| Suspect=3 | Low	spike	threshold	exceeded.    | `If abs($WS_{n-1}$ - SPK_REF) >	THRSHLD_LOW` and `abs($WS_{n-1}$ - SPK_REF) ≤ THRSHLD_HIGH`,	flag = 3      |
+| Fail=4    | High	spike	threshold	exceeded.   | `If	 $abs(WS_{n-1} - SPK_REF)$ 	>	THRSHLD_HIGH`,	flag	=	4 |
+| Suspect=3 | Low	spike	threshold	exceeded.    | `If $abs(WS_{n-1} - SPK_REF)$ >	THRSHLD_LOW` and `$abs(WS_{n-1} - SPK_REF)$ ≤ THRSHLD_HIGH`,	flag = 3      |
 | Pass=1    | Applies	for	test	pass	condition. | N/A                                              |
 
 Test Exception: None.
@@ -664,7 +664,7 @@ The local operator can determine both the number of SDs (`N_DEV`) and the period
 | Flags     | Condition                                             | Codable	Instructions                     |
 |-----------|-------------------------------------------------------|------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.             | N/A                                      |
-| Suspect=3 | The	rate	of	change	exceeds	the selected	threshold. | `If	 abs(WSn – WS_{n-1})  > N_DEV*SD`,	flag	=	3 |
+| Suspect=3 | The	rate	of	change	exceeds	the selected	threshold. | `If abs(WSn – WS_{n-1}) > N_DEV*SD`,	flag	=	3 |
 | Pass=1    | Applies	for	test	pass	condition.                      | N/A                                      |
 
 Test Exception: None.
@@ -681,14 +681,14 @@ When some sensors and/or data DCPs fail,
 the result can be a continuously repeated observation of the same value.
 This test compares the present observation ($n$) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations.
 Observation $n$ is flagged if it has the same value as previous observations within a tolerance value,
-EPS,
+`EPS`,
 to allow for numerical round-off error.
 Note that historical flags are not changed.
 
 | Flags     | Condition                                                                                                                                                                                               | Codable	Instructions                                                                                    |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| Fail=4    | When	the	five	most	recent observations	are	equal,	WSn is flagged	fail.                                                                                                                         | Flag=4 `For	i=1,REP_CNT_FAILIf	 WS_n- WS_{n-i} 	>	EPS` then	flag = 1 end	if                     |
-| Suspect=3 | It	is	possible	but	unlikely	that	the present	observation	and	the	two previous	observations	would	be equal.	When	the	three	most	recent observations	are	equal,	WS_n is flagged	suspect. | If	flag=4,	end Flag=3 `For i=1, REP_CNT_SUSPECT If  WS_n - WS_{n-i} > EPS` then	flag = 1 end	if |
+| Fail=4    | When	the	five	most	recent observations	are	equal,	WSn is flagged fail.                                                                                                                         | Flag=4 <br>`For i=1`, `REP_CNT_FAIL` <br/>`If WS_n- WS_{n-i} > EPS` then flag = 1 end	if                     |
+| Suspect=3 | It	is	possible	but	unlikely	that	the present	observation	and	the	two previous	observations	would	be equal.	When	the	three	most	recent observations	are	equal,	WS_n is flagged	suspect. | If	flag=4,	end <br>Flag=3 <br/>`For i=1`, `REP_CNT_SUSPECT` <br>`If  WS_n - WS_{n-i} > EPS` then	flag = 1 <br/>end if |
 | Pass=1    | Applies	for	test	pass	condition.                                                                                                                                                                        | N/A                                                                                                     |
 
 Test Exception: None.
@@ -718,7 +718,7 @@ then the $WS_n$ value is flagged.
 | Flags     | Condition                                                                                                                               | Codable	Instructions                                                                         |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Fail=4    | No	fail	flag	is	identified	for	this	test.                                                                                               | N/A                                                                                          |
-| Suspect=3 | $WS_n$ fails	the	rate	of	change	and	the second	variable	(barometric	pressure, for	example)	does	not	exceed	the rate	of	change. | $If	 (WS_n$ – WS_{n-1})  > N_WSMV_DEV * SD_WS$ `AND` BPn – BPn-1  < N_BP_DEV * SD_BP$,	flag	=	3 |
+| Suspect=3 | $WS_n$ fails	the	rate	of	change	and	the second	variable	(barometric	pressure, for	example)	does	not	exceed	the rate	of	change. | $If	 abs(WS_n$ – WS_{n-1})  > N_WSMV_DEV * SD_WS$ `AND` abs(BPn – BPn-1)  < N_BP_DEV * SD_BP$,	flag	=	3 |
 | Pass=1    |                                                                                                                                         | N/A                                                                                          |
 
 Test Exception: None.
