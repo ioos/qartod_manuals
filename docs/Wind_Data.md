@@ -194,7 +194,7 @@ and suggested.
 #### 2.2.2 Traceability to Accepted Standards
 
 To ensure that wind sensors produce accurate data, rigorous calibrations and calibration checks must be performed in addition to QC checks.
-Most operators rely upon manufacturer calibrations and generally conduct calibration checks before deployment. 
+Most operators rely upon manufacturer calibrations and generally conduct calibration checks before deployment.
 These calibration checks are critical to ensuring that the manufacturer calibration is still valid.
 Manufacturers describe how to conduct these calibration checks in their user manuals,
 which are currently considered QA and further addressed in appendix A.
@@ -219,7 +219,7 @@ Wind sensors can be deployed in several ways: on fixed platforms with no motion 
 on moorings where buoy motion provides a source of error and a compass is required to correct for rotation,
 or on mobile platforms where corrections for both translation and rotation must be conducted.
 
-While outside the scope of the real-time tests described in this manual, 
+While outside the scope of the real-time tests described in this manual,
 QA is critical to data quality.
 Sensors require attention to proper QA measures both before and after the deployment.
 Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor maintenance.
@@ -234,7 +234,7 @@ All sensors and measurements contain errors,
 and operators should routinely provide a quantitative measure of data uncertainty in the associated metadata.
 Such calculations can be challenging,
 so operators should also document the methods used to compute the uncertainty.
-The limits and thresholds implemented by operators for the data quality control tests described here are a key component in establishing the observational error bars. 
+The limits and thresholds implemented by operators for the data quality control tests described here are a key component in establishing the observational error bars.
 Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty,
 as these two efforts greatly enhance the utility of their data.
 
@@ -252,7 +252,7 @@ Real-time wind observations are important for a wide variety of applications, in
 - Recreational boating
 - Operation of coastal engineering infrastructure
 
-Other applications, 
+Other applications,
 such as climatological summaries and operational/design criteria,
 do not require real-time QC but benefit from it through early detection of faulty wind observations or other station issues.
 
@@ -359,7 +359,7 @@ and gust measurements.
 This manual focuses specifically on the QC of real-time data, but there are limitations.
 For example,
 gradual calibration changes or slow system response variations (sensor drift) cannot be detected or corrected in real time.
-Therefore, 
+Therefore,
 delayed-mode approaches are done through comparison with collocated observations (e.g., satellite data).
 Drift correction to wind measurements during post-processing is highly unlikely to occur even if a valid post-recovery calibration could be obtained.
 Drift is often caused by worn bearings and corrosion, potentiometer pad degradation,
@@ -370,7 +370,7 @@ which are now less of a problem thanks to advances in digital circuitry.
 These gradual changes affect different systems in different ways (e.g., an impellor has a higher starting speed caused by corroded bearings).
 Another limitation is the ability of some data providers to backfill data gaps.
 In both of these examples, the observations are not considered to be real time for purposes of QC checks.
-(However, 
+(However,
 in some sophisticated 24/7 QC operations,
 real-time dissemination may be switched from one sensor to another based on real-time QC flags.)
 
