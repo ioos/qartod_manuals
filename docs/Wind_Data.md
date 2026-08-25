@@ -1122,6 +1122,7 @@ The following samples provide hints for development of deployment checklists tak
 ## Appendix B. QARTOD Wind Manual Team
 
 **Wind Manual	Contributors**
+
 | Name                       | Organization                                                         |
 |----------------------------|----------------------------------------------------------------------|
 | Mark	Bushnell,	Lead	Editor | CoastalObsTechServices	LLC	– NOAA/NOS/CO-OPS                         |
@@ -1152,6 +1153,7 @@ The following samples provide hints for development of deployment checklists tak
 *Wind	Manual Committee Members
 
 **Wind Manual	Reviewers**
+
 | Name                | Organization                                   |
 |---------------------|------------------------------------------------|
 | Jeff	Donovan       | SECOORA                                        |
@@ -1161,6 +1163,7 @@ The following samples provide hints for development of deployment checklists tak
 | Rik	Wanninkhof      | NOAA                                           |
 
 **QARTOD Board of Advisors**
+
 | Name                | Organization                                   |
 |---------------------|------------------------------------------------|
 | Joe	Swaykos	- Chair | NOAA/National	Data	Buoy	Center               |
@@ -1173,6 +1176,7 @@ The following samples provide hints for development of deployment checklists tak
 | Mario	Tamburri      | Alliance	for	Coastal	Technologies              |
 
 **DMAC Committee**
+
 | Name                            | Organization                                     |
 |---------------------------------|--------------------------------------------------|
 | Rob	Bochenek                    | AOOS/CeNCOOS	Axiom	Consulting	&	Design           |
@@ -1193,17 +1197,18 @@ The following samples provide hints for development of deployment checklists tak
 | Darren	Wright                  | SCCOOS                                           |
 
 **U.S. IOOS Regional Associations**
+
 | Name                            | Organization                                     |
 |---------------------------------|--------------------------------------------------|
-| Josie	Quintrell                 | U.S.	IOOS	Association                          |
-| Leslie	Rosenfeld               | CeNCOOS                                          |
-| Jan	Newton                      | NANOOS                                           |
-| Debra	Hernandez                 | SECOORA                                          |
+| Josie Quintrell                 | U.S. IOOS Association                            |
+| Leslie Rosenfeld                | CeNCOOS                                          |
+| Jan Newton                      | NANOOS                                           |
+| Debra Hernandez                 | SECOORA                                          |
 | Julie	Thomas                    | SCCOOS                                           |
 | Barbara	Kirkpatrick             | GCOOS                                            |
 | Gerhard	Kuska                   | MARACOOS                                         |
 | Molly	McCammon                  | AOOS                                             |
-| Ru	Morrison                    | NERACOOS                                         |
-| Jorge	Corridor                  | CariCOOS                                         |
-| Chris	Ostrander                 | PacIOOS                                          |
-| Kelli	Paige                     | GLOS                                             |
+| Ru Morrison                     | NERACOOS                                         |
+| Jorge Corridor                  | CariCOOS                                         |
+| Chris Ostrander                 | PacIOOS                                          |
+| Kelli Paige                     | GLOS                                             |

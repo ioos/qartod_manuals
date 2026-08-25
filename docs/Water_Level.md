@@ -614,6 +614,7 @@ and the spike check can be performed.
 
 Check for arrival of data.
 Test determines that the most recent data point has been measured and received within the expected time window (`TIM_INC`) and has the correct time stamp (TIM_STMP).
+
 **Note:** For those systems that do not update at regular intervals,
 a large value for `TIM_STMP` can be assigned.
 The gap check is not a solution for all timing errors.
