@@ -6,9 +6,9 @@ A Guide to Quality Control and Quality Assurance for Coastal and Oceanic Wind Ob
 
 ## Acknowledgements
 
-We are grateful to our entire Wind Manual Team, 
-whose names are listed in appendix B. 
-Special thanks go to those who served on the Wind Manual Committee and provided content and suggestions for the initial draft, 
+We are grateful to our entire Wind Manual Team,
+whose names are listed in appendix B.
+Special thanks go to those who served on the Wind Manual Committee and provided content and suggestions for the initial draft,
 as well as all who reviewed each draft and provided valuable feedback.
 
 ## Acronyms and Abbreviations
@@ -51,7 +51,7 @@ as well as all who reviewed each draft and provided valuable feedback.
 
 ## Definitions of Selected Terms
 
-This manual contains several terms whose meanings are critical to those using the manual. 
+This manual contains several terms whose meanings are critical to those using the manual.
 These terms are included in the following table to ensure that the meanings are clearly defined.
 
 |                        |                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -68,10 +68,10 @@ These terms are included in the following table to ensure that the meanings are 
 
 ## 1.0 Background and Introduction
 
-The U.S. Integrated Ocean Observing System (IOOS) has a vested interest in collecting high quality data for the 26 core variables (U.S. IOOS 2010) measured on a national scale. 
-In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, 
-addressing each variable as funding permits. 
-Additional efforts can also be undertaken to produce higher quality delayed mode data. 
+The U.S. Integrated Ocean Observing System (IOOS) has a vested interest in collecting high quality data for the 26 core variables (U.S. IOOS 2010) measured on a national scale.
+In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program,
+addressing each variable as funding permits.
+Additional efforts can also be undertaken to produce higher quality delayed mode data.
 This wind data manual is the sixth in a series of guidance documents that address QC of real-time data of each core variable.
 
 Please refer to http://www.ioos.noaa.gov/qartod/for the following documents:
@@ -87,34 +87,34 @@ Please reference this document as:
 
     U.S. Integrated Ocean Observing System, 2014. Manual for Real-Time Quality Control of Wind Data: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 45pp.
 
-This manual is a living document that reflects the state-of-the-art QC testing procedures for real-time wind observations. 
+This manual is a living document that reflects the state-of-the-art QC testing procedures for real-time wind observations.
 It is written for the experienced operator but also provides examples for those who are just entering the field.
 
 ## 2.0 Purpose/Constraints/Applications
 
-The following sections describe the purpose of this manual, 
+The following sections describe the purpose of this manual,
 as well as the constraints that operators may encounter when performing QC of wind data and specific applications of those data.
 
 ### 2.1 Purpose
 
-The purpose of this manual is to provide guidance to the U.S. IOOS and the wind community at large for the real-time QC of wind speed, 
-direction, 
-and gust measurements using an agreed-upon, 
-documented, 
-and implemented standard process. 
+The purpose of this manual is to provide guidance to the U.S. IOOS and the wind community at large for the real-time QC of wind speed,
+direction,
+and gust measurements using an agreed-upon,
+documented,
+and implemented standard process.
 This manual is also a deliverable to the U.S. IOOS Regional Associations and the ocean observing community and represents a contribution to a collection of core variable QC documents.
 
-Wind observations covered by these test procedures are collected in coastal areas, oceans, and lakes in real time or near-real time. 
-These tests draw from existing expertise in programs such as the World Meteorological Organization (WMO), 
-the U.S. Environmental Protection Agency (EPA), 
+Wind observations covered by these test procedures are collected in coastal areas, oceans, and lakes in real time or near-real time.
+These tests draw from existing expertise in programs such as the World Meteorological Organization (WMO),
+the U.S. Environmental Protection Agency (EPA),
 and very specifically the National Oceanic and Atmospheric Administration National Weather Service National Data Buoy Center (NOAA/NWS/NDBC).
 
-This manual differs from existing QC procedures for wind in that its focus is on real-time data. 
-It presents a series of eleven tests that operators can incorporate into practices and procedures for QC of wind measurements. 
-These tests apply only to the in-situ, 
+This manual differs from existing QC procedures for wind in that its focus is on real-time data.
+It presents a series of eleven tests that operators can incorporate into practices and procedures for QC of wind measurements.
+These tests apply only to the in-situ,
 real-time measurement of wind as observed by sensors deployed on fixed or mobile platforms and not to remotely sensed wind measurements (e.g., satellite observations).
 
-Table 2-1 shows technologies that are included and excluded in this manual, 
+Table 2-1 shows technologies that are included and excluded in this manual,
 and table 2-2 shows the platforms that are included and excluded.
 
 | **Technologies Included**            | **Technologies Excluded** |
@@ -139,106 +139,106 @@ and table 2-2 shows the platforms that are included and excluded.
 
 : Table 2-2. Platforms included and excluded in this manual.
 
-These test procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific tests and set data flags (data quality indicators) within an automated software program. U.S. IOOS/QARTOD maintains a code repository (http://code.google.com/p/qartod/) where operators may find or post examples of code in use. Although certain tests are recommended, 
-thresholds can vary among data providers. 
-In some instances, 
-tests have been simplified and are less rigorous than those implemented by established providers of wind data, 
-such as NOAA/NWS/NDBC. 
+These test procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific tests and set data flags (data quality indicators) within an automated software program. U.S. IOOS/QARTOD maintains a code repository (http://code.google.com/p/qartod/) where operators may find or post examples of code in use. Although certain tests are recommended,
+thresholds can vary among data providers.
+In some instances,
+tests have been simplified and are less rigorous than those implemented by established providers of wind data,
+such as NOAA/NWS/NDBC.
 A balance must be struck between the timesensitive needs of real-time observing systems and the degree of rigor that has been applied to non-real-time systems by operators with decades of QC experience.
 
-High-quality marine observations require sustained quality assurance (QA) and QC practices to ensure credibility and value to operators and data users. 
-QA practices involve processes that are employed with hardware to support the generation of high-quality data, such as a sufficiently accurate, precise, and reliable sensor with adequate resolution. 
-Other QA practices include: 
-sensor calibration; 
-calibration checks and/or in-situ verification, 
-including post-deployment calibration; 
-proper deployment considerations, 
-such as measures for corrosion control; 
-solid data communications; adequate maintenance intervals; 
-and creation of a robust qualitycontrol process. 
-Post-deployment calibration (instrument verification after recovery) issues are not part of the scope of this manual. 
-Although QC and QA are interrelated and both are important to the process, 
-QA is not the focus of this manual. 
+High-quality marine observations require sustained quality assurance (QA) and QC practices to ensure credibility and value to operators and data users.
+QA practices involve processes that are employed with hardware to support the generation of high-quality data, such as a sufficiently accurate, precise, and reliable sensor with adequate resolution.
+Other QA practices include:
+sensor calibration;
+calibration checks and/or in-situ verification,
+including post-deployment calibration;
+proper deployment considerations,
+such as measures for corrosion control;
+solid data communications; adequate maintenance intervals;
+and creation of a robust qualitycontrol process.
+Post-deployment calibration (instrument verification after recovery) issues are not part of the scope of this manual.
+Although QC and QA are interrelated and both are important to the process,
+QA is not the focus of this manual.
 However, QA considerations are briefly addressed in appendix A.
 
-QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. 
-QC practices include such things as format, 
-checksum, 
-timely arrival of data, 
-threshold checks (minimum/maximum rate of change), 
-neighbor checks, 
-climatology checks, 
-model comparisons, 
-signal/noise ratios, 
-verification of user satisfaction, 
+QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention.
+QC practices include such things as format,
+checksum,
+timely arrival of data,
+threshold checks (minimum/maximum rate of change),
+neighbor checks,
+climatology checks,
+model comparisons,
+signal/noise ratios,
+verification of user satisfaction,
 and generation of data flags (Bushnell 2005).
 
-The process of ensuring data quality is not always straightforward. 
-QA/QC procedures may be specific to a sensor technology or even to a particular manufacturer's model, 
+The process of ensuring data quality is not always straightforward.
+QA/QC procedures may be specific to a sensor technology or even to a particular manufacturer's model,
 so the establishment of a methodology that is applicable to every sensor is challenging.
 
 ### 2.2 Constraints
 
 #### 2.2.1 Data Processing Methodology
 
-The type of sensor system used to collect wind data and the system used to process and transmit the wind measurements determine which QC algorithms are used. 
-In-situ systems with sufficient on-board processing power within the sensor may process the original (raw) data and produce derived products, 
-such as a generated analog output designed to mimic a competitor's output. 
-Most sensors sample at high-rate or burst mode (e.g., 121 1-Hz values averaged to compute an observation every 6 minutes). 
-These samples are used to produce the actual real-time values transmitted (e.g., hourly speed, direction, and gust values). 
-Because operators have different data processing methodologies, 
-three levels of QC are proposed: 
-required, 
-strongly recommended, 
+The type of sensor system used to collect wind data and the system used to process and transmit the wind measurements determine which QC algorithms are used.
+In-situ systems with sufficient on-board processing power within the sensor may process the original (raw) data and produce derived products,
+such as a generated analog output designed to mimic a competitor's output.
+Most sensors sample at high-rate or burst mode (e.g., 121 1-Hz values averaged to compute an observation every 6 minutes).
+These samples are used to produce the actual real-time values transmitted (e.g., hourly speed, direction, and gust values).
+Because operators have different data processing methodologies,
+three levels of QC are proposed:
+required,
+strongly recommended,
 and suggested.
 
 #### 2.2.2 Traceability to Accepted Standards
 
-To ensure that wind sensors produce accurate data, rigorous calibrations and calibration checks must be performed in addition to QC checks. 
+To ensure that wind sensors produce accurate data, rigorous calibrations and calibration checks must be performed in addition to QC checks.
 Most operators rely upon manufacturer calibrations and generally conduct calibration checks before deployment. These calibration checks are critical to ensuring that the
 
-manufacturer calibration is still valid. 
-Manufacturers describe how to conduct these calibration checks in their user manuals, 
+manufacturer calibration is still valid.
+Manufacturers describe how to conduct these calibration checks in their user manuals,
 which are currently considered QA and further addressed in appendix A.
 
-Calibrations and calibration checks must be traceable to accepted standards. 
-The National Institute of Standards and Technology (NIST) (http://www.nist.gov/calibrations/air\_speed\_instruments.cfm), 
-a provider of internationally accepted standards, 
-is often the source for accepted standards. 
-Calibration activities must be tailored to match data use and resources. 
+Calibrations and calibration checks must be traceable to accepted standards.
+The National Institute of Standards and Technology (NIST) (http://www.nist.gov/calibrations/air\_speed\_instruments.cfm),
+a provider of internationally accepted standards,
+is often the source for accepted standards.
+Calibration activities must be tailored to match data use and resources.
 Calibration cost and effort increase dramatically as accuracy requirements increase.
 
-A stable calibration is essential for collecting climate quality data. 
-Few operators maintain a wind tunnel and reference standards as described in Freitag et al. (2001) and Gilhousen (1986), 
-but they may partner with such facilities to periodically conduct calibrations. 
-Alternatively, 
-they may develop a consensus reference capability using multiple anemometers to establish "truth," 
+A stable calibration is essential for collecting climate quality data.
+Few operators maintain a wind tunnel and reference standards as described in Freitag et al. (2001) and Gilhousen (1986),
+but they may partner with such facilities to periodically conduct calibrations.
+Alternatively,
+they may develop a consensus reference capability using multiple anemometers to establish "truth,"
 as described by Kline and Mikhail (1998).
 
 #### 2.2.3 Sensor Deployment Considerations and Hardware Limitations
 
-Wind sensors can be deployed in several ways: on fixed platforms with no motion or rotation, 
-on moorings where buoy motion provides a source of error and a compass is required to correct for rotation, 
+Wind sensors can be deployed in several ways: on fixed platforms with no motion or rotation,
+on moorings where buoy motion provides a source of error and a compass is required to correct for rotation,
 or on mobile platforms where corrections for both translation and rotation must be conducted.
 
-While outside the scope of the real-time tests described in this manual, QA is critical to data quality. 
-Sensors require attention to proper QA measures both before and after the deployment. 
-Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor maintenance. 
-Operators should strive to adhere to anemometer installation standards (EPA 1987; WMO 1983), 
-allowing for proper site clearance in the surrounding vicinity of the anemometer and above ground, rooftop, 
-or other mounting surface. 
+While outside the scope of the real-time tests described in this manual, QA is critical to data quality.
+Sensors require attention to proper QA measures both before and after the deployment.
+Operators must follow the manufacturer's recommendations for factory calibration schedules and proper sensor maintenance.
+Operators should strive to adhere to anemometer installation standards (EPA 1987; WMO 1983),
+allowing for proper site clearance in the surrounding vicinity of the anemometer and above ground, rooftop,
+or other mounting surface.
 Anemometer height relative to an accepted datum and photos of the installation should be available in the metadata.
 
-Also important, 
-but beyond the scope of this document at present, is the determination and reporting of data uncertainty. 
-All sensors and measurements contain errors, 
-and operators should routinely provide a quantitative measure of data uncertainty in the associated metadata. 
-Such calculations can be challenging, 
-so operators should also document the methods used to compute the uncertainty. 
-The limits and thresholds implemented by operators for the data quality control tests described here are a key component in establishing the observational error bars. Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty, 
+Also important,
+but beyond the scope of this document at present, is the determination and reporting of data uncertainty.
+All sensors and measurements contain errors,
+and operators should routinely provide a quantitative measure of data uncertainty in the associated metadata.
+Such calculations can be challenging,
+so operators should also document the methods used to compute the uncertainty.
+The limits and thresholds implemented by operators for the data quality control tests described here are a key component in establishing the observational error bars. Operators are strongly encouraged to consider the impact of the QC tests on data uncertainty,
 as these two efforts greatly enhance the utility of their data.
 
-The following sections describe the sensor technologies that are most often used, 
+The following sections describe the sensor technologies that are most often used,
 with a brief note about their attributes and shortcomings.
 
 ### 2.3 Applications of Wind Data
@@ -252,43 +252,43 @@ Real-time wind observations are important for a wide variety of applications, in
 - Recreational boating
 - Operation of coastal engineering infrastructure
 
-Other applications, such as climatological summaries and operational/design criteria, 
+Other applications, such as climatological summaries and operational/design criteria,
 do not require real-time QC but benefit from it through early detection of faulty wind observations or other station issues.
 
 ### 2.4 Sensor Technology
 
-The most predominant anemometer is an impellor/wind vane combination (often combined into one unit) used to measure wind speed/direction, 
-respectively. 
-Figure 2-1 shows an RM Young blade impellor mounted on a rotating wind vane. 
-The impellor rotation can be detected magnetically, 
-electrically, or optically; 
-the pulsed output is used to determine the impellor speed of rotation. 
-The wind vane rotation is often measured with a potentiometer, 
-such that orientation is proportional to the observed resistance. 
-A data collection platform (DCP) is used to capture the sensor output and apply a calibration to convert the observations to wind speed and direction. 
-These instantaneous observations are then processed over a period of time to create the reported wind speed, 
-direction, 
-and gust. 
-However, 
-this technology does have several disadvantages. 
-Impellors and wind vanes bearings tend to wear or corrode over time, 
-have various start-up thresholds that may preclude low-wind observations, 
+The most predominant anemometer is an impellor/wind vane combination (often combined into one unit) used to measure wind speed/direction,
+respectively.
+Figure 2-1 shows an RM Young blade impellor mounted on a rotating wind vane.
+The impellor rotation can be detected magnetically,
+electrically, or optically;
+the pulsed output is used to determine the impellor speed of rotation.
+The wind vane rotation is often measured with a potentiometer,
+such that orientation is proportional to the observed resistance.
+A data collection platform (DCP) is used to capture the sensor output and apply a calibration to convert the observations to wind speed and direction.
+These instantaneous observations are then processed over a period of time to create the reported wind speed,
+direction,
+and gust.
+However,
+this technology does have several disadvantages.
+Impellors and wind vanes bearings tend to wear or corrode over time,
+have various start-up thresholds that may preclude low-wind observations,
 and are subject to damage if the blade strikes an object.
 
 ![Shows an RM Young blade impellor mounted on a rotating wind vane.](images_Wind/image1.png)
 
 <figcaption>Figure 2-1. RM Young propeller and wind vane sensor (photo courtesy of RM Young).</figcaption>
 
-Figure 2-2 (left) shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge. 
-Metadata for this station can be found at http://tidesandcurrents.noaa.gov/stationhome.html?id=8764227. 
-Figure 2-2 (right) shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy. 
-An example of supporting metadata for this buoy can be seen at http://www.ndbc.noaa.gov/station\_page.php?station=44009. 
-In both cases, maintenance is eased because the dual anemometers are identical. However, 
-they will have identical failure modes, 
-and operators may be lulled into a sense of heightened accuracy because of the certain agreement between the two identical sensors. 
-A better arrangement would have dual anemometers with different technologies. 
-Figure 2-3 shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction. 
-The vane/impellor anemometer bearings are especially challenged in a marine environment, and maintenance may be needed more frequently. 
+Figure 2-2 (left) shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge.
+Metadata for this station can be found at http://tidesandcurrents.noaa.gov/stationhome.html?id=8764227.
+Figure 2-2 (right) shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy.
+An example of supporting metadata for this buoy can be seen at http://www.ndbc.noaa.gov/station\_page.php?station=44009.
+In both cases, maintenance is eased because the dual anemometers are identical. However,
+they will have identical failure modes,
+and operators may be lulled into a sense of heightened accuracy because of the certain agreement between the two identical sensors.
+A better arrangement would have dual anemometers with different technologies.
+Figure 2-3 shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction.
+The vane/impellor anemometer bearings are especially challenged in a marine environment, and maintenance may be needed more frequently.
 Manufacturers continually strive to improve the materials used, such as the recent implementation of ceramic bearings, which won't corrode.
 
 ![In the left, shows the dual vane/impellor anemometers mounted on a tower atop a single pile structure supporting a NOAA/National Ocean Service (NOS)/Center for Operational Oceanographic Products and Services (CO-OPS) water level gauge. In the right, shows dual anemometers mounted on a standard NOAA/NDBC 3-meter (m) discus buoy.](images_Wind/image2.png)
@@ -299,80 +299,80 @@ Manufacturers continually strive to improve the materials used, such as the rece
 
 <figcaption>Figure 2-3. Close-up of a cup anemometer (photo courtesy of NOAA/NWS).</figcaption>
 
-Another popular technology uses ultrasound, either by observing changes in the time of flight of acoustic pulses between several emitter/receiver pairs, 
-or more recently by detecting phase changes in a resonant acoustic wave. 
-Figure 2-4 shows a variety of acoustic anemometers being tested at the Otis Weather Test facility in Cape Cod, Massachusetts. 
-These electronic sensors usually include the circuitry needed to directly output calibrated wind speed, 
-direction, 
-and gust. In some cases, 
-they can also generate an analog output that mimics an impellor/wind vane, 
-easing the replacement of these devices with a sonic anemometer. 
-They excel at observing the lowest wind speeds, 
-but in some cases, 
-the physical structure that supports the emitter/receivers also obstructs wind flow. The problem is most pronounced at extremely high wind speeds. 
-Some sensors are also prone to failure because of roosting birds. 
-Early acoustic anemometers accumulated water droplets on the emitter or receiver resulting in erroneous measurements, 
+Another popular technology uses ultrasound, either by observing changes in the time of flight of acoustic pulses between several emitter/receiver pairs,
+or more recently by detecting phase changes in a resonant acoustic wave.
+Figure 2-4 shows a variety of acoustic anemometers being tested at the Otis Weather Test facility in Cape Cod, Massachusetts.
+These electronic sensors usually include the circuitry needed to directly output calibrated wind speed,
+direction,
+and gust. In some cases,
+they can also generate an analog output that mimics an impellor/wind vane,
+easing the replacement of these devices with a sonic anemometer.
+They excel at observing the lowest wind speeds,
+but in some cases,
+the physical structure that supports the emitter/receivers also obstructs wind flow. The problem is most pronounced at extremely high wind speeds.
+Some sensors are also prone to failure because of roosting birds.
+Early acoustic anemometers accumulated water droplets on the emitter or receiver resulting in erroneous measurements,
 which are now readily detected and discarded by the sensor itself before outputting an observation.
 
 ![Shows a cup anemometer on the right side of the image with a separate vane on the left used to provide wind direction](images_Wind/image4.jpg)
 
 <figcaption>Figure 2-4. Acoustic anemometers at the Otis Weather Test facility in Cape Cod, Massachusetts. The five masts on the left provide reference wind observations. The five sensors on the right are: 1) RM Young 3-axis ultrasonic anemometer (partially obscured), 2) Gill R3 3-D anemometer, 3) RM Young 2-axis ultrasonic anemometer, 4) Gill Windsonic 2-axis ultrasonic anemometer, and 5) Vaisala WS425 ultrasonic anemometer (photo courtesy of Mark Bushnell).</figcaption>
 
-Both impellor and sonic anemometers are subject to failure when water freezes on them, especially in lowwind and high-humidity conditions. 
-Coatings (such as Teflon) and heaters are often employed to mitigate freezing. Heaters require a large power supply, 
-and in extreme cold, 
+Both impellor and sonic anemometers are subject to failure when water freezes on them, especially in lowwind and high-humidity conditions.
+Coatings (such as Teflon) and heaters are often employed to mitigate freezing. Heaters require a large power supply,
+and in extreme cold,
 may sufficiently melt snow that otherwise would not have adhered to the device.
 
-Wind Observation Through Ambient Noise (WOTAN) is a unique technology that is not widely used. 
-Acoustic transducers record sound pressure levels near the ocean surface at selected frequencies, 
-and algorithms have been developed to convert these observations into wind speeds (Vagle et al. 1990). 
-A vane on the supporting buoy provides wind direction. 
-This technology is included because the output of a WOTAN wind buoy is simply wind speed and direction, 
+Wind Observation Through Ambient Noise (WOTAN) is a unique technology that is not widely used.
+Acoustic transducers record sound pressure levels near the ocean surface at selected frequencies,
+and algorithms have been developed to convert these observations into wind speeds (Vagle et al. 1990).
+A vane on the supporting buoy provides wind direction.
+This technology is included because the output of a WOTAN wind buoy is simply wind speed and direction,
 which makes the QC tests described herein directly applicable.
 
-Hot-wire wind speed sensors are thermistors that are cooled by heat dissipation when winds blow over them. 
-They are not typically used in the field because they are fragile, can require a large power supply, 
-and require correction for humidity. 
+Hot-wire wind speed sensors are thermistors that are cooled by heat dissipation when winds blow over them.
+They are not typically used in the field because they are fragile, can require a large power supply,
+and require correction for humidity.
 They are more often found as a reference sensor in wind tunnel calibration facilities.
 
 ## 3.0 Quality Control
 
-As is the case with most real-time meteorological/ocean observations, 
-the real-time QC of wind observations can be extremely challenging. 
-Events such as fast moving fronts, 
-microbursts, 
-and tropical cyclones must be considered when determining acceptable data thresholds. 
+As is the case with most real-time meteorological/ocean observations,
+the real-time QC of wind observations can be extremely challenging.
+Events such as fast moving fronts,
+microbursts,
+and tropical cyclones must be considered when determining acceptable data thresholds.
 Human involvement is therefore important to ensure that solid scientific principles are applied to data evaluation so that good data are not discarded and bad data are not distributed (e.g., selection of appropriate thresholds and examination of data flagged as questionable).
 
-To conduct real-time QC on wind observations, the first pre-requisite is to understand the science and context within which the measurements are being conducted. 
-For example and as was discussed in section 2.2.3, 
-sensors can be deployed in a number of ways. Each deployment method imposes the need for specific QC methods. 
-Real-time wind data should have these main attributes: accurate time, 
-speed, 
-direction, 
+To conduct real-time QC on wind observations, the first pre-requisite is to understand the science and context within which the measurements are being conducted.
+For example and as was discussed in section 2.2.3,
+sensors can be deployed in a number of ways. Each deployment method imposes the need for specific QC methods.
+Real-time wind data should have these main attributes: accurate time,
+speed,
+direction,
 and gust measurements.
 
-This manual focuses specifically on the QC of real-time data, but there are limitations. 
-For example, 
-gradual calibration changes or slow system response variations (sensor drift) cannot be detected or corrected in real time. 
-Therefore, delayed-mode approaches are done through comparison with collocated observations (e.g., satellite data). 
-Drift correction to wind measurements during post-processing is highly unlikely to occur even if a valid post-recovery calibration could be obtained. 
-Drift is often caused by worn bearings and corrosion, potentiometer pad degradation, 
-and to a lesser extent, 
-the aging of electronic components—e.g., 
-those compensating for temperature dependencies, 
-which are now less of a problem thanks to advances in digital circuitry. 
-These gradual changes affect different systems in different ways (e.g., an impellor has a higher starting speed caused by corroded bearings). 
-Another limitation is the ability of some data providers to backfill data gaps. 
-In both of these examples, the observations are not considered to be real time for purposes of QC checks. 
-(However, in some sophisticated 24/7 QC operations, 
+This manual focuses specifically on the QC of real-time data, but there are limitations.
+For example,
+gradual calibration changes or slow system response variations (sensor drift) cannot be detected or corrected in real time.
+Therefore, delayed-mode approaches are done through comparison with collocated observations (e.g., satellite data).
+Drift correction to wind measurements during post-processing is highly unlikely to occur even if a valid post-recovery calibration could be obtained.
+Drift is often caused by worn bearings and corrosion, potentiometer pad degradation,
+and to a lesser extent,
+the aging of electronic components—e.g.,
+those compensating for temperature dependencies,
+which are now less of a problem thanks to advances in digital circuitry.
+These gradual changes affect different systems in different ways (e.g., an impellor has a higher starting speed caused by corroded bearings).
+Another limitation is the ability of some data providers to backfill data gaps.
+In both of these examples, the observations are not considered to be real time for purposes of QC checks.
+(However, in some sophisticated 24/7 QC operations,
 real-time dissemination may be switched from one sensor to another based on real-time QC flags.)
 
-Observations are time ordered, and the most recent observation is *n0*, 
-preceded by a value at *n-1*, 
-and so on backwards in time. 
-The focus of the real-time QC is primarily on observations n0, 
-*n-1*, 
+Observations are time ordered, and the most recent observation is *n0*,
+preceded by a value at *n-1*,
+and so on backwards in time.
+The focus of the real-time QC is primarily on observations n0,
+*n-1*,
 and *n-2*.
 
 ### 3.1 QC Flags
@@ -581,7 +581,7 @@ Test Exception: None.
 
 Test specifications to be established locally by the operator.
 
-Examples: 
+Examples:
 
 - `SENSOR_MAX = 100 m/s` (limited by the manufacturer firmware, for example)
 - `SENSOR_MIN = 0 m/s`
