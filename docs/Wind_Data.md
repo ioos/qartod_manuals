@@ -573,7 +573,7 @@ An obvious gross range check is wind direction 0-360°.
 
 | Flags     | Condition                           | Codable	Instructions          |
 |-----------|-------------------------------------|-------------------------------|
-| Fail=4    | Reported	value	is	outside	of	sensor span.| If $WS_n$ <	`SENSOR_MIN`, or `≥`$WS_n$ >	`SENSOR_MAX`, flag	=	4   |
+| Fail=4    | Reported	value	is	outside	of	sensor span.| If $WS_n$ <	`SENSOR_MIN`, or $WS_n$ >	`SENSOR_MAX`, flag	=	4   |
 | Suspect=3 | Reported	value	is	outside	of	user selected	span.     | If $WS_n$ < `USER_MIN`, or $WS_n$ > `USER_MAX`,	flag	=	3   |
 | Pass=1    | Applies	for	test	pass	condition     |             N/A                |
 
