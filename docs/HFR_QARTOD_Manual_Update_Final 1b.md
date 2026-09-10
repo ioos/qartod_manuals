@@ -2,9 +2,9 @@
 
 A Guide to Quality Control and Quality Assurance for High Frequency Radar Surface Current Observations
 
-#### DOI
+<https://doi.org/10.25923/4c5x-g538>
 
-# Acknowledgements
+## Acknowledgements
 
 Special thanks go to members of the high frequency radar surface current mapping committee,
 who contributed their expertise to develop the content of the initial manual and also to reviewers,
@@ -35,10 +35,10 @@ Appendix A provides a full list of committee members,
 reviewers,
 and others involved in the QARTOD project.
 
-# Acronyms and Abbreviations
+## Acronyms and Abbreviations
 
-|AOOS|Alaska Ocean Observing System|
 |---|---|
+|AOOS|Alaska Ocean Observing System|
 |APM|Antenna pattern measurement|
 |BF|Beam forming|
 |CARICOOS|Caribbean Coastal Ocean Observing System|
@@ -82,112 +82,163 @@ and others involved in the QARTOD project.
 |UNESCO|United Nations Educational, Scientific, and Cultural Organization|
 |WERA|Wellen (Wave) Radar|
 
-viii
-
-# Definitions of Selected Terms
+## Definitions of Selected Terms
 
 This manual contains several terms whose meanings are critical to those using the manual. These terms are included in the following table to ensure that the meanings are clearly defined.
 
-**Beam** A BF system is a high frequency radar surface current mapping system that employs a **Forming** phased-array antenna system to estimate the incoming direction of a measured signal. **(BF) System**
+|  |  |
+|---|---|
+| Beam Forming (BF) System | A BF system is a high frequency radar surface current mapping system that employs a phased-array antenna system to estimate the incoming direction of a measured signal. |
+| Codable Instructions | Codable instructions are specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds. |
+| Data Record | A data record is one or more messages that form a coherent, logical, and complete observation. |
+| Direction Finding (DF) System | A DF system is a high frequency radar surface current mapping system that employs three orthogonal antenna elements to estimate the incoming direction of a measured signal. |
+| Message | A message is a standalone data transmission. A data record can be composed of multiple messages. |
+| Operator | Operators are individuals or entities who are responsible for collecting and providing data. |
+| Quality Assurance (QA) | QA involves processes that are employed with hardware to support the generation of high-quality data. (section 2.0) |
+| Quality Control (QC) | QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. (section 3.0) |
+| Radial Component | Radial component is the observed surface current speed toward or away from a single HF radar site, and is also often referred to as radial speed, radial velocity, or radial vector. A radial file contains a spatial array of radial components. |
+| Real-Time | Real-time means that: data are delivered without delay for immediate use; time series extends only backwards in time, where the next data points are not available; and sample intervals may range from a few seconds to a few hours or even days, depending upon the sensor configuration. (section 1.0) |
+| Total Vector | Total vector is the derived surface current velocity, obtained by combining radial components from multiple HF Radar sites. A total vector file contains a spatial array of total vectors. |
+| Threshold | Thresholds are limits that are defined by the operator. They often vary in space and time and should be readily available to other operators and users. |
+| Variable | Variable is an observation (or measurement) of biogeochemical properties within oceanographic and/or meteorological environments. |
 
-**Codable** Codable instructions are specific guidance that can be used by a software programmer **Instructions** to design, construct, and implement a test. These instructions also include examples with sample thresholds.
+## 1.0 Background and Introduction
 
-**Data Record** A data record is one or more messages that form a coherent, logical, and complete observation.
+The U.S. Integrated Ocean Observing System®(IOOS®) has a vested interest in collecting high quality data for the 34 core variables (https://ioos.noaa.gov/about/ioos-by-the-numbers) measured on a national scale. 
+In response to this interest, 
+U.S. IOOS continues to establish written, 
+authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding permits (UNESCO 1993). 
+This manual update on the real-time QC of high frequency (HF) radar surface currents represents the ninth core variable to be addressed. 
+Other QARTOD guidance documents that have been published by the U.S. IOOS project to date are listed below and are also available at (https://ioos.noaa.gov/project/qartod/).
 
-**Direction** A DF system is a high frequency radar surface current mapping system that employs **Finding (DF)** three orthogonal antenna elements to estimate the incoming direction of a measured **System** signal.
+1. U.S. Integrated Ocean Observing System (2017). U.S IOOS QARTOD Project Plan-Accomplishments for 2012–2016 and Update for 2017–2021. 48 pp. (https://doi.org/10.7289/V5JQ0Z71).
 
-**Message** A message is a standalone data transmission. A data record can be composed of multiple messages.
+2. U.S. Integrated Ocean Observing System (2018). Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.1: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 53 pp. (https://doi.org/10.25923/q0m1-d488).
 
-**Operator** Operators are individuals or entities who are responsible for collecting and providing data.
+3. U.S. Integrated Ocean Observing System (2019). Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 69 pp. (https://doi.org/10.25923/7yc5-vs69).
 
-**Quality** QA involves processes that are employed with hardware to support the generation of **Assurance** high-quality data. (section 2.0) **(QA)**
+4. U.S. Integrated Ocean Observing System (2019). Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 54 pp. (https://doi.org/10.25923/sqe9-e310).
 
-**Quality** QC involves follow-on steps that support the delivery of high-quality data and **Control (QC)** requires both automation and human intervention. (section 3.0)
+5. U.S. Integrated Ocean Observing System (2021). Manual for Real-Time Quality Control of Water Level Data Version 2.1: A Guide to Quality Control and Quality Assurance of Water Level Observations. 47 pp. (https://doi.org/10.25923/vpsx-dc82).
 
-**Radial** Radial component is the observed surface current speed toward or away from a single **Component** HF radar site, and is also often referred to as radial speed, radial velocity, or radial vector. A radial file contains a spatial array of radial components.
+6. U.S. Integrated Ocean Observing System (2020). Manual for Real-Time Quality Control of In-situ Temperature and Salinity Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-situ Temperature and Salinity Observations. 50 pp. (https://doi.org/10.25923/x02m-m555).
 
-**Real-Time** Real-time means that: data are delivered without delay for immediate use; time series extends only backwards in time, where the next data points are not available; and sample intervals may range from a few seconds to a few hours or even days, depending upon the sensor configuration. (section 1.0)
+7. U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. (https://doi.org/10.7289/V5FX77NH).
 
-**Total Vector** Total vector is the derived surface current velocity, obtained by combining radial components from multiple HF Radar sites. A total vector file contains a spatial array of total vectors.
+8. U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Ocean Optics Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 49 pp. (https://doi.org/10.25923/v9p8-ft24).
 
-**Threshold** Thresholds are limits that are defined by the operator. They often vary in space and time and should be readily available to other operators and users.
+9. U.S. Integrated Ocean Observing System (2018). Manual for Real-Time Quality Control of Dissolved Nutrients Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. (https://doi.org/10.7289/V5TT4P7R).
 
-**Variable** Variable is an observation (or measurement) of biogeochemical properties within oceanographic and/or meteorological environments.
+10. U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Phytoplankton Data Version 1.0: A Guide to Quality Control and Quality Assurance of Phytoplankton Data Observations. 67 pp. (https://doi.org/10.7289/V56D5R6S).
 
-ix
+11. U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Passive Acoustics Data Version 1.0: A Guide to Quality Control and Quality Assurance of Passive Acoustics Observations. 43 pp. (https://doi.org/10.7289/V5PC30M9).
 
-## <u>High Frequency Radar</u>
+12. U.S. Integrated Ocean Observing System (2018). Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 46 pp. (https://doi.org/10.25923/gszc-ha43).
 
-# 1.0 Background and Introduction
+13. U.S. Integrated Ocean Observing System (2019). Manual for Real-Time Quality Control of pH Data Version 1.0: A Guide to Quality Control and Quality Assurance of pH Data Observations. 56 pp. (https://doi.org/10.25923/111k-br08).
 
-The U.S. Integrated Ocean Observing System®(IOOS®) has a vested interest in collecting high quality data for the 34 core variables (<u>[https://ioos.noaa.gov/about/ioos-by-the-numbers](https://ioos.noaa.gov/about/ioos-by-the-numbers)</u>) measured on a national scale. In response to this interest, U.S. IOOS continues to establish written, authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding permits (UNESCO 1993). This manual update on the real-time QC of high frequency (HF) radar surface currents represents the ninth core variable to be addressed. Other QARTOD guidance documents that have been published by the U.S. IOOS project to date are listed below and are also available at <u>[https://ioos.noaa.gov/project/qartod/](https://ioos.noaa.gov/project/qartod/) - manuals.</u>
+Please reference this document as:
 
-1) U.S. Integrated Ocean Observing System (2017). U.S IOOS QARTOD Project Plan-Accomplishments for 2012–2016 and Update for 2017–2021. 48 pp. <u>[https://doi.org/10.7289/V5JQ0Z71](https://doi.org/10.7289/V5JQ0Z71)</u>.
-2) U.S. Integrated Ocean Observing System (2018). Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.1: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 53 pp. <u>[https://doi.org/10.25923/q0m1-](https://doi.org/10.25923/q0m1-)</u> <u>d488</u>
-3) U.S. Integrated Ocean Observing System (2019). Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 69 pp. <u>[https://doi.org/10.25923/7yc5-vs69](https://doi.org/10.25923/7yc5-vs69)</u>
-4) U.S. Integrated Ocean Observing System (2019). Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 54 pp. <u>[https://doi.org/10.25923/sqe9-e310](https://doi.org/10.25923/sqe9-e310)</u>
-5) U.S. Integrated Ocean Observing System (2021). Manual for Real-Time Quality Control of Water Level Data Version 2.1: A Guide to Quality Control and Quality Assurance of Water Level Observations. 47 pp. <u>[https://doi.org/10.25923/vpsx-dc82](https://doi.org/10.25923/vpsx-dc82)</u>
-6) U.S. Integrated Ocean Observing System (2020). Manual for Real-Time Quality Control of In-situ Temperature and Salinity Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-situ Temperature and Salinity Observations. 50 pp. <u>[https://doi.org/10.25923/x02m-m555](https://doi.org/10.25923/x02m-m555)</u>
-7) U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. <u>[https://doi.org/10.7289/V5FX77NH](https://doi.org/10.7289/V5FX77NH)</u>.
-8) U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Ocean Optics Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 49 pp. <u>[https://doi.org/10.25923/v9p8-ft24](https://doi.org/10.25923/v9p8-ft24).</u>
+    U.S. Integrated Ocean Observing System (2022). Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 57 pp. <https://doi.org/10.25923/4c5x-g538>
 
-9) U.S. Integrated Ocean Observing System (2018). Manual for Real-Time Quality Control of Dissolved Nutrients Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. <u>[https://doi.org/10.7289/V5TT4P7R](https://doi.org/10.7289/V5TT4P7R)</u>
-10) U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Phytoplankton Data Version 1.0: A Guide to Quality Control and Quality Assurance of Phytoplankton Data Observations. 67 pp. <u>[https://doi.org/10.7289/V56D5R6S](https://doi.org/10.7289/V56D5R6S)</u>
-11) U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Passive Acoustics Data Version 1.0: A Guide to Quality Control and Quality Assurance of Passive Acoustics Observations. 43 pp. <u>[https://doi.org/10.7289/V5PC30M9](https://doi.org/10.7289/V5PC30M9)</u>
-12) U.S. Integrated Ocean Observing System (2018). Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 46 pp. <u>[https://doi.org/10.25923/gszc-ha43](https://doi.org/10.25923/gszc-ha43)</u>
-13) U.S. Integrated Ocean Observing System (2019). Manual for Real-Time Quality Control of pH Data Version 1.0: A Guide to Quality Control and Quality Assurance of pH Data Observations. 56 pp. <u>[https://doi.org/10.25923/111k-br08](https://doi.org/10.25923/111k-br08)</u>
-## Please reference this document as:
+This manual is a living document that reflects the state-of-the-art QC testing procedures for HF radar surface currents observations. 
+It is written for the experienced operator but also provides examples for those who are just entering the field.
 
-U.S. Integrated Ocean Observing System (2022). Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 57 pp.
-This manual is a living document that reflects the state-of-the-art QC testing procedures for HF radar surface currents observations. It is written for the experienced operator but also provides examples for those who are just entering the field.
+## 2.0 Purpose/Constraints/Applications
 
-#### <u>High Frequency Radar</u>
+The HF radar capability was successfully demonstrated decades ago, 
+and its use to observe surface currents is now one of the most robust operational measurements employed by the oceanographic community. 
+The present U.S. IOOS program integrates HF radar observations from 11 participating Regional Associations (RAs), 
+31 participating organizations, 
+more than a decade of operations, 
+over 130 coastal sites, 
+and almost 8,000,000 data files. 
+The effort is well described in the *National Surface Currents Plan* (U.S. IOOS 2015). 
+Section 13.5 of that plan provides an overview of the existing and emerging QC techniques and serves as the basis for the QC processes described herein.
 
-# 2.0 Purpose/Constraints/Applications
+### 2.1 Purpose
 
-The HF radar capability was successfully demonstrated decades ago, and its use to observe surface currents is now one of the most robust operational measurements employed by the oceanographic community. The present U.S. IOOS program integrates HF radar observations from 11 participating Regional Associations (RAs), 31 participating organizations, more than a decade of operations, over 130 coastal sites, and almost 8,000,000 data files. The effort is well described in the *National Surface Currents Plan* (U.S. IOOS 2015). Section
+The purpose of this manual is to document successful QC techniques already in place, 
+identify any shortcoming of those techniques, 
+and to suggest new QC tests that may be employed as resources and capabilities permit.
 
-13.5 of that plan provides an overview of the existing and emerging QC techniques and serves as the basis for the QC processes described herein.
-## 2.1 Purpose
+QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. 
+QC practices include such things as data integrity checks (format, checksum, 
+timely arrival of data), 
+data value checks (threshold checks, 
+minimum/maximum rate of change), neighbor checks, 
+climatology checks, 
+model comparisons, 
+signal/noise ratios, 
+the mark-up of the data, 
+the verification of user satisfaction, 
+and generation of data flags (Bushnell 2005).
 
-The purpose of this manual is to document successful QC techniques already in place, identify any shortcoming of those techniques, and to suggest new QC tests that may be employed as resources and capabilities permit.
+### 2.2 Constraints
 
-QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. QC practices include such things as data integrity checks (format, checksum, timely arrival of data), data value checks (threshold checks, minimum/maximum rate of change), neighbor checks, climatology checks, model comparisons, signal/noise ratios, the mark-up of the data, the verification of user satisfaction, and generation of data flags (Bushnell 2005).
+The focus of the manual is on the real-time QC of data collected, 
+processed, 
+and disseminated by the U.S. IOOS RAs. 
+It is limited to the HF radar surface current mapping systems presently used by the RAs, 
+and to the data presently provided from them. 
+Therefore, 
+it addresses these systems and manufacturers:
 
-## 2.2 Constraints
+- SeaSonde® - developed by CODAR Ocean Sensors. Ltd.
+- WERA - manufactured by HELZEL Messtechnik GmbH (HZM)
+- LERA - developed by Pierre Flament at the University of Hawaii
 
-The focus of the manual is on the real-time QC of data collected, processed, and disseminated by the U.S. IOOS RAs. It is limited to the HF radar surface current mapping systems presently used by the RAs, and to the data presently provided from them. Therefore, it addresses these systems and manufacturers:
+QC is also constrained to surface current observations. 
+All three systems provide surface gravity wave observations, 
+and these observations from HF radar systems are just now emerging operationally (Roarty et al. 2019). 
+For a U.S. IOOS National HF Radar Technical Steering Team position paper on the use of HF radar for wave measurement, 
+see (https://ioos.noaa.gov/project/hf-radar/).
 
-- SeaSonde®- developed by CODAR Ocean Sensors. Ltd.
-- WERA-manufactured by HELZEL Messtechnik GmbH (HZM)
-- LERA-developed by Pierre Flament at the University of Hawaii
-QC is also constrained to surface current observations. All three systems provide surface gravity wave observations, and these observations from HF radar systems are just now emerging operationally (Roarty et al. 2019). For a U.S. IOOS National HF Radar Technical Steering Team position paper on the use of HF radar for wave measurement, see <u>[https://ioos.noaa.gov/project/hf-radar/](https://ioos.noaa.gov/project/hf-radar/).</u>
-
-In addition, the manual does not focus on the quality assurance (QA) associated with the proper installation and operation of a HF radar site (Voulgaris 2011). Operators typically monitor many performance metrics to ensure the health of an HF radar site, see Mantovani et al. (2020) Tables 5 and 6, or Cook et al (2008) which is specific to SeaSonde systems.
+In addition, 
+the manual does not focus on the quality assurance (QA) associated with the proper installation and operation of a HF radar site (Voulgaris 2011). 
+Operators typically monitor many performance metrics to ensure the health of an HF radar site, 
+see Mantovani et al. (2020) Tables 5 and 6, 
+or Cook et al (2008) which is specific to SeaSonde systems.
 
 Each system is briefly described in the following subsections.
 
-### 2.2.1 CODAR SeaSonde
+#### 2.2.1 CODAR SeaSonde
 
-CODAR Ocean Sensors, Ltd. (CODAR) is the developer and manufacturer of the SeaSonde compact HF radar system. Its founders were the creators and pioneers of the HF surface-wave radar field beginning in the 1970s. CODAR offers software for outputting several data product categories, including surface current mapping, wave measurements, tsunami detection, and recently ship detection. The company has a history of
+CODAR Ocean Sensors, Ltd. (CODAR) is the developer and manufacturer of the SeaSonde compact HF radar system. 
+Its founders were the creators and pioneers of the HF surface-wave radar field beginning in the 1970s. 
+CODAR offers software for outputting several data product categories, including surface current mapping, 
+wave measurements, 
+tsunami detection, 
+and recently ship detection. 
+The company has a history of HF research and transition to operations. 
+The CODAR compact direction-finding system is the most widely deployed oceanographic HF technology, 
+both within the U.S. (approximately 150 sites) and internationally (> 300). 
+The antenna system optionally combines the transmitting and receiving antennas within a single mast and also eliminates the horizontal ground plane whip antennas. 
+The company headquarters are in Mountain View, California.
 
-HF research and transition to operations. The CODAR compact direction-finding system is the most widely deployed oceanographic HF technology, both within the U.S. (approximately 150 sites) and internationally (> 300). The antenna system optionally combines the transmitting and receiving antennas within a single mast and also eliminates the horizontal ground plane whip antennas. The company headquarters are in Mountain View, California.
+#### 2.2.2 WERA
 
-# 2.2.2 WERA
+The Wellen Radar¹ (WERA) system was initially developed at the University of Hamburg in 1996. 
+One of the aims was to allow measurements of the ocean wave spectrum, 
+which requires access to the full backscatter Doppler spectrum for all ranges and directions. 
+This access is achieved by applying a beam-forming technique.
 
-The Wellen Radar¹ (WERA) system was initially developed at the University of Hamburg in 1996. One of the aims was to allow measurements of the ocean wave spectrum, which requires access to the full backscatter Doppler spectrum for all ranges and directions. This access is achieved by applying a beam-forming technique.
+The design uses a modular system that can include 4, 8, 12, or 16 independent, 
+inter-calibrated receiver channels. 
+The processing of the signals is done on the software side and allows for employing beam forming (BF) using a linear array of 8 to 16 antennas and/or direction finding (DF) with 4 antennas in a square. 
+A recent software upgrade allows to also apply DF algorithms on the linear array; however, 
+DF implementations do not provide ocean wave parameters.
 
-The design uses a modular system that can include 4, 8, 12, or 16 independent, inter-calibrated receiver channels. The processing of the signals is done on the software side and allows for employing beam forming (BF) using a linear array of 8 to 16 antennas and/or direction finding (DF) with 4 antennas in a square. A recent software upgrade allows to also apply DF algorithms on the linear array; however, DF implementations do not provide ocean wave parameters.
-
-To avoid high-power transmit pulses in the range of some kilowatts as used in former systems, a frequency- modulated continuous-wave signal at 30 watts is transmitted to achieve range resolution. The depth of the range cells can be adopted to the requirements by reprogramming the frequency span of the transmitted frequency chirp. Typical values for a system operated in the 12-MHz frequency band are 130 ranges at 1.5 kilometers (km) resolution.
+To avoid high-power transmit pulses in the range of some kilowatts as used in former systems, 
+a frequency-modulated continuous-wave signal at 30 watts is transmitted to achieve range resolution. 
+The depth of the range cells can be adopted to the requirements by reprogramming the frequency span of the transmitted frequency chirp. 
+Typical values for a system operated in the 12-MHz frequency band are 130 ranges at 1.5 kilometers (km) resolution.
 
 **Figure 2-1.** WERA system
 
 To reduce the impact of radio frequency interference (RFI), the WERA receives simultaneously signal containing the backscattered echoes superimposed by RFI, along with a second signal containing RFI only.
 
 1Wellen Radar is German for wave radar.
-
-### <u>High Frequency Radar</u>
 
 The RFI-only signal is used to mitigate the RFI component within the echo signal, which results in much clearer access to the echoes from the ocean surface and from ships.
 
