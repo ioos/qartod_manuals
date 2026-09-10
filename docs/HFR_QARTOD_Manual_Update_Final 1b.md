@@ -1,137 +1,39 @@
-# Manual for
+# Manual for Real-Time Quality Control of High Frequency Radar Surface
 
-## Real-Time Quality Control of High Frequency Radar Surface
+A Guide to Quality Control and Quality Assurance for High Frequency Radar Surface Current Observations
 
-## Current Data
-
-### A Guide to Quality Control and Quality Assurance for High Frequency Radar Surface Current Observations
-
-#### Version 2.0 June 2022
-
-# Document Validation
-
-ii
-
-# Table of Contents
-
-**Document Validation.............................................................................................................................ii**
-
-**Table of Contents..................................................................................................................................iii**
-
-**List of Figures....................................................................................................................................... iv**
-
-**List of Tables........................................................................................................................................ iv**
-
-**Revision History.................................................................................................................................... v**
-
-**Endorsement Disclaimer...................................................................................................................... vi**
-
-**Acknowledgements.............................................................................................................................. vii**
-
-**Acronyms and Abbreviations.............................................................................................................. viii**
-
-**Definitions of Selected Terms.............................................................................................................. ix**
-
-**1.0 Background and Introduction......................................................................................................... 1**
-**2.0 Purpose/Constraints/Applications................................................................................................. 3**
-2.1 Purpose...................................................................................................................................................................................... 3
-2.2 Constraints................................................................................................................................................................................ 3
-2.2.1 CODAR SeaSonde..................................................................................................................................................... 3
-2.2.2 WERA........................................................................................................................................................................... 4
-2.2.3 UH-HFDR................................................................................................................................................................... 5
-**3.0 Quality Control................................................................................................................................ 6**
-3.1 QC Flags.................................................................................................................................................................................... 6
-3.2 Sensor Deployment Considerations..................................................................................................................................... 7
-3.3 QC Test Descriptions............................................................................................................................................................. 8
-3.4 Test Hierarchy........................................................................................................................................................................ 10
-3.4.1 Signal Processing (or Spectral Processing)........................................................................................................... 11
-3.4.2 Radial Tests................................................................................................................................................................ 14
-3.4.3 Total Vectors............................................................................................................................................................. 20
-**4.0 Case Studies................................................................................................................................... 27**
-4.1 The European HFR Network............................................................................................................................................. 27
-4.2 MARACOOS HFR Network.............................................................................................................................................. 33
-4.2.1 Signal and Radial Metric QC................................................................................................................................... 33
-4.2.2 Radial QC................................................................................................................................................................... 34
-4.2.3 Totals QC................................................................................................................................................................... 35
-4.2.4 Primary Flag Definition........................................................................................................................................... 36
-4.2.5 Thresholds.................................................................................................................................................................. 36
-**5.0 Summary........................................................................................................................................ 37**
-**6.0 References..................................................................................................................................... 38**
-Additional References to Related Documents:.......................................................................................................................... 40
-Supporting Documents Available from the QARTOD Website:.......................................................................................... 41
-
-**Appendix A. QARTOD HF Radar Manual Version 2.0 Team.......................................................A-1**
-
-**Appendix B. Additional Potential Quality Control Tests.............................................................. B-1**
-
-iii
-
-# List of Figures
-
-Figure 2-1. WERA system...................................................................................................................................................................... 4
-
-Figure 3-1. A SeaSonde 25 MHz combined transmitting and receiving antenna deployed at Cape Henlopen, Delaware... 7
-
-# List of Tables
-
-Table 3-1. Flags for real-time data (UNESCO 2013)........................................................................................................................ 7
-
-Table 4- 1. Mandatory QC tests for radial velocity data.................................................................................................................. 28
-
-Table 4-2. Mandatory QC tests for total velocity data.................................................................................................................... 30
-
-Table 4-3. Processing levels for HFR data........................................................................................................................................ 31
-
-Table 4-4. Argo quality control flag scale.......................................................................................................................................... 32
-
-Table 4-5. MARACOOS HFR Processing Steps............................................................................................................................. 33
-
-Table 4-6. MARACOOS Radial Data QC Tests.............................................................................................................................. 34
-
-Table 4-7. MARACOOS Totals Data QC Tests.............................................................................................................................. 35
-
-iv
-
-||Revision History|
-|---|---|
-|Date|Revision Description Notes|
-|5/2016|Original Document Published|
-|6/2022|Update email address for Board of Advisors (page vi). Update acknowledgements (page vii). Add three terms to Acronyms and Abbreviations (page viii). Revise definitions of several selected terms. (page ix). Update section 1.0 to include list of manuals (pages 1–2). Update section 2.0; add figure and section 2.2.3 (pages 3–6) Update section 3.0; add figure and several tests. (pages 7–27). Add section 4.0. (pages 28–36). Update section 5.0. (page 37). Update and add references (pages 38–41). Delete original appendix A. Update appendix A (pages A-1–A-4). Update appendix B (page B-1).|
-||v|
-
-# Endorsement Disclaimer
-
-## Mention of a commercial company or product does not constitute an
-
-## endorsement by NOAA. Use of information from this publication for publicity
-
-## or advertising purposes concerning proprietary products or the tests of such products is not authorized.
-
-# Request to Manual Users
-
-## To gauge the success of the QARTOD project, it helps to be aware
-
-## of groups working to utilize these QC tests. Please notify us of your
-
-**efforts or intentions to implement QARTOD processes by sending a brief email to** <u>qartod.board@noaa.gov</u> **or posting a notice at**
-
-<u>[http://www.linkedin.com/groups?gid=2521409](http://www.linkedin.com/groups?gid=2521409).</u>
-
-vi
+#### DOI
 
 # Acknowledgements
 
-Special thanks go to members of the high frequency radar surface current mapping committee, who contributed their expertise to develop the content of the initial manual and also to reviewers, whose many valuable suggestions greatly enhanced the manual content.
+Special thanks go to members of the high frequency radar surface current mapping committee, 
+who contributed their expertise to develop the content of the initial manual and also to reviewers, 
+whose many valuable suggestions greatly enhanced the manual content.
 
-The early participation and support from Teresa Updyke (Old Dominion University), Dr. Hugh Roarty (Rutgers University), Sara Haines (University of North Carolina), Dr. Mal Heron (James Cook University, Australia), and Dr. George Voulgaris (University of South Carolina) are especially appreciated.
+The early participation and support from Teresa Updyke (Old Dominion University), 
+Dr. Hugh Roarty (Rutgers University), 
+Sara Haines (University of North Carolina), 
+Dr. Mal Heron (James Cook University, Australia), 
+and Dr. George Voulgaris (University of South Carolina) are especially appreciated.
 
-We thank Mark Otero (University of California San Diego/Scripps Institution of Oceanography) for providing existing QC documents. We are also grateful for the substantial comments and suggestions provided by Don Barrick (CODAR Ocean Systems Ltd.).
+We thank Mark Otero (University of California San Diego/Scripps Institution of Oceanography) for providing existing QC documents. 
+We are also grateful for the substantial comments and suggestions provided by Don Barrick (CODAR Ocean Systems Ltd.).
 
-In 2021 a team was formed to revise the initial version, consisting of Brian Emery (University of California Santa Barbara), Dale Trockel (CODAR Ocean Sensors), Dr. Sung Yong Kim (Korea Advanced Institute of Science and Technology), Teresa Updyke (Old Dominion University), Manman Wang (Ocean Networks Canada), Lorenzo Corgnati (Institute of Marine Science of the National Research Council of Italy), Sara Haines (University of North Carolina), Rachel Potter (University of Alaska Fairbanks), and Dr. Hugh Roarty. Support from Bill Rector at Codar Ocean Systems is appreciated.
+In 2021 a team was formed to revise the initial version, 
+consisting of Brian Emery (University of California Santa Barbara), 
+Dale Trockel (CODAR Ocean Sensors), 
+Dr. Sung Yong Kim (Korea Advanced Institute of Science and Technology), 
+Teresa Updyke (Old Dominion University), 
+Manman Wang (Ocean Networks Canada), 
+Lorenzo Corgnati (Institute of Marine Science of the National Research Council of Italy), 
+Sara Haines (University of North Carolina), 
+Rachel Potter (University of Alaska Fairbanks), 
+and Dr. Hugh Roarty. 
+Support from Bill Rector at Codar Ocean Systems is appreciated.
 
-Appendix A provides a full list of committee members, reviewers, and others involved in the QARTOD project.
-
-vii
+Appendix A provides a full list of committee members, 
+reviewers, 
+and others involved in the QARTOD project.
 
 # Acronyms and Abbreviations
 
