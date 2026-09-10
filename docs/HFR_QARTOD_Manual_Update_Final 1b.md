@@ -104,11 +104,11 @@ This manual contains several terms whose meanings are critical to those using th
 
 ## 1.0 Background and Introduction
 
-The U.S. Integrated Ocean Observing System®(IOOS®) has a vested interest in collecting high quality data for the 34 core variables (https://ioos.noaa.gov/about/ioos-by-the-numbers) measured on a national scale. 
-In response to this interest, 
-U.S. IOOS continues to establish written, 
-authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding permits (UNESCO 1993). 
-This manual update on the real-time QC of high frequency (HF) radar surface currents represents the ninth core variable to be addressed. 
+The U.S. Integrated Ocean Observing System®(IOOS®) has a vested interest in collecting high quality data for the 34 core variables (https://ioos.noaa.gov/about/ioos-by-the-numbers) measured on a national scale.
+In response to this interest,
+U.S. IOOS continues to establish written,
+authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding permits (UNESCO 1993).
+This manual update on the real-time QC of high frequency (HF) radar surface currents represents the ninth core variable to be addressed.
 Other QARTOD guidance documents that have been published by the U.S. IOOS project to date are listed below and are also available at (https://ioos.noaa.gov/project/qartod/).
 
 1. U.S. Integrated Ocean Observing System (2017). U.S IOOS QARTOD Project Plan-Accomplishments for 2012–2016 and Update for 2017–2021. 48 pp. (https://doi.org/10.7289/V5JQ0Z71).
@@ -141,97 +141,97 @@ Please reference this document as:
 
     U.S. Integrated Ocean Observing System (2022). Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 57 pp. <https://doi.org/10.25923/4c5x-g538>
 
-This manual is a living document that reflects the state-of-the-art QC testing procedures for HF radar surface currents observations. 
+This manual is a living document that reflects the state-of-the-art QC testing procedures for HF radar surface currents observations.
 It is written for the experienced operator but also provides examples for those who are just entering the field.
 
 ## 2.0 Purpose/Constraints/Applications
 
-The HF radar capability was successfully demonstrated decades ago, 
-and its use to observe surface currents is now one of the most robust operational measurements employed by the oceanographic community. 
-The present U.S. IOOS program integrates HF radar observations from 11 participating Regional Associations (RAs), 
-31 participating organizations, 
-more than a decade of operations, 
-over 130 coastal sites, 
-and almost 8,000,000 data files. 
-The effort is well described in the *National Surface Currents Plan* (U.S. IOOS 2015). 
+The HF radar capability was successfully demonstrated decades ago,
+and its use to observe surface currents is now one of the most robust operational measurements employed by the oceanographic community.
+The present U.S. IOOS program integrates HF radar observations from 11 participating Regional Associations (RAs),
+31 participating organizations,
+more than a decade of operations,
+over 130 coastal sites,
+and almost 8,000,000 data files.
+The effort is well described in the *National Surface Currents Plan* (U.S. IOOS 2015).
 Section 13.5 of that plan provides an overview of the existing and emerging QC techniques and serves as the basis for the QC processes described herein.
 
 ### 2.1 Purpose
 
-The purpose of this manual is to document successful QC techniques already in place, 
-identify any shortcoming of those techniques, 
+The purpose of this manual is to document successful QC techniques already in place,
+identify any shortcoming of those techniques,
 and to suggest new QC tests that may be employed as resources and capabilities permit.
 
-QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. 
-QC practices include such things as data integrity checks (format, checksum, 
-timely arrival of data), 
-data value checks (threshold checks, 
-minimum/maximum rate of change), neighbor checks, 
-climatology checks, 
-model comparisons, 
-signal/noise ratios, 
-the mark-up of the data, 
-the verification of user satisfaction, 
+QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention.
+QC practices include such things as data integrity checks (format, checksum,
+timely arrival of data),
+data value checks (threshold checks,
+minimum/maximum rate of change), neighbor checks,
+climatology checks,
+model comparisons,
+signal/noise ratios,
+the mark-up of the data,
+the verification of user satisfaction,
 and generation of data flags (Bushnell 2005).
 
 ### 2.2 Constraints
 
-The focus of the manual is on the real-time QC of data collected, 
-processed, 
-and disseminated by the U.S. IOOS RAs. 
-It is limited to the HF radar surface current mapping systems presently used by the RAs, 
-and to the data presently provided from them. 
-Therefore, 
+The focus of the manual is on the real-time QC of data collected,
+processed,
+and disseminated by the U.S. IOOS RAs.
+It is limited to the HF radar surface current mapping systems presently used by the RAs,
+and to the data presently provided from them.
+Therefore,
 it addresses these systems and manufacturers:
 
 - SeaSonde® - developed by CODAR Ocean Sensors. Ltd.
 - WERA - manufactured by HELZEL Messtechnik GmbH (HZM)
 - LERA - developed by Pierre Flament at the University of Hawaii
 
-QC is also constrained to surface current observations. 
-All three systems provide surface gravity wave observations, 
-and these observations from HF radar systems are just now emerging operationally (Roarty et al. 2019). 
-For a U.S. IOOS National HF Radar Technical Steering Team position paper on the use of HF radar for wave measurement, 
+QC is also constrained to surface current observations.
+All three systems provide surface gravity wave observations,
+and these observations from HF radar systems are just now emerging operationally (Roarty et al. 2019).
+For a U.S. IOOS National HF Radar Technical Steering Team position paper on the use of HF radar for wave measurement,
 see (https://ioos.noaa.gov/project/hf-radar/).
 
-In addition, 
-the manual does not focus on the quality assurance (QA) associated with the proper installation and operation of a HF radar site (Voulgaris 2011). 
-Operators typically monitor many performance metrics to ensure the health of an HF radar site, 
-see Mantovani et al. (2020) Tables 5 and 6, 
+In addition,
+the manual does not focus on the quality assurance (QA) associated with the proper installation and operation of a HF radar site (Voulgaris 2011).
+Operators typically monitor many performance metrics to ensure the health of an HF radar site,
+see Mantovani et al. (2020) Tables 5 and 6,
 or Cook et al (2008) which is specific to SeaSonde systems.
 
 Each system is briefly described in the following subsections.
 
 #### 2.2.1 CODAR SeaSonde
 
-CODAR Ocean Sensors, Ltd. (CODAR) is the developer and manufacturer of the SeaSonde compact HF radar system. 
-Its founders were the creators and pioneers of the HF surface-wave radar field beginning in the 1970s. 
-CODAR offers software for outputting several data product categories, including surface current mapping, 
-wave measurements, 
-tsunami detection, 
-and recently ship detection. 
-The company has a history of HF research and transition to operations. 
-The CODAR compact direction-finding system is the most widely deployed oceanographic HF technology, 
-both within the U.S. (approximately 150 sites) and internationally (> 300). 
-The antenna system optionally combines the transmitting and receiving antennas within a single mast and also eliminates the horizontal ground plane whip antennas. 
+CODAR Ocean Sensors, Ltd. (CODAR) is the developer and manufacturer of the SeaSonde compact HF radar system.
+Its founders were the creators and pioneers of the HF surface-wave radar field beginning in the 1970s.
+CODAR offers software for outputting several data product categories, including surface current mapping,
+wave measurements,
+tsunami detection,
+and recently ship detection.
+The company has a history of HF research and transition to operations.
+The CODAR compact direction-finding system is the most widely deployed oceanographic HF technology,
+both within the U.S. (approximately 150 sites) and internationally (> 300).
+The antenna system optionally combines the transmitting and receiving antennas within a single mast and also eliminates the horizontal ground plane whip antennas.
 The company headquarters are in Mountain View, California.
 
 #### 2.2.2 WERA
 
-The Wellen Radar¹ (WERA) system was initially developed at the University of Hamburg in 1996. 
-One of the aims was to allow measurements of the ocean wave spectrum, 
-which requires access to the full backscatter Doppler spectrum for all ranges and directions. 
+The Wellen Radar¹ (WERA) system was initially developed at the University of Hamburg in 1996.
+One of the aims was to allow measurements of the ocean wave spectrum,
+which requires access to the full backscatter Doppler spectrum for all ranges and directions.
 This access is achieved by applying a beam-forming technique.
 
-The design uses a modular system that can include 4, 8, 12, or 16 independent, 
-inter-calibrated receiver channels. 
-The processing of the signals is done on the software side and allows for employing beam forming (BF) using a linear array of 8 to 16 antennas and/or direction finding (DF) with 4 antennas in a square. 
-A recent software upgrade allows to also apply DF algorithms on the linear array; however, 
+The design uses a modular system that can include 4, 8, 12, or 16 independent,
+inter-calibrated receiver channels.
+The processing of the signals is done on the software side and allows for employing beam forming (BF) using a linear array of 8 to 16 antennas and/or direction finding (DF) with 4 antennas in a square.
+A recent software upgrade allows to also apply DF algorithms on the linear array; however,
 DF implementations do not provide ocean wave parameters.
 
-To avoid high-power transmit pulses in the range of some kilowatts as used in former systems, 
-a frequency-modulated continuous-wave signal at 30 watts is transmitted to achieve range resolution. 
-The depth of the range cells can be adopted to the requirements by reprogramming the frequency span of the transmitted frequency chirp. 
+To avoid high-power transmit pulses in the range of some kilowatts as used in former systems,
+a frequency-modulated continuous-wave signal at 30 watts is transmitted to achieve range resolution.
+The depth of the range cells can be adopted to the requirements by reprogramming the frequency span of the transmitted frequency chirp.
 Typical values for a system operated in the 12-MHz frequency band are 130 ranges at 1.5 kilometers (km) resolution.
 
 **Figure 2-1.** WERA system
