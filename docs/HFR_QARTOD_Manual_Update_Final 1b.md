@@ -6,33 +6,33 @@ A Guide to Quality Control and Quality Assurance for High Frequency Radar Surfac
 
 # Acknowledgements
 
-Special thanks go to members of the high frequency radar surface current mapping committee, 
-who contributed their expertise to develop the content of the initial manual and also to reviewers, 
+Special thanks go to members of the high frequency radar surface current mapping committee,
+who contributed their expertise to develop the content of the initial manual and also to reviewers,
 whose many valuable suggestions greatly enhanced the manual content.
 
-The early participation and support from Teresa Updyke (Old Dominion University), 
-Dr. Hugh Roarty (Rutgers University), 
-Sara Haines (University of North Carolina), 
-Dr. Mal Heron (James Cook University, Australia), 
+The early participation and support from Teresa Updyke (Old Dominion University),
+Dr. Hugh Roarty (Rutgers University),
+Sara Haines (University of North Carolina),
+Dr. Mal Heron (James Cook University, Australia),
 and Dr. George Voulgaris (University of South Carolina) are especially appreciated.
 
-We thank Mark Otero (University of California San Diego/Scripps Institution of Oceanography) for providing existing QC documents. 
+We thank Mark Otero (University of California San Diego/Scripps Institution of Oceanography) for providing existing QC documents.
 We are also grateful for the substantial comments and suggestions provided by Don Barrick (CODAR Ocean Systems Ltd.).
 
-In 2021 a team was formed to revise the initial version, 
-consisting of Brian Emery (University of California Santa Barbara), 
-Dale Trockel (CODAR Ocean Sensors), 
-Dr. Sung Yong Kim (Korea Advanced Institute of Science and Technology), 
-Teresa Updyke (Old Dominion University), 
-Manman Wang (Ocean Networks Canada), 
-Lorenzo Corgnati (Institute of Marine Science of the National Research Council of Italy), 
-Sara Haines (University of North Carolina), 
-Rachel Potter (University of Alaska Fairbanks), 
-and Dr. Hugh Roarty. 
+In 2021 a team was formed to revise the initial version,
+consisting of Brian Emery (University of California Santa Barbara),
+Dale Trockel (CODAR Ocean Sensors),
+Dr. Sung Yong Kim (Korea Advanced Institute of Science and Technology),
+Teresa Updyke (Old Dominion University),
+Manman Wang (Ocean Networks Canada),
+Lorenzo Corgnati (Institute of Marine Science of the National Research Council of Italy),
+Sara Haines (University of North Carolina),
+Rachel Potter (University of Alaska Fairbanks),
+and Dr. Hugh Roarty.
 Support from Bill Rector at Codar Ocean Systems is appreciated.
 
-Appendix A provides a full list of committee members, 
-reviewers, 
+Appendix A provides a full list of committee members,
+reviewers,
 and others involved in the QARTOD project.
 
 # Acronyms and Abbreviations
