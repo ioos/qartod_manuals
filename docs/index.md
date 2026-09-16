@@ -7,3 +7,4 @@ See <https://repository.oceanbestpractices.org/handle/11329/336>
 - [Manual for Real-Time Quality Control of pH Data Observations](pH.md)
 - [Manual for Real-Time Quality Control of High Frequency Radar Surface Current Data](HFR.md)
 - [Manual for Real-Time Quality Control of Wind Data](Wind_Data.md)
+- [Manual for Quality Control of Temperature and Salinity Data Observations from Gliders](Glider.md)
