@@ -2,22 +2,22 @@
 
 <https://doi.org/10.25607/OBP-1465>
 
-## Acknowledgements 
+## Acknowledgements
 
-We are grateful for the assistance of the Glider Data Assembly Center Temperature and Salinity Quality Control Manual Team, 
-which is listed in appendix A. 
+We are grateful for the assistance of the Glider Data Assembly Center Temperature and Salinity Quality Control Manual Team,
+which is listed in appendix A.
 
-Special thanks to Dr. Matt Howard (Texas A&M University/Gulf of Mexico Coastal Ocean Observing System) for his efforts to initiate the development of this manual, 
-and to Dr. Dan Rudnick (Scripps Institution of Oceanography) for sharing his insights acquired through much glider QC experience. 
+Special thanks to Dr. Matt Howard (Texas A&M University/Gulf of Mexico Coastal Ocean Observing System) for his efforts to initiate the development of this manual,
+and to Dr. Dan Rudnick (Scripps Institution of Oceanography) for sharing his insights acquired through much glider QC experience.
 
-We are grateful for the contributions and support provided by Stephanie Jaeger (SeaBird Electronics), 
-Dr. Fritz Stahr and Beth Curry (University of Washington), Danielle Bryant (Naval Oceanographic Office), 
-and Richard Davis and Brad Covey (Dalhousie University). 
-Also, we thank John Kerfoot and Laura Palamara (Rutgers University), 
-Ben Allsup (Teledyne-Webb), 
-and Chad Lembke and Frank Muller-Karger (University of South Florida) for their insight and comments. 
+We are grateful for the contributions and support provided by Stephanie Jaeger (SeaBird Electronics),
+Dr. Fritz Stahr and Beth Curry (University of Washington), Danielle Bryant (Naval Oceanographic Office),
+and Richard Davis and Brad Covey (Dalhousie University).
+Also, we thank John Kerfoot and Laura Palamara (Rutgers University),
+Ben Allsup (Teledyne-Webb),
+and Chad Lembke and Frank Muller-Karger (University of South Florida) for their insight and comments.
 
-## Acronyms and Abbreviations 
+## Acronyms and Abbreviations
 
 |AUV|Autonomous Underwater Vehicle|
 |---|---|
@@ -47,7 +47,7 @@ and Chad Lembke and Frank Muller-Karger (University of South Florida) for their 
 |T|temperature|
 |UWAPL|University of Washington Applied Physics Laboratory|
 
-## Definitions of Selected Terms 
+## Definitions of Selected Terms
 
 |**Term**|**Definition**|
 |---|---|
@@ -63,58 +63,58 @@ and Chad Lembke and Frank Muller-Karger (University of South Florida) for their 
 |**Threshold**|Thresholds are limit of variables that are defined by the regional operator or<br>the Glider DAC.|
 |**Variable**|Variable is an observation (or measurement) of biogeochemical properties<br>within oceanographic and/or meteorological environments.|
 
-## Preface 
+## Preface
 
-The U.S. Integrated Ocean Observing System® (IOOS®) and its partners collect oceanographic data, 
-such as wave height and direction, 
-current velocity and direction, 
-temperature and salinity, 
-via both fixed and mobile platforms. 
-Real-time data collected from sensors attached to these platforms must be quality controlled before being published. 
+The U.S. Integrated Ocean Observing System® (IOOS®) and its partners collect oceanographic data,
+such as wave height and direction,
+current velocity and direction,
+temperature and salinity,
+via both fixed and mobile platforms.
+Real-time data collected from sensors attached to these platforms must be quality controlled before being published.
 
-This manual describes the tests required to ensure the quality control (QC) of real-time data collected by sensors attached to profiling gliders. 
-Profiling gliders are self-propelled (buoyancy driven), 
-autonomous underwater vehicles (AUVs) that are deployed for days-tomonths and profile the water column collecting environmental data. 
-The _Constraints and Applications_ section describes the most frequently used gliders, 
-and has a partial list of the organizations that provide data to the U.S. IOOS Glider Data Assembly Center (DAC). 
-The _Quality Control_ section provides details about how the tests described in U.S. IOOS (2015) can be implemented. 
-Specifically, the tests in section 3.3.2 of that manual, 
-_Applications of QC Tests to Mobile Temperature/Salinity Sensors_, 
-are used as the starting point for this QC manual for real-time data collected from glider platforms. 
-The _Summary_ and _References_ sections provide an overview of the tests and full citations of references used in development of this manual. 
-Appendix A contains the names of the manual preparation team; 
-appendix B describes real-time temperature and salinity alignment challenges. 
-Appendix C and appendix D provide information about other QC programs and are used with permission from the Naval Oceanographic Office and the University of Washington School of Oceanography/Applied Physics Laboratory, 
-respectively. 
+This manual describes the tests required to ensure the quality control (QC) of real-time data collected by sensors attached to profiling gliders.
+Profiling gliders are self-propelled (buoyancy driven),
+autonomous underwater vehicles (AUVs) that are deployed for days-tomonths and profile the water column collecting environmental data.
+The _Constraints and Applications_ section describes the most frequently used gliders,
+and has a partial list of the organizations that provide data to the U.S. IOOS Glider Data Assembly Center (DAC).
+The _Quality Control_ section provides details about how the tests described in U.S. IOOS (2015) can be implemented.
+Specifically, the tests in section 3.3.2 of that manual,
+_Applications of QC Tests to Mobile Temperature/Salinity Sensors_,
+are used as the starting point for this QC manual for real-time data collected from glider platforms.
+The _Summary_ and _References_ sections provide an overview of the tests and full citations of references used in development of this manual.
+Appendix A contains the names of the manual preparation team;
+appendix B describes real-time temperature and salinity alignment challenges.
+Appendix C and appendix D provide information about other QC programs and are used with permission from the Naval Oceanographic Office and the University of Washington School of Oceanography/Applied Physics Laboratory,
+respectively.
 
-The details of the U.S. IOOS glider program are not repeated herein; 
-however, the rationale for a glider network is well described in Baltes et al. (2014). 
-They also identify the gliders in use by those contributing to the U.S. IOOS Glider DAC. 
-The U.S. IOOS glider home page provides an overview of gliders, their applications, 
-a listing of various U.S. IOOS Regional Association deployments, 
-and related workshops/meetings (http://www.ioos.noaa.gov/glider/welcome.html). 
-A series of presentations from a strategy development workshop held on August 1-3, 2012 at the Scripps Institution of Oceanography (SIO) provides further details and background information. 
-Results from active and historical glider deployments can be viewed and links to data access can be found at http://dev.oceansmap.com/gliders/catalog/. 
+The details of the U.S. IOOS glider program are not repeated herein;
+however, the rationale for a glider network is well described in Baltes et al. (2014).
+They also identify the gliders in use by those contributing to the U.S. IOOS Glider DAC.
+The U.S. IOOS glider home page provides an overview of gliders, their applications,
+a listing of various U.S. IOOS Regional Association deployments,
+and related workshops/meetings (http://www.ioos.noaa.gov/glider/welcome.html).
+A series of presentations from a strategy development workshop held on August 1-3, 2012 at the Scripps Institution of Oceanography (SIO) provides further details and background information.
+Results from active and historical glider deployments can be viewed and links to data access can be found at http://dev.oceansmap.com/gliders/catalog/.
 
 Glider QC points of contact are identified and posted on the emerging glider DAC website (http://gliders.ioos.us/index.html) so that the list can readily be maintained.
 
-## Constraints and Applications 
+## Constraints and Applications
 
-Mobile platforms are available in a variety of configurations and require different realtime QC considerations. 
-Mobile platforms are, in order of increasing complexity: 
-fixed vertical profilers, 
-mobile surface vessels, 
-and vessels freely operating in three dimensions (e.g., gliders, floats, powered AUVs). 
-This manual is primarily written for gliders. 
-Table 1 shows a representative list of these gliders and includes the institutions and types of instruments that provide data to the DAC; however, 
-it is not a comprehensive listing of all gliders. 
-Figures 1-4 illustrate examples of the glider models used to collect the data that this QC manual addresses. 
+Mobile platforms are available in a variety of configurations and require different realtime QC considerations.
+Mobile platforms are, in order of increasing complexity:
+fixed vertical profilers,
+mobile surface vessels,
+and vessels freely operating in three dimensions (e.g., gliders, floats, powered AUVs).
+This manual is primarily written for gliders.
+Table 1 shows a representative list of these gliders and includes the institutions and types of instruments that provide data to the DAC; however,
+it is not a comprehensive listing of all gliders.
+Figures 1-4 illustrate examples of the glider models used to collect the data that this QC manual addresses.
 
-At http://data.ioos.us/gliders/status (click on the **Latest** tab), a complete listing of the latest dataset updates can be found. 
-The page contains additional links to data and information about these data, 
-such as a summary map, 
-listings of operators and institutions, 
-the status of incomplete datasets, and a link to all datasets. 
+At http://data.ioos.us/gliders/status (click on the **Latest** tab), a complete listing of the latest dataset updates can be found.
+The page contains additional links to data and information about these data,
+such as a summary map,
+listings of operators and institutions,
+the status of incomplete datasets, and a link to all datasets.
 
 | Data Provider | Glider Type | Sensor |
 | --- | --- | --- |
@@ -126,7 +126,7 @@ the status of incomplete datasets, and a link to all datasets.
 
 <small>_*Conductivity, Temperature, and Depth._</small>
 
-: Table 1. Examples of Glider DAC information. 
+: Table 1. Examples of Glider DAC information.
 
 ![Slocum glider](images_QC_Gliders/figure-1-slocum-glider.png)
 
@@ -144,111 +144,111 @@ the status of incomplete datasets, and a link to all datasets.
 
 <figcaption>Figure 4. Spray glider (photo courtesy of Dr. Fritz Stahr/UWAPL).</figcaption>
 
-### Glider Temperature-Corrected Salinities 
+### Glider Temperature-Corrected Salinities
 
-Gliders transiting gradients in temperature and salinity over short time scales may require additional QC. 
-Specifically, there are two corrections that should be applied prior to the real-time QC tests described in this manual: 
-a response time lag correction and a thermal lag correction. 
-However, the ability to make these two corrections in real time is a challenging and very contentious problem: the corrections are unique to each specific sensor and may require calibration factors. 
-The following discussion is an overview of the complexity associated with obtaining CTD data of high accuracy but is not meant to instruct or guide operators on these correction processes. 
-Further discussion of the various correction methods and their capabilities is included in appendix B. 
+Gliders transiting gradients in temperature and salinity over short time scales may require additional QC.
+Specifically, there are two corrections that should be applied prior to the real-time QC tests described in this manual:
+a response time lag correction and a thermal lag correction.
+However, the ability to make these two corrections in real time is a challenging and very contentious problem: the corrections are unique to each specific sensor and may require calibration factors.
+The following discussion is an overview of the complexity associated with obtaining CTD data of high accuracy but is not meant to instruct or guide operators on these correction processes.
+Further discussion of the various correction methods and their capabilities is included in appendix B.
 
-**_Response Time Lag Correction_**. 
-Salinity is computed using nearly simultaneous measurements of temperature and conductivity made by two independent sensors. 
-Salinities computed using misaligned values will be incorrect and can appear as spikes in salinity data, 
-yielding erroneously unstable density profiles. 
-A misalignment can also occur if the temperature or conductivity sensors are located downstream of one another on the instrument or if the water flowing over the two sensors takes a different path, 
-such as through the plumbing of a pumped system. 
-This error can be corrected by slightly shifting the two records in time relative to each other. 
-The amount of shift depends on the sampling rate and the speed of the flow due to either the glider motion or a pump (Garau et al. 2011). 
+**_Response Time Lag Correction_**.
+Salinity is computed using nearly simultaneous measurements of temperature and conductivity made by two independent sensors.
+Salinities computed using misaligned values will be incorrect and can appear as spikes in salinity data,
+yielding erroneously unstable density profiles.
+A misalignment can also occur if the temperature or conductivity sensors are located downstream of one another on the instrument or if the water flowing over the two sensors takes a different path,
+such as through the plumbing of a pumped system.
+This error can be corrected by slightly shifting the two records in time relative to each other.
+The amount of shift depends on the sampling rate and the speed of the flow due to either the glider motion or a pump (Garau et al. 2011).
 
-**_Thermal Lag Correction_**. 
-A second correction is needed to account for the thermal mass of the conductivity cell and its effect on the resulting salinity calculation. 
-Electrode conductivity sensors work by measuring the resistance across a small, 
-precise volume of water flowing through an open-ended cell. 
-When a conductivity sensor moves into cooler (or warmer) water, 
-the cell slightly warms (or cools) the water inside the cell. 
-Because conductivity is a strong function of temperature, 
-this small change in water temperature inside the cell leads to a significantly different conductivity measurement value than would have been made if the temperature inside the cell was the same as that outside the cell. 
-This thermal lag effect occurs whenever the glider passes through a temperature gradient. 
-Without corrections, 
-the paired conductivity and temperature used to calculate salinity will result in erroneous salinity and density values, especially across temperature gradients. 
-A method to correct for heating inside the cell has been developed, resulting in more accurate salinity profiles (Morison et al. 1994). 
-Garau et al. (2011) 
-specifically address the additional considerations associated with unpumped CTD sensors deployed on gliders. 
-Liu et al. (2015) examined the salinity corrections across a sharp thermocline with an unpumped CTD sensor and proposed further filtering along with the corrections. 
+**_Thermal Lag Correction_**.
+A second correction is needed to account for the thermal mass of the conductivity cell and its effect on the resulting salinity calculation.
+Electrode conductivity sensors work by measuring the resistance across a small,
+precise volume of water flowing through an open-ended cell.
+When a conductivity sensor moves into cooler (or warmer) water,
+the cell slightly warms (or cools) the water inside the cell.
+Because conductivity is a strong function of temperature,
+this small change in water temperature inside the cell leads to a significantly different conductivity measurement value than would have been made if the temperature inside the cell was the same as that outside the cell.
+This thermal lag effect occurs whenever the glider passes through a temperature gradient.
+Without corrections,
+the paired conductivity and temperature used to calculate salinity will result in erroneous salinity and density values, especially across temperature gradients.
+A method to correct for heating inside the cell has been developed, resulting in more accurate salinity profiles (Morison et al. 1994).
+Garau et al. (2011)
+specifically address the additional considerations associated with unpumped CTD sensors deployed on gliders.
+Liu et al. (2015) examined the salinity corrections across a sharp thermocline with an unpumped CTD sensor and proposed further filtering along with the corrections.
 
-Both types of corrections rely on previous values of temperature and a sufficiently high sampling rate. 
-The extent to which these corrections are applied in real time depends upon the capabilities of the CTD sensor, 
-the requirements of the operator, 
-and the resources available. 
+Both types of corrections rely on previous values of temperature and a sufficiently high sampling rate.
+The extent to which these corrections are applied in real time depends upon the capabilities of the CTD sensor,
+the requirements of the operator,
+and the resources available.
 
-An advantage of pumped systems is that the flow rate through the cell is fixed and known. 
-For unpumped systems, 
-the flow rate through the cell can be variable, 
-depending on the angle and speed of the glider. 
-Corrections are more effectively accomplished during post-processing of the full resolution profiles than in real time, 
-where many people believe an insufficient amount of data is transmitted. 
-The metadata should indicate if the real-time profiles have been corrected by the operator before submission to the DAC. 
+An advantage of pumped systems is that the flow rate through the cell is fixed and known.
+For unpumped systems,
+the flow rate through the cell can be variable,
+depending on the angle and speed of the glider.
+Corrections are more effectively accomplished during post-processing of the full resolution profiles than in real time,
+where many people believe an insufficient amount of data is transmitted.
+The metadata should indicate if the real-time profiles have been corrected by the operator before submission to the DAC.
 
-## Quality Control 
+## Quality Control
 
-To conduct real-time QC on glider observations, 
-the first prerequisite is to understand the science and context within which the measurements are being conducted. 
-Glider deployments have a unique definition of ‘real time’, 
-providing space-time profiles of a variety of variables upon surfacing. 
-While each sensor provides vastly different products, QC techniques can be applied broadly. 
-In this initial U.S. IOOS Glider DAC QC manual, 
-we focus on the observations of temperature (T), 
-conductivity (C), 
-and on the calculation of salinity (S), 
-collectively referred to herein as TS observations. 
-The decision to use either Practical Salinity (S<sub>P</sub>) or Absolute Salinity (S<sub>A</sub>) is left to the operator. 
+To conduct real-time QC on glider observations,
+the first prerequisite is to understand the science and context within which the measurements are being conducted.
+Glider deployments have a unique definition of ‘real time’,
+providing space-time profiles of a variety of variables upon surfacing.
+While each sensor provides vastly different products, QC techniques can be applied broadly.
+In this initial U.S. IOOS Glider DAC QC manual,
+we focus on the observations of temperature (T),
+conductivity (C),
+and on the calculation of salinity (S),
+collectively referred to herein as TS observations.
+The decision to use either Practical Salinity (S<sub>P</sub>) or Absolute Salinity (S<sub>A</sub>) is left to the operator.
 
-TS measurements can be used to resolve many things, 
-such as internal waves, 
-oceanic fronts, 
-river runoff, 
-upwelling, etc., 
-and some of these can be extreme events. 
-Human involvement is therefore important to ensure that good data are not discarded and bad data are not distributed by using scientific principles applied to data evaluation. 
+TS measurements can be used to resolve many things,
+such as internal waves,
+oceanic fronts,
+river runoff,
+upwelling, etc.,
+and some of these can be extreme events.
+Human involvement is therefore important to ensure that good data are not discarded and bad data are not distributed by using scientific principles applied to data evaluation.
 
-The real-time QC of TS observations taken from sensors attached to gliders can be extremely challenging. 
-For example, 
-gradual calibration changes and long-term system responses, 
-such as sensor drift, 
-most likely cannot be detected or corrected with realtime, automated QC. 
-Drift correction for TS measurements during post-processing is difficult even if a valid post-recovery calibration is obtained. 
-Drift is often caused by biofouling, 
-affecting different systems in different ways—a sensor’s response will be affected by the added mass of bio-fouling. 
-Another example is the ability of some data providers to backfill data gaps quickly. 
-In both of these examples, 
-the observations cannot be corrected in real time. 
+The real-time QC of TS observations taken from sensors attached to gliders can be extremely challenging.
+For example,
+gradual calibration changes and long-term system responses,
+such as sensor drift,
+most likely cannot be detected or corrected with realtime, automated QC.
+Drift correction for TS measurements during post-processing is difficult even if a valid post-recovery calibration is obtained.
+Drift is often caused by biofouling,
+affecting different systems in different ways—a sensor’s response will be affected by the added mass of bio-fouling.
+Another example is the ability of some data providers to backfill data gaps quickly.
+In both of these examples,
+the observations cannot be corrected in real time.
 
-### QC Flags 
+### QC Flags
 
-Data are evaluated using QC tests, 
-and the results of those tests are recorded by inserting flags in the data record. 
-Table 2 provides the simple set of flags and associated descriptions adopted by U.S. IOOS and employed at the Glider DAC. 
-Operators may incorporate additional flags for inclusion in metadata records to further assist with troubleshooting. 
-For example, 
-an observation may fail the temperature min/max range test and be flagged as having failed. 
-An operator could provide an additional test to further define a failure: 
-if the data failed the temperature min/max by exceeding the upper limit, 
-a “failed high” flag could indicate that the values were higher than the expected range. 
-Such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS Glider DAC requirements for QC of real-time data. 
-For additional information regarding flags, 
-see the _Manual for the Use of Real-Time Oceanographic Data Quality Control Flags_ (U.S.IOOS 2014) posted on the U.S. IOOS QARTOD website. 
+Data are evaluated using QC tests,
+and the results of those tests are recorded by inserting flags in the data record.
+Table 2 provides the simple set of flags and associated descriptions adopted by U.S. IOOS and employed at the Glider DAC.
+Operators may incorporate additional flags for inclusion in metadata records to further assist with troubleshooting.
+For example,
+an observation may fail the temperature min/max range test and be flagged as having failed.
+An operator could provide an additional test to further define a failure:
+if the data failed the temperature min/max by exceeding the upper limit,
+a “failed high” flag could indicate that the values were higher than the expected range.
+Such detailed flags primarily support maintenance efforts and are presently beyond U.S. IOOS Glider DAC requirements for QC of real-time data.
+For additional information regarding flags,
+see the _Manual for the Use of Real-Time Oceanographic Data Quality Control Flags_ (U.S.IOOS 2014) posted on the U.S. IOOS QARTOD website.
 
-Post-processing of the data may yield improvements to data that were initially disseminated. 
-Flags set in real time should not be changed to ensure that historical documentation is preserved. 
-Results from post-processing should generate another set of flags. 
+Post-processing of the data may yield improvements to data that were initially disseminated.
+Flags set in real time should not be changed to ensure that historical documentation is preserved.
+Results from post-processing should generate another set of flags.
 
-Observations are time-ordered, 
-and the most recent observation is n₀, 
-preceded by a value at n₋₁, 
-and so on moving back in time. 
-The focus is primarily on the real-time QC of observations n₀, n₋₁, and n₋₂. 
+Observations are time-ordered,
+and the most recent observation is n₀,
+preceded by a value at n₋₁,
+and so on moving back in time.
+The focus is primarily on the real-time QC of observations n₀, n₋₁, and n₋₂.
 
 |**Flag**|**Description**|
 |---|---|
@@ -260,7 +260,7 @@ The focus is primarily on the real-time QC of observations n₀, n₋₁, and n�
 
 : Table 2. Flags for real-time data (UNESCO 2013).
 
-### Test Hierarchy 
+### Test Hierarchy
 
 This section outlines the 14 real-time QC tests that are required, strongly recommended, or suggested for real-time TS measurements. Salinity may be computed onboard the sensor package or after transmission of the raw data. When possible, tests should be applied to conductivity and temperature observations, as well as the derived salinity values, regardless of where the salinity calculation takes place. Operators should also consider that some of these tests can be carried out within the instrument, where thresholds can be defined in configuration files. Although more tests may imply a more robust QC effort, there are many reasons operators could use to justify not conducting some tests. In those cases, operators need only to document reasons these tests do not apply to their observations. Tests in table 3 are divided into three groups: those that are required, strongly recommended, or suggested.
 
@@ -272,7 +272,7 @@ This section outlines the 14 real-time QC tests that are required, strongly reco
 
 : Table 3. Test Hierarchy.
 
-#### Test Description 
+#### Test Description
 
 A variety of tests can be performed to evaluate data quality in real time. Testing the timely arrival and integrity of the data transmission itself is a first step. If the data are corrupted during transmission, further testing may be irrelevant. The checks defined in these 14 tests evaluate data through various comparisons to other data and to the expected conditions in the given environment. The tests listed in this section presume a time-ordered series of observations and denote the most recent observation as previously described.
 
