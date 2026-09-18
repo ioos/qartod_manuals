@@ -1,0 +1,3645 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../pH/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>HFR - QARTOD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manual-for-real-time-quality-control-of-high-frequency-radar-surface" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QARTOD" class="md-header__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QARTOD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HFR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Water_Level/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Water Level
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ADCP/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ADCP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pH/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  pH
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  HFR
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QARTOD" class="md-nav__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QARTOD
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Water_Level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HFR
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HFR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acronyms-and-abbreviations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acronyms and Abbreviations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions-of-selected-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definitions of Selected Terms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-background-and-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.0 Background and Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-purposeconstraintsapplications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.0 Purpose/Constraints/Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.0 Purpose/Constraints/Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Constraints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-codar-seasonde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.1 CODAR SeaSonde
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-wera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.2 WERA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-uh-hfdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.3 UH-HFDR
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-quality-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.0 Quality Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.0 Quality Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-qc-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 QC Flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-sensor-deployment-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Sensor Deployment Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-qc-test-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 QC Test Descriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 QC Test Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#34-test-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Test Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#341-signal-processing-or-spectral-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1 Signal Processing (or Spectral Processing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-radial-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2 Radial Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-total-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.3 Total Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-case-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.0 Case Studies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.0 Case Studies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-the-european-hfr-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 The European HFR Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-maracoos-hfr-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 MARACOOS HFR Network
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 MARACOOS HFR Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-signal-and-radial-metric-qc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1 Signal and Radial Metric QC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-radial-qc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2 Radial QC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-totals-qc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3 Totals QC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424-primary-flag-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.4 Primary Flag Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#425-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.5 Thresholds
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.0 Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#60-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.0 References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-qartod-hf-radar-manual-version-20-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A. QARTOD HF Radar Manual Version 2.0 Team
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-additional-potential-quality-control-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B. Additional Potential Quality Control Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/ocefpaf/qartod_manuals/edit/main/docs/HFR.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/ocefpaf/qartod_manuals/raw/main/docs/HFR.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="manual-for-real-time-quality-control-of-high-frequency-radar-surface">Manual for Real-Time Quality Control of High Frequency Radar Surface</h1>
+<p>A Guide to Quality Control and Quality Assurance for High Frequency Radar Surface Current Observations</p>
+<p><a href="https://doi.org/10.25923/4c5x-g538">https://doi.org/10.25923/4c5x-g538</a></p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>Special thanks go to members of the high frequency radar surface current mapping committee,
+who contributed their expertise to develop the content of the initial manual and also to reviewers,
+whose many valuable suggestions greatly enhanced the manual content.</p>
+<p>The early participation and support from Teresa Updyke (Old Dominion University),
+Dr. Hugh Roarty (Rutgers University),
+Sara Haines (University of North Carolina),
+Dr. Mal Heron (James Cook University, Australia),
+and Dr. George Voulgaris (University of South Carolina) are especially appreciated.</p>
+<p>We thank Mark Otero (University of California San Diego/Scripps Institution of Oceanography) for providing existing QC documents.
+We are also grateful for the substantial comments and suggestions provided by Don Barrick (CODAR Ocean Systems Ltd.).</p>
+<p>In 2021 a team was formed to revise the initial version,
+consisting of Brian Emery (University of California Santa Barbara),
+Dale Trockel (CODAR Ocean Sensors),
+Dr. Sung Yong Kim (Korea Advanced Institute of Science and Technology),
+Teresa Updyke (Old Dominion University),
+Manman Wang (Ocean Networks Canada),
+Lorenzo Corgnati (Institute of Marine Science of the National Research Council of Italy),
+Sara Haines (University of North Carolina),
+Rachel Potter (University of Alaska Fairbanks),
+and Dr. Hugh Roarty.
+Support from Bill Rector at Codar Ocean Systems is appreciated.</p>
+<p>Appendix A provides a full list of committee members,
+reviewers,
+and others involved in the QARTOD project.</p>
+<h2 id="acronyms-and-abbreviations">Acronyms and Abbreviations</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AOOS</td>
+<td>Alaska Ocean Observing System</td>
+</tr>
+<tr>
+<td>APM</td>
+<td>Antenna pattern measurement</td>
+</tr>
+<tr>
+<td>BF</td>
+<td>Beam forming</td>
+</tr>
+<tr>
+<td>CARICOOS</td>
+<td>Caribbean Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>CeNCOOS</td>
+<td>Central and Northern California Ocean Observing System</td>
+</tr>
+<tr>
+<td>CMEMS</td>
+<td>Copernicus Marine Environment Monitoring Service</td>
+</tr>
+<tr>
+<td>cm/s</td>
+<td>Centimeters per second</td>
+</tr>
+<tr>
+<td>CO-OPS</td>
+<td>(NOAA) Center for Operational Oceanographic Products and Services</td>
+</tr>
+<tr>
+<td>dB</td>
+<td>Decibel</td>
+</tr>
+<tr>
+<td>DF</td>
+<td>Direction finding</td>
+</tr>
+<tr>
+<td>DOA</td>
+<td>Direction of arrival</td>
+</tr>
+<tr>
+<td>EMODnet</td>
+<td>European Marine Observation and Data Network</td>
+</tr>
+<tr>
+<td>EuroGOOS</td>
+<td>European Global Ocean Observing System</td>
+</tr>
+<tr>
+<td>GCOOS</td>
+<td>Gulf of Mexico Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>GDOP</td>
+<td>Geometric Dilution of Precision</td>
+</tr>
+<tr>
+<td>GLOS</td>
+<td>Great Lakes Observing System</td>
+</tr>
+<tr>
+<td>HF</td>
+<td>High frequency</td>
+</tr>
+<tr>
+<td>HFR</td>
+<td>High frequency radar</td>
+</tr>
+<tr>
+<td>hr</td>
+<td>Hour</td>
+</tr>
+<tr>
+<td>HZM</td>
+<td>HELZEL Messtechnik</td>
+</tr>
+<tr>
+<td>INSTAC</td>
+<td>In Situ Thematic Assembly Centre</td>
+</tr>
+<tr>
+<td>IOOS</td>
+<td>(U.S.) Integrated Ocean Observing System</td>
+</tr>
+<tr>
+<td>km</td>
+<td>Kilometer</td>
+</tr>
+<tr>
+<td>LERA</td>
+<td>Least Expensive Radar</td>
+</tr>
+<tr>
+<td>MARACOOS</td>
+<td>Mid-Atlantic Regional Association Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>MHz</td>
+<td>Megahertz</td>
+</tr>
+<tr>
+<td>m/s</td>
+<td>Meters per second</td>
+</tr>
+<tr>
+<td>MUSIC</td>
+<td>Multiple Signal Classification</td>
+</tr>
+<tr>
+<td>NANOOS</td>
+<td>Northwest Association of Networked Ocean Observing Systems</td>
+</tr>
+<tr>
+<td>NERACOOS</td>
+<td>Northeastern Regional Association of Coastal Ocean Observing Systems</td>
+</tr>
+<tr>
+<td>NOAA</td>
+<td>National Oceanic and Atmospheric Administration</td>
+</tr>
+<tr>
+<td>PacIOOS</td>
+<td>Pacific Islands Ocean Observing System</td>
+</tr>
+<tr>
+<td>QARTOD</td>
+<td>Quality-Assurance/Quality Control of Real-Time Oceanographic Data</td>
+</tr>
+<tr>
+<td>QA</td>
+<td>Quality assurance</td>
+</tr>
+<tr>
+<td>QC</td>
+<td>Quality control</td>
+</tr>
+<tr>
+<td>RA</td>
+<td>Regional Association</td>
+</tr>
+<tr>
+<td>RFI</td>
+<td>Radio frequency interference</td>
+</tr>
+<tr>
+<td>SCCOOS</td>
+<td>Southern California Coastal Ocean Observing System</td>
+</tr>
+<tr>
+<td>SDC</td>
+<td>SeaDataCloud</td>
+</tr>
+<tr>
+<td>SECOORA</td>
+<td>Southeast Coastal Ocean Observing Regional Association</td>
+</tr>
+<tr>
+<td>SNR</td>
+<td>Signal-to-noise ratio</td>
+</tr>
+<tr>
+<td>UNESCO</td>
+<td>United Nations Educational, Scientific, and Cultural Organization</td>
+</tr>
+<tr>
+<td>WERA</td>
+<td>Wellen (Wave) Radar</td>
+</tr>
+</tbody>
+</table>
+<h2 id="definitions-of-selected-terms">Definitions of Selected Terms</h2>
+<p>This manual contains several terms whose meanings are critical to those using the manual. These terms are included in the following table to ensure that the meanings are clearly defined.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beam Forming (BF) System</td>
+<td>A BF system is a high frequency radar surface current mapping system that employs a phased-array antenna system to estimate the incoming direction of a measured signal.</td>
+</tr>
+<tr>
+<td>Codable Instructions</td>
+<td>Codable instructions are specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.</td>
+</tr>
+<tr>
+<td>Data Record</td>
+<td>A data record is one or more messages that form a coherent, logical, and complete observation.</td>
+</tr>
+<tr>
+<td>Direction Finding (DF) System</td>
+<td>A DF system is a high frequency radar surface current mapping system that employs three orthogonal antenna elements to estimate the incoming direction of a measured signal.</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>A message is a standalone data transmission. A data record can be composed of multiple messages.</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td>Operators are individuals or entities who are responsible for collecting and providing data.</td>
+</tr>
+<tr>
+<td>Quality Assurance (QA)</td>
+<td>QA involves processes that are employed with hardware to support the generation of high-quality data. (section 2.0)</td>
+</tr>
+<tr>
+<td>Quality Control (QC)</td>
+<td>QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. (section 3.0)</td>
+</tr>
+<tr>
+<td>Radial Component</td>
+<td>Radial component is the observed surface current speed toward or away from a single HF radar site, and is also often referred to as radial speed, radial velocity, or radial vector. A radial file contains a spatial array of radial components.</td>
+</tr>
+<tr>
+<td>Real-Time</td>
+<td>Real-time means that: data are delivered without delay for immediate use; time series extends only backwards in time, where the next data points are not available; and sample intervals may range from a few seconds to a few hours or even days, depending upon the sensor configuration. (section 1.0)</td>
+</tr>
+<tr>
+<td>Total Vector</td>
+<td>Total vector is the derived surface current velocity, obtained by combining radial components from multiple HF Radar sites. A total vector file contains a spatial array of total vectors.</td>
+</tr>
+<tr>
+<td>Threshold</td>
+<td>Thresholds are limits that are defined by the operator. They often vary in space and time and should be readily available to other operators and users.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Variable is an observation (or measurement) of biogeochemical properties within oceanographic and/or meteorological environments.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-background-and-introduction">1.0 Background and Introduction</h2>
+<p>The U.S. Integrated Ocean Observing System®(IOOS®) has a vested interest in collecting high quality data for the 34 core variables (https://ioos.noaa.gov/about/ioos-by-the-numbers) measured on a national scale.
+In response to this interest,
+U.S. IOOS continues to establish written,
+authoritative procedures for the quality control (QC) of real-time data through the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) program, addressing each variable as funding permits (UNESCO 1993).
+This manual update on the real-time QC of high frequency (HF) radar surface currents represents the ninth core variable to be addressed.
+Other QARTOD guidance documents that have been published by the U.S. IOOS project to date are listed below and are also available at (https://ioos.noaa.gov/project/qartod/).</p>
+<ol>
+<li>
+<p>U.S. Integrated Ocean Observing System (2017). U.S IOOS QARTOD Project Plan-Accomplishments for 2012–2016 and Update for 2017–2021. 48 pp. (https://doi.org/10.7289/V5JQ0Z71).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2018). Manual for Real-Time Quality Control of Dissolved Oxygen Observations Version 2.1: A Guide to Quality Control and Quality Assurance for Dissolved Oxygen Observations in Coastal Oceans. 53 pp. (https://doi.org/10.25923/q0m1-d488).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2019). Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 69 pp. (https://doi.org/10.25923/7yc5-vs69).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2019). Manual for Real-Time Quality Control of In-Situ Current Observations Version 2.1 A Guide to Quality Control and Quality Assurance of Acoustic Doppler Current Profiler Observations. 54 pp. (https://doi.org/10.25923/sqe9-e310).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2021). Manual for Real-Time Quality Control of Water Level Data Version 2.1: A Guide to Quality Control and Quality Assurance of Water Level Observations. 47 pp. (https://doi.org/10.25923/vpsx-dc82).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2020). Manual for Real-Time Quality Control of In-situ Temperature and Salinity Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-situ Temperature and Salinity Observations. 50 pp. (https://doi.org/10.25923/x02m-m555).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Wind Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Wind Observations. 47 pp. (https://doi.org/10.7289/V5FX77NH).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Ocean Optics Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Oceanic Optics Observations. 49 pp. (https://doi.org/10.25923/v9p8-ft24).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2018). Manual for Real-Time Quality Control of Dissolved Nutrients Data Version 1.1: A Guide to Quality Control and Quality Assurance of Coastal and Dissolved Nutrients Observations. 56 pp. (https://doi.org/10.7289/V5TT4P7R).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Phytoplankton Data Version 1.0: A Guide to Quality Control and Quality Assurance of Phytoplankton Data Observations. 67 pp. (https://doi.org/10.7289/V56D5R6S).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2017). Manual for Real-Time Quality Control of Passive Acoustics Data Version 1.0: A Guide to Quality Control and Quality Assurance of Passive Acoustics Observations. 43 pp. (https://doi.org/10.7289/V5PC30M9).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2018). Manual for Real-Time Quality Control of Stream Flow Data Version 1.0: A Guide to Quality Control and Quality Assurance of Stream Flow Observations in Rivers and Streams. 46 pp. (https://doi.org/10.25923/gszc-ha43).</p>
+</li>
+<li>
+<p>U.S. Integrated Ocean Observing System (2019). Manual for Real-Time Quality Control of pH Data Version 1.0: A Guide to Quality Control and Quality Assurance of pH Data Observations. 56 pp. (https://doi.org/10.25923/111k-br08).</p>
+</li>
+</ol>
+<p>Please reference this document as:</p>
+<div class="highlight"><pre><span></span><code>U.S. Integrated Ocean Observing System (2022). Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 57 pp. &lt;https://doi.org/10.25923/4c5x-g538&gt;
+</code></pre></div>
+<p>This manual is a living document that reflects the state-of-the-art QC testing procedures for HF radar surface currents observations.
+It is written for the experienced operator but also provides examples for those who are just entering the field.</p>
+<h2 id="20-purposeconstraintsapplications">2.0 Purpose/Constraints/Applications</h2>
+<p>The HF radar capability was successfully demonstrated decades ago,
+and its use to observe surface currents is now one of the most robust operational measurements employed by the oceanographic community.
+The present U.S. IOOS program integrates HF radar observations from 11 participating Regional Associations (RAs),
+31 participating organizations,
+more than a decade of operations,
+over 130 coastal sites,
+and almost 8,000,000 data files.
+The effort is well described in the <em>National Surface Currents Plan</em> (U.S. IOOS 2015).
+Section 13.5 of that plan provides an overview of the existing and emerging QC techniques and serves as the basis for the QC processes described herein.</p>
+<h3 id="21-purpose">2.1 Purpose</h3>
+<p>The purpose of this manual is to document successful QC techniques already in place,
+identify any shortcoming of those techniques,
+and to suggest new QC tests that may be employed as resources and capabilities permit.</p>
+<p>QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention.
+QC practices include such things as data integrity checks (format, checksum,
+timely arrival of data),
+data value checks (threshold checks,
+minimum/maximum rate of change), neighbor checks,
+climatology checks,
+model comparisons,
+signal/noise ratios,
+the mark-up of the data,
+the verification of user satisfaction,
+and generation of data flags (Bushnell 2005).</p>
+<h3 id="22-constraints">2.2 Constraints</h3>
+<p>The focus of the manual is on the real-time QC of data collected,
+processed,
+and disseminated by the U.S. IOOS RAs.
+It is limited to the HF radar surface current mapping systems presently used by the RAs,
+and to the data presently provided from them.
+Therefore,
+it addresses these systems and manufacturers:</p>
+<ul>
+<li>SeaSonde® - developed by CODAR Ocean Sensors. Ltd.</li>
+<li>WERA - manufactured by HELZEL Messtechnik GmbH (HZM)</li>
+<li>LERA - developed by Pierre Flament at the University of Hawaii</li>
+</ul>
+<p>QC is also constrained to surface current observations.
+All three systems provide surface gravity wave observations,
+and these observations from HF radar systems are just now emerging operationally (Roarty et al. 2019).
+For a U.S. IOOS National HF Radar Technical Steering Team position paper on the use of HF radar for wave measurement,
+see (https://ioos.noaa.gov/project/hf-radar/).</p>
+<p>In addition,
+the manual does not focus on the quality assurance (QA) associated with the proper installation and operation of a HF radar site (Voulgaris 2011).
+Operators typically monitor many performance metrics to ensure the health of an HF radar site,
+see Mantovani et al. (2020) Tables 5 and 6,
+or Cook et al (2008) which is specific to SeaSonde systems.</p>
+<p>Each system is briefly described in the following subsections.</p>
+<h4 id="221-codar-seasonde">2.2.1 CODAR SeaSonde</h4>
+<p>CODAR Ocean Sensors, Ltd. (CODAR) is the developer and manufacturer of the SeaSonde compact HF radar system.
+Its founders were the creators and pioneers of the HF surface-wave radar field beginning in the 1970s.
+CODAR offers software for outputting several data product categories, including surface current mapping,
+wave measurements,
+tsunami detection,
+and recently ship detection.
+The company has a history of HF research and transition to operations.
+The CODAR compact direction-finding system is the most widely deployed oceanographic HF technology,
+both within the U.S. (approximately 150 sites) and internationally (&gt; 300).
+The antenna system optionally combines the transmitting and receiving antennas within a single mast and also eliminates the horizontal ground plane whip antennas.
+The company headquarters are in Mountain View, California.</p>
+<h4 id="222-wera">2.2.2 WERA</h4>
+<p>The Wellen Radar¹ (WERA) system was initially developed at the University of Hamburg in 1996.
+One of the aims was to allow measurements of the ocean wave spectrum,
+which requires access to the full backscatter Doppler spectrum for all ranges and directions.
+This access is achieved by applying a beam-forming technique.</p>
+<p>The design uses a modular system that can include 4, 8, 12, or 16 independent,
+inter-calibrated receiver channels.
+The processing of the signals is done on the software side and allows for employing beam forming (BF) using a linear array of 8 to 16 antennas and/or direction finding (DF) with 4 antennas in a square.
+A recent software upgrade allows to also apply DF algorithms on the linear array; however,
+DF implementations do not provide ocean wave parameters.</p>
+<p>To avoid high-power transmit pulses in the range of some kilowatts as used in former systems,
+a frequency-modulated continuous-wave signal at 30 watts is transmitted to achieve range resolution.
+The depth of the range cells can be adopted to the requirements by reprogramming the frequency span of the transmitted frequency chirp.
+Typical values for a system operated in the 12-MHz frequency band are 130 ranges at 1.5 kilometers (km) resolution.</p>
+<p><img alt="WERA system." src="../images_HF_Radar/image1.jpg" /></p>
+<figcaption>Figure 2-1. WERA system</figcaption>
+
+<p>To reduce the impact of radio frequency interference (RFI),
+the WERA receives simultaneously signal containing the backscattered echoes superimposed by RFI,
+along with a second signal containing RFI only.</p>
+<p>The RFI-only signal is used to mitigate the RFI component within the echo signal,
+which results in much clearer access to the echoes from the ocean surface and from ships.</p>
+<p>Data acquisition can be programmed for different integration times,
+e.g., about 10 minutes for ocean currents and wind direction and 20 minutes for ocean wave spectra (Gurgel et al. 2007).
+These short intervals help to track highly variable oceanographic processes,
+e.g., the impact of a fast-moving meteorological front to the ocean surface.
+For detection and tracking of tsunamis and ships, data sets with 2 minutes integration time can be processed in real time every 30 seconds.</p>
+<p>In 2000, a technology transfer to HZM (http://www.helzel.com/) began.
+WERA systems are now manufactured and further developed by HZM,
+which is located in Kaltenkirchen, Germany.
+More than 100 systems have been installed worldwide;
+about ten are deployed within the U.S.
+Additional information on WERA is available at http://ifmaxp1.ifm.uni-hamburg.de/WERA.shtml and https://helzel.com/product-detail-wera/.</p>
+<p>HZM offers a software module with their own implementation of QC flags and QC tests which work on WERA data formats.
+Although access to the description of the data format and to the description of the WERA QC procedure (Gomez et al. 2014) is not restricted,
+the binary programs that implement it are typically provided with an additional software license cost.
+WERA reports that the same tests applied by the WERA QC proprietary software are also considered in the recommendations provided in this document,
+either in Table 3-2,
+or as an additional potential QC test in appendix B (such as broadness of peak or trend limits).</p>
+<p><small>¹ Wellen Radar is German for wave radar.</small></p>
+<h4 id="223-uh-hfdr">2.2.3 UH-HFDR</h4>
+<p>The University of Hawai‘i High Frequency Doppler Radars (UH-HFDR; known colloquially as LERA) was developed at the University of Hawaii Radio Oceanography Laboratory starting in 1998.
+The HFDR systems are produced with an open source model to minimize hardware costs. In the subsequent years,
+the laboratory has developed projects and collaborations around the world: Hawaii (2002–present), Italy (2002–2004), Philippines (2008–present), Taiwan (2018–present), and Mexico (2005–present), to name a few.</p>
+<h3 id="23-applications">2.3 Applications</h3>
+<p>The QC tests described here can be applied to the Doppler spectra,
+to the radial components, or to the total vectors.
+In HF radar surface current mapping,
+much of the QC is already embedded in the acquisition system, especially for QC of the Doppler spectra.
+Examples include:</p>
+<ul>
+<li>Noise floor detection and computation</li>
+<li>First-order Bragg peak detection and measurement</li>
+<li>Individual spectrum signal-to-noise ratio (SNR) computation for the first-order peak</li>
+<li>Detection and removal of burst interference (e.g., lightning)</li>
+<li>Detection and removal of ionospheric echo</li>
+<li>Detection and removal of ship echoes</li>
+<li>Detection and removal of other types of RFI</li>
+</ul>
+<p>Doppler spectra may be rejected,
+and radial components may not be produced from them depending on the outcome of these tests.
+Because these processes influence the production of radial components,
+they are inherently part of the quality control process for surface currents described in U.S. IOOS (2015).</p>
+<h2 id="30-quality-control">3.0 Quality Control</h2>
+<p>To conduct real-time quality control (QC) on HF radar surface current observations,
+the first prerequisite is to understand the science and context within which the measurements are being conducted.
+Each HF radar radial site may have unique QC challenges.
+HF radar measurements can be used to resolve many surface-current features,
+such as oceanic fronts,
+current shear,
+divergent and convergence zones;
+some of these features can be extreme events.
+Human involvement is therefore important so that solid scientific principles are applied to data evaluation to ensure that good data are not discarded and bad data are not distributed.</p>
+<p>The real-time QC of HF radar observations can be extremely challenging.
+For example,
+for real-time QC,
+gradual calibration changes (e.g., changes in antenna patterns) and long-term system responses (component drift) most likely cannot be detected or corrected with real-time,
+automated QC—at least,
+not at the present time.</p>
+<p>The QC described here may be conducted: 1) within the HF radar data collection system itself,
+2) by the local system operator,
+and 3) national and regional servers. Example of national and regional servers are:</p>
+<ul>
+<li>The University of California San Diego - http://cordc.ucsd.edu/projects/mapping</li>
+<li>NOAA’s National Data Buoy Center - http://hfradar.ndbc.noaa.gov/</li>
+<li>Rutgers University - https://rucool.marine.rutgers.edu/data/codar/</li>
+</ul>
+<h3 id="31-qc-flags">3.1 QC Flags</h3>
+<p>Data are evaluated using QC tests,
+and the results of those tests are recorded by inserting flags in the data record.
+Table 3-1 provides a simple set of flags and associated descriptions.
+HF radar manufacturers already include additional flags for metadata records to further assist with troubleshooting.
+For example,
+CODAR Ocean Sensors (2009) identifies a variety of flags that are unique to SeaSonde systems.
+For additional information regarding flags,
+see the <em>Manual for the Use of Real-Time Oceanographic Data Quality Control Flags</em> (U.S. IOOS 2020) posted on the U.S. IOOS QARTOD website.
+Extensive data flagging is already in place for HF radar and serves the observational needs quite well.
+These flags can be a successful example for other systems;
+however,
+herein we focus on the use of the flagging scheme accepted by UNESCO/IOC in 2013 and adopted by U.S. IOOS/QARTOD in 2014.</p>
+<p>Further post-processing of the data may yield different conclusions from those reached during initial assessments.
+Flags set in real-time should not be changed to ensure that historical documentation is preserved. Results from post-processing should generate another set of flags.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Flag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pass=1</td>
+<td>Data have passed critical real-time QC tests and are deemed adequate for use as preliminary data.</td>
+</tr>
+<tr>
+<td>Not Evaluated=2</td>
+<td>Data have not been QC-tested, or the information on quality is not available.</td>
+</tr>
+<tr>
+<td>Suspect or of High Interest=3</td>
+<td>Data are considered to be either suspect or of high interest to data providers and users. They are flagged suspect to draw further attention to them by operators.</td>
+</tr>
+<tr>
+<td>Fail=4</td>
+<td>Data are considered to have failed one or more critical real-time QC checks. If they are disseminated at all, it should be readily apparent that they are not of acceptable quality.</td>
+</tr>
+<tr>
+<td>Missing Data=9</td>
+<td>Data are missing; used as a placeholder.</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-1. Flags for real-time data (UNESCO 2013)</p>
+<h3 id="32-sensor-deployment-considerations">3.2 Sensor Deployment Considerations</h3>
+<p>HF radars can be deployed in a variety of environments. Cook et al. (2008) and Mantovani et al. (2020) discuss the steps to follow when finding a suitable location for an HF radar installation.
+Figure 3-1 shows an example of a SeaSonde antenna location with desirable features—close to the sea with low elevation and no nearby structures.</p>
+<p><img alt="Photo of an example of a SeaSonde antenna location with desirable features—close to the sea with low elevation and no nearby structures." src="../images_HF_Radar/image2.png" /></p>
+<figcaption>Figure 3-1. A SeaSonde 25 MHz combined transmitting and receiving antenna deployed at Cape Henlopen, Delaware.</figcaption>
+
+<h3 id="33-qc-test-descriptions">3.3 QC Test Descriptions</h3>
+<p>A variety of tests can be performed to evaluate data quality in real time.
+Some tests may already be embedded in the processing software;
+some may be applied using optional manufacturer-supplied software modules, and others are conducted by the local operator or the national servers.
+The tests listed in this section (Table 3-2) presume a time-ordered series of observations and denote these observations as follows:</p>
+<p>Radial velocity: <span class="arithmatex">\(R_{t-2}\)</span>, <span class="arithmatex">\(R_{t-1}\)</span>, <span class="arithmatex">\(R_{t}\)</span> - Total vector: <span class="arithmatex">\(T_{t-2}\)</span>, <span class="arithmatex">\(T_{t-1}\)</span>, <span class="arithmatex">\(T_{t}\)</span></p>
+<p>Sensor operators need to select the best thresholds for each test, which are determined at the operator level and may require trial and error before final selections are made.
+A successful QC effort is highly dependent upon selection of the proper thresholds,
+which should not be determined arbitrarily but can be based on historical knowledge or statistics derived from more recently acquired data.
+Although this manual provides some guidance for selecting thresholds based on input from various operators,
+it is assumed that operators have the expertise and motivation to select the proper thresholds to maximize the value of their QC effort.
+Operators must openly provide thresholds as metadata for user support.
+This shared information will help U.S. IOOS to document standardized thresholds that will be included in future releases of this manual.</p>
+<p>In Table 3-2, tests that apply only to DF systems are marked with an asterisk (<code>*</code>).
+This condition is further highlighted as needed within each test description in the test exceptions block.
+A double asterisk (<code>**</code>) indicates that the use of both the U component and V component uncertainty tests is an acceptable alternative to the required GDOP threshold test.</p>
+<p>Several additional tests were suggested by experienced operators who reviewed the manual,
+but details of the tests were not available.
+In order to ensure these tests remain available for consideration,
+they have been listed in appendix B,
+<em>Additional Potential Quality Control Tests</em>.
+As this manual is updated and content for these tests becomes available,
+they will be incorporated.</p>
+<table>
+<thead>
+<tr>
+<th>Test Type</th>
+<th>Test Name</th>
+<th>Status</th>
+<th>Test Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Signal (or Spectral) Processing</td>
+<td>Signal-to-Noise Ratio (SNR) for Each Antenna (Test 101)</td>
+<td>Required</td>
+<td>Embedded</td>
+</tr>
+<tr>
+<td></td>
+<td>Cross Spectra Covariance Matrix Eigenvalues* (Test 102)</td>
+<td>Suggested</td>
+<td>Embedded</td>
+</tr>
+<tr>
+<td></td>
+<td>Direction of Arrival (DOA) Metrics* (magnitude) (Test 103)</td>
+<td>Suggested</td>
+<td>Embedded</td>
+</tr>
+<tr>
+<td></td>
+<td>Direction of Arrival (DOA) Function Widths* (3 dB) (Test 104)</td>
+<td>Suggested</td>
+<td>Embedded</td>
+</tr>
+<tr>
+<td></td>
+<td>Positive Definiteness of 2×2 Signal Matrix* (Test 105)</td>
+<td>Required</td>
+<td>Embedded</td>
+</tr>
+<tr>
+<td>Radial Components</td>
+<td>Syntax (Test 201)</td>
+<td>Required</td>
+<td>National</td>
+</tr>
+<tr>
+<td></td>
+<td>Max Threshold (Test 202)</td>
+<td>Required</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Valid Location (Test 203)</td>
+<td>Required</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Radial Count (Test 204)</td>
+<td>Suggested</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Spatial Median Filter (Test 205)</td>
+<td>Suggested</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Temporal Gradient (Test 206)</td>
+<td>Suggested</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Average Radial Bearing (Test 207)</td>
+<td>Suggested</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Baseline and Synthetic Radial (Test 208)</td>
+<td>Suggested</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Radial Stuck Value (Test 209)</td>
+<td>Suggested</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Phases (Test 210)</td>
+<td>In development</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td>Total Vectors</td>
+<td>Data Density Threshold* (Test 301)</td>
+<td>Required</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>GDOP Threshold** (Test 302)</td>
+<td>Required</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Max Speed Threshold (Test 303)</td>
+<td>Required</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Spatial Median Comparison (Test 304)</td>
+<td>Suggested</td>
+<td>Local and National</td>
+</tr>
+<tr>
+<td></td>
+<td>Valid Location (Test 305)</td>
+<td>Suggested</td>
+<td>Local</td>
+</tr>
+<tr>
+<td></td>
+<td>U Component Uncertainty** (Test 306)</td>
+<td>Required</td>
+<td>Local</td>
+</tr>
+<tr>
+<td></td>
+<td>V Component Uncertainty** (Test 307)</td>
+<td>Required</td>
+<td>Local</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 3-2. QC tests for real-time HF radar data. Tests with (<code>*</code>) apply only to systems using DF. **Use of both the U component uncertainty and V component uncertainty tests is an acceptable alternative to the required GDOP threshold test.</p>
+<h4 id="34-test-hierarchy">3.4 Test Hierarchy</h4>
+<p>This section outlines the real-time QC tests that are required or suggested for HF radar measurements.
+Operators should also consider that some of these tests can be carried out within the instrument,
+where thresholds can be defined in configuration files.
+These procedures are written as a high-level narrative from which a computer programmer can develop code to execute specific data flags (data quality indicators) within an automated software program.
+A code repository where operators may find or post examples of code in use exists at https://github.com/rowg.
+However,
+HF radar surface current observations are well established,
+and in most cases the QC applied will be quite uniform.
+Tests are listed in table 3-3 and are divided into four groups:
+those that are required,
+strongly recommended,
+suggested,
+or in development.</p>
+<p><strong>Table 3-3.</strong> QC Test hierarchy</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Test</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group 1 — Required</td>
+<td>Test 101</td>
+<td>Signal-to-Noise Ratio</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 105</td>
+<td>Positive Definiteness of 2×2 Signal Matrix*</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 201</td>
+<td>Syntax</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 202</td>
+<td>Max Threshold</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 203</td>
+<td>Valid Location (radial components)</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 301</td>
+<td>Data Density Threshold*</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 302</td>
+<td>GDOP Threshold** (or U component and V component tests)</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 303</td>
+<td>Max Speed Threshold</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 306</td>
+<td>U Component Uncertainty**</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 307</td>
+<td>V Component Uncertainty**</td>
+</tr>
+<tr>
+<td>Group 2 — Strongly Recommended</td>
+<td>None</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>Group 3 — Suggested</td>
+<td>Test 102</td>
+<td>Cross Spectra Covariance Matrix Eigenvalues</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 103</td>
+<td>DOA Metrics (magnitude)*</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 104</td>
+<td>DOA Function Widths (3 dB)*</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 204</td>
+<td>Radial Count*</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 205</td>
+<td>Spatial Median Filter* (radial components)</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 206</td>
+<td>Temporal Gradient</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 207</td>
+<td>Average Radial Bearing*</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 208</td>
+<td>Baseline and Synthetic Radial</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 209</td>
+<td>Radial Stuck Value</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 304</td>
+<td>Spatial Median Comparison (total vectors)</td>
+</tr>
+<tr>
+<td></td>
+<td>Test 305</td>
+<td>Valid Location</td>
+</tr>
+<tr>
+<td>Group 4 — In Development</td>
+<td>Test 210</td>
+<td>Phases</td>
+</tr>
+</tbody>
+</table>
+<h4 id="341-signal-processing-or-spectral-processing">3.4.1 Signal Processing (or Spectral Processing)</h4>
+<p>These tests are presently, or likely would be,
+conducted using algorithms embedded in the data acquisition software.</p>
+<p><strong>Test 101 – Signal-to-Noise Ratio (SNR) for Each Antenna (Required)</strong></p>
+<p>Ensures that measured signal is sufficiently above a noise level.</p>
+<p>The signal-to-noise ratio (SNR) value should exceed the minimum value (SNRMIN). Different methods may be specified for different HF radar types (antenna configuration). For CODAR, SNRMIN can be set in Header.txt manually or by using cross spectra in post processing.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>SNR for a specific antenna is less than a minimum value. Reject due to low signal level either on the monopole (SNR3) or on both loop antennas (SNR1 and SNR2).</td>
+<td>If SNR3 &lt; SNRMIN OR (SNR1 &lt; SNRMIN AND SNR2 &lt; SNRMIN), flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>SNR exceeds minimum on both monopole and either of the loop antennas.</td>
+<td>If SNR3 ≥ SNRMIN AND (SNR1 ≥ SNRMIN OR SNR2 ≥ SNRMIN), flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established by operator.</p>
+<p>Example: <code>SNRMIN=6.0</code> (dB) (default) (6.0 to 9.0 dB CODAR-recommended).</p>
+<p><strong>Test 102 – Cross Spectra Covariance Matrix Eigenvalues (Suggested)</strong></p>
+<p>Test is part of the direction-of-arrival (DOA) decision process about whether to select single or dual angle for radial velocity value.</p>
+<p>A single eigenvalue that is much larger than the others favors a single-angle decision.
+Two larger eigenvalues favor dual-angle.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>All eigenvalues are close to each other.</td>
+<td>If Eig1, Eig2, Eig3 within 20% of each other, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>Two eigenvalues are moderately large.</td>
+<td>If Eig1/Eig3 &lt; 2 * Eig2/Eig3, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>One eigenvalue is much larger than other two.</td>
+<td>If Eig1 &gt; 100 * Eig2 and Eig1 &gt; 100 * Eig3, then accept single-angle decision, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Does not apply to systems using BF.</p>
+<p>Test specifications to be established by operator. For SeaSonde systems, these thresholds are part of preference settings in the Header.txt file under MUSIC parameters.</p>
+<p><strong>Test 103 - Direction of Arrival (DOA) Metrics (magnitude)<code>*</code> (Suggested)</strong></p>
+<p>Evaluates whether the DOA response peak power is strong enough to produce good data for the specific DOA solution. (Kirincich et al. 2012).</p>
+<p>DOA peak power for each solution should be above a specified threshold minimum (PPMIN).
+For CODAR, MSEL is the multiple signal classification (MUSIC) bearing selected (1 = single, 2 = dual angle1, and 3 = dual angle2) has corresponding output columns in RadialMetric files for MUSIC DOA peak power response, MSR1, MDR1, and MDR2, respectively.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>DOA response peak power is less than minimum value.</td>
+<td>If (MSEL==1 AND MSR1 &lt; PPMIN) OR (MSEL==2 AND MDR1 &lt; PPMIN) OR (MSEL==3 AND MDR2 &lt; PPMIN), flag = 4.</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>DOA peak power exceeds minimum for specific DOA solution. Applies for test pass condition.</td>
+<td>If (MSEL==1 AND MSR1 ≥ PPMIN) AND (MSEL==2 AND MDR1 ≥ PPMIN) AND (MSEL==3 AND MDR2 ≥ PPMIN), flag = 1.</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Does not apply to systems using BF.</p>
+<p>Test specifications to be established by operator.</p>
+<p>Example: PPMIN = 5.0 (dB)</p>
+<p><strong>Test 104 – DOA Function Widths (3 dB)<code>*</code> (Suggested)</strong></p>
+<p>Evaluates whether DOA function is too wide,
+indicating a poor fit to the antenna pattern for a specific DOA solution.
+(Kirincich et al. 2012).</p>
+<p>DOA function width at 3 dB down from the response peak bearing for each solution should be below a specified threshold maximum width in degrees (PWMAX).
+For CODAR, MSEL is the MUSIC bearing selected (1 = single, 2 = dual angle1, and 3 = dual angle2) and has corresponding output columns in RadialMetric files for MUSIC DOA function width—MSW1,
+MDW1, and
+MDW2,
+respectively.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>DOA function width is greater than maximum value.</td>
+<td>If (MSEL==1 AND MSW1 ≥ PWMAX) OR (MSEL==2 AND MDW1 ≥ PWMAX) OR (MSEL==3 AND MDW2 ≥ PWMAX), flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>DOA function width is narrower than maximum value for a specific DOA solution. Applies for test pass condition.</td>
+<td>If (MSEL==1 AND MSW1 &lt; PWMAX) AND (MSEL==2 AND MDW1 &lt; PWMAX) AND (MSEL==3 AND MDW2 &lt; PWMAX), flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Does not apply to systems using BF.</p>
+<p>Test specifications to be established by operator.</p>
+<p>Example: PWMAX = 50 degrees</p>
+<p><strong>Test 105 - Positive Definiteness of 2x2 Signal Matrix<code>*</code> (Suggested)</strong></p>
+<p>Test is part of DOA decision process to specifically check whether dual-angle decision fits the data.</p>
+<p>A dual-angle situation implies two signals present from two directions.
+From these a 2x2 signal matrix can be computed,
+whose diagonal elements are the powers from each of the two directions.
+The off-diagonal elements are complex noise numbers that would be zero under perfect dual-angle,
+infinite-ensemble average conditions.
+If these differ significantly from zero and are close to the diagonal elements (resulting in a matrix that is not positive definite),
+the dual-angle hypothesis should not apply.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Dual angle decision fails because off- diagonal elements are too large.</td>
+<td>If P1 * P2 &lt; 3 * abs(C12), then flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>Possibly single or dual angle; other criteria important for decision.</td>
+<td>If 3 * abs(C12) &lt; P1 * P2 &lt; 5 * abs(C12), then flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>More likely dual-angle condition.</td>
+<td>If P1 * P2 &gt; 5 * abs(C12), then flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Does not apply to systems using BF.</p>
+<p>Test specifications to be established by operator.
+This test may be used in conjunction with or in place of other DOA decision criteria.
+Optimal values in the codable instructions should be tested because they may be site-specific,
+depending on conditions.</p>
+<h4 id="342-radial-tests">3.4.2 Radial Tests</h4>
+<p>This set of tests is conducted during the development of the radial velocities, or upon the resultant radial velocities. These tests may be carried out at the local, regional and/or national network levels.</p>
+<p><strong>Test 201 – Syntax (Required)</strong></p>
+<p>A collection of tests ensuring proper formatting and existence of fields within a radial file.</p>
+<p>The radial file may be tested for proper parsing and content,
+for file format (hfrweralluv1.0, for example),
+site code,
+appropriate time stamp,
+site coordinates,
+antenna pattern type (measured or ideal,
+for DF systems),
+and internally consistent row/column specifications.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>One or more fields are corrupt or contain invalid data.</td>
+<td>If “File Format” ≠ “hfrweralluv1.0”, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Applies for test pass condition.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established by operator.
+Acceptable files types, site codes, coordinates, APM names, etc., must be presented.
+For example, the national network performs the following suite of tests:</p>
+<ul>
+<li>All radial files acquired by HFRNet portals report the data timestamp in the filename. The filename timestamp must not be any more than 72 hours in the future relative to the portals’ system time.</li>
+<li>The file name timestamp must match the timestamp reported within the file.</li>
+<li>Radial data tables (Lon, Lat, U, V, ...) must not be empty.</li>
+<li>Radial data table columns stated must match the number of columns reported for each row (a useful test for catching partial or corrupted files).</li>
+<li>The site location must be within range: − 180 ≤ Longitude ≤ 180 − 90 ≤ Latitude ≤ 90.</li>
+<li>As a minimum, the following metadata must be defined:<ul>
+<li>File type (LLUV)</li>
+<li>Site code</li>
+<li>Timestamp</li>
+<li>Site coordinates</li>
+<li>Antenna pattern type (measured or idealized)</li>
+<li>Time zone (only Coordinated Universal Time or Greenwich Mean Time accepted)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Test 202 - Max Threshold (Required)</strong></p>
+<p>Ensures that a radial current speed is not unrealistically high.</p>
+<p>The maximum radial speed threshold (RSPDMAX) represents the maximum reasonable surface radial velocity for the given domain.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Radial current speed exceeds the maximum radial speed threshold.</td>
+<td>If RSPD &gt; RSPDMAX, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Radial current speed is less than or equal to the maximum radial speed threshold.</td>
+<td>If RSPD ≤ RSPDMAX, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established by operator.
+The maximum total speed threshold is 1 m/s for the West Coast of the United States and 3 m/s for the East/Gulf Coast domain.
+The threshold must vary by region.
+For example, the presence of the Gulf Stream dictates the higher threshold on the East Coast.</p>
+<p><strong>Test 203 – Valid Location (Required)</strong></p>
+<p>Removes radial vectors placed over land or in other unmeasurable areas.</p>
+<p>Radial vector coordinates are checked against a reference file containing information about which locations are over land <strong>or</strong> in an unmeasurable area (for example, behind an island or point of land). Radials in these areas will be flagged with a code (FLOC) in the radial file (+128 in CODAR radial files) and are not included in total vector calculations.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Radial contains a user-defined location flag code in the radial file.</td>
+<td>If FLOC exists, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Radial does not contain a user-defined location flag code in the radial file.</td>
+<td>If FLOC does not exist, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established by operator. For CODAR systems, the reference file is called AngSeg_XXXX.txt, where XXXX is the four-letter site code of the station and is located in the “RadialConfigs” folder. These vectors receive a code of +128 in the flag column of the radial text file. BF systems use pre-set grid locations for radials. For WERA systems, this information can be found in the params.cfg file in parameter WATT_NAME.</p>
+<p><strong>Test 204 – Radial Count<code>*</code> (Suggested)</strong></p>
+<p>Rejects radials in files with low radial counts (poor radial map coverage).</p>
+<p>The number of radials (RCNT) in a radial file must be above a threshold value RCNT_MIN to pass the test and above a value RC_LOW to not be considered suspect.
+If the number of radials is below the minimum level,
+it indicates a problem with data collection. In this case,
+the file should be rejected and none of the radials used for total vector processing.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Number of radials is less than RC_MIN.</td>
+<td>If RCNT &lt; RC_MIN, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>Number of radials is greater than or equal to RC_MIN and less than or equal to RC_LOW.</td>
+<td>If RCNT ≥ RC_MIN and RCNT ≤ RC_LOW, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Number of radials is greater than RC_LOW.</td>
+<td>If RCNT &gt; RC_LOW, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Does not apply to BF systems.</p>
+<p>Test specifications to be established by operator.
+The RC_LOW threshold may be based on the national network performance metric threshold value of 300.
+The choice of 300 radial solutions came from grouping radial files over a certain time period from all stations,
+looking at the cumulative density function for counts,
+and selecting a value around 10%.
+However,
+this threshold does not work for all stations.
+A custom value for a site might be found by following the same procedure for the individual station.</p>
+<p><strong>Test 205 – Spatial Median Filter (Suggested)</strong></p>
+<p>Reduces outlier velocities in radials.</p>
+<p>For each radial source vector, compute the median of all velocities within <code>&lt;RCLim&gt;</code> Range Step (km) and also within <code>&lt;AngLim&gt;</code> degrees in bearing. If the difference between the vector's velocity and the median velocity is greater than <code>&lt;CurLim&gt;</code> cm/s, then the vector is discarded; otherwise the median velocity is used.</p>
+<p>In the codable instructions below, the radial velocity is designated as RV and the set of neighboring velocities is designated as RVNB.</p>
+<p>A filtered and filled option for radials was introduced in CODAR Radial Suite software release 7. SeaSondeRadialSiteSetup can turn this feature on or off. Another way to do this is to change the value of line 22 in the AnalysisOptions.txt file in the RadialConfigs folder. It can be set to 0, 1, or 2 according to this guidance: 0 = Off, 1 = Area Filter + Interpolation, 2 = Area Filter Only.</p>
+<p>The filtering and interpolation parameters are located on line 30 of the Header.txt in the RadialConfigs folder. Only the filtering is described below.</p>
+<p><small>(Information provided by personal communication with Bill Rector at CODAR.)</small></p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Difference between the vector velocity and the median velocity is greater than the threshold.</td>
+<td>If RV-median(RVNB) &gt; CurLim, vector, flag = 4.</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If the difference between the vector velocity and the median velocity is less or equal to the threshold, the vector value is CHANGED to the median value.</td>
+<td>If RV-median(RVNB) ≤ CurLim, RV = median(RVNB) and flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established by operator. If the feature is turned on, the default values are: RCLim = 2.1 steps, AngLim = 10 degrees, CurLim = 30 cm/s.</p>
+<p><strong>Test 206 – Temporal Gradient (Suggested)</strong></p>
+<p>Checks for satisfactory temporal rate of change of radial components.</p>
+<p>Test determines whether changes between successive radial velocity measurements at a particular range and bearing cell are within an acceptable range. GRADIENT_TEMP = abs(<span class="arithmatex">\(R_{t-1}\)</span> - <span class="arithmatex">\(R_{t}\)</span>)</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>The temporal change between successive radial velocities exceeds the gradient failure threshold.</td>
+<td>If GRADIENT_TEMP ≥ GRADIENT_TEMP_FAIL, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>The temporal change between successive radial velocities is less than the gradient failure threshold but exceeds the gradient warn threshold.</td>
+<td>If GRADIENT_TEMP &lt; GRADIENT_TEMP_FAIL &amp; GRADIENT_TEMP ≥ GRADIENT_TEMP_WARN, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>The temporal change between successive radial velocities is less than the gradient warn threshold.</td>
+<td>If GRADIENT_TEMP &lt; GRADIENT_TEMP_WARN, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established by operator. Example: GRADIENT_TEMP_FAIL = 54 cm/s * hr, GRADIENT_TEMP_WARN = 36 cm/s * hr</p>
+<p><strong>Test 207 – Average Radial Bearing<code>*</code> (Suggested)</strong></p>
+<p>Check that the average radial bearing remains relatively constant (Roarty et al. 2012).</p>
+<p>It is expected that the average of all radial velocity bearings AVG_RAD_BEAR obtained during a sample interval (e.g., 1 hour) should be close to a reference bearing REF_RAD_BEAR and not vary beyond warning or failure thresholds.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>The absolute difference between the average radial bearing and a reference bearing exceeds a failure threshold.</td>
+<td>If abs(AVG_RAD_BEAR – REF_RAD_BEAR) ≥ RAD_BEAR_DIF_FAIL, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>The absolute difference between the average radial bearing and a reference bearing is less than the failure threshold but exceeds the warning threshold.</td>
+<td>If abs(AVG_RAD_BEAR - REF_RAD_BEAR) ≥ RAD_BEAR_DIF_WARN AND abs(AVG_RAD_BEAR - REF_RAD_BEAR) &lt; RAD_BEAR_DIF_FAIL, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>The absolute difference between the average radial bearing and a reference bearing is less than the warning threshold.</td>
+<td>If abs(AVG_RAD_BEAR - REF_RAD_BEAR) &lt; 1RAD_BEAR_DIF_WARN, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Test becomes less useful as the observation azimuth increases, cannot be used for omnidirectional sites, and does not apply to BF systems.</p>
+<p>Test specifications to be established by operator. Examples: RAD_BEAR_DIF_FAIL =30°, RAD_BEAR DIF_WARN = 15°.</p>
+<p><strong>Test 208 – Baseline and Synthetic Radial Test (Suggested)</strong></p>
+<p>Tests for the difference between actual radial and independent synthetic radial.</p>
+<p>Total maps are computed from a subset of available radar station radial maps.
+Synthetic radials for the excluded radial maps are back-computed from those totals and compared with observed radials.
+A synthetic radial velocity (RS) is created for an independent site by using a total vector generated from two or more sites and comparing RS to the actual radial velocity (RA) from the independent site.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>The absolute difference between the synthetic radial component <span class="arithmatex">\(R_{S}\)</span> and the actual independent radial component <span class="arithmatex">\(R_{A}\)</span> exceeds the <span class="arithmatex">\(ΔR_{Fail}\)</span> threshold.</td>
+<td>If abs(<span class="arithmatex">\(R_{S}\)</span> - <span class="arithmatex">\(R_{A}\)</span>) &gt; <span class="arithmatex">\(ΔR_{Fail}\)</span>, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>The absolute difference between the synthetic radial component <span class="arithmatex">\(R_{S}\)</span> and the actual independent radial component <span class="arithmatex">\(R_{A}\)</span> is less than or equal to the <span class="arithmatex">\(ΔR_{Fail}\)</span> threshold and greater than the <span class="arithmatex">\(ΔR_{Suspect}\)</span> threshold.</td>
+<td>If abs(<span class="arithmatex">\(R_{S}\)</span> - <span class="arithmatex">\(R_{A}\)</span>) ≤ <span class="arithmatex">\(ΔR_{Fail}\)</span> and abs(<span class="arithmatex">\(R_{S}\)</span> - <span class="arithmatex">\(R_{A}\)</span>) &gt; <span class="arithmatex">\(ΔR_{Suspect}\)</span>, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Applies for test pass condition.</td>
+<td>abs(<span class="arithmatex">\(R_{S}\)</span> - <span class="arithmatex">\(R_{A}\)</span>) ≤ <span class="arithmatex">\(ΔR_{Suspect}\)</span>, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Test cannot be conducted unless sites provide sufficient radial components with overlapping coverage.</p>
+<p>Test specifications to be established by operator. Example: ΔRFail = 25 cm/s, ΔRSuspect = 15 cm/s</p>
+<p><strong>Test 209 – Radial Stuck Value Test (Suggested)</strong></p>
+<p>Tests for repeating values in radial time series at a location.</p>
+<p>If the temporal change between successive radial velocities has not exceeded the resolution of the measurement for N successive time steps,
+those velocities (excluding first occurrence of the repeating velocity in the evaluation period) are considered stuck values.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>The temporal change between successive radial velocities has not exceeded the resolution (R) of the measurement for N successive time steps.</td>
+<td>V = [ <span class="arithmatex">\(V_{t=-(N-1)}\)</span> … <span class="arithmatex">\(V_{t=-1}\)</span>, <span class="arithmatex">\(V_{t=0}\)</span> ] IF MAX(ABS(DIFF(V))) &lt; R, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>The temporal change between successive radial velocities has exceeded the resolution of the measurement.</td>
+<td>IF MAX(ABS(DIFF(V))) ≥ R, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Cannot be applied if there are less than N successive measurements at the location.</p>
+<p>Test specifications to be established by operator. Example: N = 3, R = 0.01</p>
+<p><strong>Test 210 -- Phases (In development)</strong></p>
+<p>Tests ensuring proper setting of expected antenna phases for ideal pattern.</p>
+<p>The radial file may be tested for absolute difference between phases used (P13_setting, P23_setting) to calculate radials versus measured (P13_actual, P23_actual).
+How this test should be structured and implemented is not yet clear.
+It should consider that differences of 180 degrees (or within the tolerance threshold of 180 degrees) are also acceptable if this is occurring in one of the two loops.
+Operators should routinely check on the sea echo phases as a best practice.
+Depending on the station,
+operators might want to use this test for monitoring and not flagging,
+since system phases could be stable while the sea echo phase estimates from spectra may not be as stable.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>abs(P13_actual - P13_setting) &gt; tolerance or abs(P23_actual - P23_setttings) &gt; tolerance</td>
+<td>Codable instructions needed</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Applies for test pass condition.</td>
+<td>Codable instructions needed</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception:</p>
+<p>Test specifications to be established by operator. Example:</p>
+<h4 id="343-total-vectors">3.4.3 Total Vectors</h4>
+<p>This set of tests is conducted during the development of the total velocities.
+These tests may be carried out at the local,
+regional and/or national network levels.</p>
+<p><strong>Test 301 - Data Density Threshold<code>*</code> (Required)</strong></p>
+<p>Tests that a sufficient number of radial velocities exist to compute a total velocity vector.</p>
+<p>A minimum number of radial velocities (RV_MIN) are required to construct a total velocity vector. RV_CNT is the number of radial velocities available to be used in the calculation.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Insufficient number of radial velocities exist.</td>
+<td>If RV_CNT &lt; RV_MIN, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>A sufficient number of radial velocities exist.</td>
+<td>If RV_CNT ≥ RV_MIN, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Does not apply to BF systems.</p>
+<p>Test specifications to be established by operator. Recommend RV_MIN = 3</p>
+<p>In CODAR software, this is set in line 1 of the AnalysisOptions.txt configuration file; the default value is 2.</p>
+<p><strong>Test 302 - GDOP Threshold (Required)</strong></p>
+<p>Tests that the uncertainty in velocity due to the geometric relationship between radials is low enough for the vector to be considered valid.</p>
+<p>GDOP (Geometric Dilution of Precision) is a scalar representing the contribution of the radial (bearing) geometry to uncertainty in velocity at a given grid point.
+Higher GDOP values indicate larger co-variances associated with the least square’s fit used in obtaining the solution.
+GDOP must be less than a maximum allowed value of GDOP_MAX to pass and less than a GDOP_HIGH value to not be considered suspect (Kim et al. 2008).</p>
+<p><small>Note that there are different versions of the GDOP calculation, which make different assumptions about the radial uncertainties and the covariance between radial uncertainties.</p>
+<p>For more information, see README_error_estimates.m in HFR Progs (https://github.com/rowg/hfrprogs/blob/master/matlab/totals/README_error_estimates.m) and Kaplan et al. (2005). </small></p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Poor geometric relationship between radials yields a total vector with too much uncertainty to be valid.</td>
+<td>If GDOP ≥ GDOP_MAX, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>The GDOP value associated with a total vector solution may be acceptable.</td>
+<td>If GDOP &lt; GDOP_MAX and GDOP ≥ GDOP_HIGH, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>The GDOP associated with the total vector solution is sufficient.</td>
+<td>If GDOP &lt; GDOP_HIGH, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established by operator.</p>
+<p>The national network uses a GDOP_MAX of 10 and a more conservative value of 1.25 for near-real time applications such as Web display.
+The maximum and minimum values of GDOP may depend on the number of radials,
+so we suggest examining statistics of regional GDOP and to determine appropriate thresholds.
+The HFRprogs Toolbox includes several implementations of GDOP, some of which are more conservative than others,
+but generally the differences are minimal.</p>
+<p><strong>Test 303 - Max Speed Threshold (Required)</strong></p>
+<p>||Ensures that a total current speed is not unrealistically high.||
+||represents the maximum reasonable surface velocity for the given|Like the maximum radial velocity threshold, the maximum total speed threshold TSPDMAX domain.|</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Total current speed exceeds the maximum total speed threshold.</td>
+<td>If TSPD &gt; TSPDMAX, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None.</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Total current speed is below or equal to the maximum total speed threshold.</td>
+<td>If TSPD ≤ TSPDMAX, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established by operator.</p>
+<p>The maximum total speed threshold is 1 m/s for the West Coast of the United States and 3 m/s for the East/Gulf Coast domain.
+The threshold must vary by region and is in general related to the inverse function of the radials.
+For example, the presence of the Gulf Stream dictates the higher threshold on the East Coast.</p>
+<p><strong>Test 304 – Spatial Median Comparison (Suggested)</strong></p>
+<p>Reduces outlier velocities in totals.</p>
+<p>Modeled after CODAR’s median filter for radials,
+this test computes the difference between a total velocity (TV) and the median of a set of total velocities in an area surrounding that vector (TVNB).</p>
+<p>For each total source vector, compute the median of all velocities within <code>&lt;TCLim&gt;</code> Grid Steps in u and v directions.
+If the difference between the vector's velocity and the median velocity is greater than <code>&lt;TCurLim&gt;</code> cm/s then the vector is discarded.</p>
+<p>In the instructions below,
+the total velocity is designated as TV and the set of neighboring velocities is designated as TVNB.
+The test rejects the vector when the difference is greater than TCurLim.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Difference between the vector velocity and the median velocity is greater than the threshold.</td>
+<td>If TV-median(TVNB) &gt; TCurLim, vector is rejected; flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>If the difference between the vector velocity and the median velocity is less or equal to the threshold, the vector passes the test.</td>
+<td>If R = TV - median(TVNB) ≤ TCurLim, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: None.</p>
+<p>Test specifications to be established by operator. TCLim and TCurLim will be set by the operator and will depend on environmental conditions.</p>
+<p><strong>Test 305 – Valid Location (Suggested)</strong></p>
+<p>Removes total vectors placed over land or in other unmeasurable areas.</p>
+<p>Total vector coordinates are checked against a reference (land mask) file containing information about which locations are over land or in an unmeasurable area (for example, behind an island or point of land).</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Total is located on a grid point designated as land by the land mask reference file.</td>
+<td>If LANDMASK exists, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>Total is located on a grid point not designated as land by the land mask reference file.</td>
+<td>If LANDMASK does not exist, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: If the totals grid file only contains valid locations, this test is not necessary.</p>
+<p>Test specifications to be established by operator.</p>
+<p><strong>Test 306 - U Component Uncertainty (Required)</strong></p>
+<p>Tests that the uncertainty in U velocity due to the geometric relationship between radials.</p>
+<p>The uncertainty must be low enough for the vector to be considered valid.</p>
+<p>UERR (U Component Uncertainty) is an uncertainty normalized by the a priori model covariance. normalized uncertainty of <code>u = &lt;(u_hat - u)^2&gt;/&lt;u^2&gt;</code> (good: 0, poor: 1)</p>
+<p>Soh et al. 2018, pp. 770–771</p>
+<p>Higher UERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution.
+UERR must be less than a maximum allowed value of UERR_MAX to pass and less than a UERR_HIGH value to not be considered suspect.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Poor geometric relationship between radials yields a total vector with too much uncertainty in U component to be valid.</td>
+<td>If UERR ≥ UERR_MAX, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>The U component uncertainty value associated with a total vector solution may be acceptable.</td>
+<td>If UERR &lt; UERR_MAX and UERR ≥ UERR_HIGH, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>The U component uncertainty associated with the total vector solution is sufficient.</td>
+<td>If UERR &lt; UERR_HIGH, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Not needed if using Test 302 GDOP threshold.</p>
+<p>Test specifications to be established by operator.</p>
+<p><strong>Test 307 - V Component Uncertainty (Required)</strong></p>
+<p>Tests that the uncertainty in V velocity due to the geometric relationship between radials.</p>
+<p>The uncertainty must be low enough for the vector to be considered valid.</p>
+<p>VERR (V Component Uncertainty) is an uncertainty normalized by the a priori model covariance.</p>
+<p>normalized uncertainty of <code>v = &lt;(v_hat - v)^2&gt;/&lt;v^2&gt;</code> (good :0, poor: 1)</p>
+<p>Soh et al., 2018 (pp 770–771)</p>
+<p>Higher VERR values indicate larger co-variances associated with the least square’s fit used in obtaining the solution.
+VERR must be less than a maximum allowed value of VERR_MAX to pass and less than a VERR_HIGH value to not be considered suspect.</p>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Condition</th>
+<th>Codable Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fail = 4</td>
+<td>Poor geometric relationship between radials yields a total vector with too much uncertainty in V component to be valid.</td>
+<td>If VERR ≥ VERR_MAX, flag = 4</td>
+</tr>
+<tr>
+<td>Suspect = 3</td>
+<td>The V component uncertainty value associated with a total vector solution may be acceptable.</td>
+<td>If VERR &lt; VERR_MAX and VERR ≥ VERR_HIGH, flag = 3</td>
+</tr>
+<tr>
+<td>Pass = 1</td>
+<td>The V component uncertainty associated with the total vector solution is sufficient.</td>
+<td>If VERR &lt; VERR_HIGH, flag = 1</td>
+</tr>
+</tbody>
+</table>
+<p>Test Exception: Not needed if using Test 302 GDOP threshold.</p>
+<p>Test specifications to be established by operator.</p>
+<h2 id="40-case-studies">4.0 Case Studies</h2>
+<p>While global consistency within the high frequency radar (HFR) community is desirable,
+different efforts inevitably will result in differing evolutions of the operational systems.
+Two case studies are offered to provide background and further resources for users of this QC manual.</p>
+<h3 id="41-the-european-hfr-network">4.1 The European HFR Network</h3>
+<p>In 2014,
+the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe.
+The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea,
+EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]<span class="arithmatex">\(^2\)</span>) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems,
+In 2014,
+the European Global Ocean Observing System (EuroGOOS) launched the High Frequency Radar Task Team (http://eurogoos.eu/high-frequency-radar-task-team/) to promote the coordinated development of HFR technology in Europe.
+The team followed up on many initiatives in Europe (e.g., EU H2020 Jerico-Next, EU H2020 SeaDataCloud, EU H2020 EuroSea,
+EU H2020 Jerico-S3, and Copernicus Marine Environment Monitoring Service [CMEMS]²) aimed at building an operational HFR European network based on coordinated data management for the development of operational ocean monitoring via HFR systems,
+and integration of HFR products into the major platforms for marine data distribution.</p>
+<p>These efforts achieved the harmonization of system requirements and design, data quality,
+and standardization of HFR data access and tools (Mantovani et al. 2020).
+The European standard format for HFR data and metadata model has been defined and implemented (Corgnati et al. 2018),
+compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6),
+OceanSITES convention,
+CMEMS-In Situ TAC<span class="arithmatex">\(^3\)</span> and SDC requirements and INSPIRE directive.
+Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management,
+These efforts achieved the harmonization of system requirements and design, data quality,
+and standardization of HFR data access and tools (Mantovani et al. 2020).
+The European standard format for HFR data and metadata model has been defined and implemented (Corgnati et al. 2018),
+compliant with Climate and Forecast Metadata Convention version 1.6 (CF-1.6),
+OceanSITES convention,
+CMEMS-In Situ TAC³ and SDC requirements and INSPIRE directive.
+Furthermore, a battery of the QC tests to be mandatorily applied to HFR data has been defined according to the EuroGOOS Data Management,
+Exchange and Quality Work Group (DATAMEQ) working recommendations on real-time QC and building on the initial U.S. IOOS QARTOD HF radar manual (U.S. IOOS 2016).</p>
+<p>Thanks to these achievements,
+the inclusion of HFR data into CMEMS-INSTAC (Copernicus Marine in situ TAC, 2021; Copernicus Marine in situ TAC, 2020a;
+Copernicus Marine in situ TAC, 2020b),
+the European Marine Observation and Data Network (EMODnet) Physics and SDC Data Access (Corgnati et al. 2019) was completed,
+ensuring the improved management of several related key issues as marine safety, marine resources,
+coastal and marine environment, weather, climate and seasonal forecast.</p>
+<p>The EU HFR Node was established in 2018 by AZTI,
+CNR-ISMAR and SOCIB,<span class="arithmatex">\(^4\)</span> under the coordination of the EuroGOOS HFR Task Team,
+as the focal point and operational asset in Europe for HFR data management and dissemination,
+also promoting networking between EU infrastructures and the Global HFR network.
+The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC,
+The EU HFR Node was established in 2018 by AZTI,
+CNR-ISMAR and SOCIB,⁴ under the coordination of the EuroGOOS HFR Task Team,
+as the focal point and operational asset in Europe for HFR data management and dissemination,
+also promoting networking between EU infrastructures and the Global HFR network.
+The EU HFR Node is fully operational since December 2018 in distributing tools and support for standardization to the HFR providers as well as standardized near-real-time (NRT) and delayed-mode HFR radial and total current data to CMEMS-INSTAC,
+EMODnet Physics and SDC Data Access.</p>
+<p>The European common data and metadata model for real-time HFR data requires real-time data to be mandatorily processed by the QC tests listed in Table 4-1 (for radial velocity data) and in Table 4-2 (for total velocity data). These tests were selected by the dedicated working group (composed by the HFR operators and by the EuroGOOS HFR Task Team members) and the tests are among the ones defined in this QARTOD manual, according to the defined hierarchy.</p>
+<p>The mandatory QC tests were selected to be manufacturer-independent, i.e. not to rely on particular variables or information provided only by a specific device. These standard sets of tests have been defined both for radial and total velocity data and they are the required ones for labelling the data as Level 2B (for radial velocity) and Level 3B (for total velocity) data, as defined in Table 4-3.</p>
+<p><small>² See https://ec.europa.eu/info/research-and-innovation/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en.</p>
+<p>³ See http://www.marineinsitu.eu/.</p>
+<p>⁴ AZTI is a scientific and technological center that develops high-impact transformation projects with organizations aligned with the United Nations 2030 SDGs. CNR-ISMAR is a marine institute in Italy, and SOCIB is the Balearic Islands Coastal Ocean Observing and Forecasting System.</small></p>
+<table>
+<thead>
+<tr>
+<th>QC test</th>
+<th>Code</th>
+<th>Meaning</th>
+<th>QC variable type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td>QC201</td>
+<td>This test will ensure the proper formatting and the existence of all the necessary fields within the radial netCDF file. This test is performed on the netCDF files, and it assesses the presence and correctness of all data and attribute fields and the correct syntax throughout the file.</td>
+<td>N/A—it is a test on the netCDF file structure, not on data content.</td>
+</tr>
+<tr>
+<td>Over-water</td>
+<td>QC203</td>
+<td>This test labels radial vectors that lie on land with a “bad data” flag and radial vectors that lie on water with a “good data” flag.</td>
+<td>gridded</td>
+</tr>
+<tr>
+<td>Velocity Threshold</td>
+<td>QC202</td>
+<td>This test labels radial velocity vectors whose module is bigger than a maximum velocity threshold with a “bad data” flag and radial vectors whose module is smaller than the threshold with a “good data” flag.</td>
+<td>gridded</td>
+</tr>
+<tr>
+<td>Variance Threshold</td>
+<td></td>
+<td>This test labels radial vectors whose temporal variance is bigger than a maximum threshold with a “bad data” flag and radial vectors whose temporal variance is smaller than the threshold with a “good data” flag. The CODAR manufacturer suggests not to use variance data for real-time QC, as documented in the fall 2013 CODAR Currents Newsletter. The indication is due to the fact that the CODAR parameter defining the variance is computed at each time step, and therefore considered not statistically solid. Thus, this test is applicable only to Beam Forming (BF) systems. Data files from Direction Finding (DF) systems will apply instead the “Temporal Derivative” test reporting the explanation “Test not applicable to Direction Finding systems. The Temporal Derivative test is applied.” in the comment attribute.</td>
+<td>gridded</td>
+</tr>
+<tr>
+<td>Temporal Derivative</td>
+<td>QC206</td>
+<td>For each radial bin, the current hour velocity vector is compared with the previous and next hour ones. If the differences are bigger than a threshold (specific for each radial bin and evaluated on the basis of the analysis of a one-year-long time series), the present vector is flagged as bad data; otherwise, it is labeled with a “good data” flag. Since this method implies a one-hour delay in the data provision, the current hour file should have the related QC flag set to 0 (no QC performed) until it is updated to the proper values when the next hour file is generated.</td>
+<td>gridded</td>
+</tr>
+<tr>
+<td>Median Filter</td>
+<td>QC205</td>
+<td>For each source vector, the median of all velocities within a radius of <code>&lt;RCLim&gt;</code> and whose vector bearing (angle of arrival at site) is also within an angular distance of <code>&lt;AngLim&gt;</code> degrees from the source vector's bearing is evaluated. If the difference between the vector’s velocity and the median velocity is greater than the specified threshold, then the vector is labeled with a “bad data” flag, otherwise it is labeled with a “good data” flag.</td>
+<td>gridded</td>
+</tr>
+<tr>
+<td>Average Radial Bearing</td>
+<td>QC207</td>
+<td>This test labels the entire data file with a “good data” flag if the average radial bearing of all the vectors contained in the data file lies within a specified margin around the expected value of normal operation. Otherwise, the data file is labeled with a “bad data” flag. The value of normal operation must be defined within a time interval when the proper functioning of the device is assessed. The margin must be set according to site-specific properties. This test applies only to DF systems. Data files from BF systems will have this variable filled with “good data” flags (1) and the explanation “Test not applicable to Beam Forming systems” in the comment attribute.</td>
+<td>scalar</td>
+</tr>
+<tr>
+<td>Radial Count</td>
+<td>QC204</td>
+<td>Test labeling radial data having a number of velocity vectors bigger than the threshold with a “good data” flag and radial data having a number of velocity vectors smaller than the threshold with a “bad data” flag.</td>
+<td>scalar</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 4-1. Mandatory QC tests for radial velocity data.</p>
+<table>
+<thead>
+<tr>
+<th>QC test</th>
+<th>Code</th>
+<th>Meaning</th>
+<th>QC variable type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td>Similar to QC201</td>
+<td>This test will ensure the proper formatting and the existence of all the necessary fields within the total netCDF file. This test is performed on the netCDF files, and it assesses the presence and correctness of all data and attribute fields and the correct syntax throughout the file.</td>
+<td>N/A, it is a test on the netCDF file structure, not on data content.</td>
+</tr>
+<tr>
+<td>Data Density Threshold</td>
+<td>QC301</td>
+<td>This test labels total velocity vectors with a number of contributing radials bigger than the threshold with a “good data” flag and total velocity vectors with a number of contributing radials smaller than the threshold with a “bad data” flag.</td>
+<td>gridded</td>
+</tr>
+<tr>
+<td>Velocity Threshold</td>
+<td>QC303</td>
+<td>This test labels total velocity vectors whose module is bigger than a maximum velocity threshold with a “bad data” flag and total vectors whose module is smaller than the threshold with a “good data” flag.</td>
+<td>gridded</td>
+</tr>
+<tr>
+<td>Variance Threshold</td>
+<td>Similar to QC306 and QC307</td>
+<td>This test labels total vectors whose temporal variance is bigger than a maximum threshold with a “bad data” flag and total vectors whose temporal variance is smaller than the threshold with a “good data” flag. The CODAR manufacturer suggests not to use variance data for real-time QC, as documented in the fall 2013 CODAR Currents Newsletter. The indication is due to the fact that the CODAR parameter defining the variance is computed at each time step, and therefore considered not statistically solid. Thus, this test applies only to Beam Forming (BF) systems. Data files from Direction Finding (DF) systems will apply instead the “Temporal Derivative” test reporting the explanation “Test not applicable to Direction Finding systems. The Temporal Derivative test is applied.” in the comment attribute.</td>
+<td>gridded</td>
+</tr>
+<tr>
+<td>Temporal Derivative</td>
+<td>QC206</td>
+<td>For each grid cell, the current hour velocity vector is compared with the previous and next ones. If the differences are bigger than a threshold (specific for each grid cell and evaluated on the basis of the analysis of one-year-long time series), the present vector is flagged as “bad data,” otherwise it is labelled with a “good data” flag. Since this method implies a one-hour delay in the data provision, the current hour file should have the related QC flag set to 0 (no QC performed) until it is updated to the proper values when the next hour file is generated.</td>
+<td>gridded</td>
+</tr>
+<tr>
+<td>GDOP Threshold</td>
+<td>QC302</td>
+<td>This test labels total velocity vectors whose GDOP is bigger than a maximum threshold with a “bad data” flag and the vectors whose GDOP is smaller than the threshold with a “good data” flag.</td>
+<td>gridded</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 4-2. Mandatory QC tests for total velocity data.</p>
+<table>
+<thead>
+<tr>
+<th>Processing Level</th>
+<th>Definition</th>
+<th>Products</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEVEL 0</td>
+<td>Reconstructed, unprocessed instrument/payload data at full resolution; any and all communications artifacts, e.g., synchronization frames, communications headers, duplicate data removed.</td>
+<td>Signal received by the antenna before the processing stage. (No access to these data in CODAR systems)</td>
+</tr>
+<tr>
+<td>LEVEL 1A</td>
+<td>Reconstructed, unprocessed instrument data at full resolution, time-referenced and annotated with ancillary information, including radiometric and geometric calibration coefficients and georeferencing.</td>
+<td>Spectra by antenna channel</td>
+</tr>
+<tr>
+<td>LEVEL 1B</td>
+<td>Level 1A data that have been processed to sensor units for next processing steps. Not all instruments will have data equivalent to Level 1B.</td>
+<td>Spectra by beam direction</td>
+</tr>
+<tr>
+<td>LEVEL 2A</td>
+<td>Derived geophysical variables at the same resolution and locations as the Level 1 source data.</td>
+<td>HFR radial velocity data</td>
+</tr>
+<tr>
+<td>LEVEL 2B</td>
+<td>Level 2A data that have been processed with a minimum set of QC tests.</td>
+<td>HFR radial velocity data</td>
+</tr>
+<tr>
+<td>LEVEL 2C</td>
+<td>Level 2A data that have been reprocessed for advanced QC.</td>
+<td>Reprocessed HFR radial velocity data</td>
+</tr>
+<tr>
+<td>LEVEL 3A</td>
+<td>Variables mapped on uniform space-time grid scales, usually with some completeness and consistency</td>
+<td>HFR total velocity data</td>
+</tr>
+<tr>
+<td>LEVEL 3B</td>
+<td>Level 3A data that have been processed with a minimum set of QC tests.</td>
+<td>HFR total velocity data</td>
+</tr>
+<tr>
+<td>LEVEL 3C</td>
+<td>Level 3A data that have been reprocessed for advanced QC.</td>
+<td>Reprocessed HFR total velocity data</td>
+</tr>
+<tr>
+<td>LEVEL 4</td>
+<td>Model output or results from analyses of lower-level data, e.g., variables derived from multiple measurements</td>
+<td>Energy density maps, residence times, etc.</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 4-3. Processing levels for HFR data.</p>
+<p>Each QC test results in a flag related to each data vector,
+which is inserted in a specific test variable.
+These variables can be: 1) matrices with the same dimensions of the data variable,
+containing (for each cell), the flag related to the vector lying in that cell,
+when the QC test evaluates each cell of the gridded data,
+or 2) a scalar, in case the QC test assesses an overall property of the data.</p>
+<p>An overall QC variable also reports the quality flags related to the results of all the QC tests:
+it is a “good data” flag if and only if all QC tests are passed.</p>
+<p>The flagging policy is not to modify the data, but only to label them with flags.
+Thus,
+each geophysical variable in the standard output files contains exactly the measured data and QC variables containing flags can be used as masks to the geophysical variables for having information about data quality.</p>
+<p>The adopted QC flagging scheme is the ARGO QC flag scale (Wong et al. 2022), shown in Table 4-4, which extends the UNESCO scale reported in Table 3-1.</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>unknown</td>
+<td>No QC was performed.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>good data</td>
+<td>All QC tests passed.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>probably good data</td>
+<td>These data should be used with caution.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>potentially correctable bad data</td>
+<td>These data are not to be used without scientific correction or re-calibration.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bad data</td>
+<td>Data have failed one or more QC tests.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>value changed</td>
+<td>Data may be recovered after transmission error.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>N/A</td>
+<td>This number was not used.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>nominal value</td>
+<td>The provided value is not measured but comes from a priori knowledge (instrument design or deployment), e.g. instrument target depth.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>interpolated value</td>
+<td>Missing data may be interpolated from neighboring data in space or time.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>missing value</td>
+<td>Value was missing.</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 4-4. Argo quality control flag scale.</p>
+<p>For some of these tests, HFR operators will need to select the best thresholds.
+Since a successful QC effort is highly dependent upon selection of the proper thresholds,
+this choice is not straightforward,
+and may require trial and error before final selections are made.
+These thresholds should not be determined arbitrarily but based on historical knowledge or statistics derived from historical data.</p>
+<p>The threshold values are reported in the ‘comment’ variable attribute of each QC variable.
+The flagging scheme is reported as well in the ‘flag values’ and ‘flag meanings’ variable attributes of each QC variable.</p>
+<p>The standard netCDF radial and total files including the aforementioned QC procedures are generated by the following software tools,
+that were developed and are continuously improved by the EU HFR NODE:</p>
+<ul>
+<li>HFR_Node__Centralized_Processing: <a href="https://doi.org/10.5281/zenodo.2639558">DOI 10.5281/zenodo.2639558</a></li>
+<li>HFR_Node__Historical_Data_Processing: <a href="https://doi.org/10.5281/zenodo.3569518">DOI 10.5281/zenodo.3569518</a></li>
+<li>HFR_Node__REP_Temporal_Aggregation: <a href="https://doi.org/10.5281/zenodo.3707649">DOI 10.5281/zenodo.3707649</a></li>
+<li>HFR_Node_tools: <a href="https://doi.org/10.5281/zenodo.2639555">DOI 10.5281/zenodo.2639555</a></li>
+</ul>
+<h3 id="42-maracoos-hfr-network">4.2 MARACOOS HFR Network</h3>
+<p>The Mid-Atlantic Regional Association Coastal Ocean Observing System (MARACOOS) provides hourly surface current velocity maps to the U.S. Coast Guard for the Mid-Atlantic waters stretching from Cape Hatteras to Cape Cod (Table 4-5).
+Those maps are produced by combining radial data from seventeen CODAR SeaSonde long range high frequency radar (HFR) systems onto a 6-kilometer grid using an optimal interpolation method.
+This case study describes the efforts to expand real-time quality control in this regional surface current product and implement QC more formally through assignment of quality flags as recommended by IOOS QARTOD manuals.</p>
+<table>
+<thead>
+<tr>
+<th>Processing Step</th>
+<th>Description</th>
+<th>Software</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1: Signal QC, Radial Generation &amp; Transfer</td>
+<td>SeaSonde radials (and QCD radials from North Carolina radars) are produced at the radar stations and transferred to Rutgers University.</td>
+<td>SeaSonde software; qccodar Python toolbox</td>
+</tr>
+<tr>
+<td>2: Radial QC</td>
+<td>Load the radial data, run the radial QC tests and output a radial QC file (Table 4-6).</td>
+<td>HFRadarPy Python toolbox</td>
+</tr>
+<tr>
+<td>3: Compute Totals</td>
+<td>Load radial QC files and create total vector files in MAT format. Radials with fail codes in the primary flag are NOT included in totals.</td>
+<td>MATLAB scripts &amp; HFR-Progs toolbox</td>
+</tr>
+<tr>
+<td>4: Total QC</td>
+<td>Run the total QC tests and save secondary and primary flags for totals vectors as additional fields in the HFR-Progs TUV MATLAB structure.</td>
+<td>MATLAB scripts &amp; HFR-Progs toolbox</td>
+</tr>
+<tr>
+<td>5: NetCDF Output</td>
+<td>Convert MATLAB totals data to NetCDF and include total vector flag information following CF metadata conventions.</td>
+<td>HFRadarPy Python toolbox</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 4-5. MARACOOS HFR Processing Steps.</p>
+<h4 id="421-signal-and-radial-metric-qc">4.2.1 Signal and Radial Metric QC</h4>
+<p>QARTOD tests 101 and 105 are part of SeaSonde software and used on every station.
+The three North Carolina stations implement radial metric QC (QARTOD tests 102, 103, 104) on the site computer with a toolbox called qccodar developed by Sara Haines.
+Radial output from these qccodar scripts are called QCD radials.
+Haines et al. (2017) provide more information on radial metric QC.</p>
+<h4 id="422-radial-qc">4.2.2 Radial QC</h4>
+<p>MARACOOS writes radial QC files for CODAR Oceans Sensors SeaSonde data that include secondary flags for individual QC tests as well as a primary flag (Table 4-6).
+Both levels of flags follow the IOC 54:V3 Primary Level flagging standard (UNESCO 2013), which has been adopted by QARTOD.
+The new QC radial file retains the same name as the original radial file and keeps all information from the original file.</p>
+<table>
+<thead>
+<tr>
+<th>Test Name</th>
+<th>Code</th>
+<th>Description</th>
+<th>Suspect Flag</th>
+<th>Fail Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td>QC201</td>
+<td>A collection of tests ensuring proper formatting and existence of fields within a radial file.</td>
+<td>N/A</td>
+<td>Tests reveal invalid formatting or fields.</td>
+</tr>
+<tr>
+<td>Max Threshold</td>
+<td>QC202</td>
+<td>Ensures that a radial current speed is not unrealistically high.</td>
+<td>N/A</td>
+<td>velocity &gt; RSPDMAX; RSPDMAX = 300 cm/s</td>
+</tr>
+<tr>
+<td>Valid Location</td>
+<td>QC203</td>
+<td>Removes radial vectors placed over land or in other unmeasurable areas. Operator defines the invalid areas in SeaSonde software.</td>
+<td>N/A</td>
+<td>VFLG = 128</td>
+</tr>
+<tr>
+<td>Radial Count</td>
+<td>QC204</td>
+<td>Rejects radials in files with low radial counts.</td>
+<td>RCMIN &gt;= count &lt;= RCLOW</td>
+<td>count &lt; RCMIN</td>
+</tr>
+<tr>
+<td>Spatial Median</td>
+<td>QC205</td>
+<td>The difference between the vector's velocity and the median velocity of its neighbors (within radius of <code>&lt;RCLim&gt;</code> * Range Step (km) whose vector bearing is also within <code>&lt;AngLim&gt;</code> degrees) must be less or equal to <code>&lt;CurLim&gt;</code> cm/s to pass the test.</td>
+<td>N/A</td>
+<td>velocity &gt; CURLIM; RCLIM = 2.1 cells, ANGLIM = 10 degrees, CURLIM = 30 cm/s (or 50 cm/s for stations near Gulf Stream)</td>
+</tr>
+<tr>
+<td>Primary Flag</td>
+<td>PRIM</td>
+<td>Highest flag value of QC201, QC202, QC203, QC204, QC205 (will be set to “not evaluated” only if ALL tests were “not evaluated”).</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 4-6. MARACOOS Radial Data QC Tests</p>
+<h4 id="423-totals-qc">4.2.3 Totals QC</h4>
+<p>Total vector flags are recorded with total velocities in MATLAB MAT files. They are saved in the HFR-Progs TUV structure as additional fields. When the MATLAB file is converted to NetCDF, the flags are represented as additional variables and those variables include attributes that describe the flags. Following CF conventions, the “ancillary variable” attributes of the velocity variables provide a reference to the flag variables (Table 4-7).</p>
+<table>
+<thead>
+<tr>
+<th>Test Name</th>
+<th>Code</th>
+<th>Description</th>
+<th>Suspect Flag</th>
+<th>Fail Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data Density</td>
+<td>QC301</td>
+<td>Tests that a sufficient number of radial velocities exist to compute a total velocity vector.</td>
+<td>N/A</td>
+<td>N/A, 3 radial velocities sourced from at least 2 radar stations are required to compute a total velocity vector.</td>
+</tr>
+<tr>
+<td>Max Threshold</td>
+<td>QC303</td>
+<td>Ensures that a total current speed is not unrealistically high.</td>
+<td>N/A</td>
+<td>velocity &gt; RSPDMAX RSPDMAX = 300 cm/s</td>
+</tr>
+<tr>
+<td>Valid Location</td>
+<td>QC305</td>
+<td>The radial must not be located over land or in any other location where valid measurements are not possible.</td>
+<td>N/A</td>
+<td>Fail locations are identified by a regional land mask file.</td>
+</tr>
+<tr>
+<td>U Component Uncertainty</td>
+<td>QC306</td>
+<td>Tests that the uncertainty in U component of velocity due to the geometric relationship between radials is low enough for the vector to be considered valid.</td>
+<td>N/A</td>
+<td>Uerr uncertainty &gt; 0.6</td>
+</tr>
+<tr>
+<td>V Component Uncertainty</td>
+<td>QC307</td>
+<td>Tests that the uncertainty in V component of velocity due to the geometric relationship between radials is low enough for the vector to be considered valid.</td>
+<td>N/A</td>
+<td>Verr uncertainty &gt; 0.6</td>
+</tr>
+<tr>
+<td>Primary Flag</td>
+<td>PRIM</td>
+<td>Highest flag value of QC301, QC303,QC305,QC306,QC307 (will be set to “not evaluated” only if ALL tests were “not evaluated”). 35</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 4-7. MARACOOS Totals Data QC Tests.</p>
+<h4 id="424-primary-flag-definition">4.2.4 Primary Flag Definition</h4>
+<p>The primary flag is explicitly defined in metadata as the highest flag value of test1,
+test2, etc. with a note that it will be set to “not evaluated” only if ALL tests were “not evaluated”.
+The flag is NOT the highest value of all individual test flags.
+This allows the inclusion of a secondary flag in the file that does not affect the primary (e.g., for testing purposes).
+It also avoids assigning the primary as “not evaluated” in a case where it may not be a useful designation (e.g., all tests pass except the radial was at the edge of coverage, and there were not enough neighbors for the spatial median test to be evaluated).</p>
+<h4 id="425-thresholds">4.2.5 Thresholds</h4>
+<p>Thresholds for a low radial count test (QC204) are site specific.
+The failure threshold is 10% of the number of valid radial locations and the suspect threshold is 30% of the number of valid radial locations.
+The number of valid locations is based on a radial grid with a maximum of 40 range cells and 5-degree bins.
+Every cell that falls over land or is otherwise blocked from obtaining a good signal (e.g., behind land) is not counted as a valid location.
+The SeaSonde AngSeg_XXXX.txt file is helpful in obtaining the valid location count.
+A MATLAB script was written to count the good locations from the AngSeg file and the resulting number is “rounded” to the nearest 25.</p>
+<h2 id="50-summary">5.0 Summary</h2>
+<p>The QC tests in this HF radar document have been compiled using the guidance provided by the HF radar committee and valuable reviewers (appendix A),
+earlier U.S. IOOS/QARTOD manuals,
+and all QARTOD workshops (https://ioos.noaa.gov/ioos-in-action/qartod-meetings/).
+Test suggestions came from both operators and HF radar data users with extensive experience.
+The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time,
+and these and other differences must be balanced according to the specific circumstances of each operator.
+Although these real-time tests are required,
+recommended,
+suggested, or in development,
+it is the operator who is responsible for deciding which tests are appropriate.</p>
+<p>The QC tests identified in this manual apply to HF radar observations from three HF radar types that are used in U.S. IOOS.
+The existing program has developed QC tests that are documented in this U.S. IOOS QARTOD manual.
+The QARTOD HF radar committee intends for the QC tests of these programs to be compliant with U.S. IOOS QARTOD requirements and recommendations.
+The individual tests are described and include codable instructions,
+output conditions,
+example thresholds,
+and exceptions (when applicable).</p>
+<p>Selection of the proper thresholds is critical to a successful QC effort.
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data,
+but they should not be determined arbitrarily.
+This manual provides guidance for selecting thresholds based on input from various operators,
+but also notes that operators need the subject matter expertise and motivation to select the proper thresholds to maximize the value of their QC effort.</p>
+<p>Future QARTOD reports will address standard QC test procedures and best practices for all types of common and uncommon platforms and sensors for all the U.S. IOOS core variables.
+We anticipate growth in the test procedures that will take place within the sensor package.
+Significant components of metadata will reside in the sensor and be transmitted either on demand or automatically along with the data stream.
+Users may also reference metadata through Uniform Resource Locators to simplify the identification of which QC steps have been applied to data.
+However,
+QARTOD QC test procedures in this manual address only real-time in-situ observations.
+The tests do not include post-processing,
+which is not in real time but may be useful for ecosystem-based management,
+or delayed-mode,
+which might be suitable for climate studies</p>
+<p>Each QARTOD manual is envisioned as a dynamic document and will be posted on the QARTOD website at https://ioos.noaa.gov/project/qartod/.
+This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.</p>
+<h2 id="60-references">6.0 References</h2>
+<blockquote>
+<p>Bushnell, M., Presentation at QARTOD III: (2005). Scripps Institution of Oceanography, La Jolla, California.</p>
+<p>CODAR Ocean Sensors (2009). SeaSonde Radial Site Release 6, Radial Vector and Grid Flag. (Copyright CODAR Ocean Sensors)</p>
+<p>Cook, Thomas, Lisa Hazard, Mark Otero, and Brian Zelenke. (2008) “Deployment and Maintenance of a High-frequency Radar (HFR) for Ocean Surface Current Mapping: Best Practices.”</p>
+<p>Copernicus Marine In Situ Tac Data Management Team (2021). Copernicus Marine In Situ NetCDF format manual. <a href="https://doi.org/10.13155/59938">https://doi.org/10.13155/59938</a></p>
+<p>Copernicus Marine in situ TAC (2020a). Copernicus in situ NRT current product user manual (PUM). CMEMS-INS-PUM-013-048. <a href="https://doi.org/10.13155/73192">https://doi.org/10.13155/73192</a></p>
+<p>Copernicus Marine In Situ Tac (2020b). For Global Ocean-Delayed Mode in-situ Observations of surface (drifters and HFR) and sub-surface (vessel-mounted ADCPs) water velocity. Quality Information Document (QUID). CMEMS-INS-QUID-013-044. <a href="https://doi.org/10.13155/41256">https://doi.org/10.13155/41256</a></p>
+<p>Corgnati, L., Mantovani, C., Novellino, A., Jousset, S., Cramer, R. N., and Thijsse, P. (2019) SeaDataNet data management protocols for HF Radar data, <a href="https://repository.oceanbestpractices.org/handle/11329/1511">https://repository.oceanbestpractices.org/handle/11329/1511</a>.</p>
+<p>Corgnati, L., Mantovani, C., Novellino, A., Rubio, A., Mader, J., Reyes, E., Griffa, A., Asensio, J. L.., Gorringe, P., Quentin, C., Breitbach, G., and Widera, J. (2018) Recommendation Report 2 on improved common procedures for HFR QC analysis. <a href="https://repository.oceanbestpractices.org/handle/11329/1441">https://repository.oceanbestpractices.org/handle/11329/1441</a>.</p>
+<p>Gomez, R. et al. (2014) “Real-time quality control of current velocity data on individual grid cells in WERA HF radar,” OCEANS 2014 - TAIPEI, 2014, pp. 1–7, doi: 10.1109/OCEANS-TAIPEI.2014.6964502.</p>
+<p>Gurgel, K.W., Barbin, Y., Schlick, T. (2007) “Radio Frequency Interference Suppression Techniques in FMCW Modulated HF Radars”, Proc. of IEEE/OES Oceans ’07 Europe, Aberdeen, Scotland, UK, June 2007.</p>
+<p>Haines, S., Seim, H., &amp; Muglia, M. (2017). Implementing Quality Control of High-Frequency Radar Estimates and Application to Gulf Stream Surface Currents, <em>Journal of Atmospheric and Oceanic Technology</em>, <em>34</em>(6), 1207-1224. <a href="https://journals.ametsoc.org/view/journals/atot/34/6/jtech-d-16-0203.1.xml">https://journals.ametsoc.org/view/journals/atot/34/6/jtech-d-16-0203.1.xml</a></p>
+<p>Kaplan, D., Largier, J., and Botsford, L. (2005) “HF radar observations of surface circulation off Bodega Bay (northern California, USA).” <em>Journal of Geophysical Research: Oceans</em> 110, no. C10.</p>
+<p>Kim, S. Y., Terrill, E.J., and Cornuelle, B.D. (2008) “Mapping surface currents from HF radar radial velocity measurements using optimal interpolation.” <em>Journal of Geophysical Research</em>: <em>Oceans</em> 113.C10.</p>
+<p>Kirincich, A.R., De Paolo, T., and Terrill, E. (2012) “Improving HF radar estimates of surface currents using signal quality metrics, with application to the MVCO high-resolution radar system.” <em>Journal of Atmospheric</em> <em>and Oceanic Technology</em> 29, no. 9: 1377-1390.</p>
+<p>Mantovani, C., Corgnati, L., Horstmann, J., Rubio, A., Reyes, E., Quentin, C., Cosoli, S., Asensio, J.L., Mader, J. and Griffa, A. (2020). Best Practices on High Frequency Radar Deployment and Operation for Ocean Current Measurement. Front. Mar. Sci. 7:210. doi: 10.3389/fmars.2020.00210 <a href="https://www.frontiersin.org/articles/10.3389/fmars.2020.00210/full">https://www.frontiersin.org/articles/10.3389/fmars.2020.00210/full</a></p>
+<p>Paris. Intergovernmental Oceanographic Commission of UNESCO (2013). Ocean Data Standards, Vol. 3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.) (IOC/2013/MG/54-3). <a href="http://www.ioccp.org/images/D4standards/IOC-OceanDataStandards54-3-2013.pdf">http://www.ioccp.org/images/D4standards/IOC-OceanDataStandards54-3-2013.pdf</a></p>
+<p>Roarty, H., M. Smith, J. Kerfoot, J. Kohut and S. Glenn (2012). Automated quality control of High Frequency radar data. Oceans, 2012 Virginia Beach, Va.</p>
+<p>Roarty, H., J. Klein, S. Dante, A. Cope, S. Johnson and M. Daugharty (2019). “Evaluation of Wave Data from HF Radar by the National Weather Service,” 2019 IEEE/OES Twelfth Current, Waves and Turbulence Measurement (CWTM), pp. 1-4, doi: 10.1109/CWTM43797.2019.8955189.</p>
+<p>Soh, Hyun Sup, et al. (2018)“Do Nonorthogonally and Irregularly Sampled Scalar Velocities Contain Sufficient Information to Reconstruct an Orthogonal Vector Current Field?” <em>Journal of Atmospheric and</em> <em>Oceanic Technology</em> 35.4: 763-795.</p>
+<p>UNESCO (1993). Manual and Guides 26, Manual of Quality Control Procedures for Validation of Oceanographic Data, Section 2.2, Appendix A1: Wave Data. Prepared by CEC: DG-XII, MAST and IOC: IODE. 436 pp. <a href="http://unesdoc.unesco.org/images/0013/001388/138825eo.pdf">http://unesdoc.unesco.org/images/0013/001388/138825eo.pdf</a></p>
+<p>U.S. IOOS Interagency Working Group on Ocean Observations (2015). A Plan to Meet the Nation’s Needs for Surface Current Mapping. 62 pp. <a href="https://cdn.ioos.noaa.gov/media/2017/12/national_surface_current_plan.pdf">https://cdn.ioos.noaa.gov/media/2017/12/national_surface_current_plan.pdf</a></p>
+<p>U.S. Integrated Ocean Observing System (2016). Manual for Real-Time Quality Control of High Frequency Radar Surface Currents Data: A Guide to Quality Control and Quality Assurance of High Frequency Radar Surface Currents Data Observations. 58 pp. <a href="https://repository.library.noaa.gov/view/noaa/15482">https://repository.library.noaa.gov/view/noaa/15482</a></p>
+<p>U.S. Integrated Ocean Observing System (2020). Manual for Real-Time Oceanographic Data Quality Control Flags Version 1.2. 24 pp. <a href="https://repository.library.noaa.gov/view/noaa/24982">https://repository.library.noaa.gov/view/noaa/24982</a></p>
+<p>Voulgaris, G. (2011). Guidelines for assessing HF radar capabilities and performance. Technical Report CPSD #11-01. University of South Carolina. Columbia, S.C.</p>
+<p>Wong Annie, Keeley Robert, Carval Thierry, Argo Data Management Team (2022). Argo Quality Control Manual for CTD and Trajectory Data. <a href="https://doi.org/10.13155/33951">https://doi.org/10.13155/33951</a></p>
+</blockquote>
+<p>Additional References to Related Documents:</p>
+<blockquote>
+<p>The U.S. IOOS website page on HF Radar can be found at <a href="https://ioos.noaa.gov/project/hf-radar/ - documents">https://ioos.noaa.gov/project/hf-radar/ - documents</a></p>
+<p>The Ocean Data Standards resource pool can be found at: <a href="http://www.oceandatastandards.org/">http://www.oceandatastandards.org/</a></p>
+<p>Scheme on QC flags, which is a general document that discusses how to write the results of tests but does not discuss the actual tests. <a href="http://www.iode.org/index.php?option=com_oe&amp;task=viewDocumentRecord&amp;docID=10762">http://www.iode.org/index.php?option=com_oe&amp;task=viewDocumentRecord&amp;docID=10762</a></p>
+<p>U.S. IOOS Office, (2010). A Blueprint for Full Capability, Version 1.0, 254 pp. <a href="http://www.iooc.us/wp-content/uploads/2010/11/US-IOOS-Blueprint-for-Full-Capability-Version-1.0.pdf">http://www.iooc.us/wp-content/uploads/2010/11/US-IOOS-Blueprint-for-Full-Capability-Version-1.0.pdf</a></p>
+<p>National Oceanographic Partnership Program (NOPP) January 2006. The First U.S. Integrated Ocean Observing System (IOOS)Development Plan – A report of the national Ocean Research Leadership Council and the Interagency Committee on Ocean Science and Resource Management Integration. The National Office for Integrated and Sustained Ocean Observations. Ocean US Publication No. 9. <a href="http://www.iooc.us/wp-content/uploads/2010/12/9.pdf">http://www.iooc.us/wp-content/uploads/2010/12/9.pdf</a></p>
+<p>National Data Buoy Center (NDBC) Technical Document 09-02, Handbook of Automated Data Quality Control Checks and Procedures, August 2009. National Data Buoy Center, Stennis Space Center, Mississippi 39529-6000.</p>
+<p>NOAA, 2005. Second Workshop Report on the QA of Real-Time Ocean Data, July 2005. 48 pp. Norfolk, Virginia. CCPO Technical Report Series No. 05-01</p>
+<p>NOAA, 2009. Fifth Workshop on the QA/QC of Real-Time Oceanographic Data. November 16-19, 2009. 136 pp. Omni Hotel, Atlanta, Georgia.</p>
+<p>Ocean.US, 2006. National Office for Integrated and Sustained Ocean Observations. The First U.S. Integrated Ocean Observing System (IOOS) Development Plan, Publication 9, January 2006.</p>
+<p>U.S. IOOS QARTOD Project Plan, February 18, 2012. <a href="http://dx.doi.org/10.25607/OBP-533">http://dx.doi.org/10.25607/OBP-533</a></p>
+<p>Data QC Flags from CSIRO Cookbook <a href="https://repository.oceanbestpractices.org/handle/11329/127">https://repository.oceanbestpractices.org/handle/11329/127</a></p>
+<p>Integrated Marine Observing System Toolbox <a href="https://github.com/aodn/imos-toolbox">https://github.com/aodn/imos-toolbox</a></p>
+<p>IMOS ACORN Quality Control Procedures for IMOS Ocean Radar Manual <a href="http://dx.doi.org/10.26198/5c89b59a931cb">http://dx.doi.org/10.26198/5c89b59a931cb</a></p>
+<p>Lipa, B., Barrick, D., and Whelan, C. (2019) “A quality control method for broad-beam HF radar current velocity measurements.” <em>Journal of Marine Science and Engineering</em> 7, no. 4: 112.</p>
+</blockquote>
+<p>Supporting Documents Available from the QARTOD Website:
+(https://ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-high-frequency-radar-surface-current-data/)</p>
+<div class="highlight"><pre><span></span><code>*These documents were particularly useful to the committee and reviewers when developing this manual. They do not contain copyright restrictions and are posted on the U.S. IOOS QARTOD website for easy reference*.
+</code></pre></div>
+<p>Guidelines for Assessing HF Radar Capabilities and Performance</p>
+<p>Encoding NetCDF Radial Data in the HF-Radar Network</p>
+<p>QA/QC and Related Practices at CODAR</p>
+<p>HF-Radar Network Near-Real Time Ocean Surface Current Mapping</p>
+<p>Real-Time Quality Control of Current Velocity Data on Individual Grid Cells in WERA HF Radar</p>
+<p>Remote Monitoring Checklist</p>
+<p>QC_procedures_for_IMOS_Ocean_Radar_manual_v2.1</p>
+<h2 id="appendix-a-qartod-hf-radar-manual-version-20-team">Appendix A. QARTOD HF Radar Manual Version 2.0 Team</h2>
+<p><strong>HF Radar Manual Committee, Contributors and Reviewers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mark Bushnell</td>
+<td>U.S. IOOS</td>
+</tr>
+<tr>
+<td>Lorenzo Corgnati</td>
+<td>Institute of Marine Science of the National Research Council of Italy</td>
+</tr>
+<tr>
+<td>Brian Emery</td>
+<td>University of California Santa Barbara</td>
+</tr>
+<tr>
+<td>Roberto Gomez</td>
+<td>HELZEL</td>
+</tr>
+<tr>
+<td>Sara Haines</td>
+<td>University of North Carolina/Wilmington</td>
+</tr>
+<tr>
+<td>Rachel Potter</td>
+<td>University of Alaska Fairbanks</td>
+</tr>
+<tr>
+<td>Bill Rector</td>
+<td>Codar Ocean Sensors</td>
+</tr>
+<tr>
+<td>Hugh Roarty</td>
+<td>Rutgers University</td>
+</tr>
+<tr>
+<td>Dale Trockel</td>
+<td>CODAR Ocean Sensors</td>
+</tr>
+<tr>
+<td>Teresa Updyke</td>
+<td>Old Dominion University</td>
+</tr>
+<tr>
+<td>Manman Wang</td>
+<td>Ocean Networks Canada</td>
+</tr>
+</tbody>
+</table>
+<p><strong>QARTOD Board of Advisors</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eugene Burger, Chair</td>
+<td>NOAA/Pacific Marine Environmental Laboratory</td>
+</tr>
+<tr>
+<td>Kathleen Bailey</td>
+<td>U.S. IOOS</td>
+</tr>
+<tr>
+<td>Jim Behrens</td>
+<td>SCCOOS/Scripps Institution of Oceanography/Coastal Data Information Program</td>
+</tr>
+<tr>
+<td>Matthew Biddle</td>
+<td>U.S. IOOS</td>
+</tr>
+<tr>
+<td>Julie Bosch</td>
+<td>NOAA/National Centers for Environmental Information</td>
+</tr>
+<tr>
+<td>Mark Bushnell</td>
+<td>U.S. IOOS</td>
+</tr>
+<tr>
+<td>Jennifer Dorton</td>
+<td>Southeast Coastal Ocean Observing Regional Association</td>
+</tr>
+<tr>
+<td>Regina Easley</td>
+<td>National Institute for Standards and Technology</td>
+</tr>
+<tr>
+<td>Karen Grissom</td>
+<td>National Data Buoy Center</td>
+</tr>
+<tr>
+<td>Bob Heitsenrether</td>
+<td>NOAA/CO-OPS</td>
+</tr>
+<tr>
+<td>Bob Jensen</td>
+<td>U.S. Army Corps of Engineers</td>
+</tr>
+<tr>
+<td>Mario Tamburri</td>
+<td>University of Maryland/Alliance for Coastal Technologies</td>
+</tr>
+<tr>
+<td>Christoph Waldmann</td>
+<td>University of Bremen (MARUM)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>U.S. IOOS Regional Associations</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Josie Quintrell</td>
+<td>U.S. IOOS Association</td>
+</tr>
+<tr>
+<td>Clarissa Anderson</td>
+<td>SCCOOS</td>
+</tr>
+<tr>
+<td>Jorge Brenner</td>
+<td>GCOOS</td>
+</tr>
+<tr>
+<td>Debra Hernandez</td>
+<td>SECOORA</td>
+</tr>
+<tr>
+<td>Melissa Iwamoto</td>
+<td>PacIOOS</td>
+</tr>
+<tr>
+<td>Jake Kritzer, Ph.D.</td>
+<td>NERACOOS</td>
+</tr>
+<tr>
+<td>Gerhard Kuska</td>
+<td>MARACOOS</td>
+</tr>
+<tr>
+<td>Julio Morell</td>
+<td>CARICOOS</td>
+</tr>
+<tr>
+<td>Jan Newton</td>
+<td>NANOOS</td>
+</tr>
+<tr>
+<td>Kelli Paige</td>
+<td>GLOS</td>
+</tr>
+<tr>
+<td>Henry Ruhl</td>
+<td>CeNCOOS</td>
+</tr>
+<tr>
+<td>Sheyna Wisdom</td>
+<td>AOOS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>HF Radar Manual Version 1.0 Committee and Reviewers</strong></p>
+<p><strong>HF Radar Manual Committee and Reviewers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mark Bushnell, Lead Editor</td>
+<td>CoastalObsTechServices LLC/CO-OPS</td>
+</tr>
+<tr>
+<td>Jack Harlan, Co-Editor</td>
+<td>NOAA</td>
+</tr>
+<tr>
+<td>Teresa Updyke, Co-Editor</td>
+<td>Old Dominion University</td>
+</tr>
+<tr>
+<td>Helen Worthington, Editor</td>
+<td>REMSA/CO-OPS</td>
+</tr>
+<tr>
+<td>Kathy Bailey</td>
+<td>U.S. IOOS</td>
+</tr>
+<tr>
+<td>Don Barrick</td>
+<td>CODAR Ocean Sensors Ltd.</td>
+</tr>
+<tr>
+<td>Simone Cosoli</td>
+<td>University of Western Australia</td>
+</tr>
+<tr>
+<td>Maeve Daugharty</td>
+<td>CODAR Ocean Sensors Ltd.</td>
+</tr>
+<tr>
+<td>Greg Dusek</td>
+<td>CO-OPS</td>
+</tr>
+<tr>
+<td>Brian Emery</td>
+<td>University of California Santa Barbara</td>
+</tr>
+<tr>
+<td>Pierre Flament</td>
+<td>University of Hawaii</td>
+</tr>
+<tr>
+<td>Klaus-Werner Gurgel</td>
+<td>University of Hamburg/Institute of Oceanography</td>
+</tr>
+<tr>
+<td>Sara Haines</td>
+<td>University of North Carolina</td>
+</tr>
+<tr>
+<td>Birgit Hansen</td>
+<td>HELZEL Messtechnik GmbH</td>
+</tr>
+<tr>
+<td>Mal Heron</td>
+<td>IEEE/James Cook University, Townsville, Australia</td>
+</tr>
+<tr>
+<td>Anthony Kirincich</td>
+<td>Woods Hole Oceanographic Institution</td>
+</tr>
+<tr>
+<td>Mike Kosro</td>
+<td>Oregon State University</td>
+</tr>
+<tr>
+<td>Jeff Paduan</td>
+<td>Naval Postgraduate School</td>
+</tr>
+<tr>
+<td>Hugh Roarty</td>
+<td>Rutgers University</td>
+</tr>
+<tr>
+<td>Julie Thomas</td>
+<td>University of California San Diego/Scripps Institution of Oceanography</td>
+</tr>
+<tr>
+<td>George Voulgaris</td>
+<td>University of South Carolina</td>
+</tr>
+<tr>
+<td>Libe Washburn</td>
+<td>University of California Santa Barbara</td>
+</tr>
+<tr>
+<td>Brian Whitehouse</td>
+<td>OEA Technologies</td>
+</tr>
+<tr>
+<td>Brian Zelenke</td>
+<td>Bureau of Ocean Energy Management</td>
+</tr>
+</tbody>
+</table>
+<p><strong>QARTOD Board of Advisors</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joe Swaykos - Chair</td>
+<td>NOAA/National Data Buoy Center</td>
+</tr>
+<tr>
+<td>Kathy Bailey</td>
+<td>U.S. IOOS</td>
+</tr>
+<tr>
+<td>Julie Bosch</td>
+<td>NOAA/National Centers for Environmental Information</td>
+</tr>
+<tr>
+<td>Eugene Burger</td>
+<td>NOAA/Pacific Marine Environmental Laboratory</td>
+</tr>
+<tr>
+<td>Janet Fredericks</td>
+<td>Woods Hole Oceanographic Institution</td>
+</tr>
+<tr>
+<td>Matt Howard</td>
+<td>GCOOS/Texas A&amp;M University</td>
+</tr>
+<tr>
+<td>Bob Jensen</td>
+<td>U.S. Army Corps of Engineers</td>
+</tr>
+<tr>
+<td>Chris Paternostro</td>
+<td>NOAA/CO-OPS</td>
+</tr>
+<tr>
+<td>Mario Tamburri</td>
+<td>University of Maryland/Alliance for Coastal Technologies</td>
+</tr>
+<tr>
+<td>Julie Thomas</td>
+<td>SCCOOS/Scripps Institution of Oceanography/Coastal Data Information Program</td>
+</tr>
+</tbody>
+</table>
+<p><strong>U.S. IOOS Regional Associations</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Organization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Josie Quintrell</td>
+<td>U.S. IOOS Association</td>
+</tr>
+<tr>
+<td>David Anderson</td>
+<td>CeNCOOS</td>
+</tr>
+<tr>
+<td>Debra Hernandez</td>
+<td>SECOORA</td>
+</tr>
+<tr>
+<td>Barbara Kirkpatrick</td>
+<td>GCOOS</td>
+</tr>
+<tr>
+<td>Gerhard Kuska</td>
+<td>MARACOOS</td>
+</tr>
+<tr>
+<td>Molly McCammon</td>
+<td>AOOS</td>
+</tr>
+<tr>
+<td>Julio Morell</td>
+<td>CariCOOS</td>
+</tr>
+<tr>
+<td>Ru Morrison</td>
+<td>NERACOOS</td>
+</tr>
+<tr>
+<td>Jan Newton</td>
+<td>NANOOS</td>
+</tr>
+<tr>
+<td>Melissa Iwamoto</td>
+<td>PacIOOS</td>
+</tr>
+<tr>
+<td>Kelli Paige</td>
+<td>GLOS</td>
+</tr>
+<tr>
+<td>Julie Thomas</td>
+<td>SCCOOS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-additional-potential-quality-control-tests">Appendix B. Additional Potential Quality Control Tests</h2>
+<p>During the review process for the HF Radar QC Manual, several suggestions for potential tests were made by various contributors during manual preparation. The manual was distributed for review several times, but no one offered content for these tests. However, the tests can be reconsidered when the manual is updated. Tests marked with a # have been implemented in WERA software.</p>
+<ul>
+<li>Methods suggested by Lipa et al. (2019)⁵</li>
+<li>Separation of 1ˢᵗ Order Bragg Lines (Phased array systems)</li>
+<li>Broadening of Bragg Lines (3 dB, Phased array systems) # o This can be comparable to the parameter VARX on the WERA SW, or with the accuracy tests applied by the WERA RT QC.</li>
+<li>Trend Limits # o Trend limits are applied in the WERA RT QC software module.</li>
+<li>Spatial Gradient # o Can be configured in parameter MAX_UR_CHANGE in params.cfg on the WERA.</li>
+<li>Trend Limits for u,v components</li>
+<li>Measured Minus Model</li>
+</ul>
+<p><small>⁵ Lipa, B., Barrick, D., and Whelan, C. (2019) “A quality control method for broad-beam HF radar current velocity measurements.” <em>Journal of Marine Science and Engineering</em> 7, no. 4: 112.</small></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ocefpaf" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.tabs", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
