@@ -272,21 +272,48 @@ This section outlines the 14 real-time QC tests that are required, strongly reco
 
 : Table 3. Test Hierarchy.
 
-#### Test Description
+### Test Description
 
-A variety of tests can be performed to evaluate data quality in real time. Testing the timely arrival and integrity of the data transmission itself is a first step. If the data are corrupted during transmission, further testing may be irrelevant. The checks defined in these 14 tests evaluate data through various comparisons to other data and to the expected conditions in the given environment. The tests listed in this section presume a time-ordered series of observations and denote the most recent observation as previously described.
+A variety of tests can be performed to evaluate data quality in real time. 
+Testing the timely arrival and integrity of the data transmission itself is a first step. 
+If the data are corrupted during transmission, 
+further testing may be irrelevant. 
+The checks defined in these 14 tests evaluate data through various comparisons to other data and to the expected conditions in the given environment. 
+The tests listed in this section presume a time-ordered series of observations and denote the most recent observation as previously described.
 
-Sensor operators need to select the best thresholds for each test, which are determined at the operator level and may require trial and error before final selections are made. A successful QC effort is highly dependent upon selection of the proper thresholds, which should not be determined arbitrarily but can be based on historical knowledge or statistics derived from more recently acquired data. Although this manual provides some guidance for selecting thresholds based on input from various operators, it is assumed that operators have the expertise and motivation to select the proper thresholds to maximize the value of their QC effort. Operators must openly provide thresholds as metadata for user support. This shared information will help U.S. IOOS to document standardized thresholds that will be included in future releases of this manual.
+Sensor operators need to select the best thresholds for each test, 
+which are determined at the operator level and may require trial and error before final selections are made. 
+A successful QC effort is highly dependent upon selection of the proper thresholds, 
+which should not be determined arbitrarily but can be based on historical knowledge or statistics derived from more recently acquired data. 
+Although this manual provides some guidance for selecting thresholds based on input from various operators, 
+it is assumed that operators have the expertise and motivation to select the proper thresholds to maximize the value of their QC effort. 
+Operators must openly provide thresholds as metadata for user support. 
+This shared information will help U.S. IOOS to document standardized thresholds that will be included in future releases of this manual.
 
-Several existing programs have developed QC tests that are similar to the U.S. IOOS Glider DAC QC tests in this manual, including: 1) the U.S. Navy’s Local Automated Glider Editing Routine (LAGER) Automated Processing and QC, 2) University of Washington Seaglider Quality Control Manual, 3) the Global Temperature and Salinity Profile Programme (GTSPP) and 4) the Argo program. Manuals from the GTSPP and Argo programs are available online (UNESCO-IOC 2010; Carval et al. 2015). Section 6 of the LAGER manual is attached as appendix C, and the full University of Washington Applied Physics Laboratory (UWAPL) Seaglider Quality Control Manual is attached as appendix D. Similar glider QC efforts are
+Several existing programs have developed QC tests that are similar to the U.S. IOOS Glider DAC QC tests in this manual, 
+including: 1) the U.S. Navy’s Local Automated Glider Editing Routine (LAGER) Automated Processing and QC, 2) University of Washington Seaglider Quality Control Manual, 3) the Global Temperature and Salinity Profile Programme (GTSPP) and 4) the Argo program. 
+Manuals from the GTSPP and Argo programs are available online (UNESCO-IOC 2010; Carval et al. 2015). 
+Section 6 of the LAGER manual is attached as appendix C, 
+and the full University of Washington Applied Physics Laboratory (UWAPL) Seaglider Quality Control Manual is attached as appendix D. 
+Similar glider QC efforts are evolving in related activities in Europe, 
+such as Everyone's Gliding Observatories (http://www.ego-network.org/dokuwiki/doku.php), 
+the Coriolis Data Assembly Centre (http://www.coriolis.eu.org/Observing-the-Ocean/GLIDERS), 
+and Gliders for Research, 
+Ocean Observations, 
+and Management (http://www.groom-fp7.eu/doku.php). 
+Operators within these and similar programs will likely find their present QC process to be largely compliant with U.S. IOOS Glider DAC requirements and recommendations, 
+which is the intention of the Glider DAC TS QC committee. 
+Table 4 provides a comparison of QC tests from this U.S. IOOS Glider DAC QC manual, 
+LAGER, 
+GTSPP, 
+real-time Argo, 
+and UWAPL programs. 
+UWAPL tests are not numerically identified, 
+so only an indication that a matching test is conducted can be provided.
 
-~~8~~
-
-evolving in related activities in Europe, such as Everyone's Gliding Observatories (http://www.ego-network.org/dokuwiki/doku.php), the Coriolis Data Assembly Centre (http://www.coriolis.eu.org/Observing-the-Ocean/GLIDERS), and Gliders for Research, Ocean Observations, and Management (http://www.groom-fp7.eu/doku.php). Operators within these and similar programs will likely find their present QC process to be largely compliant with U.S. IOOS Glider DAC requirements and recommendations, which is the intention of the Glider DAC TS QC committee. Table 4 provides a comparison of QC tests from this U.S. IOOS Glider DAC QC manual, LAGER, GTSPP, real-time Argo, and UWAPL programs. UWAPL tests are not numerically identified, so only an indication that a matching test is conducted can be provided.
-
-Each data point is quality controlled and assigned a flag using these tests. Operators may choose to expand upon the flagging scheme using another tier of flags, e.g., to characterize the entire vertical profile.
-
-**Table 4.** Comparison of U.S. IOOS Glider DAC, LAGER, GTSPP, Argo QC, and UWAPL tests. LAGER, GTSPP and Argo test numbers are matched to similar QARTOD tests.
+Each data point is quality controlled and assigned a flag using these tests. 
+Operators may choose to expand upon the flagging scheme using another tier of flags, e.g., 
+to characterize the entire vertical profile.
 
 |**Glider DAC**|**LAGER**|**GTSPP**|**Argo**|**UWAPL**|
 |---|---|---|---|---|
@@ -305,215 +332,268 @@ Each data point is quality controlled and assigned a flag using these tests. Ope
 |13)  TS Curve/Space Test|No match|No match|No match|No match|
 |14)  Density Inversion Test|6.6.2|2.10|14|No match|
 
+: Table 4. Comparison of U.S. IOOS Glider DAC, LAGER, GTSPP, Argo QC, and UWAPL tests. LAGER, GTSPP and Argo test numbers are matched to similar QARTOD tests.
 
+**Test 1 - Timing/Gap Test (Required)**
 
-~~9~~
+Check for arrival of data.
+Test determines that the most recent profile has been received within the expected time window (`TIM_INC`) and has the correct time stamp (`TIM_STMP`).
+**Note:** For those gliders that do not update at regular intervals, a large value for TIM_STMP can be assigned. 
+The gap check is not a solution for all timing errors. 
+Data could be measured or received earlier than expected. 
+This test does not address all clock drift/jump issues.
 
-###### Test 1) Timing/Gap Test (Required)
-
-###### Check for arrival of data.
-
-Test determines that the most recent profile has been received within the expected time window (TIM_INC) and has the correct time stamp (TIM_STMP).
-
-**Note:** For those gliders that do not update at regular intervals, a large value for TIM_STMP can be assigned. The gap check is not a solution for all timing errors. Data could be measured or received earlier than expected. This test does not address all clock drift/jump issues.
-
-|**Flags **|**Condition**|**Codable Instructions**|
+| Flags | Condition | Codable Instructions |
 |---|---|---|
-|Fail=4|Data have not arrived as<br>expected.|If NOW – TIM_STMP > TIM_INC, flag = 4|
+|Fail=4|Data have not arrived as<br>expected.|If `NOW` – `TIM_STMP` > `TIM_INC`, flag = 4|
 |Suspect=3|N/A|N/A|
 |Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n**: None.||
-|**Test specifica**<br>**Example:**|**tions to be established locally by the o**<br>TIM_INC= 6 hours|**perator.**|
 
+Test Exception: None.
 
+Test specifications to be established locally by the operator.
 
-Test 2) Syntax Test (Required)
+Example: `TIM_INC` = 6 hours
 
-###### Check to ensure that the message is structured properly.
+**Test 2 - Syntax Test (Required)**
 
-Received data message (full message) contains the proper structure without any indicators of flawed transmission such as parity errors. Possible tests are: a) the expected number of characters (NCHAR) for fixed length messages equals the number of characters received (REC_CHAR), or b) passes a standard parity bit check, cyclic redundancy check (CRC), etc. Many such syntax tests exist, and the user should select the best criteria for one or more syntax tests.
+Check to ensure that the message is structured properly. 
+Received data message (full message) contains the proper structure without any indicators of flawed transmission such as parity errors. 
+Possible tests are: a) the expected number of characters (`NCHAR`) for fixed length messages equals the number of characters received (`REC_CHAR`), 
+or b) passes a standard parity bit check, 
+cyclic redundancy check (CRC), etc. 
+Many such syntax tests exist, 
+and the user should select the best criteria for one or more syntax tests.
 
-Capabilities for dealing with flawed messages vary among operators; some may have the ability to parse messages to extract data within the flawed message sentence before the flaw. A syntax check is performed only at the message level and not within the message content. In cases where a data record requires multiple messages, this check can be performed at the message level but is not used to check message content.
+Capabilities for dealing with flawed messages vary among operators; 
+some may have the ability to parse messages to extract data within the flawed message sentence before the flaw. 
+A syntax check is performed only at the message level and not within the message content. 
+In cases where a data record requires multiple messages, 
+this check can be performed at the message level but is not used to check message content.
 
-|**Flags **|**Condition**|**Codable Instructions**|
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | Data sentence cannot be parsed to provide a valid observation. | If REC_CHAR ≠ NCHAR, flag = 4 |
+| Suspect=3 | N/A | N/A |
+| Pass=1 | Expected data sentence received; absence of parity errors. | N/A |
+
+Test Exception: None.
+
+Test specifications: To be established locally by the operator.
+
+Examples: NCHAR = 128
+
+**Test 3 - Location Test (Required)**
+
+Check for reasonable geographic location.
+Test checks that the reported present physical location (latitude/longitude) is within operatordetermined limits. 
+The location test(s) can vary from a simple impossible location to a more complex check for displacement (`DISP`) exceeding a distance limit (`RANGEMAX`) based upon a previous location and platform speed. 
+Operators may also check for erroneous locations based upon other criteria, 
+such as reported positions over land, as appropriate. 
+**Note:** Some operators linearly interpolate between surface GPS positions to derive positions during downglides and upglides. This Location Test addresses only the observed GPS surface positions.
+
+| Flags | Condition | Codable Instructions |
 |---|---|---|
-|Fail=4|Data sentence cannot be parsed<br>toprovide a valid observation.|If REC_CHAR ≠ NCHAR, flag = 4|
-|Suspect =3|N/A|N/A|
-|Pass=1|Expected data sentence received;<br>absence ofparityerrors.||
-|**Test Excepti**|**on**: None.||
-|**Test specific**<br>**Example:**|**ations to be established locally by the o**<br>NCHAR = 128|**perator.**|
+| --- | --- | --- |
+| Fail=4 | Impossible location. | LAT > \|90\| or LONG > \|180\|, flag = 4 |
+| Suspect=3 | Unlikely platform displacement. | `DISP` > `RANGEMAX`, flag = 3 |
+| Pass=1 | Applies for test pass condition. | N/A |
 
+Test Exception: None.
 
+Test specifications: To be established locally by the operator.
 
-~~10~~
+Examples: Displacement DISP calculated between sequential position reports, `RANGEMAX` = 20 km.
 
-###### Test 3) Location Test (Required)
-
-###### Check for reasonable geographic location.
-
-Test checks that the reported present physical location (latitude/longitude) is within operatordetermined limits. The location test(s) can vary from a simple impossible location to a more complex check for displacement (DISP) exceeding a distance limit (RANGEMAX) based upon a previous location and platform speed. Operators may also check for erroneous locations based upon other criteria, such as reported positions over land, as appropriate.
-
-**NOTE:** Some operators linearly interpolate between surface GPS positions to derive positions during downglides and upglides. This Location Test addresses only the observed GPS surface positions.
-
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|Impossible location.|LAT > | 90 | or LONG > | 180 |, flag = 4|
-|Suspect=3|Unlikely platform displacement.|DISP > RANGEMAX, flag = 3|
-|Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n**: None.||
-|**Test specifica**<br>**Example:**Dis|**tions to be established locally by the o**<br>placement DISP calculated between seq|**perator.**<br>uentialposition reports, RANGEMAX = 20 km|
-
-
-
-Test 4) Gross Range Test (Required)
+**Test 4 - Gross Range Test (Required)**
 
 Data point exceeds sensor or operator-selected min/max. Applies to T, S, C and P (pressure).
+All sensors have a limited output range, 
+and this can form the most rudimentary gross range check. 
+No values less than a minimum value or greater than the maximum value the sensor can output (`T_SENSOR_MIN`, `T_SENSOR_MAX`) are acceptable. 
+Additionally, the operator can select a smaller span (T_USER_MIN, T_USER_MAX) based upon local knowledge or a desire to draw attention to extreme values.
+**Note:** Operators may choose to flag as suspect values that exceed the calibration span but not the hardware limits (e.g., a value that sensor is not capable of producing or negative conductivity).
 
-All sensors have a limited output range, and this can form the most rudimentary gross range check. No values less than a minimum value or greater than the maximum value the sensor can output (T_SENSOR_MIN, T_SENSOR_MAX) are acceptable. Additionally, the operator can select a smaller span (T_USER_MIN, T_USER_MAX) based upon local knowledge or a desire to draw attention to extreme values.
-
-**NOTE:** Operators may choose to flag as suspect values that exceed the calibration span but not the hardware limits (e.g., a value that sensor is not capable of producing or negative conductivity).
-
-|**Flags **|**Condition**|**Codable Instructions**|
+| Flags | Condition | Codable Instructions |
 |---|---|---|
-|Fail=4|Reported value is outside of|If T_n_< T_SENSOR_MIN, or|
-||sensor span.|T_n_> T_SENSOR_MAX,flag= 4|
-|Suspect=3|Reported value is outside of|If T_n_< T_USER_MIN, or|
-||user-selected span.|T_n_> T_USER_MAX,flag= 3|
-|Pass=1|Applies for test pass condition|N/A|
+| Fail=4 | Reported value is outside of sensor span. | If Tₙ < T_SENSOR_MIN, or Tₙ > T_SENSOR_MAX, flag = 4 |
+| Suspect=3 | Reported value is outside of user-selected span. | If Tₙ < T_USER_MIN, or Tₙ > T_USER_MAX, flag = 3 |
+| Pass=1 | Applies for test pass condition. | N/A |
 
+Test Exception: None.
 
+Test specifications to be established locally by the operator.
 
-**Test Exception:** None.
+Examples: Operators to provide sensor and user min/max examples.
 
-**Test specifications to be established locally by the operator. Examples:** Operators to provide sensor and user min/max examples.
+**Test 5 - Pressure Test (Required)**
 
-~~11~~
+Check for monotonically ordered pressure record.
+Test inspects the downglide (upglide) to ensure a continuously increasing (decreasing) pressure series. 
+In this test example a downglide pressure series is examined for a continuously increasing pressure. 
+Pressure (Pₙ) is routinely expected to be larger than Pₙ₋₁. Reasons for rare exceptions to this expectation may be found in Merckelbach et al. (2010) and elsewhere.
 
-###### Test 5) Pressure Test (Required)
+Note: The test flags a neutrally buoyant glider record as suspect or of high interest.
 
-###### Check for monotonically ordered pressure record.
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | No fail flag is identified for this test. | N/A |
+| Suspect=3 | Pressure does not monotonically increase with depth. | If Pₙ ≤ Pₙ₋₁, flag = 3 |
+| Pass=1 | Applies for test pass condition. | N/A |
 
-Test inspects the downglide (upglide) to ensure a continuously increasing (decreasing) pressure series. In this test example a downglide pressure series is examined for a continuously increasing pressure. Pressure (Pn) is routinely expected to be larger than Pn-1. Reasons for rare exceptions to this expectation may be found in Merckelbach et al. (2010) and elsewhere.
+Test Exception: None.
 
-**Note:** The test flags a neutrally buoyant glider record as suspect or of high interest.
+Test specifications: To be established locally by the operator.
 
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|No fail flag is identified for this<br>test.|N/A|
-|Suspect=3|Pressure does not monotonically<br>increase with depth.|If P_n_ ≤P_n_-1, flag = 3|
-|Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n**: None.||
-|**Test specifica**<br>**Example:**|**tions to be established locally by the o**<br>None.|**perator.**|
+Examples: None.
 
+**Test 6 - Climatology Test (Strongly Recommended)**
 
+Test that data point falls within seasonal expectations. Applies to T and S.
 
-Test 6) Climatology Test (Strongly Recommended)
+This test is a variation on the gross range check, 
+where the gross range `T_Season_MAX` and `T_Season_MIN` are adjusted monthly, seasonally, 
+or at some other operator-selected time period (`TIM_TST`). Expertise of the local operator is required to determine reasonable seasonal averages. 
+Longer time series permit more refined identification of appropriate thresholds. 
+The ranges should also vary with water depth, if the measurements are taken at sites that cover significant vertical extent and if climatological ranges are meaningfully different at different depths (e.g., narrower ranges at greater depth). 
+Climatology databases such as the temperature Variability Generalized Digital Environmental Model (Allen et al. 2012) or the National Centers for Environmental Information World Ocean Database (Boyer et al. 2013) may be used for climatological guidance.
 
-###### Test that data point falls within seasonal expectations. Applies to T and S.
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | Because of the dynamic nature of T and S in some locations, no fail flag is identified for this test. | N/A |
+| Suspect=3 | Reported value is outside of operator-identified climatology window. | If Tₙ < T_Season_MIN or Tₙ > T_Season_MAX, flag = 3 |
+| Pass=1 | Applies for test pass condition. | N/A |
 
-This test is a variation on the gross range check, where the gross range T_Season_MAX and T_Season_MIN are adjusted monthly, seasonally, or at some other operator-selected time period (TIM_TST). Expertise of the local operator is required to determine reasonable seasonal averages. Longer time series permit more refined identification of appropriate thresholds. The ranges should also vary with water depth, if the measurements are taken at sites that cover significant vertical extent and if climatological ranges are meaningfully different at different depths (e.g., narrower ranges at greater depth). Climatology databases such as the temperature Variability Generalized Digital Environmental Model (Allen et al. 2012) or the National Centers for Environmental Information World Ocean Database (Boyer et al. 2013) may be used for climatological guidance.
+Test Exception: None.
 
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|Because of the dynamic nature<br>of T and S in some locations, no<br>fail flag is identified for this test.|N/A|
-|Suspect=3|Reported value is outside of<br>operator-identified climatology<br>window.|If T_n_ < T_Season_MIN or<br>T_n_> T_Season_MAX, flag = 3|
-|Pass=1|Applies for test pass condition.|N/A|
-|**Test Excepti**|**on:**None.||
-|**Test specific**<br>at all TIM_TS<br>**Examples:**|**ations to be established locally by opera**<br>T intervals**.**<br>T_SPRING_MIN = 12 °C, T_SPRING_MA|**tor:**A seasonal matrix of Tmaxand Tminvalues<br>X = 18.0 °C|
+Test specifications: To be established locally by operator: a seasonal matrix of Tmax and Tmin values at all `TIM_TST` intervals.
 
+Examples: `T_SPRING_MIN` = 12 °C, `T_SPRING_MAX` = 18.0 °C
 
+**Test 7 - Spike Test (Strongly Recommended)**
 
-~~12~~
+Data point n-1 exceeds a selected threshold relative to adjacent data points. Applies to T, S, C, and P.
+This check is for single value spikes, specifically the value at point n-1. Spikes consisting of more than one data point are difficult to capture, 
+but their onset may be flagged by the rate of change test. 
+The spike test consists of two operator-selected thresholds, THRSHLD_LOW and THRSHLD_HIGH. 
+Adjacent data points (n₋₂ and n₀) are averaged to form a spike reference (SPK_REF). 
+The absolute value of the spike is tested to capture positive and negative spikes. Large spikes are easier to identify as outliers and flag as failures. 
+Smaller spikes may be real and are only flagged suspect. 
+The thresholds may be fixed values or dynamically established (for example, a multiple of the standard deviation over an operator-selected depth range). 
+Unpumped sensors transiting thermal gradients are perhaps the most common source of spikes in salinity.
 
-###### Test 7) Spike Test (Strongly Recommended)
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | High spike threshold exceeded. | If \|Sₙ₋₁ - `SPK_REF`\| > `THRSHLD_HIGH`, flag = 4 |
+| Suspect=3 | Low spike threshold exceeded. | If \|Sₙ₋₁ - SPK_REF\| > `THRSHLD_LOW` and \|Sₙ₋₁ - `SPK_REF`\| ≤ `THRSHLD_HIGH`, flag = 3 |
+| Pass=1 | Applies for test pass condition. | N/A |
 
-Data point _n_ -1 exceeds a selected threshold relative to adjacent data points. Applies to T, S, C, and P.
+Test Exception: None.
 
-This check is for single value spikes, specifically the value at point _n_ -1. Spikes consisting of more than one data point are difficult to capture, but their onset may be flagged by the rate of change test. The spike test consists of two operator-selected thresholds, THRSHLD_LOW and THRSHLD_HIGH. Adjacent data points ( _n_ -2 and _n0_ ) are averaged to form a spike reference (SPK_REF). The absolute value of the spike is tested to capture positive and negative spikes. Large spikes are easier to identify as outliers and flag as failures. Smaller spikes may be real and are only flagged suspect. The thresholds may be fixed values or dynamically established (for example, a multiple of the standard deviation over an operator-selected depth range). Unpumped sensors transiting thermal gradients are perhaps the most common source of spikes in salinity.
+Test specifications: To be established locally by the operator.
 
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|High spike threshold exceeded.|If|S_n_-1- SPK_REF|> THRSHLD_HIGH,flag= 4|
-|Suspect=3|Low spike threshold exceeded.|If | S_n_-1- SPK_REF| > THRSHLD_LOW and<br>|S_n_-1- SPK_REF| ≤THRSHLD_HIGH,flag= 3|
-|Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n:**None.||
-|**Test specifica**<br>**Examples:**TH|**tions to be established locally by the**<br>RSHLD_LOW = 0.02, THRSHLD_HIGH|**operator.**<br>= 0.05|
+Examples: `THRSHLD_LOW` = 0.02, `THRSHLD_HIGH` = 0.05
 
+**Test 8 - Rate of Change Test (Strongly Recommended)**
 
+Excessive rise/fall test. Applies to T, S, C, and P.
+This test inspects the time series for a time rate of change that exceeds a threshold value identified by the operator. 
+T, C, and S values can change substantially over small depth ranges in some locations, hindering the value of this test. 
+A balance must be found between a threshold set too low, 
+which triggers too many false alarms, and one set too high, 
+making the test ineffective. 
+Determining the excessive rate of change is left to the local operator. 
+The following show three different examples of ways to select the thresholds provided by QARTOD VI participants. 
+Implementation of this test can be challenging. 
+Upon failure, 
+it is unknown which of the points is bad. 
+Further, 
+upon failing a data point, it remains to be determined how the next iteration can be handled.
 
-~~13~~
+- The rate of change between temperature Tₙ₋₁ and Tₙ must be less than an operator-defined multiple of the local standard deviation (SD). The local operator determines both the number of SDs (`N_DEV`) and the depth sample interval over which the SDs (`ZRANGE_DEV`) are calculated.
+- The rate of change between temperature Tₙ₋₁ and Tₙ must be less than 2 °C + 2SD.
+- |Tₙ₋₁ - Tₙ₋₂| + |Tₙ₋₁ - Tₙ| ≤ 2*N_DEV*SD (example provided by EuroGOOS).
 
-###### Test 8) Rate of Change Test (Strongly Recommended)
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | No fail flag is identified for this test. | N/A |
+| Suspect=3 | The rate of change exceeds the selected threshold. | If \|Tₙ - Tₙ₋₁\| > N_DEV*SD, flag = 3 |
+| Pass=1 | Applies for test pass condition. | N/A |
 
-###### Excessive rise/fall test. Applies to T, S, C, and P.
+Test Exception: None.
 
-This test inspects the time series for a time rate of change that exceeds a threshold value identified by the operator. T, C, and S values can change substantially over small depth ranges in some locations, hindering the value of this test. A balance must be found between a threshold set too low, which triggers too many false alarms, and one set too high, making the test ineffective. Determining the excessive rate of change is left to the local operator. The following show three different examples of ways to select the thresholds provided by QARTOD VI participants. Implementation of this test can be challenging. Upon failure, it is unknown which of the points is bad. Further, upon failing a data point, it remains to be determined how the next iteration can be handled.
+Test specifications: To be established locally by operator.
 
-- The rate of change between temperature T _n_ -1 and T _n_ must be less than an operator-defined multiple of the local standard deviation (SD). The local operator determines both the number of SDs (N_DEV) and the depth sample interval over which the SDs (ZRANGE_DEV) are calculated.
+Examples: `N_DEV` = 3, `ZRANGE_DEV` = 25 meters
 
-- The rate of change between temperature T _n_ -1 and T _n_ must be less than 2 °C +2SD.
+**Test 9 - Flat Line Test (Strongly Recommended)**
 
-- |Tn-1 – Tn-2| + |Tn-1 – Tn| <= 2*N_DEV*SD (example provided by EuroGOOS).
+Invariant value. Applies to T, S, C, and P.
+When some sensors and/or data collection platforms fail, 
+the result can be a continuously repeated observation of the same value. 
+This test compares the present observation (_n_) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations. 
+Observation (_n_) is flagged if it has the same value as previous observations within a tolerance value, `EPS`, 
+to allow for numerical round-off error. Note that historical flags are not changed.
 
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|No fail flag is identified for this<br>test.|N/A|
-|Suspect=3|The rate of change exceeds the<br>selected threshold.|If |T_n_– T_n_-1|>N_DEV*SD, flag = 3|
-|Pass=1|Applies for test pass condition.|N/A|
+Uniformly mixed surface layers and deep waters may approach flat line conditions, 
+while still being valid observations. 
+Judicious selection of the three described thresholds by knowledgeable operators is needed to minimize false fail or suspect flags.
 
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | When many of the most recent observations are equal, Tₙ is flagged fail. | For i=1, `REP_CNT_FAIL`: Tₙ - Tₙ₋ᵢ < `EPS`, flag = 4 |
+| Suspect=3 | It is possible but unlikely that the present observation and the multiple previous observations would be equal. When the most recent observations are equal, Tₙ is flagged suspect. | For i=1, `REP_CNT_SUSPECT`: Tₙ - Tₙ₋ᵢ < EPS, flag = 3 |
+| Pass=1 | Applies for test pass condition. | N/A |
 
+Test Exception: None.
 
-**Test Exception:** None. **Test specifications to be established locally by operator. Example:** N <mark>_</mark> DEV = 3, ZRANGE <mark>_</mark> DEV = 25 meters
+Test specifications: To be established locally by the operator.
 
-~~14~~
+Examples: `REP_CNT_FAIL` = 20, `REP_CNT_SUSPECT` = 10, `EPS` = 0.005°
 
-###### Test 9) Flat Line Test (Strongly Recommended)
+**Test 10 - Multi-Variate Test (Suggested)**
 
-###### Invariant value. Applies to T, S, C, and P.
+Comparison to other variables. Applies to T, C, S, and P.
+This is an advanced family of tests, 
+starting with the simpler test described here and anticipating growth towards full co-variance testing in the future. 
+It is doubtful that anyone is conducting tests such as these in real time. 
+As these tests are developed and implemented, 
+they should be documented and standardized in later versions of this manual.
 
-When some sensors and/or data collection platforms fail, the result can be a continuously repeated observation of the same value. This test compares the present observation ( _n_ ) to a number (REP_CNT_FAIL or REP_CNT_SUSPECT) of previous observations. Observation ( _n_ ) is flagged if it has the same value as previous observations within a tolerance value, EPS, to allow for numerical round-off error. Note that historical flags are not changed.
-
-Uniformly mixed surface layers and deep waters may approach flat line conditions, while still being valid observations. Judicious selection of the three described thresholds by knowledgeable operators is needed to minimize false fail or suspect flags.
-
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|When many of the most recent<br>observations are equal, T_n_is<br>flagged fail.|For_i_=1,REP_CNT_FAIL T_n_-T_n_-_i_ <EPS ,<br>flag = 4|
-|Suspect=3|It is possible but unlikely that<br>the present observation and the<br>multiple previous observations<br>would be equal. When the most<br>recent observations are equal,<br>T_n_is flagged suspect.|For_i_=1,REP_CNT_SUSPECT T_n_-T_n_-_i_ <EPS,<br>flag = 3|
-|Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**|**n**: None.||
-|**Test specifica**<br>**Examples:**|**tions to be established locally by the o**<br>REP_CNT_FAIL = 20, REP_CNT_SUSPE|**perator.**<br>CT= 10, EPS = 0.005°|
-
-
-
-~~15~~
-
-###### Test 10) Multi-Variate Test (Suggested)
-
-###### Comparison to other variables. Applies to T, C, S, and P.
-
-This is an advanced family of tests, starting with the simpler test described here and anticipating growth towards full co-variance testing in the future. It is doubtful that anyone is conducting tests such as these in real time. As these tests are developed and implemented, they should be documented and standardized in later versions of this manual.
-
-This example pairs rate of change tests as described in test 8. The T (or S or P) rate of change test is conducted with a more restrictive threshold (N_T_DEV). If this test fails, a second rate of change test operating on a second variable (conductivity or salinity would be the most probable) is conducted. The absolute value rate of change should be tested, since the relationship between T and variable two is indeterminate. If the rate of change test on the second variable fails to exceed a threshold (e.g., an anomalous step is found in temperature and is lacking in salinity), then the T _n_ value is flagged.
-
+This example pairs rate of change tests as described in test 8. 
+The T (or S or P) rate of change test is conducted with a more restrictive threshold (`N_T_DEV`). 
+If this test fails, 
+a second rate of change test operating on a second variable (conductivity or salinity would be the most probable) is conducted. 
+The absolute value rate of change should be tested, 
+since the relationship between T and variable two is indeterminate. 
+If the rate of change test on the second variable fails to exceed a threshold (e.g., an anomalous step is found in temperature and is lacking in salinity), then the Tₙ value is flagged.
 Note that Test 13, TS Curve/Space Test is a well-known example of the multi-variate test.
 
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|No fail flag is identified for this<br>test.|N/A|
-|Suspect=3|T_n_fails the rate of change and<br>the second variable does not<br>exceed the rate of change.|If |T_n_– T_n_-1|>N_T_DEV*SD_T<br>AND<br>|S_n_– S_n_-1|<N_S_DEV*SD_S, flag = 3|
-|Pass=1||N/A|
-|**Test Exceptio**|**n:**None.||
-|**Test specifica**<br>**Examples:**|**tions to be established locally by the op**<br>N_T_DEV = 2, N_TEMP_DEV=2, ZRANGE|**erator.**<br>_DEV = 25 meters|
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | No fail flag is identified for this test. | N/A |
+| Suspect=3 | Tₙ fails the rate of change and the second variable does not exceed the rate of change. | If \|Tₙ - Tₙ₋₁\| > N_T_DEV*SD_T AND \|Sₙ - Sₙ₋₁\| < N_S_DEV*SD_S, flag = 3 |
+| Pass=1 | N/A | N/A |
 
+Test Exception: None.
 
+Test specifications: To be established locally by the operator.
 
-In a more complex case, more than one secondary rate of change test can be conducted. Temperature, salinity, turbidity, nutrients, and chlorophyll are all possible secondary candidates, and all could be checked for anomalous rate of change values. In this case, a knowledgeable operator may elect to pass flag a high rate of change observation when any one of the secondary variables also exhibits a high rate of change. Such tests border on modeling, should be carefully considered, and may be beyond the scope of this effort.
+Examples: `N_T_DEV` = 2, `N_TEMP_DEV` = 2, `ZRANGE_DEV` = 25 meters
 
-The Glider DAC TS QC committee recognized the high value in full co-variance testing but also noted the challenges. Therefore full co-variance QC tests are still considered experimental.
+In a more complex case, more than one secondary rate of change test can be conducted. 
+Temperature, salinity, turbidity, 
+nutrients, and chlorophyll are all possible secondary candidates, 
+and all could be checked for anomalous rate of change values. 
+In this case, 
+a knowledgeable operator may elect to pass flag a high rate of change observation when any one of the secondary variables also exhibits a high rate of change. 
+Such tests border on modeling, should be carefully considered, 
+and may be beyond the scope of this effort.
 
-~~16~~
+The Glider DAC TS QC committee recognized the high value in full co-variance testing but also noted the challenges. 
+Therefore full co-variance QC tests are still considered experimental.
 
-###### Test 11) Attenuated Signal Test (Suggested)
+**Test 11 - Attenuated Signal Test (Suggested)**
 
 A test for inadequate variation of the time series. Applies to T, S, C, and P. A common sensor failure mode can provide a data series that is nearly but not exactly a flat line (e.g., if the conductivity cell was to become clogged). This test inspects for a standard deviation (SD) value or a range variation (MAX-MIN) value that fails to exceed threshold values (MIN_VAR_WARN, MIN_VAR_FAIL) over a selected depth range (TST_ZRANGE).
 
