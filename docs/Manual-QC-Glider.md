@@ -1391,27 +1391,71 @@ By examining the install_date and remove_date (if not blank) for each definition
 LAGER determines which block applies to the present data set being processed (from the set of dates/times of the observation in the time series). 
 If the data set was measured after the install date, 09/06/2011, then the second block must be used.
 
-###### **6.4.4**
+##### 6.4.4
 
-If scaling is required (calibrated = no), then LAGER constructs the calibration file name for this specific instrument by combining the instrument name (called type in the sensorconfig file, i.e., type = bamslk) with the serial number for this instrument (called sn, e.g., sn = BAMSLK-006G). For the current example, the calibration file name is bamslk_BAMSLK_006G.dat and is found together with all other calibration files in the $lager_setup_files/calibration directory.  The calibration file contains one definition block for each time this instrument was calibrated, and within each one of these blocks is one sub-block for each type of measurement made with this instrument.  In the case of the bamslk instrument, only one type of measurement, type = c (attenuation), is made. Within this sub-block, values for all of the required calibration parameters are listed, e.g., wavelength, pathlength, u_bbam_scs_air, u_bbam_scs_cal, u_bbam_scs_current, and scaled_priority. The last parameter, scaled_priority, determines what to do if the incoming raw file contains both the unscaled and the scaled times series for this variable measured by this instrument. It determines whether to keep the scaled values already available, or to replace them with newly scaled values produced by applying the calibration parameters to the unscaled time series values. The replacement might be required in some cases, for example, if it is discovered that the calibration coefficients used by the glider’s computer to scale the raw data were incorrect.
+If scaling is required (calibrated = no), 
+then LAGER constructs the calibration file name for this specific instrument by combining the instrument name (called type in the sensorconfig file, i.e., type = bamslk) with the serial number for this instrument (called sn, e.g., sn = BAMSLK-006G). 
+For the current example, 
+the calibration file name is bamslk_BAMSLK_006G.dat and is found together with all other calibration files in the $lager_setup_files/calibration directory. 
+The calibration file contains one definition block for each time this instrument was calibrated, 
+and within each one of these blocks is one sub-block for each type of measurement made with this instrument. 
+In the case of the bamslk instrument, 
+only one type of measurement, type = c (attenuation), is made. 
+Within this sub-block, values for all of the required calibration parameters are listed, e.g., 
+wavelength, pathlength, u_bbam_scs_air, u_bbam_scs_cal, u_bbam_scs_current, and scaled_priority. 
+The last parameter, 
+scaled_priority, 
+determines what to do if the incoming raw file contains both the unscaled and the scaled times series for this variable measured by this instrument. 
+It determines whether to keep the scaled values already available, 
+or to replace them with newly scaled values produced by applying the calibration parameters to the unscaled time series values. 
+The replacement might be required in some cases, 
+for example, 
+if it is discovered that the calibration coefficients used by the glider’s computer to scale the raw data were incorrect.
 
-###### **6.4.5**
+##### 6.4.5
 
-The unscaled optics measurements are scaled using the calibration information extracted from the specified instrument calibration file, applicable for the observation dates. For some unscaled observations, such as those made by the auvb instrument, more than one input time series is required and more than one scaled output time series is produced. The number of inputs and outputs is specified in the definition block for each instrument by the nvarinput and nvaroutput variables in the optics_variables_info.dat file. Missing values are assumed to be set to 1. For the auvb instrument, the two unscaled measurement time series variables required for input are sci_auvb_ref and sci_auvb_sig, and the ouput measurement type are vis (visibility), c (attenuation), and b (scattering). For the bamslk instrument used in the examples above, only one unscaled input (sci_bbam_corr_sig) is required and only one output (c, attenuation) is produced. The
+The unscaled optics measurements are scaled using the calibration information extracted from the specified instrument calibration file, 
+applicable for the observation dates. 
+For some unscaled observations, 
+such as those made by the auvb instrument, 
+more than one input time series is required and more than one scaled output time series is produced. 
+The number of inputs and outputs is specified in the definition block for each instrument by the nvarinput and nvaroutput variables in the optics_variables_info.dat file. 
+Missing values are assumed to be set to 1. 
+For the auvb instrument, 
+the two unscaled measurement time series variables required for input are sci_auvb_ref and sci_auvb_sig, 
+and the ouput measurement type are vis (visibility), 
+c (attenuation), and b (scattering). 
+For the bamslk instrument used in the examples above, only one unscaled input (sci_bbam_corr_sig) is required and only one output (c, attenuation) is produced. 
+The scaling equations used to scale each type of unscaled observation (unscaled values usually have units of counts) for each type of instrument are discussed below.
 
-C-16
+##### 6.4.6
 
-scaling equations used to scale each type of unscaled observation (unscaled values usually have units of counts) for each type of instrument are discussed below.
+Some, but not all, 
+definition blocks for unscaled measurements in the optics_variables_info.dat file contain a parameter called “add_scaled_offset”. 
+If this parameter is set to yes, 
+then LAGER looks a file named the same as the calibration file for this instrument and serial number, 
+but it it looks in the `$lager_setup_files/scaled_offsets directory` instead of in the `$lager_setup_files/calibration directory`. 
+If it finds this file, 
+then it reads the file and extracts the values attached to two parameters, 
+named “scaled_offset_date” and “scaled_offset”. 
+The value attached to scaled_offset is added to the final scaled value of the optics variable. 
+If it is zero, then no change takes place. 
+The offset value is turned on at the specified scaled_offset_date (e.g., on 20100120), 
+and is applied to all scaled values from this instrument forever (for the specified measurement type if more than one type of measurement is made from this instrument) or until the date of the next scaled_offset_date (with its corresponding scaled_offset value) found in this scaled offsets file. 
+To turn off the scaling, 
+a turn-off date must be specified in the scaled_offset_date value, 
+and the scaled_offset value must be set to 0.
 
-###### **6.4.6**
+##### 6.4.7
 
-Some, but not all, definition blocks for unscaled measurements in the optics_variables_info.dat file contain a parameter called “add_scaled_offset”. If this parameter is set to yes, then LAGER looks a file named the same as the calibration file for this instrument and serial number, but it it looks in the
-
-$lager_setup_files/scaled_offsets directory instead of in the $lager_setup_files/calibration directory. If it finds this file, then it reads the file and extracts the values attached to two parameters, named “scaled_offset_date” and “scaled_offset”. The value attached to scaled_offset is added to the final scaled value of the optics variable. If it is zero, then no change takes place. The offset value is turned on at the specified scaled_offset_date (e.g., on 20100120), and is applied to all scaled values from this instrument forever (for the specified measurement type if more than one type of measurement is made from this instrument) or until the date of the next scaled_offset_date (with its corresponding scaled_offset value) found in this scaled offsets file.  To turn off the scaling, a turn-off date must be specified in the scaled_offset_date value, and the scaled_offset value must be set to 0.
-
-###### **6.4.7**
-
-After scaling, if required, any unprocessed scaled measurement that is identified as measurement type = bb in the optics_variables_info.dat file is really in a form called beta instead of bb (backscattering coefficient).  The true scaled backscattering coefficient, bb, is computed from beta and then replaces beta in the final saved output. The calculation involves first subtracting the salinity-dependent volume scattering of water at the wavelength of the instrument (assumed to be between 300 and 900 nm) from beta. Then from that value, the backscattering coefficient at 177 degrees (for the WebLabs bb pucks) is computed. Finally, the backscattering of seawater is added to arrive at bb, the backscattering coefficient.
+After scaling, 
+if required, 
+any unprocessed scaled measurement that is identified as measurement type = bb in the optics_variables_info.dat file is really in a form called beta instead of bb (backscattering coefficient). 
+The true scaled backscattering coefficient, bb, is computed from beta and then replaces beta in the final saved output. 
+The calculation involves first subtracting the salinity-dependent volume scattering of water at the wavelength of the instrument (assumed to be between 300 and 900 nm) from beta. 
+Then from that value, 
+the backscattering coefficient at 177 degrees (for the WebLabs bb pucks) is computed. 
+Finally, the backscattering of seawater is added to arrive at bb, the backscattering coefficient.
 
 If opt_V_flag(i) = 0 and V(i) fails the Gross Global Bounds Check, then set opt_V_flag(i) = 2.
 
@@ -1419,155 +1463,205 @@ If Z(i) fails the Profile Top End (surface chop) test, set opt_V_flag(i) = 7.
 
 If opt_V_flag(i) = 0 and V(i) fails the Spike test,  set opt_V_flag(i) = 4).
 
-Check each separate V profile. If a profile fails the Constant Profile test, then set opt_V_flag(i) = 6 for all indexes i contained within the profile.
+Check each separate V profile. 
+If a profile fails the Constant Profile test, 
+then set opt_V_flag(i) = 6 for all indexes i contained within the profile.
 
-If opt_V_flag(i) = 0 and V(i) fails the Running St. Dev. test, then set opt_V_flag(i)=5.
+If opt_V_flag(i) = 0 and V(i) fails the Running St. Dev. test, 
+then set opt_V_flag(i)=5.
 
-###### **6.4.8**
+##### 6.4.8
 
-LAGER stores three output arrays for each processed optics measurement time series. The output variable name for the scaled time series containing all unaltered (except due to scaling, conversion from beta to bb, or to offsetting if specified) values, some of which might be flagged as bad, has the form opt_V_orig, where V can be bb, ed, c, b, vis, par,
+LAGER stores three output arrays for each processed optics measurement time series. 
+The output variable name for the scaled time series containing all unaltered (except due to scaling, conversion from beta to bb, or to offsetting if specified) values, 
+some of which might be flagged as bad, 
+has the form opt_V_orig, where V can be bb, ed, c, b, vis, par, Flchl, Flphyco, or Flcdom. 
+The second series, named opt_v, 
+is identical to the opt_v_orig series except that all flagged values (opt_V_flag(i) > 0) are removed (i.e., set to the missing value). 
+The final series is a smoothed series, 
+created by smoothing the opt_v series, is called opt_V_sm. 
+The smoothing is performed at each depth, Z(i), if opt_V(i) is not missing, 
+by averaging all values within the depth window, 
+depthwindow meters wide, centered on Z(i). 
+The value of the variable, depthwindow, 
+is stored in the definition block for each incoming unprocessed variable name in the optics_variables_info.dat in the $lager_setup_files directory.
 
-C-17
+#### 6.5 Quality Control Tests
 
-Flchl, Flphyco, or Flcdom. The second series, named opt_v, is identical to the opt_v_orig series except that all flagged values (opt_V_flag(i) > 0) are removed (i.e., set to the missing value). The final series is a smoothed series, created by smoothing the opt_v series, is called opt_V_sm. The smoothing is performed at each depth, Z(i), if opt_V(i) is not missing, by averaging all values within the depth window, depthwindow meters wide, centered on Z(i). The value of the variable, depthwindow, is stored in the definition block for each incoming unprocessed variable name in the optics_variables_info.dat in the $lager_setup_files directory.
-
-###### **6.5 Quality Control Tests**
-
-###### **6.5.1 Depth check T and S.  Flag = 1**
+##### 6.5.1 Depth check T and S. Flag = 1
 
 **temp_flag(i) = 1** and **salt_flag(i) = 1** if Z(i) < 0 m (surface).
 
-Prior to this check, if this is a Seaglider, a depth offset if performed if required. The Seaglider-measured depth, log SM_DEPTHo (units of meters), at the surface is read from the input un-QC’d NetCDF file. If found, then all non-missing depths, Z(i), are set to Z(i) = Z(i) – log SM_DEPTHo – 0.3 (all units of m) and all non-missing pressures, P(i), are set to P(i)= P(i)- log    SM_DEPTHo-0.3 (all units of dbars).  The extra 0.3 m or 0.3 dbars is subtracted to reduce the possibility of negative values due to small fluctuations. The modified Seaglider depth and pressure are used in the QC calculations and are also written to the output final QC’d NetCDF file.
+Prior to this check, 
+if this is a Seaglider, 
+a depth offset if performed if required. 
+The Seaglider-measured depth, 
+log SM_DEPTHo (units of meters), at the surface is read from the input un-QC’d NetCDF file. 
+If found, then all non-missing depths, Z(i), are set to `Z(i) = Z(i) – log SM_DEPTHo – 0.3` (all units of m) and all non-missing pressures, P(i), are set to `P(i)= P(i) - log SM_DEPTHo-0.3` (all units of dbars). 
+The extra 0.3 m or 0.3 dbars is subtracted to reduce the possibility of negative values due to small fluctuations. 
+The modified Seaglider depth and pressure are used in the QC calculations and are also written to the output final QC’d NetCDF file.
 
-###### **6.5.2 Global bounds check. Flag = 2**
+##### 6.5.2 Global bounds check. Flag = 2
 
-###### temperature
+temperature
 
-**temp_flag(i) = 2** if not already flagged and if T(i) < -2.5º C or T(i) > 43º C. For comparison, critical values are -2.5º C and 40º C in Schmid et al. (2007).
+      temp_flag(i) = 2 if not already flagged and if T(i) < -2.5º C or T(i) > 43º C. For comparison, critical values are -2.5º C and 40º C in Schmid et al. (2007).
 
 salinity
 
-Salinity is computed from the corrected conductivity (see thermal lag correction below) and then salinity is modified to produce a statically stable profile to produce the final salinity (S(i)).
+      Salinity is computed from the corrected conductivity (see thermal lag correction below) and then salinity is modified to produce a statically stable profile to produce the final salinity (S(i)).
 
-**salt_flag(i) = 2** if not previously flagged and if S(i) < 0 psu or S(i) > 45 psu. For comparison, critical values are 0 psu and 41 psu in Schmid et al. (2007).
+      salt_flag(i) = 2 if not previously flagged and if S(i) < 0 psu or S(i) > 45 psu. For comparison, critical values are 0 psu and 41 psu in Schmid et al. (2007).
 
 optics
 
-**opt_V_flag(i) = 2** if not previously flagged and if V(i) < validrangemin or V(i) > validrangemax. Both parameters are obtained for a particular variable V from the optics_variables_info.dat file.
+      opt_V_flag(i) = 2 if not previously flagged and if V(i) < validrangemin or V(i) > validrangemax. Both parameters are obtained for a particular variable V from the optics_variables_info.dat file.
 
-###### **6.5.3 Comparison to GDEM.  Flag = 3**
+##### 6.5.3 Comparison to GDEM. Flag = 3
 
-GDEMV3.0 is the navy's standard monthly ocean temperature and salinity climatology (ref). It is global, monthly, has a 0.25 degree geographic latitude and longitude resolution, and is defined at 78 standard depths from the surface to 6600 m depth. For each observation profile, the GDEM temperature (TG), salinity (TS), temperature standard deviation (TGstd), and salinity standard deviation (SGstd) profiles from the
+GDEMV3.0 is the navy's standard monthly ocean temperature and salinity climatology (ref). 
+It is global, monthly, has a 0.25 degree geographic latitude and longitude resolution, 
+and is defined at 78 standard depths from the surface to 6600 m depth. 
+For each observation profile, 
+the GDEM temperature (TG), 
+salinity (TS), 
+temperature standard deviation (TGstd), 
+and salinity standard deviation (SGstd) profiles from the nearest location and month are extracted and interpolated to the depths of the observed profile.
 
-C-18
+**temp_flag(i) = 3**    if Z(i) <= 100 m and |(T(i)-TG(i))/TGstd(i)| > 8
 
-nearest location and month are extracted and interpolated to the depths of the observed profile.
+**salt_flag(i) = 3**    if Z(i) <= 100 m and |(S(i)-SG(i))/SGstd(i)| > 8 or if Z(i) > 100 m and |(S(i)-SG(i))/SGstd(i)| > 8
 
-**temp_flag(i) = 3** if Z(i) <= 100 m and |(T(i)-TG(i))/TGstd(i)| > 8
+Values of 5 standard deviations, 
+rather than 8, were previously used, 
+but too many cases occurred that failed this test, 
+even though the T and S were apparently good. 
+This test needs to be re-evaluated, 
+modified for selected conditions, and inserted into the QC coding.
 
-**salt_flag(i) = 3** if Z(i) <= 100 m and |(S(i)-SG(i))/SGstd(i)| > 8 or if Z(i) > 100 m and |(S(i)-SG(i))/SGstd(i)| > 8
+##### 6.5.4 Constant profile. Flag = 11
 
-Values of 5 standard deviations, rather than 8, were previously used, but too many cases occurred that failed this test, even though the T and S were apparently good. This test needs to be re-evaluated, modified for selected conditions, and inserted into the QC coding.
+Each ascending and descending profile within the entire dive is checked separately. 
+The maximum and minimum value on each profile is determined while ignoring all missing and previously flagged values. 
+Every point in a profile is flagged as bad if the difference between the maximum and minimum values on the profile is less than (approximately) the resolution of the instrument.
 
-###### **6.5.4 Constant profile.  Flag = 11**
+temperature
 
-Each ascending and descending profile within the entire dive is checked separately. The maximum and minimum value on each profile is determined while ignoring all missing and previously flagged values. Every point in a profile is flagged as bad if the difference between the maximum and minimum values on the profile is less than (approximately) the resolution of the instrument.
-
-###### temperature
-
-**temp_flag(i)= 11** if max(T(k))-min(T(k)) < 0.001° C, where k= start to end array index of profile, and i=start to end array index of profile.
+      temp_flag(i) = 11 if max(T(k))-min(T(k)) < 0.001°C, where k= start to end array index of profile, and i=start to end array index of profile.
 
 conductivity and salinity
 
-The measured conductivity profiles and the computed salinity profiles are not checked for constant values.
+      The measured conductivity profiles and the computed salinity profiles are not checked for constant values.
 
 optics
 
-**opt_V_flag(i) = 6** if max(V(k))-min(V(k)) < resolution, where k= start to end array index of profile, and i=start to end array index of profile.
+      opt_V_flag(i) = 6 if max(V(k))-min(V(k)) < resolution, where k = start to end array index of profile, and i=start to end array index of profile.
 
-###### **6.5.5 Spike test.  Flag = 4.**
+##### 6.5.5 Spike test. Flag = 4.
 
-###### temperature
+temperature
 
-**temp_flag(i) = 4** if not previously flagged and
+      temp_flag(i) = 4 if not previously flagged and
 
-|T(i)-(T(i+1)+T(i-1))/2| - |T(i+1)-T(i-1)| > K, where K = 2º C (Z(i) < 500 m) or K = 1º C (Z(i) >= 500 m.
+      |T(i)-(T(i+1)+T(i-1))/2| - |T(i+1)-T(i-1)| > K, 
+      
+      where K = 2º C (Z(i) < 500 m) or K = 1º C (Z(i) >= 500 m.
 
-For comparison, critical values are 6º C and 2º C in the same ranges in Schmid et al. (2007).  If temperature fails this spike test, then **salt_flag(k) = 4** is also set.
+      For comparison, critical values are 6º C and 2º C in the same ranges in Schmid et al. (2007). 
+      If temperature fails this spike test, then salt_flag(k) = 4 is also set.
 
 conductivity
 
-**salt_flag(i) = 4** if |C(i)-(C(i+1)+C(i-1))/2| - |C(i+1)-C(i-1)| > K, where K = 0.02 S/m (Z(i) < 500 m) or K = 0.01 S/m (Z(i) >= 500 m). If the temperature failed the spike test, then the salt_flag(i) will already be set to 4.  For conductivity (not for temperature or salinity), whenever a conductivity spike is detected by this test, it is removed and replaced by a value linearly interpolated (versus time) from the two surrounding values.  Then, the salt flag is reset to zero.
+      salt_flag(i) = 4 if |C(i)-(C(i+1)+C(i-1))/2| - |C(i+1)-C(i-1)| > K, where K = 0.02 S/m (Z(i) < 500 m) or K = 0.01 S/m (Z(i) >= 500 m). 
+      If the temperature failed the spike test, 
+      then the salt_flag(i) will already be set to 4. 
+      For conductivity (not for temperature or salinity), 
+      whenever a conductivity spike is detected by this test, 
+      it is removed and replaced by a value linearly interpolated (versus time) from the two surrounding values. 
+      Then, the salt flag is reset to zero.
 
 salinity
 
-C-19
-
-**salt_flag(i) = 4** if not previously flagged and if |S(i)-(S(i+1)+S(i-1))/2| - |S(i+1)S(i-1)| > K, where K = 1.0 psu (Z(i) < 500 m) or K = 0.5 psu (Z(i) >= 500 m). For comparison, critical values are 0.9 psu and 0.3 psu in the same ranges in Schmid et al. (2007).
+      salt_flag(i) = 4 if not previously flagged and if |S(i)-(S(i+1)+S(i-1))/2| - |S(i+1)S(i-1)| > K, where K = 1.0 psu (Z(i) < 500 m) or K = 0.5 psu (Z(i) >= 500 m). For comparison, critical values are 0.9 psu and 0.3 psu in the same ranges in Schmid et al. (2007).
 
 optics
 
-**opt_V_flag(i) = 4** if |V(i)-(V(i+1)+V(i-1))/2| - |V(i+1)-V(i-1)| > spike.
+      opt_V_flag(i) = 4 if |V(i)-(V(i+1)+V(i-1))/2| - |V(i+1)-V(i-1)| > spike.
 
-###### **6.5.6 Gradient test (two types).  Flag = 5.**
+##### 6.5.6 Gradient test (two types). Flag = 5
 
-###### **_6.5.6.1_ If GDEM T and S vertical gradient climatologies are installed.**
+###### 6.5.6.1 If GDEM T and S vertical gradient climatologies are installed.
 
-The GDEM T and S vertical gradient climatologies are computed from the means and standard deviations of the vertical gradients of the original profiles, not from the vertical gradient of the final averaged (climatological) profile.
+The GDEM T and S vertical gradient climatologies are computed from the means and standard deviations of the vertical gradients of the original profiles, 
+not from the vertical gradient of the final averaged (climatological) profile.
 
-For each observation profile, the GDEM temperature and salinity vertical gradient (TGvg and SGvg) and temperature and salinity vertical gradient standard deviation (TGvgstd and SGvgstd) profiles from the nearest location and month are extracted and interpolated to the depths of the observed profile.  Next, the vertical gradient of the profiles, Tvg(i) and Svg(i), at depth Z(i) is computed by linear regression over the depth interval, Z(i)-deltaz(k) to Z(i)+deltaz(k), where the deltaz(k) is selected from the following table. If minz(k) <= Z(i) <= maxz(k), then deltaz(k) is the required depth interval. The depth intervals as a function of depth were selected to match those used in the calculation of the GDEM vertical gradients.
+For each observation profile, 
+the GDEM temperature and salinity vertical gradient (`TGvg` and `SGvg`) and temperature and salinity vertical gradient standard deviation (`TGvgstd` and `SGvgstd`) profiles from the nearest location and month are extracted and interpolated to the depths of the observed profile. 
+Next, 
+the vertical gradient of the profiles, `Tvg(i)` and `Svg(i)`, at depth `Z(i)` is computed by linear regression over the depth interval `Z(i)-deltaz(k)` to `Z(i) + deltaz(k)`, 
+where `deltaz(k)` is selected from the following table. 
+If `minz(k) <= Z(i) <= maxz(k)`, then `deltaz(k)` is the required depth interval. 
+The depth intervals as a function of depth were selected to match those used in the calculation of the GDEM vertical gradients.
 
-|Inde<br>x|minz (m)|maxz (m)|deltaz (m)|
-|---|---|---|---|
-|1|0|10|2|
-|2|10|100|5|
-|3|100|200|10|
-|4|200|300|20|
-|5|300|400|50|
-|6|400|1600|100|
-|7|1600|6600|200|
+| Index | minz (m) | maxz (m) | deltaz (m) |
+| --- | ---: | ---: | ---: |
+| 1 | 0 | 10 | 2 |
+| 2 | 10 | 100 | 5 |
+| 3 | 100 | 200 | 10 |
+| 4 | 200 | 300 | 20 |
+| 5 | 300 | 400 | 50 |
+| 6 | 400 | 1600 | 100 |
+| 7 | 1600 | 6600 | 200 |
 
+For `minz(k) <= Z(i) <= maxz(k)`:
 
+temperature
 
-for minz(k) <= Z(i) <= maxz(k)
+      temp_flag(i) = 5 if not previously flagged and |Tvg-TGvg| > F*TGvgstd, where F = 10 if Z(i) < 200 m and F = 8 if depth(i) >= 200 m. 
 
-###### temperature
+      The evaluation is performed separately on each profile of the dive to avoid using gradients at the transition between one profile and the next.
 
-**temp_flag(i) = 5** if not previously flagged and |Tvg-Tgvg| > F*TGvgstd where F = 10 if Z(i) < 200 and F=8 if depth(i) >= 200 m.
+salinity
 
-The evaluation is performed separately on each profile of the dive to avoid using gradients at the transition between one profile and the next.
+      salt_flag(i) = 5 if not previously flagged and |Svg-Sgvg| > F*SGvgstd where F = 10 if Z(i) < 200 and F=8 if depth(i) >= 200 m.
 
-###### Salinity
+      The evaluation is performed separately on each profile of the dive to avoid using gradients at the transition between one profile and the next.
 
-**salt_flag(i) = 5** if not previously flagged and |Svg-Sgvg| > F*SGvgstd where F = 10 if Z(i) < 200 and F=8 if depth(i) >= 200 m.
+###### 6.5.6.2 If GDEM T and S vertical gradient climatologies are NOT installed. Flag = 5
 
-C-20
+temperature
 
-The evaluation is performed separately on each profile of the dive to avoid using gradients at the transition between one profile and the next.
+      temp_flag(i) = 5 and temp_flag(i+1) = 5 if not previously flagged and if
 
-###### **_6.5.6.2_ If GDEM T and S vertical gradient climatologies are NOT installed. Flag = 5**
+         |(T(i+1)-T(i))/(Z(i+1)-Z(i))| > K where 
+         
+         K= 2° C (Z(i+1) <= 5 m) 
+         
+         K = 8 ºC/m (5 m < Z(i+1) < 500 m) 
+         
+         K = 2 ºC/m (Z(i+1) > 500 m).
 
-###### temperature
+      For comparison, in Schmid et al. (2007), the spike test critical value is |T(i)(T(i+1)+T(i-1))/2| > K, where K = 9º C (Z(i) < 500 m) or K = 6º C (Z(i) >= 500 m).  Also, if **temp_flag(i) = 5** , **salt_flag(i) = 5** is also set.
 
-**temp_flag(i) = 5** and **temp_flag(i+1) = 5** if not previously flagged and if
+salinity
 
-|(T(i+1)-T(i))/(Z(i+1)-Z(i))| > K where K= 2° C (Z(i+1) <= 5 m) K = 8 ºC/m (5 m < Z(i+1) < 500 m) K = 2 ºC/m (Z(i+1) > 500 m).
+      salt_flag(i) = 5 and salt_flag(i+1) = 5 if not previously flagged and if
 
-For comparison, in Schmid et al. (2007), the spike test critical value is |T(i)(T(i+1)+T(i-1))/2| > K, where K = 9º C (Z(i) < 500 m) or K = 6º C (Z(i) >= 500 m).  Also, if **temp_flag(i) = 5** , **salt_flag(i) = 5** is also set.
+         |(S(i+1)-S(i))/(Z(i+1)-Z(i))| > K where
+         
+         K = 0.3 PSU/m (Z(i+1) <= 5 m)
+         
+         K = 1.7 PSU/m (5 m < Z(i+1) < 500 m)
+         
+         K = 0.15 PSU/m (Z(i+1) > 500 m).
+         
+      For comparison, in Schmid et al. (2007), the spike test critical value is |T(i)(S(i+1)+S(i-1))/2| > K, where K = 1.5 PSU (Z(i) < 500 m) or K = 0.5 PSU (Z(i) >=  500 m).
 
-Salinity
+##### 6.5.7 Running standard deviation test. Flag = 8/5
 
-**salt_flag(i) = 5** and **salt_flag(i+1) = 5** if not previously flagged and if
-
-|(S(i+1)-S(i))/(Z(i+1)-Z(i))| > K where
-
-K= 0.3 PSU/m (Z(i+1) <= 5 m) K = 1.7 PSU/m (5 m < Z(i+1) < 500 m) K = 0.15 PSU/m (Z(i+1) > 500 m).
-
-For comparison, in Schmid et al. (2007), the spike test critical value is |T(i)(S(i+1)+S(i-1))/2| > K, where K = 1.5 PSU (Z(i) < 500 m) or K = 0.5 PSU (Z(i) >=  500 m).
-
-###### **6.5.7 Running standard deviation test.  Flag = 8/5**
-
-Using Q to represent either T, S, C, or optics (V) values, and ignoring (and not using) missing values, the value average and standard deviation over 9 consecutive points is computed for each i = 4 to N-3 (N is total number of points), i.e.,
+Using Q to represent either T, S, C, or optics (V) values, 
+and ignoring (and not using) missing values, 
+the value average and standard deviation over 9 consecutive points is computed for each i = 4 to N-3 (N is total number of points), i.e.,
 
 
 
