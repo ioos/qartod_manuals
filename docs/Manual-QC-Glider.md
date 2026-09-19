@@ -1034,41 +1034,45 @@ causing an offset of the series of dead-reckoned latitudes to be offset until th
 The corrected latitude time series (Figure 6) shows how the LAGER position correction algorithm removes the inaccurate GPS fixes, 
 and then resets the intermediate dead-reckoned to a more reasonable latitude time series.
 
-<!-- Start of picture text -->
-ng213-2013-032-7-8<br>Before Correction<br>Black Dots: Dead-Reckoned, Blue Circles: GPS<br>. RR GRR Po TO<br>y cope ; GPR fo Yee rv<br>on LE : : : 20<br>° [an 0 ee ee ee en<br>0.5 #06 07 O8 0.9 1.0<br>Hours Starting 2013/02/03 00:00<br><!-- End of picture text -->
+![Figure 3](images_QC_Gliders/lager-figure-3.png)
 
-**Figure 3 Depths and uncorrected longitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the longitude of each GPS fix, and the black dots are the dead-reckoned longitudes computed in real-time by the glider’s internal software. The longitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.**
+<figcaption>Figure 3. Depths and uncorrected longitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the longitude of each GPS fix, and the black dots are the dead-reckoned longitudes computed in real-time by the glider’s internal software. The longitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.</figcaption>
+<br>
 
-<!-- Start of picture text -->
-ng213-2013-032-7-8<br>After Correction<br>Black Dots: Dead-Reckoned, Blue Circles: GPS<br>S. Fmd ever es oe<br>Qo. sede i foe Noe a iF<br>oD :<br>mo} =<br>=] H { wm<br>ga H<br>0.5 0.6 0.7 #08 O09 1.0<br>Hours Starting: 2013/02/03 00:00<br><!-- End of picture text -->
+![Figure 4](images_QC_Gliders/lager-figure-4.png)
 
-**Figure 4 Depths and corrected longitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time.  The blue circles are the longitude of each GPS fix after removing all suspect values. The black dots are the dead-reckoned longitudes after correction to match the remaining good GPS positions. The longitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.**
+<figcaption>Figure 4. Depths and corrected longitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time.  The blue circles are the longitude of each GPS fix after removing all suspect values. The black dots are the dead-reckoned longitudes after correction to match the remaining good GPS positions. The longitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.</figcaption>
+<br>
 
-C-7
+![Figure 5](images_QC_Gliders/lager-figure-5.png)
 
+<figcaption>Figure 5. Depths and uncorrected latitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the latitude of each GPS fix, and the black dots are the dead-reckoned latitudes computed in real-time by the glider’s internal software. The latitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.</figcaption>
+<br>
 
+![Figure 6](images_QC_Gliders/lager-figure-6.png)
 
-<!-- Start of picture text -->
-ng213-2013-032-7-8<br>Before Correction<br>Black Dots: Dead-Reckoned, Blue Circles: GPS<br>& : ee i cote 5<br>b tego Bf Sel. s)<br>a ee oe ee oe<br>i ee (o} i 4<br>‘ ;<br>0.5 #06 0.7 08 0.9 1.0<br>Hours Starting 2013/02/03 00:00<br><!-- End of picture text -->
+<figcaption>Figure 6. Depths and corrected latitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the latitude of each GPS fix after removing all suspect values.   The black dots are the dead-reckoned latitudes after correction to match the remaining good GPS positions. The latitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.**
+<br>
 
-**Figure 5 Depths and uncorrected latitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the latitude of each GPS fix, and the black dots are the dead-reckoned latitudes computed in real-time by the glider’s internal software. The latitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.**
+#### 6.2 Profile identification
 
-C-8
+Observations are collected by a glider’s sensors as it descends and ascends through the water column. 
+The LAGER software determines the beginning and ending array indexes of each separate profile. 
+This procedure is performed by subroutine findprofiles.f, 
+and the profile information is saved in the final processed NetCDF file. 
+The algorithm for identifying profiles is very basic, 
+and essentially follows the time series of depth or pressure versus time and identifies profile endpoints as those depths where the glider reverses its vertical direction of travel. 
+In some rare cases, 
+a glider (usually erroneously) suddenly stops its descent or ascent, turns around, 
+and travels in the opposite vertical direction for only a few meters, 
+after which it turns around again, and then continues again in its original direction. 
+A short intermediate profile like this, that is less than 3 m deep, 
+is classified as degenerate, 
+and is not counted as a separate profile. 
+A profile is also classified as degenerate if it contains less than 10 non-missing pressure or depth values or if it contains a depth gap (no non-missing depth or pressure values) that is at least one half the depth range of the entire profile. 
+A degenerate profile is included as part of the profile within which it is embedded.
 
-
-
-<!-- Start of picture text -->
-ng213-2013-032-7-8<br>After Correction<br>Black Dots: Dead-Reckoned, Blue Circles: GPS<br>o|<br>2eh ee ee ee A ee<br>On 3 | ele . E<br>Zz eee ee ee a en<br>oO pones ce4 i3H i L New3<br>3 : H 3<br>ean i H i<br>0.5 #06 07 O08 0.9 1.0<br>Hours Starting 2013/02/03 00:00<br><!-- End of picture text -->
-
-**Figure 6 Depths and corrected latitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the latitude of each GPS fix after removing all suspect values.   The black dots are the dead-reckoned latitudes after correction to match the remaining good GPS positions. The latitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.**
-
-###### **6.2 Profile identification**
-
-Observations are collected by a glider’s sensors as it descends and ascends through the water column. The LAGER software determines the beginning and ending array indexes of each separate profile.  This procedure is performed by subroutine findprofiles.f, and the profile information is saved in the final processed NetCDF file. The algorithm for identifying profiles is very basic, and essentially follows the time series of depth or pressure versus time and identifies profile endpoints as those depths where the glider reverses its vertical direction of travel. In some rare cases, a glider (usually erroneously) suddenly stops its descent or ascent, turns around, and travels in the opposite vertical direction for only a few meters, after which it turns around again, and then continues again in its original direction. A short intermediate profile like this, that is less than 3 m deep, is classified as degenerate, and is not counted as a separate profile. A profile is also classified as degenerate if it contains less than 10 non-missing pressure or depth values or if it contains a depth gap (no non-missing depth or pressure values) that is at least one half the depth range of the entire profile. A degenerate profile is included as part of the profile within which it is embedded.
-
-C-9
-
-###### **6.3 Sequence of Quality Control tests on temperature, conductivity, and salinity**
+#### 6.3 Sequence of Quality Control tests on temperature, conductivity, and salinity
 
 Many of the quality control tests implemented in LAGER were derived from tests presented in several publications, including UNESCO (1990), Boyer and Levitus (1994), Maudire (1994), Levitus (2005), Ingleby and Huddleston (2007), Schmid et al. (2007), Gronell and Wijffels (2008). To these tests, several glider-specific tests were added to detect and flag specific known types of bad behavior exhibited by either a specific brand of glider or by all types of gliders. In most cases, the glider-specific tests are functions of the vertical velocity of the glider which is employed as a substitute for the more-difficult-to-determine total speed of the glider through the water.  All of the QC tests in LAGER are independent of geographic location and time of year except those that compare observations to the GDEM climatology, and the tests are almost independent of depth except in cases where different critical test values are used in two different depth ranges. The universal character of the tests weakens their capability to detect erroneous anomalies. In future versions of LAGER, we expect to use critical test values determined for some regions where large amounts of historical glider data are available.
 
