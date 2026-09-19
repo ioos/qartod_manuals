@@ -836,129 +836,208 @@ which is especially useful for waters of strong stratification and sharp thermoc
 
 ## Appendix C. LAGER Automated Processing and QC
 
-<!-- Start of picture text -->
-“LAGER Automated Processing and QC”<br>Section 6 of LAGER Manual<br>(Local Automated Glider Editing Routine)<br>Version 3.0<br>Michael R. Cames (NRL)<br>For<br>Danielle Bryant (NAVOCEANO)<br>December 10, 2013<br><!-- End of picture text -->
+*“LAGER Automated Processing and QC” — Section 6 of LAGER Manual (Local Automated Glider Editing Routine), Version 3.0.*
 
-Distribution Statement A: Approved for Public Release; distribution is unlimited
+Michael R. Carnes (NRL)  
+For Danielle Bryant (NAVOCEANO)  
+December 10, 2013
+
+Distribution Statement A: Approved for Public Release; distribution is unlimited.
+
+---
 
 **1**
 
-##### **2**
+**2**
 
 **3**
 
-##### **4**
+**4**
 
-##### **5**
+**5**
 
-##### **6 Automated Processing and QC**
+### 6 Automated Processing and QC
 
-###### **6.1** Latitude and Longitude
+#### 6.1 Latitude and Longitude
 
-###### **6.1.1** Seaglider
+##### 6.1.1 Seaglider
 
-The p*.nc (processed) files received by LAGER from each Seaglider dive contain gps positions in the **log_gps_lat** and **log_gps_lon** arrays, both of which are function of the **log_gps_time** array. The same files also contain the final arrays called **latitude** and **longitude** that contain the final corrected latitudes and longitudes which contain values at every measurement time and which match the gps measurements at the beginning and end of the dive. Therefore, no further processing is performed by LAGER on the Seaglider position information.
+The p*.nc (processed) files received by LAGER from each Seaglider dive contain gps positions in the **log_gps_lat** and **log_gps_lon** arrays, 
+both of which are function of the **log_gps_time** array. 
+The same files also contain the final arrays called **latitude** and **longitude** that contain the final corrected latitudes and longitudes which contain values at every measurement time and which match the gps measurements at the beginning and end of the dive. 
+Therefore, 
+no further processing is performed by LAGER on the Seaglider position information.
 
-###### **6.1.2** Slocum and LBS-G
+##### 6.1.2 Slocum and LBS-G
 
-The glider position information is received by LAGER in the raw data files as **GPS** positions in the **m_gps_lon** and **m_gps_lat** arrays and as dead-reckoned positions in the **m_lon** and **m_lat** arrays. Each raw incoming position value contains the sum of the integer whole degrees of longitude or latitude multiplied time 100 plus the decimal minutes of longitude or latitude.  LAGER first converts all incoming positions to the form of decimal degrees.  If the raw data are received as data-subset binary files (such as ***.sbd** and ***.tbd** ) transmitted from the glider to the Iridium Satellite communications system and received at the OOC, some or all position information might be missing depending on what the glider operators instructed to the glider to send back. The LAGER processing software will try to compensate for missing arrays to produce the most complete and accurate series of positions at each measurement time.
+The glider position information is received by LAGER in the raw data files as **GPS** positions in the **m_gps_lon** and **m_gps_lat** arrays and as dead-reckoned positions in the **m_lon** and **m_lat** arrays. 
+Each raw incoming position value contains the sum of the integer whole degrees of longitude or latitude multiplied time 100 plus the decimal minutes of longitude or latitude.  
+LAGER first converts all incoming positions to the form of decimal degrees.  
+If the raw data are received as data-subset binary files (such as ***.sbd** 
+and ***.tbd**) transmitted from the glider to the Iridium Satellite communications system and received at the OOC, 
+some or all position information might be missing depending on what the glider operators instructed to the glider to send back. 
+The LAGER processing software will try to compensate for missing arrays to produce the most complete and accurate series of positions at each measurement time.
 
-Normally, **GPS** position fixes are recorded by the glider before the dive begins and again at the end of the dive while the glider is floating at the surface. However, in some cases, if the dive includes a series of several descending and ascending profiles, and if the intermediate ascending profiles end too close to the surface, the glider might linger at the surface at these intermediate dive times and obtain extra **GPS** fixes before it descends again. The dead-reckoned latitude and longitude arrays (stored in m_lon and m_lat) are initialized to the final GPS position obtained just before the dive begins.  Once the dive
+Normally, **GPS** position fixes are recorded by the glider before the dive begins and again at the end of the dive while the glider is floating at the surface. 
+However, in some cases, if the dive includes a series of several descending and ascending profiles, 
+and if the intermediate ascending profiles end too close to the surface, 
+the glider might linger at the surface at these intermediate dive times and obtain extra **GPS** fixes before it descends again. 
+The dead-reckoned latitude and longitude arrays (stored in m_lon and m_lat) are initialized to the final GPS position obtained just before the dive begins.  
+Once the dive begins, 
+the dead-reckoned position should normally be updated using only information from various navigation sensors such as tilt and magnetic direction and from information about the expected performance of the glider. 
+However, 
+whenever **GPS** positions are obtained at intermediate times during the dive, 
+the dead-reckoned latitude and longitude arrays are re-initialized to the new **GPS** positions. 
+The LAGER processing software attempts to recognize these extra jumps in the dead-reckoned positions when it is computing the final corrected positions. 
+However, 
+another related occurance causes further complications. 
+At the beginning of the dive, 
+the glider automatically stops obtaining GPS fixes before it dives. However, 
+if GPS fixes are obtained at intermediate times during a dive, the glider attempts to obtain new GPS fixes even as it restarts its next descending profile. 
+As the glider gets deeper in the water, 
+the antenna begins to submerge and the GPS fixes become less accurate, 
+until the depth is great enough so that no GPS updates are obtained. 
+Therefore, 
+the dead-reckoned positions can be updated, 
+at intermediate times, 
+by very inaccurate GPS positions. 
+LAGER also attempts to identify these inaccurate fixes and to remove their affects from the dead-reckoned (and final corrected) positions.
 
-C-2
+The sequence of steps performed by LAGER software as it processes and edits the GPS positions and dead-reckoned positions and arrives at the final time series of corrected longitude and latitude are listed next. 
+This sequence has been extracted from the LAGER subroutine called get_and_fix_gps_latlon.f, 
+and the method used might best be obtained by examination of that subroutine. 
+We would like to provide a simple explanation of the algorithm. 
+However, 
+because of the complicating factors discussed above, 
+a more complex description is necessary.
 
-begins, the dead-reckoned position should normally be updated using only information from various navigation sensors such as tilt and magnetic direction and from information about the expected performance of the glider. However, whenever **GPS** positions are obtained at intermediate times during the dive, the dead-reckoned latitude and longitude arrays are re-initialized to the new **GPS** positions. The LAGER processing software attempts to recognize these extra jumps in the dead-reckoned positions when it is computing the final corrected positions. However, another related occurance causes further complications. At the beginning of the dive, the glider automatically stops obtaining GPS fixes before it dives. However, if GPS fixes are obtained at intermediate times during a dive, the glider attempts to obtain new GPS fixes even as it restarts its next descending profile.  As the glider gets deeper in the water, the antenna begins to submerge and the GPS fixes become less accurate, until the depth is great enough so that no GPS updates are obtained. Therefore, the dead-reckoned positions can be updated, at intermediate times, by very inaccurate GPS positions. LAGER also attempts to identify these inaccurate fixes and to remove their affects from the dead-reckoned (and final corrected) positions.
-
-The sequence of steps performed by LAGER software as it processes and edits the GPS positions and dead-reckoned positions and arrives at the final time series of corrected longitude and latitude are listed next. This sequence has been extracted from the LAGER subroutine called get_and_fix_gps_latlon.f, and the method used might best be obtained by examination of that subroutine. We would like to provide a simple explanation of the algorithm. However, because of the complicating factors discussed above, a more complex description is necessary.
-
-Initially, GPS positions are stored in arrays gpslon, gpslat, gpstime arrays, each containing ngps values each. Two more arrays of the same length (one value for each GPS fix) named gpsdepth and gpsindex are created. Another set of arrays contains one element for each time that both scientific and flight data was saved. These arrays, all of size npts, are time, drlon, drlat, depth, lon, and lat. The drlon and drlat arrays are the uncorrected dead-reckoned positions and the lon and lat arrays are the final corrected position arrays.
+Initially, 
+GPS positions are stored in arrays gpslon, 
+gpslat, 
+gpstime arrays, 
+each containing ngps values each. 
+Two more arrays of the same length (one value for each GPS fix) named gpsdepth and gpsindex are created. 
+Another set of arrays contains one element for each time that both scientific and flight data was saved. 
+These arrays, 
+all of size npts, 
+are time, drlon, drlat, 
+depth, lon, and lat. 
+The drlon and drlat arrays are the uncorrected dead-reckoned positions and the lon and lat arrays are the final corrected position arrays.
 
 The sequence of calculations follows:
 
-###### **6.1.2.1**
+###### 6.1.2.1
 
 Set the first GPS position to missing (remove it) because it is usually bad.
 
-###### **6.1.2.2**
+###### 6.1.2.2
 
-If the **depth** at the time of a GPS fix is missing, then assume that **depth** = 0. The first choice for a depth is from the **m_depth** array, but if this is array is missing, then use pressures from the **sea_water_pressure** array.
+If the **depth** at the time of a GPS fix is missing, then assume that **depth** = 0. 
+The first choice for a depth is from the **m_depth** array, 
+but if this is array is missing, 
+then use pressures from the **sea_water_pressure** array.
 
-###### **6.1.2.3**
+###### 6.1.2.3
 
-Put the **depth** from array **depth** into array **gpsdepth** at the time of each GPS fix, and put the **index** from the **time** array at the time of each GPS fix into the **gpsindex** array.
+Put the **depth** from array **depth** into array **gpsdepth** at the time of each GPS fix, 
+and put the **index** from the **time** array at the time of each GPS fix into the **gpsindex** array.
 
-C-3
+###### 6.1.2.4
 
-###### **6.1.2.4**
+Determine the minimum depth value and the maximum depth value among all glider depths at the times of the GPS fixes (from **gpsdepth)** and put the results in **zmin** and **zmax**.
 
-Determine the minimum depth value and the maximum depth value among all glider depths at the times of the GPS fixes (from **gpsdepth)** and put the results in **zmin** and **zmax** .
+###### 6.1.2.5
 
-###### **6.1.2.5**
+Compute the median of the depths from **gpsdepth** and put in **median_gpsz**.
 
-Compute the median of the depths from **gpsdepth** and put in **median_gpsz** .
+###### 6.1.2.6
 
-###### **6.1.2.6**
+Compute the time difference between each consecutive pair of GPS fixes. 
+Compute the median of these time differences and put in **median_dt**.
 
-Compute the time difference between each consecutive pair of GPS fixes. Compute the median of these time differences and put in **median_dt** .
+###### 6.1.2.7
 
-###### **6.1.2.7**
+Find the **indexes** (from the npt elements of the **time** array) at the beginning and ending of any gaps between consecutive GPS fixes. 
+A **gap** is defined as a time span, between consecutive fixes, greater than **3*median_dt**. 
+Normally, 
+there will be a series of GPS fixes before the dive begins with no defined gaps between them, and then another set of GPS fixes at the end of the dive with no defined gaps between them. 
+Normally, only one gaps is found, 
+and it is between the last fix before the dive begins and the first fix after the dive ends. 
+Extra gaps may be found if there are GPS fixes obtained at intermediate times during the dive. 
+The number of gaps is put into **ngaps**.
 
-Find the **indexes** (from the npt elements of the **time** array) at the beginning and ending of any gaps between consecutive GPS fixes. A **gap** is defined as a time span, between consecutive fixes, greater than **3*median_dt** . Normally, there will be a series of GPS fixes before the dive begins with no defined gaps between them, and then another set of GPS fixes at the end of the dive with no defined gaps between them. Normally, only one gaps is found, and it is between the last fix before the dive begins and the first fix after the dive ends. Extra gaps may be found if there are GPS fixes obtained at intermediate times during the dive.  The number of gaps is put into **ngaps** .
+###### 6.1.2.8
 
-###### **6.1.2.8**
+Count the number of GPS fixes in each group (of fixes) found between consecutive **gaps**, 
+including the group before the first **gap** and the group after the last **gap**, 
+and put into array **countgps** of size **ngaps+1**.
 
-Count the number of GPS fixes in each group (of fixes) found between consecutive **gaps** , including the group before the first **gap** and the group after the last **gap** , and put into array **countgps** of size **ngaps+1** .
+###### 6.1.2.9
 
-###### **6.1.2.9**
+Remove the first fix after each **gap** because it is often bad. 
+The first value of the last group is not removed unless there are at least 2 fixes in the last group. 
+The value of **countgps** is reduced by one for each group where a fix is removed.
 
-Remove the first fix after each **gap** because it is often bad. The first value of the last group is not removed unless there are at least 2 fixes in the last group. The value of **countgps** is reduced by one for each group where a fix is removed.
+###### 6.1.2.10
 
-###### **6.1.2.10**
+For all groups except the last group, remove and GPS fix where the glider depth at the time of that fix is greader than **median_gpsz+0.5** (all in units of meters). 
+Again, change the values of **countgps** if required. 
+This procedure attempts to remove GPS fixes taken while the glider is diving, 
+and the antenna is partly under water, 
+possibly resulting in inaccurate positions. 
+The use of the median here attempts to compensate for the possibility that the pressure sensor is inaccurate, 
+and outputs inaccurate depths or pressures.
 
-For all groups except the last group, remove and GPS fix where the glider depth at the time of that fix is greader than **median_gpsz+0.5** (all in units of meters). Again, change the values of **countgps** if required. This procedure attempts to remove GPS fixes taken while the glider is diving, and the antenna is partly under water, possibly resulting in inaccurate positions. The use of the median here attempts to compensate for the possibility that the pressure sensor is inaccurate, and outputs inaccurate depths or pressures.
+###### 6.1.2.11
 
-###### **6.1.2.11**
+If all fixes in an inter-gap group (not in the first group or the last group) were deleted by the previous procedures (value of countgps = 0 for one of the GPS groups), 
+then offset every dead-reckoned position in the succeeding gap such that the first position of that gaps equals the last position of the previous gap (immediately before the set of deleted GPS fixes). 
+This procedure attempts to remove the effect of the re-initialization of the dead-reckoned positions caused by the intermediate GPS fixes that were obtained (and now have been completely deleted) immediately before this gap.
 
-If all fixes in an inter-gap group (not in the first group or the last group) were deleted by the previous procedures (value of countgps = 0 for one of the GPS groups), then offset every dead-reckoned position in the succeeding gap such that the first position of that
+###### 6.1.2.12
 
-C-4
+Using only the set of GPS fixes that remain after performing the previous steps, 
+recompute the information about the gaps and the inter-gap groups.
 
-gaps equals the last position of the previous gap (immediately before the set of deleted GPS fixes). This procedure attempts to remove the effect of the re-initialization of the dead-reckoned positions caused by the intermediate GPS fixes that were obtained (and now have been completely deleted) immediately before this gap.
-
-###### **6.1.2.12**
-
-Using only the set of GPS fixes that remain after performing the previous steps, recompute the information about the gaps and the inter-gap groups.
-
-###### **6.1.2.13**
+###### 6.1.2.13
 
 Remove (set to missing value) all dead-reckoned positions before the first remaining GPS fix and after the last remaining GPS fix.
 
-###### **6.1.2.14**
+###### 6.1.2.14
 
-Process each gap individually. Determine the linear equation versus time for latitude (longitude) that fits through both the last GPS fix before the gap and the first GPS fix after the gap. Then perform a linear shift versus time (along a computed offset and slope) of all dead-reckoned latitudes (longitudes) within the gap such that the first dead-reckoned position in the gap matches the linear equation at the same times, and the last dead-reckoned position in the gap matches the linear equation at the same times. Insert all final corrected positions into the lon and lat arrays.
+Process each gap individually. 
+Determine the linear equation versus time for latitude (longitude) that fits through both the last GPS fix before the gap and the first GPS fix after the gap. 
+Then perform a linear shift versus time (along a computed offset and slope) of all dead-reckoned latitudes (longitudes) within the gap such that the first dead-reckoned position in the gap matches the linear equation at the same times, 
+and the last dead-reckoned position in the gap matches the linear equation at the same times. 
+Insert all final corrected positions into the lon and lat arrays.
 
-###### **6.1.2.15**
+###### 6.1.2.15
 
 Insert the remaining good GPS fixes (latitudes and longitudes) into the final corrected lon and lat arrays at the times of the fixes.
 
-###### **6.1.2.16**
+###### 6.1.2.16
 
-Fill all missing values in the lon and lat arrays before the first good position with the first good position. Similarly, fill all missing values after the last good positions with the last good positions.  Fill all remaining missing values by linear interpolation versus time.
+Fill all missing values in the lon and lat arrays before the first good position with the first good position. 
+Similarly, fill all missing values after the last good positions with the last good positions.  
+Fill all remaining missing values by linear interpolation versus time.
 
-The following four figures show an example of the dead-reckoned longitudes and latitudes before and after correction using the available GPS fixes. The dive, performed by LBS-G glider ng213, consists of three descending and three ascending profiles. After the first and second ascents, the glider remains, during the middle of the dive, near the surface and receives a number of GPS fixes. The dead-reckoned position immediately after the last GPS fix is reset to the position of that fix.  The dead-reckoned longitude time series is not affected adversely by the intermediate GPS fixes, so that the uncorrected longitude (Figure 3) and the corrected longitude (Figure 4) are essentially the same. However, the uncorrected dead-reckoned latitude (Figure 5) is reset at the start of the second descent by an inaccurate GPS latitude, causing an offset of the series of dead-reckoned latitudes to be offset until the next set of GPS fixes becomes available. The corrected latitude time series (Figure 6) shows how the LAGER position correction algorithm removes the inaccurate GPS fixes, and then resets the intermediate dead-reckoned to a more reasonable latitude time series.
-
-C-5
-
-
+The following four figures show an example of the dead-reckoned longitudes and latitudes before and after correction using the available GPS fixes. 
+The dive, performed by LBS-G glider ng213, 
+consists of three descending and three ascending profiles. After the first and second ascents, 
+the glider remains, 
+during the middle of the dive, 
+near the surface and receives a number of GPS fixes. The dead-reckoned position immediately after the last GPS fix is reset to the position of that fix. 
+The dead-reckoned longitude time series is not affected adversely by the intermediate GPS fixes, so that the uncorrected longitude (Figure 3) and the corrected longitude (Figure 4) are essentially the same. 
+However, 
+the uncorrected dead-reckoned latitude (Figure 5) is reset at the start of the second descent by an inaccurate GPS latitude, 
+causing an offset of the series of dead-reckoned latitudes to be offset until the next set of GPS fixes becomes available. 
+The corrected latitude time series (Figure 6) shows how the LAGER position correction algorithm removes the inaccurate GPS fixes, 
+and then resets the intermediate dead-reckoned to a more reasonable latitude time series.
 
 <!-- Start of picture text -->
 ng213-2013-032-7-8<br>Before Correction<br>Black Dots: Dead-Reckoned, Blue Circles: GPS<br>. RR GRR Po TO<br>y cope ; GPR fo Yee rv<br>on LE : : : 20<br>° [an 0 ee ee ee en<br>0.5 #06 07 O8 0.9 1.0<br>Hours Starting 2013/02/03 00:00<br><!-- End of picture text -->
 
 **Figure 3 Depths and uncorrected longitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the longitude of each GPS fix, and the black dots are the dead-reckoned longitudes computed in real-time by the glider’s internal software. The longitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.**
-
-C-6
-
-
 
 <!-- Start of picture text -->
 ng213-2013-032-7-8<br>After Correction<br>Black Dots: Dead-Reckoned, Blue Circles: GPS<br>S. Fmd ever es oe<br>Qo. sede i foe Noe a iF<br>oD :<br>mo} =<br>=] H { wm<br>ga H<br>0.5 0.6 0.7 #08 O09 1.0<br>Hours Starting: 2013/02/03 00:00<br><!-- End of picture text -->
