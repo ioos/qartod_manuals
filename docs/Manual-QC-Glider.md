@@ -770,17 +770,31 @@ This process allows for QC manual updates as technology development occurs for b
 
 ## Appendix B. Real-Time Temperature and Salinity Alignment Challenges
 
-Nonuniform flow rates through a CTD system creates errors in the calculation of salinity. Glider CTDs can be pumped or unpumped. Unpumped systems reply upon the forward speed of the glider, which can vary depending on the configured glider path, water density, mission duration and biofouling, etc. Pumped systems provide a more regulated flow but draw more power, so pump speed has been decreased in some cases as a compromise.
+Nonuniform flow rates through a CTD system creates errors in the calculation of salinity. 
+Glider CTDs can be pumped or unpumped. 
+Unpumped systems reply upon the forward speed of the glider, 
+which can vary depending on the configured glider path, 
+water density, 
+mission duration and biofouling, etc. 
+Pumped systems provide a more regulated flow but draw more power, 
+so pump speed has been decreased in some cases as a compromise.
 
-Within the glider operator community there are multiple views regarding the efficacy of temperature/conductivity sensor corrections in real time. There is broad agreement on the causes of the spikes seen in uncorrected data, and that corrections are needed. However, there are multiple operator concerns when dealing with the issue:
+Within the glider operator community there are multiple views regarding the efficacy of temperature/conductivity sensor corrections in real time. 
+There is broad agreement on the causes of the spikes seen in uncorrected data, and that corrections are needed. 
+However, 
+there are multiple operator concerns when dealing with the issue:
 
-- 1) Some operators believe that only the highest resolution CTD observations suffice to make adequate corrections. Bandwidth precludes full data transmission, so the corrections can be applied only during postprocessing after recovery of the glider.
+1. Some operators believe that only the highest resolution CTD observations suffice to make adequate corrections. Bandwidth precludes full data transmission, so the corrections can be applied only during postprocessing after recovery of the glider.
 
-- 2) Some believe that real-time corrections improve the data sufficiently for realtime applications; therefore, they do not archive the raw uncorrected data.
+2. Some believe that real-time corrections improve the data sufficiently for realtime applications; therefore, they do not archive the raw uncorrected data.
 
-- 3) Some are concerned about the ability to post-process data that have already received some real-time correction, making the additional corrections more challenging as the real-time corrections change over time.
+3. Some are concerned about the ability to post-process data that have already received some real-time correction, making the additional corrections more challenging as the real-time corrections change over time.
 
-It should be noted that the problem is not unique to gliders. The fall rate of expendable bathythermographs or XBTs is still a topic of discussion after a half-century of operational use, in part because of fabrication variations and in part due to a variety of fall-rate estimates. The Argo community has identified pressure sensor problems with certain groups of profilers (Barker et al. 2011), with thousands of floats impacted.
+It should be noted that the problem is not unique to gliders. 
+The fall rate of expendable bathythermographs or XBTs is still a topic of discussion after a half-century of operational use, 
+in part because of fabrication variations and in part due to a variety of fall-rate estimates. 
+The Argo community has identified pressure sensor problems with certain groups of profilers (Barker et al. 2011), 
+with thousands of floats impacted.
 
 Corrections for glider CTD data have been studied, proposed, and implemented by several investigators, including:
 
@@ -788,44 +802,44 @@ Corrections for glider CTD data have been studied, proposed, and implemented by 
 
 - Garau et al. 2011 – minimize an objective function that measures the area between two T–S curves from upglides and downglides of a dive sequence of CTD profiles by using a sequential quadratic programming method.
 
-- C. Janzen and E. Creed 2011
-
-   - (http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6107290&url=http%3A <u>%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6107290)</u>
-
-~~B-1~~
+- C. Janzen and E. Creed 2011 (http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6107290&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6107290)
 
 - D. Ullman and D. Herbert 2014 (http://journals.ametsoc.org/doi/abs/10.1175/JTECH-D-13-00200.1)
 
-- Liu, Y., R.H. Weisberg, and C. Lembke (2015). Glider salinity correction for unpumped CTD sensors across a sharp thermocline, in _Coastal Ocean Observing Systems_ , 305-325, Elsevier (Academic Press), http://dx.doi.org/10.1016/B978-0- <u>12-802022-7.00017-1.</u>
+- Liu, Y., R.H. Weisberg, and C. Lembke (2015). Glider salinity correction for unpumped CTD sensors across a sharp thermocline, in _Coastal Ocean Observing Systems_ , 305-325, Elsevier (Academic Press), http://dx.doi.org/10.1016/B978-0-12-802022-7.00017-1.
 
-- R. W. Schmitt and R. A. Petitt, "A fast response, stable CTD for gliders and AUVs," OCEANS 2006, Boston, MA, 2006, pp. 1-5. doi: 10.1109/OCEANS.2006.306907
-
-<u>http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=4099062&url=http%3A %2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D4099062</u>
+- R. W. Schmitt and R. A. Petitt, "A fast response, stable CTD for gliders and AUVs," OCEANS 2006, Boston, MA, 2006, pp. 1-5. doi: 10.1109/OCEANS.2006.306907 http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=4099062&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D4099062
 
 Liu et al. (2015) proposed a practical glider salinity correction method for the case of strong stratification and sharp thermocline.
 
-In early work to correct shipboard CTD observations, Morison et al. (1994) proposed an empirical searching method to determine the salinity correction parameters by minimizing the salinity separation of T–S curves from upglides and downglides of CTD profiles. In a salinity correction for unpumped glider CTD data, Garau et al. (2011) proposed another method to estimate these parameters based on the same hypothesis. They minimize an objective function that measures the area between two T–S curves from upglides and downglides of CTD profiles by using a sequential quadratic programming (SQP) method. More recently, based on the unpumped glider CTD data collected on the West Florida Shelf, Liu et al. (2015) examined different salinity corrections and found that the existing methods successfully adjusted the thermal lag effects of a weak thermocline, but failed to calibrate the salinity spikes near a sharp thermocline. They found that these salinity spikes could be effectively removed by applying a median filter in conjunction with the thermal lag correction methods. Thus, Liu et al. (2015) proposed an improved and practical approach of glider salinity error correction, which is especially useful for waters of strong stratification and sharp thermocline.
+In early work to correct shipboard CTD observations, 
+Morison et al. (1994) proposed an empirical searching method to determine the salinity correction parameters by minimizing the salinity separation of T–S curves from upglides and downglides of CTD profiles. 
+In a salinity correction for unpumped glider CTD data, 
+Garau et al. (2011) proposed another method to estimate these parameters based on the same hypothesis. 
+They minimize an objective function that measures the area between two T–S curves from upglides and downglides of CTD profiles by using a sequential quadratic programming (SQP) method. 
+More recently, 
+based on the unpumped glider CTD data collected on the West Florida Shelf, 
+Liu et al. (2015) examined different salinity corrections and found that the existing methods successfully adjusted the thermal lag effects of a weak thermocline, 
+but failed to calibrate the salinity spikes near a sharp thermocline. 
+They found that these salinity spikes could be effectively removed by applying a median filter in conjunction with the thermal lag correction methods. 
+Thus, 
+Liu et al. (2015) proposed an improved and practical approach of glider salinity error correction, 
+which is especially useful for waters of strong stratification and sharp thermocline.
 
-###### **References**
+**References**
 
-- Barker, P.M., J.R. Dunn, C.M. Domingues, and S. Wijffels (2011). Pressure sensor drifts in Argo and their impacts. _J. Atmos. Ocean. Technol_ ., 28(8), 1036-1049. <u>http://journals.ametsoc.org/doi/abs/10.1175/2011JTECHO831.1</u>
+> Barker, P.M., J.R. Dunn, C.M. Domingues, and S. Wijffels (2011). Pressure sensor drifts in Argo and their impacts. J. Atmos. Ocean. Technol., 28(8), 1036-1049. http://journals.ametsoc.org/doi/abs/10.1175/2011JTECHO831.1
 
-- Garau, B., Ruiz, S., Zhang, W., Pasucal, A., Heslop, E., Kerfoot, J., and Tintore, J. (2011). Thermal lag correction on Slocum CTD glider data, _J. Atmos. Ocean. Technol_ ., 28(9), 1065-1071.
+> Garau, B., Ruiz, S., Zhang, W., Pasucal, A., Heslop, E., Kerfoot, J., and Tintore, J. (2011). Thermal lag correction on Slocum CTD glider data, J. Atmos. Ocean. Technol., 28(9), 1065-1071.
 
-- Morison, J., R. Andersen, N. Larson, E. D'Asaro, and T. Boyd. (1994). The correction for thermal-lag effects in Sea-Bird CTD data. _J. Atmos. Ocean. Technol_ ., 11, 1151–1164.
-
-~~B-2~~
+> Morison, J., R. Andersen, N. Larson, E. D'Asaro, and T. Boyd. (1994). The correction for thermal-lag effects in Sea-Bird CTD data. J. Atmos. Ocean. Technol., 11, 1151–1164.
 
 ## Appendix C. LAGER Automated Processing and QC
-
-
 
 <!-- Start of picture text -->
 “LAGER Automated Processing and QC”<br>Section 6 of LAGER Manual<br>(Local Automated Glider Editing Routine)<br>Version 3.0<br>Michael R. Cames (NRL)<br>For<br>Danielle Bryant (NAVOCEANO)<br>December 10, 2013<br><!-- End of picture text -->
 
 Distribution Statement A: Approved for Public Release; distribution is unlimited
-
-C-1
 
 **1**
 
