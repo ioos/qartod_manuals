@@ -846,16 +846,6 @@ Distribution Statement A: Approved for Public Release; distribution is unlimited
 
 ---
 
-**1**
-
-**2**
-
-**3**
-
-**4**
-
-**5**
-
 ### 6 Automated Processing and QC
 
 #### 6.1 Latitude and Longitude
@@ -1663,68 +1653,125 @@ Using Q to represent either T, S, C, or optics (V) values,
 and ignoring (and not using) missing values, 
 the value average and standard deviation over 9 consecutive points is computed for each i = 4 to N-3 (N is total number of points), i.e.,
 
+$$
+Qave(i) =
+\frac{
+\displaystyle\sum_{j=i-4}^{i+4} w(j)Q(j)
+}{
+\displaystyle\sum_{j=i-4}^{i+4} w(j)
+}
+$$
 
+$$
+Qstd(i) =
+\frac{
+\displaystyle\sum_{j=i-4}^{i+4}
+\left[w(j)Q(j)-Qave(i)\right]^2
+}{
+\displaystyle\sum_{j=i-4}^{i+4} w(j)
+}
+$$
 
-<!-- Start of picture text -->
-jrit4 jrit4<br>mes<br>Qave(i)=iedLY w(jQ(jiLX wi) jrit<br>and Qstd(i)= > [w(j)Q(j)—Qave(i)]/ ¥ w(i)<br>where w(j) = if=i-4 Q(j) is an acceptable value (seejai-4 below) and w(j) = 0 otherwise.<br><!-- End of picture text -->
+where \(w(j)=1\) if \(Q(j)\) is an acceptable value (see below) and \(w(j)=0\) otherwise.
 
-For each calculation of Qave(i) and Qstd(i), starting from the center value, Q(i), and moving outward, the preceding and succeeding points are not used in the calculation if the time interval between adjacent points is greater than 30 seconds or the depth interval is greater than 5 m.  A value is not used if its flag value is 1, 2, 3, or 4.  After excluding all unacceptable points, the resulting standard deviation, Qstd(i), is used only if it was computed from 2 or more temperature values.  For the first four points of the time series (i =1, 4) and for the last four points of the time series (i = N-3, N), the mean and standard deviation are computed as for the 5<sup>th</sup> value and as for the N-4<sup>th</sup> value, respectively.
+For each calculation of Qave(i) and Qstd(i), 
+starting from the center value, Q(i), 
+and moving outward, the preceding and succeeding points are not used in the calculation if the time interval between adjacent points is greater than 30 seconds or the depth interval is greater than 5 m. 
+A value is not used if its flag value is 1, 2, 3, or 4. 
+After excluding all unacceptable points, the resulting standard deviation, 
+Qstd(i), is used only if it was computed from 2 or more temperature values. 
+For the first four points of the time series (i =1, 4) and for the last four points of the time series (i = N-3, N), 
+the mean and standard deviation are computed as for the 5ᵗʰ value and as for the N-4ᵗʰ value, respectively.
 
-C-21
+temperature
 
-###### temperature
+      temp_flag(i) = 8 if not previously flagged and both |T(i)-Tave(k)| > 2.
 
-**temp_flag(i) = 8** if not previously flagged and both |T(i)-Tave(k)| > 2.2*Tstd(i) and |T(i)-Tave(k)| > 0.001° C (the assumed approximate minimum resolution of the CTD temperature measurements).
+      2*Tstd(i) and |T(i)-Tave(k)| > 0.001° C (the assumed approximate minimum resolution of the CTD temperature measurements).
 
-###### conductivity
+conductivity
 
-**salt_flag(i) = 8** if not previously flagged and both |C(i)-Cave(k)| > 2.2*Cstd(i) and |C(i)-Cave(k)| > 0.001 S/m (the assumed approximate minimum resolution of the CTD conductivity measurements).
+      salt_flag(i) = 8 if not previously flagged and both |C(i)-Cave(k)| > 2.2*Cstd(i) and |C(i)-Cave(k)| > 0.001 S/m (the assumed approximate minimum resolution of the CTD conductivity measurements).
 
-###### salinity
+salinity
 
-**salt_flag(i) = 8** if not previously flagged and both |S(i)-Save(k)| > 2.2*Sstd(i) and
+      salt_flag(i) = 8 if not previously flagged and both |S(i)-Save(k)| > 2.2*Sstd(i) and
 
-|S(i)-Save(k)| > 0.001 psu (the assumed approximate minimum resolution of the CTD salinity measurements).
+      |S(i)-Save(k)| > 0.001 psu (the assumed approximate minimum resolution of the CTD salinity measurements).
 
 Yes, the same critical values are used for T, S, and C!
 
 Optics
 
-**opt_V_flag(i) = 5** if not previously flagged and both |V(i)-Vave(k)| > stdevfactor*Vstd(i) and V(i)-Vave(k)| > abslimfactor.
+      opt_V_flag(i) = 5 if not previously flagged and both |V(i)-Vave(k)| > stdevfactor*Vstd(i) and V(i)-Vave(k)| > abslimfactor.
 
-###### **6.5.8 Surface Chop.  Flag = 20/7**
+##### 6.5.8 Surface Chop. Flag = 20/7
 
-###### **_6.5.8.1_ Slocum and LBS-G**
+###### 6.5.8.1 Slocum and LBS-G
 
 **temp_flag(i) = 20** and **salt_flag(i) = 20** if Z(i) < 1 m.
 
 **opt_V_flag(i) = 7** if Z(i) < maxchopdepth.
 
-###### **_6.5.8.2_ Seaglider**
+###### 6.5.8.2 Seaglider
 
 **temp_flag(i) = 20** and **salt_flag(i) = 20** if Z(i) < 2 m.
 
-. **opt_V_flag(i) = 7** if Z(i) < maxchopdepth.
+.**opt_V_flag(i) = 7** if Z(i) < maxchopdepth.
 
-###### **6.5.9 Vertical velocity test. Flag = 10**
+##### 6.5.9 Vertical velocity test. Flag = 10
 
-The pressure, P(i), is first interpolated to a one-second time interval and smoothed with a 13-point (12-second time span) running average. The use of pressure rather than depth to compute vertical velocity results in only a very small error. The vertical velocity at the center of each one-second time interval is computed by centered differences of the smoothed pressure divided by the time interval. The resulting vertical velocity is then interpolated back to the original time grid to form the W(i) series.  Any gaps in the vertical velocity are linearly interpolated from the two surrounding velocities. Missing values at the beginning of the time series are filled with the first good value, and missing values at the end of the series are filled with the last good value.
+The pressure, P(i), 
+is first interpolated to a one-second time interval and smoothed with a 13-point (12-second time span) running average. 
+The use of pressure rather than depth to compute vertical velocity results in only a very small error. 
+The vertical velocity at the center of each one-second time interval is computed by centered differences of the smoothed pressure divided by the time interval. 
+The resulting vertical velocity is then interpolated back to the original time grid to form the W(i) series. 
+Any gaps in the vertical velocity are linearly interpolated from the two surrounding velocities. 
+Missing values at the beginning of the time series are filled with the first good value, 
+and missing values at the end of the series are filled with the last good value.
 
-C-22
+The Seaglider times are reported as integer seconds, 
+resulting in a time uncertainty of 0.5 seconds. 
+The smoothing removes noise in the computed vertical velocity resulting from the time truncation. 
+The Slocum glider and LBS-G times are reported as double precision floating point numbers in units of seconds. 
+However, the original pressure time series and the series of times might not be synchronized, depending on several factors. 
+On the earlier Slocums, we could count on having a time series (m_present_time) and a pressure or depth (either m_water_pressure, m_pressure, or m_depth) values at each of those times available from the glider processor. 
+At the same time, 
+we might also have data from the science processor, such as sci_water_pressure or sci_depth and sci_ctd40cp_timestamp or sci_water_timestamp. 
+At that time, however, 
+both the glider data and the science data were stored by the glider processor into a single file that required sending the science data to the glider processor. 
+Often the glider processor was too slow to manage all incoming data or the buffer through which the science had to pass to reach the glider processor was too slow to handle all of the data. 
+As a result, 
+some of the science data was often lost and the available (from the variables sent back in real time) pressure and time were sometimes not synchronized, 
+making calculations of vertical velocity prone to error. 
+As discussed previously, 
+at some time just before development of Version 7 of the Slocum Glider Dos software, 
+the data logging scheme was changed so that data were logged into two different data files, 
+one on the glider processor side and the other on the science processor side, 
+which eliminated the need to send science data to the glider processor. 
+This new approach eliminated the data delay and loss that resulted from transferring science data to the glider processor. 
+However, 
+at this time, 
+there still remain some problems in receiving synchronized time and pressure values from the glider. 
+The time and pressure variables from the Slocum preferred by LAGER are the sci_ctd41cp_timestamp and the sci_water_pressure, 
+both generated by the CTD. However, 
+the glider operators sometimes do not instruct the glider to send both of these variables back in the real-time data transmissions, and a substitute must be used instead. 
+Our experience is that other combinations do not have the required synchronization. 
+In fact, even the two CTD outputs sometimes shift in and out of synchronization at various intervals.
 
-The Seaglider times are reported as integer seconds, resulting in a time uncertainty of 0.5 seconds. The smoothing removes noise in the computed vertical velocity resulting from the time truncation.  The Slocum glider and LBS-G times are reported as double precision floating point numbers in units of seconds. However, the original pressure time series and the series of times might not be synchronized, depending on several factors. On the earlier Slocums, we could count on having a time series (m_present_time) and a pressure or depth (either m_water_pressure, m_pressure, or m_depth) values at each of those times available from the glider processor.  At the same time, we might also have data from the science processor, such as sci_water_pressure or sci_depth and sci_ctd40cp_timestamp or sci_water_timestamp. At that time, however, both the glider data and the science data were stored by the glider processor into a single file that required sending the science data to the glider processor. Often the glider processor was too slow to manage all incoming data or the buffer through which the science had to pass to reach the glider processor was too slow to handle all of the data. As a result, some of the science data was often lost and the available (from the variables sent back in real time) pressure and time were sometimes not synchronized, making calculations of vertical velocity prone to error. As discussed previously, at some time just before development of Version 7 of the Slocum Glider Dos software, the data logging scheme was changed so that data were logged into two different data files, one on the glider processor side and the other on the science processor side, which eliminated the need to send science data to the glider processor.  This new approach eliminated the data delay and loss that resulted from transferring science data to the glider processor. However, at this time, there still remain some problems in receiving synchronized time and pressure values from the glider. The time and pressure variables from the Slocum preferred by LAGER are the sci_ctd41cp_timestamp and the sci_water_pressure, both generated by the CTD. However, the glider operators sometimes do not instruct the glider to send both of these variables back in the real-time data transmissions, and a substitute must be used instead. Our experience is that other combinations do not have the required synchronization. In fact, even the two CTD outputs sometimes shift in and out of synchronization at various intervals.
+The Seaglider also reports back a vertical velocity having the variable name, 
+`vert_speed_pitch_buoy_model`. 
+This variable is not used in LAGER processing because its values sometimes suddenly become constant (mainly zero), 
+particularly near the surface during the glider ascent. 
+The smoothed vertical velocity computed by LAGER (W) is written to the output NetCDF glider data file as variable name `vert_speed_depth_time`.
 
-The Seaglider also reports back a vertical velocity having the variable name, vert_speed_pitch_buoy_model. This variable is not used in LAGER processing because its values sometimes suddenly become constant (mainly zero), particularly near the surface during the glider ascent.   The smoothed vertical velocity computed by LAGER (W) is written to the output NetCDF glider data file as variable name vert_speed_depth_time.
-
-###### **_6.5.9.1_ Slocum or LBS-G velocity test.  Flag = 10**
+###### 6.5.9.1 Slocum or LBS-G velocity test. Flag = 10
 
 **temp_flag(i) = 10** and **salt_flag(i) = 10** if not previously flagged and if |W(i)| < 2 cm/s, where W is the vertical velocity computed from the observed pressure versus time.
 
-###### **_6.5.9.2_ Seaglider velocity test [10, 20]**
+###### 6.5.9.2 Seaglider velocity test [10, 20]
 
 **salt_flag(i) = 10** if not previously flagged and if |W(i)| < 5 cm/s.
-
-C-23
 
 If Z(i) > 10 m and Zmax-Z(i) > 10, where Zmax is the maximum depth of the present dive, then **temp_flag(i) = 10** and **salt_flag(i) = 10** if not previously flagged for depths from  Z(i)- 2 m to Z(i) + 2 m, if |W(i)|< 3 cm/s.
 
@@ -1732,19 +1779,42 @@ If Z(i) > 10 m and Zmax-Z(i) > 10, where Zmax is the maximum depth of the presen
 
 During the descent, **temp_flag(i) =10** and **salt_flag(i) = 10** (if not previously flagged) at all depths Zcrit <= Z(i) <= Zmax, where Zcrit is depth where |W| < 6 cm/s in the depth range, Zmax-Z(i) < 15 m.
 
-During the descent, for all Z(i) in the upper 3 m before W first exceeds 5 cm /s, _temp_flag(i) = 10 and salt_flag(i) = 10 if not previously flagged._
+During the descent, for all Z(i) in the upper 3 m before W first exceeds 5 cm /s, temp_flag(i) = 10 and salt_flag(i) = 10 if not previously flagged.
 
-During ascent, for all Z(i) in the upper 3 m after W falls below 5 cm/s, **temp_flag(i) = 10** _and salt_flag(i) = 10 if not previously flagged._
+During ascent, for all Z(i) in the upper 3 m after W falls below 5 cm/s, **temp_flag(i) = 10** and salt_flag(i) = 10 if not previously flagged.
 
-###### **6.5.10 Seaglider Sudden Pitch Change Test.  Flag = 9**
+##### 6.5.10 Seaglider Sudden Pitch Change Test. Flag = 9
 
-On some seagliders, the pitch angle suddenly (and erroneously) increases by 20 degrees or more while descending or ascending. The occurrence of these changes is sporadic and sudden, and the pitch returns to its normal angle within several minutes.  During a descent, the glider's nose is normally pitched downward at about 20°, but within one measurement cycle, the glider's pitch changes to nearly zero (horizontal) or even pitched slightly upward. On ascent, the pitch angle suddenly increases, causing its nose to pitch upward at an even greater angle. The sudden pitch change causes errors in temperature and salinity only (or nearly so) on descent because the sudden change causes the glider to stall out.  The temperature suddenly changes to values measured above its present position (often 50 m or more above its position).   An example of this behavior is shown in Figures 7a and 7b. In Figure 7a, a section of a Seaglider descending profile over a depth range from 740 m to 830 m is shown. At a depth of about 777 m, the pitch changes from -17° (downward) to over 5° (upward) in one cycle. At the same time, the vertical velocity suddenly changes from about 8 cm/s downward to about 2.5 cm/s downward. The glider continues to travel downward and slowly accelerate until, at 795 m, the pitch angle suddenly recovers to about -15° (downward). In Figure 7b, the edited temperature and salinity profile after QC are shown in black and red, respectively. The temperature and salinity before QC are shown in magenta and blue, respectively. The QC performed by the sudden-pitch test removed the temperature and salinity measurement from the beginning of the pitch change to a depth nearly 10 m below the point where the pitch angle recovered. The sudden positive temperature spikes that were removed by the QC, appear to indicate that water, which the glider passed through earlier, was suddenly pushed across the CTD's thermistor.
+On some seagliders, 
+the pitch angle suddenly (and erroneously) increases by 20 degrees or more while descending or ascending. 
+The occurrence of these changes is sporadic and sudden, 
+and the pitch returns to its normal angle within several minutes. 
+During a descent, the glider's nose is normally pitched downward at about 20°, 
+but within one measurement cycle, 
+the glider's pitch changes to nearly zero (horizontal) or even pitched slightly upward. 
+On ascent, 
+the pitch angle suddenly increases, causing its nose to pitch upward at an even greater angle. 
+The sudden pitch change causes errors in temperature and salinity only (or nearly so) on descent because the sudden change causes the glider to stall out. 
+The temperature suddenly changes to values measured above its present position (often 50 m or more above its position). 
+An example of this behavior is shown in Figures 7a and 7b. 
+In Figure 7a, a section of a Seaglider descending profile over a depth range from 740 m to 830 m is shown. 
+At a depth of about 777 m, the pitch changes from -17° (downward) to over 5° (upward) in one cycle. 
+At the same time, the vertical velocity suddenly changes from about 8 cm/s downward to about 2.5 cm/s downward. 
+The glider continues to travel downward and slowly accelerate until, 
+at 795 m, the pitch angle suddenly recovers to about -15° (downward). 
+In Figure 7b, 
+the edited temperature and salinity profile after QC are shown in black and red, 
+respectively. 
+The temperature and salinity before QC are shown in magenta and blue, respectively. 
+The QC performed by the sudden-pitch test removed the temperature and salinity measurement from the beginning of the pitch change to a depth nearly 10 m below the point where the pitch angle recovered. 
+The sudden positive temperature spikes that were removed by the QC, 
+appear to indicate that water, 
+which the glider passed through earlier, 
+was suddenly pushed across the CTD's thermistor.
 
 The **sudden pitch-change event** is identified as one of the following:
 
 **1.** The pitch angle increases by 10° between two consecutive measurements and the pitch angle of the second measurement is greater than or equal to 5° (upward).
-
-C-24
 
 **2.** The first of two consecutive pitch angles is negative (downward) and the second pitch angle is greater than -3° (downward, but small).
 
@@ -1752,35 +1822,23 @@ If either of these events occurs, then set
 
 **temp_flag(i) = 9** and **salt_flag(i) = 9** at every point from the second of the two consecutive points from which the sudden pitch angle was detected until 6 points after the pitch angle returns to within 0.8 of the pitch angle of the first of the two consecutive points.
 
+![Figure 7a](images_QC_Gliders/lager-figure-7a.jpg)
 
+<figcaption>Figure 7a</figcaption>
+<br>
 
-<!-- Start of picture text -->
-Glider: sg135<br>Dive Number = 0421 Profile 1 of 2<br>740 FERS et et<br>D190 orb — frend ing<br>820 ae ee eae er na i<br>po it =<br>5.2 53 S34 55 5.6 5.7 58 5.9 6.0<br>temp<br>34.465 34.470 34.475 34.480 34.485 34.490 34.495<br>salinity<br>27.14 27.16 27.18 | 27.20 27.22 27.24 = 27.26<br>sigma_theta<br>-I1l -10 -9 -8 -7 6-5 -4 -3 -2<br>vert_speed_depth_time<br>-20 -15 -10 5 0 5 10<br>eng_pitchAng<br><!-- End of picture text -->
+![Figure 7b](images_QC_Gliders/lager-figure-7b.jpg)
 
-**Figure 7a**
+<figcaption>Figure 7b</figcaption>
+<br>
 
-C-25
+### 6.6 Processing Performed on Temperature and Salinity
 
+##### 6.6.1 Conductivity correction
 
-
-<!-- Start of picture text -->
-Glider: sg135<br>Dive Number = 0421 Profile 1 of 2<br>740 fi : : fore * 4<br>=<br>a ak ee Pom es<br>3 790 48 nkoe aE EE — eae<br>5.2 5.3 5.4 5.5 5.6 5.7 5.8 5.9 6.0<br>temp<br>a<br>34.15 34.20 34.25 34.30 34.35 34.40 34.45 34.50 34.55<br>salinity<br>-20 -15 -10 -5 0 5 10<br>eng_pitchAng<br>34.15 34.20 34.25 34.30 34.35 34.40 34.45 34.50 34.55<br>salinity_orig<br>5.2 5.3 5.4 5.5 5.6 5.7 5.8 5.9 6.0<br>temp_orig<br><!-- End of picture text -->
-
-**Figure 7b**
-
-###### **6.6 Processing Performed on Temperature and Salinity**
-
-###### **6.6.1   Conductivity correction**
-
-Salinity is computed from the conductivity, temperature, and pressure measured on the glider by a non-pumped CTD (SBE 41) or a pumped (flow-controlled) Glider Payload CTD (GPCTD), both manufactured by Seabird Electronics, Inc. Calculation of accurate salinity requires corrections for spatial measurement offsets of the sensors, for differences in the sensor response times, and for the thermal inertia of the conductivity cell. With the non-pumped CTD, the speed of flow through the conductivity cell depends upon the speed of the glider, making the thermal inertial correction speed-dependent. Presently,
-
-C-26
-
-the LAGER software performs only a speed-independent correction which is adequate for most cases, but it appears to over-correct when the glider vertical velocity is greater than 20 cm/s. A glider-speed-dependent conductivity correction will be implemented in the future for the non-pumped CTD measurements using the method discussed in Garau et al. (2011). Presently, LAGER corrects the conductivity using coefficients, for a correction algorithm, computed for each glider from a large number of T, C, and P profiles (typically, hundreds) measured by that glider. These coefficients are computed by the LAGER utility called compute_cond_coefs, which iteratively applies the correction equations developed by Lueck and Piclo (1990), making small changes in the correction coefficients, until a minimum error in the salinity difference between consecutive descending and ascending profiles at the same set of potential densities is obtained. This approach is similar to that used by Morison et al. (1994) and Kerfoot et al. (2006).
+Salinity is computed from the conductivity, temperature, and pressure measured on the glider by a non-pumped CTD (SBE 41) or a pumped (flow-controlled) Glider Payload CTD (GPCTD), both manufactured by Seabird Electronics, Inc. Calculation of accurate salinity requires corrections for spatial measurement offsets of the sensors, for differences in the sensor response times, and for the thermal inertia of the conductivity cell. With the non-pumped CTD, the speed of flow through the conductivity cell depends upon the speed of the glider, making the thermal inertial correction speed-dependent. Presently, the LAGER software performs only a speed-independent correction which is adequate for most cases, but it appears to over-correct when the glider vertical velocity is greater than 20 cm/s. A glider-speed-dependent conductivity correction will be implemented in the future for the non-pumped CTD measurements using the method discussed in Garau et al. (2011). Presently, LAGER corrects the conductivity using coefficients, for a correction algorithm, computed for each glider from a large number of T, C, and P profiles (typically, hundreds) measured by that glider. These coefficients are computed by the LAGER utility called compute_cond_coefs, which iteratively applies the correction equations developed by Lueck and Piclo (1990), making small changes in the correction coefficients, until a minimum error in the salinity difference between consecutive descending and ascending profiles at the same set of potential densities is obtained. This approach is similar to that used by Morison et al. (1994) and Kerfoot et al. (2006).
 
 A discrete time-domain recursive filter was developed by Lueck and Piclo (1990) for the conductivity correction in terms of temperatures given by
-
-
 
 <!-- Start of picture text -->
 Cz(n)=—bCz(n—1)+yo|T|n|—T|n—1)] , (1)<br>where<br>a=4f,0 1 *[1+4f, -1\-16} (2)<br>and<br>b=1-2a0™! . (3)<br><!-- End of picture text -->
