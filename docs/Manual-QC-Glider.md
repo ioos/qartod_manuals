@@ -1074,209 +1074,322 @@ A degenerate profile is included as part of the profile within which it is embed
 
 #### 6.3 Sequence of Quality Control tests on temperature, conductivity, and salinity
 
-Many of the quality control tests implemented in LAGER were derived from tests presented in several publications, including UNESCO (1990), Boyer and Levitus (1994), Maudire (1994), Levitus (2005), Ingleby and Huddleston (2007), Schmid et al. (2007), Gronell and Wijffels (2008). To these tests, several glider-specific tests were added to detect and flag specific known types of bad behavior exhibited by either a specific brand of glider or by all types of gliders. In most cases, the glider-specific tests are functions of the vertical velocity of the glider which is employed as a substitute for the more-difficult-to-determine total speed of the glider through the water.  All of the QC tests in LAGER are independent of geographic location and time of year except those that compare observations to the GDEM climatology, and the tests are almost independent of depth except in cases where different critical test values are used in two different depth ranges. The universal character of the tests weakens their capability to detect erroneous anomalies. In future versions of LAGER, we expect to use critical test values determined for some regions where large amounts of historical glider data are available.
+Many of the quality control tests implemented in LAGER were derived from tests presented in several publications, 
+including UNESCO (1990), 
+Boyer and Levitus (1994), 
+Maudire (1994), Levitus (2005), Ingleby and Huddleston (2007), Schmid et al. (2007), 
+Gronell and Wijffels (2008). 
+To these tests, several glider-specific tests were added to detect and flag specific known types of bad behavior exhibited by either a specific brand of glider or by all types of gliders. 
+In most cases, 
+the glider-specific tests are functions of the vertical velocity of the glider which is employed as a substitute for the more-difficult-to-determine total speed of the glider through the water. 
+All of the QC tests in LAGER are independent of geographic location and time of year except those that compare observations to the GDEM climatology, 
+and the tests are almost independent of depth except in cases where different critical test values are used in two different depth ranges. 
+The universal character of the tests weakens their capability to detect erroneous anomalies. 
+In future versions of LAGER, 
+we expect to use critical test values determined for some regions where large amounts of historical glider data are available.
 
-Temperature flags (temp_flag(i)) and salinity flags (salt_flag(i)) at each depth (Z(i)), where i is the depth index, are initially set to zero at each depth. Tests are performed on observed temperature values (T(i)) prior to any tests performed on salinity values (S(i)). In addition, one test (spike) is performed on conductivity (C(i)). If a test is failed at a depth with index i, then the corresponding flag at the given index is set to the failure flag value for that test. The entire 36-step sequence of tests on T, S, and C is listed next, followed by an explanation of each type of test and the critical values used for each test.
+Temperature flags (temp_flag(i)) and salinity flags (salt_flag(i)) at each depth (Z(i)), 
+where i is the depth index, are initially set to zero at each depth. 
+Tests are performed on observed temperature values (T(i)) prior to any tests performed on salinity values (S(i)). 
+In addition, one test (spike) is performed on conductivity (C(i)). 
+If a test is failed at a depth with index i, then the corresponding flag at the given index is set to the failure flag value for that test. 
+The entire 36-step sequence of tests on T, S, and C is listed next, 
+followed by an explanation of each type of test and the critical values used for each test.
 
-###### **6.3.1 QC setup**
+##### 6.3.1 QC setup
 
-###### **6.3.1.1**
+###### 6.3.1.1
 
-Search entire dive for separate profiles (see Section X.X for procedure). If none are found, then stop QC analysis.
+Search entire dive for separate profiles (see Section X.X for procedure). 
+If none are found, then stop QC analysis.
 
-###### **6.3.1.2**
+###### 6.3.1.2
 
-If the times series for temperature is missing (completely filled with missing value indicators) then stop QC analysis. If the time series for both depth and pressure are missing (completely filled with missing value indicators) then stop QC analysis. If either the depth or the pressure series is available, then do not stop.
+If the times series for temperature is missing (completely filled with missing value indicators) then stop QC analysis. 
+If the time series for both depth and pressure are missing (completely filled with missing value indicators) then stop QC analysis. 
+If either the depth or the pressure series is available, 
+then do not stop.
 
-###### **6.3.1.3**
+###### 6.3.1.3
 
-Fill all gaps up to four points long in the primary time variable, scitime, by linear interpolation.
+Fill all gaps up to four points long in the primary time variable, scitime, 
+by linear interpolation.
 
-###### **6.3.1.4**
+###### 6.3.1.4
 
 Set temp_flag(i) = 0 and salt_flag(i) = 0, for i=1,n (where n is the length of all time series which are function of the primary time variable, scitime).
 
-C-10
+###### 6.3.1.5
 
-###### **6.3.1.5**
+Set temp_flag(i) = 1 and salt_flag(i) = 1 where Z(i) < 0.
 
-Set temp_flag(i) =1 and salt_flag(i) = 1 where Z(i) < 0.
+##### 6.3.2 Perform temperature checks
 
-###### **6.3.2 Perform temperature checks**
+###### 6.3.2.1
 
-###### **6.3.2.1**
+If temp_flag(i) = 0 and T(i) fails the Gross Global Bounds Check, 
+then set temp_flag(i) = 2.
 
-If temp_flag(i) = 0 and T(i) fails the Gross Global Bounds Check, then set temp_flag(i) = 2.
+###### 6.3.2.2
 
-###### **6.3.2.2**
+If T(i) fails the GDEM Mean and Standard Deviation test, 
+then set temp_flag(i) = 3 (even if temp_flag(i) was previously not equal to zero).
 
-If T(i) fails the GDEM Mean and Standard Deviation test, then set temp_flag(i) = 3 (even if temp_flag(i) was previously not equal to zero).
+###### 6.3.2.3
 
-###### **6.3.2.3**
+Check each separate T profile. 
+If a profile fails the Constant Profile test, 
+then set temp_flag(i) = 11 for all indexes i contained within the profile.
 
-Check each separate T profile. If a profile fails the Constant Profile test, then set temp_flag(i) = 11 for all indexes i contained within the profile.
-
-###### **6.3.2.4**
+###### 6.3.2.4
 
 If temp_flag(i) = 0 and T(i) fails the Spike test, set temp_flag(i) = 4 and salt_flag(i) = 4 (because salinity is computed from both conductivity and temperature).
 
-###### **6.3.2.5**
+###### 6.3.2.5
 
-If temp_flag(i) = 0 and T(i) fails the Vertical Gradient test, then set temp_flag(i)=5 and salt_flag(i)=5.
+If temp_flag(i) = 0 and T(i) fails the Vertical Gradient test, 
+then set temp_flag(i) = 5 and salt_flag(i) = 5.
 
-###### **6.3.2.6**
+###### 6.3.2.6
 
-If temp_flag(i) = 0 and T(i) fails the Running St. Dev. test, then set temp_flag(i)=8.
+If temp_flag(i) = 0 and T(i) fails the Running St. Dev. test, 
+then set temp_flag(i)=8.
 
-###### **6.3.2.7**
+###### 6.3.2.7
 
-If T(i) is set to missing value indicator, but C(i) is not, then set salt_flag(i) = 12.
+If T(i) is set to missing value indicator, 
+but C(i) is not, 
+then set salt_flag(i) = 12.
 
-###### **6.3.3 Perform conductivity checks.**
+##### 6.3.3 Perform conductivity checks.
 
-###### **6.3.3.1**
+###### 6.3.3.1
 
 If C(i) fails the Spike test, set salt_flag(i) = 4.
 
-###### **6.3.3.2**
+###### 6.3.3.2
 
-If C(i) fails the Running St. Dev. test, set salt_flag(i)=8.
+If C(i) fails the Running St. Dev. test, set salt_flag(i) = 8.
 
-###### **6.3.3.3**
+###### 6.3.3.3
 
-Compute vertical velocity (see Vertical Velocity calculation method below), V(i), from scitime(i) and Z(i) for all i=1,n.
+Compute vertical velocity (see Vertical Velocity calculation method below), V(i), 
+from scitime(i) and Z(i) for all i = 1,n.
 
-C-11
+###### 6.3.3.4
 
-###### **6.3.3.4**
+For Seagliders descending profiles, but not SLOCUMs or LBS-Gs, set temp_flag(i) = 9 and salt_flag(i) = 9 at any depth, Z(i), where the Pitch test is failed. The Pitch test is performed using the Seaglider pitch angle variable, eng_pitchAng.
 
-For Seagliders descending profiles, but not SLOCUMs or LBS-Gs, set temp_flag(i) = 9 and salt_flag(i)=9 at any depth, Z(i), where the Pitch test is failed. The Pitch test is performed using the Seaglider pitch angle variable, eng_pitchAng.
-
-###### **6.3.3.5**
+###### 6.3.3.5
 
 If Z(i) fails the Profile Top End (surface chop) test, set temp_flag(i) = 20 and salt_flag(i) = 20.  This test is performed differently on Seagliders than on Slocums and LBS-Gs.
 
-###### **6.3.3.6**
+###### 6.3.3.6
 
-If V(i) fails the Vertical Velocity test, set temp_flag(i) = 10 (if temp_flag(i) = 0 previously) and salt_flag(i) = 10 (if salt_flag(i) = 0 previously). This test is performed differently on Seagliders than on Slocums and LBS-Gs.
+If V(i) fails the Vertical Velocity test, set temp_flag(i) = 10 (if temp_flag(i) = 0 previously) and salt_flag(i) = 10 (if salt_flag(i) = 0 previously). 
+This test is performed differently on Seagliders than on Slocums and LBS-Gs.
 
-###### **6.3.3.7**
+###### 6.3.3.7
 
-If the CTD thermistor temperature response variable, tau_t, is available for this glider, then perform the CTD Thermistor Response Correction (see Section X.X below) on T(i), i =1,n if temp_flag(i) = 0.
+If the CTD thermistor temperature response variable, tau_t, is available for this glider, 
+then perform the CTD Thermistor Response Correction (see Section X.X below) on T(i), i =1,n if temp_flag(i) = 0.
 
-###### **6.3.3.8**
+###### 6.3.3.8
 
 Perform the CTD Conductivity Thermal Lag Correction on C(i), i =1,n if temp_flag(i) = 0 and both correction variables, alpha and tau, are available.
 
-###### **6.3.3.9**
+###### 6.3.3.9
 
-Compute S(i) from T(i), C(i), P(i) for all i=1,n where temp_flag(i)=0, salt_flag(i)=0. Smooth the salinity series using a running 13-point average after interpolating salinity to 1-second intervals.  Then interpolate back to original times.
+Compute S(i) from T(i), C(i), P(i) for all i=1,n where temp_flag(i)=0, salt_flag(i)=0. 
+Smooth the salinity series using a running 13-point average after interpolating salinity to 1-second intervals. 
+Then interpolate back to original times.
 
-###### **6.3.3.10**
+###### 6.3.3.10
 
 If salt_flag(i) = 0 and if S(i) fails the Running St. Dev. test, set salt_flag(i) = 8.
 
-###### **6.3.3.11**
+###### 6.3.3.11
 
 Perform the Profile Static Stabilization Correction on T(i) and S(i), i=1,n to produce statically stable profiles.
 
-###### **6.3.3.12**
+###### 6.3.3.12
 
-If temp_flag(i) = 0 and if T(i) fails the Large Change During Stabilization test, set temp_flag(i) = 21. If salt_flag(i) = 0 and S(i) fails the Large Change During Stabilization test, set salt_flag(i) = 21.
+If temp_flag(i) = 0 and if T(i) fails the Large Change During Stabilization test, set temp_flag(i) = 21. 
+If salt_flag(i) = 0 and S(i) fails the Large Change During Stabilization test, set salt_flag(i) = 21.
 
-###### **6.3.4 Recheck temperature which might have changed during profile stabilization.**
+##### 6.3.4 Recheck temperature which might have changed during profile stabilization.
 
-C-12
-
-###### **6.3.4.1**
+###### 6.3.4.1
 
 If temp_flag(i) = 0 or 21 and T(i) fails the Gross Global Bounds Check, then set temp_flag(i) = 2.
 
-###### **6.3.4.2**
+###### 6.3.4.2
 
 If T(i) fails the GDEM Mean and Standard Deviation test, then set temp_flag(i) = 3 (even if temp_flag(i) was previously not equal to zero).
 
-###### **6.3.4.3**
+###### 6.3.4.3
 
-If temp_flag(i) = 0 or 21 and T(i) fails the Spike test,  set temp_flag(i) = 4 and salt_flag(i) = 4.
+If temp_flag(i) = 0 or 21 and T(i) fails the Spike test, 
+set temp_flag(i) = 4 and salt_flag(i) = 4.
 
-###### **6.3.4.4**
+###### 6.3.4.4
 
-If temp_flag(i) = 0 or 21 and T(i) fails the Vertical Gradient test, then set temp_flag(i)=5.
+If temp_flag(i) = 0 or 21 and T(i) fails the Vertical Gradient test, 
+then set temp_flag(i)=5.
 
-###### **6.3.4.5**
+###### 6.3.4.5
 
-If temp_flag(i) = 0 or 21  and T(i) fails the Running St. Dev. test, then set temp_flag(i)=8.
+If temp_flag(i) = 0 or 21  and T(i) fails the Running St. Dev. test, 
+then set temp_flag(i)=8.
 
-###### **6.3.5 Perform tests on final smoothed and stabilized salinity, computed from corrected temperature and conductivity** .
+##### 6.3.5 Perform tests on final smoothed and stabilized salinity, computed from corrected temperature and conductivity.
 
-###### **6.3.5.1**
+###### 6.3.5.1
 
-If salt_flag(i) = 0 or 21 and S(i) fails the Gross Global Bounds Check, then set salt_flag(i) = 2.
+If salt_flag(i) = 0 or 21 and S(i) fails the Gross Global Bounds Check, 
+then set salt_flag(i) = 2.
 
-###### **6.3.5.2**
+###### 6.3.5.2
 
-If S(i) fails the GDEM Mean and Standard Deviation test, then set salt_flag(i) = 3 (even if salt_flag(i) was previously not equal to zero).
+If S(i) fails the GDEM Mean and Standard Deviation test, 
+then set salt_flag(i) = 3 (even if salt_flag(i) was previously not equal to zero).
 
-###### **6.3.5.3**
+###### 6.3.5.3
 
-If salt_flag(i) = 0 or 21 and S(i) fails the Spike test,  set salt_flag(i) = 4.
+If salt_flag(i) = 0 or 21 and S(i) fails the Spike test, set salt_flag(i) = 4.
 
-###### **6.3.5.4**
+###### 6.3.5.4
 
-If salt_flag(i) = 0 or 21 and S(i) fails the Vertical Gradient test, then set salt_flag(i)=5.
+If salt_flag(i) = 0 or 21 and S(i) fails the Vertical Gradient test, then set salt_flag(i) = 5.
 
-###### **6.3.5.5**
+###### 6.3.5.5
 
-If salt_flag(i) = 0 or 21  and S(i) fails the Running St. Dev. test, then set salt_flag(i)=8.
+If salt_flag(i) = 0 or 21 and S(i) fails the Running St. Dev. test, then set salt_flag(i) = 8.
 
-###### **6.3.5.6**
+###### 6.3.5.6
 
-At each consecutive depth pair, Z(i) and Z(i+1), that fails the Static Stability Test, set temp_flag(i)= 7 and temp_flag(i+1) = 7 if originally set to zero, and set salt_flag(i) = 7 and salt_flag(i+1) = 7 if originally set to zero.
+At each consecutive depth pair, Z(i) and Z(i+1), that fails the Static Stability Test, 
+set temp_flag(i)= 7 and temp_flag(i+1) = 7 if originally set to zero, 
+and set salt_flag(i) = 7 and salt_flag(i+1) = 7 if originally set to zero.
 
-C-13
-
-###### **6.3.5.7**
+###### 6.3.5.7
 
 Set full-profile flags for each temperature and salinity (separately) profile based on numbers and types of flags set for each profile.
 
-###### **6.4 Sequence of Quality Control tests and Processing Performed on optics measurements**
+#### 6.4 Sequence of Quality Control tests and Processing Performed on optics measurements
 
-Lager is presently set up to process eight different types of optics measurements. Both raw, un-scaled observations and scaled observations can be processed and tested for quality. The name of each time series variable in the raw, unprocessed, incoming observation file is used by LAGER to determine whether it is an optics observation, whether it is unscaled or scaled, what type of optical measurement it is, and what specific critical parameters should be used in the scaling (if required) and in the quality control tests. Part of the listing in this section concerns the determination of possible measurement errors, and the integer values representing various types of errors are stored in error flag arrays, with one flag value for each observation. Optics error flags are stored in the final processed output file with names of the form, opt_V_flag, where V is one of the eight optics measurement types processed by LAGER (i.e., V = **bb** , **ed** , **c** , **b** , **vis** , **par** , **Flchl** , **Flphyco** , or **Flcdom** ). All opt_V_flag(i) values at each depth, Z(i), where i is the depth index, are initially set to zero, which indicates no error. The sequence of steps used by LAGER to identify, process, and quality control optics observations follows:
+Lager is presently set up to process eight different types of optics measurements. 
+Both raw, un-scaled observations and scaled observations can be processed and tested for quality. 
+The name of each time series variable in the raw, unprocessed, 
+incoming observation file is used by LAGER to determine whether it is an optics observation, 
+whether it is unscaled or scaled, 
+what type of optical measurement it is, and what specific critical parameters should be used in the scaling (if required) and in the quality control tests. 
+Part of the listing in this section concerns the determination of possible measurement errors, 
+and the integer values representing various types of errors are stored in error flag arrays, 
+with one flag value for each observation. 
+Optics error flags are stored in the final processed output file with names of the form, 
+opt_V_flag, where V is one of the eight optics measurement types processed by LAGER (i.e., V = **bb** , **ed** , **c** , **b** , **vis** , **par** , **Flchl** , **Flphyco** , or **Flcdom** ). 
+All opt_V_flag(i) values at each depth, Z(i), 
+where i is the depth index, are initially set to zero, 
+which indicates no error. 
+The sequence of steps used by LAGER to identify, 
+process, and quality control optics observations follows:
 
-###### **6.4.1**
+##### 6.4.1
 
-LAGER cycles through each variable definition block in the optics_variables_info.dat file (Section 3.6). For each definition block in the optics_variables_info.dat file, the “inname” is read. This is name for an optics variable name that might be found in and incoming raw NetCDF data file. Example inname variable names are wlbb2f_blueCount, wlbb2f_redCount, and wlbb2f_fluorCount from Seaglider raw files and
+LAGER cycles through each variable definition block in the optics_variables_info.dat file (Section 3.6). 
+For each definition block in the optics_variables_info.dat file, 
+the “inname” is read. 
+This is name for an optics variable name that might be found in and incoming raw NetCDF data file. 
+Example inname variable names are wlbb2f_blueCount, 
+wlbb2f_redCount, 
+and wlbb2f_fluorCount from Seaglider raw files and sci_bbam_corr_sig and sci_bbam_beam_c from a Slocum or LBS-G glider raw NetCDF files (previously made into NetCDF files from raw binary sbd/tbd, 
+mbd/nbd, or dbd/ebd files). 
+LAGER tries to read the time series with this name from the incoming raw data file. 
+If it successfully reads the time series, then the processing continues.  If the variable is not found, 
+then the inname from the next definition block is read, 
+and LAGER tries to read this variable from the incoming raw data file. 
+This process continues until a match is made between the inname from the optics_varialbes_info.dat file and a variable in the incoming data file, 
+or until the end of the optics_variables_info.dat file is reached.
 
-sci_bbam_corr_sig and sci_bbam_beam_c from a Slocum or LBS-G glider raw NetCDF files (previously made into NetCDF files from raw binary sbd/tbd, mbd/nbd, or dbd/ebd files).  LAGER tries to read the time series with this name from the incoming raw data file. If it successfully reads the time series, then the processing continues.  If the variable is not found, then the inname from the next definition block is read, and LAGER tries to read this variable from the incoming raw data file.  This process continues until a match is made between the inname from the optics_varialbes_info.dat file and a variable in the incoming data file, or until the end of the optics_variables_info.dat file is reached.
+##### 6.4.2
 
-###### **6.4.2**
+Once a variable matching the inname is identified in the incoming file and the time series is read in, 
+the other parameters defined in the same optics_variables_info.dat definition block as inname are read in to aid in further processing. 
+A typical list of parameters (for inname = sci_bbam_corr_sig in this case) in the definition block is (see Section 3.6):
 
-Once a variable matching the inname is identified in the incoming file and the time series is read in, the other parameters defined in the same optics_variables_info.dat definition block as inname are read in to aid in further processing. A typical list of parameters (for inname = sci_bbam_corr_sig in this case) in the definition block is (see Section 3.6):
+nvarinput = 1
 
-nvarinput = 1 inname = sci_bbam_corr_sig calibrated = no
+inname = sci_bbam_corr_sig
 
-C-14
+calibrated = no
 
-add_scaled_offset = yes instrument = bamslk description = beam attenuation coefficient type = c units = 1/m outname = attenuation validrangemin = 0 validrangemax = 100 resolution = 0.01 wavelength = 0 scalefactor = 1 spike = 1.0 stdevfactor = 2.0 abslimfactor = 0.03 lenfilt = 7 maxchopdepth = 1.0 depthwindow = 5.0 enddef
+add_scaled_offset = yes
+
+instrument = bamslk
+
+description = beam attenuation coefficient
+
+type = c
+
+units = 1/m
+
+outname = attenuation
+
+validrangemin = 0
+
+validrangemax = 100
+
+resolution = 0.01
+
+wavelength = 0
+
+scalefactor = 1
+
+spike = 1.0
+
+stdevfactor = 2.0
+
+abslimfactor = 0.03
+
+lenfilt = 7
+
+maxchopdepth = 1.0
+
+depthwindow = 5.0
+
+enddef
 
 The parameter, “calibrated”, is either yes or no (no in this case) depending on whether the variable is scaled or unscaled.
 
 **_Unfortunately, the words scaled and unscaled are used synonymously with the words calibrated and uncalibrated. Furthermore, the process of scaling is also called the process of calibration, and scaling coefficients are usually called calibration coefficients._**
 
-###### **6.4.3**
+##### 6.4.3
 
-If the variable is unscaled (calibrated = no), then it must be scaled using calibration coefficients for the specific instrument that made these measurements on the glider presently being processed. LAGER first constructs the name of the glider’s sensor configuration file by adding “_sensorconfig.dat” to the name of the glider, e.g., sl079_sensorconfig.dat.  LAGER then reads that file contained in the
+If the variable is unscaled (calibrated = no), 
+then it must be scaled using calibration coefficients for the specific instrument that made these measurements on the glider presently being processed. 
+LAGER first constructs the name of the glider’s sensor configuration file by adding “_sensorconfig.dat” to the name of the glider, e.g., sl079_sensorconfig.dat. 
+LAGER then reads that file contained in the `$lager_setup_files/sensor_config directory`. 
+This file contains a series of definition blocks. Each block contains information for a given instrument that is or has ever been attached to this glider, such as “bamslk”, 
+the instrument name from the example from the optics_variables_info.dat definition block above. 
+There may be more than one definition block in the sensorconfig file for this glider for this particular instrument. 
+There will be one block for each time this instrument was installed and removed. 
+For example, the sensor_config file for sl079 contains two definition blocks for the bamslk instrument:
 
-$lager_setup_files/sensor_config directory. This file contains a series of definition blocks. Each block contains information for a given instrument that is or has ever been attached to this glider, such as “bamslk”, the instrument name from the example from the optics_variables_info.dat definition block above. There may be more than one definition block in the sensorconfig file for this glider for this particular instrument. There will be one block for each time this instrument was installed and removed. For example, the sensor_config file for sl079 contains two definition blocks for the bamslk instrument:
+         #
+         type = bamslk
+         sn = BAMSLK-008R
+         install_date = 20110701
+         remove_date =20110906
+         #
+         type = bamslk
+         sn = BAMSLK-006G
+         install_date = 20110906
+         remove_date =
 
-# type = bamslk sn = BAMSLK-008R
-
-C-15
-
-install_date = 20110701 remove_date =20110906 # type = bamslk sn = BAMSLK-006G install_date = 20110906 remove_date =
-
-By examining the install_date and remove_date (if not blank) for each definition block for this instruement, LAGER determines which block applies to the present data set being processed (from the set of dates/times of the observation in the time series).  If the data set was measured after the install date, 09/06/2011, then the second block must be used.
+By examining the install_date and remove_date (if not blank) for each definition block for this instruement, 
+LAGER determines which block applies to the present data set being processed (from the set of dates/times of the observation in the time series). 
+If the data set was measured after the install date, 09/06/2011, then the second block must be used.
 
 ###### **6.4.4**
 
