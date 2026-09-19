@@ -52,17 +52,17 @@ and Chad Lembke and Frank Muller-Karger (University of South Florida) for their 
 
 |**Term**|**Definition**|
 |---|---|
-|**Absolute Salinity (SA)**|Absolute salinity is the mass fraction of salt in seawater, expressed in units of g/kg. Spatial variations of the composition of seawater mean that absolute<br>salinity is not simply proportional to practical salinity (TEOS-10).|
-|**Codable Instructions**|Codable instructions are specific guidance that can be used by a software<br>programmer to design, construct, and implement a test. These instructions<br>also include examples with sample thresholds.|
-|**Data Record**|A data record is one or more messages that form a coherent, logical, and<br>complete observation.|
-|**Message**|A message is a standalone data transmission. A data record can be composed<br>of multiple messages.|
-|**Operator**|Operators are individuals or entities who are responsible for collecting and<br>providing data.|
-|**Practical Salinity (SP)**|Practical salinity is a unitless ratio expressing salinity as defined by the<br>Practical Salinity Scale 1978 (PSS-78).|
-|**Quality Assurance (QA)**|QA involves processes that are employed with hardware to support the<br>generation of high quality data.|
-|**Quality Control (QC)**|QC involves follow-on steps that support the delivery of high quality data<br>and requires both automation and human intervention.|
-|**Real Time**|Real time means that: data are delivered without delay for immediate use;<br>time series extends only backwards in time, where the next data points are<br>not available; and there may be delays ranging from a few seconds to a few<br>hours or even days, depending upon the variable.|
-|**Threshold**|Thresholds are limit of variables that are defined by the regional operator or<br>the Glider DAC.|
-|**Variable**|Variable is an observation (or measurement) of biogeochemical properties<br>within oceanographic and/or meteorological environments.|
+|**Absolute Salinity (SA)**|Absolute salinity is the mass fraction of salt in seawater, expressed in units of g/kg. Spatial variations of the composition of seawater mean that absolute salinity is not simply proportional to practical salinity (TEOS-10).|
+|**Codable Instructions**|Codable instructions are specific guidance that can be used by a software programmer to design, construct, and implement a test. These instructions also include examples with sample thresholds.|
+|**Data Record**|A data record is one or more messages that form a coherent, logical, and complete observation.|
+|**Message**|A message is a standalone data transmission. A data record can be composed of multiple messages.|
+|**Operator**|Operators are individuals or entities who are responsible for collecting and providing data.|
+|**Practical Salinity (SP)**|Practical salinity is a unitless ratio expressing salinity as defined by the Practical Salinity Scale 1978 (PSS-78).|
+|**Quality Assurance (QA)**|QA involves processes that are employed with hardware to support the generation of high quality data.|
+|**Quality Control (QC)**|QC involves follow-on steps that support the delivery of high quality data and requires both automation and human intervention.|
+|**Real Time**|Real time means that: data are delivered without delay for immediate use; time series extends only backwards in time, where the next data points are not available; and there may be delays ranging from a few seconds to a few hours or even days, depending upon the variable.|
+|**Threshold**|Thresholds are limit of variables that are defined by the regional operator or the Glider DAC.|
+|**Variable**|Variable is an observation (or measurement) of biogeochemical properties within oceanographic and/or meteorological environments.|
 
 ## Preface
 
@@ -253,10 +253,10 @@ The focus is primarily on the real-time QC of observations n₀, n₋₁, and n�
 
 |**Flag**|**Description**|
 |---|---|
-|Pass=1|Data have passed critical real-time quality control tests and are deemed<br>adequate for use as preliminary data.|
-|Not evaluated=2|Data have not been QC-tested, or the information on quality is not<br>available.|
-|Suspect or<br>Of High Interest=3|Data are considered to be either suspect or of high interest to data<br>providers and users. They are flagged suspect to draw further attention<br>to them by operators.|
-|Fail=4|Data are considered to have failed one or more critical real-time QC<br>checks. If they are disseminated at all, it should be readily apparent that<br>they are not of acceptable quality.|
+|Pass=1|Data have passed critical real-time quality control tests and are deemed adequate for use as preliminary data.|
+|Not evaluated=2|Data have not been QC-tested, or the information on quality is not available.|
+|Suspect or Of High Interest=3|Data are considered to be either suspect or of high interest to data providers and users. They are flagged suspect to draw further attention to them by operators.|
+|Fail=4|Data are considered to have failed one or more critical real-time QC checks. If they are disseminated at all, it should be readily apparent that they are not of acceptable quality.|
 |Missing data=9|Data are missing; used as a placeholder.|
 
 : Table 2. Flags for real-time data (UNESCO 2013).
@@ -319,16 +319,16 @@ to characterize the entire vertical profile.
 |**Glider DAC**|**LAGER**|**GTSPP**|**Argo**|**UWAPL**|
 |---|---|---|---|---|
 |1)  Timing/Gap Test|No match|1.2|2|No match|
-|2)  Syntax Test|No match|No match|1 (close, not<br>identical)|No match|
+|2)  Syntax Test|No match|No match|1 (close, not identical)|No match|
 |3)  Location Test|6.1|1.3, 1.4|3, 4, 5|Yes|
-|4)  Gross Range Test|6.3.2.1, 6.3.4.1,<br>6.3.5.1, 6.5.2|2.1|6, 7|Yes|
+|4)  Gross Range Test|6.3.2.1, 6.3.4.1, 6.3.5.1, 6.5.2|2.1|6, 7|Yes|
 |5)  Pressure Test|6.2|2.4|8|No match|
-|6) Climatological Test|6.5.3|3.1, 3.2, 3.3,<br>3.4|No match|No match|
-|7)  Spike Test|6.3.2.4, 6.3.3.1,<br>6.3.4.3, 6.3.5.3,<br>6.5.5|2.7, 2.8|9|Yes|
+|6) Climatological Test|6.5.3|3.1, 3.2, 3.3, 3.4|No match|No match|
+|7)  Spike Test|6.3.2.4, 6.3.3.1, 6.3.4.3, 6.3.5.3, 6.5.5|2.7, 2.8|9|Yes|
 |8)   Rate of Change Test|6.3.2.5, 6.3.4.4|2.9, 4.1|11|No match|
 |9)  Flat Line Test|6.3.2.3, 6.5.4|2.4, 2.5|14, 18|No match|
 |10)  Multi-Variate Test|No match|No match|No match|No match|
-|11)  Attenuated  Signal Test|No match|2.4|16 (close,<br>not<br>identical)|No match|
+|11)  Attenuated  Signal Test|No match|2.4|16 (close, not identical)|No match|
 |12)  Previous Profile Test|No match|No match|No match|No match|
 |13)  TS Curve/Space Test|No match|No match|No match|No match|
 |14)  Density Inversion Test|6.6.2|2.10|14|No match|
@@ -346,7 +346,7 @@ This test does not address all clock drift/jump issues.
 
 | Flags | Condition | Codable Instructions |
 |---|---|---|
-|Fail=4|Data have not arrived as<br>expected.|If `NOW` – `TIM_STMP` > `TIM_INC`, flag = 4|
+|Fail=4|Data have not arrived as expected.|If `NOW` – `TIM_STMP` > `TIM_INC`, flag = 4|
 |Suspect=3|N/A|N/A|
 |Pass=1|Applies for test pass condition.|N/A|
 
@@ -532,8 +532,8 @@ Examples: `N_DEV` = 3, `ZRANGE_DEV` = 25 meters
 Invariant value. Applies to T, S, C, and P.
 When some sensors and/or data collection platforms fail, 
 the result can be a continuously repeated observation of the same value. 
-This test compares the present observation (_n_) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations. 
-Observation (_n_) is flagged if it has the same value as previous observations within a tolerance value, `EPS`, 
+This test compares the present observation (n) to a number (`REP_CNT_FAIL` or `REP_CNT_SUSPECT`) of previous observations. 
+Observation (n) is flagged if it has the same value as previous observations within a tolerance value, `EPS`, 
 to allow for numerical round-off error. Note that historical flags are not changed.
 
 Uniformly mixed surface layers and deep waters may approach flat line conditions, 
@@ -596,141 +596,177 @@ Therefore full co-variance QC tests are still considered experimental.
 
 **Test 11 - Attenuated Signal Test (Suggested)**
 
-A test for inadequate variation of the time series. Applies to T, S, C, and P. A common sensor failure mode can provide a data series that is nearly but not exactly a flat line (e.g., if the conductivity cell was to become clogged). This test inspects for a standard deviation (SD) value or a range variation (MAX-MIN) value that fails to exceed threshold values (MIN_VAR_WARN, MIN_VAR_FAIL) over a selected depth range (TST_ZRANGE).
+A test for inadequate variation of the time series. 
+Applies to T, S, C, and P. 
+A common sensor failure mode can provide a data series that is nearly but not exactly a flat line (e.g., if the conductivity cell was to become clogged). 
+This test inspects for a standard deviation (`SD`) value or a range variation (`MAX`-`MIN`) value that fails to exceed threshold values (`MIN_VAR_WARN`, `MIN_VAR_FAIL`) over a selected depth range (`TST_ZRANGE`).
 
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|Variation fails to meet the<br>minimum threshold<br>MIN_VAR_FAIL.|If throughout TST_ZRANGE, SD<br><MIN_VAR_FAIL, or<br>During TST_ZRANGE, MAX-MIN<br><MIN_VAR_FAIL,flag= 4|
-|Suspect=3|Variation fails to meet the<br>minimum threshold<br>MIN_VAR_WARN.|If throughout TST_ZRANGE, SD<br><MIN_VAR_WARN, or<br>During TST_ZRANGE, MAX-MIN<br><MIN_VAR_WARN,flag= 3|
-|Pass=1|Applies for test pass condition.|N/A|
-|**Test Excepti**|**on:**None.||
-|**Test specific**<br>**Examples:**|**ations to be established locally by the op**<br>TST_ZRANGE =  50 meters<br>MIN_VAR_WARN=0.05 °C, MIN_VAR_F|**erator.**<br>AIL=0.01 °C|
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | Variation fails to meet the minimum threshold `MIN_VAR_FAIL`. | If throughout `TST_ZRANGE`, `SD` < `MIN_VAR_FAIL`, or during `TST_ZRANGE`, `MAX`-`MIN` < `MIN_VAR_FAIL`, flag = 4 |
+| Suspect=3 | Variation fails to meet the minimum threshold `MIN_VAR_WARN`. | If throughout `TST_ZRANGE`, `SD` < `MIN_VAR_WARN`, or during `TST_ZRANGE`, `MAX`-`MIN` < `MIN_VAR_WARN`, flag = 3 |
+| Pass=1 | Applies for test pass condition. | N/A |
 
-###### Test 12) Previous Profile Test (Suggested)
+Test Exception: None.
 
-###### Comparison to nearby profiles. Applies to T, C, S.
+Test specifications: To be established locally by the operator.
 
-The previous ( _n-1_ ) downglide or upglide can often serve as a good reference for the new ( _n_ ) downglide or upglide. The example below illustrates a temperature comparison.
+Examples: `TST_ZRANGE` = 50 meters; `MIN_VAR_WARN` = 0.05 °C; `MIN_VAR_FAIL` = 0.01 °C
 
-At each pressure (P) in a profile, the absolute difference between the new observation (T _n,P_ ) and the previous observation (T _n-1,P_ ) is determined and compared to an operator-selected threshold. The selected thresholds are a function of pressure to allow greater variability in the vicinity of the thermocline/halocline and lesser variability at depth.
+**Test 12 - Previous Profile Test (Suggested)**
 
-The utility of this test depends largely upon the glider mission. For studies of small variations in the ocean interior, it could quickly identify hardware issues, but when tracking oceanic fronts, the test would likely be disabled.
+Comparison to nearby profiles. Applies to T, C, S.
+The previous (n₋₁) downglide or upglide can often serve as a good reference for the new (n) downglide or upglide. 
+The example below illustrates a temperature comparison.
 
-|**Flags**|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|Because of the dynamic nature<br>of T and S in some locations, no<br>fail flag is identified for this test.|N/A|
-|Suspect=3|Reported value is outside of<br>operator-identified deviation<br>from previous profile.|If |T_n,P_ - T_n-1,P_ |> TDEVP, flag = 3|
-|Pass=1|Applies for test pass condition.|N/A|
-|**Test Exceptio**<br>be conducted|**n:**May be disabled for glider missions<br>on the first glide.|seeking large horizontal gradients. Test cannot|
-|**Test specifica**<br>deviation fro<br>**Examples:**0-|**tions to be established locally by the**<br>m the previous profile.<br>15 dbar, TDEV=0.5 °C; 15-40 dbar, TDE|**operator.**Profiles of acceptable T, C, and S<br>V=1.0 °C; 40-200 dbar TDEV=0.1 °C|
+At each pressure (P) in a profile, 
+the absolute difference between the new observation (Tₙ,ₚ) and the previous observation (Tₙ₋₁,ₚ) is determined and compared to an operator-selected threshold. 
+The selected thresholds are a function of pressure to allow greater variability in the vicinity of the thermocline/halocline and lesser variability at depth.
 
+The utility of this test depends largely upon the glider mission. 
+For studies of small variations in the ocean interior, 
+it could quickly identify hardware issues, but when tracking oceanic fronts, 
+the test would likely be disabled.
 
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | Because of the dynamic nature of T and S in some locations, no fail flag is identified for this test. | N/A |
+| Suspect=3 | Reported value is outside of operator-identified deviation from previous profile. | If \|Tₙ,ₚ - Tₙ₋₁,ₚ\| > TDEVₚ, flag = 3 |
+| Pass=1 | Applies for test pass condition. | N/A |
 
-~~18~~
+Test Exception: May be disabled for glider missions seeking large horizontal gradients. Test cannot be conducted on the first glide.
 
-###### Test 13) TS Curve/Space Test (Suggested)
+Test specifications: To be established locally by the operator. Profiles of acceptable T, C, and S deviation from the previous profile.
 
-###### Comparison to expected TS relationship. Applies to T, S.
+Examples: 0-15 dbar, TDEV = 0.5 °C; 15-40 dbar, TDEV = 1.0 °C; 40-200 dbar, TDEV = 0.1 °C
 
-The TS curve is a classic tool used to evaluate observations, especially in the open ocean below the thermocline. Site-specific TS curve characteristics are used to identify outliers. The curve could be either a fitted equation or numerical table. For a given T _n_ , S _n_ is expected to be within Sfit ± S_fit_warn or S_fit_fail, operator-provided values. The value Sfit is obtained from the equation or table.
+**Test 13 - TS Curve/Space Test (Suggested)**
 
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|For a given temperature, the<br>observed salinity falls outside the<br>TS curve failure threshold.|If |S_n_-Sfit| >S_fit_fail, flag = 4|
-|Suspect=3|For a given temperature, the<br>observed salinity falls outside the<br>TS curve warning threshold.|If |S_n_-Sfit| <S_fit_fail and |S_n_-Sfit| ≥S_fit_warn,<br>flag = 3|
-|Pass=1|For a given temperature, the<br>observed salinity falls within the<br>specified TS curve threshold.||S_n_-Sfit| <S_fit_warn, flag = 1|
-|**Test Excepti**|**on:**The test will probably not be usef|ul above the thermocline.|
-|**Test specific**<br>**Examples:**|**ations to be established locally by th**<br>At the Bermuda Atlantic Time Serie<br>salinitySfit = 36.5, S_fit_fail = 0.05,|**e operator.**<br>s site, for a temperature of 18°C, practical<br>S_fit_warn = 0.02|
+Comparison to expected TS relationship. Applies to T, S.
+The TS curve is a classic tool used to evaluate observations, 
+especially in the open ocean below the thermocline. 
+Site-specific TS curve characteristics are used to identify outliers. 
+The curve could be either a fitted equation or numerical table. 
+For a given Tₙ, Sₙ is expected to be within `Sfit` ± `S_fit_warn` or `S_fit_fail`, operator-provided values. 
+The value Sfit is obtained from the equation or table.
 
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | For a given temperature, the observed salinity falls outside the TS curve failure threshold. | If \|Sₙ - `Sfit`\| > `S_fit_fail`, flag = 4 |
+| Suspect=3 | For a given temperature, the observed salinity falls outside the TS curve warning threshold. | If \|Sₙ - `Sfit`\| < `S_fit_fail` and \|Sₙ - `Sfit`\| ≥ `S_fit_warn`, flag = 3 |
+| Pass=1 | For a given temperature, the observed salinity falls within the specified TS curve threshold. | \|Sₙ - `Sfit`\| < `S_fit_warn`, flag = 1 |
 
+Test Exception: The test will probably not be useful above the thermocline.
 
-~~19~~
+Test specifications: To be established locally by the operator.
 
-###### Test 14) Density Inversion Test (Suggested)
+Examples: At the Bermuda Atlantic Time Series site, for a temperature of 18 °C, practical salinity Sfit = 36.5, S_fit_fail = 0.05, S_fit_warn = 0.02
 
-###### Checks that density increases with pressure (depth).
+**Test 14 - Density Inversion Test (Suggested)**
 
-With few exceptions, potential water density (σθ) will increase with increasing pressure. When vertical profile data are obtained, this test is used to flag failed T, C, and S observations, which yield densities that do not sufficiently increase with pressure. A small operator-selected density threshold (DT) allows for micro-turbulent exceptions. Here, σθ _n_ is defined as one sample increment deeper than σθ _n_ -1. With proper consideration, the test can be run on downglides, upglides, or down/upglide results produced in real time.
+Checks that density increases with pressure (depth).
+With few exceptions, potential water density (σθ) will increase with increasing pressure. 
+When vertical profile data are obtained, 
+this test is used to flag failed T, C, and S observations, 
+which yield densities that do not sufficiently increase with pressure. 
+A small operator-selected density threshold (DT) allows for micro-turbulent exceptions. 
+Here, σθₙ is defined as one sample increment deeper than σθₙ₋₁. 
+With proper consideration, 
+the test can be run on downglides, upglides, 
+or down/upglide results produced in real time.
 
-From a computational point of view, this test is similar to the rate of change test (test 8). The same code can be used for both, using different variables and thresholds. As with the rate of change test, it is not known which side of the step is good versus bad.
+From a computational point of view, this test is similar to the rate of change test (test 8). 
+The same code can be used for both, 
+using different variables and thresholds. As with the rate of change test, 
+it is not known which side of the step is good versus bad.
 
-An example of the software to compute sigma-theta (σθ) is available at http://www.teos- <u>10.org/software.htm. Operators may choose a different measure of density, such as σt.</u>
+An example of the software to compute sigma-theta (σθ) is available at http://www.teos-10.org/software.htm. Operators may choose a different measure of density, such as σt.
 
-|**Flags **|**Condition**|**Codable Instructions**|
-|---|---|---|
-|Fail=4|Potential density does not<br>sufficiently increase with<br>increasingdepth.|If σθ_n_-1+DT > σθ_n_, flag = 4|
-|Suspect=3|No suspect flag is identified for<br>this test.|N/A|
-|Pass=1|Potential density sufficiently<br>increases with increasingdepth.|If σθ_n_-1+DT ≤ σθ_n_, flag = 1|
-|**Test Excepti**|**on:**None.||
-|**Test specific**<br>**Examples:**|**ations to be established locally by the**<br>DT = 0.03 kg/m<sup>3</sup>|**operator.**|
+| Flags | Condition | Codable Instructions |
+| --- | --- | --- |
+| Fail=4 | Potential density does not sufficiently increase with increasing depth. | If σθₙ₋₁ + DT > σθₙ, flag = 4 |
+| Suspect=3 | No suspect flag is identified for this test. | N/A |
+| Pass=1 | Potential density sufficiently increases with increasing depth. | If σθₙ₋₁ + DT ≤ σθₙ, flag = 1 |
 
+Test Exception: None.
 
+Test specifications: To be established locally by the operator.
 
-~~20~~
+Examples: DT = 0.03 kg/m³
 
-# Summary
+## Summary
 
-The QC tests in this glider document have been compiled using the guidance provided by the volunteer committee and valuable reviewers (appendix A). Test suggestions came from both operators and TS profile data users with extensive experience. The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time, and these and other differences must be balanced according to the specific circumstances of each operator. Although these real-time tests are required, strongly recommended, or suggested, it is the operator who is responsible for deciding which tests are appropriate. Each operator selects thresholds based on the specific program requirements that must be met. The scope of requirements can vary widely, from complex data streams that support myriad QC checks to ensure precise and accurate measurements to basic data streams that do not need such details. Operators must publish their QC processes via metadata so that data users can readily see and understand the source and quality of those data.
+The QC tests in this glider document have been compiled using the guidance provided by the volunteer committee and valuable reviewers (appendix A). 
+Test suggestions came from both operators and TS profile data users with extensive experience. 
+The considerations of operators who ensure the quality of real-time data may be different from those whose data are not published in real time, 
+and these and other differences must be balanced according to the specific circumstances of each operator. 
+Although these real-time tests are required, 
+strongly recommended, or suggested, 
+it is the operator who is responsible for deciding which tests are appropriate. 
+Each operator selects thresholds based on the specific program requirements that must be met. 
+The scope of requirements can vary widely, 
+from complex data streams that support myriad QC checks to ensure precise and accurate measurements to basic data streams that do not need such details. 
+Operators must publish their QC processes via metadata so that data users can readily see and understand the source and quality of those data.
 
-The 14 QC tests identified in this manual apply to TS profile observations from a variety of gliders and operators who are providing data to the U.S. IOOS Glider DAC. The individual tests are described and include codable instructions, output conditions, example thresholds, and exceptions (if any). Several existing programs, including the U.S. Navy’s LAGER Automated Processing and QC (appendix C), the UWAPL’s Seaglider Quality Control Manual (appendix D), GTSPP (UNESCO-IOC 2010) and Argo (Carval et al. 2015), have developed QC tests for mobile platforms that are similar to the U.S. IOOS glider QC tests in this manual.
+The 14 QC tests identified in this manual apply to TS profile observations from a variety of gliders and operators who are providing data to the U.S. IOOS Glider DAC. 
+The individual tests are described and include codable instructions, output conditions, 
+example thresholds, 
+and exceptions (if any). 
+Several existing programs, 
+including the U.S. Navy’s LAGER Automated Processing and QC (appendix C), the UWAPL’s Seaglider Quality Control Manual (appendix D), 
+GTSPP (UNESCO-IOC 2010) and Argo (Carval et al. 2015), 
+have developed QC tests for mobile platforms that are similar to the U.S. IOOS glider QC tests in this manual.
 
-Selection of the proper thresholds is critical to a successful QC effort. Thresholds can be based on historical knowledge or statistics derived from more recently acquired data, but they should not be determined arbitrarily. This manual provides guidance for selecting thresholds based on input from various operators, but also notes that operators need the subject matter expertise and motivation to select the proper thresholds to maximize the value of their QC effort.
+Selection of the proper thresholds is critical to a successful QC effort. 
+Thresholds can be based on historical knowledge or statistics derived from more recently acquired data, 
+but they should not be determined arbitrarily. 
+This manual provides guidance for selecting thresholds based on input from various operators, 
+but also notes that operators need the subject matter expertise and motivation to select the proper thresholds to maximize the value of their QC effort.
 
-The test procedures in this manual address only real-time, in-situ observations. The tests do not include post-processing, which is not in real time but may be useful for ecosystembased management, or delayed-mode, which might be suitable for climate studies.
+The test procedures in this manual address only real-time, 
+in-situ observations. 
+The tests do not include post-processing, 
+which is not in real time but may be useful for ecosystembased management, 
+or delayed-mode, 
+which might be suitable for climate studies.
 
-This manual is envisioned as a dynamic document and will be posted on the U.S. IOOS Glider DAC website at www.ioos.noaa.gov/glider. This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.
+This manual is envisioned as a dynamic document and will be posted on the U.S. IOOS Glider DAC website at www.ioos.noaa.gov/glider. 
+This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.
 
-~~21~~
+## References
 
-# References
+> Allen, R. L. Jr. and US Navy; Naval Oceanographic Office (2012). Global gridded physical profile data from the U.S. Navy's Generalized Digital Environmental Model (GDEM) product database (NODC Accession 9600094). Version 1.1. National Oceanographic Data Center, NOAA. Dataset.
 
-- Allen, R. L. Jr. and US Navy; Naval Oceanographic Office (2012). Global gridded physical profile data from the U.S. Navy's Generalized Digital Environmental Model (GDEM) product database (NODC Accession 9600094). Version 1.1. National Oceanographic Data Center, NOAA. Dataset.
+> Baltes, B., D. Rudnick, M. Crowley, O. Schofield, C. Lee, J. Barth, C. Lembke…J. Potemra, (2014). Toward a U.S. IOOS® Underwater Glider Network Plan: Part of a comprehensive subsurface observing system. http://www.ioos.noaa.gov/glider/strategy/glider_network_whitepaper_final.pdf
 
-- Baltes, B., D. Rudnick, M. Crowley, O. Schofield, C. Lee, J. Barth, C. Lembke…J. Potemra, (2014). Toward a U.S. IOOS<sup>®</sup> Underwater Glider Network Plan: Part of a comprehensive subsurface observing system.
+> Boyer, T.P., J. I. Antonov, O. K. Baranova, C. Coleman, H. E. Garcia, A. Grodsky, D. R. Johnson, R. A. Locarnini, A. V. Mishonov, T.D. O'Brien, C.R. Paver, J.R. Reagan, D. Seidov, I. V. Smolyar, and M. M. Zweng (2013): World Ocean Database 2013, NOAA Atlas NESDIS 72, S. Levitus, Ed., A. Mishonov, Technical Ed.; Silver Spring, MD, 209 pp., http://doi.org/10.7289/V5NZ85MT
 
-   - <u>http://www.ioos.noaa.gov/glider/strategy/glider_network_whitepaper_final.pdf</u>
+> Carval, T., R. Keeley, Y. Takatsuki, T. Yoshida, C. Schmid, R. Goldsmith, A. Wong, A. Thresher, A. Tran, S. Loch, R. Mccreadie (2015). Argo user’s manual V3.2. http://dx.doi.org/10.13155/29825
 
-- Boyer, T.P., J. I. Antonov, O. K. Baranova, C. Coleman, H. E. Garcia, A. Grodsky, D. R. Johnson, R. A. Locarnini, A. V. Mishonov, T.D. O'Brien, C.R. Paver, J.R. Reagan, D. Seidov, I. V. Smolyar, and M. M. Zweng (2013): World Ocean Database 2013, NOAA Atlas NESDIS 72, S. Levitus, Ed., A. Mishonov, Technical Ed.; Silver Spring, MD, 209 pp., <u>http://doi.org/10.7289/V5NZ85MT</u>
+> Garau, B., S. Ruiz, W. Zhang, A. Pasucal, E. Heslop, J. Kerfoot, and J. Tintore, 2011. Thermal lag correction on Slocum CTD glider data. J. Atmos. Ocean. Technol., 28(9), 1065–1071.
 
-- Carval, T., R. Keeley, Y. Takatsuki, T. Yoshida, C. Schmid, R. Goldsmith, A. Wong, A. Thresher, A. Tran, S. Loch, R. Mccreadie (2015). Argo user’s manual V3.2. <u>http://dx.doi.org/10.13155/29825</u>
+> GTSPP Real-Time Quality Control Manual, First Revised Edition. UNESCO-IOC 2010. (IOC Manuals and Guides No. 22, Revised Edition.) (IOC/2010/MG/22Rev.) Note: The initial version of the manual was published in 1990 (SC-90/WS-74) Published in 2010 by the United Nations Educational, Scientific and Cultural Organization, 7, Place de Fontenoy, 75352, Paris 07 SP UNESCO 2010 http://www.nodc.noaa.gov/GTSPP/document/qcmans/MG22rev1.pdf
 
-- Garau, B., S. Ruiz, W. Zhang, A. Pasucal, E. Heslop, J. Kerfoot, and J. Tintore, 2011. Thermal lag correction on Slocum CTD glider data _. J. Atmos. Ocean. Technol_ ., 28(9), 1065–1071.
+> Liu, Y., R.H. Weisberg, and C. Lembke (2015). Glider salinity correction for unpumped CTD sensors across a sharp thermocline, in _Coastal Ocean Observing Systems_ , 305325, Elsevier (Academic Press), http://dx.doi.org/10.1016/B978-0-12-802022-7.00017-1.
 
-- GTSPP Real-Time Quality Control Manual, First Revised Edition. UNESCO-IOC 2010. (IOC Manuals and Guides No. 22, Revised Edition.) (IOC/2010/MG/22Rev.)
+> Merckelbach, L., D. Smeed and G. Griffiths (2010). Vertical water velocities from underwater gliders. _Journal of Atmospheric and Oceanic Technology_ , 27, (3), 547563. (doi:10.1175/2009JTECHO710.1).
 
-   - Note: The initial version of the manual was published in 1990 (SC-90/WS-74) Published in 2010 by the United Nations Educational, Scientific and Cultural Organization, 7, Place de Fontenoy, 75352, Paris 07 SP UNESCO 2010 <u>http://www.nodc.noaa.gov/GTSPP/document/qcmans/MG22rev1.pdf</u>
+> Morison, J., R. Andersen, N. Larson, E. D'Asaro, and T. Boyd. (1994). The correction for thermal-lag effects in Sea-Bird CTD data. J. Atmos. Ocean. Technol., 11, 1151–1164.
 
-- Liu, Y., R.H. Weisberg, and C. Lembke (2015). Glider salinity correction for unpumped CTD sensors across a sharp thermocline, in _Coastal Ocean Observing Systems_ , 305325, Elsevier (Academic Press), http://dx.doi.org/10.1016/B978-0-12-802022- <u>7.00017-1.</u>
+> Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013. Ocean Data Standards, Vol. 3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.) (IOC/2013/MG/54-3) http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf.
 
-- Merckelbach, L., D. Smeed and G. Griffiths (2010). Vertical water velocities from underwater gliders. _Journal of Atmospheric and Oceanic Technology_ , 27, (3), 547563. (doi:10.1175/2009JTECHO710.1).
+> U.S. Integrated Ocean Observing System, January 2014. Manual for the Use of RealTime Oceanographic Data Quality Control Flags. 19 pp. http://www.ioos.noaa.gov/qartod/temperature_salinity/qartod_oceanographic_data_quality_manual.pdf
 
-- Morison, J., R. Andersen, N. Larson, E. D'Asaro, and T. Boyd. (1994). The correction for thermal-lag effects in Sea-Bird CTD data. _J. Atmos. Ocean. Technol_ ., 11, 1151–1164.
-
-~~22~~
-
-- Paris. Intergovernmental Oceanographic Commission of UNESCO. 2013. Ocean Data Standards, Vol. 3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.) (IOC/2013/MG/54-3)
-
-<u>http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf.</u>
-
-- U.S. Integrated Ocean Observing System, January 2014. Manual for the Use of RealTime Oceanographic Data Quality Control Flags. 19 pp.
-
-   - <u>http://www.ioos.noaa.gov/qartod/temperature_salinity/qartod_oceanographic_data _quality_manual.pdf</u>
-
-- U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of In-situ Temperature and Salinity Data Version 2.0: A Guide to Quality Control and Quality Assurance of In-situ Temperature and Salinity Observations. 56 pp. <u>www.ioos.noaa.gov/qartod/temperature_salinity/qartod_temperature_salinity_man ual.pdf</u>
-
-~~23~~
+> U.S. Integrated Ocean Observing System, 2015. Manual for Real-Time Quality Control of In-situ Temperature and Salinity Data Version 2.0: A Guide to Quality Control and Quality Assurance of In-situ Temperature and Salinity Observations. 56 pp. www.ioos.noaa.gov/qartod/temperature_salinity/qartod_temperature_salinity_man ual.pdf
 
 ## Appendix A. Glider DAC TS QC Manual Team
 
-#### Glider DAC TS QC Manual Team
+**Glider DAC TS QC Manual Team**
 
-|**Glider DAC**<br>**Document**<br>**Committee**|David Aragon–Rutgers University<br>Kathy Bailey–NOAA/U.S. IOOS<br>Becky Baltes–NOAA/U.S. IOOS<br>Danielle Bryant—Naval Oceanographic Office<br>Mark Bushnell–CoastalObsTechServices/CO-OPS (Lead Editor)<br>Brad Covey–Dalhousie University<br>Bob Currier–Texas A&M University/GCOOS<br>Ruth Curry–Woods Hole Oceanographic Institution<br>Richard Davis–Dalhousie University<br>Laura Fiorentino–NOAA/National Data Buoy Center<br>Stephanie Jaeger–Sea-Bird Electronics, Inc.<br>John Kerfoot–Rutgers University/MARACOOS<br>Chad Lembke–University of South Florida<br>Bryan Mensi–Naval Oceanographic Office<br>Frank Muller-Karger–University of South Florida<br>Laura Palamara–Rutgers University<br>Rob Ragsdale–NOAA/U.S. IOOS<br>Helen Worthington–REMSA/CO-OPS (Editor)|
+| | |
 |---|---|
-|**Glider DAC**<br>**Document**<br>**Reviewers**|Fred Bahr-Monterey Bay Aquarium Research Institute/CeNCOOS<br>Francis Bringas-NOAA/Atlantic Oceanographic and Meteorological Laboratory<br>Beth Curry-University of Washington<br>Matt Howard–Texas A&M University/GCOOS<br>Ana Lara-Lopez–Integrated Marine Observing System<br>Younggan Liu-University of South Florida<br>Lucas Merkelbach- Centre for Materials and Coastal Research/Germany<br>Fritz Stahr-University of Washington<br>Julie Thomas-SIO/SCCOOS|
-
-
-
-~~A-1~~
+|**Glider DAC Document Committee**|David Aragon–Rutgers University<br>Kathy Bailey–NOAA/U.S. IOOS<br>Becky Baltes–NOAA/U.S. IOOS<br>Danielle Bryant—Naval Oceanographic Office<br>Mark Bushnell–CoastalObsTechServices/CO-OPS (Lead Editor)<br>Brad Covey–Dalhousie University<br>Bob Currier–Texas A&M University/GCOOS<br>Ruth Curry–Woods Hole Oceanographic Institution<br>Richard Davis–Dalhousie University<br>Laura Fiorentino–NOAA/National Data Buoy Center<br>Stephanie Jaeger–Sea-Bird Electronics, Inc.<br>John Kerfoot–Rutgers University/MARACOOS<br>Chad Lembke–University of South Florida<br>Bryan Mensi–Naval Oceanographic Office<br>Frank Muller-Karger–University of South Florida<br>Laura Palamara–Rutgers University<br>Rob Ragsdale–NOAA/U.S. IOOS<br>Helen Worthington–REMSA/CO-OPS (Editor)|
+|**Glider DAC Document Reviewers**|Fred Bahr-Monterey Bay Aquarium Research Institute/CeNCOOS<br>Francis Bringas-NOAA/Atlantic Oceanographic and Meteorological Laboratory<br>Beth Curry-University of Washington<br>Matt Howard–Texas A&M University/GCOOS<br>Ana Lara-Lopez–Integrated Marine Observing System<br>Younggan Liu-University of South Florida<br>Lucas Merkelbach- Centre for Materials and Coastal Research/Germany<br>Fritz Stahr-University of Washington<br>Julie Thomas-SIO/SCCOOS|
 
 ## Appendix B. Real-Time Temperature and Salinity Alignment Challenges
 
