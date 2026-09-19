@@ -19,8 +19,9 @@ and Chad Lembke and Frank Muller-Karger (University of South Florida) for their 
 
 ## Acronyms and Abbreviations
 
-|AUV|Autonomous Underwater Vehicle|
+| | |
 |---|---|
+|AUV|Autonomous Underwater Vehicle|
 |CeNCOOS|Central and Northern California Ocean Observing System|
 |CO-OPS|Center for Operational Oceanographic Products and Services|
 |CT|Conductivity and Temperature|
@@ -52,13 +53,13 @@ and Chad Lembke and Frank Muller-Karger (University of South Florida) for their 
 |**Term**|**Definition**|
 |---|---|
 |**Absolute Salinity (SA)**|Absolute salinity is the mass fraction of salt in seawater, expressed in units of g/kg. Spatial variations of the composition of seawater mean that absolute<br>salinity is not simply proportional to practical salinity (TEOS-10).|
-|**Codable**<br>**Instructions**|Codable instructions are specific guidance that can be used by a software<br>programmer to design, construct, and implement a test. These instructions<br>also include examples with sample thresholds.|
+|**Codable Instructions**|Codable instructions are specific guidance that can be used by a software<br>programmer to design, construct, and implement a test. These instructions<br>also include examples with sample thresholds.|
 |**Data Record**|A data record is one or more messages that form a coherent, logical, and<br>complete observation.|
 |**Message**|A message is a standalone data transmission. A data record can be composed<br>of multiple messages.|
 |**Operator**|Operators are individuals or entities who are responsible for collecting and<br>providing data.|
-|**Practical**<br>**Salinity (SP) **|Practical salinity is a unitless ratio expressing salinity as defined by the<br>Practical Salinity Scale 1978 (PSS-78).|
-|**Quality**<br>**Assurance**<br>**(QA)**|QA involves processes that are employed with hardware to support the<br>generation of high quality data.|
-|**Quality**<br>**Control**<br>**(QC)**|QC involves follow-on steps that support the delivery of high quality data<br>and requires both automation and human intervention.|
+|**Practical Salinity (SP)**|Practical salinity is a unitless ratio expressing salinity as defined by the<br>Practical Salinity Scale 1978 (PSS-78).|
+|**Quality Assurance (QA)**|QA involves processes that are employed with hardware to support the<br>generation of high quality data.|
+|**Quality Control (QC)**|QC involves follow-on steps that support the delivery of high quality data<br>and requires both automation and human intervention.|
 |**Real Time**|Real time means that: data are delivered without delay for immediate use;<br>time series extends only backwards in time, where the next data points are<br>not available; and there may be delays ranging from a few seconds to a few<br>hours or even days, depending upon the variable.|
 |**Threshold**|Thresholds are limit of variables that are defined by the regional operator or<br>the Glider DAC.|
 |**Variable**|Variable is an observation (or measurement) of biogeochemical properties<br>within oceanographic and/or meteorological environments.|
@@ -604,10 +605,6 @@ A test for inadequate variation of the time series. Applies to T, S, C, and P. A
 |Pass=1|Applies for test pass condition.|N/A|
 |**Test Excepti**|**on:**None.||
 |**Test specific**<br>**Examples:**|**ations to be established locally by the op**<br>TST_ZRANGE =  50 meters<br>MIN_VAR_WARN=0.05 °C, MIN_VAR_F|**erator.**<br>AIL=0.01 °C|
-
-
-
-~~17~~
 
 ###### Test 12) Previous Profile Test (Suggested)
 
