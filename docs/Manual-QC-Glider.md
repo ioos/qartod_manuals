@@ -1836,40 +1836,87 @@ If either of these events occurs, then set
 
 ##### 6.6.1 Conductivity correction
 
-Salinity is computed from the conductivity, temperature, and pressure measured on the glider by a non-pumped CTD (SBE 41) or a pumped (flow-controlled) Glider Payload CTD (GPCTD), both manufactured by Seabird Electronics, Inc. Calculation of accurate salinity requires corrections for spatial measurement offsets of the sensors, for differences in the sensor response times, and for the thermal inertia of the conductivity cell. With the non-pumped CTD, the speed of flow through the conductivity cell depends upon the speed of the glider, making the thermal inertial correction speed-dependent. Presently, the LAGER software performs only a speed-independent correction which is adequate for most cases, but it appears to over-correct when the glider vertical velocity is greater than 20 cm/s. A glider-speed-dependent conductivity correction will be implemented in the future for the non-pumped CTD measurements using the method discussed in Garau et al. (2011). Presently, LAGER corrects the conductivity using coefficients, for a correction algorithm, computed for each glider from a large number of T, C, and P profiles (typically, hundreds) measured by that glider. These coefficients are computed by the LAGER utility called compute_cond_coefs, which iteratively applies the correction equations developed by Lueck and Piclo (1990), making small changes in the correction coefficients, until a minimum error in the salinity difference between consecutive descending and ascending profiles at the same set of potential densities is obtained. This approach is similar to that used by Morison et al. (1994) and Kerfoot et al. (2006).
+Salinity is computed from the conductivity, temperature, and pressure measured on the glider by a non-pumped CTD (SBE 41) or a pumped (flow-controlled) Glider Payload CTD (GPCTD), both manufactured by Seabird Electronics, Inc. 
+Calculation of accurate salinity requires corrections for spatial measurement offsets of the sensors, 
+for differences in the sensor response times, and for the thermal inertia of the conductivity cell. 
+With the non-pumped CTD, the speed of flow through the conductivity cell depends upon the speed of the glider, 
+making the thermal inertial correction speed-dependent. 
+Presently, 
+the LAGER software performs only a speed-independent correction which is adequate for most cases, 
+but it appears to over-correct when the glider vertical velocity is greater than 20 cm/s. 
+A glider-speed-dependent conductivity correction will be implemented in the future for the non-pumped CTD measurements using the method discussed in Garau et al. (2011). 
+Presently, 
+LAGER corrects the conductivity using coefficients, 
+for a correction algorithm, 
+computed for each glider from a large number of T, C, and P profiles (typically, hundreds) measured by that glider. 
+These coefficients are computed by the LAGER utility called compute_cond_coefs, 
+which iteratively applies the correction equations developed by Lueck and Piclo (1990), 
+making small changes in the correction coefficients, 
+until a minimum error in the salinity difference between consecutive descending and ascending profiles at the same set of potential densities is obtained. 
+This approach is similar to that used by Morison et al. (1994) and Kerfoot et al. (2006).
 
 A discrete time-domain recursive filter was developed by Lueck and Piclo (1990) for the conductivity correction in terms of temperatures given by
 
-<!-- Start of picture text -->
-Cz(n)=—bCz(n—1)+yo|T|n|—T|n—1)] , (1)<br>where<br>a=4f,0 1 *[1+4f, -1\-16} (2)<br>and<br>b=1-2a0™! . (3)<br><!-- End of picture text -->
+$$
+C_T(n) = -bC_T(n-1) + \gamma \sigma \left[T(n)-T(n-1)\right],
+\tag{1}
+$$
 
-In these equations, n is the observation index, T is the measured temperature, fn is the sample Nyquist frequency, and γ is the conductivity change due to temperature while holding salinity and pressure constant, i.e., ∂ C /∂ T ∣S,P    . The response of the measured conductivity has magnitude σ and e-folding time scale φ-1  of the temperature error.
+where
 
-Several approaches have been used to determine the coefficients σ and φ for various CTD models. Morison et al. (1994) determined the coefficients for the Sea-Bird SBE-9 CTD that sampled at 24 Hz and where the flow through the sensor was pumped at a constant rate of about 1.75 m s<sup>-1</sup> . Their approach to determining the coefficients compared up cast and down cast profiles after correcting the profiles using Equations (1-3). The best set of coefficients was chosen as those that produced the minimum difference in T/S diagrams between the up and down casts. The approach is based on the assumption that the change in the T/S relationship is small between the up and down casts. They also combined their results with several other studies that used both pumped and un-pumped Sea-Bird conductivity cells to determine σ and φ as functions of flow rate through the cell. Their equations for the Sea-Bird cell are
+$$
+a = 4f_n\sigma\phi^{-1}
+\left[1+4f_n\phi^{-1}\right]^{-1},
+\tag{2}
+$$
 
+and
 
+$$
+b = 1-2a\sigma^{-1}.
+\tag{3}
+$$
 
-<!-- Start of picture text -->
-. o= 0.0264 V-!+0 .0135 (4)<br>and<br>o '=2.7858 V-1?+7.1499 , (5)<br><!-- End of picture text -->
+In these equations, $n$ is the observation index, 
+$T$ is the measured temperature, 
+$f_n$ is the sample Nyquist frequency, 
+and $\gamma$ is the conductivity change due to temperature while holding salinity and pressure constant, i.e., $\left.\partial C/\partial T\right|_{S,P}$. 
+The response of the measured conductivity has magnitude $\sigma$ and e-folding time scale $\phi^{-1}$ of the temperature error.
 
-where V is the velocity through the conductivity cell in units of m s<sup>-1</sup> .  Kerfoot et al. (2006) determined these coefficients for the Slocum Sea-Bird 41cp CTD using essentially the same technique used by Morison et al. (1994). They obtained σ = 0.13 and φ<sup>-1</sup> = 25.5. The flow velocities computed by substituting these values into Equations (4) and (5) are
+Several approaches have been used to determine the coefficients σ and φ for various CTD models. 
+Morison et al. (1994) determined the coefficients for the Sea-Bird SBE-9 CTD that sampled at 24 Hz and where the flow through the sensor was pumped at a constant rate of about 1.75 m s⁻¹. 
+Their approach to determining the coefficients compared up cast and down cast profiles after correcting the profiles using Equations (1-3). 
+The best set of coefficients was chosen as those that produced the minimum difference in T/S diagrams between the up and down casts. 
+The approach is based on the assumption that the change in the T/S relationship is small between the up and down casts. 
+They also combined their results with several other studies that used both pumped and un-pumped Sea-Bird conductivity cells to determine σ and φ as functions of flow rate through the cell. Their equations for the Sea-Bird cell are
 
-C-27
+$$
+\sigma=0.0264V^{-1}+0.0135 \tag{4}
+$$
 
-22.7 cm s<sup>-1</sup> and 2.3 cm s<sup>-1</sup> , respectively.  These two inconsistent velocities indicate that the Slocum results do not fit within those presented by Morison et al. (1994). Glider velocities are highly variable; the ascent and descent velocities are often a factor of two different.  In addition, the speed of flow through the conductivity cells is much lower than the speed of flow around the cell. For example, Morison et al. (1994) estimated that the flow speed through the Sea-Bird microconductivity cell was 10 cm s<sup>-1</sup> when the CTD was being lowered at a rate of 36 cm s<sup>-1</sup> .
+and
 
+$$
+\phi^{-1}=2.7858V^{-1/2}+7.1499 \tag{5}
+$$
 
+where V is the velocity through the conductivity cell in units of m s⁻¹. 
+Kerfoot et al. (2006) determined these coefficients for the Slocum Sea-Bird 41cp CTD using essentially the same technique used by Morison et al. (1994). 
+They obtained σ = 0.13 and φ⁻¹ = 25.5. 
+The flow velocities computed by substituting these values into Equations (4) and (5) are 22.7 cm s⁻¹ and 2.3 cm s⁻¹, respectively. 
+These two inconsistent velocities indicate that the Slocum results do not fit within those presented by Morison et al. (1994). 
+Glider velocities are highly variable; the ascent and descent velocities are often a factor of two different. 
+In addition, 
+the speed of flow through the conductivity cells is much lower than the speed of flow around the cell. 
+For example, 
+Morison et al. (1994) estimated that the flow speed through the Sea-Bird microconductivity cell was 10 cm s⁻¹ when the CTD was being lowered at a rate of 36 cm s⁻¹.
 
-<!-- Start of picture text -->
-* ack Teaperabere y<br>Blue : Original Salinity i<br>Red; Corrected Salinity / /<br>p,<br>‘<br>|<br>:y<br>: yy,<br>a 3<br>yy<br>LE?<br><!-- End of picture text -->
+![Figure 8](images_QC_Gliders/figure-8.png)
 
-**Figure 8 Seaglider descending and ascending profiles of salinity and temperature (horizontal axis) versus potential density (vertical axis). The black lines show the temperature profiles and the blue lines show the salinity prior to correction of conductivity for thermal-lag effects. The red lines are the descending and ascending salinity computed from the conductivity after correction for thermal lag.**
+<figcaption>Figure 8. Seaglider descending and ascending profiles of salinity and temperature (horizontal axis) versus potential density (vertical axis). The black lines show the temperature profiles and the blue lines show the salinity prior to correction of conductivity for thermal-lag effects. The red lines are the descending and ascending salinity computed from the conductivity after correction for thermal lag.</figcaption>
+<br>
 
 Examples of the salinity profiles before and after correction of the conductivity are shown for the Seaglider in Figure 8 and for the Slocum in Figure 9.
-
-C-28
-
-
 
 <!-- Start of picture text -->
 \ Black: Teaperature<br>a Blue : Original Salinity<br>~<br>aa<br>a<br>ei \<br>» \<br>}Pe \<br>7 ,<br>iJ<br>Fo /<br>i<br>i<br>H<br>a \<br>By) \<br>a<br>pciaacdla ae aete ee ae<br>ae<br>a ee ee ee<br>me<br><!-- End of picture text -->
