@@ -2927,138 +2927,221 @@ Vehicle parameters: All but sg_configuration are required.
 
 The general configuration of the glider
 
-0. Seaglider with original SBE41 CT **`sg_configuration`** 1. Seaglider with gun-style SBE41 CT 2. Deepglider with gun-style SB41 CT 3. Seaglider with pumped GPCTD
-
-**`hd_a`** Hydrodynamic lift factor for given hull shape [1/° of attack angle] **`hd_b`** Hydrodynamic drag factor for given hull shape [Pa-1/4] **`hd_c`** Hydrodynamic induced drag factor for given hull shape [1/radians2 of attack angle] **`rho0`** Typical expected density of seawater for this deployment [kg/m3]
-
-**`volmax`** Maximum displaced volume of the glider [m3] **`mass`** Mass of the glider [kg]
+- `sg_configuration`:
+   - 0. Seaglider with original SBE41 CT
+   - 1. Seaglider with gun-style SBE41 CT
+   - 2. Deepglider with gun-style SB41 CT
+   - 3. Seaglider with pumped GPCTD
+- `hd_a`: Hydrodynamic lift factor for given hull shape [1/° of attack angle] 
+- `hd_b`: Hydrodynamic drag factor for given hull shape [Pa-1/4]
+- `hd_c`: Hydrodynamic induced drag factor for given hull shape [1/radians2 of attack angle]
+- `rho0`: Typical expected density of seawater for this deployment [kg/m3]
+- `volmax`: Maximum displaced volume of the glider [m3]
+- `mass`: Mass of the glider [kg]
 
 Instrument biases: All are optional; default bias values are 0.
 
-**`pitchbias`** Pitch sensor bias [°] **`depth_bias`** Depth bias of pressure sensor [m] **`vbdbias`** VBD bias [cc] **`GPS_position_error`** GPS position error if HPE is not reported [m]
+- `pitchbias`: Pitch sensor bias [°]
+- `depth_bias`: Depth bias of pressure sensor [m]
+- `vbdbias`: VBD bias [cc]
+- `GPS_position_error`: GPS position error if HPE is not reported [m]
 
 General CTD parameters: All are optional. Default bias values are 0.
 
-**`sbe_temp_freq_min`** SBE41 minimum permitted temperature frequency [Hz] **`sbe_temp_freq_max`** SBE41 maximum permitted temperature frequency [Hz] **`sbe_temp_freq_offset`** Temperature frequency offset [Hz] **`temp_bias`** Temperature bias [°C] **`sbe_cond_freq_min`** SBE41 minimum permitted conductivity frequency [Hz] **`sbe_cond_freq_max`** SBE41 maximum permitted conductivity frequency [Hz] **`sbe_cond_freq_offset`** Conductivity frequency offset [Hz] **`cond_bias`** Conductivity bias [mS/cm]
+- `sbe_temp_freq_min`: SBE41 minimum permitted temperature frequency [Hz]
+- `sbe_temp_freq_max`: SBE41 maximum permitted temperature frequency [Hz] 
+- `sbe_temp_freq_offset`: Temperature frequency offset [Hz]
+- `temp_bias`: Temperature bias [°C]
+- `sbe_cond_freq_min`: SBE41 minimum permitted conductivity frequency [Hz]
+- `sbe_cond_freq_max`: SBE41 maximum permitted conductivity frequency [Hz]
+- `sbe_cond_freq_offset`: Conductivity frequency offset [Hz]
+- `cond_bias`: Conductivity bias [mS/cm]
 
-###### Quality control test parameters: See above for default values.
+Quality control test parameters: See above for default values.
 
-**`QC_temp_min`** Minimum allowable temperature [°C] **`QC_temp_max`** Maximum allowable temperature [°C] **`QC_temp_spike_depth`** Depth for deep temperature spike test [m] **`QC_temp_spike_shallow`** Allowable temperature spike in shallow deep water [°C/m] **`QC_temp_spike_deep`** Allowable temperature spike in deep water [°C/m] **`QC_cond_spike_depth`** Depth for deep conductivity spike test [m] **`QC_cond_spike_shallow`** Allowable conductivity spike in shallow deep water [mS/cm/m] **`QC_cond_spike_deep`** Allowable conductivity spike in deep water [mS/cm/m] **`QC_salin_min`** Minimum salinity value [PSU] **`QC_salin_max`** Maximum salinity value [PSU] **`QC_overall_ctd_percentage`** Maximum fraction of CTD data that can be QC_BAD
+- `QC_temp_min`: Minimum allowable temperature [°C]
+- `QC_temp_max`: Maximum allowable temperature [°C] 
+- `QC_temp_spike_depth`: Depth for deep temperature spike test [m] 
+- `QC_temp_spike_shallow`: Allowable temperature spike in shallow deep water [°C/m]
+- `QC_temp_spike_deep`: Allowable temperature spike in deep water [°C/m]
+- `QC_cond_spike_depth`: Depth for deep conductivity spike test [m]
+- `QC_cond_spike_shallow`: Allowable conductivity spike in shallow deep water [mS/cm/m]
+- `QC_cond_spike_deep`: Allowable conductivity spike in deep water [mS/cm/m]
+- `QC_salin_min`: Minimum salinity value [PSU]
+- `QC_salin_max`: Maximum salinity value [PSU]
+- `QC_overall_ctd_percentage`: Maximum fraction of CTD data that can be QC_BAD
 
-D-14
-
-### C. Main output variables in an nc file
+**C. Main output variables in an nc file**
 
 Within the nc file the original data variables and vectors are tagged with a prefix that indicates their origin:
 
-**`sg_cal_`** Variables from sg_calib_constants.m **`log_`** Parameters from the log file **`log_gps_`** Selected values from the $GPS lines in the log file **`gc_`** Selected values from the $GC lines in the log file **`eng_`** Original data vectors from the engineering (eng) file
+- `sg_cal_`: Variables from sg_calib_constants.m
+- `log_`: Parameters from the log file
+- `log_gps_`: Selected values from the $GPS lines in the log file
+- `gc_`: Selected values from the $GC lines in the log file
+- `eng_`: Original data vectors from the engineering (eng) file
 
-String constants are written as string arrays with dimensions appropriate to their length; these dimensions are named ' **_`string_`_** _n_ **_`'`_** , where n is the length of the string. Other dimensions are as follows:
+String constants are written as string arrays with dimensions appropriate to their length; 
+these dimensions are named '`string_n`', 
+where n is the length of the string. Other dimensions are as follows:
 
-**`sg_data_point`** Number of vehicle data points **`gc_event`** Number of $GC events in the log **`gps_info`** Number of GPS readings (3)
+- `sg_data_point`: Number of vehicle data points
+- `gc_event`: Number of $GC events in the log
+- `gps_info`: Number of GPS readings (3)
 
-Result variables are listed below. Units, if any, are enclosed in []. Quality control variables use the **`_qc`** suffix; values are listed in Appendix A. For reference, Argo-equivalent variable names, if appropriate, are enclosed in {}.
+Result variables are listed below. Units, if any, are enclosed in []. 
+Quality control variables use the `_qc` suffix; 
+values are listed in Appendix A. 
+For reference, Argo-equivalent variable names, 
+if appropriate, are enclosed in {}.
 
 Information about the processing of the profile:
 
-**`processing_history`** Collected processing output **`reviewed`** Whether a scientist has reviewed and approved this profile **`directives`** The control directives supplied by the scientist for this profile
+- `processing_history`: Collected processing output
+- `reviewed`: Whether a scientist has reviewed and approved this profile
+- `directives`: The control directives supplied by the scientist for this profile
 
 Information about the location of the profile[11]:
 
-**`magnetic_variation`** The magnetic variance from true north [°] **`avg_latitude`** The average latitude of the dive [° North] **`GPS1_qc`** Whether to trust the GPS1 information **`GPS2_qc`** Whether to trust the GPS2 information **`GPSE_qc`** Whether to trust the final GPS information **`time`** Time in GMT epoch format [seconds from 00:00Z 1 January 1970] **`depth`** Depth below the surface, corrected for average latitude [m] {DEPTH} **`start_of_climb_time`** Seconds after dive start when the second apogee pump starts [s]
+- `magnetic_variation`: The magnetic variance from true north [°] 
+- `avg_latitude`: The average latitude of the dive [° North]
+- `GPS1_qc`: Whether to trust the GPS1 information
+- `GPS2_qc`: Whether to trust the GPS2 information
+- `GPSE_qc`: Whether to trust the final GPS information
+- `time`: Time in GMT epoch format [seconds from 00:00Z 1 January 1970]
+- `depth`: Depth below the surface, corrected for average latitude [m] {DEPTH}
+- `start_of_climb_time`: Seconds after dive start when the second apogee pump starts [s]
 
-D-15
+Results based on CTD measurements:
 
-###### Results based on CTD measurements:
-
-**`ctd_time`** CTD sample time in GMT epoch format [seconds from 00:00Z 1 January 1970] **`ctd_depth`** CTD thermistor depth corrected for average latitude [m] **`ctd_pressure`** Pressure at CTD thermistor [dbar] **`CTD_qc`** Whether to trust the corrected CTD values **`temperature`** Termperature corrected for thermistor first-order lag [°C] { **`TEMP_ADJUSTED`** } **`temperature_qc`** Whether to trust each **`temperature`** value { **`TEMP_ADJUSTED_QC`** } **`conductivity`** Conductivity corrected for anomalies [mS/cm] { **`CNDC_ADJUSTED`** } **`conductivity_qc`** Whether to trust each **`conductivity`** value { **`CNDC_ADJUSTED_QC`** } **`salinity`** Salinity corrected for thermal-inertia effects [PSU] { **`PSAL_ADJUSTED`** } **`salinity_qc`** Whether to trust each **`salinity`** value { **`PSAL_ADJUSTED_QC`** } **`buoyancy`** Buoyancy of vehicle, corrected for compression effects [g] **`density`** Potential density based **`temperature`** and **`salinity`** at 0 pressure [g/m3] **`density_insitu`** Density based **`temperature`** , **`salinity`** and **`ctd_pressure`** [g/m3] **`sigma_t`** Sigma based on **`density`** [g/m3] **`theta`** Potential temperature based on measured pressure, **`temperature`** , and **`salinity`** [°C] **`sigma_theta`** Potential density based on **`theta`** at 0 pressure [g/m3] **`sound_velocity`** Sound velocity based on **`temperature`** and **`salinity`** [m/s] **`temperature_raw`** Uncorrected temperature (in situ) [°C] { **`TEMP`** } **`temperature_raw_qc`** Whether to trust each raw temperature value { **`TEMP_QC`** } **`conductivity_raw`** Uncorrected conductivity [mS/cm] { **`CNDC`** } **`conductivity_raw_qc`** Whether to trust each raw conductivity value { **`CNDC_QC`** } **`salinity_raw`** Uncorrected salinity derived from **`temperature_raw`** and **`conductivity_raw`** [PSU] { **`PSAL`** } **`salinity_raw_qc`** Whether to trust each raw salinity value { **`PSAL_QC`** }
+- `ctd_time`: CTD sample time in GMT epoch format [seconds from 00:00Z 1 January 1970]
+- `ctd_depth`: CTD thermistor depth corrected for average latitude [m] 
+- `ctd_pressure`: Pressure at CTD thermistor [dbar]
+- `CTD_qc`: Whether to trust the corrected CTD values
+- `temperature`: Termperature corrected for thermistor first-order lag [°C] {`TEMP_ADJUSTED`}
+- `temperature_qc`: Whether to trust each `temperature` value {`TEMP_ADJUSTED_QC`} 
+- `conductivity`: Conductivity corrected for anomalies [mS/cm] {`CNDC_ADJUSTED`}
+- `conductivity_qc`: Whether to trust each `conductivity` value {`CNDC_ADJUSTED_QC`}
+- `salinity`: Salinity corrected for thermal-inertia effects [PSU] {`PSAL_ADJUSTED`}
+- `salinity_qc`: Whether to trust each `salinity` value {`PSAL_ADJUSTED_QC`}
+- `buoyancy`: Buoyancy of vehicle, corrected for compression effects [g] 
+- `density`: Potential density based `temperature` and `salinity` at 0 pressure [g/m3]
+- `density_insitu`: Density based `temperature`, `salinity` and `ctd_pressure` [g/m3]
+- `sigma_t`: Sigma based on `density` [g/m3]
+- `theta`: Potential temperature based on measured pressure, `temperature`, and `salinity` [°C]
+- `sigma_theta`: Potential density based on `theta` at 0 pressure [g/m3] 
+- `sound_velocity`: Sound velocity based on `temperature` and `salinity` [m/s]
+- `temperature_raw`: Uncorrected temperature (in situ) [°C] { **`TEMP`** }
+- `temperature_raw_qc`: Whether to trust each raw temperature value {`TEMP_QC`}
+- `conductivity_raw`: Uncorrected conductivity [mS/cm] {`CNDC`}
+- `conductivity_raw_qc`** Whether to trust each raw conductivity value {`CNDC_QC`}
+- `salinity_raw`: Uncorrected salinity derived from `temperature_raw` and `conductivity_raw` [PSU] {`PSAL`}
+- `salinity_raw_qc`: Whether to trust each raw salinity value {`PSAL_QC`}
 
 Vehicle velocities and displacements:
 
-**`hdm_qc`** Whether corrected temperatures, salinities, and hdm velocities converged **`speed`** Vehicle speed based on hdm [cm/s] **`speed_qc`** Whether to trust each vehicle speed based on hdm **`glide_angle`** Glide angle based on hdm [°] **`horz_speed`** Vehicle horizontal speed based on hdm [cm/s] **`vert_speed`** Vehicle vertical speed based on hdm [cm/s] **`flight_avg_speed_east`** Eastward component of flight average speed based on hdm [m/s] **`flight_avg_speed_north`** Northward component of flight average speed based on hdm [m/s] **`north_displacement`** Northward displacement from hdm [m] **`east_displacement`** Eastward displacement from hdm [m] **`speed_gsm`** Vehicle speed based on gsm [cm/s]
-
-D-16
-
-**`glide_angle_gsm`** Glide angle based on gsm [°] **`horz_speed_gsm`** Vehicle horizontal speed based on gsm [cm/s] **`vert_speed_gsm`** Vehicle vertical speed based on gsm [cm/s] **`flight_avg_speed_east_gsm`** Eastward component of flight average speed based on gsm [m/s] **`flight_avg_speed_north_gsm`** Northward component of flight average speed based on gsm [m/s] **`north_displacement_gsm`** Northward displacement from gsm [m] **`east_displacement_gsm`** Eastward displacement from gsm [m]
+- `hdm_qc`: Whether corrected temperatures, salinities, and hdm velocities converged
+- `speed`: Vehicle speed based on hdm [cm/s]
+- `speed_qc`: Whether to trust each vehicle speed based on hdm
+- `glide_angle`: Glide angle based on hdm [°] **`horz_speed`** Vehicle horizontal speed based on hdm [cm/s]
+- `vert_speed`: Vehicle vertical speed based on hdm [cm/s]
+- `flight_avg_speed_east`: Eastward component of flight average speed based on hdm [m/s]
+- `flight_avg_speed_north`: Northward component of flight average speed based on hdm [m/s]
+- `north_displacement`: Northward displacement from hdm [m] 
+- `east_displacement`: Eastward displacement from hdm [m]
+- `speed_gsm`: Vehicle speed based on gsm [cm/s]
+- `glide_angle_gsm`: Glide angle based on gsm [°]
+- `horz_speed_gsm`: Vehicle horizontal speed based on gsm [cm/s]
+- `vert_speed_gsm`: Vehicle vertical speed based on gsm [cm/s]
+- `flight_avg_speed_east_gsm`: Eastward component of flight average speed based on gsm [m/s]
+- `flight_avg_speed_north_gsm`: Northward component of flight average speed based on gsm [m/s]
+- `north_displacement_gsm`: Northward displacement from gsm [m]
+- `east_displacement_gsm`: Eastward displacement from gsm [m]
 
 Positions based on displacements and computed depth-average current (DAC):
 
-**`depth_avg_curr_qc`** Whether to trust the DAC values and displacements **`depth_avg_curr_east`** Eastward component of DAC based on hdm [m/s] **`depth_avg_curr_north`** Northward component of DAC based on hdm [m/s] **`depth_avg_curr_error`** Expected error of depth-average current from GPS [m/s] **`latitude`** Latitude based on hdm DAC [° North] **`longitude`** Longitude based on hdm DAC [° East] **`depth_avg_curr_east_gsm`** Eastward component of DAC based on gsm [m/s] **`depth_avg_curr_north_gsm`** Northward component of DAC based on gsm [m/s] **`latitude_gsm`** Latitude based on gsm DAC [° North] **`longitude_gsm`** Longitude based on gsm DAC [° East]
+- `depth_avg_curr_qc`: Whether to trust the DAC values and displacements
+- `depth_avg_curr_east`: Eastward component of DAC based on hdm [m/s]
+- `depth_avg_curr_north`: Northward component of DAC based on hdm [m/s]
+- `depth_avg_curr_error`: Expected error of depth-average current from GPS [m/s]
+- `latitude`: Latitude based on hdm DAC [° North]
+- `longitude`: Longitude based on hdm DAC [° East]
+- `depth_avg_curr_east_gsm`: Eastward component of DAC based on gsm [m/s]
+- `depth_avg_curr_north_gsm`: Northward component of DAC based on gsm [m/s]
+- `latitude_gsm`: Latitude based on gsm DAC [° North]
+- `longitude_gsm`: Longitude based on gsm DAC [° East]
 
 Computed surface current:
 
-**`surface_curr_qc`** Whether to trust the surface current values **`surface_curr_east`** Eastward component of surface current [cm/s] **`surface_curr_north`** Northward component of surface current [cm/s] **`surface_curr_error`** Expected error of surface current from GPS [m/s]
+- `surface_curr_qc`: Whether to trust the surface current values
+- `surface_curr_east`: Eastward component of surface current [cm/s]
+- `surface_curr_north`: Northward component of surface current [cm/s]
+- `surface_curr_error`: Expected error of surface current from GPS [m/s]
 
 Dissolved oxygen from various instruments, if present:
 
-**`dissolved_oxygen_sat`** Dissolved oxygen saturation in based on salinity and temperature [micromoles/kg] **`SBE43_ qc`** Whether to trust the SBE43 results **`sbe43_dissolved_oxygen`** Oxygen concentration corrected for salinity [micromoles/kg] {DOXY} **`sbe43_dissolved_oxygen_qc`** Whether to trust each SBE43 dissolved oxygen value **`aanderaa3830_qc`** Whether to trust the Aanderaa 3830 results
+- `dissolved_oxygen_sat`: Dissolved oxygen saturation in based on salinity and temperature [micromoles/kg]
+- `SBE43_ qc`: Whether to trust the SBE43 results
+- `sbe43_dissolved_oxygen`: Oxygen concentration corrected for salinity [micromoles/kg] {DOXY}
+- `sbe43_dissolved_oxygen_qc`: Whether to trust each SBE43 dissolved oxygen value
+- `aanderaa3830_qc`: Whether to trust the Aanderaa 3830 results
+- `aanderaa3830_dissolved_oxygen`: Oxygen concentration calculated from optode tdphase corrected for salinity [micromoles/kg] {DOXY_ADJUSTED}
+- `aanderaa3830_dissolved_oxygen_qc`: Whether to trust each optode dissolved oxygen value
+- `aanderaa3830_instrument_dissolved_oxygen`: Oxygen concentration reported from optode corrected for salinity [micromoles/kg] {DOXY_ADJUSTED}
+- `aanderaa4330_qc`: Whether to trust the Aanderaa 4330 results
+- `aanderaa4330_dissolved_oxygen`: Oxygen concentration calculated from optode tcphase for salinity and depth [micromoles/kg] {DOXY_ADJUSTED}
+- `aanderaa4330_dissolved_oxygen_qc`: Whether to trust each optode dissolved oxygen value
+- `aanderaa4330_instrument_dissolved_oxygen`: Oxygen concentration reported from optode corrected for salinity [micromoles/kg] {DOXY_ADJUSTED}
 
-D-17
+**D. References**
 
-|**`aanderaa3830_dissolved_oxygen`**|Oxygen concentration calculated from optode<br>dphase corrected for salinity [micromoles/kg]<br>{DOXY_ADJUSTED}|
-|---|---|
-|**`aanderaa3830_dissolved_oxygen_qc`**|Whether to trust each optode dissolved oxygen<br>value|
-|**`aanderaa3830_instrument_dissolved_oxygen`**|Oxygen concentration reported from optode<br>corrected for salinity [micromoles/kg]<br>{DOXY_ADJUSTED}|
-|**`aanderaa4330_qc`**|Whether to trust the Aanderaa 4330 results|
-|**`aanderaa4330_dissolved_oxygen`**|Oxygen concentration calculated from optode<br>tcphase for salinity and depth [micromoles/kg]<br>{DOXY_ADJUSTED}|
-|**`aanderaa4330_dissolved_oxygen_qc`**|Whether to trust each optode dissolved oxygen<br>value|
-|**`aanderaa4330_instrument_dissolved_oxygen`**|Oxygen concentration reported from optode<br>corrected for salinity [micromoles/kg]<br>{DOXY_ADJUSTED|
+> "Argo quality control manual, version 2.6", November, 2010.
 
+> Bennett, J & Stahr, F., 2014: "GPS positional accuracy for Seagliders", University of Washington, School of Oceanography.
 
+> Carnes, M. R., 2008: "LAGER Manual, version 1.0", Naval Research Laboratory.
 
-D-18
+> Eriksen, C. C., Osse, T. J., Light, R. D., Wen, T., Lehman, T. W., Sabin, P.L., Ballard, J.W., and Chiodi, A. M., 2001: "Seaglider: A long-range autonomous underwater vehicle for oceanographic research", IEEE ournal of Oceanic Engineering, 26(4), 424-436.
 
-### D. References
+> Eriksen, C. C., forthcoming: "Thermal inertia in unpumped conductivity cells".
 
-"Argo quality control manual, version 2.6", November, 2010.
+> Garcia and Gordon, 1992: "Oxygen solubility in seawater: Better fitting equations", Limnol. Oceanog. 37(6), 1992, 1307-1312.
 
-Bennett, J & Stahr, F., 2014: "GPS positional accuracy for Seagliders", University of Washington, School of Oceanography.
+> IOC Manual and Guides #22.
 
-Carnes, M. R., 2008: "LAGER Manual, version 1.0", Naval Research Laboratory.
+> Johnson, K. S., J. N. Plant, S. C. Riser, and D. Gilbert, forthcoming: "Air oxygen calibration of oxygen optodes on a profiling float array". Submitted, Journal of Atmospheric and Oceanic Technology.
 
-Eriksen, C. C., Osse, T. J., Light, R. D., Wen, T., Lehman, T. W., Sabin, P.L., Ballard, J.W., and Chiodi, A. M., 2001: "Seaglider: A long-range autonomous underwater vehicle for oceanographic research", IEEE ournal of Oceanic Engineering, 26(4), 424-436.
+> Lueck, R. G., 1990: "Thermal inertia of conductivity cells", Theory J. Atmos Ocean. Tech., 7, 741755.
 
-Eriksen, C. C., forthcoming: "Thermal inertia in unpumped conductivity cells".
+> Schmid, C., Molinari, R. L., Sabina, R., Daneshzadeh, Y., Xia, X., Forteza, E., and Yang, H., 2007: "The realtime data management system for Argo profiling float operations", J. Atmos. Ocean. Tech., 24, 1608-1628.
 
-Garcia and Gordon, 1992: "Oxygen solubility in seawater: Better fitting equations", Limnol. Oceanog. 37(6), 1992, 1307-1312.
+> Unesco, 1981: "Tenth report of the joint panel on oceanographic tables and standards", Unesco technical papers in marine science, 36.
 
-IOC Manual and Guides #22.
+> N.P. Fofonoff and R.C. Millard Jr., 1983: "Algorithms for computation of fundamental properties of seawater",Unesco technical papers in marine science, 44.
 
-Johnson, K. S., J. N. Plant, S. C. Riser, and D. Gilbert, forthcoming: "Air oxygen calibration of oxygen optodes on a profiling float array". Submitted, Journal of Atmospheric and Oceanic Technology.
+**Notes**
 
-Lueck, R. G., 1990: "Thermal inertia of conductivity cells", Theory J. Atmos Ocean. Tech., 7, 741755.
+1. While the basestation as a whole handles many different files, the dive profile processing code initially requires only a log and engineering file for each profile, and a `sg_calib_constants.m` file for the deployment. Other glider control files, such as the `cmdfile`, `science` or `targets` files, are ignored.
 
-Schmid, C., Molinari, R. L., Sabina, R., Daneshzadeh, Y., Xia, X., Forteza, E., and Yang, H., 2007: "The realtime data management system for Argo profiling float operations", J. Atmos. Ocean. Tech., 24, 1608-1628.
+2. Reprocessing of any profile can be ensured by providing the --force option to the `MakeDiveProfiles.py` basestation script
 
-Unesco, 1981: "Tenth report of the joint panel on oceanographic tables and standards", Unesco technical papers in marine science, 36.
+3. Schmid, et al, 2007 uses pressure (dbar); Carnes uses depth.
 
-N.P. Fofonoff and R.C. Millard Jr., 1983: "Algorithms for computation of fundamental properties of seawater",Unesco technical papers in marine science, 44.
+4. These bounds correspond to Carnes, 2008 and are higher than Schmid, et al, 2007 (40 °C).
 
-### Notes
-
-1. While the basestation as a whole handles many different files, the dive profile processing code initially requires only a log and engineering file for each profile, and a **`sg_calib_constants.m`** file for the deployment. Other glider control files, such as the **`cmdfile`** , **`science`** or **`targets`** files, are ignored.
-
-2. Reprocessing of any profile can be ensured by providing the --force option to the MakeDiveProfiles.py basestation script
-
-3. Schmid, _et al_ , 2007 uses pressure (dbar); Carnes uses depth.
-
-D-19
-
-4. These bounds correspond to Carnes, 2008 and are higher than Schmid, _et al_ , 2007 (40 °C).
-
-5. Compare with Schmid, _et al_ , 2007 of 2.0/50 (0.04) °C/m deep and 6.0/50 (0.12) °C/m shallow, assuming a nominal Argo sampling interval of 25 meters.
+5. Compare with Schmid, et al, 2007 of 2.0/50 (0.04) °C/m deep and 6.0/50 (0.12) °C/m shallow, assuming a nominal Argo sampling interval of 25 meters.
 
 6. These values are roughly 10 times smaller than the temperature spike values, as expected.
 
-7. The upper bound corresponds to Carnes, 2008 and is higher than Schmid, _et al_ , 2007 (41 PSU). The lower bound is higher than Carnes or Schmid; Seagliders typically cannot operate in waters fresher than 19 PSU. However, the CT might sample a fresh surface cap from river runoff or intense rain events.
+7. The upper bound corresponds to Carnes, 2008 and is higher than Schmid, et al, 2007 (41 PSU). The lower bound is higher than Carnes or Schmid; Seagliders typically cannot operate in waters fresher than 19 PSU. However, the CT might sample a fresh surface cap from river runoff or intense rain events.
 
 8. Points are considered bad if they are marked QC_BAD, QC_PROBABLY_BAD, or QC_UNSAMPLED.
 
 9. A consistent temperature increase during guidance-and-control (GC) maneuvers has been observed on one vehicle. Declaring this directive will interpolate temperature readings during GC with points just before and after each GC, unless the glider was in a sharp thermocline.
 
-10. A **`bad_gps3`** directive on one profile should be paired with a bad_gps1 directive on the subsequent profile. A **`no_bad_gpsx`** directive forces the system to trust GPS _x_ for the specified profile(s).
+10. A `bad_gps3` directive on one profile should be paired with a bad_gps1 directive on the subsequent profile. A `no_bad_gpsx` directive forces the system to trust GPSx for the specified profile(s).
 
-11. Argo reports the date and time (JULD), and position (LATITUDE and LONGITUDE) of float surfacing. Equivalent times and locations for Seaglider missions may be found in the **`log_gps_time, log_gps_lat`** and **`log_gps_lon`** arrays; Seaglider surfacing is recorded under index 3. Seaglider output variables time, latitude and longitude are estimated times and positions of each vehicle sample during a profile.
+11. Argo reports the date and time (JULD), and position (LATITUDE and LONGITUDE) of float surfacing. Equivalent times and locations for Seaglider missions may be found in the `log_gps_time, log_gps_lat` and `log_gps_lon` arrays; Seaglider surfacing is recorded under index 3. Seaglider output variables time, latitude and longitude are estimated times and positions of each vehicle sample during a profile.
 
 1.<sup>[1]</sup>
 
@@ -3083,5 +3166,3 @@ D-19
 11.<sup>[11]</sup>
 
 Copyright University of Washington, 2011-12 All Rights Reserved.
-
-D-20
