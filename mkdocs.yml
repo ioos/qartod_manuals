@@ -54,6 +54,8 @@ markdown_extensions:
   - markdown_grid_tables
   - abbr
   - toc
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
