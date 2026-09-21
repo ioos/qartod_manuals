@@ -1024,22 +1024,22 @@ causing an offset of the series of dead-reckoned latitudes to be offset until th
 The corrected latitude time series (Figure 6) shows how the LAGER position correction algorithm removes the inaccurate GPS fixes, 
 and then resets the intermediate dead-reckoned to a more reasonable latitude time series.
 
-![Figure 3](images_QC_Gliders/lager-figure-3.png)
+![Figure 3](images_QC_Gliders/figure-3.png)
 
 <figcaption>Figure 3. Depths and uncorrected longitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the longitude of each GPS fix, and the black dots are the dead-reckoned longitudes computed in real-time by the glider’s internal software. The longitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.</figcaption>
 <br>
 
-![Figure 4](images_QC_Gliders/lager-figure-4.png)
+![Figure 4](images_QC_Gliders/figure-4.png)
 
 <figcaption>Figure 4. Depths and corrected longitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time.  The blue circles are the longitude of each GPS fix after removing all suspect values. The black dots are the dead-reckoned longitudes after correction to match the remaining good GPS positions. The longitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.</figcaption>
 <br>
 
-![Figure 5](images_QC_Gliders/lager-figure-5.png)
+![Figure 5](images_QC_Gliders/figure-5.png)
 
 <figcaption>Figure 5. Depths and uncorrected latitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the latitude of each GPS fix, and the black dots are the dead-reckoned latitudes computed in real-time by the glider’s internal software. The latitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.</figcaption>
 <br>
 
-![Figure 6](images_QC_Gliders/lager-figure-6.png)
+![Figure 6](images_QC_Gliders/figure-6.png)
 
 <figcaption>Figure 6. Depths and corrected latitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the latitude of each GPS fix after removing all suspect values.   The black dots are the dead-reckoned latitudes after correction to match the remaining good GPS positions. The latitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.**
 <br>
@@ -1822,12 +1822,12 @@ If either of these events occurs, then set
 
 **temp_flag(i) = 9** and **salt_flag(i) = 9** at every point from the second of the two consecutive points from which the sudden pitch angle was detected until 6 points after the pitch angle returns to within 0.8 of the pitch angle of the first of the two consecutive points.
 
-![Figure 7a](images_QC_Gliders/lager-figure-7a.jpg)
+![Figure 7a](images_QC_Gliders/figure-7a.jpg)
 
 <figcaption>Figure 7a</figcaption>
 <br>
 
-![Figure 7b](images_QC_Gliders/lager-figure-7b.jpg)
+![Figure 7b](images_QC_Gliders/figure-7b.jpg)
 
 <figcaption>Figure 7b</figcaption>
 <br>
@@ -1918,85 +1918,129 @@ Morison et al. (1994) estimated that the flow speed through the Sea-Bird microco
 
 Examples of the salinity profiles before and after correction of the conductivity are shown for the Seaglider in Figure 8 and for the Slocum in Figure 9.
 
-<!-- Start of picture text -->
-\ Black: Teaperature<br>a Blue : Original Salinity<br>~<br>aa<br>a<br>ei \<br>» \<br>}Pe \<br>7 ,<br>iJ<br>Fo /<br>i<br>i<br>H<br>a \<br>By) \<br>a<br>pciaacdla ae aete ee ae<br>ae<br>a ee ee ee<br>me<br><!-- End of picture text -->
+![Figure 9](images_QC_Gliders/figure-9.jpg)
 
-**Figure 9** Same as Figure 8 except for Slocum.
+<figcaption>Figure 9. Same as Figure 8 except for Slocum.</figcaption>
+<br>
 
-###### **6.6.2   Static stability correction**
+##### 6.6.2 Static stability correction
 
-After correction of the thermal inertia of the conductivity cells, the resulting temperature and salinity profile is modified to remove density inversions. Density inversions can be caused by temperature inversions, where temperature increases with increasing depth, by salinity decreasing with increasing depth, or both. Jackett and McDougall (1995) developed a method to correct instabilities as a constrained optimization problem with minimal adjustment of both the temperature and salinity.  The approach used in LAGER is similar, but replaces the inequality constraint by a simple iterative correction algorithm. Chu and Fan (2010) also present a profile stabilization scheme, but our initial experimentation with their technique produced poor results, although the fault might have been with our software rather than with their method.
+After correction of the thermal inertia of the conductivity cells, 
+the resulting temperature and salinity profile is modified to remove density inversions. 
+Density inversions can be caused by temperature inversions, 
+where temperature increases with increasing depth, 
+by salinity decreasing with increasing depth, or both. 
+Jackett and McDougall (1995) developed a method to correct instabilities as a constrained optimization problem with minimal adjustment of both the temperature and salinity. 
+The approach used in LAGER is similar, 
+but replaces the inequality constraint by a simple iterative correction algorithm. 
+Chu and Fan (2010) also present a profile stabilization scheme, 
+but our initial experimentation with their technique produced poor results, 
+although the fault might have been with our software rather than with their method.
 
-The squared Brunt-Väisälä (BV) frequency, N<sup>2</sup> , of the water layer between depths (increasing downward here),<sup>_z_</sup> _k_ and<sup>_z_</sup> _k+_ 1  , can be written in discrete form as (McDougall,
+The squared Brunt-Väisälä (BV) frequency, $N_k^2$, of the water layer between depths (increasing downward here), $z_k$ and $z_{k+1}$, can be written in discrete form as (McDougall, 1987):
 
+$$
+N_k^2=g\left[\beta_k(p_k)\left(\frac{S_{k+1}-S_k}{z_{k+1}-z_k}\right)-\alpha_k(p_k)\left(\frac{\theta_{k+1}-\theta_k}{z_{k+1}-z_k}\right)\right],\qquad z_{k+1}>z_k. \tag{1}
+$$
 
+where $g$ is the gravitational acceleration, $p$ is the mid-depth pressure, θ is the potential temperature, $S$ is the salinity. The coefficients  α  and  β  are the thermal expansion and saline contraction coefficients
 
-<!-- Start of picture text -->
-Nj=9|B,(2_ Px]Zz,Sye1-S,K+K+ 2kSk  — a, (P,] Ts9x41+1+1 —-9,— 2k9x » 244172 @)<br><!-- End of picture text -->
+$$
+\alpha_k=-\frac{1}{\rho}\left.\frac{\partial\rho}{\partial\theta}\right|_{S,p},\qquad
+\beta_k=\frac{1}{\rho}\left.\frac{\partial\rho}{\partial S}\right|_{\theta,p}. \tag{2}
+$$
 
-1987), where g is the gravitational acceleration, p is the mid-depth pressure, θ is the potential temperature, S is the salinity. The coefficients  α  and  β  are the thermal expansion and saline contraction coefficients
+at the depth midway between adjacent depths, $z_k$ and $z_{k+1}$. Given the initial glider profile, $\{S_k,\theta_k,p_k\},\ k=1,n$, we seek the anomaly profile $\{\Delta S_k,\Delta\theta_k,p_k\},\ k=1,n$, such that the modified profile $\{S_k+\Delta S_k,\theta_k+\Delta\theta_k,p_k\},\ k=1,n$ is everywhere statically stable, plus a little margin, i.e., $M_k^2=N_k^2+\Delta N_k^2\ge N_{\min}^2$, $k=1,n$, where $M^2$ is the BV of the modified profile, and $\Delta N_k^2\ge N_{\min}^2-N_k^2$ is the BV of the anomaly that produces the stability, given by
 
-C-29
+$$
+\Delta N_k^2=g\left[\beta_k\frac{\Delta S_{k+1}-\Delta S_k}{z_{k+1}-z_k}-\alpha_k\frac{\Delta\theta_{k+1}-\Delta\theta_k}{z_{k+1}-z_k}\right]. \tag{3}
+$$
 
+The approach used here is to produce a stable profile through several iterations, where each iteration makes only a small adjustment, 
+λΔNk, 
+to the required full adjustment, ΔNk, 
+where λ is a small fraction, 
+typically about 0.2. 
+During the first iteration, 
+the adjacent values of temperature and salinity anomalies required to make the small adjustment to BV are computed in the direction of increasing depth down the profile. 
+Then, the next iteration makes the changes to the anomalies are made traveling up the profile. 
+Subsequently, the direction of anomaly updates is reversed with each iteration. 
+In this way the small changes tend to balance in each direction after many iterations. 
+At each iteration, the adjacent temperature anomalies and adjacent salinity anomalies are set to be equal and opposite to each other, 
+i.e.,
 
-
-<!-- Start of picture text -->
-a=- 160gb Pr= -lépSasbo 2)<br>at the depth mid way between adjacent depths, 2, and 2,,, . Given the initial glider<br>profile (Se{  at Px) =1,L n )! , we seek the anomaly profile, {((45, A6, Py)= Ln! , such<br>that modified profile, (Se +AS,,6, +48, Py) k= 1, n} is everywhere statically stable, plus<br>a little margin, i.e., M =Nj?+ANZ2 N2,, k= 1,n , where M2 is the BV of the modified<br>profile, and AN; 2 N2- NR is the BV of the anomaly that produces the stability, given<br>by<br>AN?2=9‘ B AS,k+1 ,,—AS,kg 46,ke ,—A0k (3)<br>* Zeer 2k ¥en Zk<br><!-- End of picture text -->
-
-The approach used here is to produce a stable profile through several iterations, where each iteration makes only a small adjustment,  λΔNk  , to the required full adjustment, ΔNk  , where  λ is a small fraction, typically about 0.2.  During the first iteration, the adjacent values of temperature and salinity anomalies required to make the small adjustment to BV are computed in the direction of increasing depth down the profile. Then, the next iteration makes the changes to the anomalies are made traveling up the profile. Subsequently, the direction of anomaly updates is reversed with each iteration. In this way the small changes tend to balance in each direction after many iterations. At each iteration, the adjacent temperature anomalies and adjacent salinity anomalies are set to be equal and opposite to each other, i.e.,
-
-
-
-<!-- Start of picture text -->
-40,=—A8,,, and AS,=—AS,,, . (4)<br><!-- End of picture text -->
+$$
+\Delta\theta_k=-\Delta\theta_{k+1} \qquad and \qquad \Delta S_k=-\Delta S_{k+1}. \tag{4}
+$$
 
 In addition, the relationship between the temperature anomaly and the salinity anomaly is arbitrarily selected to be
 
+$$
+|\Delta\theta_k|=\gamma|\Delta S_k|, \qquad where \qquad \gamma=0.5\frac{|\max(\theta)-\min(\theta)|}{|\max(S)-\min(S)|}. \tag{5}
+$$
 
+where the minimum and maximum values of temperature and salinity are computed over the entire profile, 
+and the value, 0.5, 
+is employed to cause larger changes to salinity and smaller changes in temperature than would otherwise occur. 
+This approach is used because measurements of salinity are more prone to error than temperature. Another possible approach would be to select the ratio of the temperature anomaly to the salinity anomaly based on the local thermal expansion and saline contraction so that the contribution of each to the stabilization is nearly equal. 
+However, 
+selection of the best approach requires further study. 
+The sign of both the salinity anomaly and the temperature anomaly is always selected to produce an increase in the resulting BV of the water between adjacent depths.
 
-<!-- Start of picture text -->
-|49,| =y|AS,| , where y=0.5 ymax ( 6 |—mi) mi n |@(6) ; (5)<br>max(S|—min|S]<br><!-- End of picture text -->
+Substituting (4) and (5) into (3), solving for $\Delta S_k$, 
+and incorporating the partial update factor, λ, we obtain
 
-where the minimum and maximum values of temperature and salinity are computed over the entire profile, and the value, 0.5, is employed to cause larger changes to salinity and smaller changes in temperature than would otherwise occur. This approach is used because measurements of salinity are more prone to error than temperature. Another possible approach would be to select the ratio of the temperature anomaly to the salinity anomaly based on the local thermal expansion and saline contraction so that the contribution of each to the stabilization is nearly equal. However, selection of the best approach requires further study. The sign of both the salinity anomaly and the temperature anomaly is always selected to produce an increase in the resulting BV of the water between adjacent depths.
+$$
+\Delta S_k=\frac{\lambda\left(1.5N_{\min}^2-N_k^2\right)(z_{k+1}-z_k)}{-2g(\beta_k-\gamma\alpha_k)}. \tag{6}
+$$
 
-Substituting (4) and (5) into (3), solving for<sup>_ΔS_</sup> _k_ , and incorporating the partial update factor, _λ_ , we obtain
+This salinity anomaly, 
+together with the temperature anomaly computed from (5), 
+are the anomalies needed to partially increase the BV between depths $k$ and $k+1$ in one iteration. 
+In (6), the minimum required BV, $N_{\min}^2$, 
+has been multiplied by 1.5 to force the iteration to reach the goal BV of $N_{\min}$ faster, 
+but the test for stability still uses just $N_{\min}$. 
+If  more than 100 iterations of this scheme are required to produce a fully stabilized profile, 
+then the value of γ is increased from 0.2 to 0.9 in subsequent iterations. 
+Although this scheme is allowed to continue for 25000 iterations, 
+it typically stops before 100 iterations.
 
+Figure 10 shows a profile measured by a glider in shallow water in the Persian Gulf in summer. 
+Small inversions were detected in the thermocline where decreasing salinity with increasing depth acted against stabilization and required larger temperature gradients at two points to recover stability. 
+Also, a small (less than 0.002 psu) and gradual change to the salinity over the full extent of the mixed layer was required to produce a stabile profile.
 
+![Figure 10](images_QC_Gliders/figure-10.png)
 
-<!-- Start of picture text -->
-A(1.5 Noin—N¢)(Zk+1-2%]2 2<br>AS,=——__—_— - (6)<br>—2g(B,—yay)<br><!-- End of picture text -->
+<figcaption>Figure 10. Profile showing changes in the temperature salinity profiles performed to stabilize density. The initial temperature and salinity values are in magenta and blue, respectively. The final profiles of temperature and salinity after stabilization are colored black and red, respectively.</figcaption>
+<br>
 
-C-30
+#### 6.7 Processing Performed on Optics
 
-This salinity anomaly, together with the temperature anomaly computed from (5), are the anomalies needed to partially increase the BV between depths k and k+1 in one iteration. In (6), the minimum required BV, _N_ mi<sup>2</sup> , has been multiplied by 1.5 to force the iteration to reach the goal BV of _N_ min  faster, but the test for stability still uses just _N_ min  . If  more than 100 iterations of this scheme are required to produce a fully stabilized profile, then the value of _γ_ is increased from 0.2 to 0.9 in subsequent iterations. Although this scheme is allowed to continue for 25000 iterations, it typically stops before 100 iterations.
+##### 6.7.1 Scaling
 
-Figure 10 shows a profile measured by a glider in shallow water in the Persian Gulf in summer.  Small inversions were detected in the thermocline where decreasing salinity with increasing depth acted against stabilization and required larger temperature gradients at two points to recover stability.  Also, a small (less than 0.002 psu) and gradual change to the salinity over the full extent of the mixed layer was required to produce a stabile profile.
+If LAGER recognizes a raw input variable time series as an unscaled optics measurement, 
+it performs a scaling of that variable to form a final scaled optics measurement which is then written to the final output NetCDF file.  
+LAGER checks the names of all times series variables in the raw unprocessed glider data input to determine whether it is or is not an optics variable name. 
+Each valid optics variable name is stored in a variable definition block in the `$lager_setup_files/optics_variables_info.dat` file as the value of an “inname” parameters. 
+Also within each block, 
+another parameter called “calibrated” is set to a value of “no” if the time series with this name are unscaled. 
+Unscaled time series are normally integer time series with units of counts. 
+Often, especially on Slocums and LBS-G gliders, 
+the unscaled optics measurements are scaled before being sent from the glider back, 
+via satellite communications, to the OOC. 
+The following two subsections describe the procedures LAGER uses to scale to different types of unscaled input. 
+With the first type, one scale output time series is produced from one input unscaled time series. 
+The second type produces more than one output time series from more than one input time series.
 
-C-31
+###### 6.7.1.1 One Input and One Output Calibration
 
+The raw input names of variables attached to unscaled time series that require only one unscaled input time series and output one output scaled times are listed next. 
+The final column in the listing is either linear, 
+indicating that scaling uses a linear equation or logarithmic, 
+meaning that scaling is performed using a logarithmic equation.
 
-
-<!-- Start of picture text -->
-Glider: s1113_ Project: GL_PersianGulf<br>Mission Number = 000 Segment Number = 029 Profile 32 of 32<br>3 15 popes : No<br>2 H H i<br>20 fone) unsnansinenend a<br>. : i i i]<br>32.4 32.6 32.8 33.0 33.2 33.4<br>DeLay eS Fong ee neetemp Puen Pee eneee pean ene<br>40.0440.0640.0840.1040.1240.1440.1640.1840.2040.2240.24<br>salinity<br>24.35 24.40 24.45 24.50 24.55 24.60 24.65 24.70 24.75<br>sigma_theta<br>40.0440.0640.0840.1040.1240.1440.1640.1840.2040.2240.24<br>salinity_unstable<br>32.4 32.6 328 ° 33.0 332 334<br>temp_orig<br><!-- End of picture text -->
-
-**Figure 10** Profile showing changes in the temperature salinity profiles performed to stabilize density. The initial temperature and salinity values are in magenta and blue, respectively. The final profiles of temperature and salinity after stabilization are colored black and red, respectively.
-
-###### **6.7 Processing Performed on Optics**
-
-###### **6.7.1 Scaling**
-
-If LAGER recognizes a raw input variable time series as an unscaled optics measurement, it performs a scaling of that variable to form a final scaled optics measurement which is then written to the final output NetCDF file.  LAGER checks the
-
-C-32
-
-names of all times series variables in the raw unprocessed glider data input to determine whether it is or is not an optics variable name. Each valid optics variable name is stored in a variable definition block in the $lager_setup_files/optics_variables_info.dat file as the value of an “inname” parameters. Also within each block, another parameter called “calibrated” is set to a value of “no” if the time series with this name are unscaled. Unscaled time series are normally integer time series with units of counts. Often, especially on Slocums and LBS-G gliders, the unscaled optics measurements are scaled before being sent from the glider back, via satellite communications, to the OOC. The following two subsections describe the procedures LAGER uses to scale to different types of unscaled input. With the first type, one scale output time series is produced from one input unscaled time series. The second type produces more than one output time series from more than one input time series.
-
-###### **_6.7.1.1_ One Input and One Output Calibration**
-
-The raw input names of variables attached to unscaled time series that require only one unscaled input time series and output one output scaled times are listed next. The final column in the listing is either linear, indicating that scaling uses a linear equation or logarithmic, meaning that scaling is performed using a logarithmic equation.
-
-|**Unscaled name**|**Instrument**|**Meas.**<br>**Type**|**Wavelength**<br>**(nm)**|**Units**|**Scaling**|
-|---|---|---|---|---|---|
+| Unscaled name | Instrument | Meas. Type | Wavelength (nm) | Units | Scaling |
+| --- | --- | --- | --- | --- | --- |
 |wlbb2f_blueCount|bb2f|bb|470|1/m|linear|
 |wlbb2f_redCount|bb2f|bb|700|1/m|linear|
 |wlbb2f_fluorCount|bb2f|Flchl|470|mg/m**3|linear|
@@ -2017,103 +2061,139 @@ The raw input names of variables attached to unscaled time series that require o
 |eng_wlbbfl2vmt_Cdomsig|bbfl2s|Flcdom|00|ppb|linear|
 |sci_bbam_corr_sig|bamslk|c|00|1/m|logarithmic|
 
+The linear and logarithmic scaling equations, 
+which follow, use the name, unscaled_val, 
+to indicate the unscaled input time series and scaled_val to indicate the output scaled time series. 
+The linear scaling equation is:
 
-
-The linear and logarithmic scaling equations, which follow, use the name, unscaled_val, to indicate the unscaled input time series and scaled_val to indicate the output scaled time series.  The linear scaling equation is:
-
-scaled_val = **scale_factor** *(unscaled_val- **dark_counts** ),
-
-C-33
+scaled_val = **scale_factor** * (unscaled_val - **dark_counts**),
 
 where **scale_factor** and **dark_counts** are parameters extracted for the particular measurement type from the calibration file for the specified instrument and serial number attached to the glider from which these observations were made. The valid parameter names in the optics calibration files are listed in section 3.5.2.4.
 
 The logarithmic scaling equation, used only to produce the beam attenuation coefficient (c) measured from the bamslk instrument is:
 
-scaled_val = -1/ **pathlength** (m)*log(unscaled_val*
+scaled_val = -1/**pathlength**(m) * log(unscaled_val * ((**u_bbam_csc_air/u_bbam_csc_current**)/**u_bbam_csc_cal**))
 
-(( **u_bbam_csc_air** / **u_bbam_csc_current** )/ **u_bbam_csc_cal** ))
+###### 6.7.1.2 Two Inputs and Three Outputs Calibration
 
-###### **_6.7.1.2_ Two Inputs and Three Outputs Calibration**
+At this time, 
+the only recognized multi-input/output optics variable names are associated with measurements made by the AUVB instrument. 
+Two time series (required for scaling) are output from the AUVB from which three scaled time series are produced.
 
-At this time, the only recognized multi-input/output optics variable names are associated with measurements made by the AUVB instrument. Two time series (required for scaling) are output from the AUVB from which three scaled time series are produced.
-
-The five required scaling parameters, found in the calibration file for this instrument and serial number are: **dark_counts** , **scale_factor** , **wavelength** , **ref_cal** , and **ref_used** . The **dark_counts** coefficient might be referred to as **bias** in the manufacturer's calibration information.
+The five required scaling parameters, 
+found in the calibration file for this instrument and serial number are: **dark_counts**, **scale_factor**, **wavelength**, **ref_cal**, and **ref_used**. 
+The **dark_counts** coefficient might be referred to as **bias** in the manufacturer's calibration information.
 
 The two required unscaled time series from the AUVB are sci_auvb_ref and sci_auvb_sig.
 
 The three output scaled time series are measurement types vis (visibility), c (attenuation), and b (scattering).
 
-The algorithm used to scale the auvb output time series is more complex than the linear and logarithmic equations discussed above. The process_auvb.f subroutine performs the scaling.  It is based on a Matlab function written by John Kerfoot.
+The algorithm used to scale the auvb output time series is more complex than the linear and logarithmic equations discussed above. 
+The process_auvb.f subroutine performs the scaling. 
+It is based on a Matlab function written by John Kerfoot.
 
-###### **6.7.2 Optics time series smoothing**
+##### 6.7.2 Optics time series smoothing
 
-As discussed in section 6.2.13, LAGER stores three output arrays for each final processed optics scaled measurement time series. One of these is the smoothed time series, generically called opt_V_sm (where V is either be **bb** , **ed** , **c** , **b** , **vis** , **par** , **Flchl** , **Flphyco** , or **Flcdom),** computed using only unflagged (no errors detected) elements of the scaled time series. The smoothing is performed by replacing each value V(i), at depth Z(i), with the local average of all values within the depth band from Z(i)- **depthwindow** /2.0 to Z(i) +depthwindow/2.0 meters.  The value of **depthwindow** is stored in the $lager_setup_files/optics_variables_info.dat file in the definition block for each input scaled and unscaled variable name.  Typically, **depthwindow** = 5.0 m.
+As discussed in section 6.2.13, 
+LAGER stores three output arrays for each final processed optics scaled measurement time series. 
+One of these is the smoothed time series, generically called opt_V_sm (where V is either be **bb**, **ed**, **c**, **b**, **vis**, **par**, **Flchl**, **Flphyco**, or **Flcdom**), 
+computed using only unflagged (no errors detected) elements of the scaled time series. 
+The smoothing is performed by replacing each value V(i), 
+at depth Z(i), with the local average of all values within the depth band from Z(i) -  **depthwindow**/2.0 to Z(i) + depthwindow/2.0 meters. 
+The value of **depthwindow** is stored in the `$lager_setup_files/optics_variables_info.dat` file in the definition block for each input scaled and unscaled variable name. 
+Typically, **depthwindow** = 5.0 m.
 
-###### **6.8 Manual QC Flags**
+#### 6.8 Manual QC Flags
 
-Manual QC flags are not present in the glider data NetCDF file immediately after passing through the LAGER automated QC analysis. The manual flag arrays are added to the NetCDF file only if the file has been loaded into the MUG manual QC routine and then
-
-C-34
-
-only if data manual flags are added during manual editing. Manual QC flags, if applied, are set at individual depths in the MUG GUI. If a manual flag is set at any depth for a particular parameter (temperature, salinity, an optics variable), then an array of manual flags equal to the length of the entire dive's time series arrays is added to the NetCDF file for that variable. At points in the time series were a manual flag was not applied, the value is set to zero (the default value indicating that no manual flag has been applied). When manual flags are applied, the original automated flag values are not changed in the NetCDF file. Instead the manual flags value indicates whether the automated flag value should be or not be used.
+Manual QC flags are not present in the glider data NetCDF file immediately after passing through the LAGER automated QC analysis. 
+The manual flag arrays are added to the NetCDF file only if the file has been loaded into the MUG manual QC routine and then only if data manual flags are added during manual editing. 
+Manual QC flags, 
+if applied, 
+are set at individual depths in the MUG GUI. 
+If a manual flag is set at any depth for a particular parameter (temperature, salinity, an optics variable), 
+then an array of manual flags equal to the length of the entire dive's time series arrays is added to the NetCDF file for that variable. 
+At points in the time series were a manual flag was not applied, 
+the value is set to zero (the default value indicating that no manual flag has been applied). 
+When manual flags are applied, 
+the original automated flag values are not changed in the NetCDF file. 
+Instead the manual flags value indicates whether the automated flag value should be or not be used.
 
 The four possible values of the manual flags are:
 
-- **0** no change of automated flag (default, use the automated flag value)
+- **0**: no change of automated flag (default, use the automated flag value)
 
-- **1** manually changed data value (data value now good, ignore the automated flag value)
+- **1**: manually changed data value (data value now good, ignore the automated flag value)
 
-- **2** interpolated data value (data value now good, ignore the automated flag value)
+- **2**: interpolated data value (data value now good, ignore the automated flag value)
 
-- **3** manually set data value to bad (data value bad now, ignore the automated flag value)
+- **3**: manually set data value to bad (data value bad now, ignore the automated flag value)
 
 The array names of the manual flags in the NetCDF files for each variable are:
 
-**manual_temp_flag manual_salt_flag opt_bb_manual_flag opt_ed_manual_flag opt_c_manual_flag opt_b_manual_flag opt_vis_manual_flag opt_par_manual_flag opt_Flchl_manual_flag opt_Flphyco_manual_flag opt_Flcdom_manual_flag**
+- **manual_temp_flag**
+- **manual_salt_flag**
+- **opt_bb_manual_flag**
+- **opt_ed_manual_flag**
+- **opt_c_manual_flag**
+- **opt_b_manual_flag**
+- **opt_vis_manual_flag**
+- **opt_par_manual_flag**
+- **opt_Flchl_manual_flag**
+- **opt_Flphyco_manual_flag**
+- **opt_Flcdom_manual_flag**
 
-###### **_6.9 Overall profile quality flags_**
+#### 6.9 Overall profile quality flags
 
-###### **6.9.1 Full-profile Keep flag**
+##### 6.9.1 Full-profile Keep flag
 
-A special full-profile QC flag is written to the NetCDF file by the automated QC software for each individual (ascending or descending) profile that indicates whether that profile is good or bad based on the full set of individual-depth QC flags. The names of the full-depth QC flags in the NetCDF files for each variable are:
+A special full-profile QC flag is written to the NetCDF file by the automated QC software for each individual (ascending or descending) profile that indicates whether that profile is good or bad based on the full set of individual-depth QC flags. 
+The names of the full-depth QC flags in the NetCDF files for each variable are:
 
-**keeptemp_flag** (nprofs) **keepsalt_flag** (nprofs) **opt_bb_keep** (opt_bb_num,nprofs) **opt_ed_keep** (opt_ed_num,nprofs) **opt_c_keep** (opt_c_num,nprofs)
+- **keeptemp_flag** (nprofs)
+- **keepsalt_flag** (nprofs)
+- **opt_bb_keep** (opt_bb_num,nprofs)
+- **opt_ed_keep** (opt_ed_num,nprofs)
+- **opt_c_keep** (opt_c_num,nprofs)
+- **opt_b_keep** (opt_b_num,nprofs)
+- **opt_vis_keep** (opt_vis_num,nprofs) 
+- **opt_par_keep** (opt_par_num,nprofs)
+- **opt_Flchl_keep** (opt_Flchl_num,nprofs)
+- **opt_Flphyco_keep** (opt_Flphyco_num,nprofs)
+- **opt_Flcdom_keep** (opt_Flcdom_num,nprofs)
 
-C-35
+The temperature and salinity full-profile flag arrays are one dimensional, with length equal to the number of profiles (nprofs) in the dive stored in the NetCDF file. 
+The optics full-profile flag arrays are all two-dimensional, 
+with the length of the first dimension for each variable equal to the number of different wavelength measured for this variable (**ob_bb_num**, **opt_ed_num**, etc.) and the length of the second index equal to the number of profiles.
 
-**opt_b_keep** (opt_b_num,nprofs) **opt_vis_keep** (opt_vis_num,nprofs) **opt_par_keep** (opt_par_num,nprofs) **opt_Flchl_keep** (opt_Flchl_num,nprofs)
-
-**opt_Flphyco_keep** (opt_Flphyco_num,nprofs) **opt_Flcdom_keep** (opt_Flcdom_num,nprofs)
-
-The temperature and salinity full-profile flag arrays are one dimensional, with length equal to the number of profiles (nprofs) in the dive stored in the NetCDF file. The optics full-profile flag arrays are all two-dimensional, with the length of the first dimension for each variable equal to the number of different wavelength measured for this variable ( **ob_bb_num** , **opt_ed_num** , etc.) and the length of the second index equal to the number of profiles.
-
-The values of these full-profile flags can be either 1 or 0, where 1 means that the profile is good and should be kept, and a zero means that the profile is bad and should not be kept (or used).
+The values of these full-profile flags can be either 1 or 0, 
+where 1 means that the profile is good and should be kept, 
+and a zero means that the profile is bad and should not be kept (or used).
 
 The flag value is determined for each variable type by examination of the individual depth QC flag values.
 
-**keeptemp_flag = 0** if at least 30% of depths have a temp_flag > 0 but not counting temp_flag values = 20.  Otherwise, **keeptemp_flag = 1.**
+**keeptemp_flag = 0** if at least 30% of depths have a temp_flag > 0 but not counting temp_flag values = 20. 
+Otherwise, **keeptemp_flag = 1**.
 
-**keepsalt_flag = 0** if at least 30% of depths have a salt_flag > 0 (not counting salt_flag_values = 20 or 21) or at least 30% of temperature or salinity values were changed by excessive amounts during profile stabilization. Otherwise, **keepsalt_flag = 1.**
+**keepsalt_flag = 0** if at least 30% of depths have a salt_flag > 0 (not counting salt_flag_values = 20 or 21) or at least 30% of temperature or salinity values were changed by excessive amounts during profile stabilization. 
+Otherwise, **keepsalt_flag = 1.**
 
-**V_keep = 0** if at least 10% of depths have opt_V_flag > 0, where **V** is one of the optics variable names ( **opt_bb** , **opt_ed** , etc.).  Otherwise, **V_keep = 1.**
+**V_keep = 0** if at least 10% of depths have opt_V_flag > 0, where **V** is one of the optics variable names (**opt_bb**, **opt_ed**, etc.).  Otherwise, **V_keep = 1**.
 
-###### **6.9.2 needs_manual_editing_flag**
+##### 6.9.2 needs_manual_editing_flag
 
-The **needs_manual_editing_flag(nprofs)** and
+The **needs_manual_editing_flag(nprofs)** and **optics_needs_manual_editing_flag(nprofs)** full-profile QC flag arrays are generated by the automated QC software and written to the NetCDF data files to indicate whether or not one or more profiles, 
+and therefore the entire file, 
+needs to be evaluated further by manual examination in the MUG GUI.
 
-**optics_needs_manual_editing_flag(nprofs)** full-profile QC flag arrays are generated by the automated QC software and written to the NetCDF data files to indicate whether or not one or more profiles, and therefore the entire file, needs to be evaluated further by manual examination in the MUG GUI.
-
-One value of each of these flags is computed for each profile of the dive and one value is computed for both temperature and salinity combined ( **need_manual_editing_flag** ) and only one value is computed for all optics variables combined
+One value of each of these flags is computed for each profile of the dive and one value is computed for both temperature and salinity combined (**need_manual_editing_flag**) and only one value is computed for all optics variables combined
 
 ( **optics_needs_manual_editing_flag** ).  For each of these array values:
 
-**0** indicates that manual editing is not required
+- **0**: indicates that manual editing is not required
 
-C-36
+- **1**: indicates that the file containing this profile should be sent to the manual editor for further examination.
 
-- **1** indicates that the file containing this profile should be sent to the manual editor for further examination.
-
-The temperature/salinity flag ( **need_manual_editing_flag** ) for a profile is set to **1** if:
+The temperature/salinity flag (**need_manual_editing_flag**) for a profile is set to **1** if:
 
 1. at least one temp_flag or salt_flag = 3 (failed GDEM comparison test, 5.1.2 and 5.1.10 above).
 
@@ -2125,383 +2205,723 @@ The temperature/salinity flag ( **need_manual_editing_flag** ) for a profile is 
 
 5. for Slocum profiles only, at least one depth gap between consecutive observations was >= 10 m or two gaps >= 6 m.
 
-The optics flag ( **optics_needs_manual_editing_flag** ) for a profile is set to **1** if:
+The optics flag (**optics_needs_manual_editing_flag**) for a profile is set to **1** if:
 
-1. At least 10% of depths of any one of the optics variables have opt_V_flag > 0 (flagged bad), where **V** is one of the optics variable names ( **opt_bb** , **opt_ed** , etc.).
+1. At least 10% of depths of any one of the optics variables have opt_V_flag > 0 (flagged bad), where **V** is one of the optics variable names (**opt_bb**, **opt_ed**, etc.).
 
-# **REFERENCES**
+**References**
 
-Boyer, T. and S. Levitus, 1994: Quality control processing of historical oceanographic temperature, salinity, and oxygen data, National Oceanographic Data Center, Ocean Climate Laboratory.
+> Boyer, T. and S. Levitus, 1994: Quality control processing of historical oceanographic temperature, salinity, and oxygen data, National Oceanographic Data Center, Ocean Climate Laboratory.
 
-C-T. Chen, C. –T. and F.J Millero, 1977: Speed of sound in seawater at high pressures. J. Acoust. Soc. Am, 62, 1129-1135.
+> C-T. Chen, C. –T. and F.J Millero, 1977: Speed of sound in seawater at high pressures. J. Acoust. Soc. Am, 62, 1129-1135.
 
-Chu, P.C. and C. Fan, 2010: A conserved minimal adjustment scheme for stabilization of hydrographic profiles,  J. Atmos. Ocean. Tech., 27, 1072-1083.
+> Chu, P.C. and C. Fan, 2010: A conserved minimal adjustment scheme for stabilization of hydrographic profiles,  J. Atmos. Ocean. Tech., 27, 1072-1083.
 
-Eriksen, C.C., T.J. Osse, R.D. Light, T. Wen, T.W. Lehman, P.L. Sabin, J.W. Ballard, and A.M. Chiodi, 2001: Seaglider: A long-range autonomous underwater vehicle for oceanographic research, IEEE Journal of Oceanic Engineering, 26 (4), 424-436.
+> Eriksen, C.C., T.J. Osse, R.D. Light, T. Wen, T.W. Lehman, P.L. Sabin, J.W. Ballard, and A.M. Chiodi, 2001: Seaglider: A long-range autonomous underwater vehicle for oceanographic research, IEEE Journal of Oceanic Engineering, 26 (4), 424-436.
 
-Garau, B., S. Ruiz, W.G. Zhang, A, Pascual, E. Heslop, J. Kerfoot, and J. Tintore, 2011: Thermal Lag Correction on Slocum CTD Glider Data, J Atmos. Ocean. Tech, , 28, 1065-1071.
+> Garau, B., S. Ruiz, W.G. Zhang, A, Pascual, E. Heslop, J. Kerfoot, and J. Tintore, 2011: Thermal Lag Correction on Slocum CTD Glider Data, J Atmos. Ocean. Tech, , 28, 1065-1071.
 
-Gronell, A. and S. E. Wijffels, 2008: A semiautomated approach for quality controlling large historical ocean temperature archives, J. Atmos. and Ocean. Tech., 25, 990-1003.
+> Gronell, A. and S. E. Wijffels, 2008: A semiautomated approach for quality controlling large historical ocean temperature archives, J. Atmos. and Ocean. Tech., 25, 990-1003.
 
-Ingleby, B. and M. Huddleston, 2007: Quality control of ocean temperature and salinity profiles – Historical and real-time data, J. Mar. Systems, 65, 158-175.
+> Ingleby, B. and M. Huddleston, 2007: Quality control of ocean temperature and salinity profiles – Historical and real-time data, J. Mar. Systems, 65, 158-175.
 
-Jackett, D.R., and T.J. McDougall, 1995: Minimal adjustment of hydrographic profiles to achieve static stability, J. Atmos. Ocean. Tech., 12, 381-389.
+> Jackett, D.R., and T.J. McDougall, 1995: Minimal adjustment of hydrographic profiles to achieve static stability, J. Atmos. Ocean. Tech., 12, 381-389.
 
-C-37
+> Johnson, G. C., J. M. Toole, and N. G. Larson, 2007: Sensor corrections for Sea-Bird SBD-41CP and SBE-41 CTDs, J. Atmos. Ocean. Tech, 24, 1117-1130.
 
-Johnson, G. C., J. M. Toole, and N. G. Larson, 2007: Sensor corrections for Sea-Bird SBD-41CP and SBE-41 CTDs, J. Atmos. Ocean. Tech, 24, 1117-1130.
+> Kerfoot, J, S Glenn, J. Kohut, O. Schofield, H. Roarty: Correction for sensor mismatch and thermal lag effects in non-pumped conductivity-temperature sensors on the Slocum coastal electric glider, Ocean Sciences, Honolulu, Hawaii, February 2006.
 
-Kerfoot, J, S Glenn, J. Kohut, O. Schofield, H. Roarty: Correction for sensor mismatch and thermal lag effects in non-pumped conductivity-temperature sensors on the Slocum coastal electric glider, Ocean Sciences, Honolulu, Hawaii, February 2006.
+> Levitus, S., 2005, World Ocean Database 2005 documentation, NODC Internal Report 18, U.S. Government Printing Office, Washington D.C., 163 pp.
 
-Levitus, S., 2005, World Ocean Database 2005 documentation, NODC Internal Report 18, U.S. Government Printing Office, Washington D.C., 163 pp.
+> Lueck, R. G., 1990: Thermal inertia of conductivity cells: Theory. J. Atmos. Ocean. Tech., 7, 741-755.
 
-Lueck, R. G., 1990: Thermal inertia of conductivity cells: Theory. J. Atmos. Ocean. Tech., 7, 741-755.
+> Lueck, R. G., 1990: Thermal inertia of conductivity cells: observations with a Sea-Bird Cell.  J. Atmos. Ocean. Tech., 7, 756-768.
 
-Lueck, R. G., 1990: Thermal inertia of conductivity cells: observations with a Sea-Bird Cell.  J. Atmos. Ocean. Tech., 7, 756-768.
+> Maudire, G., 1994: Routine data quality control in a data centre. The example of the TOGA/WOCE Subsurface Centre, OCEANS ’94, “Oceans Engineering for Today’s Technology and Tomorrow’s Preservation.” Proceedings, Vol 2, II/384-II389.
 
-Maudire, G., 1994: Routine data quality control in a data centre. The example of the TOGA/WOCE Subsurface Centre, OCEANS ’94, “Oceans Engineering for Today’s Technology and Tomorrow’s Preservation.” Proceedings, Vol 2, II/384-II389.
+> McDougall, T.J., 1987: Neutral surfaces, J. Phys. Ocean., 17, 1950-1964.
 
-McDougall, T.J., 1987: Neutral surfaces, J. Phys. Ocean., 17, 1950-1964.
+> McDougall, T.J. and D.R. Jackett, 1995: Minimal adjustment of hydrographic profiles to achieve static stability, J. Atmos. Ocean. Tech., 12, 381-389.
 
-McDougall, T.J. and D.R. Jackett, 1995: Minimal adjustment of hydrographic profiles to achieve static stability, J. Atmos. Ocean. Tech., 12, 381-389.
+> Millero, F. J., & Li, X. (1994). Comments on “On equations for the speed of sound in seawater” [J. Acoust. Soc. Am. 94, 255-275 (1993)]. _The Journal of the Acoustical Society of America_ , _95_ , 2757–2759.
 
-Millero, F. J., & Li, X. (1994). Comments on “On equations for the speed of sound in seawater” [J. Acoust. Soc. Am. 94, 255-275 (1993)]. _The Journal of the Acoustical Society of America_ , _95_ , 2757–2759.
+> Morison et al., 1994: The correction for thermal-lag effects in Sea-Bird CTD data. J. Atmos. Ocean. Tech., 11, 1151-1164.
 
-Morison et al., 1994: The correction for thermal-lag effects in Sea-Bird CTD data. J. Atmos. Ocean. Tech., 11, 1151-1164.
+> Rowan, T., 1990, Functional Stability Analysis of Numerical Algorithms, Ph.D. Thesis, Department of Computer Sciences, University of Texas at Austin, 1990.
 
-Rowan, T., 1990, Functional Stability Analysis of Numerical Algorithms, Ph.D. Thesis, Department of Computer Sciences, University of Texas at Austin, 1990.
+> Sam, 2010: U.S. Naval Oceanographic Office BUFR BUFFET Tables Version 2.0, 19 pp.
 
-Sam, 2010: U.S. Naval Oceanographic Office BUFR BUFFET Tables Version 2.0, 19 pp.
+> Schmid, C., R.L. Molinari, R. Sabina, Y.-H. Daneshzadeh, X. Xia, E. Forteza, and H. Yang, 2007: The real-time data management system for Argo profile float observations, J. Atmos. Ocean. Tech., 24, 1608-1628.
 
-Schmid, C., R.L. Molinari, R. Sabina, Y.-H. Daneshzadeh, X. Xia, E. Forteza, and H. Yang, 2007: The real-time data management system for Argo profile float observations, J. Atmos. Ocean. Tech., 24, 1608-1628.
+> Schofield, O., J. Kohut, D. Aragon, L. Creed, J. Graver, J. Kerfoot, H. Roarty, C. Jones, D. Webb, S. Glenn, 2007: Slocum Gliders: Robust and Ready, Journal of Field Robotics, 24(6), 473-485.
 
-Schofield, O., J. Kohut, D. Aragon, L. Creed, J. Graver, J. Kerfoot, H. Roarty, C. Jones, D. Webb, S. Glenn, 2007: Slocum Gliders: Robust and Ready, Journal of Field Robotics, 24(6), 473-485.
+> Sea-Bird, 2008: Glider Payload CTD, Sea-Bird Electronics, Inc., Preliminary Brochure, www.seabird.com/products/GliderCTDs.htm
 
-C-38
+> Sherman, J.T., R.E. Davis, W.B. Owens, and J. Valdes, 2001: The autonomous underwater glider 'Spray.' IEEE Oceanic Eng., 26, 437-446.
 
-Sea-Bird, 2008: Glider Payload CTD, Sea-Bird Electronics, Inc., Preliminary Brochure, www.seabird.com/products/GliderCTDs.htm
-
-Sherman, J.T., R.E. Davis, W.B. Owens, and J. Valdes, 2001: The autonomous underwater glider 'Spray.' IEEE Oceanic Eng., 26, 437-446.
-
-UNESCO, 1990: GTSPP Real-Time Quality Control Manual, Intergovernmental Oceanographic Commission, Manual and Guides 22, SC/90/WS-74, 121 pp.
-
-C-39
+> UNESCO, 1990: GTSPP Real-Time Quality Control Manual, Intergovernmental Oceanographic Commission, Manual and Guides 22, SC/90/WS-74, 121 pp.
 
 ## Appendix D. Seaglider Quality Control Manual
 
-##### SCHOOL OF OCEANOGRAPHY
+**SCHOOL OF OCEANOGRAPHY and APPLIED PHYSICS LABORATORY UNIVERSITY OF WASHINGTON**
 
-##### and
+Copyright (c) 2011-2016 by University of Washington. All rights reserved. 
 
-##### APPLIED PHYSICS LABORATORY UNIVERSITY OF WASHINGTON
-
-Copyright (c) 2011-2016 by University of Washington. All rights reserved. Version 1.13 February 2016
+Version 1.13 February 2016
 
 Corresponding to Seaglider basestation version 2.09
 
-### **Revision History**
+**Revision History**
 
-- 08/12/2011 Initial version.
+- 08/12/2011 - Initial version.
 
-- 10/20/2011 Change interpolation and suggestion policies; handle warm trapped water at apogee; document speed QC.
+- 10/20/2011 - Change interpolation and suggestion policies; handle warm trapped water at apogee; document speed QC.
 
-- 03/21/2012 Remove discussion of CTD data decimation.
+- 03/21/2012 - Remove discussion of CTD data decimation.
 
-- 04/19/2012 Update discussion of conductivity and salinity checks and bounds; removed stalled from directives lists.
+- 04/19/2012 - Update discussion of conductivity and salinity checks and bounds; removed stalled from directives lists.
 
-- 06/05/2012 Broaden handling warm trapped water to dives; improve discussion of oxygen corrections. 10/06/2012 Improve description of oxygen corrections and QC.
+- 06/05/2012 - Broaden handling warm trapped water to dives; improve discussion of oxygen corrections.
 
-- 07/29/2013 Clarify pressure to depth interpolation; SBE43 flow-related effects now corrected. 03/28/2014 Document bad_gps directives.
+- 10/06/2012 Improve description of oxygen corrections and QC.
 
-- 05/01/2014 Removed SBE43 flow-related effects; optode corrections now based on in-situ density. 09/03/2014 Handle GPS position errors in depth-average current calculations. 03/26/2015 Mark certain marginal depth-average current calculations QC_PROBABLY_BAD. 03/31/2015 Remove references to salinity spike calculations that are not performed. 07/06/2015 Introduce optode calibration drift correction of Johnson et al., forthcoming. 03/02/2016 Add copyright; update basestation version number
+- 07/29/2013 - Clarify pressure to depth interpolation; SBE43 flow-related effects now corrected.
 
-### **Introduction**
+- 03/28/2014 Document bad_gps directives.
+
+- 05/01/2014 - Removed SBE43 flow-related effects; optode corrections now based on in-situ density.
+
+- 09/03/2014 Handle GPS position errors in depth-average current calculations.
+
+- 03/26/2015 Mark certain marginal depth-average current calculations QC_PROBABLY_BAD.
+
+- 03/31/2015 Remove references to salinity spike calculations that are not performed.
+
+- 07/06/2015 Introduce optode calibration drift correction of Johnson et al., forthcoming.
+
+- 03/02/2016 Add copyright; update basestation version number.
+
+### Introduction
 
 This document describes the data processing and quality-control procedures for profile data received from Seaglider (and Deepglider) deployments.
 
-The overall data quality control process is patterned after the Argo data processing scheme (Schmid, _et al_ , 2007 and Argo, 2010). In particular, an initial fully-automated quality control process, described in this manual, produces a NetCDF-format file for each profile sufficient for deposit to any national repository, such as the National Oceanographic Data Repository. This process corresponds to Argo's 'real-time' quality control procedure.
+The overall data quality control process is patterned after the Argo data processing scheme (Schmid, _et al_ , 2007 and Argo, 2010). 
+In particular, 
+an initial fully-automated quality control process, 
+described in this manual, 
+produces a NetCDF-format file for each profile sufficient for deposit to any national repository, 
+such as the National Oceanographic Data Repository. 
+This process corresponds to Argo's 'real-time' quality control procedure.
 
-D-1
+This is followed, 
+at some date, 
+by a manual review of each profile by one or more trained oceanographers, 
+leading to possible adjustments to the automated results and hence resubmission. 
+This process corresponds to the Argo 'delayed-mode' quality control procedure. 
+A preliminary manual adjustment mechanism is presented in this document.
 
-This is followed, at some date, by a manual review of each profile by one or more trained oceanographers, leading to possible adjustments to the automated results and hence resubmission. This process corresponds to the Argo 'delayed-mode' quality control procedure. A preliminary manual adjustment mechanism is presented in this document.
-
-Additional information about oceanographic data quality control may be found in the references. The basic seawater property calculations used throughout rely upon formulas taken from Unesco's joint panel on oceanographic tables and standards, described in Unesco, 1981 and Fofonoff, _et al_ , 1983.
+Additional information about oceanographic data quality control may be found in the references. 
+The basic seawater property calculations used throughout rely upon formulas taken from Unesco's joint panel on oceanographic tables and standards, 
+described in Unesco, 1981 and Fofonoff, et al, 1983.
 
 An archive of this document may be found at NODC.
 
-#### **Known limitations**
+#### Known limitations
 
-With few exceptions due to minor parameter renaming, glider data files written after May, 2006 (Seaglider code version 65.03) can be processed. Files written prior to this date must be converted to a more recent format; contact the Seaglider Fabrication Center at the University of Washington for software and assistance with this procedure.
+With few exceptions due to minor parameter renaming, 
+glider data files written after May, 2006 (Seaglider code version 65.03) can be processed. 
+Files written prior to this date must be converted to a more recent format; 
+contact the Seaglider Fabrication Center at the University of Washington for software and assistance with this procedure.
 
-The conversion and quality-control tests assume that the data was collected during a normal profile cycle comprising a dive, apogee, climb, and possible surface maneuver. So-called 'yo-yo' dives (a series of multiple apogee and perigee maneuvers before surfacing) are supported but depth-averaged current calculations are not performed. Dives under ice or using RAFOS navigation are not supported.
+The conversion and quality-control tests assume that the data was collected during a normal profile cycle comprising a dive, 
+apogee, climb, 
+and possible surface maneuver. 
+So-called 'yo-yo' dives (a series of multiple apogee and perigee maneuvers before surfacing) are supported but depth-averaged current calculations are not performed. 
+Dives under ice or using RAFOS navigation are not supported.
 
-No quality control checks are performed between profiles on a deployment. For example, checks for possible sensor drift or conductivity anomalies occurring between adjacent profiles are not performed.
+No quality control checks are performed between profiles on a deployment. 
+For example, 
+checks for possible sensor drift or conductivity anomalies occurring between adjacent profiles are not performed.
 
-#### **Files required and produced during data processing**
+#### Files required and produced during data processing
 
-During a deployment, the glider transmits a log file and one or more engineering data files for each profile; additional engineering data files may be produced by other instruments not part of the basic glider sensor package. (Separate Seaglider documents describe the onboard file formats, how the data is collected, and how it is transmitted by the vehicle.)
+During a deployment, 
+the glider transmits a log file and one or more engineering data files for each profile; 
+additional engineering data files may be produced by other instruments not part of the basic glider sensor package. 
+(Separate Seaglider documents describe the onboard file formats, how the data is collected, and how it is transmitted by the vehicle.)
 
-To control data conversion and checking during and after the deployment, the scientist supplies **`an sg_calib_constants.m`** file containing a set of calibration constants and other control parameter values that apply to all profiles in the deployment. A partial list of these control variables is given in Appendix B. In addition, the scientist may supply an **`sg_directives.txt`** file containing per-deployment or per-dive directives describing manual quality-control corrections and review notations. The form and processing of this file is described in the 'Manual Quality Control' Chapter below<sup>[1]</sup> .
+To control data conversion and checking during and after the deployment, 
+the scientist supplies an `sg_calib_constants.m` file containing a set of calibration constants and other control parameter values that apply to all profiles in the deployment. 
+A partial list of these control variables is given in Appendix B. 
+In addition, 
+the scientist may supply an `sg_directives.txt` file containing per-deployment or per-dive directives describing manual quality-control corrections and review notations. 
+The form and processing of this file is described in the 'Manual Quality Control' Chapter below<sup>[1]</sup> .
 
-After processing the log and engineering files, all recorded data and any derived results, with associated quality control values, as well as the **`sg_calib_constants`** values are written to a NetCDF-format file (the
+After processing the log and engineering files, 
+all recorded data and any derived results, 
+with associated quality control values, as well as the `sg_calib_constants` values are written to a NetCDF-format file (the so-called 'nc' file), 
+one per profile. 
+The nc file also records the level of quality control procedures, 
+various control parameters, the review state, 
+and a record of processing history, documenting how the results were obtained. 
+A list of the main output variables in an nc file is given in Appendix C. 
+Each profile nc file, 
+regardless of review level, should be sufficient for national repositories. 
+The nc files follow CF 1.6 Metadata Conventions and NODC guidelines for trajectory files.
 
-D-2
+As each nc file contains all the uncorrected data from the original data files, 
+they are sufficient to support subsequent processing in the absence of those original files. 
+The basestation inspects the time-stamps of the various files, 
+if they are present, 
+to determine if any further processing need occur. 
+If any original file is found to be more recent than the nc file (for example, 
+the scientist updates the `sg_calib_constants.m` or `sg_directives.txt` file or a transmission from the glider updates a data file), 
+the calculations will be recomputed and the nc file will be updated. 
+Indeed, 
+it is typical to manually review and adjust the data in the nc file in the absence of any of the original files using the directives mechanism (or, in the future, via a GUIbased system)<sup>[2]</sup>.
 
-so-called 'nc' file), one per profile. The nc file also records the level of quality control procedures, various control parameters, the review state, and a record of processing history, documenting how the results were obtained. A list of the main output variables in an nc file is given in Appendix C. Each profile nc file, regardless of review level, should be sufficient for national repositories. The nc files follow CF 1.6 Metadata Conventions and NODC guidelines for trajectory files.
+### Automated Quality Control
 
-As each nc file contains all the uncorrected data from the original data files, they are sufficient to support subsequent processing in the absence of those original files. The basestation inspects the time-stamps of the various files, if they are present, to determine if any further processing need occur. If any original file is found to be more recent than the nc file (for example, the scientist updates the **`sg_calib_constants.m`** or **`sg_directives.txt`** file or a transmission from the glider updates a data file), the calculations will be recomputed and the nc file will be updated. Indeed, it is typical to manually review and adjust the data in the nc file in the absence of any of the original files using the directives mechanism (or, in the future, via a GUIbased system)<sup>[2]</sup> .
+This section describes the main data processing for a single dive/climb profile and the automated quality control checks currently implemented. 
+As these checks and corrections are performed, 
+their quality is assessed and reported in the nc file. 
+In this document quality assessments are referred to symbolically, 
+e.g., 'QC_GOOD' indicates the associated data or test is trustworthy, 
+'QC_BAD' indicates uncorrectable data or a problem with a calculation, etc. 
+The equivalent numeric values recorded in the nc file are given in Appendix A.
 
-### **Automated Quality Control**
+#### Processing overview
 
-This section describes the main data processing for a single dive/climb profile and the automated quality control checks currently implemented. As these checks and corrections are performed, their quality is assessed and reported in the nc file. In this document quality assessments are referred to symbolically, e.g., 'QC_GOOD' indicates the associated data or test is trustworthy, 'QC_BAD' indicates uncorrectable data or a problem with a calculation, etc. The equivalent numeric values recorded in the nc file are given in Appendix A.
+Seaglider data observations are taken on a regular time interval that can be varied by vehicle depth. 
+Typical sample rates range from 4-15 seconds (every 0.4 to 1.5 meters) near the surface and 15-60 seconds (every 1.5 to 6.0 meters) near the bottom of the dive. 
+During each observation, different installed instruments may be sampled. 
+The vehicle pressure sensor and compass heading and pitch are always recorded. 
+Other instruments (including the unpumped CT) may be configured to record or not every _n_ th vehicle observation. 
+Historically data was recorded exclusively during these sampling intervals. 
+However, newer instruments, 
+including the pumped CTD, 
+may sample data at different times and frequencies. 
+These are described, as appropriate, below.
 
-#### **Processing overview**
+Overall the processing code is responsible for converting these raw measurements into common oceanographic units, 
+validating and possibly adjusting their values for known vehicle and instrument issues, 
+and then deriving other interesting quantities from this data. 
+The primary computations performed involve determining accurate temperature and salinity of the water column, 
+based on possibly corrected temperature and conductivity measures, 
+deriving the vehicle buoyancy and flight speeds, 
+directions and displacements, 
+and finally inferring a depth-averaged current by comparing predicted surfacing location from the flight model with the actual surfacing positions reported by the GPS instrument. 
+Each of these steps are described in the following sections.
 
-Seaglider data observations are taken on a regular time interval that can be varied by vehicle depth. Typical sample rates range from 4-15 seconds (every 0.4 to 1.5 meters) near the surface and 15-60 seconds (every 1.5 to 6.0 meters) near the bottom of the dive. During each observation, different installed instruments may be sampled. The vehicle pressure sensor and compass heading and pitch are always recorded. Other instruments (including the unpumped CT) may be configured to record or not every _n_ th vehicle observation. Historically data was recorded exclusively during these sampling intervals. However, newer instruments, including the pumped CTD, may sample data at different times and frequencies. These are described, as appropriate, below.
+#### Validating GPS locations and times
 
-Overall the processing code is responsible for converting these raw measurements into common oceanographic units, validating and possibly adjusting their values for known vehicle and instrument issues, and then deriving other interesting quantities from this data. The primary computations performed involve determining accurate temperature and salinity of the water column, based on possibly corrected temperature and conductivity measures, deriving the vehicle buoyancy and flight speeds, directions and displacements, and finally inferring a depth-averaged current by comparing predicted surfacing location from the flight model with the actual surfacing positions reported by the GPS instrument. Each of these steps are described in the following sections.
+Proper calculation of vehicle depth, 
+surface drift and depth-averaged currents requires three accurate GPS fixes, 
+recorded in the log file: 
+the position when initially surfaced (GPS1), 
+the position just before leaving the surface on the dive (GPS2), 
+and the position when surfaced subsequently (GPS, which is GPS1 of the next profile). 
+GPS positions and times from the unit are assumed to be well-formed (valid dates and times) unless the unit timed out and was unable to acquire a fix. 
+The GPS position error for a fix is taken as the reported horizontal prediction of error (HPE), 
+if any, or the value of the variable `GPS_position_error`, 
+which defaults to 100 meters. 
+Unlike the Argo system, GPS positions are not tested whether they are on land.
 
-D-3
+To determine surface drift, 
+the GPS2 time must be strictly greater than the GPS1 time. 
+To determine depthaveraged current, 
+the final GPS time must be strictly greater than the GPS2 time. 
+If either (or both) of these tests fail, 
+the associated quality control variable is marked as QC_BAD and the calculation is not performed.
 
-#### **Validating GPS locations and times**
+#### Correcting depth and pressure
 
-Proper calculation of vehicle depth, surface drift and depth-averaged currents requires three accurate GPS fixes, recorded in the log file: the position when initially surfaced (GPS1), the position just before leaving the surface on the dive (GPS2), and the position when surfaced subsequently (GPS, which is GPS1 of the next profile). GPS positions and times from the unit are assumed to be well-formed (valid dates and times) unless the unit timed out and was unable to acquire a fix. The GPS position error for a fix is taken as the reported horizontal prediction of error (HPE), if any, or the value of the variable **`GPS_position_error`** , which defaults to 100 meters. Unlike the Argo system, GPS positions are not tested whether they are on land.
+The vehicle measures pressure in dbar at every sample but converts it onboard (using a linear factor of 0.685 m/psi) to an estimated depth, 
+which is reported in the engineering file. 
+The basestation inverts this calculation to recover pressure. 
+The seawater depth routine then determines accurate vehicle depth given measured pressure and the average latitude between the GPS2 and GPS fixes (or GPS1 and GPS2 if the GPS fix is bad). 
+If required, 
+the glider pressure readings are linearly interpolated to the CT sampling grid before the conversion to depth.
 
-To determine surface drift, the GPS2 time must be strictly greater than the GPS1 time. To determine depthaveraged current, the final GPS time must be strictly greater than the GPS2 time. If either (or both) of these tests fail, the associated quality control variable is marked as QC_BAD and the calculation is not performed.
+For an unpumped CT, 
+the vehicle pressure and corrected depth, 
+measured vehicle pitch, 
+and known installation geometry of the CT instrument with respect to the pressure sensor are used to compute the depth and pressure at the thermistor of CT instrument. 
+This 'CT depth' is used in the temperature and salinity corrections discussed below. 
+A pumped CTD reports its own pressure, 
+which is converted to depth as above and used directly as the 'CT depth'.
 
-#### **Correcting depth and pressure**
-
-The vehicle measures pressure in dbar at every sample but converts it onboard (using a linear factor of 0.685 m/psi) to an estimated depth, which is reported in the engineering file. The basestation inverts this calculation to recover pressure. The seawater depth routine then determines accurate vehicle depth given measured pressure and the average latitude between the GPS2 and GPS fixes (or GPS1 and GPS2 if the GPS fix is bad). If required, the glider pressure readings are linearly interpolated to the CT sampling grid before the conversion to depth.
-
-For an unpumped CT, the vehicle pressure and corrected depth, measured vehicle pitch, and known installation geometry of the CT instrument with respect to the pressure sensor are used to compute the depth and pressure at the thermistor of CT instrument. This 'CT depth' is used in the temperature and salinity corrections discussed below. A pumped CTD reports its own pressure, which is converted to depth as above and used directly as the 'CT depth'.
-
-Warnings are emitted (and conductivity points are marked QC_BAD) for any depths where the CT is apparently out of the water (CT depth < 0 meters). This can occur during high sea state, when the vehicle breaches during surface maneuver, if the sensor drifts over a deployment, or if the pressure sensor was not zeroed properly before deployment. In the later case, it may be advisable to adjust the values by setting the **`depth_bias`** variable. No check is made whether the measured pressures are monotonically increasing on the dive or decreasing on the climb.
+Warnings are emitted (and conductivity points are marked QC_BAD) for any depths where the CT is apparently out of the water (CT depth < 0 meters). 
+This can occur during high sea state, when the vehicle breaches during surface maneuver, 
+if the sensor drifts over a deployment, 
+or if the pressure sensor was not zeroed properly before deployment. 
+In the later case, it may be advisable to adjust the values by setting the `depth_bias` variable. 
+No check is made whether the measured pressures are monotonically increasing on the dive or decreasing on the climb.
 
 #### Computing initial vehicle velocity and glide angle
 
-An initial estimate of vehicle velocity and glide angle is determined using the glide-slope model ('gsm'), a version of the glider's hydrodynamic flight equations discussed in Eriksen, _et al_ , 2001. Speed and glide angle are determined from the measured vertical velocity (w, the rate of change of vehicle depth), compassmeasured pitch and heading and an assumed in-situ seawater density ( **`rho0`** ). The gsm estimate does not account for vehicle buoyancy forcing; see the full hydrodynamic speed calculation ('hdm') discussion below.
+An initial estimate of vehicle velocity and glide angle is determined using the glide-slope model ('gsm'), 
+a version of the glider's hydrodynamic flight equations discussed in Eriksen, et al, 2001. 
+Speed and glide angle are determined from the measured vertical velocity (w, the rate of change of vehicle depth), 
+compassmeasured pitch and heading and an assumed in-situ seawater density (`rho0`). 
+The gsm estimate does not account for vehicle buoyancy forcing; see the full hydrodynamic speed calculation ('hdm') discussion below.
 
-D-4
+Generally, 
+the vehicle compass is calibrated prior to deployment such that heading and pitch measurements are accurate to within +/-1.2 degrees. 
+Compass inaccuracies are typically due either to the installation of an incorrect calibration file or to a change to the vehicle hard or soft iron signature after the calibration; 
+both of these conditions can be addressed by changing the calibration file during deployment, 
+which should annotated using a manual directive. 
+The compass calibrations have been tested at latitudes between 70 degrees North and 76 degrees South.
 
-Generally, the vehicle compass is calibrated prior to deployment such that heading and pitch measurements are accurate to within +/-1.2 degrees. Compass inaccuracies are typically due either to the installation of an incorrect calibration file or to a change to the vehicle hard or soft iron signature after the calibration; both of these conditions can be addressed by changing the calibration file during deployment, which should annotated using a manual directive. The compass calibrations have been tested at latitudes between 70 degrees North and 76 degrees South.
+#### Computing temperature, conductivity and salinity
 
-#### **Computing temperature, conductivity and salinity**
+The computation of salinity from temperature and conductivity occurs first from uncorrected data and then from adjusted data. 
+Corrections depend upon whether the CT sensor is pumped or unpumped.
 
-The computation of salinity from temperature and conductivity occurs first from uncorrected data and then from adjusted data. Corrections depend upon whether the CT sensor is pumped or unpumped.
+Each vector of temperature, 
+conductivity and salinity values, 
+corrected or not, 
+is accompanied by a separate, 
+parallel vector of quality-control indicators. 
+All sampled data points are initially considered QC_GOOD; 
+unsampled points are marked QC_UNSAMPLED. 
+As checks and computations are performed individual points are marked as QC_BAD (uncorrectable for various reasons) or, 
+for corrected data, 
+QC_INTERPOLATED if any interpolation occurs.
 
-Each vector of temperature, conductivity and salinity values, corrected or not, is accompanied by a separate, parallel vector of quality-control indicators. All sampled data points are initially considered QC_GOOD; unsampled points are marked QC_UNSAMPLED. As checks and computations are performed individual points are marked as QC_BAD (uncorrectable for various reasons) or, for corrected data, QC_INTERPOLATED if any interpolation occurs.
+In the unpumped CT case, 
+the measured temperature and conductivity frequencies are converted to uncorrected temperature and conductivity values using instrument-specific calibration constants. 
+Temperature and conductivity frequency bounds, 
+if provided by the scientist, 
+are used to mark points exceeding these values as QC_BAD.
 
-In the unpumped CT case, the measured temperature and conductivity frequencies are converted to uncorrected temperature and conductivity values using instrument-specific calibration constants. Temperature and conductivity frequency bounds, if provided by the scientist, are used to mark points exceeding these values as QC_BAD.
+An uncorrected salinity (expressed in practical salinity units, PSU) is derived using the seawater routines based on the uncorrected temperature and conductivity values and the pressure at the CT. 
+These salinity values are independent of any thermal-inertia effects.
 
-An uncorrected salinity (expressed in practical salinity units, PSU) is derived using the seawater routines based on the uncorrected temperature and conductivity values and the pressure at the CT. These salinity values are independent of any thermal-inertia effects.
+As with Argo, 
+the uncorrected temperature, conductivity, 
+and salinity values are checked against global bounds. 
+Temperature and conductivity are checked for individual spikes that suggest electrical noise in the CT sensor. 
+Unlike Argo, there are no checks for excessive gradients.
 
-As with Argo, the uncorrected temperature, conductivity, and salinity values are checked against global bounds. Temperature and conductivity are checked for individual spikes that suggest electrical noise in the CT sensor. Unlike Argo, there are no checks for excessive gradients.
+Any value that exceeds the specified global bounds, 
+regardless of CT depth, 
+is marked QC_BAD.
 
-Any value that exceeds the specified global bounds, regardless of CT depth, is marked QC_BAD.
+A spike test value (|(v₂ − (v₃ + v₁)/2 | − |(v₃ − v₁)/2|) / (|(d₃ − d₁)|/2) is computed for a measurement value v₂, 
+where v₁ and v₃ are the data points before and after v₂ respectively, 
+and d₁ and d₃ are the CT depths associated with v₁ and v₃. 
+The spike test value may not exceed the bounds given below, 
+otherwise the point is marked QC_INTERPOLATED. 
+These tests have a shallow and deep bound: 
+If the CT depth corresponding to v₂ is deeper than the specified depth, 
+the test value must not exceed the deep bound, 
+otherwise (the point is shallower) the test value must not exceed the shallow bound<sup>[3]</sup> .
 
-A spike test value (|(v2 - (v3 + v1)/2| - |(v3 - v1)/2|) / (|(d3 - d1)|/2) is computed for a measurement value v2, where v1 and v3 are the data points before and after v2 respectively, and d1 and d3 are the CT depths associated with v1 and v3. The spike test value may not exceed the bounds given below, otherwise the point is marked QC_INTERPOLATED. These tests have a shallow and deep bound: If the CT depth corresponding to v2 is deeper than the specified depth, the test value must not exceed the deep bound, otherwise (the point is shallower) the test value must not exceed the shallow bound<sup>[3]</sup> .
+The default allowable bounds for each test are taken from Schmid, 
+et al, 2007 (and IOC Manual and Guides #22) or Carnes, 2008. 
+These bounds are not adjusted to reflect regional climatology. 
+All depth and parameter bounds may be overridden by the scientist on a per-deployment basis.
 
-The default allowable bounds for each test are taken from Schmid, _et al_ , 2007 (and IOC Manual and Guides #22) or Carnes, 2008. These bounds are not adjusted to reflect regional climatology. All depth and parameter bounds may be overridden by the scientist on a per-deployment basis.
-
-D-5
-
-###### **Temperature bounds:**
-
+**Temperature bounds:**
 Temperature values must fall between -2.5 and 43 °C<sup>[4].</sup>
 
-###### **Temperature spikes:**
-
+**Temperature spikes:**
 For temperature spike test values deeper than 500 meters, the (deep) bound is 0.01 °C/m, otherwise the (shallow) bound is 0.05 °C/m<sup>[5].</sup>
 
-###### **Conductivity spikes:**
-
+**Conductivity spikes:**
 For conductivity spike test values deeper than 500 meters, the (deep) bound is 0.001 mS/m/m, otherwise the (shallow) bound is 0.006 mS/m/m<sup>[6]</sup> .
 
-###### **Salinity bounds:**
+**Salinity bounds:**
+Salinity values must fall between 19 and 45 PSU<sup>[7]</sup>. Salinity bound errors not explained by temperature issues are assumed to be conductivity issues.
 
-Salinity values must fall between 19 and 45 PSU<sup>[7].</sup> Salinity bound errors not explained by temperature issues are assumed to be conductivity issues.
+If any temperature or conductivity value is marked QC_BAD, 
+the corresponding salinity value is marked QC_BAD. 
+Uncorrected CT data is never interpolated or changed, even if marked QC_BAD.
 
-If any temperature or conductivity value is marked QC_BAD, the corresponding salinity value is marked QC_BAD. Uncorrected CT data is never interpolated or changed, even if marked QC_BAD.
+#### Adjusting temperature, conductivity, and salinity
 
-#### **Adjusting temperature, conductivity, and salinity**
+The uncorrected CT data and their quality control indicates are reported to the nc file. 
+Copies of temperature, conductivity, 
+salinity and their associated quality control indicators are made and additional adjustments and corrections, described below, 
+apply to these copies, 
+which are then reported separately in the nc file.
 
-The uncorrected CT data and their quality control indicates are reported to the nc file. Copies of temperature, conductivity, salinity and their associated quality control indicators are made and additional adjustments and corrections, described below, apply to these copies, which are then reported separately in the nc file.
+Any _adjusted_ temperature, 
+conductivity, 
+or salinity data value marked QC_BAD is replaced with NaN. 
+Interpolated values are marked QC_INTERPOLATED. 
+Interpolation is linear between two or more trustworthy 'anchor' points. 
+For temperature and conductivity the anchors are always those points immediately adjacent to each contiguous set of QC_INTERPOLATED points, 
+if they are not 'bad'<sup>[8]</sup>. 
+For salinity, 
+the interpolation anchors are computed as described below and may be modified by the `trust_salinity directive`. 
+If interpolation fails (due to insufficient anchor points), 
+values are left unchanged and they are marked QC_PROBABLY_BAD.
 
-Any _adjusted_ temperature, conductivity, or salinity data value marked QC_BAD is replaced with NaN. Interpolated values are marked QC_INTERPOLATED. Interpolation is linear between two or more trustworthy 'anchor' points. For temperature and conductivity the anchors are always those points immediately adjacent to each contiguous set of QC_INTERPOLATED points, if they are not 'bad'[8]. For salinity, the interpolation anchors are computed as described below and may be modified by the **`trust_salinity directive`** . If interpolation fails (due to insufficient anchor points), values are left unchanged and they are marked QC_PROBABLY_BAD.
-
-#### **Adjusting temperature**
+#### Adjusting temperature
 
 The temperature is adjusted for a first-order thermistor-response lag that depends on the thermal gradient encountered by the instrument.
 
-#### **Correcting trapped water temperature anomalies during apogee**
+#### Correcting trapped water temperature anomalies during apogee
 
-On dives, the Seaglider forward fairing can trap and transport water from the upper part of the water column to depth, where it can be expelled when the glider pitches up because of a stall or to begin its climb. If the surrounding water is relatively still and the glider is trimmed heavy so the vehicle continues to sink during
+On dives, the Seaglider forward fairing can trap and transport water from the upper part of the water column to depth, 
+where it can be expelled when the glider pitches up because of a stall or to begin its climb. 
+If the surrounding water is relatively still and the glider is trimmed heavy so the vehicle continues to sink during apogee, 
+it is possible for the trapped warmer water to waft up to the thermistor on the CT sail. 
+This temperature anomaly appears as a strong multi-point fresh spike on a typical temperature salinity diagram with a size proportional to the overlying thermal stratification.
 
-D-6
+To account for this effect, 
+temperature points from the start of the second pump (and pitch up) until the glider is deemed flying (0.1 m/s) are marked QC_BAD unless the measured change of pressure indicates the glider is ascending by at least 0.04 m/s vertically. 
+Vehicles employing an interstital compressee, such as the Deepglider, are not effected.
 
-apogee, it is possible for the trapped warmer water to waft up to the thermistor on the CT sail. This temperature anomaly appears as a strong multi-point fresh spike on a typical temperature salinity diagram with a size proportional to the overlying thermal stratification.
+#### Detecting conductivity anomalies
 
-To account for this effect, temperature points from the start of the second pump (and pitch up) until the glider is deemed flying (0.1 m/s) are marked QC_BAD unless the measured change of pressure indicates the glider is ascending by at least 0.04 m/s vertically. Vehicles employing an interstital compressee, such as the Deepglider, are not effected.
+All CTDs on gliders are subject to bubbles on the surface (either because of high sea state or breaching) and biofouling at depth. 
+These conductivity anomalies, 
+in which the sensor is not measuring seawater, 
+are often transient and must be accounted for when correcting salinity. 
+Anomalies typically extend over several data points and thus escape the simple bound and spike tests outlined above.
 
-#### **Detecting conductivity anomalies**
+Most conductivity anomalies appear as sharp drops in measured conductivity compared to what is expected in seawater at that temperature based on the seawater conductivity routines. 
+This fact is exploited to detect and track the growth and clearance of anomalies, 
+including warning of unexpected anomalies (e.g., sudden unexpected increases in conductivity, possible but weak anomalies, etc.).
 
-All CTDs on gliders are subject to bubbles on the surface (either because of high sea state or breaching) and biofouling at depth. These conductivity anomalies, in which the sensor is not measuring seawater, are often transient and must be accounted for when correcting salinity. Anomalies typically extend over several data points and thus escape the simple bound and spike tests outlined above.
+Bubbles near the surface are considered uncorrectable, and marked QC_BAD, 
+from the start of dive to the deepest bubble clearance and, 
+on climbs, 
+from deepest bubble start to the end of climb. 
+Deeper conductivity anomalies, 
+when detected, 
+trigger directive suggestions, which the scientist may elect to employ. 
+A heuristic policy recommends interpolation for anomalies with vertical extents is less than 50 meters, 
+otherwise they should be considered uncorrectable.
 
-Most conductivity anomalies appear as sharp drops in measured conductivity compared to what is expected in seawater at that temperature based on the seawater conductivity routines. This fact is exploited to detect and track the growth and clearance of anomalies, including warning of unexpected anomalies (e.g., sudden unexpected increases in conductivity, possible but weak anomalies, etc.).
+The detector is unable to handle anomalies that straddle two or more profiles, 
+although it may detect their start and finish in the different profiles. 
+Further, 
+anomalies that begin or end in strong thermoclines are difficult to detect. 
+These situations require manual intervention.
 
-Bubbles near the surface are considered uncorrectable, and marked QC_BAD, from the start of dive to the deepest bubble clearance and, on climbs, from deepest bubble start to the end of climb. Deeper conductivity anomalies, when detected, trigger directive suggestions, which the scientist may elect to employ. A heuristic policy recommends interpolation for anomalies with vertical extents is less than 50 meters, otherwise they should be considered uncorrectable.
+#### Correcting salinity for thermal-inertia effects
 
-The detector is unable to handle anomalies that straddle two or more profiles, although it may detect their start and finish in the different profiles. Further, anomalies that begin or end in strong thermoclines are difficult to detect. These situations require manual intervention.
+The conductivity measured in all CTDs depends on the temperature of the sampled water in the tube. 
+This in turn depends on the thermal-inertia and thermal flux in the conductivity tube itself, 
+which depends on the construction of the instrument and speed of the water through the tube. 
+In the unpumped case, the vehicle propulsion provides the sensor fluid flow. 
+The thermal-inertia effects change as the speed of the vehicle fluctuates and the sensor encounters thermoclines. 
+See Eriksen, 
+forthcoming, 
+and Lueck, 1990 for detailed discussions of this effect.
 
-#### **Correcting salinity for thermal-inertia effects**
+Thermal-inertia effects are corrected for measurements taken by an unpumped Seabird CT41 as described in Eriksen, f
+orthcoming. 
+An effective water temperature inside the conductivity tube is computed based on the tube's thermal response to the changes in measured temperature outside the tube and the estimated flow through the tube, 
+yielding a corrected salinity derived from the associated conductivity measurement. 
+The corrections assume relatively steady flow through the conductivity tube. 
+Measurements where the vehicle is rapidly accelerating (during flare, apogee, or surface maneuvers) are marked QC_BAD in conductivity. 
+Measurements where the vehicle is stalled (low or no CT flow) are removed from these computations; 
+the scientist may elect to interpolate these points against surrounding corrected points (see below).
 
-The conductivity measured in all CTDs depends on the temperature of the sampled water in the tube. This in turn depends on the thermal-inertia and thermal flux in the conductivity tube itself, which depends on the construction of the instrument and speed of the water through the tube. In the unpumped case, the vehicle propulsion provides the sensor fluid flow. The thermal-inertia effects change as the speed of the vehicle fluctuates and the sensor encounters thermoclines. See Eriksen, forthcoming, and Lueck, 1990 for detailed discussions of this effect.
+In the unpumped CT case, 
+determining the vehicle speed (and hence flow speed through the sensor tube) depends on knowing the buoyancy of the vehicle, 
+which requires knowing the in-situ density, 
+hence salinity of the seawater. 
+An iterative scheme is employed to find a mutually-consistent solution of corrected salinity and vehicle speed, if possible. 
+The speed and glide angle of the vehicle are determined using the full hydrodynamic equations in Eriksen, et al, 2001 and are based on the measured pitch and computed buoyancy of the vehicle. 
+Vehicle buoyancy is based on the maximum volume of the vehicle, 
+its measured mass, 
+the state of the variable buoyancy device (VBD), 
+thermal and pressure effects on the hull, 
+interstitial seawater, and any compressee, 
+and the in-situ corrected density of the water. 
+The final, 
+converged, speed and glide angle results are referred to as the hydrodynamic model results or 'hdm'. 
+As with the gsm, 
+speeds and glide angles during stalls are set to zero but marked QC_GOOD. 
+Speeds and glide angles are marked QC_BAD and set to NaN (unknown) where bouyancy cannot be determined because salinity is QC_BAD.
 
-Thermal-inertia effects are corrected for measurements taken by an unpumped Seabird CT41 as described in Eriksen, forthcoming. An effective water temperature inside the conductivity tube is computed based on the tube's thermal response to the changes in measured temperature outside the tube and the estimated flow
+In the case of restarting flow after stalls or during steep thermoclines that are insufficiently sampled, 
+the thermal-inertia estimates may not completely correct the salinity values. 
+A simple temperature-correction heuristic discovers these locations, 
+which, along with vehicle stall points for unpumped CTs, 
+may be interpolated. 
+Another heuristic estimates where the salinity of the surrounding water masses is stable, 
+hence trustworthy, 
+to anchor these salinity interpolations. 
+If any suspect points require interpolation between a pair of stable points, all points in that segment are recommented to be interpolated, 
+since it is often unclear where the flow and thermal-inertia effects begin and end in these locations. 
+Both heuristics can fail; 
+the points to interpolate and the points to trust can be adjusted manually.
 
-D-7
+#### Correcting pumped CTD data
 
-through the tube, yielding a corrected salinity derived from the associated conductivity measurement. The corrections assume relatively steady flow through the conductivity tube. Measurements where the vehicle is rapidly accelerating (during flare, apogee, or surface maneuvers) are marked QC_BAD in conductivity. Measurements where the vehicle is stalled (low or no CT flow) are removed from these computations; the scientist may elect to interpolate these points against surrounding corrected points (see below).
+The pumped Seabird GPCTD instrument reports temperature and conductivity values directly, 
+along with an associated pressure; 
+no frequency data is reported. 
+The CT pressure is used directly to determine the CT depth corrected for the latitude of the vehicle.
 
-In the unpumped CT case, determining the vehicle speed (and hence flow speed through the sensor tube) depends on knowing the buoyancy of the vehicle, which requires knowing the in-situ density, hence salinity of the seawater. An iterative scheme is employed to find a mutually-consistent solution of corrected salinity and vehicle speed, if possible. The speed and glide angle of the vehicle are determined using the full hydrodynamic equations in Eriksen, _et al_ , 2001 and are based on the measured pitch and computed buoyancy of the vehicle. Vehicle buoyancy is based on the maximum volume of the vehicle, its measured mass, the state of the variable buoyancy device (VBD), thermal and pressure effects on the hull, interstitial seawater, and any compressee, and the in-situ corrected density of the water. The final, converged, speed and glide angle results are referred to as the hydrodynamic model results or 'hdm'. As with the gsm, speeds and glide angles during stalls are set to zero but marked QC_GOOD. Speeds and glide angles are marked QC_BAD and set to NaN (unknown) where bouyancy cannot be determined because salinity is QC_BAD.
+Thermal-inertia corrections assume a constant tube flow velocity (corresponding to the normal pump speed) and ignore the vehicle speed, 
+including stalls. 
+Thus, unlike the unpumped CT, 
+points during the entire dive, 
+apogee, climb, 
+and surface phases of the profile are retained. 
+Conductivity anomaly detection is performed. 
+Since the thermal-inertia correction (and possible salinity interpolation) is independent of vehicle speed, 
+the buoyancy and hydrodynamic speed results are computed once rather than iteratively.
 
-In the case of restarting flow after stalls or during steep thermoclines that are insufficiently sampled, the thermal-inertia estimates may not completely correct the salinity values. A simple temperature-correction heuristic discovers these locations, which, along with vehicle stall points for unpumped CTs, may be interpolated. Another heuristic estimates where the salinity of the surrounding water masses is stable, hence trustworthy, to anchor these salinity interpolations. If any suspect points require interpolation between a pair of stable points, all points in that segment are recommented to be interpolated, since it is often unclear where the flow and thermal-inertia effects begin and end in these locations. Both heuristics can fail; the points to interpolate and the points to trust can be adjusted manually.
+#### Derived seawater properties
 
-#### **Correcting pumped CTD data**
+In the case of a pumped CTD or an unpumped CTD running on a separate science controller, 
+the sampling rate and timing can differ from the glider sampling rate. 
+In these cases the CTD data sampled during glider operation is employed to determine salinity, 
+vehicle speeds, and quantities based on that data. 
+Relevant glider data required for the salinity and speed corrections, such as vehicle pitch, 
+VBD state, 
+and depth are linearly interpolated to the CTD sample grid.
 
-The pumped Seabird GPCTD instrument reports temperature and conductivity values directly, along with an associated pressure; no frequency data is reported. The CT pressure is used directly to determine the CT depth corrected for the latitude of the vehicle.
+Assuming computations converge on a consistent speed and salinity, 
+the final adjusted salinity values are evaluated again against the salinity bound test described above. 
+The resultant QC_GOOD salinity values are accurate to 0.01 PSU, 
+0.03 PSU in regions of high thermocline. 
+Adjusted temperatures are accurate to 0.001 °C. 
+Vehicle speeds are accurate to 0.01 m/s. 
+The CTD readings are considered overall trustworthy (`CTD_qc`) if more than 70% if the adjusted points are QC_GOOD, 
+otherwise the data are considered QC_BAD.
 
-Thermal-inertia corrections assume a constant tube flow velocity (corresponding to the normal pump speed) and ignore the vehicle speed, including stalls. Thus, unlike the unpumped CT, points during the entire dive, apogee, climb, and surface phases of the profile are retained. Conductivity anomaly detection is performed. Since the thermal-inertia correction (and possible salinity interpolation) is independent of vehicle speed, the buoyancy and hydrodynamic speed results are computed once rather than iteratively.
+Seawater potential temperature, potential density, 
+and sound velocity are computed from the adjusted temperatures and salinities.
 
-#### **Derived seawater properties**
+At present no attempt is made to detect deployment sensor drift, 
+density inversions, 
+turbulent mixing, etc.
 
-In the case of a pumped CTD or an unpumped CTD running on a separate science controller, the sampling rate and timing can differ from the glider sampling rate. In these cases the CTD data sampled during glider
+For reference, 
+Appendix C lists the results of these calculations and, 
+where applicable, 
+their corresponding Argo variable counterparts.
 
-D-8
+#### Computing depth-average and surface-drift current
 
-operation is employed to determine salinity, vehicle speeds, and quantities based on that data. Relevant glider data required for the salinity and speed corrections, such as vehicle pitch, VBD state, and depth are linearly interpolated to the CTD sample grid.
+Given a well-characterized vehicle (accurate hydrodynamic and vehicle control response parameters) the flight model can predict, in still water, 
+the expected surfacing position of the glider by computing the vehicle's displacements at each data point based on the computed hydrodynamic speed and direction. 
+Any vector deviation in actual (GPS) surfacing position from predicted implies a current encountered somewhere at depth while the vehicle was flying, 
+stalled, 
+or drifting (e.g., during apogee or surface maneuver). 
+The depthaverage current is assumed to apply uniformly over the entire profile. 
+Rough latitude and longitude for each data point are computed using adjusted displacements reflecting any depth-average current. 
+Points where the vehicle appears stuck on the bottom or the speed is unknown are removed from the current and displacement calculations.
 
-Assuming computations converge on a consistent speed and salinity, the final adjusted salinity values are evaluated again against the salinity bound test described above. The resultant QC_GOOD salinity values are accurate to 0.01 PSU, 0.03 PSU in regions of high thermocline. Adjusted temperatures are accurate to 0.001 °C. Vehicle speeds are accurate to 0.01 m/s. The CTD readings are considered overall trustworthy ( **`CTD_qc`** ) if more than 70% if the adjusted points are QC_GOOD, otherwise the data are considered QC_BAD.
+A depth-average current and associated quantities is computed for both the gsm and the hdm velocity results unless the speed estimation was inconsistent. 
+The depth-average current is computed and considered QC_GOOD only if the GPS2 and GPS fixes and times are trustworthy, 
+if the vehicle reported data over the entire profile, 
+and there was no apparent significant up- or down-welling. 
+The later is detected by finding differences between the measured vertical velocity and predicted vertical velocity larger than 0.05 m/s. 
+In the case of truncated dives or where significant up- or down-welling occurs, 
+the depth-average current is computed but marked QC_PROBABLY_BAD.
 
-Seawater potential temperature, potential density, and sound velocity are computed from the adjusted temperatures and salinities.
+The expected depth-average current error due to GPS positional errors is computed based on the individual position errors and the elapsed time of the time of the dive; 
+if the expected error is greater than the computed hdm depth-average current, 
+`depth_avg_curr_qc` is marked as QC_PROBABLY_BAD. 
+The estimated depth-average current error due to GPS positional errors should be treated as a lower bound that assumes the flight model and the vehicle parameters are accurate; 
+the actual error could be worse if, 
+for example, 
+the vehicle flight parameters are not estimated correctly.
 
-At present no attempt is made to detect deployment sensor drift, density inversions, turbulent mixing, etc.
+Surface-drift current is computed using the differences in position and time between valid GPS1 and GPS2 fixes; 
+an expected surface-drift current error due to GPS positional errors is computed. 
+Note that after August, 2014 some GPS fixes may report the measured surface drift.
 
-For reference, Appendix C lists the results of these calculations and, where applicable, their corresponding Argo variable counterparts.
+#### Correcting oxygen sensor data
 
-#### **Computing depth-average and surface-drift current**
+There are three types of oxygen sensors available on a Seaglider: 
+the Seabird 43, and the Aanderaa 3830 and 4330 optodes. 
+Direct measurements from all instruments are reported. 
+All sampled data points are assumed to be QC_GOOD; 
+unsampled points are marked as QC_UNSAMPLED. 
+Negative raw data values are marked as QC_BAD. 
+Corrections and conversions, always to micromoles/kg, 
+are performed for all instruments following both manufacturer's recommended procedure (and current Argo processing adjustments [Swift, personal commumucation]) using associated calibration constants with the following differences.
 
-Given a well-characterized vehicle (accurate hydrodynamic and vehicle control response parameters) the flight model can predict, in still water, the expected surfacing position of the glider by computing the vehicle's displacements at each data point based on the computed hydrodynamic speed and direction. Any vector deviation in actual (GPS) surfacing position from predicted implies a current encountered somewhere at depth while the vehicle was flying, stalled, or drifting (e.g., during apogee or surface maneuver). The depthaverage current is assumed to apply uniformly over the entire profile. Rough latitude and longitude for each data point are computed using adjusted displacements reflecting any depth-average current. Points where the vehicle appears stuck on the bottom or the speed is unknown are removed from the current and displacement calculations.
+The Seabird 43 reports a frequency measurement that is converted to a dissolved oxygen value using supplied instrument calibration constants, 
+the CT pressure, 
+and an estimate of the expected oxygen saturation based on the corrected CT temperature and salinity.
 
-A depth-average current and associated quantities is computed for both the gsm and the hdm velocity results unless the speed estimation was inconsistent. The depth-average current is computed and considered QC_GOOD only if the GPS2 and GPS fixes and times are trustworthy, if the vehicle reported data over the entire profile, and there was no apparent significant up- or down-welling. The later is detected by finding differences between the measured vertical velocity and predicted vertical velocity larger than 0.05 m/s. In the case of truncated dives or where significant up- or down-welling occurs, the depth-average current is computed but marked QC_PROBABLY_BAD.
+The Aanderaa 3380 and 4330 O2 and dphase measurements are converted to a dissolved oxygen value using instrument calibration constants, 
+CT depth, 
+and the corrected CT temperature (to eliminate possible instrument self-heating), 
+salinity, and in-situ density. 
+If optode in-air values and sea-level pressure readings are available during self-tests before deployment, 
+these are used to correct for optode calibration drift following the method of Johnson, et al, 
+forthcoming.
 
-The expected depth-average current error due to GPS positional errors is computed based on the individual position errors and the elapsed time of the time of the dive; if the expected error is greater than the computed hdm depth-average current, **`depth_avg_curr_qc`** is marked as QC_PROBABLY_BAD. The estimated depth-average current error due to GPS positional errors should be treated as a lower bound that assumes the flight model and the vehicle parameters are accurate; the actual error could be worse if, for example, the vehicle flight parameters are not estimated correctly.
+The calculation of oxygen saturation for fresh water and seawater salinity correction used in these corrections follow Garcia and Gordon 1992 except the corrections employ the 'Benson and Krause 1984' coefficients in Table 1 rather than the 'Combined fit' values, 
+per their recommendation.
 
-D-9
+#### Correcting Wetlab sensor data
 
-Surface-drift current is computed using the differences in position and time between valid GPS1 and GPS2 fixes; an expected surface-drift current error due to GPS positional errors is computed. Note that after August, 2014 some GPS fixes may report the measured surface drift.
+All direct measurements from the instrument are reported; 
+NaN indicates unsampled points. 
+If dark counts and scale factor calibration values are available for specific channels, 
+scaled measurements are also reported. 
+No quality-control tests are applied to the data.
 
-#### **Correcting oxygen sensor data**
+### Manual Quality Control
 
-There are three types of oxygen sensors available on a Seaglider: the Seabird 43, and the Aanderaa 3830 and 4330 optodes. Direct measurements from all instruments are reported. All sampled data points are assumed to be QC_GOOD; unsampled points are marked as QC_UNSAMPLED. Negative raw data values are marked as QC_BAD. Corrections and conversions, always to micromoles/kg, are performed for all instruments following both manufacturer's recommended procedure (and current Argo processing adjustments [Swift, personal commumucation]) using associated calibration constants with the following differences.
+To handle situations where automated checks and corrections are insufficient or incorrect, 
+the scientist may provide directives in a simple language to direct whether and where various corrections should be applied or overridden. 
+Profile-specific directives and comments are placed in an optional `sg_directives.txt` file associated with each deployment, 
+which is interpreted for each profile. 
+Comments follow Matlab convention: Blank lines and characters after '%' are ignored. 
+Applicable directives with their associated comments are preserved in the nc file for future reference and use.
 
-The Seabird 43 reports a frequency measurement that is converted to a dissolved oxygen value using supplied instrument calibration constants, the CT pressure, and an estimate of the expected oxygen saturation based on the corrected CT temperature and salinity.
+Directives have the following format:
 
-The Aanderaa 3380 and 4330 O2 and dphase measurements are converted to a dissolved oxygen value using instrument calibration constants, CT depth, and the corrected CT temperature (to eliminate possible instrument self-heating), salinity, and in-situ density. If optode in-air values and sea-level pressure readings are available during self-tests before deployment, these are used to correct for optode calibration drift following the method of Johnson, _et al_ , forthcoming.
+      _profile_spec function [location]
 
-The calculation of oxygen saturation for fresh water and seawater salinity correction used in these corrections follow Garcia and Gordon 1992 except the corrections employ the 'Benson and Krause 1984' coefficients in Table 1 rather than the 'Combined fit' values, per their recommendation.
-
-#### **Correcting Wetlab sensor data**
-
-All direct measurements from the instrument are reported; NaN indicates unsampled points. If dark counts and scale factor calibration values are available for specific channels, scaled measurements are also reported. No quality-control tests are applied to the data.
-
-### **Manual Quality Control**
-
-To handle situations where automated checks and corrections are insufficient or incorrect, the scientist may provide directives in a simple language to direct whether and where various corrections should be applied or overridden. Profile-specific directives and comments are placed in an optional **`sg_directives.txt`** file associated with each deployment, which is interpreted for each profile. Comments follow Matlab convention: Blank lines and characters after '%' are ignored. Applicable directives with their associated comments are preserved in the nc file for future reference and use.
-
-D-10
-
-###### Directives have the following format:
-
-_profile_spec function_ [location]
-
-where _profile_spec_ is a profile number, e.g., '149', a range of profile numbers, e.g., '84:90', or '*' for all profiles in the deployment.
+where _profile_spec is a profile number, e.g., '149', a range of profile numbers, e.g., '84:90', or '*' for all profiles in the deployment.
 
 The _functions_ currently available are:
 
-**`Skip_profile`** Do no processing for this profile. (False) **`reviewed`** Mark the nc file as reviewed; comments should indicate reviewer and date. (False) **`interp_gc_temperatures`** Interpolate temperatures during GC maneuvers<sup>[9]</sup> . (False) **`correct_thermal_inertia_effects`** Apply the thermal-inertia corrections. (True) **`interp_suspect_thermal_inertia_salinities`** Interpolate points where thermal-inertia corrections are suspect. (False) **`bad_gps1|2|3`** The first (1), second (2) or final (3) GPS fix for the profile is not trustworthy<sup>[10]</sup> . (False)
+|     |     |
+| --- | --- |
+| `Skip_profile` | Do no processing for this profile. (False) |
+| `reviewed` | Mark the nc file as reviewed; comments should indicate reviewer and date. (False) |
+| `interp_gc_temperatures` | Interpolate temperatures during GC maneuvers<sup>[9]</sup>. (False) |
+| `correct_thermal_inertia_effects` | Apply the thermal-inertia corrections. (True) |
+| `interp_suspect_thermal_inertia_salinities` | Interpolate points where thermal-inertia corrections are suspect. (False) |
+| `bad_gps1\|2\|3` | The first (1), second (2) or final (3) GPS fix for the profile is not trustworthy<sup>[10]</sup>. (False) |
 
-The functions above set booleans and direct processing; the default values of the booleans are enclosed in (). The prefix ' **`no_`** ' may be added to the function to set the associated boolean to False, e.g., ' **`no_correct_thermal_inertia_effects`** ' defeats the thermal-inertia corrections.
+The functions above set booleans and direct processing; the default values of the booleans are enclosed in (). 
+The prefix ' `no_` ' may be added to the function to set the associated boolean to False, 
+e.g., ' `no_correct_thermal_inertia_effects` ' defeats the thermal-inertia corrections.
 
-The following functions apply to the adjusted, not uncorrected, temperature, conductivity and salinity values. These directives change (add or remove) the marks in the quality-control variables; these marks then direct modification of the data. As mentioned above, any adjusted data value marked QC_BAD is replaced with NaN; any value marked QC_INTERPOLATED will be interpolated.
+The following functions apply to the adjusted, 
+not uncorrected, 
+temperature, conductivity and salinity values. 
+These directives change (add or remove) the marks in the quality-control variables; 
+these marks then direct modification of the data. 
+As mentioned above, 
+any adjusted data value marked QC_BAD is replaced with NaN; 
+any value marked QC_INTERPOLATED will be interpolated.
 
-|**`bad_temperature`**|Mark as QC_BAD|
+|   |   |
 |---|---|
-|**`interp_temperature`**|Mark as QC_INTERPOLATED|
-|**`bad_conductivity`**|Mark as QC_BAD|
-|**`interp_conductivity`**|Mark as QC_INTERPOLATED|
-|**`bad_salinity`**|Mark as QC_BAD|
-|**`interp_salinity`**|Mark as QC_INTERPOLATED|
+|`bad_temperature`|Mark as QC_BAD|
+|`interp_temperature`|Mark as QC_INTERPOLATED|
+|`bad_conductivity`|Mark as QC_BAD|
+|`interp_conductivity`|Mark as QC_INTERPOLATED|
+|`bad_salinity`|Mark as QC_BAD|
+|`interp_salinity`|Mark as QC_INTERPOLATED|
 
+As with the boolean functions, for the `bad_` and `interp_` functions the prefix '`no_`' may be added to the function, e.g., 
+`no_bad_temperature` or `no_interp_salinity`. 
+Those points will be removed from the points automatically determined to be bad or interpolated respectively. 
+This allows the scientist to override which points are marked uncorrectable or interpolated.
 
-
-As with the boolean functions, for the **`bad_`** and **`interp_`** functions the prefix ' **`no_`** ' may be added to the function, e.g., **`no_bad_temperature`** or **`no_interp_salinity.`** Those points will be removed from the points automatically determined to be bad or interpolated respectively. This allows the scientist to override which points are marked uncorrectable or interpolated.
-
-D-11
-
-These functions may be followed by an optional , which can be a named list (e.g., depth, time, see below) or, more typically, a user-specified list of points in terms of actual data point number. Locations typically restrict the set of values desired. For example:
+These functions may be followed by an optional , 
+which can be a named list (e.g., depth, time, see below) or, 
+more typically, 
+a user-specified list of points in terms of actual data point number. 
+Locations typically restrict the set of values desired. 
+For example:
 
 ```
 * bad_salinity depth below 10 % all salinities strictly less than 10
 meters are considered QC_BAD
-```
 
-```
 346 interp_salinity data_points at 120 121 122 % ensure these points
 are interpolated on dive 346 only
+
 346 interp_salinity data_points between 120 122 % equivalent to the
 above
 ```
 
-The modifier ' **`at`** ' lists specific values that must match exactly. The modifiers ' **`below`** ' and **`'above`** ' test that values are strictly less than or strictly greater than the given value, respectively. The synonyms **`'less_than`** ', ' **`before`** ', ' **`greater_than`** ' and ' **`after`** ' are also recognized. The modifier ' **`between`** ' is inclusive of the range. The modifier ' **`in_between`** ' includes all points the range except the end points. If no location is specified, the function applies to all the available data points. At present boolean combinations of locations on a single directive are not supported.
+The modifier '`at`' lists specific values that must match exactly. 
+The modifiers '`below`' and '`above`' test that values are strictly less than or strictly greater than the given value, respectively. 
+The synonyms '`less_than`', 
+'`before`', 
+'`greater_than`' and '`after`' are also recognized. 
+The modifier '`between`' is inclusive of the range. 
+The modifier '`in_between`' includes all points the range except the end points. 
+If no location is specified, 
+the function applies to all the available data points. 
+At present boolean combinations of locations on a single directive are not supported.
 
-If there are several directives for a function (or its negation) they are combined, first by forming a union of all the included points and then removing the union of any negated points. Thus negation trumps inclusion, which is often what is desired. The order of the directives does not matter.
+If there are several directives for a function (or its negation) they are combined, 
+first by forming a union of all the included points and then removing the union of any negated points.
+ Thus negation trumps inclusion, 
+ which is often what is desired. 
+ The order of the directives does not matter.
 
-Several lists of data point indices and values are computed and made available for directives. They are:
+Several lists of data point indices and values are computed and made available for directives. 
+They are:
 
-|**`depth`**|Vehicle depth, in meters, over the entire profile|
+|   |   |
 |---|---|
-|**`dive_depth`**|Vehicle depth, in meters, before start of apogee|
-|**`climb_depth`**|Vehicle depths, in meters, after end of apogee|
-|**`time`**|The elapsed time, in seconds, of each glider data point|
-|**`data_points`**|The index, starting at 1, of each CTD data point|
-|**`glider_data_points`**|The index, starting at 1, of each vehicle data point|
-
-
+|`depth`|Vehicle depth, in meters, over the entire profile|
+|`dive_depth`|Vehicle depth, in meters, before start of apogee|
+|`climb_depth`|Vehicle depths, in meters, after end of apogee|
+|`time`|The elapsed time, in seconds, of each glider data point|
+|`data_points`|The index, starting at 1, of each CTD data point|
+|`glider_data_points`|The index, starting at 1, of each vehicle data point|
 
 #### Application of directives
 
-The **`skip_profile`** directive is honored after all the data is read but before any processing occurs. The reviewed directive is honored after all corrections are made.
+The `skip_profile` directive is honored after all the data is read but before any processing occurs. 
+The reviewed directive is honored after all corrections are made.
 
-The **`bad_temperature`** , **`interp_temperature`** , **`bad_conductivity`** , and **`interp_conductivity`** directives are honored once, just before the salinity corrections and hdm speed computations are performed. The **`bad_salinity`** directive is also honored once just before the (possibly iterative) speed computations are performed, to eliminate these points from participating in the buoyancy computations. Any **`interp_salinity`** directives are honored after each thermal-inertia correction is made and before the buoyancy and hdm speed computation is performed; for the iterative, unpumped CT case, these directives may be applied several times.
+The `bad_temperature`, 
+`interp_temperature`, 
+`bad_conductivity`, 
+and `interp_conductivity` directives are honored once, 
+just before the salinity corrections and hdm speed computations are performed. 
+The `bad_salinity` directive is also honored once just before the (possibly iterative) speed computations are performed, 
+to eliminate these points from participating in the buoyancy computations. 
+Any `interp_salinity` directives are honored after each thermal-inertia correction is made and before the buoyancy and hdm speed computation is performed; 
+for the iterative, 
+unpumped CT case, 
+these directives may be applied several times.
 
-D-12
-
-There are cases where thermal inertia corrections do not permit the speeds and salinities to converge to an acceptable solution (often the vehicle is on the verge of stalling in many places). Rather than completely abandoning the profile (by employing **`skip_profile`** ), the scientist might try
-
-**`no_correct_thermal_inertia_effects`** . This will compute salinities and speeds but will not iterate. If the results are still unacceptable for whatever reason, employ **`skip_profile`** .
+There are cases where thermal inertia corrections do not permit the speeds and salinities to converge to an acceptable solution (often the vehicle is on the verge of stalling in many places). 
+Rather than completely abandoning the profile (by employing `skip_profile`), 
+the scientist might try `no_correct_thermal_inertia_effects`. 
+This will compute salinities and speeds but will not iterate. 
+If the results are still unacceptable for whatever reason, 
+employ `skip_profile`.
 
 ### Appendices
 
-### A. Quality control values
+**A. Quality control values***
 
-These are the available quality control names and their numeric equivalents. They are taken from Argo, 2010 with the addition of QC_UNSAMPLED. Not all values are currently used.
+These are the available quality control names and their numeric equivalents. 
+They are taken from Argo, 2010 with the addition of QC_UNSAMPLED. 
+Not all values are currently used.
 
 **`QC_NO_CHANGE`** 0 - No QC was performed **`QC_GOOD`** 1 - Value is ok **`QC_PROBABLY_GOOD`** 2 - Value is likely good **`QC_PROBABLY_BAD`** 3 - Potentially correctable **`QC_BAD`** 4 - Untrustworthy and uncorrectable **`QC_CHANGED`** 5 - Explicit manual change **`QC_UNSAMPLED`** 6 - Explicitly not sampled (vs. expected but QC_MISSING) **`QC_INTERPOLATED`** 8 - Interpolated value **`QC_MISSING`** 9 - Value missing; instrument timed out
 
-### B. Selected parameters controlling processing
+| Name | Value | Description |
+|---|---:|---|
+| `QC_NO_CHANGE` | 0 | No QC was performed |
+| `QC_GOOD` | 1 | Value is ok |
+| `QC_PROBABLY_GOOD` | 2 | Value is likely good |
+| `QC_PROBABLY_BAD` | 3 | Potentially correctable |
+| `QC_BAD` | 4 | Untrustworthy and uncorrectable |
+| `QC_CHANGED` | 5 | Explicit manual change |
+| `QC_UNSAMPLED` | 6 | Explicitly not sampled (vs. expected but `QC_MISSING`) |
+| `QC_INTERPOLATED` | 8 | Interpolated value |
+| `QC_MISSING` | 9 | Value missing; instrument timed out |
 
-The following is a partial list of the variables and parameters that the scientist can set set in the **`sg_calib_constants.m`** file to control the corrections and the quality-control processing. Instrumentspecific calibration constants are not listed. All values should be scalars, either real numbers, integers, or strings. Matlab conventions apply: comments follow '%', ';' should terminate lines to silence output from Matlab. Setting a variable applies that value to all the profiles in a deployment.
+**B. Selected parameters controlling processing**
+
+The following is a partial list of the variables and parameters that the scientist can set set in the `sg_calib_constants.m` file to control the corrections and the quality-control processing. 
+Instrumentspecific calibration constants are not listed. 
+All values should be scalars, 
+either real numbers, integers, or strings. 
+Matlab conventions apply: 
+comments follow '%', ';' should terminate lines to silence output from Matlab. 
+Setting a variable applies that value to all the profiles in a deployment.
 
 Vehicle parameters: All but sg_configuration are required.
 
@@ -2510,8 +2930,6 @@ The general configuration of the glider
 0. Seaglider with original SBE41 CT **`sg_configuration`** 1. Seaglider with gun-style SBE41 CT 2. Deepglider with gun-style SB41 CT 3. Seaglider with pumped GPCTD
 
 **`hd_a`** Hydrodynamic lift factor for given hull shape [1/° of attack angle] **`hd_b`** Hydrodynamic drag factor for given hull shape [Pa-1/4] **`hd_c`** Hydrodynamic induced drag factor for given hull shape [1/radians2 of attack angle] **`rho0`** Typical expected density of seawater for this deployment [kg/m3]
-
-D-13
 
 **`volmax`** Maximum displaced volume of the glider [m3] **`mass`** Mass of the glider [kg]
 
