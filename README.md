@@ -23,4 +23,4 @@
 - [ ] QARTOD_TS_Manual_Update2_200324_final.pdf
 - [ ] qartod_wave_data_manual.pdf
 - [ ] QARTOD_Waves_Update3a Final.pdf
-- [ ] qartod_wind_manual.pdf
+- [X] qartod_wind_manual.pdf

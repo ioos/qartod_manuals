@@ -42,6 +42,7 @@ nav:
   - ADCP: ADCP.md
   - pH: pH.md
   - HFR: HFR.md
+  - Wind Data: Wind_Data.md
 
 extra:
   social:
