@@ -374,7 +374,7 @@ this check can be performed at the message level but is not used to check messag
 
 | Flags | Condition | Codable Instructions |
 | --- | --- | --- |
-| Fail=4 | Data sentence cannot be parsed to provide a valid observation. | If REC_CHAR ≠ NCHAR, flag = 4 |
+| Fail=4 | Data sentence cannot be parsed to provide a valid observation. | If `REC_CHAR` ≠ `NCHAR`, flag = 4 |
 | Suspect=3 | N/A | N/A |
 | Pass=1 | Expected data sentence received; absence of parity errors. | N/A |
 
@@ -412,13 +412,13 @@ Data point exceeds sensor or operator-selected min/max. Applies to T, S, C and P
 All sensors have a limited output range, 
 and this can form the most rudimentary gross range check. 
 No values less than a minimum value or greater than the maximum value the sensor can output (`T_SENSOR_MIN`, `T_SENSOR_MAX`) are acceptable. 
-Additionally, the operator can select a smaller span (T_USER_MIN, T_USER_MAX) based upon local knowledge or a desire to draw attention to extreme values.
+Additionally, the operator can select a smaller span (`T_USER_MIN`, `T_USER_MAX`) based upon local knowledge or a desire to draw attention to extreme values.
 **Note:** Operators may choose to flag as suspect values that exceed the calibration span but not the hardware limits (e.g., a value that sensor is not capable of producing or negative conductivity).
 
 | Flags | Condition | Codable Instructions |
 |---|---|---|
-| Fail=4 | Reported value is outside of sensor span. | If Tₙ < T_SENSOR_MIN, or Tₙ > T_SENSOR_MAX, flag = 4 |
-| Suspect=3 | Reported value is outside of user-selected span. | If Tₙ < T_USER_MIN, or Tₙ > T_USER_MAX, flag = 3 |
+| Fail=4 | Reported value is outside of sensor span. | If Tₙ < T_SENSOR_MIN, or Tₙ > `T_SENSOR_MAX`, flag = 4 |
+| Suspect=3 | Reported value is outside of user-selected span. | If Tₙ < T_USER_MIN, or Tₙ > `T_USER_MAX`, flag = 3 |
 | Pass=1 | Applies for test pass condition. | N/A |
 
 Test Exception: None.
@@ -462,7 +462,7 @@ Climatology databases such as the temperature Variability Generalized Digital En
 | Flags | Condition | Codable Instructions |
 | --- | --- | --- |
 | Fail=4 | Because of the dynamic nature of T and S in some locations, no fail flag is identified for this test. | N/A |
-| Suspect=3 | Reported value is outside of operator-identified climatology window. | If Tₙ < T_Season_MIN or Tₙ > T_Season_MAX, flag = 3 |
+| Suspect=3 | Reported value is outside of operator-identified climatology window. | If Tₙ < `T_Season_MIN` or Tₙ > `T_Season_MAX`, flag = 3 |
 | Pass=1 | Applies for test pass condition. | N/A |
 
 Test Exception: None.
@@ -486,7 +486,7 @@ Unpumped sensors transiting thermal gradients are perhaps the most common source
 | Flags | Condition | Codable Instructions |
 | --- | --- | --- |
 | Fail=4 | High spike threshold exceeded. | If \|Sₙ₋₁ - `SPK_REF`\| > `THRSHLD_HIGH`, flag = 4 |
-| Suspect=3 | Low spike threshold exceeded. | If \|Sₙ₋₁ - SPK_REF\| > `THRSHLD_LOW` and \|Sₙ₋₁ - `SPK_REF`\| ≤ `THRSHLD_HIGH`, flag = 3 |
+| Suspect=3 | Low spike threshold exceeded. | If \|Sₙ₋₁ - `SPK_REF`\| > `THRSHLD_LOW` and \|Sₙ₋₁ - `SPK_REF`\| ≤ `THRSHLD_HIGH`, flag = 3 |
 | Pass=1 | Applies for test pass condition. | N/A |
 
 Test Exception: None.
@@ -513,12 +513,12 @@ upon failing a data point, it remains to be determined how the next iteration ca
 
 - The rate of change between temperature Tₙ₋₁ and Tₙ must be less than an operator-defined multiple of the local standard deviation (SD). The local operator determines both the number of SDs (`N_DEV`) and the depth sample interval over which the SDs (`ZRANGE_DEV`) are calculated.
 - The rate of change between temperature Tₙ₋₁ and Tₙ must be less than 2 °C + 2SD.
-- |Tₙ₋₁ - Tₙ₋₂| + |Tₙ₋₁ - Tₙ| ≤ 2*N_DEV*SD (example provided by EuroGOOS).
+- |Tₙ₋₁ - Tₙ₋₂| + |Tₙ₋₁ - Tₙ| ≤ 2 * `N_DEV` * SD (example provided by EuroGOOS).
 
 | Flags | Condition | Codable Instructions |
 | --- | --- | --- |
 | Fail=4 | No fail flag is identified for this test. | N/A |
-| Suspect=3 | The rate of change exceeds the selected threshold. | If \|Tₙ - Tₙ₋₁\| > N_DEV*SD, flag = 3 |
+| Suspect=3 | The rate of change exceeds the selected threshold. | If \|Tₙ - Tₙ₋₁\| > `N_DEV` * SD, flag = 3 |
 | Pass=1 | Applies for test pass condition. | N/A |
 
 Test Exception: None.
@@ -543,7 +543,7 @@ Judicious selection of the three described thresholds by knowledgeable operators
 | Flags | Condition | Codable Instructions |
 | --- | --- | --- |
 | Fail=4 | When many of the most recent observations are equal, Tₙ is flagged fail. | For i=1, `REP_CNT_FAIL`: Tₙ - Tₙ₋ᵢ < `EPS`, flag = 4 |
-| Suspect=3 | It is possible but unlikely that the present observation and the multiple previous observations would be equal. When the most recent observations are equal, Tₙ is flagged suspect. | For i=1, `REP_CNT_SUSPECT`: Tₙ - Tₙ₋ᵢ < EPS, flag = 3 |
+| Suspect=3 | It is possible but unlikely that the present observation and the multiple previous observations would be equal. When the most recent observations are equal, Tₙ is flagged suspect. | For i=1, `REP_CNT_SUSPECT`: Tₙ - Tₙ₋ᵢ < `EPS`, flag = 3 |
 | Pass=1 | Applies for test pass condition. | N/A |
 
 Test Exception: None.
@@ -573,7 +573,7 @@ Note that Test 13, TS Curve/Space Test is a well-known example of the multi-vari
 | Flags | Condition | Codable Instructions |
 | --- | --- | --- |
 | Fail=4 | No fail flag is identified for this test. | N/A |
-| Suspect=3 | Tₙ fails the rate of change and the second variable does not exceed the rate of change. | If \|Tₙ - Tₙ₋₁\| > N_T_DEV*SD_T AND \|Sₙ - Sₙ₋₁\| < N_S_DEV*SD_S, flag = 3 |
+| Suspect=3 | Tₙ fails the rate of change and the second variable does not exceed the rate of change. | If \|Tₙ - Tₙ₋₁\| > `N_T_DEV` * `SD_T` AND \|Sₙ - Sₙ₋₁\| < `N_S_DEV` * `SD_S`, flag = 3 |
 | Pass=1 | N/A | N/A |
 
 Test Exception: None.
@@ -660,7 +660,7 @@ Test Exception: The test will probably not be useful above the thermocline.
 
 Test specifications: To be established locally by the operator.
 
-Examples: At the Bermuda Atlantic Time Series site, for a temperature of 18 °C, practical salinity Sfit = 36.5, S_fit_fail = 0.05, S_fit_warn = 0.02
+Examples: At the Bermuda Atlantic Time Series site, for a temperature of 18 °C, practical salinity `Sfit` = 36.5, `S_fit_fail` = 0.05, `S_fit_warn` = 0.02
 
 **Test 14 - Density Inversion Test (Suggested)**
 
@@ -765,8 +765,8 @@ This process allows for QC manual updates as technology development occurs for b
 
 | | |
 |---|---|
-|**Glider DAC Document Committee**|David Aragon–Rutgers University<br>Kathy Bailey–NOAA/U.S. IOOS<br>Becky Baltes–NOAA/U.S. IOOS<br>Danielle Bryant—Naval Oceanographic Office<br>Mark Bushnell–CoastalObsTechServices/CO-OPS (Lead Editor)<br>Brad Covey–Dalhousie University<br>Bob Currier–Texas A&M University/GCOOS<br>Ruth Curry–Woods Hole Oceanographic Institution<br>Richard Davis–Dalhousie University<br>Laura Fiorentino–NOAA/National Data Buoy Center<br>Stephanie Jaeger–Sea-Bird Electronics, Inc.<br>John Kerfoot–Rutgers University/MARACOOS<br>Chad Lembke–University of South Florida<br>Bryan Mensi–Naval Oceanographic Office<br>Frank Muller-Karger–University of South Florida<br>Laura Palamara–Rutgers University<br>Rob Ragsdale–NOAA/U.S. IOOS<br>Helen Worthington–REMSA/CO-OPS (Editor)|
-|**Glider DAC Document Reviewers**|Fred Bahr-Monterey Bay Aquarium Research Institute/CeNCOOS<br>Francis Bringas-NOAA/Atlantic Oceanographic and Meteorological Laboratory<br>Beth Curry-University of Washington<br>Matt Howard–Texas A&M University/GCOOS<br>Ana Lara-Lopez–Integrated Marine Observing System<br>Younggan Liu-University of South Florida<br>Lucas Merkelbach- Centre for Materials and Coastal Research/Germany<br>Fritz Stahr-University of Washington<br>Julie Thomas-SIO/SCCOOS|
+|**Glider DAC Document Committee**|David Aragon – Rutgers University<br>Kathy Bailey – NOAA/U.S. IOOS<br>Becky Baltes – NOAA/U.S. IOOS<br>Danielle Bryant – Naval Oceanographic Office<br>Mark Bushnell – CoastalObsTechServices/CO-OPS (Lead Editor)<br>Brad Covey – Dalhousie University<br>Bob Currier – Texas A&M University/GCOOS<br>Ruth Curry – Woods Hole Oceanographic Institution<br>Richard Davis – Dalhousie University<br>Laura Fiorentino – NOAA/National Data Buoy Center<br>Stephanie Jaeger–Sea-Bird Electronics, Inc.<br>John Kerfoot–Rutgers – University/MARACOOS<br>Chad Lembke – University of South Florida<br>Bryan Mensi – Naval Oceanographic Office<br>Frank Muller-Karger – University of South Florida<br>Laura Palamara–Rutgers University<br>Rob Ragsdale – NOAA/U.S. IOOS<br>Helen Worthington – REMSA/CO-OPS (Editor)|
+|**Glider DAC Document Reviewers**|Fred Bahr – Monterey Bay Aquarium Research Institute/CeNCOOS<br>Francis Bringas – NOAA/Atlantic Oceanographic and Meteorological Laboratory<br>Beth Curry – University of Washington<br>Matt Howard – Texas A&M University/GCOOS<br>Ana Lara-Lopez – Integrated Marine Observing System<br>Younggan Liu – University of South Florida<br>Lucas Merkelbach – Centre for Materials and Coastal Research/Germany<br>Fritz Stahr – University of Washington<br>Julie Thomas – SIO/SCCOOS|
 
 ## Appendix B. Real-Time Temperature and Salinity Alignment Challenges
 
@@ -863,8 +863,7 @@ no further processing is performed by LAGER on the Seaglider position informatio
 The glider position information is received by LAGER in the raw data files as **GPS** positions in the **m_gps_lon** and **m_gps_lat** arrays and as dead-reckoned positions in the **m_lon** and **m_lat** arrays. 
 Each raw incoming position value contains the sum of the integer whole degrees of longitude or latitude multiplied time 100 plus the decimal minutes of longitude or latitude.  
 LAGER first converts all incoming positions to the form of decimal degrees.  
-If the raw data are received as data-subset binary files (such as ***.sbd** 
-and ***.tbd**) transmitted from the glider to the Iridium Satellite communications system and received at the OOC, 
+If the raw data are received as data-subset binary files (such as *.sbd and *.tbd) transmitted from the glider to the Iridium Satellite communications system and received at the OOC, 
 some or all position information might be missing depending on what the glider operators instructed to the glider to send back. 
 The LAGER processing software will try to compensate for missing arrays to produce the most complete and accurate series of positions at each measurement time.
 
@@ -1041,7 +1040,7 @@ and then resets the intermediate dead-reckoned to a more reasonable latitude tim
 
 ![Figure 6](images_QC_Gliders/figure-6.png)
 
-<figcaption>Figure 6. Depths and corrected latitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the latitude of each GPS fix after removing all suspect values.   The black dots are the dead-reckoned latitudes after correction to match the remaining good GPS positions. The latitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.**
+<figcaption>Figure 6. Depths and corrected latitudes versus time during a six-profile dive by LBS-G glider ng213. The red curve shows the depth versus time. The blue circles are the latitude of each GPS fix after removing all suspect values.   The black dots are the dead-reckoned latitudes after correction to match the remaining good GPS positions. The latitude labels along the left hand side axis have been removed on purpose to avoid revealing the location of the glider.</figcaption>
 <br>
 
 #### 6.2 Profile identification
@@ -1822,12 +1821,12 @@ If either of these events occurs, then set
 
 **temp_flag(i) = 9** and **salt_flag(i) = 9** at every point from the second of the two consecutive points from which the sudden pitch angle was detected until 6 points after the pitch angle returns to within 0.8 of the pitch angle of the first of the two consecutive points.
 
-![Figure 7a](images_QC_Gliders/figure-7a.jpg)
+![Figure 7a](images_QC_Gliders/figure-7a.png)
 
 <figcaption>Figure 7a</figcaption>
 <br>
 
-![Figure 7b](images_QC_Gliders/figure-7b.jpg)
+![Figure 7b](images_QC_Gliders/figure-7b.png)
 
 <figcaption>Figure 7b</figcaption>
 <br>
@@ -1880,7 +1879,7 @@ $$
 In these equations, $n$ is the observation index, 
 $T$ is the measured temperature, 
 $f_n$ is the sample Nyquist frequency, 
-and $\gamma$ is the conductivity change due to temperature while holding salinity and pressure constant, i.e., $\left.\partial C/\partial T\right|_{S,P}$. 
+and $\gamma$ is the conductivity change due to temperature while holding salinity and pressure constant, i.e., $\left.\partial C/\partial T\right|S,P$. 
 The response of the measured conductivity has magnitude $\sigma$ and e-folding time scale $\phi^{-1}$ of the temperature error.
 
 Several approaches have been used to determine the coefficients σ and φ for various CTD models. 
