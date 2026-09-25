@@ -43,6 +43,7 @@ nav:
   - pH: pH.md
   - HFR: HFR.md
   - Wind Data: Wind_Data.md
+  - Glider: Glider.md
 
 extra:
   social:
