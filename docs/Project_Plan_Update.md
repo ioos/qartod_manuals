@@ -298,77 +298,165 @@ or perhaps include ‘QARTOD Compliant’ in the accompanying metadata.
 
 ### Update Manuals 
 
-The process of preparing and updating manuals has been one of the hallmarks of QARTOD’s success. Each manual is distributed to a large list of national and international subject-matter experts from private and public sectors, as well as academia, for multiple reviews. Each reviewer comment is recorded in an adjudication matrix, along with whether the suggested revision or addition is accepted, and if not, why. 
+The process of preparing and updating manuals has been one of the hallmarks of QARTOD’s success. 
+Each manual is distributed to a large list of national and international subject-matter experts from private and public sectors, 
+as well as academia, 
+for multiple reviews. 
+Each reviewer comment is recorded in an adjudication matrix, 
+along with whether the suggested revision or addition is accepted, 
+and if not, why. 
 
-Of the sixteen manuals completed since 2012, six have received two updates, four have received one update, and six have never been updated. Most manual updates have occurred every 2–4 years. Manuals can receive either an incremental or substantial update. Incremental updates are made to repair broken links, correct any minor editorial mistakes (e.g., typographical errors), or to incorporate other revisions that do not affect the QC tests used by operators. Substantial updates occur when advancing technology or other factors lead to changes in QC tests. Substantial updates will occur when a clear request for one is received from the affected community. To date, all manual updates have been incremental. 
+Of the sixteen manuals completed since 2012, 
+six have received two updates, 
+four have received one update, and six have never been updated. 
+Most manual updates have occurred every 2–4 years. 
+Manuals can receive either an incremental or substantial update. 
+Incremental updates are made to repair broken links, 
+correct any minor editorial mistakes (e.g., typographical errors), 
+or to incorporate other revisions that do not affect the QC tests used by operators. 
+Substantial updates occur when advancing technology or other factors lead to changes in QC tests. 
+Substantial updates will occur when a clear request for one is received from the affected community. 
+To date, 
+all manual updates have been incremental. 
 
-One clear result of the questionnaire distributed to BOA members to prepare for this project plan update was the high value of updating existing QC manuals. The BOA members ranked this as the most important activity; however, the frequency and drivers of updates were less clear. In the past, most manuals have been updated approximately every three years. Some members felt that other factors beyond just elapsed time should be considered when deciding when to conduct an update. Consequently, the BOA will continue to participate in determining which manuals should be updated. 
+One clear result of the questionnaire distributed to BOA members to prepare for this project plan update was the high value of updating existing QC manuals. 
+The BOA members ranked this as the most important activity; 
+however, 
+the frequency and drivers of updates were less clear. 
+In the past, 
+most manuals have been updated approximately every three years. 
+Some members felt that other factors beyond just elapsed time should be considered when deciding when to conduct an update. Consequently, 
+the BOA will continue to participate in determining which manuals should be updated. 
 
-While manual updates are a responsibility shared between the ocean observing community and the QARTOD NC, it is ultimately the responsibility of the NC to coordinate all updates. In 2022–2026 as with past QARTOD manuals, a team of subject-matter experts (SMEs) will draft manual updates, and then the updated manuals will be sent for community reviews, similar to the process used for initial creation. Once the period for reviews is complete, the suggested edits will be reviewed and accepted/rejected by the team of subject-matter experts; the updated manual then will be finalized. 
+While manual updates are a responsibility shared between the ocean observing community and the QARTOD NC, 
+it is ultimately the responsibility of the NC to coordinate all updates. 
+In 2022–2026 as with past QARTOD manuals, a team of subject-matter experts (SMEs) will draft manual updates, 
+and then the updated manuals will be sent for community reviews, 
+similar to the process used for initial creation. 
+Once the period for reviews is complete, 
+the suggested edits will be reviewed and accepted/rejected by the team of subject-matter experts; 
+the updated manual then will be finalized. 
 
-The final important task related to developing and updating manuals is ensuring that all manuals can be found easily. The practice of assigning a Digital Object Identifier (DOI) has become standard with all QARTOD manuals and other documents. Each one is available through the NOAA Institutional Repository,<sup>7</sup> the IOOS website,<sup>8</sup> and the Ocean Best Practices System Repository.<sup>9</sup> 
+The final important task related to developing and updating manuals is ensuring that all manuals can be found easily. 
+The practice of assigning a Digital Object Identifier (DOI) has become standard with all QARTOD manuals and other documents. 
+Each one is available through the NOAA Institutional Repository,⁷ 
+the IOOS website,⁸ 
+and the Ocean Best Practices System Repository.⁹ 
 
-#### Work with Communities to Develop New Manuals as Appropriate 
+### Work with Communities to Develop New Manuals as Appropriate 
 
-The requirement for high-quality real-time data reaches beyond U.S. IOOS and Regional Associations. Ocean observing communities everywhere need to ensure data accuracy and precision, so future manuals might best be prepared by the communities deriving the most benefit from them. The existing manuals cover oceanographic and meteorological variables, as these variables can be monitored and reported in real-time. Only a few existing manuals cover biological variables, as many of the biological variables are not measured or tracked in real-time. In September 2020, the QARTOD BOA published a paper (U.S. IOOS 2020b) that charts the path forward for communities observing variables that do not yet have a manual. Also, Hörstmann et al. (2020) provide a useful source for those initiating the creation of a QARTOD manual. 
+The requirement for high-quality real-time data reaches beyond U.S. IOOS and Regional Associations. 
+Ocean observing communities everywhere need to ensure data accuracy and precision, 
+so future manuals might best be prepared by the communities deriving the most benefit from them. 
+The existing manuals cover oceanographic and meteorological variables, 
+as these variables can be monitored and reported in real-time. 
+Only a few existing manuals cover biological variables, 
+as many of the biological variables are not measured or tracked in real-time. 
+In September 2020, 
+the QARTOD BOA published a paper (U.S. IOOS 2020b) that charts the path forward for communities observing variables that do not yet have a manual. 
+Also, 
+Hörstmann et al. (2020) provide a useful source for those initiating the creation of a QARTOD manual. 
 
-The U.S. IOOS leadership and the QARTOD BOA stand ready to assist communities wishing to develop new QARTOD manuals for variables that currently have no manual. Communities such as the Alliance for Coastal Technologies (ACT), the Global Ocean Ship-based Hydrographic Investigations Program (GOSHIP), and Ocean Observatories Initiative (OOI) might want to develop a QARTOD manual for a variable of interest to them. The QARTOD BOA recognizes that technological advancements might be needed before real-time QC can be implemented for many biological variables. However, the recent advancements in uncrewed platforms<sup>10</sup> (beyond gliders and floats) make these data streams ripe for QA/QC standardization. 
+The U.S. IOOS leadership and the QARTOD BOA stand ready to assist communities wishing to develop new QARTOD manuals for variables that currently have no manual. 
+Communities such as the Alliance for Coastal Technologies (ACT), 
+the Global Ocean Ship-based Hydrographic Investigations Program (GOSHIP), 
+and Ocean Observatories Initiative (OOI) might want to develop a QARTOD manual for a variable of interest to them. 
+The QARTOD BOA recognizes that technological advancements might be needed before real-time QC can be implemented for many biological variables. 
+However, 
+the recent advancements in uncrewed platforms¹⁰ (beyond gliders and floats) make these data streams ripe for QA/QC standardization. 
 
-#### Interact with International Entities as Appropriate 
+### Interact with International Entities as Appropriate
 
-Part of the NC’s role is to engage with the international community. The initial interaction occurred through soliciting reviewers for QARTOD manuals. This interaction has expanded to include international representation on the QARTOD BOA, as well as the NC’s participation in the Ocean Best Practices System (OBPS) Steering Group<sup>11</sup> and the U.S. Climate Variability and Predictability (CLIVAR) Ocean Uncertainty Working Group.<sup>12</sup> Inspiration and guidance can also be gained from interaction with the international meteorological community (e.g., the Global Climate Observing System’s Monitoring Principles)<sup>13</sup> and the biological community (e.g., the biodiversity data quality interest group).<sup>14</sup> These examples represent potential interactions through which expertise can be shared to further promote high-quality data. 
+Part of the NC’s role is to engage with the international community. 
+The initial interaction occurred through soliciting reviewers for QARTOD manuals. 
+This interaction has expanded to include international representation on the QARTOD BOA, 
+as well as the NC’s participation in the Ocean Best Practices System (OBPS) Steering Group¹¹ and the U.S. Climate Variability and Predictability (CLIVAR) Ocean Uncertainty Working Group.¹² 
+Inspiration and guidance can also be gained from interaction with the international meteorological community (e.g., the Global Climate Observing System’s Monitoring Principles)¹³ and the biological community (e.g., the biodiversity data quality interest group).¹⁴ 
+These examples represent potential interactions through which expertise can be shared to further promote high-quality data. 
 
-> 7 <u>https://repository.library.noaa.gov/</u> 
+<small>⁷ https://repository.library.noaa.gov/</small> 
 
-> 8 <u>https://ioos.noaa.gov/project/qartod/</u> 
+<small>⁸ https://ioos.noaa.gov/project/qartod/</small> 
 
-> 9 <u>https://www.oceanbestpractices.org/</u> 
+<small>⁹ https://www.oceanbestpractices.org/</small> 
 
-> 10 <u>https://sciencecouncil.noaa.gov/LinkClick.aspx?fileticket=4jWNkpk-ZBo=&portalid=0</u> 
+<small>¹⁰ https://sciencecouncil.noaa.gov/LinkClick.aspx?fileticket=4jWNkpk-ZBo=&portalid=0</small> 
 
-> 11 <u>https://www.oceanbestpractices.org/about/governance/</u> 
+<small>¹¹ https://www.oceanbestpractices.org/about/governance/</small> 
 
-> 12 <u>https://usclivar.org/working-groups/ocean-uncertainty-quantification-working-group-resources</u> 
+<small>¹² https://usclivar.org/working-groups/ocean-uncertainty-quantification-working-group-resources</small> 
 
-> 13 <u>https://gcos.wmo.int/en/essential-climate-variables/about/gcos-monitoring-principles</u> 
+<small>¹³ https://gcos.wmo.int/en/essential-climate-variables/about/gcos-monitoring-principles</small> 
 
-> 14 <u>https://www.tdwg.org/community/bdq</u> 
+<small>¹⁴ https://www.tdwg.org/community/bdq</small> 
 
-12 
+Interaction with OBPS includes submitting QARTOD documents to the OBPS repository, 
+which enhances global document accessibility. 
+Strong QARTOD - OBPS engagement is highly synergistic, 
+providing both entities with shared opportunities and resources.
 
-Interaction with OBPS includes submitting QARTOD documents to the OBPS repository, which enhances global document accessibility. Strong QARTOD - OBPS engagement is highly synergistic, providing both entities with shared opportunities and resources. 
+### Promote Outreach 
 
-#### Promote Outreach 
+QARTOD manuals provide information to the ocean observing community; 
+however, 
+outreach by the NC and BOA is vital for making sure the manuals are used. 
+By presenting papers at conferences and participating in working groups and discussions, 
+the NC and the BOA have been a conduit for the exchange of ideas about how to improve the quality of real-time data and implement the QARTOD tests. 
+Community outreach has led to the identification of variables that were ready for a manual, 
+specific tests to be included in manuals, 
+and other important considerations, 
+such as identifying the best data flagging scheme to adopt. 
+Outreach has been a cornerstone for keeping QARTOD relevant and helpful to data providers (operators) as well as data users. 
+A brief synopsis of the QARTOD Project serves as an outreach tool for the NC and BOA (appendix F). 
 
-QARTOD manuals provide information to the ocean observing community; however, outreach by the NC and BOA is vital for making sure the manuals are used. By presenting papers at conferences and participating in working groups and discussions, the NC and the BOA have been a conduit for the exchange of ideas about how to improve the quality of real-time data and implement the QARTOD tests. Community outreach has led to the identification of variables that were ready for a manual, specific tests to be included in manuals, and other important considerations, such as identifying the best data flagging scheme to adopt. Outreach has been a cornerstone for keeping QARTOD relevant and helpful to data providers (operators) as well as data users. A brief synopsis of the QARTOD Project serves as an outreach tool for the NC and BOA (appendix F). 
+During 2017–2021, 
+the role of outreach was extended to include the international community such as the OBPS Steering Group, 
+and to include topics of interest such as measurement uncertainty. 
 
-During 2017–2021, the role of outreach was extended to include the international community such as the OBPS Steering Group, and to include topics of interest such as measurement uncertainty. 
+As previously mentioned, 
+several universities use QARTOD QC manuals in the classroom. 
+Introducing students in ocean science fields to manuals and methods early on is an important and rewarding future outreach effort to pursue. 
 
-As previously mentioned, several universities use QARTOD QC manuals in the classroom. Introducing students in ocean science fields to manuals and methods early on is an important and rewarding future outreach effort to pursue. 
+### Work with Manufacturers to Embed QC Tests in Instruments 
 
-#### Work with Manufacturers to Embed QC Tests in Instruments 
+Many manufacturers have embedded QC tests within the sensor software, 
+and they are encouraged to expand this capability (Bushnell 2017). 
+However, 
+it must be done cautiously and in concert with the desires of the community to ensure that controls and results produced do not introduce unexpected consequences. 
+In general, 
+the ability to embed QC tests into a field deployed system increases with the maturity of the system. 
+For example, 
+acoustic Doppler current profilers are mature instruments with QC protocols embedded in the sensor and the sensor processing software. 
+Newer technologies are more likely to require a hands-on QC approach.
 
-Many manufacturers have embedded QC tests within the sensor software, and they are encouraged to expand this capability (Bushnell 2017). However, it must be done cautiously and in concert with the desires of the community to ensure that controls and results produced do not introduce unexpected consequences. In general, the ability to embed QC tests into a field deployed system increases with the maturity of the system. For example, acoustic Doppler current profilers are mature instruments with QC protocols embedded in the sensor and the sensor processing software. Newer technologies are more likely to require a hands-on QC approach. 
+The benefits of embedded QC include less reliance on a single data management process, 
+potentially faster data distribution, 
+and enhanced interoperability. 
+One example of enhanced interoperability is sensor neighbor interaction. 
+Two sensors can themselves agree their extraordinary observations are valid. 
+The embedded QC must be configurable by the operator so that local thresholds can be set and tests enabled/disabled.
 
-The benefits of embedded QC include less reliance on a single data management process, potentially faster data distribution, and enhanced interoperability. One example of enhanced interoperability is sensor neighbor interaction. Two sensors can themselves agree their extraordinary observations are valid. The embedded QC must be configurable by the operator so that local thresholds can be set and tests enabled/disabled. 
+One drawback of a field-deployed QC-enabled system is decentralized processing. 
+Many think such edge computing is advantageous; others believe one shore-based system is easier to maintain.
 
-One drawback of a field-deployed QC-enabled system is decentralized processing. Many think such edge computing is advantageous; others believe one shore-based system is easier to maintain. 
+   **What is Edge Computing?** 
 
-13 
-
-##### **What is Edge Computing?** 
-
-Edge computing is a distributed computing framework that brings enterprise applications closer to data sources such as Internet of Things or IoT devices or local edge servers <u>(https://www.ibm.com/cloud/what-is-edge-computing). Edge computing operates on "instant</u> 
-
-data" that is real-time data generated by sensors or users (Hamilton, Eric [27 December 2018]. "What is Edge Computing: The Network Edge Explained." cloudwards.net. Retrieved 2022-01-25.). 
-
-14 
+      Edge computing is a distributed computing framework that brings enterprise applications closer to data sources such as Internet of Things or IoT devices or local edge servers (https://www.ibm.com/cloud/what-is-edge-computing). Edge computing operates on "instant data" that is real-time data generated by sensors or users (Hamilton, Eric [27 December 2018]. "What is Edge Computing: The Network Edge Explained." cloudwards.net. Retrieved 2022-01-25.). 
 
 ## Part 3 - New Activities for 2022–2026 
 
-The six core activities described in Part 2 continue to be fundamental to QARTOD’s success. However, it is important to also consider the 34 variables selected by IOOS that represent physics, biogeochemistry, and biology/ecosystems.<sup>15</sup> Many of the biological and ecosystem variables do not have associated QARTOD manuals because real-time automated data dissemination is not yet possible for those variables. The technology for data collection is still emerging for many of these variables, but QARTOD will engage with communities that work with biological variables to monitor ecological health and to meet their needs for QC (e.g., “timely data”) and best practice documentation. In addition to working with observatory operators and data users, QARTOD activities will also include engaging with manufacturers to determine if/when they believe development of a traditional QARTOD manual becomes appropriate or if embedded tests are practical. 
+The six core activities described in Part 2 continue to be fundamental to QARTOD’s success. 
+However, 
+it is important to also consider the 34 variables selected by IOOS that represent physics, 
+biogeochemistry, 
+and biology/ecosystems.¹⁵ 
+Many of the biological and ecosystem variables do not have associated QARTOD manuals because real-time automated data dissemination is not yet possible for those variables. 
+The technology for data collection is still emerging for many of these variables, 
+but QARTOD will engage with communities that work with biological variables to monitor ecological health and to meet their needs for QC (e.g., “timely data”) and best practice documentation. 
+In addition to working with observatory operators and data users, 
+QARTOD activities will also include engaging with manufacturers to determine if/when they believe development of a traditional QARTOD manual becomes appropriate or if embedded tests are practical. 
 
-#### BOA Questionnaire Results 
+### BOA Questionnaire Results 
 
 The BOA questionnaire discussed in Part 1 revealed multiple suggestions to move the QARTOD project forward. They include: 
 
@@ -386,11 +474,9 @@ The BOA questionnaire discussed in Part 1 revealed multiple suggestions to move 
 
 - Early Career Ocean Professional (ECOP) participation in the development and writing of new manuals, papers, and updates is encouraged. ECOPs are more likely to have recent field experience and be familiar with the characteristics and limitations of the latest instrumentation. 
 
-> 15 <u>https://www.iooc.us/task-teams/core-ioos-variables/</u> 
+<small>¹⁵ https://www.iooc.us/task-teams/core-ioos-variables/</small>
 
-15 
-
-#### Potential New Efforts 
+### Potential New Efforts
 
 Technological advances for existing sensors/variables and emerging technology for biological variables create opportunities for QARTOD, including: 
 
@@ -402,19 +488,39 @@ Technological advances for existing sensors/variables and emerging technology fo
 
 - Encourage the implementation and adherence to QARTOD QC tests more proactively. 
 
-Many of these opportunities described in the bullets on the previous page veer away from the relatively narrow QARTOD focus on real-time QC manuals designed for an audience writing software to implement the tests. To accommodate these disparate opportunities, a different approach is required. The solution involves using the present QARTOD manual development process to address the development of any QA/QC-related standardized process. The project management section (Part 4) provides more information on how the QARTOD NC and BOA will manage these opportunities. 
+Many of these opportunities described in the bullets on the previous page veer away from the relatively narrow QARTOD focus on real-time QC manuals designed for an audience writing software to implement the tests. 
+To accommodate these disparate opportunities, 
+a different approach is required. 
+The solution involves using the present QARTOD manual development process to address the development of any QA/QC-related standardized process. 
+The project management section (Part 4) provides more information on how the QARTOD NC and BOA will manage these opportunities. 
 
-The over-arching goal of QARTOD’s scope expansion is to provide a clear path to a broader community for the development and adoption of accepted standardized processes (e.g., uncertainty quantification and satellite/acoustic telemetry data for animal movements). Additional justifications include a) past suggestions for non-traditional QARTOD assistance (e.g., sargassum abundance, mangrove cover and composition), b) results from the questionnaire distributed to BOA members, c) a recognized need in the scientific community, and d) where no current best practices exist QARTOD can readily build upon a solid foundation. 
+The over-arching goal of QARTOD’s scope expansion is to provide a clear path to a broader community for the development and adoption of accepted standardized processes (e.g., uncertainty quantification and satellite/acoustic telemetry data for animal movements). 
+Additional justifications include a) past suggestions for non-traditional QARTOD assistance (e.g., sargassum abundance, mangrove cover and composition), 
+b) results from the questionnaire distributed to BOA members, c) a recognized need in the scientific community, 
+and d) where no current best practices exist QARTOD can readily build upon a solid foundation. 
 
-Using the QARTOD process, a community with an interest in a specific variable could create any QA/QC best practice for submission to IOOS through the QARTOD project. Initial agreement by IOOS would confirm that the proposed document is within scope. IOOS QARTOD guidance during the development of the document would be available, but the schedule is left to the variable community. Upon completion, the draft manual would be submitted to the QARTOD NC who would verify that the proper processes were followed and that the document matched the standardized appearance of a QARTOD manual. The manual would then be submitted for signature by the QARTOD BOA Chair, the QARTOD Project Manager, and the IOOS Director. 
+Using the QARTOD process, 
+a community with an interest in a specific variable could create any QA/QC best practice for submission to IOOS through the QARTOD project. 
+Initial agreement by IOOS would confirm that the proposed document is within scope. 
+IOOS QARTOD guidance during the development of the document would be available, 
+but the schedule is left to the variable community. 
+Upon completion, 
+the draft manual would be submitted to the QARTOD NC who would verify that the proper processes were followed and that the document matched the standardized appearance of a QARTOD manual. 
+The manual would then be submitted for signature by the QARTOD BOA Chair, 
+the QARTOD Project Manager, 
+and the IOOS Director. 
 
-For 2022–2026, the role of the QARTOD NC will shift from initiator/creator of real-time QC manuals to oversight of increasingly specific and complex QA/QC standardized processes developed by the appropriate SMEs. In fact, this returns QARTOD to the project originally envisioned by IOOS, where manual creation was proposed to be chaired by variable community leaders rather than the IOOS. Expanded use of the IOOS QARTOD project provides a clear path forward to a much broader community, just as it did for the initial grassroots wave and currents QARTOD efforts in 2012. 
-
-16 
+For 2022–2026, 
+the role of the QARTOD NC will shift from initiator/creator of real-time QC manuals to oversight of increasingly specific and complex QA/QC standardized processes developed by the appropriate SMEs. 
+In fact, 
+this returns QARTOD to the project originally envisioned by IOOS, 
+where manual creation was proposed to be chaired by variable community leaders rather than the IOOS. 
+Expanded use of the IOOS QARTOD project provides a clear path forward to a much broader community, 
+just as it did for the initial grassroots wave and currents QARTOD efforts in 2012. 
 
 Possible examples of efforts that might be covered under an expanded QARTOD scope include: 
 
-- **Uncertainty quantification** . The 6<sup>th</sup> Law of QARTOD, “ _Observers should quantify the level of calibration accuracy and the associated expected error bounds_ ” (Burnett et al. 2010), identifies but oversimplifies the need for detailed uncertainty quantification of ocean observations. Documents detailing specific variable/sensor/system uncertainties are sorely needed but challenging to create. Interaction with other stakeholder groups (e.g., U.S. CLIVAR OceanUQ or like-minded groups from the World Meteorological Organization) should be undertaken. 
+- **Uncertainty quantification** . The 6ᵗʰ Law of QARTOD, “ _Observers should quantify the level of calibration accuracy and the associated expected error bounds_ ” (Burnett et al. 2010), identifies but oversimplifies the need for detailed uncertainty quantification of ocean observations. Documents detailing specific variable/sensor/system uncertainties are sorely needed but challenging to create. Interaction with other stakeholder groups (e.g., U.S. CLIVAR OceanUQ or like-minded groups from the World Meteorological Organization) should be undertaken. 
 
 - **Satellite and acoustic telemetry data for animal movement.** This is a location timeseries of biologging sensors used in habitat and connectivity studies of individual organisms. While many of the variables logged by the sensors are already addressed by QARTOD QC manuals (temperature, salinity, dissolved oxygen, etc.), there may be other quality-related aspects of animal tracking and variable observations. Content from the existing QARTOD passive acoustics QC manual may be leveraged for this application. 
 
@@ -423,8 +529,6 @@ Possible examples of efforts that might be covered under an expanded QARTOD scop
 - **High frequency radar surface current observations antenna pattern measurements.** This includes both how to conduct the antenna pattern measurements and how to use the results. 
 
 - **Vessel AIS data QC –** Automated Identification Systems (AIS) aboard vessels provide ship locations that can be used for a wide variety of applications. A standardized QC process would be welcomed by many communities. 
-
-17 
 
 ## Part 4 - Project Management, Roles and Responsibilities 
 
