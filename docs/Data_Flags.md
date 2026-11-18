@@ -405,235 +405,223 @@ Argo Quality Control Manual for CTD and Trajectory Data Version 3.3 <https://arc
 |---|---|
 |Kathleen Bailey – Project Manager|U.S. IOOS|
 |Julie Bosch|NOAA/National Centers for Environmental Information|
-|Eugene Burger<br>Jennifer Dorton|NOAA/Pacific Marine Environmental Laboratory<br>SECOORA|
-|Regina Easley<br>Robert Heitsenrether<br>Jeff King<br>Karen Grissom<br>Mario Tamburri|National Institute of Standards and Technology<br>NOS/Center for Operational Oceanographic Products and Services<br>U.S. Army Corps of Engineers<br>NOAA/National Data Buoy Center<br>University of Maryland Center for Environmental Science /<br>Chesapeake Biological Laboratory|
-|Julianna Thomas – BOA Chair<br>Christoph Waldmann|SCCOOS/Scripps Institution of Oceanography/Coastal Data<br>Information Program (retired)<br>Universityof Bremen/MARUM|
+|Eugene Burger|NOAA/Pacific Marine Environmental Laboratory|
+|Jennifer Dorton|SECOORA|
+|Regina Easley|National Institute of Standards and Technology|
+|Robert Heitsenrether|NOS/Center for Operational Oceanographic Products and Services|
+|Jeff King|U.S. Army Corps of Engineers|
+|Karen Grissom|NOAA/National Data Buoy Center|
+|Mario Tamburri|University of Maryland Center for Environmental Science / Chesapeake Biological Laboratory|
+|Julianna Thomas – BOA Chair|SCCOOS / Scripps Institution of Oceanography / Coastal Data Information Program (retired)|
+|Christoph Waldmann|Universityof Bremen / MARUM|
 
-|**DMAC Communit**<br>**Regional Ass**<br>|**y, Version 1.2**<br>**ociations**<br>|
+**DMAC Community, Version 1.2**
+
+**Regional Associations**
+
+| Organization | Representative(s) |
 |---|---|
-|**AOOS**|**GCOOS**|
-|Carol Janzen|Bob Currier|
-|**CARICOOS**|**SECOORA**|
-|Miguel Canals|Jennifer Dorton|
-|Roy Watlington|Filipe Pires Alvarenga Fernandes<br>AbbeyWakely|
-|**Research Organizations**||
-|**Gulf of Maine Research Institute**|**Scripps Institution of Oceanography**|
-|Eric Bridger|VickyRowley|
-|**Monterey Bay Aquarium Research Institute**<br>Fred Bahr|**Smithsonian Environmental Research Center**<br>Matthew Ogburn|
-|**Federal and State Agencies**||
-|**Bureau of Ocean Energy Management**|**Environmental Protection Agency**|
-|Brian Zelenke|Dwane Young|
-|Jonathan Blythe||
-|**Great Lakes Commission**|**U.S. Geological Survey**|
-|Guan Wang|Abigail Benson<br>Sky Bristol<br>James Kreft<br>Rich Signell|
-|**National Oceanic and Atmospheric Administration**||
-|Tim Boyer|Jessica Morgan|
-|Mark Bushnell|Kevin O'Brien|
-|Gabrielle Canonico|Thomas Ryan|
-|Kenneth Casey|Bob Simons|
-|Lynn Dewitt|Derrick Snowden|
-|Dave Easter|Tiffany Vance|
-|Benjamin LaCour|Micah Wengren|
-|Tony Lavoi|Bill Woodward|
-|Frank Lodato||
+| **AOOS** | Carol Janzen |
+| **GCOOS** | Bob Currier |
+| **CARICOOS** | Miguel Canals, Roy Watlington |
+| **SECOORA** | Jennifer Dorton, Filipe Pires Alvarenga Fernandes, Abbey Wakely |
 
+**Research Organizations**
 
-
-A-2 
-
-_Data QC Flags Manual_ 
-
-|**Academic Institutions, Version 1.2**||
+| Organization | Representative(s) |
 |---|---|
-|**University of Maine**|Bob Fleming|
-|**University of Maryland**|Mario Tamburri|
-|**Dalhousie University**|Lenore Bajona<br>Brad Covey<br>Richard Davis|
-|**University of Puerto Rico**|Jorge Capella<br>Juan Orlando Gonzalez Lopez|
-|**University of Hawaii**|James T. Potemra|
-|**University of Washington**|Emilio Mayorga|
-|**Texas A & M University**|Felimon Gayanilo|
-|**Rutgers University**|John Kerfoot<br>Michael Vardaro|
-|**University of Tasmania**|Peter Walsh|
-|**Private Industry**||
-|**LimnoTech**|Kathy Koch<br>Tad Slawecki|
-|**RPS Group**|Ben Adams<br>Robert Fratantonio<br>Kelly Knee<br>Brian McKenna|
-|**Axiom**|Jessica Austin<br>Rob Bochenek<br>Stacey Buckelew<br>Shane StClair<br>Kyle Wilcox|
-|**Ocean Tracking Network**|Jonathan Pye|
-|**GMRI**|Alex Kerney|
+| **Gulf of Maine Research Institute** | Eric Bridger |
+| **Scripps Institution of Oceanography** | Vicky Rowley |
+| **Monterey Bay Aquarium Research Institute** | Fred Bahr |
+| **Smithsonian Environmental Research Center** | Matthew Ogburn |
 
+**Federal and State Agencies**
 
-
-A-3 
-
-_Data QC Flags Manual_ 
-
-|**QARTOD Data QC**|**Flag Manual Reviewers, Version 1.1**|
+| Organization | Representative(s) |
 |---|---|
-|**Name**|**Organization**|
-|Mark Bushnell<br>Luke Campbell<br>Emilio Mayorga|U.S. IOOS<br>RPS Group<br>NANOOS/University of Washington|
-|**U.S. IOOS Reg**|**ional Associations, Version 1.1**|
-|**Name**|**Organization**|
-|Josie Quintrell<br>Clarissa Anderson<br>Francisco Chavez<br>Debra Hernandez<br>Barbara Kirkpatrick<br>Gerhard Kuska<br>Molly McCammon<br>Julio Morell<br>Ru Morrison<br>Jan Newton<br>Melissa Iwamoto|IOOS Association<br>SCCOOS<br>CeNCOOS<br>SECOORA<br>GCOOS<br>MARACOOS<br>AOOS<br>CariCOOS<br>NERACOOS<br>NANOOS<br>PacIOOS|
-|Kelli Paige|GLOS|
-|**QARTOD B**|**oard of Advisors, Version 1.1**|
-|**Name**|**Organization**|
-|Kathleen Bailey – Project Manager<br>Julie Bosch<br>Eugene Burger<br>Janet Fredericks<br>Matt Howard<br>Bob Jensen<br>Chris Paternostro<br>Mario Tamburri<br>Julie Thomas – BOA Chair|U.S. IOOS<br>NOAA/National Centers for Environmental Information<br>NOAA/Pacific Marine Environmental Laboratory<br>Woods Hole Oceanographic Institution<br>GCOOS/Texas A&M University<br>U.S. Army Corps of Engineers<br>NOS/CO-OPS<br>University of Maryland Center for Environmental Science /<br>Chesapeake Biological Laboratory<br>SCCOOS/Scripps Institution of Oceanography/Coastal Data<br>Information Program|
+| **Bureau of Ocean Energy Management** | Brian Zelenke, Jonathan Blythe |
+| **Environmental Protection Agency** | Dwane Young |
+| **Great Lakes Commission** | Guan Wang |
+| **U.S. Geological Survey** | Abigail Benson, Sky Bristol, James Kreft, Rich Signell |
+| **National Oceanic and Atmospheric Administration** | Tim Boyer, Mark Bushnell, Gabrielle Canonico, Kenneth Casey, Lynn Dewitt, Dave Easter, Benjamin LaCour, Tony Lavoi, Frank Lodato, Jessica Morgan, Kevin O'Brien, Thomas Ryan, Bob Simons, Derrick Snowden, Tiffany Vance, Micah Wengren, Bill Woodward |
 
+**Academic Institutions, Version 1.2**
 
-
-A-4 
-
-_Data QC Flags Manual_ 
-
-### **<mark>DMAC Community, Version 1.1</mark>** 
-
-##### **Regional Associations** 
-
-|**AOOS**|**GCOOS**|
+| Institution | Representative(s) |
 |---|---|
-|Carol Janzen|Bob Currier|
-|**CARICOOS**|**SECOORA**|
-|Miguel Canals|Abbey Wakely|
-|Roy Watlington|Debra Hernandez|
-||Filipe Pires Alvarenga Fernandes|
-|**Research Organizations**||
-|**Gulf of Maine Research Institute**|**Scripps Institution of Oceanography**|
-|Eric Bridger|Darren Wright|
-|**Monterey Bay Aquarium Research Institute**|**Smithsonian Environmental Research Center**|
-|Aric Bickel|Matthew Ogburn|
-|Anderson David||
-|Fred Bahr||
-|**Federal and State Agencies**||
-|**Bureau of Ocean Energy Management**|**Environmental Protection Agency**|
-|Brian Zelenke|Dwane Young|
-|Jonathan Blythe||
-|**Great Lakes Commission**||
-|Guan Wang||
-|**National Oceanic and Atmospheric Administration**||
-|Becky Baltes|Jennifer Bosch|
-|Bill Woodward|Jennifer Patterson|
-|Kenneth Casey|Jessica Morgan|
-|Mark VanWaes|Kevin O'Brien|
-|Alexander Birger|Lynn Dewitt|
-|Bob Simons|Mark Bushnell|
-|Byron Kilbourne|Mathew Biddle|
-|Dave Easter|Micah Wengren|
-|Derrick Snowden|Rita Adak|
-|Eric Johnson|Robert Bassett|
-|Frank Lodato|Samantha Simmons|
-|Gabrielle Canonico|Thomas Ryan|
-|Jack Harlan|Tiffany Vance|
-|Jason Gedamke|Tim Boyer|
-|Jeff de La Beaujardiere|Tony Lavoi|
-|Jenifer Rhoades|Xiaoyan Li|
-|**U.S. Army Corps of Engineers**|**U.S. Geological Survey**|
-|Jeff Lillycrop|Abigail Benson<br>James Kreft|
-||Rich Signell|
-||SkyBristol|
+| **University of Maine** | Bob Fleming |
+| **University of Maryland** | Mario Tamburri |
+| **Dalhousie University** | Lenore Bajona, Brad Covey, Richard Davis |
+| **University of Puerto Rico** | Jorge Capella, Juan Orlando Gonzalez Lopez |
+| **University of Hawaii** | James T. Potemra |
+| **University of Washington** | Emilio Mayorga |
+| **Texas A & M University** | Felimon Gayanilo |
+| **Rutgers University** | John Kerfoot, Michael Vardaro |
+| **University of Tasmania** | Peter Walsh |
 
+**Private Industry**
 
-
-A-5 
-
-_Data QC Flags Manual_ 
-
-|**Academic Instituti**|**ons, Version 1.1**||
-|---|---|---|
-||**University of Maine**|Bob Fleming|
-||**University of Maryland**|Mario Tamburri|
-||**Dalhousie University**|Brad Covey<br>Lenore Bajona<br>Richard Davis|
-||**University of Puerto Rico**|Jorge Capella<br>Juan Orlando Gonzalez Lopez<br>Julio Morell|
-||**University of Hawaii**|Chris Ostrander<br>James T. Potemra<br>Melissa Iwamoto|
-||**University of Washington**|Emilio Mayorga|
-||**Texas A & M University**|Felimon Gayanilo|
-||**Rutgers University**<br>**University of Tasmania**|John Kerfoot<br>Michael Vardaro<br>Peter Walsh|
-|**Private Industry**|||
-||**LimnoTech**|Kathy Koch<br>Tad Slawecki|
-||**RPS Group**|Kelly Knee<br>Luke Campbell<br>Melanie Gearon|
-||**Axiom**|Kyle Wilcox<br>Rob Bochenek<br>Shane StClair|
-||**Animal Tracking Network**|Jonathan Pye|
-
-
-
-A-6 
-
-_Data QC Flags Manual_ 
-
-# **<mark>Data QC Flag Manual Editors, Version 1.0</mark>** 
-
-|**Name**|**Organization**|
+| Organization | Representative(s) |
 |---|---|
-|Mark Bushnell, Lead|CoastalObsTechServices LLC/CO-OPS|
-|Ray Toll|Old Dominion University/NDBC|
-|Helen Worthington|REMSA/CO-OPS|
+| **LimnoTech** | Kathy Koch, Tad Slawecki |
+| **RPS Group** | Ben Adams, Robert Fratantonio, Kelly Knee, Brian McKenna |
+| **Axiom** | Jessica Austin, Rob Bochenek, Stacey Buckelew, Shane StClair, Kyle Wilcox |
+| **Ocean Tracking Network** | Jonathan Pye |
+| **GMRI** | Alex Kerney |
 
+**QARTOD Data QC Flag Manual Reviewers, Version 1.1**
 
-
-# **Data QC Flag Manual Reviewers/DMAC Committee,** 
-
-# **Version 1.0** 
-
-|**Name**|**Organization**|
+| Name | Organization |
 |---|---|
-|Rob Bochenek|AOOS/Axiom Consulting & Design|
-|Julie Bosch|NOAA/NCDDC|
-|Eric Bridger|NERACOOS/GMRI|
-|Jorge Capella|CariCOOS/University of Puerto Rico|
-|Jeremy Cothran|SECOORA|
-|Janet Fredericks|WHOI|
-|Lisa Hazard|SCCOOS/Scripps Institute of Oceanography|
-|Bob Heitsenrether|NOAA/CO-OPS|
-|Matt Howard|GCOOS/Texas A&M University|
-|Steven Le|CeNCOOS/SAIC|
-|Emilio Mayorga|NANOOS/University of Washington|
-|Jennifer Patterson|CeNCOOS/MBARI|
-|Jim Potemra|PacIOOS/University of Hawaii|
-|Rob Ragsdale|U.S. IOOS|
-|Tad Slawecki|GLOS/LimnoTech|
-|Derrick Snowden|U.S. IOOS|
-|Shane StClair|AOOS/Axiom Consulting & Design|
-|Vembu Subramanian|SECOORA|
-|Julie Thomas|SIO/CDIP|
-|Kyle Wilcox|MARACOOS/Applied Science Associates,Inc.|
+| Mark Bushnell | U.S. IOOS |
+| Luke Campbell | RPS Group |
+| Emilio Mayorga | NANOOS/University of Washington |
 
+**U.S. IOOS Regional Associations, Version 1.1**
 
-
-# **<u><mark>QARTOD Board of Advisors, Version 1.0</mark></u>** 
-
-|**Name**|**Organization**|
+| Name | Organization |
 |---|---|
-|Joe Swaykos - Chair|NDBC|
-|Derrick Snowden|U.S. IOOS|
-|Julie Bosch|NOAA/NCDDC|
-|Julie Thomas|SIO/CDIP|
-|Derrick Snowden|US IOOS|
-|Matt Howard|GCOOS|
-|Chris Paternostro|NOAA/CO-OPS|
-|Bob Jensen|USACE|
-|Janet Fredericks|WHOI|
+| Josie Quintrell | IOOS Association |
+| Clarissa Anderson | SCCOOS |
+| Francisco Chavez | CeNCOOS |
+| Debra Hernandez | SECOORA |
+| Barbara Kirkpatrick | GCOOS |
+| Gerhard Kuska | MARACOOS |
+| Molly McCammon | AOOS |
+| Julio Morell | CariCOOS |
+| Ru Morrison | NERACOOS |
+| Jan Newton | NANOOS |
+| Melissa Iwamoto | PacIOOS |
+| Kelli Paige | GLOS |
 
+**QARTOD Board of Advisors, Version 1.1**
 
-
-A-7 
-
-_Data QC Flags Manual_ 
-
-|**U.S. I**<br>|**OOS Regional Associations,**<br>**Version 1.0**<br>|
+| Name | Organization |
 |---|---|
-|**Name**|**Organization**|
-|Josie Quintrell – Director<br>Leslie Rosenfeld|U.S. IOOS Association<br>CeNCOOS|
-|Jan Newton|NANOOS|
-|Debra Hernandez|SECOORA|
-|Julie Thomas|SCCOOS|
-|Ann Jochens|GCOOS|
-|Gerhard Kuska|MARACOOS|
-|Molly McCammon|AOOS|
-|Ru Morrison|NERACOOS|
-|Jorge Corridor|CariCOOS|
-|Heather Kerkering|PacIOOS|
-|Jen Read|GLOS|
+| Kathleen Bailey – Project Manager | U.S. IOOS |
+| Julie Bosch | NOAA/National Centers for Environmental Information |
+| Eugene Burger | NOAA/Pacific Marine Environmental Laboratory |
+| Janet Fredericks | Woods Hole Oceanographic Institution |
+| Matt Howard | GCOOS/Texas A&M University |
+| Bob Jensen | U.S. Army Corps of Engineers |
+| Chris Paternostro | NOS / CO-OPS |
+| Mario Tamburri | University of Maryland Center for Environmental Science / Chesapeake Biological Laboratory |
+| Julie Thomas – BOA Chair | SCCOOS / Scripps Institution of Oceanography / Coastal Data Information Program |
 
+**DMAC Community, Version 1.1**
 
+**Regional Associations**
 
-A-8 
+| Organization | Representative(s) |
+|---|---|
+| **AOOS** | Carol Janzen |
+| **GCOOS** | Bob Currier |
+| **CARICOOS** | Miguel Canals, Roy Watlington |
+| **SECOORA** | Abbey Wakely, Debra Hernandez, Filipe Pires Alvarenga Fernandes |
 
+**Research Organizations**
+
+| Organization | Representative(s) |
+|---|---|
+| **Gulf of Maine Research Institute** | Eric Bridger |
+| **Scripps Institution of Oceanography** | Darren Wright |
+| **Monterey Bay Aquarium Research Institute** | Aric Bickel, Anderson David, Fred Bahr |
+| **Smithsonian Environmental Research Center** | Matthew Ogburn |
+
+**Federal and State Agencies**
+
+| Organization | Representative(s) |
+|---|---|
+| **Bureau of Ocean Energy Management** | Brian Zelenke, Jonathan Blythe |
+| **Environmental Protection Agency** | Dwane Young |
+| **Great Lakes Commission** | Guan Wang |
+| **National Oceanic and Atmospheric Administration** | Becky Baltes, Bill Woodward, Kenneth Casey, Mark VanWaes, Alexander Birger, Bob Simons, Byron Kilbourne, Dave Easter, Derrick Snowden, Eric Johnson, Frank Lodato, Gabrielle Canonico, Jack Harlan, Jason Gedamke, Jeff de La Beaujardiere, Jenifer Rhoades, Jennifer Bosch, Jennifer Patterson, Jessica Morgan, Kevin O'Brien, Lynn Dewitt, Mark Bushnell, Mathew Biddle, Micah Wengren, Rita Adak, Robert Bassett, Samantha Simmons, Thomas Ryan, Tiffany Vance, Tim Boyer, Tony Lavoi, Xiaoyan Li |
+| **U.S. Army Corps of Engineers** | Jeff Lillycrop |
+| **U.S. Geological Survey** | Abigail Benson, James Kreft, Rich Signell, Sky Bristol |
+
+**Academic Institutions, Version 1.1**
+
+| Institution | Representative(s) |
+|---|---|
+| **University of Maine** | Bob Fleming |
+| **University of Maryland** | Mario Tamburri |
+| **Dalhousie University** | Brad Covey, Lenore Bajona, Richard Davis |
+| **University of Puerto Rico** | Jorge Capella, Juan Orlando Gonzalez Lopez, Julio Morell |
+| **University of Hawaii** | Chris Ostrander, James T. Potemra, Melissa Iwamoto |
+| **University of Washington** | Emilio Mayorga |
+| **Texas A & M University** | Felimon Gayanilo |
+| **Rutgers University** | John Kerfoot, Michael Vardaro |
+| **University of Tasmania** | Peter Walsh |
+
+**Private Industry**
+
+| Organization | Representative(s) |
+|---|---|
+| **LimnoTech** | Kathy Koch, Tad Slawecki |
+| **RPS Group** | Kelly Knee, Luke Campbell, Melanie Gearon |
+| **Axiom** | Kyle Wilcox, Rob Bochenek, Shane StClair |
+| **Animal Tracking Network** | Jonathan Pye |
+
+**Data QC Flag Manual Editors, Version 1.0**
+
+| Name | Organization |
+|---|---|
+| Mark Bushnell, Lead | CoastalObsTechServices LLC/CO-OPS |
+| Ray Toll | Old Dominion University/NDBC |
+| Helen Worthington | REMSA/CO-OPS |
+
+**Data QC Flag Manual Reviewers/DMAC Committee, Version 1.0**
+
+| Name | Organization |
+|---|---|
+| Rob Bochenek | AOOS/Axiom Consulting & Design |
+| Julie Bosch | NOAA/NCDDC |
+| Eric Bridger | NERACOOS/GMRI |
+| Jorge Capella | CariCOOS/University of Puerto Rico |
+| Jeremy Cothran | SECOORA |
+| Janet Fredericks | WHOI |
+| Lisa Hazard | SCCOOS/Scripps Institute of Oceanography |
+| Bob Heitsenrether | NOAA/CO-OPS |
+| Matt Howard | GCOOS/Texas A&M University |
+| Steven Le | CeNCOOS/SAIC |
+| Emilio Mayorga | NANOOS/University of Washington |
+| Jennifer Patterson | CeNCOOS/MBARI |
+| Jim Potemra | PacIOOS/University of Hawaii |
+| Rob Ragsdale | U.S. IOOS |
+| Tad Slawecki | GLOS/LimnoTech |
+| Derrick Snowden | U.S. IOOS |
+| Shane StClair | AOOS/Axiom Consulting & Design |
+| Vembu Subramanian | SECOORA |
+| Julie Thomas | SIO/CDIP |
+| Kyle Wilcox | MARACOOS/Applied Science Associates, Inc. |
+
+**QARTOD Board of Advisors, Version 1.0**
+
+| Name | Organization |
+|---|---|
+| Joe Swaykos - Chair | NDBC |
+| Derrick Snowden | U.S. IOOS |
+| Julie Bosch | NOAA/NCDDC |
+| Julie Thomas | SIO/CDIP |
+| Derrick Snowden | US IOOS |
+| Matt Howard | GCOOS |
+| Chris Paternostro | NOAA/CO-OPS |
+| Bob Jensen | USACE |
+| Janet Fredericks | WHOI |
+
+**U.S. IOOS Regional Associations, Version 1.0**
+
+| Name | Organization |
+|---|---|
+| Josie Quintrell – Director | U.S. IOOS Association |
+| Leslie Rosenfeld | CeNCOOS |
+| Jan Newton | NANOOS |
+| Debra Hernandez | SECOORA |
+| Julie Thomas | SCCOOS |
+| Ann Jochens | GCOOS |
+| Gerhard Kuska | MARACOOS |
+| Molly McCammon | AOOS |
+| Ru Morrison | NERACOOS |
+| Jorge Corridor | CariCOOS |
+| Heather Kerkering | PacIOOS |
+| Jen Read | GLOS |
