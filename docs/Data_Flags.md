@@ -280,88 +280,114 @@ and waveFlagSecondary holds additional information as assigned by CDIP QC routin
 
 <figcaption>: Table 4. Example shows a two-tier flagging scheme (courtesy of the SIO CDIP team).</figcaption>
 
-#### **Application of Flags** 
+### Application of Flags
 
-QC flags provide necessary information to those who may use the data to make important decisions in realtime. The data and the metadata (including QC flag settings) provided in real-time should be archived exactly as they were delivered to users. Therefore, data records containing QC flags set in real-time should retain those flags permanently. Operators should have a high degree of confidence in the assigned QC flags. Postprocessed records may yield a different finding, but these records should not overwrite the real-time records. 
+QC flags provide necessary information to those who may use the data to make important decisions in realtime. 
+The data and the metadata (including QC flag settings) provided in real-time should be archived exactly as they were delivered to users. 
+Therefore, 
+data records containing QC flags set in real-time should retain those flags permanently. 
+Operators should have a high degree of confidence in the assigned QC flags. 
+Postprocessed records may yield a different finding, 
+but these records should not overwrite the real-time records.
 
-However, there are limited instances where it is acceptable to change a real-time flag. In some cases, QC tests operate on a data point that may be one or more cycles old. For example, a spike check might use data points at N-2 and N0 to examine data point N-1. In this case, the flag for the QC test on the data point N0 should be set to “ _2 Not evaluated, not available, or unknown_ .” After receipt of the subsequent data point, N0 becomes N-1, the spike test can be applied, and the flag can be changed as necessary. Operators and users must understand that some tests operate over several data points, and the determination of primary flags must also take this into consideration. The situation highlights the importance of users (both machine-to-machine and end users) evaluating the QC flags for several time-steps backward. 
+However, 
+there are limited instances where it is acceptable to change a real-time flag. 
+In some cases, 
+QC tests operate on a data point that may be one or more cycles old. 
+For example, 
+a spike check might use data points at N₋₂ and N₀ to examine data point N₋₁. 
+In this case, the flag for the QC test on the data point N₀ should be set to “_2 Not evaluated, not available, or unknown_". 
+After receipt of the subsequent data point, 
+N₀ becomes N₋₁, 
+the spike test can be applied, 
+and the flag can be changed as necessary. 
+Operators and users must understand that some tests operate over several data points, 
+and the determination of primary flags must also take this into consideration. 
+The situation highlights the importance of users (both machine-to-machine and end users) evaluating the QC flags for several time-steps backward.
 
-5 
+## Summary
 
-_Data QC Flags Manual_ 
+There are a wide variety of applications for and users of real-time oceanographic data. 
+The quality of those data is dependent upon many factors, 
+including the ability to apply QC flags to real-time data streams. 
+This QC flag manual has been compiled considering multiple QC flagging schemes that have been documented by various sources. 
+The flagging standard suggested in early QARTOD manuals nearly matched the “Primary Level” scheme presented in IOC 54:V3. 
+Therefore, 
+QARTOD has accepted the IOC 54:V3 scheme as its data QC flag protocol. 
 
-## **Summary** 
+Although content for this manual is drawn from many sources, 
+it is primarily intended to support the existing QARTOD QC manuals—not to address all data flagging schemes. 
+Guidance provided in this manual, 
+like that in other QARTOD manuals, 
+also considers that operators have different skill levels and resources with which to apply QC flags. 
+Some operators already employ advanced flagging schemes, 
+while others use basic thresholds to flag outlier data. 
 
-There are a wide variety of applications for and users of real-time oceanographic data. The quality of those data is dependent upon many factors, including the ability to apply QC flags to real-time data streams. This QC flag manual has been compiled considering multiple QC flagging schemes that have been documented by various sources. The flagging standard suggested in early QARTOD manuals nearly matched the “Primary Level” scheme presented in IOC 54:V3. Therefore, QARTOD has accepted the IOC 54:V3 scheme as its data QC flag protocol. 
+U.S. IOOS DMAC operators implementing QARTOD QC tests maintain a code repository at <https://github.com/ioos/ioos_qc> and <https://ioos.github.io/ioos_qc/>, 
+where others may find or post examples of code in use. 
+Such leveraging of developed code is strongly encouraged and appreciated. 
 
-Although content for this manual is drawn from many sources, it is primarily intended to support the existing QARTOD QC manuals—not to address all data flagging schemes. Guidance provided in this manual, like that in other QARTOD manuals, also considers that operators have different skill levels and resources with which to apply QC flags. Some operators already employ advanced flagging schemes, while others use basic thresholds to flag outlier data. 
+Each QC manual is envisioned as a dynamic document and will be posted on the QARTOD website at <https://ioos.noaa.gov/project/qartod/>. 
+This process allows for QC manual updates as technology development occurs for both upgrades of existing sensors and new sensors.
 
-U.S. IOOS DMAC operators implementing QARTOD QC tests maintain a code repository at <u>https://github.com/ioos/ioos_qc</u> and https://ioos.github.io/ioos_qc/, where others may find or post examples of code in use. Such leveraging of developed code is strongly encouraged and appreciated. 
+## References
 
-Each QC manual is envisioned as a dynamic document and will be posted on the QARTOD website at <u>https://ioos.noaa.gov/project/qartod/. This process allows for QC manual updates as technology</u> development occurs for both upgrades of existing sensors and new sensors. 
+> Evans, M., French, G., and Bethem, T., 2003. Information Systems Branch PORTS Uniform Flat File Format (PUFFF) NOAA/NOS/CO-OPS, Silver Spring, Maryland. 32 pp. <http://tidesandcurrents.noaa.gov/publications/pufff4.pdf> 
 
-6 
+> NOAA, 2009. Fifth Workshop on the QA/QC of Real-Time Oceanographic Data. November 16-19, 2009. 136 pp. Omni Hotel, Atlanta, Georgia. <https://cdn.ioos.noaa.gov/media/2019/05/QARTODVReport_Final2.pdf> 
 
-_Data QC Flags Manual_ 
+> Paris. Intergovernmental Oceanographic Commission of UNESCO, 2013. Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3) <http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf> 
 
-## **References** 
+> Pouliquen, S., 2011. Recommendations for in-situ data Real Time Quality Control. 23 pp. <http://eurogoos.eu/download/reference_documents_/rtqc.pdf> 
 
-- Evans, M., French, G., and Bethem, T., 2003. Information Systems Branch PORTS Uniform Flat File Format (PUFFF) NOAA/NOS/CO-OPS, Silver Spring, Maryland. 32 pp. 
+> Schlitzer, R., 2013. Ocean Quality Flag Schemes and Mapping between Them, Version 1.4. Alfred Wegener Institute for Polar and Marine Research, Bremerhaven, Germany. 18 pp. <http://odv.awi.de/fileadmin/user_upload/odv/misc/ODV4_QualityFlagSets.pdf> 
 
-   - <u>http://tidesandcurrents.noaa.gov/publications/pufff4.pdf</u> 
+> U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of Water Level Data Version 2.0: A Guide to Quality Control and Quality Assurance of Water Level Observations. 46 pp. <https://doi.org/10.7289/V5QC01Q7> 
 
-- NOAA, 2009. Fifth Workshop on the QA/QC of Real-Time Oceanographic Data. November 16-19, 2009. 136 pp. Omni Hotel, Atlanta, Georgia. 
+> U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 70 pp. <https://doi.org/10.25923/7yc5-vs69>
 
-   - <u>https://cdn.ioos.noaa.gov/media/2019/05/QARTODVReport_Final2.pdf</u> 
+**Useful Links**
 
-- Paris. Intergovernmental Oceanographic Commission of UNESCO, 2013. Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3) <u>http://www.nodc.noaa.gov/oceanacidification/support/MG54_3.pdf</u> 
+U.S. IOOS Website <https://ioos.noaa.gov/project/qartod/>
 
-- Pouliquen, S., 2011. Recommendations for in-situ data Real Time Quality Control. 23 pp. <u>http://eurogoos.eu/download/reference_documents_/rtqc.pdf</u> 
+Ocean Data Standards Pilot Project <http://www.oceandatastandards.org/>
 
-- Schlitzer, R., 2013. Ocean Quality Flag Schemes and Mapping between Them, Version 1.4. Alfred Wegener Institute for Polar and Marine Research, Bremerhaven, Germany. 18 pp. <u>http://odv.awi.de/fileadmin/user_upload/odv/misc/ODV4_QualityFlagSets.pdf</u> 
+Hydrographic Data Formats <https://cchdo.github.io/hdo-assets/documentation/manuals/pdf/90_1/chap4.pdf>
 
-- U.S. Integrated Ocean Observing System, 2016. Manual for Real-Time Quality Control of Water Level Data Version 2.0: A Guide to Quality Control and Quality Assurance of Water Level Observations. 46 pp. <u>https://doi.org/10.7289/V5QC01Q7</u> 
+CF Conventions and Metadata <http://cfconventions.org/>
 
-- U.S. Integrated Ocean Observing System, 2019. Manual for Real-Time Quality Control of In-Situ Surface Wave Data Version 2.1: A Guide to Quality Control and Quality Assurance of In-Situ Surface Wave Observations. 70 pp. https://doi.org/10.25923/7yc5-vs69 
+Data Buoy Cooperation Panel Meta-T Pilot Project <https://marinemetadata.org/community/teams/metat/introduction> and <http://www.jcommops.org/dbcp/data/metadata.html>
 
-7 
+National Centers for Environmental Information (NCEI) Metadata Training <https://www.ncddc.noaa.gov/metadata-standards/metadata-training/course-one/>
 
-_Data QC Flags Manual_ 
+Introduction to Oceanographic Data Management <http://classroom.oceanteacher.org/course/view.php?id=131>
 
-## **Useful Links** 
+Ocean Best Practices System <https://obpsystem.org/>
 
-U.S. IOOS Website <u>https://ioos.noaa.gov/project/qartod/</u> 
+Argo Quality Control Manual for CTD and Trajectory Data Version 3.3 <https://archimer.ifremer.fr/doc/00228/33951/>
 
-Ocean Data Standards Pilot Project <u>http://www.oceandatastandards.org/</u> 
+## Appendix A. QARTOD Data QC Flag Manual Team
 
-Hydrographic Data Formats <u>https://cchdo.github.io/hdo-assets/documentation/manuals/pdf/90_1/chap4.pdf</u> 
+**QARTOD Data QC Flag Manual Reviewers, Version 1.2**
 
-CF Conventions and Metadata <u>http://cfconventions.org/</u> 
-
-Data Buoy Cooperation Panel Meta-T Pilot Project <u>https://marinemetadata.org/community/teams/metat/introduction http://www.jcommops.org/dbcp/data/metadata.html</u> 
-
-National Centers for Environmental Information (NCEI) Metadata Training <u>https://www.ncddc.noaa.gov/metadata-standards/metadata-training/course-one/</u> 
-
-Introduction to Oceanographic Data Management <u>http://classroom.oceanteacher.org/course/view.php?id=131</u> 
-
-Ocean Best Practices System <u>https://obpsystem.org/</u> 
-
-Argo Quality Control Manual for CTD and Trajectory Data Version 3.3 <u>https://archimer.ifremer.fr/doc/00228/33951/</u> 
-
-8 
-
-_Data QC Flags Manual_ 
-
-## **Appendix A. QARTOD Data QC Flag Manual Team** 
-
-|**QARTOD Data QC**|**Flag Manual Reviewers, Version 1.2**|
+| Name | Organization |
 |---|---|
-|**Name**|**Organization**|
-|Jessica Austin<br>Mark Bushnell<br>Jorge Capella<br>Mike Crowley<br>Felimon Gayanilo<br>Corey Olfe<br>Teresa Updyke<br>Micah Wengren|Axiom Data Science<br>U.S. IOOS<br>CARICOOS<br>Rutgers University<br>Texas A&M University<br>University of California San Diego<br>Old Dominion University<br>U.S. IOOS|
+|Jessica Austin|Axiom Data Science|
+|Mark Bushnell|U.S. IOOS|
+|Jorge Capella|CARICOOS
+|Mike Crowley|Rutgers University
+|Felimon Gayanilo|Texas A&M University
+|Corey Olfe|University of California San Diego
+|Teresa Updyke|Old Dominion University
+|Micah Wengren|U.S. IOOS|
 |Darren Wright|Universityof California San Diego|
-|**U.S. IOOS Reg**|**ional Associations, Version 1.2**|
-|**Name**|**Organization**|
-|Josie Quintrell<br>Clarissa Anderson|IOOS Association<br>SCCOOS|
+
+**U.S. IOOS Regional Associations, Version 1.2**
+
+| Name | Organization |
+|---|---|
+|Josie Quintrell|IOOS Association|
+|Clarissa Anderson|SCCOOS|
 |Jake Kritzer|NERACOOS|
 |Debra Hernandez|SECOORA|
 |Melissa Iwamoto|PacIOOS|
@@ -371,20 +397,17 @@ _Data QC Flags Manual_
 |Julio Morell|CARICOOS|
 |Jan Newton|NANOOS|
 |Kelli Paige|GLOS|
-|HenryRuhl|CeNCOOS|
-|**QARTOD B**|**oard of Advisors, Version 1.2**|
-|**Name**|**Organization**|
+|Henry Ruhl|CeNCOOS|
+
+**QARTOD Board of Advisors, Version 1.2**
+
+| Name | Organization |
+|---|---|
 |Kathleen Bailey – Project Manager|U.S. IOOS|
 |Julie Bosch|NOAA/National Centers for Environmental Information|
 |Eugene Burger<br>Jennifer Dorton|NOAA/Pacific Marine Environmental Laboratory<br>SECOORA|
 |Regina Easley<br>Robert Heitsenrether<br>Jeff King<br>Karen Grissom<br>Mario Tamburri|National Institute of Standards and Technology<br>NOS/Center for Operational Oceanographic Products and Services<br>U.S. Army Corps of Engineers<br>NOAA/National Data Buoy Center<br>University of Maryland Center for Environmental Science /<br>Chesapeake Biological Laboratory|
 |Julianna Thomas – BOA Chair<br>Christoph Waldmann|SCCOOS/Scripps Institution of Oceanography/Coastal Data<br>Information Program (retired)<br>Universityof Bremen/MARUM|
-
-
-
-A-1 
-
-_Data QC Flags Manual_ 
 
 |**DMAC Communit**<br>**Regional Ass**<br>|**y, Version 1.2**<br>**ociations**<br>|
 |---|---|
