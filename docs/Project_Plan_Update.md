@@ -520,7 +520,7 @@ just as it did for the initial grassroots wave and currents QARTOD efforts in 20
 
 Possible examples of efforts that might be covered under an expanded QARTOD scope include: 
 
-- **Uncertainty quantification** . The 6ᵗʰ Law of QARTOD, “ _Observers should quantify the level of calibration accuracy and the associated expected error bounds_ ” (Burnett et al. 2010), identifies but oversimplifies the need for detailed uncertainty quantification of ocean observations. Documents detailing specific variable/sensor/system uncertainties are sorely needed but challenging to create. Interaction with other stakeholder groups (e.g., U.S. CLIVAR OceanUQ or like-minded groups from the World Meteorological Organization) should be undertaken. 
+- **Uncertainty quantification.** The 6ᵗʰ Law of QARTOD, “_Observers should quantify the level of calibration accuracy and the associated expected error bounds_” (Burnett et al. 2010), identifies but oversimplifies the need for detailed uncertainty quantification of ocean observations. Documents detailing specific variable/sensor/system uncertainties are sorely needed but challenging to create. Interaction with other stakeholder groups (e.g., U.S. CLIVAR OceanUQ or like-minded groups from the World Meteorological Organization) should be undertaken. 
 
 - **Satellite and acoustic telemetry data for animal movement.** This is a location timeseries of biologging sensors used in habitat and connectivity studies of individual organisms. While many of the variables logged by the sensors are already addressed by QARTOD QC manuals (temperature, salinity, dissolved oxygen, etc.), there may be other quality-related aspects of animal tracking and variable observations. Content from the existing QARTOD passive acoustics QC manual may be leveraged for this application. 
 
@@ -528,46 +528,66 @@ Possible examples of efforts that might be covered under an expanded QARTOD scop
 
 - **High frequency radar surface current observations antenna pattern measurements.** This includes both how to conduct the antenna pattern measurements and how to use the results. 
 
-- **Vessel AIS data QC –** Automated Identification Systems (AIS) aboard vessels provide ship locations that can be used for a wide variety of applications. A standardized QC process would be welcomed by many communities. 
+- **Vessel AIS data QC –** Automated Identification Systems (AIS) aboard vessels provide ship locations that can be used for a wide variety of applications. A standardized QC process would be welcomed by many communities.
 
-## Part 4 - Project Management, Roles and Responsibilities 
+## Part 4 - Project Management, Roles and Responsibilities
 
-QARTOD includes representatives from a diverse group—one with an interest in providing and/or using real-time automated data. This wide reach has enabled QARTOD to communicate its mission and solicit input from hundreds of ocean observers around the globe representing both public and private entities. 
+QARTOD includes representatives from a diverse group—one with an interest in providing and/or using real-time automated data. 
+This wide reach has enabled QARTOD to communicate its mission and solicit input from hundreds of ocean observers around the globe representing both public and private entities.
 
-The position descriptions of those responsible for managing QARTOD largely will remain the same for the 2022–2026 plan. The IOOS director and project manager, as well as the QARTOD NC and technical writer, will execute the 2022–2026 project plan. Those positions and description of duties are included in Figure 1 and discussed later in this section. The QARTOD BOA will continue to provide guidance and direction for QARTOD, and ocean observers from around the world will still serve as community reviewers for QARTOD manuals. 
+The position descriptions of those responsible for managing QARTOD largely will remain the same for the 2022–2026 plan. 
+The IOOS director and project manager, 
+as well as the QARTOD NC and technical writer, 
+will execute the 2022–2026 project plan. 
+Those positions and description of duties are included in Figure 1 and discussed later in this section. 
+The QARTOD BOA will continue to provide guidance and direction for QARTOD, 
+and ocean observers from around the world will still serve as community reviewers for QARTOD manuals.
 
+![QARTOD Organizational Chart.](images_Plan_Update/image01.png)
 
+<figcaption>Figure 1. QARTOD Organizational Chart.</figcaption>
 
-<!-- Start of picture text -->
-U.S. 1OOS Director<br>Board of National<br>Advisors (BOA) . , QARTOD Manager Project (PM) _ J Coordinator (NC)<br>100S DMAC nae a j ;<br>QARTOD ‘ Technical Writer Committee International<br>Working Group Lead/SMEs Ocean-ObservingCommunity<br><!-- End of picture text -->
+### Position Descriptions
 
-**Figure 1.** QARTOD Organizational Chart 
+The following eight positions (or groups) will be key implementors of QARTOD for future new and updated manuals. 
+All have important roles in the process of improving data quality through QARTOD. 
 
-#### Position Descriptions 
+#### IOOS Director
 
-The following eight positions (or groups) will be key implementors of QARTOD for future new and updated manuals. All have important roles in the process of improving data quality through QARTOD. 
+The Director approves all QARTOD manuals, 
+promotes QARTOD within periodical announcements, 
+and provides direction for all aspects of the QARTOD Project. 
 
-##### IOOS Director 
+#### Project Manager
 
-The Director approves all QARTOD manuals, promotes QARTOD within periodical announcements, and provides direction for all aspects of the QARTOD Project. 
+The PM serves as the U.S. IOOS Program Office representative on the QARTOD BOA and answers directly to the Director. 
+The PM also administers the funds for QARTOD and ensures implementation of the project plan and other related activities. 
 
-##### Project Manager 
+#### Board of Advisors
 
-The PM serves as the U.S. IOOS Program Office representative on the QARTOD BOA and answers directly to the Director. The PM also administers the funds for QARTOD and ensures implementation of the project plan and other related activities. 
+The original project plan’s vision of a volunteer group of technical experts representing the U.S. IOOS community has supported the QARTOD Project in numerous ways and has been a valuable sounding board for the NC. 
+The BOA has played an important role in identifying SMEs, 
+reviewing manuals, 
+and suggesting opportunities for outreach at conferences and other venues to share the QARTOD vision. 
 
-##### Board of Advisors 
+The BOA has a volunteer chair who serves as a signatory for QARTOD manuals, 
+but the NC moderates the quarterly BOA teleconferences. 
+The current BOA membership of twelve (appendix A) is diverse in terms of expertise, 
+gender, 
+ethnicity, 
+nationality, 
+and age, 
+and includes representatives from a broad variety of agencies. 
+Though there has been no written guidance for any specific organizational aspects of the BOA, 
+staggered four-year term limits for members so as to retain institutional knowledge was one outcome of the BOA questionnaire. 
+It was agreed that four-year term limits with an option of renewing for another four would be implemented. 
 
-The original project plan’s vision of a volunteer group of technical experts representing the U.S. IOOS community has supported the QARTOD Project in numerous ways and has been a valuable sounding 
+#### National Coordinator 
 
-18 
-
-board for the NC. The BOA has played an important role in identifying SMEs, reviewing manuals, and suggesting opportunities for outreach at conferences and other venues to share the QARTOD vision. 
-
-The BOA has a volunteer chair who serves as a signatory for QARTOD manuals, but the NC moderates the quarterly BOA teleconferences. The current BOA membership of twelve (appendix A) is diverse in terms of expertise, gender, ethnicity, nationality, and age, and includes representatives from a broad variety of agencies. Though there has been no written guidance for any specific organizational aspects of the BOA, staggered four-year term limits for members so as to retain institutional knowledge was one outcome of the BOA questionnaire. It was agreed that four-year term limits with an option of renewing for another four would be implemented. 
-
-##### National Coordinator 
-
-The QARTOD Project NC receives guidance from U.S. IOOS management, the QARTOD PM, and the QARTOD BOA. The NC works closely with the technical writer and shall: 
+The QARTOD Project NC receives guidance from U.S. IOOS management, 
+the QARTOD PM, 
+and the QARTOD BOA. 
+The NC works closely with the technical writer and shall: 
 
 - Assist in the development and maintenance of manuals describing oceanographic data QA/QC best practices for real-time/timely delivery. Suggest variables to be addressed, solicit support from co-editors and other manual content providers and reviewers, and participate in drafting manuals. 
 
@@ -589,11 +609,9 @@ The QARTOD Project NC receives guidance from U.S. IOOS management, the QARTOD PM
 
 - Manage the QARTOD LinkedIn page at https://www.linkedin.com/groups/2521409/. 
 
-- Seek opportunities to engage with ECOPS via ML discussion groups. 
+- Seek opportunities to engage with ECOPS via ML discussion groups.
 
-19 
-
-##### Technical Writer 
+#### Technical Writer 
 
 The Technical Writer works closely with the NC to: 
 
@@ -603,142 +621,160 @@ The Technical Writer works closely with the NC to:
 
 - Assist in the development of papers and presentations. 
 
-##### Community Reviewers 
+#### Community Reviewers 
 
-Volunteer SME reviewers are a critical component of the QARTOD project. Since 2003, several hundred individuals have participated in the creation of the manuals. Community members participate in the following ways: 
+Volunteer SME reviewers are a critical component of the QARTOD project. 
+Since 2003, 
+several hundred individuals have participated in the creation of the manuals. 
+Community members participate in the following ways:
 
-- Serve on committees creating the initial draft of a manual. 
+- Serve on committees creating the initial draft of a manual.
 
-- Provide reviews of the subsequent draft revisions. 
+- Provide reviews of the subsequent draft revisions.
 
-- Assist with implementation of the QC described in the manuals. 
+- Assist with implementation of the QC described in the manuals.
 
-- Provide feedback to be incorporated into manual updates. 
+- Provide feedback to be incorporated into manual updates.
 
-##### DMAC 
+#### DMAC 
 
-Because implementation of QARTOD receives even greater emphasis in this plan update, the Data Management and Cyberinfrastructure (DMAC) community will play an even greater role in QARTOD than before. Members of the DMAC community have the challenging task of implementing the QC tests described in the manuals. Since they are provided with multiple opportunities to participate in the creation of the manuals, surprises are infrequent and the burden is reduced. DMAC coordinators: 
+Because implementation of QARTOD receives even greater emphasis in this plan update, 
+the Data Management and Cyberinfrastructure (DMAC) community will play an even greater role in QARTOD than before. 
+Members of the DMAC community have the challenging task of implementing the QC tests described in the manuals. 
+Since they are provided with multiple opportunities to participate in the creation of the manuals, 
+surprises are infrequent and the burden is reduced. DMAC coordinators:
 
-- Share their implementation status freely with the DMAC community. 
+- Share their implementation status freely with the DMAC community.
 
-- Maintain software examples on GitHub (https://github.com/ioos/ioos_qc and <u>https://ioos.github.io/ioos_qc/).</u> 
+- Maintain software examples on GitHub (https://github.com/ioos/ioos_qc and https://ioos.github.io/ioos_qc/).
 
-- Participate in hackathons and annual meetings to share new data management techniques and tools. 
+- Participate in hackathons and annual meetings to share new data management techniques and tools.
 
-Operators (Data Providers) 
+#### Operators (Data Providers) 
 
-- Choose QC thresholds as appropriate for their application. 
+- Choose QC thresholds as appropriate for their application.
 
-- Create products with QC flagging appropriate for their stakeholders. 
-
-20 
+- Create products with QC flagging appropriate for their stakeholders.
 
 ## References 
 
-- Burnett, W.; Crout, R.; Bushnell, M.; Thomas, J.; Fredricks, J.; Bosch, J. and Waldmann, C. (2010) Quality Assurance of Real-Time Ocean Data: Evolving Infrastructure and Increasing Data Management to Monitor the World's Environment. In: Proceedings of OceanObs’09: Sustained Ocean Observations and Information for Society, Venice, Italy, 21-25 September 2009, (Vol. 2). (Hall, J., Harrison, D.E. & Stammer, D. (eds)). European Space Agency, 5pp. (ESA Publication WPP-306). DOI:10.5270/OceanObs09.cwp.12 
+> Burnett, W.; Crout, R.; Bushnell, M.; Thomas, J.; Fredricks, J.; Bosch, J. and Waldmann, C. (2010) Quality Assurance of Real-Time Ocean Data: Evolving Infrastructure and Increasing Data Management to Monitor the World's Environment. In: Proceedings of OceanObs’09: Sustained Ocean Observations and Information for Society, Venice, Italy, 21-25 September 2009, (Vol. 2). (Hall, J., Harrison, D.E. & Stammer, D. (eds)). European Space Agency, 5pp. (ESA Publication WPP-306). DOI:10.5270/OceanObs09.cwp.12 
 
-- Bushnell, M. (2005) Quality Control, Quality Assurance, and Quality Flags [Presentation at QARTOD III, 2- 4 November 2005]. NOAA/NOS/CO-OPS, 18 slides. http://dx.doi.org/10.25607/OBP-390 
+> Bushnell, M. (2005) Quality Control, Quality Assurance, and Quality Flags [Presentation at QARTOD III, 2- 4 November 2005]. NOAA/NOS/CO-OPS, 18 slides. http://dx.doi.org/10.25607/OBP-390 
 
-- Bushnell, M., 2017. Integration of QARTOD Tests Within a Sensor: Considerations for Sensor Manufacturers. MTS/IEEE OCEANS’17 conference proceedings, 5 pp. 
+> Bushnell, M., 2017. Integration of QARTOD Tests Within a Sensor: Considerations for Sensor Manufacturers. MTS/IEEE OCEANS’17 conference proceedings, 5 pp. 
 
-- Bushnell M., Waldmann C., Seitz S., Buckley E., Tamburri M., Hermes J., Henslop E. and Lara-Lopez A. (2019) Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Front. Mar. Sci. 6:706. https://doi.org/10.3389/fmars.2019.00706 
+> Bushnell M., Waldmann C., Seitz S., Buckley E., Tamburri M., Hermes J., Henslop E. and Lara-Lopez A. (2019) Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Front. Mar. Sci. 6:706. https://doi.org/10.3389/fmars.2019.00706 
 
-- U.S. IOOS (2017) QARTOD Project Plan Accomplishments for 2012-2016 and Update for 2017-2021. Silver Spring, MD, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Ocean Service, Integrated Ocean Observing System, 48 pp. http://doi.org/10.7289/V5JQ0Z71 
+> U.S. IOOS (2017) QARTOD Project Plan Accomplishments for 2012-2016 and Update for 2017-2021. Silver Spring, MD, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Ocean Service, Integrated Ocean Observing System, 48 pp. http://doi.org/10.7289/V5JQ0Z71 
 
-- Hörstmann, C.; Buttigieg, P.L.; Simpson, P.; Pearlman, J. ; Karstensen, J. and Waite, A.M. (2020) Towards a Best Practice for Developing Best Practices in Ocean Observation (BP4BP): Supporting Methodological Evolution through Actionable Documentation. Paris, France, UNESCO, 33pp. (Intergovernmental Oceanographic Commission Manuals and Guides No. 84). (IOC/2020/MG/84). <u>http://dx.doi.org/10.25607/OBP-781</u> 
+> Hörstmann, C.; Buttigieg, P.L.; Simpson, P.; Pearlman, J. ; Karstensen, J. and Waite, A.M. (2020) Towards a Best Practice for Developing Best Practices in Ocean Observation (BP4BP): Supporting Methodological Evolution through Actionable Documentation. Paris, France, UNESCO, 33pp. (Intergovernmental Oceanographic Commission Manuals and Guides No. 84). (IOC/2020/MG/84). http://dx.doi.org/10.25607/OBP-781
 
-- Paris. Intergovernmental Oceanographic Commission of UNESCO, 2013. Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3) <u>http://www.ioccp.org/images/D4standards/IOC-OceanDataStandards54-3-2013.pdf</u> 
+> Paris. Intergovernmental Oceanographic Commission of UNESCO, 2013. Ocean Data Standards, Vol.3: Recommendation for a Quality Flag Scheme for the Exchange of Oceanographic and Marine Meteorological Data. (IOC Manuals and Guides, 54, Vol. 3.) 12 pp. (English.)(IOC/2013/MG/54-3) http://www.ioccp.org/images/D4standards/IOC-OceanDataStandards54-3-2013.pdf
 
-- Toll, R. (ed.) (2012) U.S. IOOS QARTOD Project Plan. Silver Spring, MD, IOOS, 8pp. DOI: <u>http://dx.doi.org/10.25607/OBP-533</u> 
+> Toll, R. (ed.) (2012) U.S. IOOS QARTOD Project Plan. Silver Spring, MD, IOOS, 8pp. DOI: http://dx.doi.org/10.25607/OBP-533
 
-- U.S. Integrated Ocean Observing System (2020a) QARTOD - Prospects for Real-Time Quality Control Manuals, How to Create Them, and a Vision for Advanced Implementation. Silver Spring MD, U.S. Integrated Ocean Observing System, 22 pp. https://repository.library.noaa.gov/view/noaa/27130 
+> U.S. Integrated Ocean Observing System (2020a) QARTOD - Prospects for Real-Time Quality Control Manuals, How to Create Them, and a Vision for Advanced Implementation. Silver Spring MD, U.S. Integrated Ocean Observing System, 22 pp. https://repository.library.noaa.gov/view/noaa/27130 
 
-- U.S. Integrated Ocean Observing System (2020b). Manual for the Use of Real-Time Oceanographic Data Quality Control Flags, Version 1.2. 24 pp. https://doi.org/10.25923/w8y6-d298 
+> U.S. Integrated Ocean Observing System (2020b). Manual for the Use of Real-Time Oceanographic Data Quality Control Flags, Version 1.2. 24 pp. https://doi.org/10.25923/w8y6-d298 
 
-21 
+**Additional References: QARTOD Meetings** 
 
-###### **Additional References: QARTOD Meetings** 
+> Kearns, E.; Woody, C. and Bushnell, M. (eds.) (2004) QARTOD-I Report. First Workshop Report on the Quality Assurance of Real-Time Ocean Data. December 3-5, 2003. Stennis Space Center, MS, NOAA/NWS/National Data Buoy Center 89pp. http://dx.doi.org/10.25607/OBP-380 
 
-- Kearns, E.; Woody, C. and Bushnell, M. (eds.) (2004) QARTOD-I Report. First Workshop Report on the Quality Assurance of Real-Time Ocean Data. December 3-5, 2003. Stennis Space Center, MS, NOAA/NWS/National Data Buoy Center 89pp. http://dx.doi.org/10.25607/OBP-380 
+> NOAA (2005) Second Workshop Report on the Quality Assurance of Real-Time Ocean Data, July 2005. Norfolk, VA, NOAA/NOS/Center for Operational Oceanographic Products and Services, 48pp. (CCPO Technical Report Series No. 05-01). http://dx.doi.org/10.25607/OBP-382 
 
-- NOAA (2005) Second Workshop Report on the Quality Assurance of Real-Time Ocean Data, July 2005. Norfolk, VA, NOAA/NOS/Center for Operational Oceanographic Products and Services, 48pp. (CCPO Technical Report Series No. 05-01). http://dx.doi.org/10.25607/OBP-382 
+> Bushnell, M. (2005) Quality Control, Quality Assurance, and Quality Flags [Presentation at QARTOD III, 2- 4 November 2005]. NOAA/NOS/CO-OPS, 18 slides. http://dx.doi.org/10.25607/OBP-390 
 
-- Bushnell, M. (2005) Quality Control, Quality Assurance, and Quality Flags [Presentation at QARTOD III, 2- 4 November 2005]. NOAA/NOS/CO-OPS, 18 slides. http://dx.doi.org/10.25607/OBP-390 
+> Fredericks, J. (2007) Quality Assurance of Real-Time Oceanographic Data; QARTOD IV – Final Report; Fourth Workshop on the QC/QA of Real-Time Data, Woods Hole, MA, Woods Hole Oceanographic Institution, 123 pp. http://dx.doi.org/10.25607/OBP-383 
 
-- Fredericks, J. (2007) Quality Assurance of Real-Time Oceanographic Data; QARTOD IV – Final Report; Fourth Workshop on the QC/QA of Real-Time Data, Woods Hole, MA, Woods Hole Oceanographic Institution, 123 pp. http://dx.doi.org/10.25607/OBP-383 
-
-- Burnett, W. (ed) (2011) QARTOD V Final Report: Fifth Workshop on the QA/QC of Real-time Oceanographic Data. Stennis Space Center, MS, NOAA/NWS/National Data Buoy Center, 136 pp. <u>http://dx.doi.org/10.25607/OBP-384</u> 
+> Burnett, W. (ed) (2011) QARTOD V Final Report: Fifth Workshop on the QA/QC of Real-time Oceanographic Data. Stennis Space Center, MS, NOAA/NWS/National Data Buoy Center, 136 pp. <u>http://dx.doi.org/10.25607/OBP-384</u> 
 
 ## List of Appendices 
 
-- A. Present and Former Board of Advisors Members 
+A. Present and Former Board of Advisors Members
 
-- B. Distinction between Quality Assurance and Quality Control 
+B. Distinction between Quality Assurance and Quality Control
 
-- C. Accomplishments for 2017–2021 
+C. Accomplishments for 2017–2021
 
-- D. QARTOD Five-year Plan BOA Questionnaire 
+D. QARTOD Five-year Plan BOA Questionnaire
 
-- E. QARTOD Process 
+E. QARTOD Process
 
-- F. Synopsis of QARTOD for Outreach 
-
-22 
+F. Synopsis of QARTOD for Outreach
 
 ## Appendix A. Present and Former Board of Advisors Members 
 
-|**Name**|**Organization**|**Member Status**|**Notes**|
+|Name|Organization|Member Status|Notes|
 |---|---|---|---|
 |Kathleen Bailey|U.S. IOOS|Active|Term expires(2022)|
-|Jim Behrens|University of California San Diego, Scripps<br>Institution of Oceanography|Active|Term expires (2025)|
+|Jim Behrens|University of California San Diego, Scripps Institution of Oceanography|Active|Term expires (2025)|
 |Matthew Biddle|U.S. IOOS|Active|Term expires(2025)|
-|Julie Bosch|National Centers for Environmental<br>Information|Active|Term expires (2023)|
+|Julie Bosch|National Centers for Environmental Information|Active|Term expires (2023)|
 |Eugene Burger|Pacific Marine Environmental Laboratory|Active|Term expires(2024)|
 |Mark Bushnell|U.S. IOOS|Active|Term expires(2023)|
 |Dick Crout|National Data BuoyCenter(NDBC)|Past Member|N/A|
 |Jennifer Dorton|SECOORA|Active|Term expires(2024)|
-|Regina Easley|National Institute of Standards and<br>Technology|Active|Term expires (2023)|
+|Regina Easley|National Institute of Standards and Technology|Active|Term expires (2023)|
 |Janet Fredericks|Woods Hole Oceanographic Institution|Past Member|N/A|
 |Karen Grissom|NDBC|Active|Term expires(2024)|
-|Bob Heitsenrether|Center for Operational Oceanographic<br>Products and Services(CO-OPS)|Active|Term expires (2023)|
+|Bob Heitsenrether|Center for Operational Oceanographic Products and Services(CO-OPS)|Active|Term expires (2023)|
 |Matt Howard|GCOOS/Texas A&M|Past Member|N/A|
 |Bob Jensen|U.S. ArmyCorps of Engineers(USACE)|Active|Term expires(2024)|
 |Jeff King|USACE|Past Member|N/A|
 |Shannon McArthur|NDBC|Past Member|N/A|
 |Chris Paternostro|CO-OPS|Past Member|N/A|
-|Tad Slawecki|LimnoTech, Inc.|Past Member|IDQWG<br>representative|
+|Tad Slawecki|LimnoTech, Inc.|Past Member|IDQWG representative|
 |Derrick Snowden|U.S. IOOS|Past Project Manager|N/A|
 |Joe Swaykos|U.S. IOOS|Past Project Manager|N/A|
 |Mario Tamburri|Alliance for Coastal Technologies(ACT)|Active|Term expires(2022)|
 |Julie Thomas|Scripps Institution of Oceanography|Past BOA Chair|Term expires(2022)|
-|Ray Toll|U.S. IOOS|Past Technical<br>Coordinator|N/A|
-|Christoph<br>Waldmann|University of Bremen (MARUM)|Active|Term expires (2023)|
+|Ray Toll|U.S. IOOS|Past Technical Coordinator|N/A|
+|Christoph Waldmann|University of Bremen (MARUM)|Active|Term expires (2023)|
 
-
-
-**Biographies on current Board of Advisors members are available at** <u>https://ioos.noaa.gov/ioos-inaction/qartod-board-of-advisors/.</u> 
-
-23 
+**Biographies on current Board of Advisors members are available at** <https://ioos.noaa.gov/ioos-inaction/qartod-board-of-advisors/>.
 
 ## Appendix B. Distinction between Quality Assurance and Quality Control 
 
-The terms quality assurance (QA) and quality control (QC) have been used interchangeably by many scientists, but these definitions have become essential to distinguishing between the automated flags described in the tests outlined in each QARTOD manual (QC) and other processes that are also important to generating high quality data (QA). 
+The terms quality assurance (QA) and quality control (QC) have been used interchangeably by many scientists, 
+but these definitions have become essential to distinguishing between the automated flags described in the tests outlined in each QARTOD manual (QC) and other processes that are also important to generating high quality data (QA). 
 
-QA involves processes that are employed with hardware to support the generation of high-quality data, such as a sufficiently accurate, precise, and reliable sensor with adequate resolution. QA practices include sensor calibration; calibration checks and/or in-situ verification, including post-deployment calibration; proper deployment considerations, such as measures for corrosion control and antifouling; reliable data communications; and adequate maintenance intervals. 
+QA involves processes that are employed with hardware to support the generation of high-quality data, 
+such as a sufficiently accurate, 
+precise, 
+and reliable sensor with adequate resolution. QA practices include sensor calibration; 
+calibration checks and/or in-situ verification, 
+including post-deployment calibration; 
+proper deployment considerations, 
+such as measures for corrosion control and antifouling; 
+reliable data communications; and adequate maintenance intervals. 
 
-QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. QC practices include such things as format, checksum, timely arrival of data, threshold checks (minimum/maximum rate of change), nearest neighbor checks, climatology checks, model comparisons, signal/noise ratios, verification of user satisfaction, and generation of data flags (Bushnell 2005). 
+QC involves follow-on steps that support the delivery of high-quality data and requires both automation and human intervention. 
+QC practices include such things as format, 
+checksum, 
+timely arrival of data, 
+threshold checks (minimum/maximum rate of change), 
+nearest neighbor checks, 
+climatology checks, 
+model comparisons, 
+signal/noise ratios, 
+verification of user satisfaction, 
+and generation of data flags (Bushnell 2005).
 
-QARTOD manuals mainly have focused on QC, although general QA suggestions were included in most manuals until a separate QA paper, _Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership_ , was published in Frontiers in Marine Science (see Bushnell, M., Waldmann, C., Seitz, S., Buckley, E., Tamburri, M., Hermes, J., Heslop, E., and Lara-Lopez, A, 2019. Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Front. Mar. Sci., Vol. 6. https://doi.org/10.3389/fmars.2019.00706). 
-
-24 
+QARTOD manuals mainly have focused on QC, 
+although general QA suggestions were included in most manuals until a separate QA paper, 
+_Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership_, 
+was published in Frontiers in Marine Science (see Bushnell, M., Waldmann, C., Seitz, S., Buckley, E., Tamburri, M., Hermes, J., Heslop, E., and Lara-Lopez, A, 2019. 
+Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Front. Mar. Sci., Vol. 6. https://doi.org/10.3389/fmars.2019.00706).
 
 ## Appendix C. Accomplishments for 2017–2021 
 
-###### **QARTOD Manuals** 
+**QARTOD Manuals** 
 
 - Formally engaged the international community in development of QC manuals and other efforts, such as the Ocean Best Practice System 
 
-- Updated the QARTOD Project Plan for 2017-2021, <u>https://cdn.ioos.noaa.gov/media/2017/12/QARTOD-ProjectPlanUpdate_v2.0_2017_Final.pdf</u> 
+- Updated the QARTOD Project Plan for 2017-2021, https://cdn.ioos.noaa.gov/media/2017/12/QARTOD-ProjectPlanUpdate_v2.0_2017_Final.pdf
 
 - Issued Phytoplankton Manual 
 
@@ -760,11 +796,11 @@ QARTOD manuals mainly have focused on QC, although general QA suggestions were i
 
 - Conducted quarterly Board of Advisors meetings 
 
-###### **Conferences, Papers, and Outreach** 
+**Conferences, Papers, and Outreach** 
 
-- Participated in the _AtlantOS Transatlantic Ocean Data Harmonization Workshop_ (Brussels, June 2017), which led to participation in the OBPS and the QA paper <u>(https://doi.org/10.3389/fmars.2019.00706).</u> 
+- Participated in the _AtlantOS Transatlantic Ocean Data Harmonization Workshop_ (Brussels, June 2017), which led to participation in the OBPS and the QA paper (https://doi.org/10.3389/fmars.2019.00706).
 
-- Provided a QARTOD presentation at the 32<sup>nd</sup> Data Buoy Cooperation Panel Meeting Scientific and Technical Workshop (Scripps, October 2016). 
+- Provided a QARTOD presentation at the 32ⁿᵈ Data Buoy Cooperation Panel Meeting Scientific and Technical Workshop (Scripps, October 2016). 
 
 - Presented _An International Coordinated Effort to Further the Documentation and Development of Quality Assurance, Quality Control, and Best Practices for Oceanographic Observations_ at an AGU meeting (New Orleans, December 2017). 
 
@@ -778,9 +814,7 @@ QARTOD manuals mainly have focused on QC, although general QA suggestions were i
 
 - Published a paper titled _Quality Control of Real-Time Water Level Data: The U.S. IOOS® QARTOD Project_ (MTS Journal, March/April 2018 issue) 
 
-- Co-authored a presentation titled Putting Ocean Observations on Solid Footing, presented by Christoph Waldman at the European Geosciences Union General Assembly (Vienna, Austria, April 2018) 
-
-25 
+- Co-authored a presentation titled Putting Ocean Observations on Solid Footing, presented by Christoph Waldman at the European Geosciences Union General Assembly (Vienna, Austria, April 2018)
 
 - Provided a QARTOD presentation at the annual DMAC meeting (Silver Spring, May 2018) 
 
@@ -804,17 +838,19 @@ QARTOD manuals mainly have focused on QC, although general QA suggestions were i
 
 - Presented a QARTOD poster at the 2020 Ocean Sciences Meeting (San Diego, California, February 2020) 
 
-- Provided a QARTOD and an OBPS presentation at the DMAC monthly webinar (Virtual, February 2021) 
-
-26 
+- Provided a QARTOD and an OBPS presentation at the DMAC monthly webinar (Virtual, February 2021)
 
 ## Appendix D. QARTOD Five-year Plan BOA Questionnaire 
 
-###### **April 10, 2021** 
+**April 10, 2021** 
 
-###### **EXECUTIVE SUMMARY** 
+**EXECUTIVE SUMMARY** 
 
-We thank all BOA members for completing the questionnaire and summarize the responses herein. Overall, it seems members favor the status quo or some expansion of the project mission. The bullets in this executive summary are derived from the detailed summary, which follows (page 2). 
+We thank all BOA members for completing the questionnaire and summarize the responses herein. 
+Overall, 
+it seems members favor the status quo or some expansion of the project mission. 
+The bullets in this executive summary are derived from the detailed summary, 
+which follows (page 2). 
 
 Several questions had a nearly unanimous response: 
 
@@ -852,9 +888,7 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Only one-third ranked adding an early career ocean professional to the BOA highly. (Q 12) 
 
-27 
-
-###### **DETAILED SUMMARY** 
+**DETAILED SUMMARY**
 
 **QARTOD BOA Questionnaire** – This questionnaire is targeted to BOA members. Another document will be developed for distribution to the Regional Associations and elsewhere, which will make use of the information gathered by this questionnaire. 
 
@@ -880,9 +914,7 @@ There was some spread in responses to other topics, and these could be addressed
 
    - I don't think option 3 is a good choice. If the QARTOD was significantly scaled down or closed I'd be concerned about potential atrophy and lack of resources for maintaining the existing website, manual archival, and supporting wider implementation across the ocean observing community. (BH) 
 
-> 16 Numbers in red (4) denote the number of responses for that option. In some cases, there are more than 12 responses because the person either checked more than one block or added a comment in the designated space. 
-
-28 
+> 16 Numbers in red (4) denote the number of responses for that option. In some cases, there are more than 12 responses because the person either checked more than one block or added a comment in the designated space.
 
    - The manuals serve an important part of QARTOD, adding such things like mentioned in the paragraph preceding the choice seems to be a reasonable list to pursue in the future. (REJ) 
 
@@ -1215,7 +1247,7 @@ QARTOD is unique in its scope and activities. Therefore, it is well justified to
 
 38 
 
-Appendix F. Synopsis of QARTOD for Outreach 
+## Appendix F. Synopsis of QARTOD for Outreach 
 
 
 
@@ -1258,8 +1290,3 @@ IOOS supports a small team that works with data providers, consumers, and vendor
 |SME|Subject-matter Expert|
 |UNESCO|United Nations Educational, Scientific, and Cultural Organization|
 |UQ|Uncertainty Quantification|
-
-
-
-40 
-
