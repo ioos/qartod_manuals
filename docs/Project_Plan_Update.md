@@ -112,9 +112,15 @@ The 2003 meeting involved representatives from federal and state agencies,
 as well as academia and the private sector; 
 they selected the official name of the effort: Quality Assurance of Real-Time Oceanographic Data² or QARTOD. 
 
-   **Why is a Human-in-the-Loop necessary in an automated process?** 
+<div style="border: 4px dotted #315A9E; padding: 20px; margin: 20px 0;">
 
-      While we can expect more automation in the future, there will always be challenging cases that are too difficult to automate and require human intervention in order to appropriately assign quality control flags to data. Such cases enlighten operators and inform the next generation of automated QC. 
+<h3 style="color: #315A9E; margin-top: 0;">Why is a Human-in-the-Loop necessary in an automated process?</h3>
+
+<p>
+While we can expect more automation in the future, there will always be challenging cases that are too difficult to automate and require human intervention in order to appropriately assign quality control flags to data. Such cases enlighten operators and inform the next generation of automated QC.
+</p>
+
+</div>
 
 One of the first tasks undertaken by the representatives in 2003 was to describe the criteria needed for data quality control. 
 This description became known as the Seven Laws of QARTOD. 
@@ -131,11 +137,7 @@ This description became known as the Seven Laws of QARTOD.
 
 6. Observers should quantify the level of calibration accuracy and the associated expected error bounds. 
 
-7. Manual checks on the automated procedures, the real-time data collected and the status of the observing system must be provided by the observer on a time scale appropriate to ensure the integrity of the observing system. 
-
-<small>² Later, the QARTOD Board of Advisors (BOA) recognized that quality assurance and quality control were different but both essential parts of data quality; therefore, quality control was added to the official name and the QARTOD logo was updated. The distinction between the two terms is described in every QARTOD manual, in the Foreword section of this document, and in appendix B.</small>
-
-<small>³ For additional information, see https://ioos.github.io/ioos-metadata/index.html.</small> 
+7. Manual checks on the automated procedures, the real-time data collected and the status of the observing system must be provided by the observer on a time scale appropriate to ensure the integrity of the observing system.
 
 QARTOD remained a grassroots effort from 2003 to 2012, with six meetings hosted by various agencies. In 2012 the U.S. Integrated Ocean Observing System® (IOOS®) program agreed to adopt QARTOD as an official IOOS project. During this time, IOOS identified 26 core variables⁴ for which QARTOD manuals could be prepared and then developed a project plan outlining how QARTOD manuals would be written, reviewed, and published. IOOS used the sixth QARTOD meeting as the springboard for preparation of the first QARTOD manual (dissolved oxygen). 
 
@@ -152,11 +154,25 @@ Since 2012,
 sixteen QARTOD manuals/papers and three project plans (including this update, see Table 1, listed chronologically by first issuance) have been developed. 
 The manuals and project plans have Digital Object Identifiers (DOIs) associated with them for easy online access. 
 The original QARTOD Project Plan set forth goals for 2012–2016 and was updated to cover 2017–2021. 
-A summary of QARTOD accomplishments for 2017–2021 can be found in appendix C. 
+A summary of QARTOD accomplishments for 2017–2021 can be found in appendix C.
 
-   **QARTOD Accomplishments**
+<div style="border: 4px dotted #315A9E; padding: 20px; margin: 20px 0;">
 
-      Since 2012, sixteen QARTOD manuals/papers have been developed covering 17 of the 34 core variables representing physics, biogeochemistry, and biology/ecosystems. It is important to note that many of the biological and ecosystem variables do not have associated QARTOD manuals because real-time automated data dissemination is not yet possible for those variables. <u>Part 3</u> of this plan update provides more insight into the remaining core variables. 
+<h3 style="color: #315A9E; margin-top: 0;">QARTOD Accomplishments</h3>
+
+<p>
+Since 2012, sixteen QARTOD manuals/papers have been developed covering 17 of the 34 core variables representing physics, biogeochemistry, and biology/ecosystems. It is important to note that many of the biological and ecosystem variables do not have associated QARTOD manuals because real-time automated data dissemination is not yet possible for those variables. Part 3 of this plan update provides more insight into the remaining core variables.
+</p>
+
+</div>
+
+<small>² Later, the QARTOD Board of Advisors (BOA) recognized that quality assurance and quality control were different but both essential parts of data quality; therefore, quality control was added to the official name and the QARTOD logo was updated. The distinction between the two terms is described in every QARTOD manual, in the Foreword section of this document, and in appendix B.</small>
+
+<small>³ For additional information, see https://ioos.github.io/ioos-metadata/index.html.</small> 
+
+<small>⁴ This was later expanded to 34 core variables (https://www.iooc.us/task-teams/core-ioos-variables/).</small>
+
+<small>⁵ The technical coordinator’s title was changed to national coordinator in 2018.</small>
 
 ### QARTOD Precepts 
 
@@ -166,11 +182,7 @@ the BOA, and national coordinator (NC) have taken in establishing the role of QA
 
 - It is preferable to adopt existing standardized processes for QARTOD manuals rather than develop them. An example of this is the adoption of the Intergovernmental Oceanographic Commission (IOC) data flagging standard in 2014 (UNESCO 2013). 
 
-- There are risks in being too prescriptive; therefore, the QARTOD manuals provide tests that can be implemented by operators (data providers) based on resources and how data are used. By design, required tests are easily implemented by all operators, while recommended and suggested tests meet the needs of operators with advanced capabilities. 
-
-<small>⁴ This was later expanded to 34 core variables (https://www.iooc.us/task-teams/core-ioos-variables/).</small>
-
-<small>⁵ The technical coordinator’s title was changed to national coordinator in 2018.</small>
+- There are risks in being too prescriptive; therefore, the QARTOD manuals provide tests that can be implemented by operators (data providers) based on resources and how data are used. By design, required tests are easily implemented by all operators, while recommended and suggested tests meet the needs of operators with advanced capabilities.
 
 - QARTOD manuals provide examples of test thresholds, but thresholds actually used by operators must be determined by the operators themselves, who are best suited to make those decisions. 
 
@@ -341,7 +353,13 @@ The final important task related to developing and updating manuals is ensuring 
 The practice of assigning a Digital Object Identifier (DOI) has become standard with all QARTOD manuals and other documents. 
 Each one is available through the NOAA Institutional Repository,⁷ 
 the IOOS website,⁸ 
-and the Ocean Best Practices System Repository.⁹ 
+and the Ocean Best Practices System Repository.⁹
+
+<small>⁷ https://repository.library.noaa.gov/</small>
+
+<small>⁸ https://ioos.noaa.gov/project/qartod/</small>
+
+<small>⁹ https://www.oceanbestpractices.org/</small>
 
 ### Work with Communities to Develop New Manuals as Appropriate 
 
@@ -363,7 +381,9 @@ the Global Ocean Ship-based Hydrographic Investigations Program (GOSHIP),
 and Ocean Observatories Initiative (OOI) might want to develop a QARTOD manual for a variable of interest to them. 
 The QARTOD BOA recognizes that technological advancements might be needed before real-time QC can be implemented for many biological variables. 
 However, 
-the recent advancements in uncrewed platforms¹⁰ (beyond gliders and floats) make these data streams ripe for QA/QC standardization. 
+the recent advancements in uncrewed platforms¹⁰ (beyond gliders and floats) make these data streams ripe for QA/QC standardization.
+
+<small>¹⁰ https://sciencecouncil.noaa.gov/LinkClick.aspx?fileticket=4jWNkpk-ZBo=&portalid=0</small> 
 
 ### Interact with International Entities as Appropriate
 
@@ -372,15 +392,12 @@ The initial interaction occurred through soliciting reviewers for QARTOD manuals
 This interaction has expanded to include international representation on the QARTOD BOA, 
 as well as the NC’s participation in the Ocean Best Practices System (OBPS) Steering Group¹¹ and the U.S. Climate Variability and Predictability (CLIVAR) Ocean Uncertainty Working Group.¹² 
 Inspiration and guidance can also be gained from interaction with the international meteorological community (e.g., the Global Climate Observing System’s Monitoring Principles)¹³ and the biological community (e.g., the biodiversity data quality interest group).¹⁴ 
-These examples represent potential interactions through which expertise can be shared to further promote high-quality data. 
+These examples represent potential interactions through which expertise can be shared to further promote high-quality data.
 
-<small>⁷ https://repository.library.noaa.gov/</small> 
-
-<small>⁸ https://ioos.noaa.gov/project/qartod/</small> 
-
-<small>⁹ https://www.oceanbestpractices.org/</small> 
-
-<small>¹⁰ https://sciencecouncil.noaa.gov/LinkClick.aspx?fileticket=4jWNkpk-ZBo=&portalid=0</small> 
+Interaction with OBPS includes submitting QARTOD documents to the OBPS repository, 
+which enhances global document accessibility. 
+Strong QARTOD - OBPS engagement is highly synergistic, 
+providing both entities with shared opportunities and resources.
 
 <small>¹¹ https://www.oceanbestpractices.org/about/governance/</small> 
 
@@ -388,12 +405,7 @@ These examples represent potential interactions through which expertise can be s
 
 <small>¹³ https://gcos.wmo.int/en/essential-climate-variables/about/gcos-monitoring-principles</small> 
 
-<small>¹⁴ https://www.tdwg.org/community/bdq</small> 
-
-Interaction with OBPS includes submitting QARTOD documents to the OBPS repository, 
-which enhances global document accessibility. 
-Strong QARTOD - OBPS engagement is highly synergistic, 
-providing both entities with shared opportunities and resources.
+<small>¹⁴ https://www.tdwg.org/community/bdq</small>
 
 ### Promote Outreach 
 
@@ -439,9 +451,17 @@ The embedded QC must be configurable by the operator so that local thresholds ca
 One drawback of a field-deployed QC-enabled system is decentralized processing. 
 Many think such edge computing is advantageous; others believe one shore-based system is easier to maintain.
 
-   **What is Edge Computing?** 
+<div style="border: 4px dotted #315A9E; padding: 20px; margin: 20px 0;">
 
-      Edge computing is a distributed computing framework that brings enterprise applications closer to data sources such as Internet of Things or IoT devices or local edge servers (https://www.ibm.com/cloud/what-is-edge-computing). Edge computing operates on "instant data" that is real-time data generated by sensors or users (Hamilton, Eric [27 December 2018]. "What is Edge Computing: The Network Edge Explained." cloudwards.net. Retrieved 2022-01-25.). 
+<h3 style="color: #315A9E; margin-top: 0;">What is Edge Computing?</h3>
+
+<p>
+Edge computing is a distributed computing framework that brings enterprise applications closer to data sources such as Internet of Things or IoT devices or local edge servers
+(<a href="https://www.ibm.com/cloud/what-is-edge-computing">https://www.ibm.com/cloud/what-is-edge-computing</a>).
+Edge computing operates on "instant data" that is real-time data generated by sensors or users (Hamilton, Eric [27 December 2018]. "What is Edge Computing: The Network Edge Explained." cloudwards.net. Retrieved 2022-01-25.).
+</p>
+
+</div>
 
 ## Part 3 - New Activities for 2022–2026 
 
@@ -820,7 +840,7 @@ Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted 
 
 - Provided a QARTOD presentation at a National Water Quality Monitoring Council Web Meeting (virtual, June 2018) 
 
-- Created a presentation titled _Emerging Methodologies Applied to Automated Data Quality Control_ , presented by Karen Grissom at the 34<sup>th</sup> Session of the Data Buoy Cooperation Panel (Cape Town, South Africa, October 2018) 
+- Created a presentation titled _Emerging Methodologies Applied to Automated Data Quality Control_ , presented by Karen Grissom at the 34ᵗʰ Session of the Data Buoy Cooperation Panel (Cape Town, South Africa, October 2018) 
 
 - Presented _Status and Near-Term Plans for the U.S. IOOS Quality Assurance / Quality Control of Real-time Oceanographic Data (QARTOD) Project_ at the IEEE / MTS OCEANS’18 meeting (Charleston, South Carolina, October 2018) 
 
@@ -892,35 +912,27 @@ There was some spread in responses to other topics, and these could be addressed
 
 **QARTOD BOA Questionnaire** – This questionnaire is targeted to BOA members. Another document will be developed for distribution to the Regional Associations and elsewhere, which will make use of the information gathered by this questionnaire. 
 
-1. QARTOD has evolved from its grassroots origin to a U.S. IOOS project with a focus on QC manuals, and more recently shifting to include best practices, uncertainty, and development of additional QC manuals by the appropriate communities. Thinking about the resources and level of effort presently in place, which direction should the scope of the QARTOD project take? (select one):
+**1. QARTOD has evolved from its grassroots origin to a U.S. IOOS project with a focus on QC manuals, and more recently shifting to include best practices, uncertainty, and development of additional QC manuals by the appropriate communities. Thinking about the resources and level of effort presently in place, which direction should the scope of the QARTOD project take? (select one):**
 
-- Be expanded, to address additional activities with additional resources. **(4)**¹⁶ 
+- Be expanded, to address additional activities with additional resources. **(4)**¹⁶
 
-- Is properly sized and should maintain focus on the 34 IOOS core variables as described in our recent paper (_QARTOD  - Prospects for Real-Time Quality Control Manuals, How to Create Them, and a Vision for Advanced Implementation_, DOI: 10.25923/ysj8-5n28). **(8)** 
+- Is properly sized and should maintain focus on the 34 IOOS core variables as described in our recent paper (*QARTOD - Prospects for Real-Time Quality Control Manuals, How to Create Them, and a Vision for Advanced Implementation*, DOI: 10.25923/ysj8-5n28). **(8)**
 
-- Has completed its mission and should be scaled down or closed. **(0)** 
+- Has completed its mission and should be scaled down or closed. **(0)**
 
-- Suggested expansions / deletions **(8)** 
-
-   - As the IOOS program and the OOS Communities identify new parameters, then the scope can and should be expanded, but that likely would require additional resources. Current support should still focus on the core variables and updates and implementation examples. (JB) 
-
-   - QARTOD should remain true to its core focus mission but consider the continued refinement of (automated) real-time QC that, maybe considering what AI can bring to this space. (EB) 
-
-   - The forays into BP and uncertainty nicely complement the QARTOD project, and similar opportunities should be explored as resources permit. (MB) 
-
-   - If we do expand, I think it would be interesting to consider acoustic data quality control. Maybe discuss this with Bill Woodard and see what he thinks? Also, what about nonreal-time data collection? Is there a need to modify the real-time manuals for non-realtime applications? Also, should we consider a modeling QA/QC manual?  Thinking of the COMT side - they are funding model development but I'm not sure if there is a standardized process for model QC.  And should there be? That could be a question for Tracy Fanara and Derrick Snowden. Finally, I do think that we should consider some more robust QA/QC for glider deployed (i.e. mobile) sensors.(JD) 
-
-   - The focus should lie on the IOOS core variables but there is room to expand to include uncertainty quantification. (RAE) 
-
-   - I don't think option 3 is a good choice. If the QARTOD was significantly scaled down or closed I'd be concerned about potential atrophy and lack of resources for maintaining the existing website, manual archival, and supporting wider implementation across the ocean observing community. (BH) 
-
-   - The manuals serve an important part of QARTOD, adding such things like mentioned in the paragraph preceding the choice seems to be a reasonable list to pursue in the future. (REJ) 
-
-   - I feel QARTOD is still a dynamic process/Program. We should focus on keeping the existing manuals up to date. We should only expand as new parameters have the community support/maturity to standardized QC. (JOT)
+- Suggested expansions / deletions **(8)**
+    - As the IOOS program and the OOS Communities identify new parameters, then the scope can and should be expanded, but that likely would require additional resources. Current support should still focus on the core variables and updates and implementation examples. (JB)
+    - QARTOD should remain true to its core focus mission but consider the continued refinement of (automated) real-time QC that, maybe considering what AI can bring to this space. (EB)
+    - The forays into BP and uncertainty nicely complement the QARTOD project, and similar opportunities should be explored as resources permit. (MB)
+    - If we do expand, I think it would be interesting to consider acoustic data quality control. Maybe discuss this with Bill Woodard and see what he thinks? Also, what about nonreal-time data collection? Is there a need to modify the real-time manuals for non-realtime applications? Also, should we consider a modeling QA/QC manual? Thinking of the COMT side - they are funding model development but I'm not sure if there is a standardized process for model QC. And should there be? That could be a question for Tracy Fanara and Derrick Snowden. Finally, I do think that we should consider some more robust QA/QC for glider deployed (i.e. mobile) sensors. (JD)
+    - The focus should lie on the IOOS core variables but there is room to expand to include uncertainty quantification. (RAE)
+    - I don't think option 3 is a good choice. If the QARTOD was significantly scaled down or closed I'd be concerned about potential atrophy and lack of resources for maintaining the existing website, manual archival, and supporting wider implementation across the ocean observing community. (BH)
+    - The manuals serve an important part of QARTOD, adding such things like mentioned in the paragraph preceding the choice seems to be a reasonable list to pursue in the future. (REJ)
+    - I feel QARTOD is still a dynamic process/Program. We should focus on keeping the existing manuals up to date. We should only expand as new parameters have the community support/maturity to standardized QC. (JOT)
 
 <small>¹⁶ Numbers in bold (4) denote the number of responses for that option. In some cases, there are more than 12 responses because the person either checked more than one block or added a comment in the designated space.</small>
 
-2. There are many QA/QC efforts in place within the global oceanographic community. When QARTOD was formed (2003) and again when QARTOD was adopted by IOOS (2012), the focus on standardizing QC of real-time data by those closest to the source of the data made the project unique. Do you feel this is still unique to QARTOD?
+**2. There are many QA/QC efforts in place within the global oceanographic community. When QARTOD was formed (2003) and again when QARTOD was adopted by IOOS (2012), the focus on standardizing QC of real-time data by those closest to the source of the data made the project unique. Do you feel this is still unique to QARTOD?**
 
 - Yes **(3)** 
 
@@ -928,23 +940,16 @@ There was some spread in responses to other topics, and these could be addressed
 
 - No, excessive redundancies have emerged in real-time QC development efforts. **(0)** 
 
-- Other thoughts: **(7)** 
+- Other thoughts: **(7)**
+    - Development efforts are still afoot developing custom code for one-off QC implementations. (EB) 
+    - Although similar efforts have emerged, the focus on real-time is still relatively rare in comparison to delayed QC and longer-term post-processing efforts. (MB) 
+    - I think there are other international efforts using real-time data QA/QC but many are built from QARTOD advances.  Should we consider creating manuals for non-real-time data collection so that PIs have a standardized set of guidelines for QA/QC? (JD) 
+    - The focus should lie on the IOOS core variables but there is room to expand to include uncertainty quantification. (RAE) 
+    - One aspect of QA/QC of data used by the oceanographic community also resides in the historical records. Granted as long as the data providers follow the QARTOD guidelines (do they actually?), data that eventually residing in various archives will be deemed good, but what about the historical data records?  Second, is that there is a real lack of documented metadata that is required establishing needed information regarding the data that is missing.  We have attempted to bring this up in the Data Collaboration Panel group meetings, but it still remains unanswered. (REJ) 
+    - While others have recently begun similar efforts in this area, none have the same history, credibility, and community buy-in as QARTOD. (MT) 
+    - There are other groups in the global oceanographic community that fulfill the same goal as QARTOD. They might not be as extensive, but they have a lot of expertise and recognition of the value of standardization. (JOT) 
 
-   - Development efforts are still afoot developing custom code for one-off QC implementations. (EB) 
-
-   - Although similar efforts have emerged, the focus on real-time is still relatively rare in comparison to delayed QC and longer-term post-processing efforts. (MB) 
-
-   - I think there are other international efforts using real-time data QA/QC but many are built from QARTOD advances.  Should we consider creating manuals for non-real-time data collection so that PIs have a standardized set of guidelines for QA/QC? (JD) 
-
-   - The focus should lie on the IOOS core variables but there is room to expand to include uncertainty quantification. (RAE) 
-
-   - One aspect of QA/QC of data used by the oceanographic community also resides in the historical records. Granted as long as the data providers follow the QARTOD guidelines (do they actually?), data that eventually residing in various archives will be deemed good, but what about the historical data records?  Second, is that there is a real lack of documented metadata that is required establishing needed information regarding the data that is missing.  We have attempted to bring this up in the Data Collaboration Panel group meetings, but it still remains unanswered. (REJ) 
-
-   - While others have recently begun similar efforts in this area, none have the same history, credibility, and community buy-in as QARTOD. (MT) 
-
-   - There are other groups in the global oceanographic community that fulfill the same goal as QARTOD. They might not be as extensive, but they have a lot of expertise and recognition of the value of standardization. (JOT) 
-
-3. We’ve been updating the QC manuals to ensure they remain accurate and relevant. How often do you think the manuals should be updated?
+**3. We’ve been updating the QC manuals to ensure they remain accurate and relevant. How often do you think the manuals should be updated?**
 
 - Routinely, every 2-3 years **(6)** 
 
@@ -954,25 +959,17 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Other: **(9)**
 
-   - I'm not convinced the user community will actively monitor/request to update the manuals, but if they do before a 2-3-yr scheduled update then that request should be acted upon.  (Ideally, the users would spearhead those changes, though). (KB) 
+    - I'm not convinced the user community will actively monitor/request to update the manuals, but if they do before a 2-3-yr scheduled update then that request should be acted upon.  (Ideally, the users would spearhead those changes, though). (KB) 
+    - I think update schedules can be driven by the technology that is in use.  So new sensors should be recognized as they are being applied in the community. That said, there should be a routine review of the existing manuals to ensure these things are incorporated if they are not on QARTODs radar screen. (JB)
+    - Documents should be living, and should be expanded on, but a mandatory review over a set period will be good. I suggest every 5 to 7 years. The reason for this period is the effort/benefit for mandated more frequent updates. (EB)
+    - Updates are needed to ensure links are operational, the latest references are cited, and the variable community has an opportunity to provide input. (MB)
+    - Updates are always needed due to changing technologies. (JD) 
+    - A mix between needs of BOA and user community. (KG)
+    - I'd recommend some kind of combo of choices 2 & 3. Manuals should be updated when recommended by the BOA or requested the user community. (BH)
+    - While many will need updating after 2-3 years, several while parameters may not need revision for several years. I think the BOA would have a good feel for this. (MT)
+    - The BOA needs to keep informed of changes in technology within the oceanographic community that might affect what is prescribed in a manual. (JOT)
 
-   - I think update schedules can be driven by the technology that is in use.  So new sensors should be recognized as they are being applied in the community. That said, there should be a routine review of the existing manuals to ensure these things are incorporated if they are not on QARTODs radar screen. (JB) 
-
-   - Documents should be living, and should be expanded on, but a mandatory review over a set period will be good. I suggest every 5 to 7 years. The reason for this period is the effort/benefit for mandated more frequent updates. (EB) 
-
-   - Updates are needed to ensure links are operational, the latest references are cited, and the variable community has an opportunity to provide input. (MB) 
-
-   - Updates are always needed due to changing technologies. (JD) 
-
-   - A mix between needs of BOA and user community. (KG) 
-
-   - I'd recommend some kind of combo of choices 2 & 3. Manuals should be updated when recommended by the BOA or requested the user community. (BH) 
-
-   - While many will need updating after 2-3 years, several while parameters may not need revision for several years. I think the BOA would have a good feel for this. (MT) 
-
-   - The BOA needs to keep informed of changes in technology within the oceanographic community that might affect what is prescribed in a manual. (JOT) 
-
-4. How important do you think interaction with relevant international programs that address data QC are?
+**4. How important do you think interaction with relevant international programs that address data QC are?**
 
 - Very important **(11)** 
 
@@ -982,7 +979,7 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Distracting and to be avoided **(0)** 
 
-5. QARTOD BOA meeting are convened virtually each quarter. How frequently should these meetings be held and via what medium? (choose all that apply)
+**5. QARTOD BOA meeting are convened virtually each quarter. How frequently should these meetings be held and via what medium? (choose all that apply)**
 
 - Be held more frequently **(0)** 
 
@@ -992,7 +989,7 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Held twice per year and focus on email communication **(0)** 
 
-6. Should term limits be established for BOA members?
+**6. Should term limits be established for BOA members?**
 
 - Yes, [3-5 and perhaps max of 6] year limits **(6)** 
 
@@ -1000,29 +997,19 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Additional thoughts re. BOA make-up: **(11)** 
 
-   - I'm open to suggestion on the year limit length but 3 seemed reasonable. (KB) 
+    - I'm open to suggestion on the year limit length but 3 seemed reasonable. (KB) 
+    - I think a staggered rotation of BOA members would be a good idea. (JB)
+    - No strong feeling here but leaning towards term limits. (EB) 
+    - While I don't think term limits are needed, I do think that as vacancies arise, we should seek younger or early career members. (MB) 
+    - I don't think so. Since this is a volunteer Army, it may be good to keep going as is.  If there is a demand to be on the BOA, then we can consider term limits. (JD) 
+    - We should definitely include more early career scientists. (RAE) 
+    - Need to consider frequency of meeting, day job workload, and duration of QARTOD activities. (KG) 
+    - This is a tough one to answer. Although I think specifying an exact term limit time frame is not necessary, it seems that some slow and gradual change, turnover, addition of new folks, etc., may be required for long-term sustainability....maybe this will just happen naturally over time (longer serving folks will eventually take a break and will be replaced by newer members)? (BH) 
+    - We need to expand with new people from time to time as the present members of the BOA may be outdated. In addition, doing this would expand QARTOD outward, and advertising the importance of the work QARTOD is involved. (REJ) 
+    - But should be staggered to there is always a mix of new members and those with significant QARTOD experience. I might also recommend one 3-year term that can be renewed for a total of 6 years max. (MT) 
+    - Perhaps 4 years with option to renew for 2 more years.  Perhaps the chairs should oversee the decision to renew. I believe that term limits are important because it is a way to keep the community engaged. I do think that terms should be staggered. I also feel that past members should hold some "ex-officio" status, indicating that they can be called upon if a question arises in a particular arena. (JOT) 
 
-   - I think a staggered rotation of BOA members would be a good idea. (JB)
-
-   - No strong feeling here but leaning towards term limits. (EB) 
-
-   - While I don't think term limits are needed, I do think that as vacancies arise, we should seek younger or early career members. (MB) 
-
-   - I don't think so. Since this is a volunteer Army, it may be good to keep going as is.  If there is a demand to be on the BOA, then we can consider term limits. (JD) 
-
-   - We should definitely include more early career scientists. (RAE) 
-
-   - Need to consider frequency of meeting, day job workload, and duration of QARTOD activities. (KG) 
-
-   - This is a tough one to answer. Although I think specifying an exact term limit time frame is not necessary, it seems that some slow and gradual change, turnover, addition of new folks, etc., may be required for long-term sustainability....maybe this will just happen naturally over time (longer serving folks will eventually take a break and will be replaced by newer members)? (BH) 
-
-   - We need to expand with new people from time to time as the present members of the BOA may be outdated. In addition, doing this would expand QARTOD outward, and advertising the importance of the work QARTOD is involved. (REJ) 
-
-   - But should be staggered to there is always a mix of new members and those with significant QARTOD experience. I might also recommend one 3-year term that can be renewed for a total of 6 years max. (MT) 
-
-   - Perhaps 4 years with option to renew for 2 more years.  Perhaps the chairs should oversee the decision to renew. I believe that term limits are important because it is a way to keep the community engaged. I do think that terms should be staggered. I also feel that past members should hold some "ex-officio" status, indicating that they can be called upon if a question arises in a particular arena. (JOT) 
-
-7. QARTOD presently leaves implementation of data flagging up to data providers. How should this determination be made?
+**7. QARTOD presently leaves implementation of data flagging up to data providers. How should this determination be made?**
 
 - QARTOD should be more prescriptive in setting standards for these processes **(1)** 
 
@@ -1030,19 +1017,14 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Other thoughts: **(6)** 
 
-   - I think being prescriptive about a roll-up / summary flag is good, but not about specific thresholds.  I do think providers desire some guidance with thresholds - e.g., standard deviation vs climatology - but may have already moved forward with solutions by now. (KB) 
+    - I think being prescriptive about a roll-up / summary flag is good, but not about specific thresholds.  I do think providers desire some guidance with thresholds - e.g., standard deviation vs climatology - but may have already moved forward with solutions by now. (KB) 
+    - I think the flexibility is good.  But it would be good to see specific communities work toward standardizing the use of flags. That would require someone to champion that within each community. (JB) 
+    - It may be good to have a QARTOD summit to promote a flagging set of common practices, and gauge the community’s present practice diversity, and their appetite for convergence on a community determined practice. (EB) 
+    - This is tough for me to answer. On some level, I think the IOOS office, as part of the contract language with RA's, should enforce QARTOD implementation at a minimum standard level including some amount of prescriptive language regarding flagging. While the RAs MUST be QARTOD compliant for certification purposes, I don't think there is a flagging requirement pushed by IOOS. There are breakdowns in how flags are implemented currently. Maybe this is ok but I'm not sure. For example, UNCW provides a flag for each test and then there is one roll up flag (good, suspect, fail) that Axiom takes. So, Axiom does not know which test failed (if something fails) only that the data has one flag that represents good, suspect, fail. Is this an issue? Maybe not, but data users would have to drill back to the data provider if they want to investigate suspect or bad data. (JD) 
+    - It may also be vital for QARTOD to check if and when the data providers follow the QARTOD guidelines. I know this would be a massive undertaking but seems to be important. I am not sure what jurisdiction QARTOD has as to 'force' data providers to follow the guidelines. And I am not sure if there is a national (and international) consensus regarding the guidelines. (REJ) 
+    - Data flagging is still a necessary procedure to assess the quality of data. However, the scheme should not dominate other concepts, like the concept of quantifying measurement uncertainty (QMU). It may happen that QMU will augment existing flagging schemes. (CW) 
 
-   - I think the flexibility is good.  But it would be good to see specific communities work toward standardizing the use of flags. That would require someone to champion that within each community. (JB) 
-
-   - It may be good to have a QARTOD summit to promote a flagging set of common practices, and gauge the community’s present practice diversity, and their appetite for convergence on a community determined practice. (EB) 
-
-   - This is tough for me to answer. On some level, I think the IOOS office, as part of the contract language with RA's, should enforce QARTOD implementation at a minimum standard level including some amount of prescriptive language regarding flagging. While the RAs MUST be QARTOD compliant for certification purposes, I don't think there is a flagging requirement pushed by IOOS. There are breakdowns in how flags are implemented currently. Maybe this is ok but I'm not sure. For example, UNCW provides a flag for each test and then there is one roll up flag (good, suspect, fail) that Axiom takes. So, Axiom does not know which test failed (if something fails) only that the data has one flag that represents good, suspect, fail. Is this an issue? Maybe not, but data users would have to drill back to the data provider if they want to investigate suspect or bad data. (JD) 
-
-   - It may also be vital for QARTOD to check if and when the data providers follow the QARTOD guidelines. I know this would be a massive undertaking but seems to be important. I am not sure what jurisdiction QARTOD has as to 'force' data providers to follow the guidelines. And I am not sure if there is a national (and international) consensus regarding the guidelines. (REJ) 
-
-   - Data flagging is still a necessary procedure to assess the quality of data. However, the scheme should not dominate other concepts, like the concept of quantifying measurement uncertainty (QMU). It may happen that QMU will augment existing flagging schemes. (CW) 
-
-8. QARTOD presently leaves the method(s) of dissemination of data quality metadata up to data providers. How should this determination be made?
+**8. QARTOD presently leaves the method(s) of dissemination of data quality metadata up to data providers. How should this determination be made?**
 
 - QARTOD should be more prescriptive in setting standards for these processes **(4)** 
 
@@ -1050,15 +1032,12 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Other thoughts: **(4)** 
 
-   - QARTOD guidance here will be valuable, as this is an active discussion in other groups as well. (EB) 
+    - QARTOD guidance here will be valuable, as this is an active discussion in other groups as well. (EB) 
+    - What are we considering data quality metadata?  Is this asking if the data providers have adequately described the QA/QC tests they are implementing and flagging protocols in the metadata for each instrument on a platform? Or are you referring to dissemination of data quality flags by the provider?  See above example - UNCW provides the flags for each test preformed but Axiom is only providing one flag. (JD) 
+    - I think data QA results would be more beneficial to end users if they were automatically made available in a standard format, along with the primary ocean obs data. Also, standard dissemination could increase visibility of QARTOD compliance. (BH) 
+    - QARTOD should be instrumental in establishing and promoting standards that are in use in neighboring domains like atmospheric observations (i.e. WMO). (CW) 
 
-   - What are we considering data quality metadata?  Is this asking if the data providers have adequately described the QA/QC tests they are implementing and flagging protocols in the metadata for each instrument on a platform? Or are you referring to dissemination of data quality flags by the provider?  See above example - UNCW provides the flags for each test preformed but Axiom is only providing one flag. (JD) 
-
-   - I think data QA results would be more beneficial to end users if they were automatically made available in a standard format, along with the primary ocean obs data. Also, standard dissemination could increase visibility of QARTOD compliance. (BH) 
-
-   - QARTOD should be instrumental in establishing and promoting standards that are in use in neighboring domains like atmospheric observations (i.e. WMO). (CW) 
-
-9. Some data providers have suggested that a test thresholds database is desirable. Such a resource would need to span all relevant variables, specific tests, geographic locations, seasons, etc. How should QARTOD approach this?
+**9. Some data providers have suggested that a test thresholds database is desirable. Such a resource would need to span all relevant variables, specific tests, geographic locations, seasons, etc. How should QARTOD approach this?**
 
 - Definitely undertake the creation and maintenance of a global test threshold resource **(3)** 
 
@@ -1066,7 +1045,7 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Continue to leave the establishment and record-keeping of test thresholds to the data providers, who are the most knowledgeable regarding their needs and tolerances **(8)** 
 
-10. QARTOD tests are grouped into required, strongly recommended, and suggested categories. The required tests set a broadly inclusive low bar, while the suggested tests are often stretch goals that are more challenging tests. Thinking about these more challenging tests, how should QARTOD approach this?
+**10. QARTOD tests are grouped into required, strongly recommended, and suggested categories. The required tests set a broadly inclusive low bar, while the suggested tests are often stretch goals that are more challenging tests. Thinking about these more challenging tests, how should QARTOD approach this?**
 
 - Work with operators and manufacturers to develop / expand the suggested tests, i.e., identify and describe tests that employ artificial intelligence or machine learning techniques? **(5)** 
 
@@ -1076,23 +1055,16 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Other thoughts: **(8)** 
 
-   - I'd leave the development of advanced tests to the operators and manufacturers, however, QARTOD need to stay in the loop of these developments through engagement with the communities of practice. (JB) 
+    - I'd leave the development of advanced tests to the operators and manufacturers, however, QARTOD need to stay in the loop of these developments through engagement with the communities of practice. (JB)
+    - QARTOD should remain true to its core focus mission but consider the continued refinement of (automated) real-time QC that, maybe considering what AI can bring to this space. (EB)
+    - While I think advanced test development is best left to operators and manufacturers, we can actively encourage them to do so, report on those activities, and watch for leveraging opportunities. (MB)
+    - I think most operators can implement the required and strongly recommended tests. The suggested tests, if needed, can be performed by the operator or could be developed in conjunction with the operator and the instrument manufacturer. We are seeing more manufacturers incorporating QARTOD tests on the instruments (e.g. Teledyne ADCPs). (JD) 
+    - Particularly for the implementation of AI. (RAE) 
+    - When dealing with the private sector developing new sensors, it seems as though honest evaluations are lacking because those manufacturers want their sensors purchased and used.  Not sure if independent testing can be performed especially considering the cost to perform. (REJ) 
+    - Once again, QARTOD needs to keep informed about the technological developments.  I don't think the complexity of the testing is the issue. I feel that testing is really circumstantial, depending on location and goal of the observation. (JOT) 
+    - QARTOD can play a pivotal role in identifying and describing tests that employ AI or machine learning. (CW) 
 
-   - QARTOD should remain true to its core focus mission but consider the continued refinement of (automated) real-time QC that, maybe considering what AI can bring to this space. (EB) 
-
-   - While I think advanced test development is best left to operators and manufacturers, we can actively encourage them to do so, report on those activities, and watch for leveraging opportunities. (MB) 
-
-   - I think most operators can implement the required and strongly recommended tests. The suggested tests, if needed, can be performed by the operator or could be developed in conjunction with the operator and the instrument manufacturer. We are seeing more manufacturers incorporating QARTOD tests on the instruments (e.g. Teledyne ADCPs). (JD) 
-
-   - Particularly for the implementation of AI. (RAE) 
-
-   - When dealing with the private sector developing new sensors, it seems as though honest evaluations are lacking because those manufacturers want their sensors purchased and used.  Not sure if independent testing can be performed especially considering the cost to perform. (REJ) 
-
-   - Once again, QARTOD needs to keep informed about the technological developments.  I don't think the complexity of the testing is the issue. I feel that testing is really circumstantial, depending on location and goal of the observation. (JOT) 
-
-   - QARTOD can play a pivotal role in identifying and describing tests that employ AI or machine learning. (CW) 
-
-11. Many IOOS core variables not yet addressed by QARTOD are biological, where real-time dissemination and use is not common. Should QARTOD relax the real-time focus to address QC at time scales appropriate to the biological community ('timely' data)?
+**11. Many IOOS core variables not yet addressed by QARTOD are biological, where real-time dissemination and use is not common. Should QARTOD relax the real-time focus to address QC at time scales appropriate to the biological community ('timely' data)?**
 
 **Should QARTOD relax the real-time focus to address QC at time scales appropriate to the biological community ('timely' data)?**
 
@@ -1102,21 +1074,14 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Comments: **(8)** 
 
-   - I think we should support QC development of these biological variables but not lead it. The biology community should lead it and refer to QARTOD as a guide for how they might undertake this development.  QARTOD should be in a supporting role, and efforts should be cross-linked so we're not ending up with 2 QC projects operating independently. I'm not comfortable with the expansion of scope (and thus resources). (KB) 
-
-   - I'm on the fence on this one.  I think QARTOD could/should assist these communities in working towards some standardized QC. Possibly starting in areas where there is some near real-time monitoring or sensors being more broadly used mature. Engagement with manufacturers is probably a good starting point. (JB) 
-
-   - A relaxed interpretation of real-time is fine, but the requirements of an interoperable data stream remain for creation of a traditional QC manual. (MB) 
-
-   - I think the real-time focus could be relaxed for physical and biological data collection. An ADCP operating in non-real-time mode still needs data QC.  Additionally, biological data collection would also benefit from QC efforts. We would need to determine who to engage in the community to help with this effort. (JD) 
-
-   - As the methods mature, QARTOD should absolutely relax the real-time focus and address biological variables particularly since biological variables are often more challenging for the user to implement quality assurance practices. (RAE) 
-
-   - Within limits, not all variables are mature or appropriate for QARTOD. (KG) 
-
-   - I feel yes with caveats. It isn't the real-time dissemination that is the issue. It is the maturity of the observation. Many of the biological observations have no QC standard yet. (JOT) 
-
-   - Yes, the biological community could benefit greatly from QARTOD and a requirement for "real-time" data should not prevent that. (MT) 
+    - I think we should support QC development of these biological variables but not lead it. The biology community should lead it and refer to QARTOD as a guide for how they might undertake this development.  QARTOD should be in a supporting role, and efforts should be cross-linked so we're not ending up with 2 QC projects operating independently. I'm not comfortable with the expansion of scope (and thus resources). (KB) 
+    - I'm on the fence on this one.  I think QARTOD could/should assist these communities in working towards some standardized QC. Possibly starting in areas where there is some near real-time monitoring or sensors being more broadly used mature. Engagement with manufacturers is probably a good starting point. (JB) 
+    - A relaxed interpretation of real-time is fine, but the requirements of an interoperable data stream remain for creation of a traditional QC manual. (MB) 
+    - I think the real-time focus could be relaxed for physical and biological data collection. An ADCP operating in non-real-time mode still needs data QC.  Additionally, biological data collection would also benefit from QC efforts. We would need to determine who to engage in the community to help with this effort. (JD) 
+    - As the methods mature, QARTOD should absolutely relax the real-time focus and address biological variables particularly since biological variables are often more challenging for the user to implement quality assurance practices. (RAE) 
+    - Within limits, not all variables are mature or appropriate for QARTOD. (KG) 
+    - I feel yes with caveats. It isn't the real-time dissemination that is the issue. It is the maturity of the observation. Many of the biological observations have no QC standard yet. (JOT) 
+    - Yes, the biological community could benefit greatly from QARTOD and a requirement for "real-time" data should not prevent that. (MT) 
 
 **Should the QARTOD mission be expanded to include documentation of biology-related data collection and management best practices?**
 
@@ -1126,21 +1091,15 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Comments: **(7)** 
 
-   - On the fence, but I think this is a slippery slope.  If this means manuals that focus on data collection/best practices but not QC, then this feels a bit off. (KB) 
+    - On the fence, but I think this is a slippery slope.  If this means manuals that focus on data collection/best practices but not QC, then this feels a bit off. (KB) 
+    - At present, other entities such as DMAC and OBPS are better poised to support these activities. (MB)
+    - I'm unsure. I answered Yes to question 11 which makes me feel like we would need to include documentation. But, if the documentation exists and is being put to use by the biological data collection community, then maybe we work with those groups to develop QARTOD manuals as a collaborative effort. (JD) 
+    - There is a need in the biological community especially for the Essential Biodiversity Variables (EBVs). (RAE) 
+    - Automated, standardized QA seems most critical to real-time obs. Not sure QARTOD type support would be as welcome or considered as useful for applications of non-real time data. Another concern is that some non-real-time biological, chemical, geological sampling methods seem to involve more complex and nuanced post collection analysis to determine usefulness of results. Not sure QARTOD approach would apply for these cases. (BH) 
+    - When the community has matured. (JOT)
+    - QARTOD should support the development of QC procedures for Essential Biodiversity Variables (EBVs) (CW) 
 
-   - At present, other entities such as DMAC and OBPS are better poised to support these activities. (MB)
-
-   - I'm unsure. I answered Yes to question 11 which makes me feel like we would need to include documentation. But, if the documentation exists and is being put to use by the biological data collection community, then maybe we work with those groups to develop QARTOD manuals as a collaborative effort. (JD) 
-
-   - There is a need in the biological community especially for the Essential Biodiversity Variables (EBVs). (RAE) 
-
-   - Automated, standardized QA seems most critical to real-time obs. Not sure QARTOD type support would be as welcome or considered as useful for applications of non-real time data. Another concern is that some non-real-time biological, chemical, geological sampling methods seem to involve more complex and nuanced post collection analysis to determine usefulness of results. Not sure QARTOD approach would apply for these cases. (BH) 
-
-   - When the community has matured. (JOT) 
-
-   - QARTOD should support the development of QC procedures for Essential Biodiversity Variables (EBVs) (CW) 
-
-12. Assign the level of importance of each of these potential QARTOD activities, from not at all important (1) to very important (5). Or, for example, all could be assigned a level of 3.
+**12. Assign the level of importance of each of these potential QARTOD activities, from not at all important (1) to very important (5). Or, for example, all could be assigned a level of 3.**
 
 - Add an early career ocean professional to the BOA **(3) received the most responses**. 5(**3**) 4(**1**) 3(**5**) 2(**2**) 1(**1**) 
 
@@ -1158,39 +1117,34 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Work with manufacturers and operators towards embedding RT QC in field-deployed instruments **(4) and (3)**. 5(**2**) 4(**3**) 3(**3**) 2(**1**) 1(**2**) 
 
-13. Should a working group comprised of volunteers be formed to assist with development of the next five-year plan?
+**13. Should a working group comprised of volunteers be formed to assist with development of the next five-year plan?**
 
 - Yes (**10**) 
 
 - No (**2**) 
 
-14. The QARTOD National Coordinator and BOA members engage with end-users: a) before the development of a QC manual by attending conferences, workshops, and contacting subject matter experts directly, b) during the creation of a QC manual through iterative draft manual reviews by an increasingly broader audience, and c) after a manual is issued by supporting implementation and updating the manuals. How do you think these existing interactions should look?
+**14. The QARTOD National Coordinator and BOA members engage with end-users: a) before the development of a QC manual by attending conferences, workshops, and contacting subject matter experts directly, b) during the creation of a QC manual through iterative draft manual reviews by an increasingly broader audience, and c) after a manual is issued by supporting implementation and updating the manuals. How do you think these existing interactions should look?**
 
 - Should be expanded, to include activities such as: (**1**) 
-
-   - It looks like a few of the answers in Question 12 are an expansion of current QARTOD BOA and Coordinator duties.  If we are going to work with manufactures to embed QC tests in instruments, then we will be expanding our duties. I listed that as a "1" because I'm not sure that we have the resources to reach out to manufacturers and engage in that activity. (JD) 
+    - It looks like a few of the answers in Question 12 are an expansion of current QARTOD BOA and Coordinator duties.  If we are going to work with manufactures to embed QC tests in instruments, then we will be expanding our duties. I listed that as a "1" because I'm not sure that we have the resources to reach out to manufacturers and engage in that activity. (JD) 
 
 - Is sufficient as is, no need for change. (**12**) (JD checked this option but also expressed the above concern. 
 
 - Is too aggressive and should be reduced. Allow the operators to come to QARTOD rather trying to foist the project on reluctant operators. (**0**) 
 
-15. QARTOD's end products (QC manuals, project information, status updates, papers, and additional information) are available or published through multiple sources such as the QARTOD web page, the NOAA Institutional Repository, the Ocean Best Practices System repository, peer-reviewed journals, the IOOS Eyes on the Ocean biweekly newsletter, and LinkedIn. How widely do you think these end products should be distributed?
+**15. QARTOD's end products (QC manuals, project information, status updates, papers, and additional information) are available or published through multiple sources such as the QARTOD web page, the NOAA Institutional Repository, the Ocean Best Practices System repository, peer-reviewed journals, the IOOS Eyes on the Ocean biweekly newsletter, and LinkedIn. How widely do you think these end products should be distributed?**
 
 - They need to be made more broadly available. **(4; however, 2 did not check the box but offered a comment)** Suggestions: 
-
-   - We will soon highlight these efforts through a NOAA Data Management catalog - an action on the NOAA Data Strategy Implementation Plan (EB) 
-
-   - I think they are properly disseminated, but it might be useful to have a link from each RA to the QARTOD webpage. Could we have each RA have a statement on their data portals that says something like, "SECOORA follows data quality control best practices as described in the IOOS QARTOD manuals" and add a link to the QARTOD website? (JD) 
-
-   - Do we really know if the information is properly disseminated?  I am not too sure how to monitor. (REJ) 
-
-   - Maybe through a webinar series. (MT) 
+    - We will soon highlight these efforts through a NOAA Data Management catalog - an action on the NOAA Data Strategy Implementation Plan (EB)
+    - I think they are properly disseminated, but it might be useful to have a link from each RA to the QARTOD webpage. Could we have each RA have a statement on their data portals that says something like, "SECOORA follows data quality control best practices as described in the IOOS QARTOD manuals" and add a link to the QARTOD website? (JD)
+    - Do we really know if the information is properly disseminated?  I am not too sure how to monitor. (REJ)
+    - Maybe through a webinar series. (MT)
 
 - Are properly disseminated, no need for change. (**10**) 
 
 - The focus should be on just the QARTOD web page, rather than sending users to a variety of sites. (**0**) 
 
-16. Should the QARTOD project broaden efforts to effect implementation and adherence to QARTOD QC tests across the ocean observing community, and to improve accountability?
+**16. Should the QARTOD project broaden efforts to effect implementation and adherence to QARTOD QC tests across the ocean observing community, and to improve accountability?**
 
 - Yes, stronger encouragement is needed, and it should be conducted through QARTOD. **(4)** 
 
@@ -1198,21 +1152,14 @@ There was some spread in responses to other topics, and these could be addressed
 
 - Further thoughts: **(9)** 
 
-   - I don't think it is QARTOD's role enforce use. However, I think QARTOD should stay involved in the various communities of practice and can help highlight those who are applying the tests. I also think QARTOD can work with other NOAA Line Offices funding similar data collection activities to inform them of the QARTOD Manuals and encourage them to require QC of the data as part of data management plans for their funded projects. (JB) 
-
-   - As communities realize the benefits of real-time QC, they will strive to adopt the testing. QARTOD can best accomplish this through continued reporting of successes, rather than attempting to push standardized RT QC on resistant communities. (MB) 
-
-   - I'm reading this question as part of the IOOS community. So, in our efforts to assure that RAs are QARTOD compliant, we should strongly encourage implementation of QC tests based on available manuals. I also think there is a need for some non-real-time QC manuals (or maybe an addendum to current manuals that says, "if you operate this instrument in non-real-time, please consider implementing Test X, X, X, X, and X along with other QC measures you may currently use". (JD) 
-
-   - Broadening the current efforts to improve accountability is not needed however, it is important for QARTOD to encourage users through outreach and in highlighting success stories. (RAE) 
-
-   - QARTOD should not take on the role of QC police, this is not their place, and in most instances, there are reasons why the data providers do not implement QARTOD QC tests. (KG) 
-
-   - It would be beneficial if a data providing organizations QARTOD adherence was made more visible to data end users. In some cases, it is not evident (no visible proof to those accessing public data archives) that some of the NOAA program offices or RAs from which members are contributing to manuals are actually implementing the QA methods themselves. Not sure about how to accomplish this, however. Maybe my answer to #8 could address? (BH) 
-
-   - Broadening the current efforts to improve accountability is not needed however, it is important for QARTOD to encourage users through outreach and in highlighting success stories. (REJ) 
-
-   - I don't think QARTOD should work as an oversight body. There is plenty of goodwill within the community to put out the best data/QC possible. Sometimes there are resource limitations (people/expertise/computing), but I don't think it is our place to get involved in these limitations. (JOT) 
+    - I don't think it is QARTOD's role enforce use. However, I think QARTOD should stay involved in the various communities of practice and can help highlight those who are applying the tests. I also think QARTOD can work with other NOAA Line Offices funding similar data collection activities to inform them of the QARTOD Manuals and encourage them to require QC of the data as part of data management plans for their funded projects. (JB)
+    - As communities realize the benefits of real-time QC, they will strive to adopt the testing. QARTOD can best accomplish this through continued reporting of successes, rather than attempting to push standardized RT QC on resistant communities. (MB)
+    - I'm reading this question as part of the IOOS community. So, in our efforts to assure that RAs are QARTOD compliant, we should strongly encourage implementation of QC tests based on available manuals. I also think there is a need for some non-real-time QC manuals (or maybe an addendum to current manuals that says, "if you operate this instrument in non-real-time, please consider implementing Test X, X, X, X, and X along with other QC measures you may currently use". (JD)
+    - Broadening the current efforts to improve accountability is not needed however, it is important for QARTOD to encourage users through outreach and in highlighting success stories. (RAE)
+    - QARTOD should not take on the role of QC police, this is not their place, and in most instances, there are reasons why the data providers do not implement QARTOD QC tests. (KG)
+    - It would be beneficial if a data providing organizations QARTOD adherence was made more visible to data end users. In some cases, it is not evident (no visible proof to those accessing public data archives) that some of the NOAA program offices or RAs from which members are contributing to manuals are actually implementing the QA methods themselves. Not sure about how to accomplish this, however. Maybe my answer to #8 could address? (BH)
+    - Broadening the current efforts to improve accountability is not needed however, it is important for QARTOD to encourage users through outreach and in highlighting success stories. (REJ)
+    - I don't think QARTOD should work as an oversight body. There is plenty of goodwill within the community to put out the best data/QC possible. Sometimes there are resource limitations (people/expertise/computing), but I don't think it is our place to get involved in these limitations. (JOT)
 
 QARTOD is unique in its scope and activities. 
 Therefore, it is well justified to have QARTOD play a major role in efforts to effect implementation and adherence to QC tests across the ocean observing community. (CW) 
