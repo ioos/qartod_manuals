@@ -5,3 +5,4 @@
 manuals/
 node_modules/
 site/
+.DS_Store
