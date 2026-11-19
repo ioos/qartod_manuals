@@ -46,6 +46,7 @@ nav:
   - Glider: Glider.md
   - Phytoplankton: Phytoplankton.md
   - Prospects_RT_QC: Prospects_RT_QC.md
+  - Data_Flags: Data_Flags.md
 
 extra:
   social:
