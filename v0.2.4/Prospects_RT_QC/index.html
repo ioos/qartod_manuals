@@ -1,0 +1,1877 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Phytoplankton/">
+      
+      
+        <link rel="next" href="../Data_Flags/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Prospects_RT_QC - QARTOD</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qartod-prospects-for-real-time-quality-control-manuals-how-to-create-them-and-a-vision-for-advanced-implementation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QARTOD" class="md-header__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QARTOD
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prospects_RT_QC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Water_Level/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Water Level
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ADCP/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  ADCP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pH/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  pH
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../HFR/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  HFR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Wind_Data/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Wind Data
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Glider/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glider
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Phytoplankton/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Phytoplankton
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Prospects_RT_QC
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Data_Flags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Data_Flags
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Project_Plan_Update/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project_Plan
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QARTOD" class="md-nav__button md-logo" aria-label="QARTOD" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QARTOD
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ocefpaf/qartod_manuals" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ocefpaf/qartod_manuals
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Water_Level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Water Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HFR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HFR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wind_Data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wind Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Phytoplankton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phytoplankton
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prospects_RT_QC
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prospects_RT_QC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background-qartod-2012-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background: QARTOD 2012-2019
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qartod-reaching-maturity-lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QARTOD Reaching Maturity: Lessons Learned
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QARTOD Reaching Maturity: Lessons Learned">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-of-selected-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Selected Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-control-and-quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Control and Quality Assurance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us-ioos-core-ocean-variables-versus-essential-ocean-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U.S. IOOS Core Ocean Variables Versus Essential Ocean Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessibility-of-qartod-manuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessibility of QARTOD Manuals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-measurement-uncertainty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Measurement Uncertainty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qartod-outreach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QARTOD Outreach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qartod-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QARTOD Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qartod-2020-and-beyond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QARTOD 2020 and Beyond
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QARTOD 2020 and Beyond">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-provider-needs-and-requirements-for-real-time-qc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Provider Needs and Requirements for Real-time QC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#international-interest-in-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        International Interest in Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communities-encouraged-to-develop-qartod-manuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communities Encouraged to Develop QARTOD Manuals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-with-new-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction with New Programs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-qartod-elevator-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A – QARTOD Elevator Speech
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data_Flags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Plan_Update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project_Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/ocefpaf/qartod_manuals/edit/main/docs/Prospects_RT_QC.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/ocefpaf/qartod_manuals/raw/main/docs/Prospects_RT_QC.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="qartod-prospects-for-real-time-quality-control-manuals-how-to-create-them-and-a-vision-for-advanced-implementation">QARTOD  - Prospects for Real-Time Quality Control Manuals, How to Create Them, and a Vision for Advanced Implementation</h1>
+<p>_Mark Bushnell_¹, _Kathleen Bailey_¹, _Julie Bosch_², _Eugene Burger_³, _Jennifer Dorton_⁴, _Regina Easley_⁵, _Bob Heitsenrether_⁶, <em>Jeff King</em>**⁷, _Karen Grissom_⁸, _Mario Tamburri_⁹, _Julianna Thomas_¹⁰, _Christoph Waldmann_¹¹</p>
+<p><small><em>¹U.S. Integrated Ocean Observing System, ²National Centers for Environmental Information, ³Pacific Marine Environmental Laboratory, ⁴Southeast Coastal Ocean Observing Regional Association, ⁵National Institute of Standards and Technology, ⁶Center for Operational Oceanographic Products and Services, ⁷U.S. Army Corps of Engineers, ⁸National Data Buoy Center, ⁹Alliance for Coastal Technologies, ¹⁰Scripps Institution of Oceanography [retired], ¹¹University of Bremen Center for Marine Environmental Sciences</em></small></p>
+<h2 id="abstract">Abstract</h2>
+<p>The United States Integrated Ocean Observing System® (U.S. IOOS®) Quality Assurance / Quality Control of Real-Time Oceanographic Data (QARTOD) Project marshaled hundreds of volunteer subject-matter experts to identify tests to evaluate real-time data quality by variable and instrument type.
+These quality control steps,
+outlined in QARTOD manuals, are crucial for documenting the reliability of the collected real-time environmental data.
+QARTOD, which began as an ad hoc effort in 2003, has published thirteen quality control manuals.
+Specific aspirations for future QARTOD efforts include revising existing manuals,
+identifying new manuals for development based on the QARTOD community development process,
+and promoting the documented quality control procedures within the IOOS and broader ocean observing system communities.</p>
+<p>QARTOD manuals characterize the quality control processes as required,
+strongly recommended,
+or suggested for each sensor type. QARTOD manuals can be developed only when, 1) interoperable data streams are employed, 2) data are disseminated and used in real-time, and 3) there is sufficient community expertise and interest.
+An initial review of U.S. IOOS core variables and Global Ocean Observing System Essential Ocean Variables (considering these three requirements) reveals no remaining variables with an immediate need for manual development.
+As technologies advance, the observational maturity increases for these variables,
+as will the need for a QARTOD manual.</p>
+<p>QARTOD QC tests are now being implemented by operators at ocean observing systems around the world.
+Technological progress (e.g., autonomous vehicles) suggests a high potential for expanding the real-time quality control measures integrated within field instrumentation.
+Most required QARTOD tests can be embedded and implemented within the field-deployed equipment,
+and QARTOD-ready devices likely will be available soon.
+As the Internet of Things grows to include oceanographic hardware (Xu et al. 2019),
+such embedded QC processes will become important.</p>
+<p>Please cite this document as:</p>
+<div class="highlight"><pre><span></span><code>U.S. Integrated Ocean Observing System, 2020. QARTOD - Prospects for Real-Time Quality Control Manuals, How to Create Them, and a Vision for Advanced Implementation. 22 pp. DOI: 10.25923/ysj8-5n28
+</code></pre></div>
+<h2 id="background-qartod-2012-2019">Background: QARTOD 2012-2019</h2>
+<p>A 2003 meeting of 80 people who thought it was important to produce the highest data quality possible ultimately led to the genesis of QARTOD (Quality Assurance / Quality Control of Real-Time Oceanographic Data).
+This grassroots effort is now a well-recognized name throughout the global oceanographic community.
+The idea for integrating ocean-observing organizations and agencies throughout the U.S. and globally emerged over time and is described in publications such as <em>the First U.S. Ocean Observing System (IOOS) Development Plan</em> in 2006 (Ocean.US 2006).
+Numerous federal and non-federal agencies in the U.S. have long collected data remotely and in-situ and understand the importance of high-quality data.
+Oceanographers from many of those agencies participated in at least one QARTOD workshop,
+held biennially from 2003 through 2009.
+By the time U.S. IOOS adopted QARTOD as an official project in 2012,
+federal and non-federal partners had provided a solid foundation for achieving data quality control through documentation of the QARTOD workshops (2003–2009).</p>
+<p>That first grassroots meeting resulted in a framework describing the conditions needed for the quality control of real-time observations.
+Subsequently,
+these have become known as the Seven Data Management Laws of QARTOD (Figure 1).
+These “laws” guide the development of the quality control (QC) test procedures in each manual.</p>
+<p><img alt="Seven Data Management Laws of QARTOD." src="../images_Prospects_RT_QC/image01.png" /></p>
+<figcaption>Figure 1. Seven data management laws of QARTOD (Burnett et al. 2009)</figcaption>
+
+<p>The QARTOD Project initially represented a vision of producing a manual for 26 specific core variables¹ (e.g., water levels, currents, waves, phytoplankton, etc.).
+More recently,
+the 31 Global Ocean Observing System (GOOS) Essential Ocean Variables (EOVs) have also been considered as candidates for a manual².
+The intended audiences of the manuals are those who are creating software to automate real-time QC tests.
+Each manual describes the process of automating the generation of quality control flags—usually pass,
+suspect,
+or fail (U.S. IOOS 2020).
+Data points flagged as suspect require a human in the loop to further inspect the data point and verify the quality of these observations.
+Each manual describes the specific tests needed for that variable,
+along with sample codable instructions that are helpful to those setting up automated data collection programs to flag data exceeding certain preselected thresholds.
+These test procedures are outlined in every QARTOD manual.</p>
+<p>The QARTOD Project became critical to the task of developing formal U.S. IOOS data standards for data collected by the U.S. IOOS Regional Associations (RAs),
+a consortia of non-federal data providers and users responsible for establishing,
+operating,
+and improving regional ocean observing systems.
+The U.S. is organized into eleven RAs, representing coastal,
+Great Lakes,
+and Caribbean regions with different ocean-observing considerations.
+After several years of project management by U.S. IOOS,
+it was noticed that QARTOD QC tests were increasingly being implemented internationally.
+As a result,
+the original opportunity for “courtesy” reviews by international communities became a formal element,
+and the manuals came to be developed with global assistance.</p>
+<p><small>¹ U.S. IOOS started with 26 core variables and expanded to 34 variables. See https://ioos.noaa.gov/about/ioos-by-the-numbers/.</small></p>
+<p><small>² Global Ocean Observing System Essential Ocean Variables. See https://www.goosocean.org/index.php?option=com_content&amp;view=article&amp;id=14&amp;Itemid=114</small></p>
+<h2 id="qartod-reaching-maturity-lessons-learned">QARTOD Reaching Maturity: Lessons Learned</h2>
+<p>Seventeen years after the first grassroots meeting,
+the QARTOD Project is now at a point of transition.
+The effort has produced thirteen QC manuals (and three papers) addressing many of the U.S. IOOS core variables.
+With each new manual and manual updates (some manuals have been updated twice),
+U.S. IOOS and the ocean-observing community have also acquired a more comprehensive understanding of data quality control through the preparation of these documents.</p>
+<p>The original (2012) project plan targeted work through 2016 (Toll 2012).
+In 2016,
+the original plan was extended out five years (through 2021) (U.S. IOOS 2017).
+The detailed work plan for 2020 included identification of new variables for which a QARTOD manual is needed,
+as well as updates to existing manuals,
+if required.
+Figure 2 shows the status of QARTOD manuals prepared to date.</p>
+<p><img alt="Status of QARTOD manuals prepared to date." src="../images_Prospects_RT_QC/image02.png" /></p>
+<figcaption>Figure 2. Status of QARTOD manuals and papers</figcaption>
+
+<p>Note that in Figure 2,
+three manuals are outside the list of core variables and were prepared at the request of a specific community.
+The data flags manual explains the selection rationale of the five different QARTOD flags,
+the HFR surface currents manual provides expanded guidance for surface current measurements,
+and the Glider Data Assembly Center manual is specific to collecting data on the glider platform.
+A quality assurance appendix to each manual was published as a quality assurance paper (Bushnell et al. 2019) and covers general quality assurance issues.
+The paper also provides examples of detailed checklists and a comprehensive example of a data uncertainty calculation.</p>
+<p>One of the pillars of QARTOD is the process itself—how it encompasses an ever-widening circle of subject-matter experts through the three iterations of manual review (Figure 3; Bushnell 2015).
+The QARTOD process has included more than 200 subject-matter experts to develop the QC manuals and related documents.
+For each review,
+proposed revisions and comments are logged into an adjudication matrix,
+and each revision and comment receive an explanation for whether the suggestion is incorporated (and if not, why).
+Adjustments to the QARTOD manual development process are made as needed to ensure efficiency and thoroughness,
+such as the previously mentioned formal inclusion of an international review.</p>
+<p><img alt="QARTOD process." src="../images_Prospects_RT_QC/image03.png" /></p>
+<figcaption>Figure 3. QARTOD process</figcaption>
+
+<h3 id="table-of-selected-definitions">Table of Selected Definitions</h3>
+<p>The key factor in the decision to include a table of selected definitions in each manual is the realization that ocean observers might differ in their definitions of certain terms;
+therefore,
+it is helpful to state how specific terms are defined and used in the manual.
+This effort began with defining the most basic terms used throughout each manual:
+real-time,
+quality control,
+and quality assurance.</p>
+<h3 id="real-time">Real-Time</h3>
+<p>The focus of QARTOD manuals is on real-time QC.
+However,
+a continuum of QC efforts exists,
+which improves data quality with the passage of time and acquisition of more data.
+Some examples of temporal data provision are:</p>
+<ul>
+<li>
+<p>Real-time is when data are delivered without delay for immediate use; time series extends only backwards in time; and sample intervals may range from a few seconds to a few hours or even days, depending upon the sensor configuration. Latency is typically minutes to hours.</p>
+</li>
+<li>
+<p>Near-real-time is not necessarily focused on the most current data point and has some tolerance for delayed dissemination. Latency may be hours to days.</p>
+</li>
+<li>
+<p>Delayed mode is not focused on the most current data point; there is acceptance of delay. Latency is typically days to months.</p>
+</li>
+<li>
+<p>Post-processed means acceptance of considerable delay but may include corrections provided by evaluation of the entire instrument deployment and post-calibrations. Post-processing may occur after months or years.</p>
+</li>
+<li>
+<p>Re-analysis includes related variables and data sets, as well as reviews of overall sensor/systems performance. Such efforts are usually conducted years or decades after initial data acquisition.</p>
+</li>
+</ul>
+<p>These are not strict partitions;
+many programs may provide real-time data and consider delayed and post-processed as identical.
+Data that might not be considered real-time may still benefit from QARTOD QC.
+The tests may serve as a starting point for the QC of non-real-time data,
+such as delayed mode.</p>
+<h3 id="quality-control-and-quality-assurance">Quality Control and Quality Assurance</h3>
+<p>Terms such as quality control and quality assurance are defined in early manuals with examples of each given in the narrative.
+The two terms are sometimes used interchangeably,
+and it was not always clear that reviewers actually agreed on the distinction between the two.
+QC is product oriented – or in the case of the manuals, all of the QC tests for the variable.
+QC is testing the data point against thresholds after it is received.
+QA is process oriented – assuring quality in the process of calibrating an instrument,
+setting it up,
+and integrating into the system.</p>
+<p>The content describing QA,
+appended to each QARTOD manual,
+was too general for many reviewers.
+Recent efforts expand upon QA within the QARTOD Project,
+resulting in the Bushnell et al. (2019) paper,
+inclusion of QA in the 2020 QARTOD project plans, and support of the newly emergent and wellrespected Ocean Best Practices System ([OBPS], https://www.oceanbestpractices.org/).
+Beginning with the update to the temperature and salinity manual in 2020,
+the QA appendix was removed,
+and manual users are referred to Bushnell et al. (2019).</p>
+<p><strong>Other Terms</strong></p>
+<p>During the QARTOD manual development process,
+other terms emerged that needed to be defined,
+including interoperable,
+sensor,
+variable,
+and operator.</p>
+<p><em>Interoperable</em> refers to the ability of two or more systems to exchange and use data,
+metadata,
+information,
+or system parameters following established protocols or standards.
+This term is important because interoperability is required before automated QC testing can be implemented.</p>
+<p><em>Sensor</em> is strictly defined as an “element of a measuring system that is directly affected by a phenomenon,
+body,
+or substance carrying a quantity to be measured” (JCGM 2012).
+However,
+it is also commonly used to identify a much broader composition of measurement system elements such as digitizers,
+firmware applying calibration to create data with engineering units,
+and data recording and telemetry functions – a measuring instrument.</p>
+<p><em>Variable</em> is an observation (or measurement) of physical and biogeochemical properties within oceanographic and/or meteorological environments.
+We refer to the listings provided by the Interagency Ocean Observation Committee (IOOC) 34 Core Ocean Variables (COVs) and the GOOS 31 EOVs².
+These are important here,
+because not all COVs and EOVs have sensors capable of generating interoperable data in real-time.</p>
+<p><em>Operator</em>,
+in QARTOD manuals,
+refers to those entities engaged in the collection,
+generation,
+and dissemination of oceanographic data (i.e., data provider).
+While the term is generally used in juxtaposition to <em>user</em>,
+operators can also be users of their own data.</p>
+<h3 id="certification">Certification</h3>
+<p>Implementation of QARTOD real-time QC can play a key role in obtaining more formal acceptance for data providers (operators).
+In some instances, QARTOD implementation may be required.
+In others,
+requirements may vary broadly depending upon the authority issuing acceptance of the provider capabilities.</p>
+<p>For example,
+the ICOOS Act of 2009 directed the National Oceanic and Atmospheric Administration (NOAA) to certify and integrate Regional Information Coordination Entities (RICEs) into the U.S. IOOS.
+RICE certification formally establishes the role of the entity within U.S. IOOS and ensures that the data disseminated by the RICE are managed using the best practices identified by NOAA.</p>
+<p>To obtain RICE certification,
+data providers must show they meet the requirements established in the U.S. Integrated Ocean Observing System: Regulations to Certify and Integrate Regional Information Coordination Entities³.
+RICE certification requirements include meeting quality control standards for variables that have an associated QARTOD manual.
+As of 2019,
+all eleven U.S. IOOS RAs had achieved RICE certification⁴.</p>
+<p><small>² http://www.goosocean.org/index.php?option=com_content&amp;view=article&amp;id=14&amp;Itemid=114</small></p>
+<p><small>³ https://cdn.ioos.noaa.gov/media/2017/12/ioos_certification_final_rule.pdf</small></p>
+<p><small>⁴ Additional RICE certification information can be found at https://ioos.noaa.gov/about/governance-and-management/certification-extending-reach-regional-data/.</small></p>
+<h3 id="us-ioos-core-ocean-variables-versus-essential-ocean-variables">U.S. IOOS Core Ocean Variables Versus Essential Ocean Variables</h3>
+<p>U.S. IOOS began with 26 variables that originated early in the process – well before U.S. IOOS assumed responsibility for QARTOD in 2012.
+Nine QARTOD manuals were already published when U.S. IOOS increased the number of core variables to 34 in 2018⁵ and grouped variables into one of three categories:
+physical,
+biogeochemical,
+and biological (ecosystems).
+This addition represents the importance of ecosystem monitoring and adds several variables important for determining the health of ecosystems.
+Internationally,
+GOOS identified EOVs⁶ that include even more specific attributes to help understand global ecosystems.
+QARTOD attempted to match U.S. IOOS core variables to EOVs but found there was no way to compare them.
+The need for core variables for each U.S. IOOS Regional Association is not identical to EOVs; therefore,
+EOVs have not replaced the 34 core variables.
+While a harmonization of COVs and EOVs is desirable,
+it is not required for the development of further QC manuals.
+The process to create a QARTOD manual would be the same for any variable from any listing.</p>
+<h3 id="accessibility-of-qartod-manuals">Accessibility of QARTOD Manuals</h3>
+<p>Documents can become difficult to access if the IP address changes or a website is updated.
+Therefore,
+all QARTOD manuals have received a Digital Object Identifier (DOI) and have been placed in the NOAA Institutional Repository⁷ and the Ocean Best Practices Repository⁸.
+QARTOD documents also reside on the U.S. IOOS website⁹.</p>
+<h3 id="data-measurement-uncertainty">Data Measurement Uncertainty</h3>
+<p>QARTOD draws distinctions between data quality assurance and quality control but also stresses their close relationship.
+As QARTOD manuals have evolved,
+so have the needs to define more clearly what high-quality data are and how to achieve the best quality possible.
+Bushnell et al. (2019) include a discussion of data measurement uncertainty,
+defined as a "non-negative parameter characterizing the dispersion of the quantity values being attributed to a measurand,
+based on the information used".
+The paper also includes an example of a rigorous measurement uncertainty calculation.</p>
+<p>Although data measurement uncertainty is not a part of the real-time QC process outlined in QARTOD manuals,
+it illustrates how QARTOD has expanded the conversation about different facets of highquality data going forward.
+Measurement uncertainty directly addresses the sixth Data Management Law of QARTOD,
+<em>Observers should quantify the level of calibration accuracy and the associated expected error bounds (Figure 1)</em>.
+However,
+calibration accuracy is only one of many elements contributing to measurement uncertainty quantification.
+Others include electronic stability,
+sensor drift,
+biofouling,
+and even the spatial and temporal variability of the measurand itself.
+Rigorous uncertainty calculations can quickly become quite complex.</p>
+<p><small>⁵ https://ioos.noaa.gov/about/ioos-by-the-numbers/</small></p>
+<p><small>⁶ https://www.goosocean.org/index.php?option=com_content&amp;view=article&amp;id=14&amp;Itemid=114</small></p>
+<p><small>⁷ https://repository.library.noaa.gov/</small></p>
+<p><small>⁸ https://www.oceanbestpractices.org/</small></p>
+<p><small>⁹ https://ioos.noaa.gov/</small></p>
+<h3 id="qartod-outreach">QARTOD Outreach</h3>
+<p>QARTOD accomplishments reach well beyond developing real-time quality control manuals.
+The QARTOD National Coordinator and Board of Advisors pursued a broad outreach strategy to explain the goals of real-time QC by participating in conferences and workshops,
+as well as authoring papers and articles for conferences,
+trade publications,
+and journals.
+For example,
+QARTOD papers were presented at the IEEE/Marine Technology Society Oceans ’15 through Oceans ’18 international meetings,
+as well as other conferences such as the American Geological Union,
+Ocean Sciences,
+the Data Buoy Cooperation Panel,
+Oceanology,
+Ocean Networks Canada,
+Radio Operators Working Group,
+and several others.
+National Coordinator Mark Bushnell was the guest editor for the February 2016 issue of <em>Sea Technology Magazine,</em> and QARTOD news articles appeared in publications such as <em>Marine Technology Reporter</em>,
+<em>ECO World News Magazine</em>,
+<em>Ocean News and Technology</em>,
+and the IEEE Oceanic Engineering Society <em>Beacon</em>.
+A QARTOD one-page document was developed to provide a concise description of the QARTOD Project (appendix A).</p>
+<table>
+<thead>
+<tr>
+<th><strong>Year</strong></th>
+<th><strong>Conference Name</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2009</strong></td>
+<td>• OceanObs’09, Venice, Italy</td>
+</tr>
+<tr>
+<td><strong>2010</strong></td>
+<td>• International Marine Data and Information Systems Conference, Paris, France</td>
+</tr>
+<tr>
+<td><strong>2012</strong></td>
+<td>• Oceans’12, Virginia Beach, Virginia</td>
+</tr>
+<tr>
+<td><strong>2014</strong></td>
+<td>• Ocean Optics Protocols Workshop, Portland, Maine<br>• Oceans’14, St. John’s, Newfoundland</td>
+</tr>
+<tr>
+<td><strong>2015</strong></td>
+<td>• American Shore &amp; Beach Preservation Association, New Orleans, Louisiana<br>• Coastal &amp; Estuarine Research Federation, Portland, Oregon (presentation by Emilio Mayorga)<br>• Currents, Waves, &amp; Turbulence Measurements Workshop, St Petersburg, Florida<br>• IEEE/MTS OCEANS’15, National Harbor, Maryland<br>• Joint Radiowave Oceanography Workshop / Radiowave Operators Working Group Meeting,<br>Woods Hole, Massachusetts<br>• Data Management and Communications annual meeting, Silver Spring, Maryland</td>
+</tr>
+<tr>
+<td><strong>2016</strong></td>
+<td>• OceanObs Research Coordination Network Meeting, San Francisco, California<br>• MTS/IEEE OCEANS’16, Monterey, California<br>• Ocean Networks Canada QARTOD Workshop, Victoria, British Columbia<br>• Pacific Marine Environmental Laboratory, (remote participation)<br>• Second JCOMM Marine Instrument Workshop for WMO Regional Association IV with focus on<br>wave measurements from moored buoys, Gulfport, Mississippi</td>
+</tr>
+<tr>
+<td><strong>2017</strong></td>
+<td>• CERF, Providence, Rhode Island<br>• AtlantOS Transatlantic Ocean Data Harmonization Workshop, Brussels, Belgium<br>• Data Buoy Cooperation Panel 32, La Jolla, California<br>• American Geophysical Union, New Orleans, Louisiana<br>• IEEE/MTS OCEANS’17, Anchorage, Alaska</td>
+</tr>
+<tr>
+<td><strong>2018</strong></td>
+<td>• IEEE/MTS OCEANS’18, Charleston, South Carolina<br>• Data Management and Communications annual meeting, Silver Spring, Maryland<br>• National Hydrologic Warning Council, Transmission newsletter, July 2018 issue<br>• DBCP, Cape Town, South Africa<br>• Special issue of the Marine Technology Society Journal - An Intergovernmental Blueprint for Community Resiliency: The Hampton Roads Sea Level Rise Preparedness and Resilience Intergovernmental Pilot Project, March/April 2018 issue<br>• National Water Quality Monitoring Council Web Meeting (remote participation)<br>• Ocean Sciences session for Real-Time Quality Control of Ocean Data, Portland, Oregon</td>
+</tr>
+<tr>
+<td><strong>2019</strong></td>
+<td>• Association for the Sciences of Limnology and Oceanography, San Juan, Puerto Rico<br>• Ocean Observatories Initiative Facility Board &amp; Data Delivery and Cyber Infrastructure<br>Committee, Alexandria, VA (remote participation)<br>• UG2 – EGO Glider Workshop, Rutgers University, New Jersey<br>• DMAC, Silver Spring, Maryland<br>• OceanObs’19, Honolulu, Hawaii</td>
+</tr>
+<tr>
+<td><strong>2020</strong></td>
+<td>• Ocean Sciences Meeting, San Diego, California</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 1. Conferences with QARTOD participation.</p>
+<p>Relevant conferences have served as the kick-off for some QARTOD manuals.
+For example,
+a workshop on real-time QC of pH observations was hosted by U.S. IOOS at the Association for the Sciences of Limnology and Oceanography meeting in Puerto Rico in February 2019.
+This resulted in the development of the pH manual.
+The ocean optics QC manual was launched during the October 2014 Ocean Optics Protocols Workshop in Portland, Maine.</p>
+<p>Quality control tests from QARTOD manuals and QA/QC of critical datasets have been incorporated into the curricula of an operational oceanography master’s program at Rutgers University.
+The results of the curriculum development and implantation are found in <em>Workforce Development Supporting the Blue Economy: Using Recent Community-Developed Material in Operational Oceanography Curricula</em> (Bushnell et al. 2018).
+The paper was dedicated to the memory of Vembu Subramanian,
+who had suggested that academic institutions might use QARTOD manuals in their classrooms.</p>
+<h3 id="qartod-implementation">QARTOD Implementation</h3>
+<p>One early implementer of QARTOD was the Coastal Data Information Program (CDIP) at Scripps Institution of Oceanography.
+CDIP (formed in 1975) has long been a leader of the real-time QC of wave data.
+CDIP personnel were instrumental in the initial grassroots QARTOD effort,
+and many wave QC tests adopted by QARTOD began with CDIP.</p>
+<p>The U.S. IOOS Program Office uses QARTOD standards as guidance for the eleven RAs;
+therefore, the RAs were among the earliest adopters of these standards.
+Efforts by these communities led the climate and forecast (CF) metadata convention governance committee to add QARTOD-inspired standard names¹⁰.
+The full set of CF standard names available to identify QARTOD flag ancillary variables can be found in the CF Standard Name Table v72¹¹.
+The search tool can be employed to find quality-related flag variable names.
+Implementation of these standardized flag names are further described,
+and an example is provided,
+in the U.S. IOOS Metadata Profile Version 1.2¹².
+Further documentation of U.S. IOOS QARTOD and other QC tests,
+implemented in Python with notebook examples,
+have been developed and shared by the community¹³.</p>
+<p>QARTOD has also received feedback from data providers in the private and public sectors about their own QARTOD implementation efforts.
+SiMCosta (the Brazilian Coastal Monitoring System),
+the U.S. Army Corps of Engineers,
+Fugro,
+Teledyne RDI,
+and several others are working with the National Coordinator to inform and provide assistance in their QARTOD implementation efforts.
+Table 2 provides an overview of the kinds of implementation efforts about which QARTOD has received feedback.</p>
+<p><small>¹⁰ https://github.com/cf-convention/cf-conventions/issues/216</small></p>
+<p><small>¹¹ http://cfconventions.org/Data/cf-standard-names/72/build/cf-standard-name-table.html</small></p>
+<p><small>¹² https://ioos.github.io/ioos-metadata/ioos-metadata-profile-v1-2.html-quality-controlqartod</small></p>
+<p><small>¹³ https://github.com/ioos/ioos_qc and https://ioos.github.io/ioos_qc/</small></p>
+<table>
+<thead>
+<tr>
+<th><strong>Entity</strong></th>
+<th><strong>Description of Effort</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>U.S.</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>CDIP</td>
+<td>The Coastal Data Information Program at Scripps Institution of Oceanography personnel were<br>leaders in the initial grass-roots QARTOD effort. They implemented all 21 waves QC tests and<br>continue to provide strong support for this US IOOS project. (Julianna Thomas)</td>
+</tr>
+<tr>
+<td>IOOS RAs</td>
+<td>All eleven Regional Associations have implemented the required QARTOD data QC tests and have<br>received certification. There are many individual examples of implementation of required data<br>QC tests, as well as several highly recommended and suggested tests for those variables<br>measured by each RA.</td>
+</tr>
+<tr>
+<td>Ocean<br>Observatories<br>Initiative</td>
+<td>“The overall goal is to ensure that the data and metadata delivered by the OOI meet<br>community data quality standards. These standards were designed with the goal of<br>meeting the Integrated Ocean Observing System (IOOS) Quality Assurance of Real<br>Time Ocean Data (QARTOD) standards.” (Smith et al. 2018).</td>
+</tr>
+<tr>
+<td>WaveForce<br>Technologies</td>
+<td>“We’ve applied QARTOD rules when rebuilding the USACE/FRF database.” (Jeff Hansen)</td>
+</tr>
+<tr>
+<td>Teledyne RDI</td>
+<td>“We’re working to implement some of the tests within the instrument.” (Daryl Symonds)</td>
+</tr>
+<tr>
+<td>PMEL</td>
+<td>“As a result of your presentation, the PMEL Carbon group are now incorporating some of the<br>QARTOD QC procedures into their data processing.” (Eugene Burger)</td>
+</tr>
+<tr>
+<td>Rutgers University</td>
+<td>“Working with Rutgers team to implement glider QC there. Created a CDL file to create a netCDF<br>file that contains all flag variables for groups 1 &amp; 2 in the QARTOD manual. “(John Kerfoot)</td>
+</tr>
+<tr>
+<td>Sea-Bird Scientific</td>
+<td>Working to embed QARTOD tests in their SeaFET V2 pH sensor (Charles Branham)</td>
+</tr>
+<tr>
+<td><strong>International</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>OMC - Melbourne,<br>Australia</td>
+<td>Implemented some QARTOD tests for our Datawell wave processing as well as tide monitoring<br>systems. Interested in hearing about further developments to the QARTOD manuals. (Carsten<br>Hofmann, Senior Coastal Engineer)</td>
+</tr>
+<tr>
+<td>British<br>Oceanographic<br>Data Centre</td>
+<td>Editing update to GLOSS QC Manual. Want to expand the RT quality control section and requests<br>permission to add several QARTOD tests to the list of tests required for GLOSS RT sea level data.<br>(Elizabeth Bradshaw)</td>
+</tr>
+<tr>
+<td>Bundesamt fuer<br>Seeschiffahrt und<br>Hydrographie</td>
+<td>Have started to implement QARTOD wave QC testing. The QARTOD waves QC manual lacks<br>identification of extreme waves. (Christian Senet)</td>
+</tr>
+<tr>
+<td>FUGRO UK</td>
+<td>Requested the updated WL manual, said “We've been advocating QARTOD in the oil and gas<br>sector for quite a few years…” (Mark Calverley)</td>
+</tr>
+<tr>
+<td>SIMCosta</td>
+<td>“Implementing QARTOD in SiMCosta, the Brazilian Coastal Monitoring System. Want to interact<br>with the QARTOD team.” (Carlos Garcia)</td>
+</tr>
+<tr>
+<td>European Marine<br>Energy Centre<br>(EMEC) Ltd.</td>
+<td>“We are currently developing own in-house metocean data processing suite and are planning to<br>align our data processing procedure with QARTOD guidelines. As a priority, ADCP and surface<br>wave processing tools are currently being developed.<br>“Although we are primarily processing data collected in self-contained (non-real-time) mode, the<br>QARTOD manual recommendations appeared to be easily adaptable for such usage and very<br>helpful.<br>“The QARTOD project is very useful and we will most certainly continue following your work.”<br>(David Darbinyan,Senior Metocean Engineer)</td>
+</tr>
+</tbody>
+</table>
+<p>: Table 2. Summary of Implementation Efforts.</p>
+<h2 id="qartod-2020-and-beyond">QARTOD 2020 and Beyond</h2>
+<h3 id="data-provider-needs-and-requirements-for-real-time-qc">Data Provider Needs and Requirements for Real-time QC</h3>
+<p>QARTOD manuals are designed to provide general guidance to those collecting and disseminating core ocean variable data in real-time.
+However,
+future requirements for specific variables could change.
+Perhaps the technology is still being developed,
+or the time scale for certain variables could move from daily or weekly to real-time.
+Examples of these scenarios are described below (<em>Communities Encouraged to Develop QARTOD Manuals</em>).</p>
+<p>QARTOD has focused 2020 efforts on incremental updates for two manuals (temperature/salinity and data flags).
+Quarterly teleconferences keep the Board of Advisors updated,
+and attendance at various conferences and workshops help the National Coordinator to remain engaged with the needs and requirements of national and international ocean-observing communities.
+The National Coordinator also serves as a moderator for the Ecosystems Mooring Forum and has continual involvement with the OBPS.</p>
+<h3 id="international-interest-in-best-practices">International Interest in Best Practices</h3>
+<p>U.S. IOOS has been supportive of the OBPS effort since inception in 2017 through attendance at workshops and participation in the founding working group (now the IOC OBPS Steering Group).
+This support is expected to continue at a similar level of effort.
+As a result of that involvement,
+QARTOD manuals and many other NOAA documents have been posted to the OBPS Repository.</p>
+<p>Close collaboration between the QARTOD Project and the OBPS is mutually beneficial.
+QARTOD gains because the QC manuals become further findable,
+accessible,
+interoperable,
+and reusable,
+and OBPS is rewarded by inclusion of accepted QC best practices into the repository.</p>
+<h3 id="communities-encouraged-to-develop-qartod-manuals">Communities Encouraged to Develop QARTOD Manuals</h3>
+<p>The future QARTOD focus is on updating existing manuals and not developing new ones.
+However,
+ocean-observing communities are in an excellent position to determine when the time is ripe for new manual development.
+The National Coordinator,
+QARTOD Board of Advisors,
+and U.S. IOOS Program Office are uniquely positioned to assist communities that eventually might have a need for standardized real-time QC.</p>
+<p>Figure 4 lists the COVs that are not presently addressed by a QARTOD manual.
+Evaluation of the remaining variables must consider the requirements for a traditional QARTOD manual,
+which include:</p>
+<ul>
+<li>
+<p>Interoperable data stream</p>
+</li>
+<li>
+<p>Use of data in real-time and need for real-time QC</p>
+</li>
+<li>
+<p>Community expertise and interest</p>
+</li>
+</ul>
+<p><img alt="Remaining U.S. IOOS core variables." src="../images_Prospects_RT_QC/image04.png" /></p>
+<figcaption>Figure 4. Remaining U.S. IOOS core variables.</figcaption>
+
+<p>Of the remaining 19 variables,
+the following could be ready for real-time QC within the next few years:</p>
+<ul>
+<li>
+<p><strong>Partial pressure of CO2</strong> – A useful example of QA/QC treatment for carbonate system sensors is the FixO3 (The Fixed point Open Ocean Observatories) Handbook of Best Practices (Sastri et al., 2019), available at several websites including the International Ocean Carbon Coordination Project¹⁴. The FixO3 Handbook details best practices for deployment, calibration, and quality control recommendations developed by the International OceanSITES initiative. Ultimately, however, the FixO3 Handbook acknowledges that quality control procedures for carbonate system sensors are not ready to be adopted as “best practices” and further work is required. The Essential Ocean Variable (EOV): Carbonate System description by the GOOS also reflects this conclusion with its assessment of the readiness level of some OA [ocean acidification] sensor types.</p>
+</li>
+<li>
+<p><strong>Total suspended matter</strong> – Also known as total suspended solids, this is a common measure of water quality and closely related to turbidity. Water is filtered and filters are dried and weighed to obtain the weight per unit volume. Since the process is conducted manually, each result is reviewed by the analyst. However, the results may not be examined in the larger context of previous or nearby observations, so traditional QARTOD QC tests could be of value.</p>
+</li>
+</ul>
+<p>The following variables either do not require real-time QC or real-time QC is not presently feasible.
+This is not to diminish the importance of these variables.
+Existing QARTOD manuals describe the process of automating the generation of quality control flags—usually pass,
+suspect,
+or fail.
+It is emphasized that a suspect flag requires a human in the loop to further inspect the data point and verify the quality of the observation.
+For those variables observed with a human continually in the loop with limited or no automation in the process,
+all data are already reviewed manually.
+There is no need to highlight suspect data points.</p>
+<p><small>¹⁴ http://www.ioccp.org/images/03TimeSeries/FixO3_Handbook-of-best-practices_2016.pdf</small></p>
+<p>The following variables do not require real-time QC:</p>
+<ul>
+<li><strong>Ice distribution</strong> – Discussions with personnel from the National Ice Center and the National Snow and Ice Data Center did not reveal interoperable data streams. Products are generated on weekly time scales, and manual evaluation is sufficient. However, there is some discussion regarding real-time QC¹⁵.</li>
+</ul>
+<p>The University of Alaska Fairbanks (UAF) School of Fisheries and Ocean Sciences partnered with Pacific Gyre to receive a 3-year Ocean Technology Transition award in 2014¹⁶.
+Their work resulted in instrumentation on a buoy that provided real-time data on the vertical temperature and salinity structure to determine freeze-up conditions.
+The mooring provided data in real-time to scientists at UAF,
+forecasters at the National Weather Service, and others¹⁷.
+While this was useful as a demonstration, they encountered mooring difficulties;
+no real-time capability exists at present.</p>
+<ul>
+<li><strong>Heat flux</strong> – Heat flux is derived from multiple met/ocean variables, which are presently addressed by QARTOD manuals such as temperature, winds, and optical properties (Yu and Weller 2007).</li>
+</ul>
+<p>For the following variables, real-time QC is not feasible at present:</p>
+<ul>
+<li>
+<p><strong>Contaminants</strong> – This core variable lacks definition and is too vague for a specific real-time QC manual. The U.S. Environmental Protection Agency (EPA) uses the Safe Drinking Water Act definition of <em>contaminant</em> as “any physical, chemical, biological or radiological substance or matter in water”. QARTOD manuals discuss sensor technology to help users understand the challenges involved in data collection, and to explain how the QC tests can be used to identify good, suspect, and bad data. This cannot be done without knowing the nature of the contaminant and the instruments used to measure it. For example, do the contaminants float, sink, or are they dispersed throughout the water column?</p>
+</li>
+<li>
+<p><strong>Microplastics</strong> - One interesting example of a contaminant is microplastics. There is a lack of standard collection methods, which prevents measurement comparisons or identification of trends in microplastics contamination¹⁸. Reference standards are poor (spheres, not representative) or non-existent. Samples collected by nets can allow long, thin fibers to go through nets and be under-sampled. Whole water samples show that microplastics are far more abundant.</p>
+</li>
+<li>
+<p><strong>Pathogens</strong> – The real-time quality control of observations of pathogens (viruses, bacteria, fungi, protozoa, and worms) is certainly desired in real-time. In fact, it is required: “… <em>the BEACH Act requires all coastal and Great Lakes states to adopt EPA Ambient Water Quality Criteria for the pathogen indicator organisms E. coli or enterococci for beach and recreational water quality monitoring.” And, “Beach and recreational water quality monitoring may include a number of measurements in addition to those for bacteria indicator organisms—for example, parameters such as rainfall, water and air temperature, water turbidity, and wind speed and direction.</em> ” <em>(U.S. ERG, Inc. 2002)</em>. As yet there are no commonly known pathogen sensors. Water samples are manually collected and transported to a lab for manual analysis. There are no automated processes and no interoperable data stream to which automated QC could be applied.</p>
+</li>
+<li>
+<p><strong>Bottom character</strong> – This variable does not have an interoperable data stream.</p>
+</li>
+<li>
+<p><strong>Biological vital rates</strong> – This variable is vague and does not have an interoperable data stream.</p>
+</li>
+<li>
+<p><strong>Coral species and abundance</strong> - These observations are manually conducted and are not disseminated in real-time.</p>
+</li>
+<li>
+<p><strong>Fish species/abundance</strong> – Conversations with biologists indicate emerging active acoustics and video imaging technologies that show promise, but these techniques are still research activities (pers. Comm., C. Reiss). If these technologies advance to real-time status, massive data sets are anticipated (Kearns, 2019, https://www.youtube.com/watch?v=jGzZs0cjdmE).</p>
+</li>
+<li>
+<p><strong>Invertebrate species and abundance</strong> - These observations are manually conducted and are not disseminated in real-time.</p>
+</li>
+<li>
+<p><strong>Marine mammal species/abundance</strong> - These observations are manually conducted and are not disseminated in real-time. They can be inferred from ocean acoustics, which is partially addressed in the passive acoustics QARTOD manual.</p>
+</li>
+<li>
+<p><strong>Microbial species/abundance/activity</strong> - Observations of microbial species, abundance, and activity are often conducted as part of a research project. They usually require measurements of other variables for which QARTOD manuals do exist, such as temperature and salinity, currents, pH, etc. However, the species, their abundance, and their activity are determined, described, and distributed through human effort (Figure 5). A manual providing guidance for the development and implementation of software for automated QC is not needed if there is no automation elsewhere in the data management process.</p>
+</li>
+</ul>
+<p><small>¹⁵ http://nsidc.org/arcticseaicenews/faq/-quality_control and https://www.navcen.uscg.gov/?pageName=NAIceService</small></p>
+<p><small>¹⁶ https://ioos.noaa.gov/project/ott-real-time-sensor-system-detecting-freeze-arctic-shelves/</small></p>
+<p><small>¹⁷ https://aoos.org/ice-detection-buoy</small></p>
+<p><small>¹⁸ https://www.aimspress.com/fileOther/PDF/environmental/Environ-06-05-326.pdf</small></p>
+<p><img alt="Miguel Semedo at the Virginia Institute of Marine Science conducts manual water quality evaluations." src="../images_Prospects_RT_QC/image05.jpg" /></p>
+<figcaption>Figure 5. Miguel Semedo at the Virginia Institute of Marine Science conducts manual water quality evaluations. Photo courtesy of Lisa Sadler.</figcaption>
+
+<ul>
+<li>
+<p><strong>Nekton diet</strong> - These observations are conducted manually and are not disseminated in realtime.</p>
+</li>
+<li>
+<p><strong>Sea birds species/abundance</strong> - These observations are conducted manually and are not disseminated in real-time.</p>
+</li>
+<li>
+<p><strong>Sea turtles species/abundance</strong> - These observations are conducted manually and are not disseminated in real-time.</p>
+</li>
+<li>
+<p><strong>Submerged aquatic vegetation species/abundance</strong> - These observations are conducted manually and are not disseminated in real-time.</p>
+</li>
+<li>
+<p><strong>Zooplankton species/abundance</strong> - Data are not disseminated in real-time, and there are no interoperable data streams. Automated imaging sensors such as McLane’s Imaging FlowCytobots (IFCB) observations were included in the QARTOD phytoplankton manual as an emerging technology. But that manual stood upon older fluorescent-based measurements. In the case of IFCB zooplankton observations, they are still considered a research activity¹⁹.</p>
+</li>
+</ul>
+<p>Another emerging technology (spanning many of these biological core variables) that will need realtime QC is the measurement of environmental DNA (Hansen et al. 2020).
+However,
+these observations are also considered a research activity,
+and QC is carried out manually at present.</p>
+<p><small>¹⁹ (Also see <em>An assessment of the use of ocean gliders to undertake acoustic measurements of zooplankton: the distribution and density of Antarctic krill (Euphausia superba) in the Weddell Sea</em> https://www.oceanbestpractices.net/handle/11329/895.)</small></p>
+<h2 id="advanced-implementation">Advanced Implementation</h2>
+<p>Many field systems employ QC processes embedded within the instrument firmware,
+and many QARTOD QC tests involve the results of these tests.
+This is especially true of the waves,
+currents,
+and HF radar manuals.
+Manufacturers should consider expansion of their embedded real-time QC processes,
+including data flagging within their sensors and field components as described in Bushnell (2017).
+These QARTOD-enabled devices would provide emerging operators an equal footing with larger data integrators.
+Cars have been alerting operators of system component failures for decades;
+our oceanographic systems should be able to do the same.</p>
+<p>An informal survey of manufacturers provided interesting insights.
+Some saw the advantages of immediate QC for use by a diverse community,
+while others favored software/firmware management ashore;
+good arguments can be made for each viewpoint.
+All agreed there would be no progress toward onboard QC without market demand.</p>
+<p>As the Internet of Things (IOT) emerges,
+fully networked systems that are remotely and autonomously configurable are likely to become available.
+Increases in sensor-to-sensor communications will make neighbor and multivariate QC analysis more viable.
+QARTOD can work with manufacturers and observing systems operators to facilitate this growth.
+The establishment of accepted standards is the keystone for this development.</p>
+<p>In concert with the emergence of the IOT,
+the Research Data Alliance efforts to develop the persistent identification of instruments²⁰ can be expected to further support interoperability of sensors and systems.
+The creation of a universal way to identify instrument instances offers a wealth of benefits to individuals,
+communities and initiatives.</p>
+<p><small>²⁰ https://www.rd-alliance.org/group/persistent-identification-instruments/case-statement/persistent-identificationinstruments</small></p>
+<h2 id="interaction-with-new-programs">Interaction with New Programs</h2>
+<p>U.S. CLIVAR Ocean Uncertainty Quantification Working Group²¹ (OceanUQ) is a three-year project initiated in 2020.
+The objectives are to: a) develop a community-driven web platform for uncertainty quantification knowledge and strategies,
+b) produce peer-reviewed, open-access articles on uncertainty quantification for observational and model ocean data,
+and c) organize a summer school and/or workshop on uncertainty quantification.
+Since documentation of measurement uncertainty is a goal of the QARTOD Project (QARTOD Law 6),
+synergistic cooperation with OceanUQ is effort well spent.</p>
+<p>QARTOD will support the United Nations Decade for Ocean Science for Sustainable Development (20212030)²² by getting involved in programs/initiatives that address long-term monitoring of ocean waters both in coastal regimes and open oceans.
+The data quality standards that had been defined by QARTOD will be instrumental in ensuring the availability of trustworthy ocean data for future generations.</p>
+<p>The restructuring process of World Meteorological Organization that started in 2019 will lead to a radically new organizational structure by 2020.
+The main purpose of this transition process is to foster a service-oriented approach toward disseminating quality-checked data and information in due time to their customers.
+In line with that concept,
+a strong focus will be to harmonize QA/QC procedures used in meteorology and ocean observations.
+QARTOD will be able to provide a significant contribution to that process.</p>
+<p><small>²¹ https://usclivar.org/working-groups/ocean-uncertainty-quantification-working-group</small></p>
+<p><small>²² https://en.unesco.org/ocean-decade</small></p>
+<h2 id="summary">Summary</h2>
+<p>QARTOD began as a grassroots effort in 2003 and became part of U.S. IOOS in 2012.
+QARTOD data quality control procedures are now recognized as an essential part of ensuring data quality control.
+From 2012 through 2019,
+the QARTOD Project produced thirteen manuals describing U.S. IOOS core variables, as well as additional supporting documents and papers.
+QARTOD also conducted extensive outreach to the oceanographic community and beyond.
+The QARTOD Board of Advisors and the National Coordinator authored papers and gave presentations at numerous conferences throughout the world.
+The QARTOD standard for data quality control is now a part of the standards for RICE certification of U.S. IOOS RAs.</p>
+<p>Many core variables requiring real-time QC now have a QARTOD manual.
+As technology advances,
+so will the capability and requirement for real-time QC.
+Additional manuals for variables such as partial pressure of CO2 and total suspended matter could be on the horizon.
+As new variables are identified as being ready for real-time QC,
+communities representing those variables are urged to use the QARTOD process to develop additional manuals.
+U.S. IOOS can help these communities with their efforts.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>QARTOD manuals are a product created by communities with an interest in the QC of a particular variable,
+and we are indebted to the hundreds of individuals who have volunteered their time to contribute to the development of them,
+review them,
+or use them and provide feedback.</p>
+<p>First, we are grateful to Zdenka Willis (former U.S. IOOS Director) for accepting QARTOD as an IOOS project in 2012. Without her support,
+QARTOD would not have become a reality.
+We also acknowledge the efforts of Capt. Ray Toll (U.S. Navy, ret.),
+who developed the first QARTOD Project Plan and served as the initial QARTOD Project Technical Coordinator.</p>
+<p>We thank Jillian Terhune (Water Quality Manager for the City of Norfolk) and Marcia Snyder (Environmental Health Supervisor for the Virginia Department of Health) for their discussions about the methods used to measure and report pathogen levels in real time.</p>
+<p>We appreciate a discussion with Siri Jodha Khalsa (Colorado State University),
+a member of the National Snow and Ice Data Center who confirmed our understanding of ice observations and data products.</p>
+<p>We acknowledge Jim Potemra (Pacific Islands Ocean Observing System),
+Robert Huber (University of Bremen, MARUM - Center for Marine Environmental Sciences),
+Pauline Simpson (UNESCO / IOC Project Office for IODE),
+and Clay Porch (NOAA Southeast Fisheries Science Center) for their time and effort to review and offer valuable comments on the draft paper.</p>
+<h2 id="references">References</h2>
+<blockquote>
+<p>Burnett, W.; Crout, R.; Bushnell, M.; Thomas, J.; Fredricks, J.; Bosch, J. and Waldmann, C. 2010. Quality Assurance of Real-Time Ocean Data: Evolving Infrastructure and Increasing Data Management to Monitor the World's Environment. In: Proceedings of OceanObs’09: Sustained Ocean Observations and Information for Society, Venice, Italy, 21-25 September 2009, (Vol. 2). (Hall, J., Harrison, D.E. &amp; Stammer, D. (eds)). European Space Agency, 5pp. (ESA Publication WPP-306). DOI:10.5270/OceanObs09.cwp.12</p>
+<p>Bushnell, M., 2015. "Quality Assurance/Quality Control of Real-Time Oceanographic Data," OCEANS 2015 - MTS/IEEE Washington, Washington, DC, pp. 1-4. DOI: 10.23919/OCEANS.2015.7404613.</p>
+<p>Bushnell, M. H., 2017. Integration of QARTOD Tests Within a Sensor: Considerations for Sensor Manufacturers. MTS/IEEE OCEANS ’17 conference proceedings, 5 pp.</p>
+<p>Bushnell, M., Glenn, S., Kohut, J., McDonnell, J., Miles, T., Saba, G. &amp; Schofield, O., 2018, Workforce development supporting the blue economy: Using recent community-developed material in operational oceanography curricula: A tribute to Vembu Subramanian. Marine Technology Society Journal, 52(3), pp. 51-54(4)</p>
+<p>Bushnell, M., Waldmann, C., Seitz, S., Buckley, E., Tamburri, M., Hermes, J., Heslop, E., and Lara-Lopez, A, 2019. Quality Assurance of Oceanographic Observations: Standards and Guidance Adopted by an International Partnership. Frontiers in Marine Science,  6:706, 12pp. DOI: https://doi.org/10.3389/fmars.2019.00706</p>
+<p>ERG, Inc. 2002. Time-Relevant Beach and Recreational Water Quality and Monitoring and Reporting. Cincinnati, OH, United States Environmental Protection Agency, 59pp. (EPA/625/R-02/017)(NTIS PB2003104886)</p>
+<p>Hansen, B.K., Jacobsen, M.W., Middelboe, A.L. et al. Remote, autonomous real-time monitoring of environmental DNA from commercial fish. Sci Rep 10, 13272 (2020). https://doi.org/10.1038/s41598020-70206-8</p>
+<p>Joint Committee for Guides in Metrology (JCGM) 2012. International Vocabulary of Metrology: Basic and General Concepts and Associated Terms. (3<sup>rd</sup> Edition). 108pp. Available: <u>https://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf. Accessed 21 August 2020.</u></p>
+<p>Ocean.US, 2006. National Office for Integrated and Sustained Ocean Observations. The First U.S. Integrated Ocean Observing System (IOOS) Development Plan, Publication 9, January 2006.</p>
+<p>Sastri, A., et al., 2019. Perspectives on In Situ Sensors for Ocean Acidification Research, Frontiers in Marine Science, 6:653, 6pp. DOI: 10.3389/fmars.2019.00653.</p>
+<p>Smith, L.M., J.A. Barth, D.S. Kelley, A. Plueddemann, I. Rodero, G.A. Ulses, M.F. Vardaro, and R. Weller. 2018. The Ocean Observatories Initiative. <em>Oceanography</em> 31(1), pp.16-35. DOI:  https://doi.org/10.5670/oceanog.2018.105.</p>
+<p>Toll, R. (ed.) 2012. U.S. IOOS QARTOD Project Plan. Silver Spring, MD, IOOS, 8pp. DOI: http://dx.doi.org/10.25607/OBP-533</p>
+<p>U.S. IOOS 2017. U.S. IOOS, QARTOD Project Plan Accomplishments for 2012-2016 and Update for 20172021. DOI: https://doi.org/10.7289/V5JQ0Z71</p>
+<p>U.S. Integrated Ocean Observing System, 2020. Manual for the Use of Real-Time Oceanographic Data Quality Control Flags, Version 1.2. 24 pp. DOI: https://doi.org/10.25923/w8y6-d298</p>
+<p>Xu, G.; Shi, Y.; Sun, X.; Shen, W. (2019). Internet of Things in Marine Environment Monitoring: A Review. <em>Sensors,</em> 19(7), 1711, 21pp.  DOI: https://www.mdpi.com/1424-8220/19/7/1711</p>
+<p>Yu, L. and Weller, B. 2007. A Fifty-Year Analysis of Global Ocean Surface Heat Flux.  Available: https://www.whoi.edu/cicor/page.do?pid=13749&amp;tid=282&amp;cid=40746 Accessed: 21 Aug 2020</p>
+</blockquote>
+<h2 id="appendix-a-qartod-elevator-speech">Appendix A – QARTOD Elevator Speech</h2>
+<p><strong>QUALITY ASSURANCE / QUALITY CONTROL OF REAL-TIME OCEANOGRAPHIC DATA Setting the Standards for Real-Time QC</strong></p>
+<p>The U.S. Integrated Ocean Observing System® (IOOS®) has a vested interest in collecting and sharing high-quality environmental data.
+One component of this effort is the Quality Assurance/Quality Control of Real-Time Oceanographic Data (QARTOD) Project.</p>
+<p>The unique initial focus of QARTOD is on the publication of real-time Quality Control (QC) manuals that provide QC requirements for interoperable data shared with national data centers.
+From 2012 through 2019,
+QARTOD provided the global oceanographic community with QC manuals for fourteen key variables:
+dissolved oxygen,
+currents,
+waves,
+temperature/salinity,
+sea level,
+wind,
+HF radar surface currents,
+optics,
+dissolved nutrients,
+phytoplankton,
+passive acoustics,
+stream flow,
+and pH.
+The manuals are broadly inclusive and span a wide variety of operators’ capabilities and their requirements for observational accuracies.
+Manual updates are undertaken as needed to address evolving technology,
+knowledge gained through QC implementation, and maturation of the QARTOD Project.</p>
+<p>U.S. IOOS supports a small team that works with data providers,
+consumers,
+and vendors to create the manuals using a standardized process.
+The QC manuals,
+an updated project plan,
+and supporting documents can be found at ioos.noaa.gov/project/qartod.
+For further information,
+contact the project national coordinator at Mark.Bushnell@noaa.gov.</p>
+<p><strong><em>Quality Control Standards for the Oceanographic Community, by the Oceanographic Community</em></strong></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 21, 2026 14:09:39 UTC">October 21, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 19, 2026 00:23:47 UTC">October 19, 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ocefpaf" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.tabs", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
